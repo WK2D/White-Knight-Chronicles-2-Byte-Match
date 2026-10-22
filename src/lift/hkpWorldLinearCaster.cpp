@@ -6,6 +6,52 @@ extern "C" {
 
 void fn_00c03c0c(void);
 void fn_00c04814(void);
+void fn_00daeb88(u32, void*);
+
+struct unk_00d79cf8_l;
+struct unk_00d79cf8_l {
+    u8 f_0;
+    char pad_1[3];
+    void* f_4;
+    u16 f_8;
+    u8 f_a;
+};
+struct unk_00d79cf8_a0 {
+    char pad_0[8];
+    u32 f_8;
+    char pad_c[120];
+    u32 f_84;
+    char pad_88[8];
+    u32 f_90;
+};
+struct unk_00d79cf8_vc0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual void vf5();
+    virtual void vf6();
+    virtual void vf7();
+    virtual void vf8();
+    virtual void vf9();
+    virtual void vf10();
+    virtual void vf11();
+    virtual void vf12();
+    virtual void vf13(void*, int, void*, int);
+};
+void fn_00d79cf8(unk_00d79cf8_a0* a0, void* a1, int a2, int a3) {
+    unk_00d79cf8_l l;
+    if ((int)(a0->f_90) != (int)(0)) {
+        l.f_4 = (void*)(a1);
+        l.f_0 = (u8)(23);
+        l.f_8 = (u16)(a2);
+        l.f_a = (u8)(a3);
+        fn_00daeb88((u32)(a0->f_84), (void*)((&l)));
+        return;
+    }
+    ((unk_00d79cf8_vc0*)(a0->f_8))->vf13((void*)(a1), (int)(a2), (void*)(a0), (int)(a3));
+}
 
 struct unk_00d79f00_a0 {
     char pad_0[8];

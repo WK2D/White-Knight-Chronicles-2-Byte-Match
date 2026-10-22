@@ -6,22 +6,7 @@ extern "C" {
 
 int fn_0041fc9c(void*, void*);
 int fn_00420f2c(void*, void*);
-int fn_00421238(void*, void*);
 static void* __attribute__((noinline)) stub_0059e1cc(void) { void* r; __asm__ volatile ("" : "=r"(r)); return r; }
-
-int fn_0059e590(int a0, void* a1) {
-    void* t0;
-    int t1;
-    int v0;
-    t0 = stub_0059e1cc();
-    if ((int)(t0) != (int)(0)) {
-        t1 = fn_00421238((void*)(t0), (void*)(a1));
-        v0 = (int)((u32)(t1) & 0xff);
-    } else {
-        v0 = (int)(0);
-    }
-    return (int)(v0);
-}
 
 void* fn_0059e5e4(int a0, void* a1) {
     void* t0;

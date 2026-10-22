@@ -5,6 +5,7 @@
 extern "C" {
 
 int fn_000fd8f4(u32, int, int, int, int);
+static int __attribute__((noinline)) stub_00141b2c(int p0, int p1, int p2, int p3, int p4) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4)); return r; }
 
 struct unk_00140708_gm6294;
 struct unk_00140708_gm6294_0;
@@ -19,6 +20,18 @@ extern unk_00140708_gm6294 g_00140708_0;
 u8 fn_00140708(int a0, int a1) {
     int t0;
     t0 = fn_000fd8f4((u32)((&g_00140708_0)->f_0->f_80), (int)(a0), (int)(4109), (int)(8), (int)(a1));
+    return (u8)((u8)t0);
+}
+
+u8 fn_001422c0(int a0, int a1, int a2) {
+    int t0;
+    t0 = stub_00141b2c((int)(a0), (int)(a1), (int)(a2), (int)(1), (int)(0));
+    return (u8)((u8)t0);
+}
+
+u8 fn_001422ec(int a0, int a1, int a2, int a3) {
+    int t0;
+    t0 = stub_00141b2c((int)(a0), (int)(a1), (int)(a2), (int)(2), (int)(a3));
     return (u8)((u8)t0);
 }
 

@@ -5,44 +5,10 @@
 extern "C" {
 
 int fn_0039513c(void*, void*, int);
-void* fn_00395da4(void*, int);
+void* fn_003d6cdc(void*, u16);
 void fn_003db02c(void*, int, int, int);
-static int __attribute__((noinline)) stub_003ebe6c(int p0, int p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static int __attribute__((noinline)) stub_003ee764(void* p0, void* p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
-
-struct unk_003ed5dc_gm11f8;
-struct unk_003ed5dc_gm11f8_0;
-struct unk_003ed5dc_gm11f8_0_6c;
-struct unk_003ed5dc_gm11f8_0_6c_8;
-struct unk_003ed5dc_gm11f8 {
-    unk_003ed5dc_gm11f8_0* f_0;
-};
-struct unk_003ed5dc_gm11f8_0 {
-    char pad_0[108];
-    unk_003ed5dc_gm11f8_0_6c* f_6c;
-};
-struct unk_003ed5dc_gm11f8_0_6c {
-    char pad_0[8];
-    unk_003ed5dc_gm11f8_0_6c_8* f_8;
-};
-struct unk_003ed5dc_gm11f8_0_6c_8 {
-    char pad_0[248];
-    u32 f_f8;
-};
-extern unk_003ed5dc_gm11f8 g_003ed5dc_0;
-void* fn_003ed5dc(int a0, int a1) {
-    int t0;
-    void* t1;
-    t0 = stub_003ebe6c((int)(a0), (int)(a1));
-    if ((int)((u32)(t0) & 0xff) == (int)(0)) {
-        return (void*)(0);
-    }
-    if ((int)((&g_003ed5dc_0)->f_0->f_6c->f_8->f_f8) == (int)(0)) {
-        return (void*)(0);
-    }
-    t1 = fn_00395da4((void*)((&g_003ed5dc_0)->f_0->f_6c->f_8->f_f8), (int)(a1));
-    return (void*)(t1);
-}
+void* fn_00457908(void*, void*, int);
 
 struct unk_003ed890_gm11f8;
 struct unk_003ed890_gm11f8_0;
@@ -83,6 +49,25 @@ struct unk_003edd50_a0 {
 int fn_003edd50(unk_003edd50_a0* a0, int a1, int a2) {
     fn_003db02c((void*)(a0->f_c + 352), (int)(a1), (int)(a2), (int)(0));
     return (int)(1);
+}
+
+struct unk_003edd88_a1 {
+    char pad_0[22];
+    u16 f_16;
+    u32 f_18;
+};
+void* fn_003edd88(int a0, unk_003edd88_a1* a1, int a2, void* a3) {
+    void* t0;
+    void* t1;
+    int v0;
+    if ((int)(a1->f_16) != (int)(0)) {
+        t0 = fn_003d6cdc((void*)(a1), (u16)(FIELD(u16, (int)(((u32)(a2) << 1) & 0x1fffe) + (int)(a1->f_18), 0)));
+        v0 = (int)(FIELD(u32, t0, 0));
+    } else {
+        v0 = (int)(0);
+    }
+    t1 = fn_00457908((void*)(a3), (void*)(v0), (int)(1));
+    return (void*)(t1);
 }
 
 struct unk_003ee888_a0_4;

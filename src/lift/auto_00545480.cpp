@@ -23,8 +23,6 @@ void fn_0055eed0(u32, void*, int);
 void fn_0055f3dc(u32, void*, int);
 void* fn_005626b8(u32, void*);
 void fn_0056473c(u32, void*, int);
-void* fn_00592184(int, int);
-int fn_0059bf4c(void*);
 
 struct unk_00545604_a0 {
     char pad_0[4];
@@ -73,20 +71,6 @@ u8 fn_00545860(unk_00545860_a0* a0) {
     int t0;
     t0 = fn_0055ccf0((u32)(a0->f_4), (void*)((int)(short)(a0->f_8)));
     return (u8)((u8)t0);
-}
-
-void* fn_005458dc(int a0) {
-    void* t0;
-    int t1;
-    int v0;
-    t0 = fn_00592184((int)(a0), (int)(0));
-    if ((int)(t0) != (int)(0)) {
-        t1 = fn_0059bf4c((void*)(t0));
-        v0 = (int)(t1);
-    } else {
-        v0 = (int)(0);
-    }
-    return (void*)(v0);
 }
 
 struct unk_00545924_a0 {

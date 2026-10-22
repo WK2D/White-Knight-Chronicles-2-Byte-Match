@@ -5,13 +5,13 @@
 extern "C" {
 
 static int __attribute__((noinline)) stub_0004bc10(void* p0, void* p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
-static void* __attribute__((noinline)) stub_0004c174(int p0) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static void* __attribute__((noinline)) stub_0004c174(int p0, int p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static void __attribute__((noinline)) stub_0004da94(int p0, int p1, int p2, void* p3, void* p4) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4)); }
 
-int fn_0004c468(int a0) {
+int fn_0004c468(int a0, int a1) {
     void* t0;
     int v0;
-    t0 = stub_0004c174((int)(a0));
+    t0 = stub_0004c174((int)(a0), (int)(a1));
     if ((int)(t0) != (int)(0)) {
         v0 = (int)(FIELD(u16, t0, 16) + -1);
     } else {
@@ -23,7 +23,7 @@ int fn_0004c468(int a0) {
 int fn_0004cce0(int a0, int a1, void* a2) {
     void* t0;
     int t1;
-    t0 = stub_0004c174((int)(a0));
+    t0 = stub_0004c174((int)(a0), (int)(a1));
     if ((int)(t0) != (int)(0)) {
         t1 = stub_0004bc10((void*)(t0), (void*)(a2));
         return (int)(t1);

@@ -4,25 +4,25 @@
 
 extern "C" {
 
-int fn_00b46120(void);
-int fn_00b473f8(void);
-int fn_00b479ac(void);
+int fn_00b46120(int, int);
+int fn_00b473f8(int, int);
+int fn_00b479ac(int, int);
 
-u8 fn_00b46668(void) {
+u8 fn_00b46668(int a0, int a1) {
     int t0;
-    t0 = fn_00b46120();
+    t0 = fn_00b46120((int)(a0), (int)(a1));
     return (u8)((u8)t0);
 }
 
-u8 fn_00b47984(void) {
+u8 fn_00b47984(int a0, int a1) {
     int t0;
-    t0 = fn_00b473f8();
+    t0 = fn_00b473f8((int)(a0), (int)(a1));
     return (u8)((u8)t0);
 }
 
-u8 fn_00b47f24(void) {
+u8 fn_00b47f24(int a0, int a1) {
     int t0;
-    t0 = fn_00b479ac();
+    t0 = fn_00b479ac((int)(a0), (int)(a1));
     return (u8)((u8)t0);
 }
 

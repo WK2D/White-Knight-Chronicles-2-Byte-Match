@@ -11,7 +11,7 @@ void* fn_00544c20(int);
 void* fn_00545d00(int);
 static int __attribute__((noinline)) stub_00590dac(void* p0, void* p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static void __attribute__((noinline)) stub_00591024(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
-static void* __attribute__((noinline)) stub_00591f00(int p0) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static void* __attribute__((noinline)) stub_00591f00(int p0, int p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 
 u16 fn_00590ed0(void* a0, int a1) {
     void* t0;
@@ -39,11 +39,11 @@ void* fn_00591ed8(void) {
     return (void*)(t0);
 }
 
-void* fn_00592144(int a0) {
+void* fn_00592144(int a0, int a1) {
     void* t0;
     int t1;
     int v0;
-    t0 = stub_00591f00((int)(a0));
+    t0 = stub_00591f00((int)(a0), (int)(a1));
     if ((int)(t0) != (int)(0)) {
         t1 = fn_0042769c((u16)(FIELD(u16, t0, 14)));
         v0 = (int)(t1);

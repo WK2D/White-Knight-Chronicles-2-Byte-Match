@@ -9,8 +9,8 @@ int fn_0036dee0(void*);
 static void __attribute__((noinline)) stub_0043983c(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 static void __attribute__((noinline)) stub_0043a804(void) { __asm__ volatile (""); }
 static void __attribute__((noinline)) stub_0043a9bc(void) { __asm__ volatile (""); }
-static void __attribute__((noinline)) stub_0043cb6c(void) { __asm__ volatile (""); }
-static void __attribute__((noinline)) stub_0043d24c(void) { __asm__ volatile (""); }
+static void __attribute__((noinline)) stub_0043cb6c(int p0) { __asm__ volatile ("" : : "r"(p0)); }
+static void __attribute__((noinline)) stub_0043d24c(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 void fn_00b37fa8(void*, int, int);
 
 struct unk_00439180_gmbb4;
@@ -298,28 +298,28 @@ int fn_0043bb74(int a0) {
     return (int)(1);
 }
 
-void fn_0043ccf4(void) {
-    stub_0043cb6c();
+void fn_0043ccf4(int a0) {
+    stub_0043cb6c((int)(a0));
 }
 
-void fn_0043ccf8(void) {
-    stub_0043cb6c();
+void fn_0043ccf8(int a0) {
+    stub_0043cb6c((int)(a0));
 }
 
-void fn_0043ccfc(void) {
-    stub_0043cb6c();
+void fn_0043ccfc(int a0) {
+    stub_0043cb6c((int)(a0));
 }
 
-void fn_0043d3cc(void) {
-    stub_0043d24c();
+void fn_0043d3cc(int a0) {
+    stub_0043d24c((int)(a0));
 }
 
-void fn_0043d3d0(void) {
-    stub_0043d24c();
+void fn_0043d3d0(int a0) {
+    stub_0043d24c((int)(a0));
 }
 
-void fn_0043d3d4(void) {
-    stub_0043d24c();
+void fn_0043d3d4(int a0) {
+    stub_0043d24c((int)(a0));
 }
 
 }

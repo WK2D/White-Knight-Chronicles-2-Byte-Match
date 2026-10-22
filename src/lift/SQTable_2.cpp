@@ -6,10 +6,10 @@ extern "C" {
 
 int fn_00935b68(void*, void*);
 void fn_00953204(int, int);
-static void __attribute__((noinline)) stub_00962a44(int p0, int p1, int p2, int p3, int p4, int p5) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4), "r"(p5)); }
+static void __attribute__((noinline)) stub_00962a44(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 
-void fn_00962bd8(int a0, int a1, int a2, int a3, int a4, int a5) {
-    stub_00962a44((int)(a0), (int)(a1), (int)(a2), (int)(a3), (int)(a4), (int)(a5));
+void fn_00962bd8(int a0) {
+    stub_00962a44((int)(a0));
     fn_00953204((int)(a0), (int)(0));
 }
 

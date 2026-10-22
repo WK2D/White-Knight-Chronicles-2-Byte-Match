@@ -4,7 +4,20 @@
 
 extern "C" {
 
+static int __attribute__((noinline)) stub_0084734c(void* p0, int p1, int p2, int p3) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); return r; }
 static int __attribute__((noinline)) stub_00847c18(int p0, int p1, int p2, int p3, int p4) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4)); return r; }
+
+struct unk_00847bdc_a0 {
+    char pad_0[42];
+    u16 f_2a;
+    char pad_2c[2];
+    u16 f_2e;
+};
+u8 fn_00847bdc(unk_00847bdc_a0* a0, int a1) {
+    int t0;
+    t0 = stub_0084734c((void*)(a0), (int)(a1), (int)((int)(short)(a0->f_2e)), (int)((int)(short)((int)(a0->f_2e) + (int)(a0->f_2a))));
+    return (u8)((u8)t0);
+}
 
 u8 fn_008482d0(int a0, int a1, int a2, int a3, int a4) {
     int t0;

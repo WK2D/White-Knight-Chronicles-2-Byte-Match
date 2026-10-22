@@ -4,27 +4,15 @@
 
 extern "C" {
 
-int fn_0004fefc(void*, u32, u32);
+static void __attribute__((noinline)) stub_005fc2a8(int p0, int p1, int p2, int p3, int p4, int p5) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4), "r"(p5)); }
 static void __attribute__((noinline)) stub_005fc7f0(int p0, int p1, int p2, int p3, int p4) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4)); }
 
-struct unk_005fbfb4_a0 {
-    char pad_0[1340];
-    u32 f_53c;
-};
-struct unk_005fbfb4_a1 {
-    char pad_0[404];
-    u32 f_194;
-};
-int fn_005fbfb4(unk_005fbfb4_a0* a0, unk_005fbfb4_a1* a1) {
-    int t0;
-    int v1;
-    if ((int)(a1) != (int)(0)) {
-        t0 = fn_0004fefc((void*)(a1), (u32)(a1->f_194), (u32)(a0->f_53c));
-        v1 = (int)((u32)(t0) & 0xff);
-    } else {
-        v1 = (int)(0);
-    }
-    return (int)(v1);
+void fn_005fc5fc(int a0, int a1, int a2, int a3, int a4) {
+    stub_005fc2a8((int)(a0), (int)(a1), (int)(a2), (int)(a3), (int)(0), (int)(a4));
+}
+
+void fn_005fc690(int a0, int a1, int a2, int a3, int a4) {
+    stub_005fc2a8((int)(a0), (int)(a1), (int)(a2), (int)(a3), (int)(1), (int)(a4));
 }
 
 void fn_005fc988(int a0, int a1, int a2, int a3) {

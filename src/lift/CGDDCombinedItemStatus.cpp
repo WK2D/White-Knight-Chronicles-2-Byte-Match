@@ -6,7 +6,7 @@ extern "C" {
 
 int fn_00034a88(void);
 int fn_00531ed8(u32, u16, void*);
-int fn_00531f44(u32, int, void*);
+int fn_00531f44(u32, int, void*, int);
 int fn_00531fd0(u32, int, int, void*);
 
 struct unk_003b9d74_a0_4;
@@ -143,11 +143,11 @@ struct unk_003bacd4_a0 {
 struct unk_003bacd4_a2 {
     u32 f_0;
 };
-int fn_003bacd4(unk_003bacd4_a0* a0, int a1, unk_003bacd4_a2* a2) {
+int fn_003bacd4(unk_003bacd4_a0* a0, int a1, unk_003bacd4_a2* a2, int a3) {
     int t0;
     int t1;
     unk_003bacd4_l l;
-    t0 = fn_00531f44((u32)(a0->f_98), (int)(a1), (void*)((&l)));
+    t0 = fn_00531f44((u32)(a0->f_98), (int)(a1), (void*)((&l)), (int)(a3));
     if ((int)(t0) == (int)(0)) {
         t1 = fn_00034a88();
         a2->f_0 = (u32)((int)(t1) + (int)(l.f_0));

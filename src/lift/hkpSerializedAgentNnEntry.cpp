@@ -5,15 +5,15 @@
 extern "C" {
 
 void fn_00dc7778(void*, int);
-void fn_00eaaf90(int, int, int, int, int, int);
-void fn_00eab3b0(int, int, int, int, int, int);
+void fn_00eaaf90(int);
+void fn_00eab3b0(int);
 
-void fn_00e95644(int a0, int a1, int a2, int a3, int a4, int a5) {
-    fn_00eaaf90((int)(a0), (int)(a1), (int)(a2), (int)(a3), (int)(a4), (int)(a5));
+void fn_00e95644(int a0) {
+    fn_00eaaf90((int)(a0));
 }
 
-void fn_00e95668(int a0, int a1, int a2, int a3, int a4, int a5) {
-    fn_00eab3b0((int)(a0), (int)(a1), (int)(a2), (int)(a3), (int)(a4), (int)(a5));
+void fn_00e95668(int a0) {
+    fn_00eab3b0((int)(a0));
 }
 
 struct unk_00e958a0_a0 {

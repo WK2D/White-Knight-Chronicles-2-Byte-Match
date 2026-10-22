@@ -9,7 +9,7 @@ static void __attribute__((noinline)) stub_003191bc(void* p0) { __asm__ volatile
 static void __attribute__((noinline)) stub_003192b0(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
 int fn_003d2328(u32, u32);
 void* fn_003fd2c4(u32);
-void fn_003fd418(u32);
+void fn_003fd418(u32, int);
 
 struct unk_0031a244_gm1e98;
 struct unk_0031a244_gm1e98_0;
@@ -89,8 +89,8 @@ struct unk_0031a340_gm1e98_0_6c_8 {
     u32 f_f0;
 };
 extern unk_0031a340_gm1e98 g_0031a340_0;
-void fn_0031a340(void) {
-    fn_003fd418((u32)((&g_0031a340_0)->f_0->f_6c->f_8->f_f0));
+void fn_0031a340(int a0, int a1) {
+    fn_003fd418((u32)((&g_0031a340_0)->f_0->f_6c->f_8->f_f0), (int)(a1));
 }
 
 struct unk_0031a378_gm1e98;

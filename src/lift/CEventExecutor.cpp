@@ -16,6 +16,7 @@ void fn_0003fa14(int);
 void* fn_0003faa8(int);
 void fn_0003fab0(void*, u8);
 void fn_0003fac8(void*, float);
+void fn_000ded08(void*, void*);
 void* fn_000e1f24(void);
 int fn_000e22e0(void*, int, float);
 void fn_000e2c9c(void*);
@@ -29,6 +30,41 @@ void fn_002de010(u32);
 void* fn_002df680(u32);
 void fn_00313a0c(void*, void*);
 void fn_00314750(void*, void*);
+
+struct unk_004ce440_g2d8;
+struct unk_004ce440_g300;
+struct unk_004ce440_g2d8_0;
+struct unk_004ce440_g2d8 {
+    unk_004ce440_g2d8_0* f_0;
+};
+struct unk_004ce440_g300 {
+    u32 f_0;
+};
+struct unk_004ce440_g2d8_0 {
+    char pad_0[164];
+    u32 f_a4;
+};
+extern unk_004ce440_g2d8 g_004ce440_0;
+extern unk_004ce440_g300 g_004ce440_1;
+int fn_004ce440(void* a0, int a1) {
+    int t0;
+    int v1;
+    if ((int)(a1) > (int)(0)) {
+        t0 = fn_0003f9e0((void*)(a0));
+        v1 = (int)(t0);
+    } else {
+        v1 = (int)(-1);
+    }
+    if ((int)((&g_004ce440_0)->f_0->f_a4) != (int)(0)) {
+        if ((int)(v1) >= (int)(0)) {
+            fn_000ded08((void*)((&g_004ce440_0)->f_0->f_a4), (void*)(v1));
+            return (int)(1);
+        }
+        fn_000ded08((void*)((&g_004ce440_0)->f_0->f_a4), (void*)((&g_004ce440_1)->f_0));
+        return (int)(1);
+    }
+    return (int)(1);
+}
 
 struct unk_004ce4b8_a0 {
     char pad_0[8];

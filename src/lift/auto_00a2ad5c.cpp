@@ -8,6 +8,7 @@ void fn_00a2123c(int);
 void fn_00a21380(void*);
 static void __attribute__((noinline)) stub_00a2abd8(void* p0, int p1, int p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
 static int __attribute__((noinline)) stub_00a2ad5c(int p0, int p1, int p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
+static void __attribute__((noinline)) stub_00a2b120(int p0, int p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 static void __attribute__((noinline)) stub_00a2b598(void* p0, int p1, int p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
 static void __attribute__((noinline)) stub_00a2b6f4(void* p0, int p1, int p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
 void fn_00b3d2f8(int, void*);
@@ -42,6 +43,10 @@ void* fn_00a2b020(int a0) {
     void* t0;
     t0 = fn_00b41fb8((int)(a0));
     return (void*)(t0);
+}
+
+void fn_00a2b2d0(int a0) {
+    stub_00a2b120((int)(a0), (int)(0));
 }
 
 extern char g_00a2b6cc_0[];

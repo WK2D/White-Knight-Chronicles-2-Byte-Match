@@ -4,7 +4,16 @@
 
 extern "C" {
 
+void fn_00c0031c(int, int, void*);
 void fn_00dc6fe0(void*, int, int);
+
+struct unk_00dcb8d8_a0 {
+    char pad_0[96];
+    u8 f_60;
+};
+void fn_00dcb8d8(unk_00dcb8d8_a0* a0, int a1, int a2) {
+    fn_00c0031c((int)(a2), (int)(a1), (void*)((&a0->f_60)));
+}
 
 struct unk_00dcc748_a0 {
     char pad_0[16];

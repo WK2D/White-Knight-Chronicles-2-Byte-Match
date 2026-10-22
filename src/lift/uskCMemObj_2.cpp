@@ -16,7 +16,6 @@ static int __attribute__((noinline)) stub_0008539c(void* p0, void* p1, u8 p2, u8
 void fn_000886b0(void*);
 int fn_0008893c(void*, void*, void*);
 int fn_00088b04(void*, void*, void*);
-int fn_00088b90(void*, void*, void*);
 int fn_00b42924(void*, int);
 void fn_00fc98d0(void*);
 void fn_00fc98f0(void*);
@@ -82,24 +81,6 @@ void* fn_00082530(unk_00082530_a0* a0, void* a1, void* a2) {
         v0 = (int)(0);
     }
     return (void*)(v0);
-}
-
-struct unk_000825a8_a0 {
-    char pad_0[16];
-    u8 f_10;
-};
-int fn_000825a8(unk_000825a8_a0* a0, void* a1, void* a2) {
-    int t0;
-    int t1;
-    int v0;
-    t0 = stub_00081f60((void*)(a0));
-    if ((int)((u32)(t0) & 0xff) != (int)(0)) {
-        t1 = fn_00088b90((void*)((&a0->f_10)), (void*)(a1), (void*)(a2));
-        v0 = (int)((u32)(t1) & 0xff);
-    } else {
-        v0 = (int)(0);
-    }
-    return (int)(v0);
 }
 
 struct unk_00082620_a0 {

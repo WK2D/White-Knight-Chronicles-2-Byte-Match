@@ -4,8 +4,6 @@
 
 extern "C" {
 
-int fn_0054ac14(u32, void*, void*, void*);
-int fn_0054ae78(u32, void*);
 static void* __attribute__((noinline)) stub_0055b498(void* p0) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 int fn_0055df20(u32, void*);
 void fn_0055e060(u32, void*, void*, void*);
@@ -22,22 +20,6 @@ void fn_0055b610(unk_0055b610_a0* a0, void* a1, void* a2) {
     t0 = stub_0055b498((void*)(a0));
     t1 = fn_0055df20((u32)(a0->f_4), (void*)(t0));
     fn_0055e060((u32)(a0->f_4), (void*)((int)(signed char)(t1)), (void*)(a1), (void*)(a2));
-}
-
-struct unk_0055b938_a0 {
-    u32 f_0;
-    char pad_4[28];
-    u32 f_20;
-};
-int fn_0055b938(unk_0055b938_a0* a0, void* a1, void* a2, void* a3) {
-    int t0;
-    int t1;
-    if ((int)(a0->f_20) != (int)(0)) {
-        t0 = fn_0054ae78((u32)(a0->f_0), (void*)(a0->f_20));
-    }
-    t1 = fn_0054ac14((u32)(a0->f_0), (void*)(a1), (void*)(a2), (void*)(a3));
-    a0->f_20 = (u32)(t1);
-    return (int)(t1);
 }
 
 struct unk_0055babc_a0_0;

@@ -4,19 +4,19 @@
 
 extern "C" {
 
-void* fn_009b66b4(int);
-void* fn_009b6914(int);
+void* fn_009b66b4(int, int);
+void* fn_009b6914(int, int);
 static void __attribute__((noinline)) stub_009d2f54(int p0, u32 p1, u32 p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
 
-void* fn_009d2ec4(int a0) {
+void* fn_009d2ec4(int a0, int a1) {
     void* t0;
-    t0 = fn_009b66b4((int)(a0));
+    t0 = fn_009b66b4((int)(a0), (int)(a1));
     return (void*)(t0);
 }
 
-void* fn_009d2eec(int a0) {
+void* fn_009d2eec(int a0, int a1) {
     void* t0;
-    t0 = fn_009b6914((int)(a0));
+    t0 = fn_009b6914((int)(a0), (int)(a1));
     return (void*)(t0);
 }
 

@@ -16,7 +16,9 @@ void fn_00939384(int);
 int fn_00939664(int, int);
 int fn_009397e0(int, int);
 int fn_00939c08(int, int, int);
+int fn_0093a500(int, int);
 int fn_0093ab54(int, int, int);
+int fn_0093ad4c(int, int);
 void fn_0093afec(int, int);
 int fn_0093b1d4(int, int);
 int fn_0093b3f4(int, int);
@@ -97,10 +99,22 @@ int fn_009780d0(int a0) {
     return (int)((int)((u32)((int)(t0) >> 31) | 0x1));
 }
 
+int fn_0097825c(int a0) {
+    int t0;
+    t0 = fn_0093a500((int)(a0), (int)(-1));
+    return (int)(t0);
+}
+
 int fn_00978288(int a0) {
     int t0;
     t0 = fn_0093ab54((int)(a0), (int)(1), (int)(1));
     return (int)((int)((u32)((int)(t0) >> 31) | 0x1));
+}
+
+int fn_009782c0(int a0) {
+    int t0;
+    t0 = fn_0093ad4c((int)(a0), (int)(-2));
+    return (int)(t0);
 }
 
 int fn_009782ec(int a0) {

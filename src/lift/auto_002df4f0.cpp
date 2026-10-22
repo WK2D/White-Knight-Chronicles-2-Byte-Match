@@ -10,7 +10,7 @@ void fn_0001c420(u32, int, int);
 void fn_0001f858(u32, int, int);
 void fn_0014e344(u32, int);
 static void* __attribute__((noinline)) stub_002dddac(int p0, int p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
-static int __attribute__((noinline)) stub_002ddf50(int p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static int __attribute__((noinline)) stub_002ddf50(int p0, int p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static int __attribute__((noinline)) stub_002ddf70(int p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static int __attribute__((noinline)) stub_002de34c(int p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static void __attribute__((noinline)) stub_002dff10(int p0) { __asm__ volatile ("" : : "r"(p0)); }
@@ -359,11 +359,11 @@ int fn_002ea4b4(int a0) {
     return (int)(v0);
 }
 
-int fn_002ea500(int a0) {
+int fn_002ea500(int a0, int a1) {
     int t0;
     int t1;
     int v0;
-    t0 = stub_002ddf50((int)(a0));
+    t0 = stub_002ddf50((int)(a0), (int)(a1));
     if ((int)((u32)(t0) & 0xff) != (int)(0)) {
         t1 = stub_002ea45c((int)(a0));
         v0 = (int)((u32)(t1) & 0xff);

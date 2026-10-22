@@ -6,6 +6,10 @@ extern "C" {
 
 static void __attribute__((noinline)) stub_009efb1c(int p0, int p1, int p2, int p3) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); }
 
+void fn_009effd4(int a0, int a1) {
+    stub_009efb1c((int)(a0), (int)(0), (int)(a1), (int)(0));
+}
+
 void fn_009effe4(int a0, int a1, int a2) {
     stub_009efb1c((int)(-1), (int)(a0), (int)(a1), (int)(a2));
 }

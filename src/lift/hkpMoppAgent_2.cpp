@@ -4,7 +4,7 @@
 
 extern "C" {
 
-void fn_00d17210(void*);
+void fn_00d17210(void*, int);
 void fn_00d17550(int, int, int, int, int);
 
 void fn_00d205bc(int a0, int a1, int a2, int a3, int a4) {
@@ -15,8 +15,8 @@ struct unk_00d205ec_a0 {
     void* f_0;
 };
 extern char g_00d205ec_0[];
-void fn_00d205ec(unk_00d205ec_a0* a0) {
-    fn_00d17210((void*)(a0));
+void fn_00d205ec(unk_00d205ec_a0* a0, int a1) {
+    fn_00d17210((void*)(a0), (int)(a1));
     a0->f_0 = (void*)(g_00d205ec_0);
 }
 
@@ -24,8 +24,8 @@ struct unk_00d20624_a0 {
     void* f_0;
 };
 extern char g_00d20624_0[];
-void fn_00d20624(unk_00d20624_a0* a0) {
-    fn_00d17210((void*)(a0));
+void fn_00d20624(unk_00d20624_a0* a0, int a1) {
+    fn_00d17210((void*)(a0), (int)(a1));
     a0->f_0 = (void*)(g_00d20624_0);
 }
 

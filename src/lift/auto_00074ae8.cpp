@@ -17,7 +17,6 @@ void fn_0014ac60(u32, int);
 void fn_0014d0e8(u32, int);
 void fn_001504d4(u32, int);
 int fn_00b38978(void*, u16, void*);
-int fn_00b38988(void*, u16);
 int fn_00b38998(void*, u16);
 void* fn_00b389a8(void*, int);
 
@@ -41,28 +40,6 @@ int fn_000750a4(int a0, void* a1) {
         v1 = (int)(0);
     }
     return (int)(v1);
-}
-
-struct unk_000750f8_gm77e0;
-struct unk_000750f8_gm77e0_0;
-struct unk_000750f8_gm77e0 {
-    unk_000750f8_gm77e0_0* f_0;
-};
-struct unk_000750f8_gm77e0_0 {
-    char pad_0[64];
-    u32 f_40;
-};
-extern unk_000750f8_gm77e0 g_000750f8_0;
-void* fn_000750f8(int a0) {
-    int t0;
-    int v0;
-    if ((int)((&g_000750f8_0)->f_0->f_40) != (int)(0)) {
-        t0 = fn_00b38988((void*)((&g_000750f8_0)->f_0->f_40), (u16)((u16)a0));
-        v0 = (int)(t0);
-    } else {
-        v0 = (int)(-1);
-    }
-    return (void*)(v0);
 }
 
 struct unk_00075144_gm77e0;

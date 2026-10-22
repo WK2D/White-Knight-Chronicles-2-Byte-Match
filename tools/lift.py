@@ -121,66 +121,117 @@ def negate(cond):
     return f'!({cond})'
 
 
-def reads_before_writes(words):
-    """(integer argument count, float argument count) a function reads on entry."""
-    written, fwritten, used, fused = set(), set(), set(), set()
-    for w in words:
-        op = w >> 26
-        rt, ra, rb = (w >> 21) & 31, (w >> 16) & 31, (w >> 11) & 31
-        srcs, dst, fsrcs, fdst = [], None, [], None
-        if op in (14, 15):
-            srcs, dst = ([ra] if ra else []), rt
-        elif op in (24, 25, 28, 29):
+def register_use(w):
+    """(GPRs read, GPR written, FPRs read, FPR written, extra GPR written) by
+    one instruction, or None if it is not known."""
+    op = w >> 26
+    rt, ra, rb = (w >> 21) & 31, (w >> 16) & 31, (w >> 11) & 31
+    srcs, dst, fsrcs, fdst, extra = [], None, [], None, None
+    if op in (14, 15):
+        srcs, dst = ([ra] if ra else []), rt
+    elif op in (24, 25, 26, 27, 28, 29):        # ori oris xori xoris andi. andis.
+        srcs, dst = [rt], ra
+    elif op in (33, 35, 41, 43):               # loads with update
+        srcs, dst = [ra], rt
+        extra = ra
+    elif op in (37, 39, 45, 53, 55):           # stores with update
+        srcs = [rt, ra] if op in (37, 39, 45) else [ra]
+        if op in (53, 55):
+            fsrcs = [rt]
+    elif op == 4:                              # vector arithmetic: no GPRs
+        pass
+    elif op in (32, 34, 40, 42, 58):
+        srcs, dst = [ra], rt
+    elif op in (48, 50):
+        srcs, fdst = [ra], rt
+    elif op in (36, 38, 44, 62):
+        srcs = [rt, ra]
+    elif op in (52, 54):
+        srcs, fsrcs = [ra], [rt]
+    elif op == 31:
+        xo = (w >> 1) & 0x3FF
+        if xo in (444, 28, 316, 124, 24, 536, 792):        # or and xor nor slw srw sraw: rs, rb -> ra
+            srcs, dst = [rt, rb], ra
+        elif xo in (986, 922, 954, 26, 824):               # extsw extsh extsb cntlzw srawi
             srcs, dst = [rt], ra
-        elif op in (32, 34, 40, 42, 58):
+        elif xo in (266, 40, 235, 491, 459, 10, 8, 138, 136):
+            srcs, dst = [ra, rb], rt
+        elif xo == 104:
             srcs, dst = [ra], rt
-        elif op in (48, 50):
-            srcs, fdst = [ra], rt
-        elif op in (36, 38, 44, 62):
-            srcs = [rt, ra]
-        elif op in (52, 54):
-            srcs, fsrcs = [ra], [rt]
-        elif op == 31:
-            xo = (w >> 1) & 0x3FF
-            if xo in (444, 28, 316, 124, 24, 536, 792):        # or and xor nor slw srw sraw: rs, rb -> ra
-                srcs, dst = [rt, rb], ra
-            elif xo in (986, 922, 954, 26, 824):               # extsw extsh extsb cntlzw srawi
-                srcs, dst = [rt], ra
-            elif xo in (266, 40, 235, 491, 459, 10, 8, 138, 136):
-                srcs, dst = [ra, rb], rt
-            elif xo == 104:
-                srcs, dst = [ra], rt
-            elif xo in (0, 32):                    # cmp / cmpl
-                srcs = [ra, rb]
-            elif xo == 339:                        # mflr / mfspr
-                dst = rt
-            elif xo == 467:                        # mtctr / mtspr
-                srcs = [rt]
-            else:
-                break
-        elif op in (21, 30):
-            srcs, dst = [rt], ra
-        elif op == 7:
-            srcs, dst = [ra], rt
-        elif op in (59, 63):
-            fsrcs, fdst = [ra, rb, (w >> 6) & 31], rt
-        elif op in (10, 11):                       # cmpli / cmpi
-            srcs = [ra]
-        elif op == 16 or op == 18 and not w & 1:   # branches inside the function: keep reading
+        elif xo in (0, 32):                    # cmp / cmpl
+            srcs = [ra, rb]
+        elif xo in (339, 19, 371):             # mfspr / mfcr / mftb
+            dst = rt
+        elif xo in (23, 87, 279, 343):         # indexed loads
+            srcs, dst = [ra, rb], rt
+        elif xo in (151, 215, 407):            # indexed stores
+            srcs = [rt, ra, rb]
+        elif xo in (535, 599):                 # indexed float loads
+            srcs, fdst = [ra, rb], rt
+        elif xo in (663, 727, 983):            # indexed float stores
+            srcs, fsrcs = [ra, rb], [rt]
+        elif xo in (103, 231, 7, 39, 71, 135, 167, 359, 487, 519, 647, 775, 903):   # vector loads/stores
+            srcs = [ra, rb]
+        elif xo in (278, 54, 86, 1014, 470, 982, 246):         # cache hints and flushes
+            srcs = [ra, rb]
+        elif xo in (598, 854):                 # sync, eieio
             pass
+        elif xo == 467:                        # mtctr / mtspr
+            srcs = [rt]
         else:
-            break                                  # a call, a return or anything unknown ends the scan
-        for r in srcs:
-            if 3 <= r <= 10 and r not in written:
-                used.add(r)
-        for r in fsrcs:
-            if 1 <= r <= 13 and r not in fwritten:
-                fused.add(r)
-        if dst is not None:
-            written.add(dst)
-        if fdst is not None:
-            fwritten.add(fdst)
-    return (max(used) - 2 if used else 0), (max(fused) if fused else 0)
+            return None
+    elif op in (21, 30):
+        srcs, dst = [rt], ra
+    elif op == 7:
+        srcs, dst = [ra], rt
+    elif op in (59, 63):
+        fsrcs, fdst = [ra, rb, (w >> 6) & 31], rt
+    elif op in (10, 11):                       # cmpli / cmpi
+        srcs = [ra]
+    elif op in (16, 18) or op == 19 and (w >> 1) & 0x3FF in (16, 528, 449, 193, 289, 417, 33, 129, 225, 257, 0, 150):
+        pass                                   # branches, returns, CR logic: control flow only
+    else:
+        return None
+    return srcs, dst, fsrcs, fdst, extra
+
+
+def reads_before_writes(words):
+    """(integer argument count, float argument count, complete) a function
+    reads on entry: registers some path reads before writing them, up to the
+    first call on that path (a call clobbers argument registers, so they are
+    read or saved before it). complete: nothing unknown was met."""
+    n = len(words)
+    used, fused, seen = set(), set(), set()
+    complete = True
+    todo = [(0, frozenset(), frozenset())]
+    while todo:
+        i, written, fwritten = todo.pop()
+        written, fwritten = set(written), set(fwritten)
+        while 0 <= i < n and i not in seen:
+            seen.add(i)
+            w = words[i]
+            use = register_use(w)
+            if use is None:
+                complete = False
+                break
+            srcs, dst, fsrcs, fdst, extra = use
+            used |= {r for r in srcs if 3 <= r <= 10 and r not in written}
+            fused |= {r for r in fsrcs if 1 <= r <= 13 and r not in fwritten}
+            written |= {r for r in (dst, extra) if r is not None}
+            if fdst is not None:
+                fwritten.add(fdst)
+            op = w >> 26
+            if op == 18 and w & 1:                 # a call ends this path
+                break
+            if op == 18:                           # b: follow it
+                i += branch_target(0, w) >> 2
+                continue
+            if op == 16:                           # bc: both ways
+                todo.append((i + (s16(w & 0xFFFC) >> 2), frozenset(written), frozenset(fwritten)))
+            if op == 19 and (w >> 1) & 0x3FF in (16, 528) and (w >> 21) & 0x14 == 0x14:
+                break                              # an unconditional return or indirect jump
+            i += 1
+    return (max(used) - 2 if used else 0), (max(fused) if fused else 0), complete
 
 
 class Lifter:
@@ -214,6 +265,7 @@ class Lifter:
         self.back_returns = set()         # targets of backward branches that are not loops
         self.active_paths = set()         # return paths being lifted (guards against cycles)
         self.made_call = False            # a call has clobbered r3-r12 somewhere before
+        self.bfresh = set()               # argument registers written in the current block
         self.uses_locals = False          # the frame holds locals: one struct l
         self.tails = set()                # indexes of tail calls (b to another function)
         self.budget = 16 * len(words)     # instructions step() may execute in total
@@ -286,6 +338,7 @@ class Lifter:
         self.gpr[r] = v
         if 3 <= r <= 10:
             self.fresh.add(r)
+            self.bfresh.add(r)
 
     def pointer(self, v):
         if v.ctype == 'toc':
@@ -578,6 +631,7 @@ class Lifter:
 
     def run_block(self, b):
         """Execute block b up to its terminator; return (kind, data)."""
+        self.bfresh = set()
         end = self.block_end(b)
         for i in range(b, end - 1):
             self.step(self.words[i], i)
@@ -1263,7 +1317,7 @@ class Lifter:
             return Value(f'(char*){paren(p_)} + (int)({i_.text})', 'addr', 1)
         return Value(f'(int)({a.text}) + (int)({b.text})', 'int', 1)
 
-    def gather_args(self, first, nint=0):
+    def gather_args(self, first, nint=0, complete=False):
         """Argument values in parameter order, from GPR first (r3, or r4 after
         'this'). Floats go in f1, f2, ... and each also takes a GPR position:
         GPR positions the caller left unwritten hold the floats, in order;
@@ -1277,8 +1331,12 @@ class Lifter:
         # The callee's reads give the count; registers the caller filled extend
         # it only while they run on without a gap (a lone r9 is scratch, not
         # a seventh argument).
+        # A complete scan of the callee is trusted, plus registers the caller
+        # set in the call's own block (an argument the callee ignores, like
+        # a trailing 0, is still passed); leftovers from earlier blocks are not.
         last = max(first - 1, 2 + nint)
-        while last + 1 in gfresh:
+        extend = gfresh & self.bfresh if complete else gfresh
+        while last + 1 in extend:
             last += 1
         args = []
         for r in range(first, last + 1):
@@ -1295,8 +1353,8 @@ class Lifter:
         return args + floats
 
     def call(self, target, local=False):
-        nargs, nfargs = self.arity(target)
-        args = self.gather_args(3, nargs)
+        nargs, nfargs, complete = self.arity(target)
+        args = self.gather_args(3, nargs, complete)
         info = {'used': False, 'type': 'int', 'target': target, 'args': args, 'temp': f't{len(self.calls)}',
                 'local': local}
         self.calls[len(self.calls)] = info
@@ -1665,6 +1723,7 @@ def arity_finder(orig, functions):
     def arity(target):
         if target not in cache:
             size = functions.get(target)
+            known = bool(size)
             words = struct.unpack(f'>{size // 4}I', orig.read(target, size)) if size else ()
             if not words:                                    # linker stubs are not in the function list
                 words = struct.unpack('>4I', orig.read(target, 16))
@@ -1672,8 +1731,14 @@ def arity_finder(orig, functions):
                     and words[2] >> 16 == 0x3842 and words[3] >> 26 == 18 and not words[3] & 3:
                 real = target + 12 + branch_target(0, words[3])
                 size = functions.get(real)
+                known = bool(size)
                 words = struct.unpack(f'>{size // 4}I', orig.read(real, size)) if size else ()
-            cache[target] = reads_before_writes(words) if words else (None, None)
+            result = reads_before_writes(words) if words else (None, None, False)
+            if not known and words:
+                # Outside the game's code (a system library's import stub):
+                # its words say nothing about the real function's arguments.
+                result = (result[0], result[1], False)
+            cache[target] = result
         if cache[target][0] is None:
             raise Fail('unknown callee')
         return cache[target]
