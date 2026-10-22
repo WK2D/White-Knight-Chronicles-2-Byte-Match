@@ -6,14 +6,19 @@ extern "C" {
 
 void fn_00b38878(void*);
 
+struct unk_005c6ffc_a0_1ec;
+struct unk_005c6ffc_a0_1ec {
+    char pad_0[36];
+    u32 f_24;
+};
 struct unk_005c6ffc_a0 {
     char pad_0[492];
-    u32 f_1ec;
+    unk_005c6ffc_a0_1ec* f_1ec;
 };
 void* fn_005c6ffc(unk_005c6ffc_a0* a0, int a1) {
     int v0;
     if ((int)(a0->f_1ec) != (int)(0)) {
-        v0 = (int)(FIELD(u32, (int)((u32)((int)(short)(a1)) << 2) + (int)(FIELD(u32, a0->f_1ec, 36)), 0));
+        v0 = (int)(FIELD(u32, (int)((u32)((int)(short)(a1)) << 2) + (int)(a0->f_1ec->f_24), 0));
     } else {
         v0 = (int)(0);
     }

@@ -8,11 +8,16 @@ static void* __attribute__((noinline)) stub_00a0d374(int p0, int p1) { void* r; 
 void fn_00a19868(u32);
 void fn_00b3d088(void*, int, int);
 
-extern char g_00a0b8a4_0[];
+struct unk_00a0b8a4_gm28d0;
+struct unk_00a0b8a4_gm28d0 {
+    u32 f_0;
+    u32 f_4;
+};
+extern unk_00a0b8a4_gm28d0 g_00a0b8a4_0;
 void fn_00a0b8a4(void) {
-    if ((int)(FIELD(u32, g_00a0b8a4_0, 0)) != (int)(0)) {
-        fn_00a19868((u32)(FIELD(u32, g_00a0b8a4_0, 4)));
-        fn_00b3d088((void*)(g_00a0b8a4_0), (int)(0), (int)(76));
+    if ((int)((&g_00a0b8a4_0)->f_0) != (int)(0)) {
+        fn_00a19868((u32)((&g_00a0b8a4_0)->f_4));
+        fn_00b3d088((void*)((&g_00a0b8a4_0)), (int)(0), (int)(76));
     }
 }
 

@@ -5,20 +5,30 @@
 extern "C" {
 
 
+struct unk_00bd24bc_a0_4;
+struct unk_00bd24bc_a0_4 {
+    char pad_0[44];
+    u8 f_2c;
+};
 struct unk_00bd24bc_a0 {
     char pad_0[4];
-    u32 f_4;
+    unk_00bd24bc_a0_4* f_4;
 };
 void fn_00bd24bc(unk_00bd24bc_a0* a0) {
-    FIELD(u8, a0->f_4, 44) = (u8)(1);
+    a0->f_4->f_2c = (u8)(1);
 }
 
+struct unk_00bd24cc_a0_4;
+struct unk_00bd24cc_a0_4 {
+    char pad_0[44];
+    u8 f_2c;
+};
 struct unk_00bd24cc_a0 {
     char pad_0[4];
-    u32 f_4;
+    unk_00bd24cc_a0_4* f_4;
 };
 void fn_00bd24cc(unk_00bd24cc_a0* a0) {
-    FIELD(u8, a0->f_4, 44) = (u8)(1);
+    a0->f_4->f_2c = (u8)(1);
 }
 
 }

@@ -9,12 +9,20 @@ u32 fn_002c8754(int a0) {
     return (u32)((u32)(((u32)(a0) << 2) + 15) & 0xfffffff0);
 }
 
+struct unk_002c8764_a0_c;
+struct unk_002c8764_a0_c_0;
+struct unk_002c8764_a0_c {
+    unk_002c8764_a0_c_0* f_0;
+};
+struct unk_002c8764_a0_c_0 {
+    u32 f_0;
+};
 struct unk_002c8764_a0 {
     char pad_0[12];
-    u32 f_c;
+    unk_002c8764_a0_c* f_c;
 };
 void fn_002c8764(unk_002c8764_a0* a0, int a1, int a2) {
-    FIELD(u32, (int)((u32)(a1) << 2) + (int)(FIELD(u32, FIELD(u32, a0->f_c, 0), 0)), 0) = (u32)(a2);
+    FIELD(u32, (int)((u32)(a1) << 2) + (int)(a0->f_c->f_0->f_0), 0) = (u32)(a2);
 }
 
 u32 fn_002c8814(int a0) {

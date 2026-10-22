@@ -6,8 +6,17 @@ extern "C" {
 
 void fn_00fc981c(void*, void*);
 
-extern char g_00f88ce0_0[];
-extern char g_00f88ce0_1[];
+struct unk_00f88ce0_gm7804;
+struct unk_00f88ce0_gm7808;
+struct unk_00f88ce0_gm7804 {
+    char pad_0[24];
+    float f_18;
+};
+struct unk_00f88ce0_gm7808 {
+    float f_0;
+};
+extern unk_00f88ce0_gm7804 g_00f88ce0_0;
+extern unk_00f88ce0_gm7808 g_00f88ce0_1;
 void fn_00f88ce0(int a0, int a1) {
     if ((int)(a0) != (int)(1)) {
         return;
@@ -15,7 +24,7 @@ void fn_00f88ce0(int a0, int a1) {
     if ((int)(a1) != (int)(65535)) {
         return;
     }
-    FIELD(float, g_00f88ce0_1, 0) = FIELD(float, g_00f88ce0_0, 24);
+    (&g_00f88ce0_1)->f_0 = (&g_00f88ce0_0)->f_18;
 }
 
 void fn_00f935ac(void* a0, void* a1) {

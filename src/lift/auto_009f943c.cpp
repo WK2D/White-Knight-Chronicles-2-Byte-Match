@@ -7,13 +7,23 @@ extern "C" {
 void fn_00a19868(u32);
 void fn_00b3d088(void*, int, int);
 
-extern char g_009fafb4_0[];
+struct unk_009fafb4_gm2d1c;
+struct unk_009fafb4_gm2d1c {
+    u32 f_0;
+    char pad_4[32];
+    u32 f_24;
+    char pad_28[20];
+    u32 f_3c;
+    char pad_40[20];
+    u32 f_54;
+};
+extern unk_009fafb4_gm2d1c g_009fafb4_0;
 void fn_009fafb4(void) {
-    if ((int)(FIELD(u32, g_009fafb4_0, 0)) != (int)(0)) {
-        fn_00a19868((u32)(FIELD(u32, g_009fafb4_0, 36)));
-        fn_00a19868((u32)(FIELD(u32, g_009fafb4_0, 60)));
-        fn_00a19868((u32)(FIELD(u32, g_009fafb4_0, 84)));
-        fn_00b3d088((void*)(g_009fafb4_0), (int)(0), (int)(192));
+    if ((int)((&g_009fafb4_0)->f_0) != (int)(0)) {
+        fn_00a19868((u32)((&g_009fafb4_0)->f_24));
+        fn_00a19868((u32)((&g_009fafb4_0)->f_3c));
+        fn_00a19868((u32)((&g_009fafb4_0)->f_54));
+        fn_00b3d088((void*)((&g_009fafb4_0)), (int)(0), (int)(192));
     }
 }
 

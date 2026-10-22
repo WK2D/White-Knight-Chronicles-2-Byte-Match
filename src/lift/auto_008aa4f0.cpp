@@ -8,6 +8,16 @@ void* fn_00b40178(u32);
 void* fn_00b401b8(void*);
 int fn_00b401c8(void*, void*);
 
+void* fn_008ac378(void* a0, int a1) {
+    if ((int)(a1) == (int)(2)) {
+        return (void*)((char*)a0 + 24);
+    }
+    if ((int)(a1) != (int)(3)) {
+        return (void*)(0);
+    }
+    return (void*)((char*)a0 + 168);
+}
+
 struct unk_008ac590_a0 {
     char pad_0[16];
     u32 f_10;

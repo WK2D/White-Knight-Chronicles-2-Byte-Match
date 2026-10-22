@@ -74,6 +74,7 @@ def compile_all(sources):
     for src in sources:
         obj = BUILD / 'obj' / (src.relative_to(ROOT).as_posix() + '.o')   # unit.c and unit.cpp differ
         obj.parent.mkdir(parents=True, exist_ok=True)
+        obj.unlink(missing_ok=True)       # a stale object would hide a failed compile
         jobs.append((src.relative_to(ROOT).as_posix(), obj.relative_to(ROOT).as_posix()))
         results[src] = obj
     if os.name == 'nt':
@@ -103,7 +104,8 @@ def compile_all(sources):
                          env=dict(os.environ, MSYS_NO_PATHCONV='1'))
     failed = {line.split(' ', 1)[1] for line in out.stdout.splitlines() if line.startswith('FAILED ')}
     for src in sources:
-        if src.relative_to(ROOT).as_posix() in failed:
+        # Parallel jobs can interleave their FAILED lines, so a missing object counts too.
+        if src.relative_to(ROOT).as_posix() in failed or not results[src].exists():
             results[src] = (BUILD / 'obj' / (src.relative_to(ROOT).as_posix() + '.o.log')).read_text()
     return results
 

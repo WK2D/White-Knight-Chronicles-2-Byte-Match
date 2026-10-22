@@ -5,15 +5,39 @@
 extern "C" {
 
 
-extern char g_007cf7ec_0[];
+struct unk_007cf7ec_g7738;
+struct unk_007cf7ec_g7738_0;
+struct unk_007cf7ec_g7738_0_6c;
+struct unk_007cf7ec_g7738_0_6c_8;
+struct unk_007cf7ec_g7738_0_6c_8_74;
+struct unk_007cf7ec_g7738 {
+    unk_007cf7ec_g7738_0* f_0;
+};
+struct unk_007cf7ec_g7738_0 {
+    char pad_0[108];
+    unk_007cf7ec_g7738_0_6c* f_6c;
+};
+struct unk_007cf7ec_g7738_0_6c {
+    char pad_0[8];
+    unk_007cf7ec_g7738_0_6c_8* f_8;
+};
+struct unk_007cf7ec_g7738_0_6c_8 {
+    char pad_0[116];
+    unk_007cf7ec_g7738_0_6c_8_74* f_74;
+};
+struct unk_007cf7ec_g7738_0_6c_8_74 {
+    char pad_0[16];
+    u8 f_10;
+};
+extern unk_007cf7ec_g7738 g_007cf7ec_0;
 int fn_007cf7ec(void) {
     int v0;
     int v2;
     int v5;
-    if ((int)(FIELD(u32, FIELD(u32, g_007cf7ec_0, 0), 108)) != (int)(0)) {
-        if ((int)(FIELD(u32, FIELD(u32, FIELD(u32, g_007cf7ec_0, 0), 108), 8)) != (int)(0)) {
-            if ((int)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_007cf7ec_0, 0), 108), 8), 116)) != (int)(0)) {
-                v0 = (int)(FIELD(u8, FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_007cf7ec_0, 0), 108), 8), 116), 16));
+    if ((int)((&g_007cf7ec_0)->f_0->f_6c) != (int)(0)) {
+        if ((int)((&g_007cf7ec_0)->f_0->f_6c->f_8) != (int)(0)) {
+            if ((int)((&g_007cf7ec_0)->f_0->f_6c->f_8->f_74) != (int)(0)) {
+                v0 = (int)((&g_007cf7ec_0)->f_0->f_6c->f_8->f_74->f_10);
             } else {
                 v0 = (int)(0);
             }

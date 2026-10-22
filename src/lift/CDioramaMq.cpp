@@ -4,7 +4,19 @@
 
 extern "C" {
 
+void fn_00b3cd48(void*);
+void fn_00b3e6a8(void*);
 void fn_00b40848(void*, void*, int);
+
+struct unk_008c9bc0_a0 {
+    void* f_0;
+};
+extern char g_008c9bc0_0[];
+void fn_008c9bc0(unk_008c9bc0_a0* a0) {
+    a0->f_0 = (void*)(g_008c9bc0_0);
+    fn_00b3e6a8((void*)(a0));
+    fn_00b3cd48((void*)(a0));
+}
 
 struct unk_008c9c64_a0 {
     void* f_0;

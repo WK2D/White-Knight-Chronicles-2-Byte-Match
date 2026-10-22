@@ -22,24 +22,6 @@ void fn_00eb9eb4(unk_00eb9eb4_a0* a0) {
     ((unk_00eb9eb4_vc0*)(a0->f_3c))->vf6();
 }
 
-struct unk_00eba0ec_a0 {
-    char pad_0[52];
-    u32 f_34;
-};
-struct unk_00eba0ec_a3 {
-    u32 f_0;
-};
-struct unk_00eba0ec_vc0 {
-    virtual void vf0();
-    virtual void vf1();
-    virtual void vf2();
-    virtual void vf3();
-    virtual void vf4(int, void*, int, u32);
-};
-void fn_00eba0ec(unk_00eba0ec_a0* a0, int a1, int a2, unk_00eba0ec_a3* a3) {
-    ((unk_00eba0ec_vc0*)(a0->f_34))->vf4((int)(a1), (void*)(a0), (int)(a2), (u32)(a3->f_0));
-}
-
 struct unk_00eba13c_a0 {
     char pad_0[56];
     u32 f_38;

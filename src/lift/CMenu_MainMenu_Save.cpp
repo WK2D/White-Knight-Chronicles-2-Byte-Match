@@ -5,13 +5,17 @@
 extern "C" {
 
 
+struct unk_0064de30_g339c;
+struct unk_0064de30_g339c {
+    u8 f_0;
+};
 struct unk_0064de30_a0 {
     char pad_0[1256];
     u32 f_4e8;
 };
-extern char g_0064de30_0[];
+extern unk_0064de30_g339c g_0064de30_0;
 void fn_0064de30(unk_0064de30_a0* a0, int a1) {
-    if ((int)(FIELD(u8, g_0064de30_0, 0)) == (int)(0)) {
+    if ((int)((&g_0064de30_0)->f_0) == (int)(0)) {
         return;
     }
     a0->f_4e8 = (u32)(a1);

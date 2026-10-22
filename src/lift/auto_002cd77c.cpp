@@ -5,14 +5,22 @@
 extern "C" {
 
 
+struct unk_002cdd0c_a0_38;
+struct unk_002cdd0c_a0_38_0;
+struct unk_002cdd0c_a0_38 {
+    unk_002cdd0c_a0_38_0* f_0;
+};
+struct unk_002cdd0c_a0_38_0 {
+    u32 f_0;
+};
 struct unk_002cdd0c_a0 {
     char pad_0[56];
-    u32 f_38;
+    unk_002cdd0c_a0_38* f_38;
     char pad_3c[4];
     u32 f_40;
 };
 void* fn_002cdd0c(unk_002cdd0c_a0* a0) {
-    return (void*)((int)(FIELD(u32, FIELD(u32, a0->f_38, 0), 0)) + (int)(a0->f_40));
+    return (void*)((int)(a0->f_38->f_0->f_0) + (int)(a0->f_40));
 }
 
 }

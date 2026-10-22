@@ -4,29 +4,29 @@
 
 extern "C" {
 
-void fn_00b3d2f8(void);
-int fn_00b3e1d8(void);
-int fn_00b3f378(void);
+void fn_00b3d2f8(int, int);
+int fn_00b3e1d8(int, int, int);
+int fn_00b3f378(int, int);
 int fn_00b3f6c8(int, int, int);
-void* fn_00b3f818(void);
+void* fn_00b3f818(int, int);
 void* fn_00b41a38(void);
-void* fn_00b42098(void);
+void* fn_00b42098(int);
 
-int fn_00bf8e44(void) {
+int fn_00bf8e44(int a0, int a1, int a2) {
     int t0;
-    t0 = fn_00b3e1d8();
+    t0 = fn_00b3e1d8((int)(a0), (int)(a1), (int)(a2));
     return (int)(t0);
 }
 
-void* fn_00bf90bc(void) {
+void* fn_00bf90bc(int a0, int a1) {
     void* t0;
-    t0 = fn_00b3f818();
+    t0 = fn_00b3f818((int)(a0), (int)(a1));
     return (void*)(t0);
 }
 
-void* fn_00bf90e4(void) {
+void* fn_00bf90e4(int a0) {
     void* t0;
-    t0 = fn_00b42098();
+    t0 = fn_00b42098((int)(a0));
     return (void*)(t0);
 }
 
@@ -42,13 +42,13 @@ int fn_00bf92c8(int a0, int a1) {
     return (int)(t0);
 }
 
-void fn_00bf9334(void) {
-    fn_00b3d2f8();
+void fn_00bf9334(int a0, int a1) {
+    fn_00b3d2f8((int)(a0), (int)(a1));
 }
 
-int fn_00bf9384(void) {
+int fn_00bf9384(int a0, int a1) {
     int t0;
-    t0 = fn_00b3f378();
+    t0 = fn_00b3f378((int)(a0), (int)(a1));
     return (int)(t0);
 }
 

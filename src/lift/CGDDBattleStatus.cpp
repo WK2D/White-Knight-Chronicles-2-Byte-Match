@@ -5,14 +5,22 @@
 extern "C" {
 
 
+struct unk_0037dca0_a0_4;
+struct unk_0037dca0_a0_8;
+struct unk_0037dca0_a0_4 {
+    u8 f_0;
+};
+struct unk_0037dca0_a0_8 {
+    u8 f_0;
+};
 struct unk_0037dca0_a0 {
     char pad_0[4];
-    u32 f_4;
-    u32 f_8;
+    unk_0037dca0_a0_4* f_4;
+    unk_0037dca0_a0_8* f_8;
 };
 int fn_0037dca0(unk_0037dca0_a0* a0) {
-    FIELD(u8, a0->f_4, 0) = (u8)(0);
-    FIELD(u8, a0->f_8, 0) = (u8)(0);
+    a0->f_4->f_0 = (u8)(0);
+    a0->f_8->f_0 = (u8)(0);
     return (int)(1);
 }
 

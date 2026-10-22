@@ -10,11 +10,11 @@ static void __attribute__((noinline)) stub_00692e30(void* p0) { __asm__ volatile
 static int __attribute__((noinline)) stub_0069397c(void) { int r; __asm__ volatile ("" : "=r"(r)); return r; }
 void fn_00b37f58(int, void*, u32);
 void fn_00b37fa8(int, int, u32);
-int fn_00b38038(void*);
+int fn_00b38038(void*, int);
 
-int fn_006936f8(void* a0) {
+int fn_006936f8(void* a0, int a1) {
     int t0;
-    t0 = fn_00b38038((void*)((char*)a0 + 14248));
+    t0 = fn_00b38038((void*)((char*)a0 + 14248), (int)(a1));
     return (int)((int)((u32)(((int)((u32)((int)(t0) >> 31) ^ (u32)(t0)) - (int)((int)(t0) >> 31)) + -1) >> 31));
 }
 

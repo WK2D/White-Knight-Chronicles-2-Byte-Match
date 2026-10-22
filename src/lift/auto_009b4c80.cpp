@@ -5,16 +5,26 @@
 extern "C" {
 
 
-extern char g_009b4c80_0[];
+struct unk_009b4c80_gm3b40;
+struct unk_009b4c80_gm3b40 {
+    u32 f_0;
+    u32 f_4;
+};
+extern unk_009b4c80_gm3b40 g_009b4c80_0;
 int fn_009b4c80(int a0, int a1) {
-    FIELD(u32, g_009b4c80_0, 0) = (u32)(a0);
-    FIELD(u32, g_009b4c80_0, 4) = (u32)(a1);
+    (&g_009b4c80_0)->f_0 = (u32)(a0);
+    (&g_009b4c80_0)->f_4 = (u32)(a1);
     return (int)(0);
 }
 
-extern char g_009b4c94_0[];
+struct unk_009b4c94_gm3b40;
+struct unk_009b4c94_gm3b40 {
+    char pad_0[8];
+    u32 f_8;
+};
+extern unk_009b4c94_gm3b40 g_009b4c94_0;
 int fn_009b4c94(int a0) {
-    FIELD(u32, g_009b4c94_0, 8) = (u32)(a0);
+    (&g_009b4c94_0)->f_8 = (u32)(a0);
     return (int)(0);
 }
 

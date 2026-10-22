@@ -6,13 +6,21 @@ extern "C" {
 
 static int __attribute__((noinline)) stub_0045d4a8(void) { int r; __asm__ volatile ("" : "=r"(r)); return r; }
 
-extern char g_0045d52c_0[];
+struct unk_0045d52c_gmad4;
+struct unk_0045d52c_gmad4_0;
+struct unk_0045d52c_gmad4 {
+    unk_0045d52c_gmad4_0* f_0;
+};
+struct unk_0045d52c_gmad4_0 {
+    u32 f_0;
+};
+extern unk_0045d52c_gmad4 g_0045d52c_0;
 int fn_0045d52c(void) {
     int t0;
     int v0;
     t0 = stub_0045d4a8();
     if ((int)((u32)(t0) & 0xff) != (int)(0)) {
-        FIELD(u32, FIELD(u32, g_0045d52c_0, 0), 0) = (u32)(0);
+        (&g_0045d52c_0)->f_0->f_0 = (u32)(0);
         v0 = (int)(1);
     } else {
         v0 = (int)(0);

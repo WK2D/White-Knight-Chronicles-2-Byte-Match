@@ -5,18 +5,41 @@
 extern "C" {
 
 
-extern char g_0098050c_0[];
+struct unk_0098050c_gm3fc0;
+struct unk_0098050c_gm3fc0_0;
+struct unk_0098050c_gm3fc0 {
+    unk_0098050c_gm3fc0_0* f_0;
+};
+struct unk_0098050c_gm3fc0_0 {
+    char pad_0[292];
+    u32 f_124;
+};
+extern unk_0098050c_gm3fc0 g_0098050c_0;
 int fn_0098050c(void) {
-    FIELD(u32, FIELD(u32, g_0098050c_0, 0), 292) = (u32)(0);
+    (&g_0098050c_0)->f_0->f_124 = (u32)(0);
     return (int)(0);
 }
 
-extern char g_00980524_0[];
-extern char g_00980524_1[];
+struct unk_00980524_gm3fbc;
+struct unk_00980524_gm3fc0;
+struct unk_00980524_gm3fc0_0;
+struct unk_00980524_gm3fbc {
+    char pad_0[372];
+    u32 f_174;
+};
+struct unk_00980524_gm3fc0 {
+    unk_00980524_gm3fc0_0* f_0;
+};
+struct unk_00980524_gm3fc0_0 {
+    char pad_0[248];
+    u32 f_f8;
+};
+extern unk_00980524_gm3fc0 g_00980524_0;
+extern unk_00980524_gm3fbc g_00980524_1;
 void* fn_00980524(int a0) {
     int v0;
-    if ((u32)(FIELD(u32, FIELD(u32, g_00980524_0, 0), 248)) > (u32)(a0)) {
-        v0 = (int)(FIELD(u32, (int)((u32)(a0) << 2) + (int)(FIELD(u32, g_00980524_1, 372)), 0));
+    if ((u32)((&g_00980524_0)->f_0->f_f8) > (u32)(a0)) {
+        v0 = (int)(FIELD(u32, (int)((u32)(a0) << 2) + (int)((&g_00980524_1)->f_174), 0));
     } else {
         v0 = (int)(0);
     }

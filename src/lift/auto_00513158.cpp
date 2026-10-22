@@ -19,6 +19,18 @@ int fn_005133cc(void) {
     return (int)(v0);
 }
 
+int fn_0051348c(void) {
+    void* t0;
+    t0 = stub_00513398();
+    if ((int)(t0) != (int)(0)) {
+        if ((u32)(FIELD(u8, t0, 22)) <= (u32)(2)) {
+            return (int)(1);
+        }
+        return (int)(0);
+    }
+    return (int)(0);
+}
+
 struct unk_0051354c_a1 {
     char pad_0[8];
     u32 f_8;
@@ -33,9 +45,18 @@ void* fn_0051354c(int a0, unk_0051354c_a1* a1) {
     return (void*)(v0);
 }
 
-extern char g_005135a8_0[];
+struct unk_005135a8_g928;
+struct unk_005135a8_g928_0;
+struct unk_005135a8_g928 {
+    unk_005135a8_g928_0* f_0;
+};
+struct unk_005135a8_g928_0 {
+    char pad_0[3312];
+    u8 f_cf0;
+};
+extern unk_005135a8_g928 g_005135a8_0;
 int fn_005135a8(void) {
-    FIELD(u8, FIELD(u32, g_005135a8_0, 0), 3312) = (u8)(1);
+    (&g_005135a8_0)->f_0->f_cf0 = (u8)(1);
     return (int)(1);
 }
 

@@ -9,10 +9,15 @@ void fn_009b66b4(int, void*);
 void fn_009b67e4(int, void*);
 void fn_009b6914(int, void*);
 
-extern char g_009b6b28_0[];
+struct unk_009b6b28_gm3b38;
+struct unk_009b6b28_gm3b38 {
+    u32 f_0;
+    u32 f_4;
+};
+extern unk_009b6b28_gm3b38 g_009b6b28_0;
 int fn_009b6b28(int a0, int a1) {
-    FIELD(u32, g_009b6b28_0, 0) = (u32)(a0);
-    FIELD(u32, g_009b6b28_0, 4) = (u32)(a1);
+    (&g_009b6b28_0)->f_0 = (u32)(a0);
+    (&g_009b6b28_0)->f_4 = (u32)(a1);
     return (int)(0);
 }
 

@@ -10,6 +10,7 @@ void* fn_00af63a4(int);
 void* fn_00af63b0(int);
 void fn_00af63bc(void);
 void* fn_00b00ad4(u32);
+void fn_00b41f98(int);
 
 void* fn_00afe600(int a0) {
     void* t0;
@@ -43,6 +44,18 @@ void* fn_00afe6c4(unk_00afe6c4_a0* a0) {
     void* t0;
     t0 = fn_00b00ad4((u32)(a0->f_10));
     return (void*)(t0);
+}
+
+struct unk_00afe78c_gm1a8;
+struct unk_00afe78c_gm1a8 {
+    u32 f_0;
+    u32 f_4;
+};
+extern unk_00afe78c_gm1a8 g_00afe78c_0;
+void fn_00afe78c(int a0, int a1) {
+    fn_00b41f98((int)(a0));
+    (&g_00afe78c_0)->f_4 = (u32)((int)((&g_00afe78c_0)->f_4) - (int)(a1));
+    (&g_00afe78c_0)->f_0 = (u32)((&g_00afe78c_0)->f_0 + -1);
 }
 
 }

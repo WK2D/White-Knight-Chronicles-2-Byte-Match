@@ -5,12 +5,17 @@
 extern "C" {
 
 
+struct unk_00e68164_a0_30;
+struct unk_00e68164_a0_30 {
+    char pad_0[24];
+    u32 f_18;
+};
 struct unk_00e68164_a0 {
     char pad_0[48];
-    u32 f_30;
+    unk_00e68164_a0_30* f_30;
 };
 void* fn_00e68164(unk_00e68164_a0* a0) {
-    return (void*)(FIELD(u32, a0->f_30, 24) + 48);
+    return (void*)(a0->f_30->f_18 + 48);
 }
 
 }

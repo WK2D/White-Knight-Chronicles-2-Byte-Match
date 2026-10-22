@@ -6,12 +6,17 @@ extern "C" {
 
 static void __attribute__((noinline)) stub_009b2ee0(u32 p0) { __asm__ volatile ("" : : "r"(p0)); }
 
-extern char g_009b2f70_0[];
+struct unk_009b2f70_gm3b50;
+struct unk_009b2f70_gm3b50 {
+    u32 f_0;
+    u32 f_4;
+};
+extern unk_009b2f70_gm3b50 g_009b2f70_0;
 u32 fn_009b2f70(void) {
     int v1;
-    if ((int)(FIELD(u32, g_009b2f70_0, 0)) != (int)(0)) {
-        stub_009b2ee0((u32)(FIELD(u32, g_009b2f70_0, 4)));
-        FIELD(u32, g_009b2f70_0, 0) = (u32)(0);
+    if ((int)((&g_009b2f70_0)->f_0) != (int)(0)) {
+        stub_009b2ee0((u32)((&g_009b2f70_0)->f_4));
+        (&g_009b2f70_0)->f_0 = (u32)(0);
         v1 = (int)(0);
     } else {
         v1 = (int)(5);

@@ -63,11 +63,16 @@ u8 fn_005acccc(unk_005acccc_a0* a0, int a1) {
     return (u8)((u8)t0);
 }
 
+struct unk_005accf4_a0_0;
+struct unk_005accf4_a0_0 {
+    char pad_0[3];
+    u8 f_3;
+};
 struct unk_005accf4_a0 {
-    u32 f_0;
+    unk_005accf4_a0_0* f_0;
 };
 u32 fn_005accf4(unk_005accf4_a0* a0) {
-    return (u32)((u32)(FIELD(u8, a0->f_0, 3)) & 0xf8);
+    return (u32)((u32)(a0->f_0->f_3) & 0xf8);
 }
 
 }

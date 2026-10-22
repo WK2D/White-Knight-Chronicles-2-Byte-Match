@@ -17,14 +17,18 @@ void* fn_00aa3078(int a0) {
     return (void*)(t0);
 }
 
+struct unk_00aa310c_gm1100;
+struct unk_00aa310c_gm1100 {
+    u32 f_0;
+};
 struct unk_00aa310c_a0 {
     void* f_0;
 };
-extern char g_00aa310c_0[];
+extern unk_00aa310c_gm1100 g_00aa310c_0;
 extern char g_00aa310c_1[];
 void fn_00aa310c(unk_00aa310c_a0* a0) {
     a0->f_0 = (void*)(g_00aa310c_1);
-    FIELD(u32, g_00aa310c_0, 0) = (u32)(FIELD(u32, g_00aa310c_0, 0) + -1);
+    (&g_00aa310c_0)->f_0 = (u32)((&g_00aa310c_0)->f_0 + -1);
 }
 
 }

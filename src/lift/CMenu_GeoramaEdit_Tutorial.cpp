@@ -6,18 +6,22 @@ extern "C" {
 
 void fn_00b3ccc8(void*);
 
+struct unk_0089c6ac_gm60e0;
+struct unk_0089c6ac_gm60e0 {
+    u32 f_0;
+};
 struct unk_0089c6ac_a0 {
     char pad_0[36];
     u32 f_24;
     char pad_28[80];
     u8 f_78;
 };
-extern char g_0089c6ac_0[];
+extern unk_0089c6ac_gm60e0 g_0089c6ac_0;
 void fn_0089c6ac(unk_0089c6ac_a0* a0) {
     if ((int)(a0->f_78) == (int)(0)) {
         a0->f_78 = (u8)(1);
     }
-    FIELD(u32, g_0089c6ac_0, 0) = (u32)(a0->f_24);
+    (&g_0089c6ac_0)->f_0 = (u32)(a0->f_24);
 }
 
 struct unk_0089c704_a0 {

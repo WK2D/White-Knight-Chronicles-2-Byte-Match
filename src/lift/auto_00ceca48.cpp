@@ -5,9 +5,6 @@
 extern "C" {
 
 
-struct unk_00cef20c_a1 {
-    u32 f_0;
-};
 struct unk_00cef20c_a3 {
     virtual void vf0();
     virtual void vf1();
@@ -16,8 +13,8 @@ struct unk_00cef20c_a3 {
     virtual void vf4(void*, u32, int);
 };
 extern char g_00cef20c_0[];
-void fn_00cef20c(int a0, unk_00cef20c_a1* a1, int a2, unk_00cef20c_a3* a3) {
-    a3->vf4((void*)(g_00cef20c_0), (u32)(a1->f_0), (int)(0));
+void fn_00cef20c(int a0, void* a1, int a2, unk_00cef20c_a3* a3) {
+    a3->vf4((void*)(g_00cef20c_0), (u32)(FIELD(u32, a1, 0)), (int)(0));
 }
 
 }

@@ -64,4 +64,29 @@ int fn_002debe0(unk_002debe0_a0* a0) {
     return (int)(v0);
 }
 
+struct unk_002dec24_gm2418;
+struct unk_002dec24_gm2418_0;
+struct unk_002dec24_gm2418_0_90;
+struct unk_002dec24_gm2418 {
+    unk_002dec24_gm2418_0* f_0;
+};
+struct unk_002dec24_gm2418_0 {
+    char pad_0[144];
+    unk_002dec24_gm2418_0_90* f_90;
+};
+struct unk_002dec24_gm2418_0_90 {
+    char pad_0[4292];
+    u32 f_10c4;
+};
+extern unk_002dec24_gm2418 g_002dec24_0;
+int fn_002dec24(void) {
+    if ((int)((&g_002dec24_0)->f_0->f_90) != (int)(0)) {
+        if ((u32)((&g_002dec24_0)->f_0->f_90->f_10c4 + -1) <= (u32)(2)) {
+            return (int)(1);
+        }
+        return (int)(0);
+    }
+    return (int)(0);
+}
+
 }

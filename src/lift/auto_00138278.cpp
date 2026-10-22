@@ -14,9 +14,18 @@ void fn_00138514(unk_00138514_a0* a0) {
     fn_00142318((int)((int)a0->f_1c));
 }
 
-extern char g_0013870c_0[];
+struct unk_0013870c_gm6350;
+struct unk_0013870c_gm6350_0;
+struct unk_0013870c_gm6350 {
+    unk_0013870c_gm6350_0* f_0;
+};
+struct unk_0013870c_gm6350_0 {
+    char pad_0[128];
+    u32 f_80;
+};
+extern unk_0013870c_gm6350 g_0013870c_0;
 void fn_0013870c(void) {
-    FIELD(u8, (int)(FIELD(u32, FIELD(u32, g_0013870c_0, 0), 128)) + 851968, -580) = (u8)(1);
+    FIELD(u8, (int)((&g_0013870c_0)->f_0->f_80) + 851968, -580) = (u8)(1);
 }
 
 }

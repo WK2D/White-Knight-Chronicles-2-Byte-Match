@@ -4,6 +4,7 @@
 
 extern "C" {
 
+int fn_0036dee0(void*);
 
 struct unk_004823b4_a0 {
     char pad_0[12];
@@ -126,10 +127,85 @@ void* fn_00482500(unk_00482500_a0* a0) {
     return (void*)(v0);
 }
 
-extern char g_004826e8_0[];
+struct unk_00482688_gm848;
+struct unk_00482688_gm848_0;
+struct unk_00482688_gm848 {
+    unk_00482688_gm848_0* f_0;
+};
+struct unk_00482688_gm848_0 {
+    char pad_0[28];
+    u32 f_1c;
+    u32 f_20;
+    u32 f_24;
+    u32 f_28;
+};
+extern unk_00482688_gm848 g_00482688_0;
+int fn_00482688(void) {
+    int v0;
+    int v3;
+    int v6;
+    if ((int)((&g_00482688_0)->f_0->f_1c) != (int)(0)) {
+        if ((int)((&g_00482688_0)->f_0->f_20) != (int)(0)) {
+            if ((int)((&g_00482688_0)->f_0->f_24) != (int)(0)) {
+                (&g_00482688_0)->f_0->f_28 = (u32)((&g_00482688_0)->f_0->f_28 + 1);
+                v0 = (int)(1);
+            } else {
+                v0 = (int)(0);
+            }
+            v3 = (int)(v0);
+        } else {
+            v3 = (int)(0);
+        }
+        v6 = (int)(v3);
+    } else {
+        v6 = (int)(0);
+    }
+    return (int)(v6);
+}
+
+struct unk_004826e8_gm848;
+struct unk_004826e8_gm848_0;
+struct unk_004826e8_gm848 {
+    unk_004826e8_gm848_0* f_0;
+};
+struct unk_004826e8_gm848_0 {
+    char pad_0[8];
+    u8 f_8;
+};
+extern unk_004826e8_gm848 g_004826e8_0;
 int fn_004826e8(void) {
-    FIELD(u8, FIELD(u32, g_004826e8_0, 0), 8) = (u8)(0);
+    (&g_004826e8_0)->f_0->f_8 = (u8)(0);
     return (int)(1);
+}
+
+struct unk_00484364_a0 {
+    char pad_0[28];
+    u32 f_1c;
+    u32 f_20;
+    char pad_24[4];
+    u32 f_28;
+    char pad_2c[53];
+    u8 f_61;
+};
+void* fn_00484364(unk_00484364_a0* a0) {
+    int t0;
+    if ((int)(a0->f_61) == (int)(0)) {
+        return (void*)(0);
+    }
+    if ((int)(a0->f_1c) == (int)(0)) {
+        return (void*)(0);
+    }
+    if ((int)(a0->f_20) == (int)(0)) {
+        return (void*)(0);
+    }
+    if ((int)(a0->f_28) == (int)(0)) {
+        return (void*)(0);
+    }
+    t0 = fn_0036dee0((void*)(a0->f_1c));
+    if ((int)((u32)(t0) & 0xff) == (int)(0)) {
+        return (void*)(0);
+    }
+    return (void*)(a0->f_20);
 }
 
 }

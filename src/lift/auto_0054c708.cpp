@@ -4,10 +4,12 @@
 
 extern "C" {
 
+int fn_00545ecc(void*);
 void fn_00565a8c(u32, int, int);
 void fn_0056797c(u32, int);
 int fn_00568ca8(u32, int);
 void fn_0056c22c(u32);
+void* fn_00573d94(void*, u32, u16, u16, int, void*);
 void* fn_00587494(u32);
 int fn_00587540(u32);
 void fn_00587c4c(u32);
@@ -77,6 +79,31 @@ struct unk_0054d1f8_a0 {
 };
 void fn_0054d1f8(unk_0054d1f8_a0* a0) {
     fn_0056c22c((u32)(a0->f_318));
+}
+
+struct unk_0054d294_a2 {
+    u32 f_0;
+};
+void* fn_0054d294(void* a0, void* a1, unk_0054d294_a2* a2, void* a3, void* a4) {
+    int t0;
+    int t1;
+    void* t2;
+    int v1;
+    int v3;
+    if ((int)(a3) != (int)(0)) {
+        t0 = fn_00545ecc((void*)(a3));
+        v1 = (int)(t0);
+    } else {
+        v1 = (int)(0);
+    }
+    if ((int)(a4) != (int)(0)) {
+        t1 = fn_00545ecc((void*)(a4));
+        v3 = (int)(t1);
+    } else {
+        v3 = (int)(0);
+    }
+    t2 = fn_00573d94((void*)(a0), (u32)(a2->f_0), (u16)((u16)v1), (u16)((u16)v3), (int)(0), (void*)(a1));
+    return (void*)(t2);
 }
 
 }

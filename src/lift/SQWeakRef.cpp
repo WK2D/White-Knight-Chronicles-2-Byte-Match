@@ -6,15 +6,20 @@ extern "C" {
 
 void fn_00952f10(void*, int);
 
+struct unk_00953430_a0_10;
+struct unk_00953430_a0_10 {
+    char pad_0[8];
+    u32 f_8;
+};
 struct unk_00953430_a0 {
     virtual void vf0(void);
     char pad_4[8];
     u32 f_c;
-    u32 f_10;
+    unk_00953430_a0_10* f_10;
 };
 void fn_00953430(unk_00953430_a0* a0) {
     if ((int)((u32)(a0->f_c) & 0x8000000) != (int)(0)) {
-        FIELD(u32, a0->f_10, 8) = (u32)(0);
+        a0->f_10->f_8 = (u32)(0);
     }
     a0->vf0();
     fn_00952f10((void*)(a0), (int)(20));

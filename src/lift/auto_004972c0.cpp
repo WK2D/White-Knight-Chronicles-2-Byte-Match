@@ -5,13 +5,17 @@
 extern "C" {
 
 
+struct unk_004972c0_gm6ac;
+struct unk_004972c0_gm6ac {
+    u32 f_0;
+};
 struct unk_004972c0_a0 {
     u32 f_0;
 };
-extern char g_004972c0_0[];
+extern unk_004972c0_gm6ac g_004972c0_0;
 void fn_004972c0(unk_004972c0_a0* a0) {
     a0->f_0 = (u32)(0);
-    FIELD(u32, g_004972c0_0, 0) = (u32)(0);
+    (&g_004972c0_0)->f_0 = (u32)(0);
 }
 
 }

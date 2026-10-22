@@ -10,14 +10,22 @@ void* fn_0002b45c(int a0) {
     return (void*)((char*)g_0002b45c_0 + (int)((int)((u32)(a0) << 5) + (int)((u32)(a0) << 7)));
 }
 
-extern char g_0002b6e0_0[];
+struct unk_0002b6e0_gm7d54;
+struct unk_0002b6e0_gm7d54 {
+    char pad_0[4816];
+    u32 f_12d0;
+    u8 f_12d4;
+    char pad_12d5[3];
+    u32 f_12d8;
+};
+extern unk_0002b6e0_gm7d54 g_0002b6e0_0;
 void fn_0002b6e0(int a0) {
-    if ((int)(FIELD(u32, g_0002b6e0_0, 4816)) != (int)(a0)) {
-        FIELD(u32, g_0002b6e0_0, 4824) = (u32)(a0);
-        FIELD(u8, g_0002b6e0_0, 4820) = (u8)(1);
+    if ((int)((&g_0002b6e0_0)->f_12d0) != (int)(a0)) {
+        (&g_0002b6e0_0)->f_12d8 = (u32)(a0);
+        (&g_0002b6e0_0)->f_12d4 = (u8)(1);
         return;
     }
-    FIELD(u8, g_0002b6e0_0, 4820) = (u8)(0);
+    (&g_0002b6e0_0)->f_12d4 = (u8)(0);
 }
 
 }

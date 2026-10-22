@@ -5,9 +5,13 @@
 extern "C" {
 
 
-extern char g_00b0abcc_0[];
+struct unk_00b0abcc_gm7668;
+struct unk_00b0abcc_gm7668 {
+    u8 f_0;
+};
+extern unk_00b0abcc_gm7668 g_00b0abcc_0;
 void* fn_00b0abcc(void) {
-    return (void*)((int)(signed char)(FIELD(u8, g_00b0abcc_0, 0)));
+    return (void*)((int)(signed char)((&g_00b0abcc_0)->f_0));
 }
 
 }

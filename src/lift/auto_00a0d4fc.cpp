@@ -29,12 +29,20 @@ u8 fn_00a0f0e8(unk_00a0f0e8_a0* a0, int a1) {
     return (u8)(FIELD(u8, (int)(t0) + (int)(a1), 0));
 }
 
-extern char g_00a10770_0[];
+struct unk_00a10770_gm27d8;
+struct unk_00a10770_gm27d8 {
+    u32 f_0;
+    char pad_4[32];
+    u32 f_24;
+    char pad_28[20];
+    u32 f_3c;
+};
+extern unk_00a10770_gm27d8 g_00a10770_0;
 void fn_00a10770(void) {
-    if ((int)(FIELD(u32, g_00a10770_0, 0)) != (int)(0)) {
-        fn_00a19868((u32)(FIELD(u32, g_00a10770_0, 36)));
-        fn_00a19868((u32)(FIELD(u32, g_00a10770_0, 60)));
-        fn_00b3d088((void*)(g_00a10770_0), (int)(0), (int)(72));
+    if ((int)((&g_00a10770_0)->f_0) != (int)(0)) {
+        fn_00a19868((u32)((&g_00a10770_0)->f_24));
+        fn_00a19868((u32)((&g_00a10770_0)->f_3c));
+        fn_00b3d088((void*)((&g_00a10770_0)), (int)(0), (int)(72));
     }
 }
 

@@ -20,26 +20,36 @@ void fn_0003f94c(unk_0003f94c_a0* a0, unk_0003f94c_a1* a1) {
     a0->f_4c = (void*)((char*)a1 + (int)(a1->f_8));
 }
 
+struct unk_0003fab0_a0_4;
+struct unk_0003fab0_a0_4 {
+    char pad_0[4];
+    u32 f_4;
+};
 struct unk_0003fab0_a0 {
     u32 f_0;
-    u32 f_4;
+    unk_0003fab0_a0_4* f_4;
 };
 void fn_0003fab0(unk_0003fab0_a0* a0, int a1) {
     if ((int)(a0->f_0) != (int)(3)) {
         return;
     }
-    FIELD(u32, a0->f_4, 4) = (u32)(a1);
+    a0->f_4->f_4 = (u32)(a1);
 }
 
+struct unk_0003fae0_a0_4;
+struct unk_0003fae0_a0_4 {
+    char pad_0[4];
+    u32 f_4;
+};
 struct unk_0003fae0_a0 {
     u32 f_0;
-    u32 f_4;
+    unk_0003fae0_a0_4* f_4;
 };
 void fn_0003fae0(unk_0003fae0_a0* a0, int a1) {
     if ((int)(a0->f_0) != (int)(3)) {
         return;
     }
-    FIELD(u32, a0->f_4, 4) = (u32)(a1);
+    a0->f_4->f_4 = (u32)(a1);
 }
 
 extern char g_0003fbc0_0[];

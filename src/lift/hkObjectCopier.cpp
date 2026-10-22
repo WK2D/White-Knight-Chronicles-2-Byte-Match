@@ -9,4 +9,14 @@ int fn_00c768a0(int a0, int a1) {
     return (int)(a1);
 }
 
+int fn_00c768a8(int a0, int a1, int a2) {
+    if ((int)(a0) >= (int)(a1)) {
+        if ((int)(a0) < (int)(a2)) {
+            return (int)(1);
+        }
+        return (int)(0);
+    }
+    return (int)(0);
+}
+
 }

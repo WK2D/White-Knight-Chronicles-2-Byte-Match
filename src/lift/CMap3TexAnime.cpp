@@ -14,14 +14,22 @@ void fn_002b9168(unk_002b9168_a0* a0) {
     fn_00b3b5a8((u32)(a0->f_c));
 }
 
+struct unk_002b9428_a0_10;
+struct unk_002b9428_a0_10_0;
+struct unk_002b9428_a0_10 {
+    unk_002b9428_a0_10_0* f_0;
+};
+struct unk_002b9428_a0_10_0 {
+    u32 f_0;
+};
 struct unk_002b9428_a0 {
     char pad_0[4];
     u32 f_4;
     char pad_8[8];
-    u32 f_10;
+    unk_002b9428_a0_10* f_10;
 };
 void fn_002b9428(unk_002b9428_a0* a0) {
-    a0->f_4 = (u32)(FIELD(u32, FIELD(u32, a0->f_10, 0), 0));
+    a0->f_4 = (u32)(a0->f_10->f_0->f_0);
 }
 
 struct unk_002b9588_a1 {
@@ -32,14 +40,22 @@ u32 fn_002b9588(int a0, unk_002b9588_a1* a1) {
     return (u32)(a1->f_138);
 }
 
+struct unk_002b9590_a0_2fbc;
+struct unk_002b9590_a0_2fbc_0;
+struct unk_002b9590_a0_2fbc {
+    unk_002b9590_a0_2fbc_0* f_0;
+};
+struct unk_002b9590_a0_2fbc_0 {
+    u32 f_0;
+};
 struct unk_002b9590_a0 {
     char pad_0[12220];
-    u32 f_2fbc;
+    unk_002b9590_a0_2fbc* f_2fbc;
 };
 void* fn_002b9590(unk_002b9590_a0* a0, int a1) {
     int v0;
     if ((int)(a0->f_2fbc) != (int)(0)) {
-        v0 = (int)(FIELD(u32, FIELD(u32, a0->f_2fbc, 0), 0));
+        v0 = (int)(a0->f_2fbc->f_0->f_0);
     } else {
         v0 = (int)(0);
     }

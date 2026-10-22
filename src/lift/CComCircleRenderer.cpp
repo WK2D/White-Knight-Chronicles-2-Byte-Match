@@ -4,10 +4,28 @@
 
 extern "C" {
 
+void fn_00045f6c(void*, int);
 static void __attribute__((noinline)) stub_00670658(void) { __asm__ volatile (""); }
 
 int fn_006706d8(void) {
     stub_00670658();
+    return (int)(0);
+}
+
+struct unk_00670fe0_a0 {
+    char pad_0[4316];
+    u32 f_10dc;
+    char pad_10e0[44];
+    u32 f_110c;
+};
+int fn_00670fe0(unk_00670fe0_a0* a0) {
+    if ((int)(a0->f_110c) != (int)(2)) {
+        return (int)(0);
+    }
+    if ((int)(a0->f_10dc) == (int)(0)) {
+        return (int)(0);
+    }
+    fn_00045f6c((void*)((char*)a0 + 272), (int)(-1));
     return (int)(0);
 }
 

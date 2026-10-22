@@ -39,12 +39,17 @@ void fn_000ecad4(int a0) {
     fn_000e98b4((int)(a0), (int)(0));
 }
 
+struct unk_000ed4ac_a0_1c;
+struct unk_000ed4ac_a0_1c {
+    char pad_0[324];
+    u32 f_144;
+};
 struct unk_000ed4ac_a0 {
     char pad_0[28];
-    u32 f_1c;
+    unk_000ed4ac_a0_1c* f_1c;
 };
 int fn_000ed4ac(unk_000ed4ac_a0* a0) {
-    return (int)((int)((u32)((int)((int)(FIELD(u32, a0->f_1c, 324)) >> 31) - (int)(FIELD(u32, a0->f_1c, 324))) >> 31));
+    return (int)((int)((u32)((int)((int)(a0->f_1c->f_144) >> 31) - (int)(a0->f_1c->f_144)) >> 31));
 }
 
 struct unk_000ed4c8_a0 {

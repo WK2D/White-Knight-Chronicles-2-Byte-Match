@@ -4,17 +4,22 @@
 
 extern "C" {
 
-static int __attribute__((noinline)) stub_0002a3c8(u32 p0, int p1, int p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
+static int __attribute__((noinline)) stub_0002a3c8(void* p0, int p1, int p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
 
+struct unk_0002a470_a0_18;
+struct unk_0002a470_a0_18 {
+    char pad_0[417];
+    u8 f_1a1;
+};
 struct unk_0002a470_a0 {
     char pad_0[24];
-    u32 f_18;
+    unk_0002a470_a0_18* f_18;
 };
 void* fn_0002a470(unk_0002a470_a0* a0, int a1, int a2) {
     int t0;
     int v0;
-    t0 = stub_0002a3c8((u32)(a0->f_18), (int)(a1), (int)(a2));
-    if ((int)(FIELD(u8, a0->f_18, 417)) != (int)((u32)(t0) & 0xff)) {
+    t0 = stub_0002a3c8((void*)(a0->f_18), (int)(a1), (int)(a2));
+    if ((int)(a0->f_18->f_1a1) != (int)((u32)(t0) & 0xff)) {
         v0 = (int)((u32)(t0) & 0xff);
     } else {
         v0 = (int)(-1);

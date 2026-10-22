@@ -4,21 +4,31 @@
 
 extern "C" {
 
-static void __attribute__((noinline)) stub_0086b620(u32 p0) { __asm__ volatile ("" : : "r"(p0)); }
+int fn_00b3e348(u32, void*);
+void fn_00b3e358(void*);
 
-struct unk_0086b690_a0 {
-    char pad_0[268];
-    u32 f_10c;
+struct unk_0086b620_gm6920;
+struct unk_0086b620_gm6920 {
+    u32 f_0;
 };
-struct unk_0086b690_a1 {
-    char pad_0[4];
-    u32 f_4;
+struct unk_0086b620_a0 {
+    char pad_0[4280];
+    u32 f_10b8;
+    char pad_10bc[56];
+    u32 f_10f4;
+    char pad_10f8[4];
+    u8 f_10fc;
 };
-int fn_0086b690(unk_0086b690_a0* a0, unk_0086b690_a1* a1) {
-    if ((int)(a1->f_4) != (int)(911)) {
-        return (int)(0);
+extern unk_0086b620_gm6920 g_0086b620_0;
+int fn_0086b620(unk_0086b620_a0* a0) {
+    int t1;
+    if ((int)(a0->f_10b8) == (int)(0)) {
+        a0->f_10fc = (u8)(a0->f_10b8);
+        fn_00b3e358((void*)((char*)a0 + 272));
+        t1 = fn_00b3e348((u32)((&g_0086b620_0)->f_0), (void*)(-1));
+        a0->f_10f4 = (u32)(t1);
+        a0->f_10b8 = (u32)(1);
     }
-    stub_0086b620((u32)(a0->f_10c));
     return (int)(0);
 }
 

@@ -6,14 +6,18 @@ extern "C" {
 
 int fn_00041b48(void*);
 
-extern char g_001c3c04_0[];
+struct unk_001c3c04_gm4dd4;
+struct unk_001c3c04_gm4dd4 {
+    u8 f_0;
+};
+extern unk_001c3c04_gm4dd4 g_001c3c04_0;
 int fn_001c3c04(void* a0, int a1) {
     int t0;
     if ((int)(a1) != (int)(1)) {
         return (int)(1);
     }
     t0 = fn_00041b48((void*)(a0));
-    FIELD(u8, g_001c3c04_0, 0) = (u8)(t0);
+    (&g_001c3c04_0)->f_0 = (u8)(t0);
     return (int)(0);
 }
 

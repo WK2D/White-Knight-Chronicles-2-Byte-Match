@@ -4,9 +4,9 @@
 
 extern "C" {
 
-void* fn_0003f9e0(int, int, int, int, int, int, void*);
-int fn_0003fab0(void*, int, int, int, int, int, void*, int);
-int fn_00212c98(void*, void*, int);
+void fn_0003f9e0(void*);
+void fn_0003fab0(void*, u8);
+int fn_002e5a74(u32);
 static void __attribute__((noinline)) stub_0032daa8(void) { __asm__ volatile (""); }
 
 int fn_0032dd54(void) {
@@ -14,34 +14,41 @@ int fn_0032dd54(void) {
     return (int)(1);
 }
 
-extern char g_00334414_0[];
-int fn_00334414(int a0, int a1, int a2, int a3, int a4, int a5) {
-    void* t0;
+struct unk_0032e208_gm1c38;
+struct unk_0032e208_gm1c38_0;
+struct unk_0032e208_gm1c38 {
+    unk_0032e208_gm1c38_0* f_0;
+};
+struct unk_0032e208_gm1c38_0 {
+    u32 f_0;
+};
+extern unk_0032e208_gm1c38 g_0032e208_0;
+int fn_0032e208(void* a0) {
     int t1;
-    t0 = fn_0003f9e0((int)(a0), (int)(a1), (int)(a2), (int)(a3), (int)(a4), (int)(a5), (void*)(g_00334414_0));
-    if ((int)(FIELD(u32, FIELD(u32, g_00334414_0, 0), 112)) != (int)(0)) {
-        t1 = fn_00212c98((void*)(FIELD(u32, FIELD(u32, g_00334414_0, 0), 112)), (void*)(t0), (int)(0));
-    }
+    fn_0003f9e0((void*)(a0));
+    t1 = fn_002e5a74((u32)((&g_0032e208_0)->f_0->f_0));
+    fn_0003fab0((void*)((char*)a0 + 8), (u8)((u8)t1));
     return (int)(1);
 }
 
-extern char g_0033500c_0[];
+struct unk_0033500c_gm1c38;
+struct unk_0033500c_gm1c38_0;
+struct unk_0033500c_gm1c38_0_84;
+struct unk_0033500c_gm1c38 {
+    unk_0033500c_gm1c38_0* f_0;
+};
+struct unk_0033500c_gm1c38_0 {
+    char pad_0[132];
+    unk_0033500c_gm1c38_0_84* f_84;
+};
+struct unk_0033500c_gm1c38_0_84 {
+    char pad_0[3594];
+    u8 f_e0a;
+};
+extern unk_0033500c_gm1c38 g_0033500c_0;
 int fn_0033500c(void) {
-    FIELD(u8, FIELD(u32, FIELD(u32, g_0033500c_0, 0), 132), 3594) = (u8)(0);
+    (&g_0033500c_0)->f_0->f_84->f_e0a = (u8)(0);
     return (int)(1);
-}
-
-extern char g_00335804_0[];
-int fn_00335804(void* a0, int a1, int a2, int a3, int a4, int a5) {
-    int t0;
-    int v1;
-    if ((int)(FIELD(u32, FIELD(u32, g_00335804_0, 0), 100)) != (int)(0)) {
-        t0 = fn_0003fab0((void*)(a0), (int)((int)FIELD(u32, FIELD(u32, FIELD(u32, g_00335804_0, 0), 100), 1004)), (int)(a2), (int)(a3), (int)(a4), (int)(a5), (void*)(FIELD(u32, FIELD(u32, g_00335804_0, 0), 100)), (int)(0));
-        v1 = (int)(1);
-    } else {
-        v1 = (int)(0);
-    }
-    return (int)(v1);
 }
 
 }

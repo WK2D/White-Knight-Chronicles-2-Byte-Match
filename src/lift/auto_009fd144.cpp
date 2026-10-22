@@ -5,9 +5,27 @@
 extern "C" {
 
 
-extern char g_009fd5d0_0[];
+struct unk_009fd5d0_gm2c90;
+struct unk_009fd5d0_gm2c90 {
+    char pad_0[68];
+    u32 f_44;
+};
+extern unk_009fd5d0_gm2c90 g_009fd5d0_0;
 int fn_009fd5d0(void) {
-    return (int)((int)((u32)(~((u32)(FIELD(u32, g_009fd5d0_0, 68)) | (u32)(FIELD(u32, g_009fd5d0_0, 68)))) >> 31));
+    return (int)((int)((u32)(~((u32)((&g_009fd5d0_0)->f_44) | (u32)((&g_009fd5d0_0)->f_44))) >> 31));
+}
+
+struct unk_009fd6bc_gm2c90;
+struct unk_009fd6bc_gm2c90 {
+    char pad_0[484];
+    u32 f_1e4;
+};
+extern unk_009fd6bc_gm2c90 g_009fd6bc_0;
+void fn_009fd6bc(void) {
+    if ((int)((&g_009fd6bc_0)->f_1e4) == (int)(0)) {
+        return;
+    }
+    (&g_009fd6bc_0)->f_1e4 = (u32)(0);
 }
 
 }

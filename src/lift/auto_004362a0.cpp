@@ -5,15 +5,41 @@
 extern "C" {
 
 int fn_00041b48(int);
-static void __attribute__((noinline)) stub_004367bc(u32 p0, u16 p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
+static void __attribute__((noinline)) stub_004367bc(void* p0, u16 p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 
-extern char g_004363ac_0[];
+struct unk_004362a0_gmbd4;
+struct unk_004362a0_gmbd4_0;
+struct unk_004362a0_gmbd4 {
+    unk_004362a0_gmbd4_0* f_0;
+};
+struct unk_004362a0_gmbd4_0 {
+    char pad_0[8];
+    u32 f_8;
+};
+extern unk_004362a0_gmbd4 g_004362a0_0;
+void fn_004362a0(void) {
+    (&g_004362a0_0)->f_0->f_8 = (u32)((&g_004362a0_0)->f_0->f_8 + 28);
+}
+
+struct unk_004363ac_gmbd4;
+struct unk_004363ac_gmbd4_0;
+struct unk_004363ac_gmbd4 {
+    unk_004363ac_gmbd4_0* f_0;
+};
+struct unk_004363ac_gmbd4_0 {
+    char pad_0[8];
+    u32 f_8;
+    u16 f_c;
+    char pad_e[6];
+    u32 f_14;
+};
+extern unk_004363ac_gmbd4 g_004363ac_0;
 int fn_004363ac(void) {
     int v0;
     int v2;
-    if ((int)(FIELD(u32, FIELD(u32, g_004363ac_0, 0), 8)) != (int)(0)) {
-        if ((int)(FIELD(u16, FIELD(u32, g_004363ac_0, 0), 12)) != (int)(0)) {
-            FIELD(u32, FIELD(u32, g_004363ac_0, 0), 20) = (u32)(FIELD(u16, FIELD(u32, g_004363ac_0, 0), 12));
+    if ((int)((&g_004363ac_0)->f_0->f_8) != (int)(0)) {
+        if ((int)((&g_004363ac_0)->f_0->f_c) != (int)(0)) {
+            (&g_004363ac_0)->f_0->f_14 = (u32)((&g_004363ac_0)->f_0->f_c);
             v0 = (int)(1);
         } else {
             v0 = (int)(0);
@@ -25,13 +51,24 @@ int fn_004363ac(void) {
     return (int)(v2);
 }
 
-extern char g_00436870_0[];
+struct unk_00436870_gmbd4;
+struct unk_00436870_gmbd4_0;
+struct unk_00436870_gmbd4 {
+    unk_00436870_gmbd4_0* f_0;
+};
+struct unk_00436870_gmbd4_0 {
+    char pad_0[12];
+    u16 f_c;
+    char pad_e[2];
+    u32 f_10;
+};
+extern unk_00436870_gmbd4 g_00436870_0;
 int fn_00436870(int a0) {
     int t0;
     t0 = fn_00041b48((int)(a0));
-    stub_004367bc((u32)(FIELD(u32, g_00436870_0, 0)), (u16)((u16)t0));
-    FIELD(u16, FIELD(u32, g_00436870_0, 0), 12) = (u16)(0);
-    FIELD(u32, FIELD(u32, g_00436870_0, 0), 16) = (u32)(t0);
+    stub_004367bc((void*)((&g_00436870_0)->f_0), (u16)((u16)t0));
+    (&g_00436870_0)->f_0->f_c = (u16)(0);
+    (&g_00436870_0)->f_0->f_10 = (u32)(t0);
     return (int)(1);
 }
 

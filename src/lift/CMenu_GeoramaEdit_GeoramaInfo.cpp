@@ -13,9 +13,28 @@ void* fn_00887abc(unk_00887abc_a0* a0) {
     return (void*)((char*)((char*)a0 + (int)((int)(a0->f_c0) * 76)) + 40);
 }
 
-extern char g_00887ad8_0[];
+struct unk_00887ad8_gm6400;
+struct unk_00887ad8_gm6400_0;
+struct unk_00887ad8_gm6400_0_6c;
+struct unk_00887ad8_gm6400_0_6c_8;
+struct unk_00887ad8_gm6400 {
+    unk_00887ad8_gm6400_0* f_0;
+};
+struct unk_00887ad8_gm6400_0 {
+    char pad_0[108];
+    unk_00887ad8_gm6400_0_6c* f_6c;
+};
+struct unk_00887ad8_gm6400_0_6c {
+    char pad_0[8];
+    unk_00887ad8_gm6400_0_6c_8* f_8;
+};
+struct unk_00887ad8_gm6400_0_6c_8 {
+    char pad_0[200];
+    u32 f_c8;
+};
+extern unk_00887ad8_gm6400 g_00887ad8_0;
 u32 fn_00887ad8(void) {
-    return (u32)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_00887ad8_0, 0), 108), 8), 200));
+    return (u32)((&g_00887ad8_0)->f_0->f_6c->f_8->f_c8);
 }
 
 }

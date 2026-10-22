@@ -7,8 +7,30 @@ extern "C" {
 void fn_00017f2c(void);
 void fn_00017f68(void);
 static void __attribute__((noinline)) stub_000e8a54(int p0) { __asm__ volatile ("" : : "r"(p0)); }
+int fn_000e950c(void*);
+void fn_000e9594(void*);
+void fn_000e95c8(void*, int);
 void fn_000e95fc(void*);
 int fn_000e98b4(void*, u32);
+
+struct unk_000e86c8_a0 {
+    char pad_0[420];
+    u32 f_1a4;
+};
+int fn_000e86c8(unk_000e86c8_a0* a0) {
+    int t1;
+    int v1;
+    fn_000e95c8((void*)(a0), (int)(0));
+    if ((int)(a0->f_1a4) != (int)(0)) {
+        a0->f_1a4 = (u32)(a0->f_1a4 + -1);
+        t1 = fn_000e950c((void*)(a0));
+        v1 = (int)(0);
+    } else {
+        v1 = (int)(-1);
+    }
+    fn_000e9594((void*)(a0));
+    return (int)(v1);
+}
 
 struct unk_000e8a90_a0 {
     char pad_0[284];

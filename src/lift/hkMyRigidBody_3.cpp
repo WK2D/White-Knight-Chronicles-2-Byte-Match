@@ -59,4 +59,36 @@ void fn_00d68c9c(void* a0) {
     ((unk_00d68c9c_vc0*)((char*)a0 + 224))->vf4();
 }
 
+struct unk_00d68f78_a0 {
+    char pad_0[232];
+    u8 f_e8;
+    char pad_e9[271];
+    u32 f_1f8;
+};
+void* fn_00d68f78(unk_00d68f78_a0* a0) {
+    if ((int)(a0->f_e8) == (int)(4)) {
+        return (void*)(a0->f_1f8);
+    }
+    if ((int)(a0->f_e8) == (int)(5)) {
+        return (void*)(a0->f_1f8);
+    }
+    return (void*)(0);
+}
+
+struct unk_00d68fa4_a0 {
+    char pad_0[232];
+    u8 f_e8;
+    char pad_e9[271];
+    u32 f_1f8;
+};
+void* fn_00d68fa4(unk_00d68fa4_a0* a0) {
+    if ((int)(a0->f_e8) == (int)(4)) {
+        return (void*)(a0->f_1f8);
+    }
+    if ((int)(a0->f_e8) == (int)(5)) {
+        return (void*)(a0->f_1f8);
+    }
+    return (void*)(0);
+}
+
 }

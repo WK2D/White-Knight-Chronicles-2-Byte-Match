@@ -6,16 +6,16 @@ extern "C" {
 
 void fn_00a2123c(int);
 void fn_00a21380(void*);
-void fn_00b41f98(void);
-void* fn_00b41fb8(void);
+void fn_00b41f98(int);
+void* fn_00b41fb8(int);
 
-void fn_00a2affc(void) {
-    fn_00b41f98();
+void fn_00a2affc(int a0) {
+    fn_00b41f98((int)(a0));
 }
 
-void* fn_00a2b020(void) {
+void* fn_00a2b020(int a0) {
     void* t0;
-    t0 = fn_00b41fb8();
+    t0 = fn_00b41fb8((int)(a0));
     return (void*)(t0);
 }
 

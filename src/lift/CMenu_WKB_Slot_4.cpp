@@ -21,14 +21,19 @@ int fn_00683600(int a0, unk_00683600_a1* a1) {
     return (int)(v1);
 }
 
+struct unk_00683654_a0_10f0;
+struct unk_00683654_a0_10f0 {
+    char pad_0[208];
+    u8 f_d0;
+};
 struct unk_00683654_a0 {
     char pad_0[4336];
-    u32 f_10f0;
+    unk_00683654_a0_10f0* f_10f0;
 };
 int fn_00683654(unk_00683654_a0* a0) {
     int v0;
     if ((int)(a0->f_10f0) != (int)(0)) {
-        v0 = (int)(FIELD(u8, a0->f_10f0, 208));
+        v0 = (int)(a0->f_10f0->f_d0);
     } else {
         v0 = (int)(0);
     }

@@ -5,39 +5,53 @@
 extern "C" {
 
 
+struct unk_00081fa0_a0_4;
+struct unk_00081fa0_a0_4 {
+    void* f_0;
+};
 struct unk_00081fa0_a0 {
     char pad_0[4];
-    u32 f_4;
+    unk_00081fa0_a0_4* f_4;
 };
 void fn_00081fa0(unk_00081fa0_a0* a0) {
     if ((int)(a0->f_4) == (int)(0)) {
         return;
     }
-    FIELD(void*, a0->f_4, 0) = (void*)(a0);
+    a0->f_4->f_0 = (void*)(a0);
 }
 
+struct unk_00081fe4_a0_4;
+struct unk_00081fe4_a0_4 {
+    char pad_0[8];
+    u32 f_8;
+};
 struct unk_00081fe4_a0 {
     char pad_0[4];
-    u32 f_4;
+    unk_00081fe4_a0_4* f_4;
 };
 void* fn_00081fe4(unk_00081fe4_a0* a0) {
     int v0;
     if ((int)(a0->f_4) != (int)(0)) {
-        v0 = (int)(FIELD(u32, a0->f_4, 8));
+        v0 = (int)(a0->f_4->f_8);
     } else {
         v0 = (int)(0);
     }
     return (void*)(v0);
 }
 
+struct unk_00082004_a0_4;
+struct unk_00082004_a0_4 {
+    char pad_0[12];
+    u32 f_c;
+};
 struct unk_00082004_a0 {
     char pad_0[4];
-    u32 f_4;
+    unk_00082004_a0_4* f_4;
 };
 int fn_00082004(unk_00082004_a0* a0) {
     int v1;
     if ((int)(a0->f_4) != (int)(0)) {
-        v1 = (int)((u32)(FIELD(u32, a0->f_4, 12)) & 0x1);
+        v1 = (int)((u32)(a0->f_4->f_c) & 0x1);
     } else {
         v1 = (int)(0);
     }

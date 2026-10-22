@@ -55,11 +55,16 @@ int fn_00417f94(unk_00417f94_a0* a0, int a1) {
     return (int)(v1);
 }
 
+struct unk_00417fd0_a1_0;
+struct unk_00417fd0_a1_0 {
+    char pad_0[12];
+    u16 f_c;
+};
 struct unk_00417fd0_a1 {
-    u32 f_0;
+    unk_00417fd0_a1_0* f_0;
 };
 int fn_00417fd0(int a0, unk_00417fd0_a1* a1) {
-    return (int)((int)(short)(FIELD(u16, a1->f_0, 12)));
+    return (int)((int)(short)(a1->f_0->f_c));
 }
 
 }

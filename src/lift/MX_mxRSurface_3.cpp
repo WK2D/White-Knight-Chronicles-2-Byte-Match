@@ -5,15 +5,19 @@
 extern "C" {
 
 
+struct unk_00af6390_a0_4;
+struct unk_00af6390_a0_4 {
+    u32 f_0;
+};
 struct unk_00af6390_a0 {
     char pad_0[4];
-    u32 f_4;
+    unk_00af6390_a0_4* f_4;
 };
 struct unk_00af6390_a1 {
     u32 f_0;
 };
 void fn_00af6390(unk_00af6390_a0* a0, unk_00af6390_a1* a1) {
-    a1->f_0 = (u32)(FIELD(u32, a0->f_4, 0));
+    a1->f_0 = (u32)(a0->f_4->f_0);
 }
 
 }

@@ -16,11 +16,70 @@ u8 fn_007ce07c(unk_007ce07c_a0* a0, int a1, int a2, int a3, int a4, int a5) {
     return (u8)((u8)t0);
 }
 
-extern char g_007cf094_0[];
+struct unk_007cef90_g7738;
+struct unk_007cef90_g7738_0;
+struct unk_007cef90_g7738_0_6c;
+struct unk_007cef90_g7738_0_6c_8;
+struct unk_007cef90_g7738 {
+    unk_007cef90_g7738_0* f_0;
+};
+struct unk_007cef90_g7738_0 {
+    char pad_0[108];
+    unk_007cef90_g7738_0_6c* f_6c;
+};
+struct unk_007cef90_g7738_0_6c {
+    char pad_0[8];
+    unk_007cef90_g7738_0_6c_8* f_8;
+};
+struct unk_007cef90_g7738_0_6c_8 {
+    char pad_0[116];
+    u32 f_74;
+};
+extern unk_007cef90_g7738 g_007cef90_0;
+void* fn_007cef90(void) {
+    if ((int)((&g_007cef90_0)->f_0->f_6c) == (int)(0)) {
+        return (void*)(0);
+    }
+    if ((int)((&g_007cef90_0)->f_0->f_6c->f_8) == (int)(0)) {
+        return (void*)(0);
+    }
+    return (void*)((&g_007cef90_0)->f_0->f_6c->f_8->f_74);
+}
+
+struct unk_007cf094_g7738;
+struct unk_007cf094_g7738_0;
+struct unk_007cf094_g7738_0_6c;
+struct unk_007cf094_g7738_0_6c_8;
+struct unk_007cf094_g7738_0_6c_8_fc;
+struct unk_007cf094_g7738_0_6c_8_fc_4;
+struct unk_007cf094_g7738 {
+    unk_007cf094_g7738_0* f_0;
+};
+struct unk_007cf094_g7738_0 {
+    char pad_0[108];
+    unk_007cf094_g7738_0_6c* f_6c;
+};
+struct unk_007cf094_g7738_0_6c {
+    char pad_0[8];
+    unk_007cf094_g7738_0_6c_8* f_8;
+};
+struct unk_007cf094_g7738_0_6c_8 {
+    char pad_0[252];
+    unk_007cf094_g7738_0_6c_8_fc* f_fc;
+};
+struct unk_007cf094_g7738_0_6c_8_fc {
+    char pad_0[4];
+    unk_007cf094_g7738_0_6c_8_fc_4* f_4;
+};
+struct unk_007cf094_g7738_0_6c_8_fc_4 {
+    char pad_0[128];
+    u32 f_80;
+};
+extern unk_007cf094_g7738 g_007cf094_0;
 void* fn_007cf094(void) {
     int v0;
-    if ((int)(FIELD(u32, FIELD(u32, g_007cf094_0, 0), 108)) != (int)(0)) {
-        v0 = (int)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_007cf094_0, 0), 108), 8), 252), 4), 128));
+    if ((int)((&g_007cf094_0)->f_0->f_6c) != (int)(0)) {
+        v0 = (int)((&g_007cf094_0)->f_0->f_6c->f_8->f_fc->f_4->f_80);
     } else {
         v0 = (int)(0);
     }

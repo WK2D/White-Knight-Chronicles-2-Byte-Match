@@ -4,23 +4,7 @@
 
 extern "C" {
 
-int fn_00a3c6e8(void*, void*);
 void fn_00a3cac8(void*, int, int);
-void* fn_00b3e1d8(void*);
-
-void* fn_00a43f58(void* a0) {
-    void* t0;
-    int t1;
-    int v0;
-    if ((int)(a0) != (int)(0)) {
-        t0 = fn_00b3e1d8((void*)(a0));
-        t1 = fn_00a3c6e8((void*)(a0), (void*)(t0));
-        v0 = (int)(t1);
-    } else {
-        v0 = (int)(0);
-    }
-    return (void*)(v0);
-}
 
 void fn_00a44108(void* a0, int a1) {
     fn_00a3cac8((void*)((char*)a0 + 4), (int)(a1), (int)(256));

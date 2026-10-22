@@ -5,40 +5,55 @@
 extern "C" {
 
 
+struct unk_0079d6f8_a0_1168;
+struct unk_0079d6f8_a0_1168 {
+    char pad_0[6438];
+    u8 f_1926;
+};
 struct unk_0079d6f8_a0 {
     char pad_0[4456];
-    u32 f_1168;
+    unk_0079d6f8_a0_1168* f_1168;
 };
 int fn_0079d6f8(unk_0079d6f8_a0* a0) {
     int v1;
     if ((int)(a0->f_1168) != (int)(0)) {
-        v1 = (int)((int)(signed char)(FIELD(u8, a0->f_1168, 6438)));
+        v1 = (int)((int)(signed char)(a0->f_1168->f_1926));
     } else {
         v1 = (int)(0);
     }
     return (int)(v1);
 }
 
+struct unk_0079d71c_a0_1168;
+struct unk_0079d71c_a0_1168 {
+    char pad_0[6438];
+    u8 f_1926;
+};
 struct unk_0079d71c_a0 {
     char pad_0[4456];
-    u32 f_1168;
+    unk_0079d71c_a0_1168* f_1168;
 };
 void fn_0079d71c(unk_0079d71c_a0* a0, int a1) {
     if ((int)(a0->f_1168) == (int)(0)) {
         return;
     }
-    FIELD(u8, a0->f_1168, 6438) = (u8)(a1);
+    a0->f_1168->f_1926 = (u8)(a1);
 }
 
+struct unk_0079d754_a0_1168;
+struct unk_0079d754_a0_1168 {
+    char pad_0[6420];
+    u16 f_1914;
+};
 struct unk_0079d754_a0 {
     char pad_0[4456];
-    u32 f_1168;
+    unk_0079d754_a0_1168* f_1168;
 };
 void fn_0079d754(unk_0079d754_a0* a0, int a1) {
     if ((int)(a0->f_1168) == (int)(0)) {
         return;
     }
-    FIELD(u16, a0->f_1168, 6420) = (u16)(a1);
+    a0->f_1168->f_1914 = (u16)(a1);
 }
 
 }

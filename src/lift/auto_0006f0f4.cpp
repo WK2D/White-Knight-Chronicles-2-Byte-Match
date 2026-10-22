@@ -51,12 +51,16 @@ u8 fn_000711b8(int a0) {
     return (u8)((u8)t1);
 }
 
-extern char g_00071fc8_0[];
+struct unk_00071fc8_gm78b4;
+struct unk_00071fc8_gm78b4 {
+    u32 f_0;
+};
+extern unk_00071fc8_gm78b4 g_00071fc8_0;
 u32 fn_00071fc8(void* a0, int a1) {
     void* t0;
     int v0;
     if ((int)(a1) == (int)(-1)) {
-        v0 = (int)(FIELD(u32, g_00071fc8_0, 0));
+        v0 = (int)((&g_00071fc8_0)->f_0);
     } else {
         v0 = (int)(a1);
     }

@@ -4,16 +4,25 @@
 
 extern "C" {
 
-static int __attribute__((noinline)) stub_00411944(u32 p0, int p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
+static int __attribute__((noinline)) stub_00411944(void* p0, int p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static int __attribute__((noinline)) stub_00412610(void* p0, u32 p1, u32 p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
 
-extern char g_00411b0c_0[];
-int fn_00411b0c(void) {
+struct unk_00411ab0_gmd7c;
+struct unk_00411ab0_gmd7c_0;
+struct unk_00411ab0_gmd7c {
+    unk_00411ab0_gmd7c_0* f_0;
+};
+struct unk_00411ab0_gmd7c_0 {
+    char pad_0[20];
+    u32 f_14;
+};
+extern unk_00411ab0_gmd7c g_00411ab0_0;
+int fn_00411ab0(void) {
     int t0;
     int v0;
-    t0 = stub_00411944((u32)(FIELD(u32, g_00411b0c_0, 0)), (int)(1));
+    t0 = stub_00411944((void*)((&g_00411ab0_0)->f_0), (int)(1));
     if ((int)((u32)(t0) & 0xff) != (int)(0)) {
-        FIELD(u32, FIELD(u32, g_00411b0c_0, 0), 28) = (u32)(0);
+        (&g_00411ab0_0)->f_0->f_14 = (u32)((&g_00411ab0_0)->f_0->f_14 + 1);
         v0 = (int)(1);
     } else {
         v0 = (int)(0);
@@ -21,14 +30,48 @@ int fn_00411b0c(void) {
     return (int)(v0);
 }
 
-extern char g_00412964_0[];
+struct unk_00411b0c_gmd7c;
+struct unk_00411b0c_gmd7c_0;
+struct unk_00411b0c_gmd7c {
+    unk_00411b0c_gmd7c_0* f_0;
+};
+struct unk_00411b0c_gmd7c_0 {
+    char pad_0[28];
+    u32 f_1c;
+};
+extern unk_00411b0c_gmd7c g_00411b0c_0;
+int fn_00411b0c(void) {
+    int t0;
+    int v0;
+    t0 = stub_00411944((void*)((&g_00411b0c_0)->f_0), (int)(1));
+    if ((int)((u32)(t0) & 0xff) != (int)(0)) {
+        (&g_00411b0c_0)->f_0->f_1c = (u32)(0);
+        v0 = (int)(1);
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
+struct unk_00412964_gmd7c;
+struct unk_00412964_gmd7c_0;
+struct unk_00412964_gmd7c {
+    unk_00412964_gmd7c_0* f_0;
+};
+struct unk_00412964_gmd7c_0 {
+    char pad_0[12];
+    u32 f_c;
+    char pad_10[4];
+    u32 f_14;
+};
+extern unk_00412964_gmd7c g_00412964_0;
 int fn_00412964(void) {
     int t0;
     int t1;
     int v0;
-    t0 = stub_00411944((u32)(FIELD(u32, g_00412964_0, 0)), (int)(1));
+    t0 = stub_00411944((void*)((&g_00412964_0)->f_0), (int)(1));
     if ((int)((u32)(t0) & 0xff) != (int)(0)) {
-        t1 = stub_00412610((void*)(FIELD(u32, g_00412964_0, 0)), (u32)(FIELD(u32, FIELD(u32, g_00412964_0, 0), 12)), (u32)(FIELD(u32, FIELD(u32, g_00412964_0, 0), 20)));
+        t1 = stub_00412610((void*)((&g_00412964_0)->f_0), (u32)((&g_00412964_0)->f_0->f_c), (u32)((&g_00412964_0)->f_0->f_14));
         v0 = (int)(1);
     } else {
         v0 = (int)(0);

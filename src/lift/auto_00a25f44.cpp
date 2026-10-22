@@ -5,9 +5,14 @@
 extern "C" {
 
 
-extern char g_00a26910_0[];
+struct unk_00a26910_gm2188;
+struct unk_00a26910_gm2188 {
+    char pad_0[8];
+    u32 f_8;
+};
+extern unk_00a26910_gm2188 g_00a26910_0;
 int fn_00a26910(void) {
-    return (int)(FIELD(u32, g_00a26910_0, 8) + -1);
+    return (int)((&g_00a26910_0)->f_8 + -1);
 }
 
 }

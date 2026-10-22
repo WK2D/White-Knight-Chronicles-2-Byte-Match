@@ -5,24 +5,29 @@
 extern "C" {
 
 static void* __attribute__((noinline)) stub_003bdddc(int p0) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
-void fn_00b38268(void*);
+void fn_00b38268(void*, int);
 
 struct unk_003bb2e8_a0 {
     char pad_0[8];
     u32 f_8;
 };
-void fn_003bb2e8(unk_003bb2e8_a0* a0) {
-    fn_00b38268((void*)(a0->f_8 + 10));
+void fn_003bb2e8(unk_003bb2e8_a0* a0, int a1) {
+    fn_00b38268((void*)(a0->f_8 + 10), (int)(a1));
 }
 
+struct unk_003bde20_a0_4;
+struct unk_003bde20_a0_4 {
+    char pad_0[8960];
+    u16 f_2300;
+};
 struct unk_003bde20_a0 {
     char pad_0[4];
-    u32 f_4;
+    unk_003bde20_a0_4* f_4;
 };
 int fn_003bde20(unk_003bde20_a0* a0) {
     int v0;
     if ((int)(a0->f_4) != (int)(0)) {
-        v0 = (int)(FIELD(u16, a0->f_4, 8960));
+        v0 = (int)(a0->f_4->f_2300);
     } else {
         v0 = (int)(0);
     }
@@ -41,14 +46,19 @@ int fn_003bde40(int a0) {
     return (int)(v0);
 }
 
+struct unk_003bdec0_a0_4;
+struct unk_003bdec0_a0_4 {
+    char pad_0[8962];
+    u16 f_2302;
+};
 struct unk_003bdec0_a0 {
     char pad_0[4];
-    u32 f_4;
+    unk_003bdec0_a0_4* f_4;
 };
 int fn_003bdec0(unk_003bdec0_a0* a0) {
     int v0;
     if ((int)(a0->f_4) != (int)(0)) {
-        v0 = (int)(FIELD(u16, a0->f_4, 8962));
+        v0 = (int)(a0->f_4->f_2302);
     } else {
         v0 = (int)(0);
     }
@@ -83,25 +93,35 @@ void* fn_003bdf58(unk_003bdf58_a0* a0) {
     return (void*)(v0);
 }
 
+struct unk_003bdfb0_a0_4;
+struct unk_003bdfb0_a0_4 {
+    char pad_0[9192];
+    u16 f_23e8;
+};
 struct unk_003bdfb0_a0 {
     char pad_0[4];
-    u32 f_4;
+    unk_003bdfb0_a0_4* f_4;
 };
 void fn_003bdfb0(unk_003bdfb0_a0* a0, int a1) {
     if ((int)(a0->f_4) == (int)(0)) {
         return;
     }
-    FIELD(u16, a0->f_4, 9192) = (u16)(a1);
+    a0->f_4->f_23e8 = (u16)(a1);
 }
 
+struct unk_003bdfc8_a0_4;
+struct unk_003bdfc8_a0_4 {
+    char pad_0[9192];
+    u16 f_23e8;
+};
 struct unk_003bdfc8_a0 {
     char pad_0[4];
-    u32 f_4;
+    unk_003bdfc8_a0_4* f_4;
 };
 int fn_003bdfc8(unk_003bdfc8_a0* a0) {
     int v0;
     if ((int)(a0->f_4) != (int)(0)) {
-        v0 = (int)(FIELD(u16, a0->f_4, 9192));
+        v0 = (int)(a0->f_4->f_23e8);
     } else {
         v0 = (int)(0);
     }

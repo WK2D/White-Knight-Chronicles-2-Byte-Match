@@ -21,4 +21,42 @@ int fn_007b720c(int a0, int a1, int a2) {
     return (int)(v0);
 }
 
+struct unk_007b7c50_g729c;
+struct unk_007b7c50_g729c_0;
+struct unk_007b7c50_g729c_0_6c;
+struct unk_007b7c50_g729c_0_6c_8;
+struct unk_007b7c50_g729c_0_6c_8_fc;
+struct unk_007b7c50_g729c {
+    unk_007b7c50_g729c_0* f_0;
+};
+struct unk_007b7c50_g729c_0 {
+    char pad_0[108];
+    unk_007b7c50_g729c_0_6c* f_6c;
+};
+struct unk_007b7c50_g729c_0_6c {
+    char pad_0[8];
+    unk_007b7c50_g729c_0_6c_8* f_8;
+};
+struct unk_007b7c50_g729c_0_6c_8 {
+    char pad_0[252];
+    unk_007b7c50_g729c_0_6c_8_fc* f_fc;
+};
+struct unk_007b7c50_g729c_0_6c_8_fc {
+    char pad_0[8];
+    u32 f_8;
+};
+extern unk_007b7c50_g729c g_007b7c50_0;
+void* fn_007b7c50(void) {
+    if ((int)((&g_007b7c50_0)->f_0->f_6c) == (int)(0)) {
+        return (void*)(0);
+    }
+    if ((int)((&g_007b7c50_0)->f_0->f_6c->f_8) == (int)(0)) {
+        return (void*)(0);
+    }
+    if ((int)((&g_007b7c50_0)->f_0->f_6c->f_8->f_fc) == (int)(0)) {
+        return (void*)(0);
+    }
+    return (void*)((&g_007b7c50_0)->f_0->f_6c->f_8->f_fc->f_8);
+}
+
 }

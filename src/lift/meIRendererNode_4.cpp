@@ -13,24 +13,34 @@ void fn_00ae069c(unk_00ae069c_a0* a0, int a1) {
     a0->f_8 = (u32)((int)(a0->f_8) + (int)(a1));
 }
 
+struct unk_00ae06ac_a0_c;
+struct unk_00ae06ac_a0_c {
+    char pad_0[16];
+    void* f_10;
+};
 struct unk_00ae06ac_a0 {
     char pad_0[8];
     u32 f_8;
-    u32 f_c;
+    unk_00ae06ac_a0_c* f_c;
 };
 void* fn_00ae06ac(unk_00ae06ac_a0* a0) {
-    FIELD(void*, a0->f_c, 16) = (void*)(a0->f_8);
+    a0->f_c->f_10 = (void*)(a0->f_8);
     return (void*)(a0->f_8);
 }
 
+struct unk_00ae06c0_a0_c;
+struct unk_00ae06c0_a0_c {
+    char pad_0[20];
+    u32 f_14;
+};
 struct unk_00ae06c0_a0 {
     char pad_0[8];
     u32 f_8;
-    u32 f_c;
+    unk_00ae06c0_a0_c* f_c;
 };
 void fn_00ae06c0(unk_00ae06c0_a0* a0, int a1) {
     a0->f_8 = (u32)((int)(a0->f_8) + (int)((u32)(a1) << 3));
-    FIELD(u32, a0->f_c, 20) = (u32)(a1);
+    a0->f_c->f_14 = (u32)(a1);
 }
 
 struct unk_00ae06dc_a0 {

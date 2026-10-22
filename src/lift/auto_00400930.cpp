@@ -115,20 +115,28 @@ u8 fn_004013b8(void* a0, int a1) {
     return (u8)((u8)t1);
 }
 
+struct unk_00402444_a0_8;
+struct unk_00402444_a0_8 {
+    u8 f_0;
+};
 struct unk_00402444_a0 {
     char pad_0[8];
-    u32 f_8;
+    unk_00402444_a0_8* f_8;
 };
 void fn_00402444(unk_00402444_a0* a0) {
-    FIELD(u8, a0->f_8, 0) = (u8)(1);
+    a0->f_8->f_0 = (u8)(1);
 }
 
+struct unk_00402454_a0_8;
+struct unk_00402454_a0_8 {
+    u8 f_0;
+};
 struct unk_00402454_a0 {
     char pad_0[8];
-    u32 f_8;
+    unk_00402454_a0_8* f_8;
 };
 void fn_00402454(unk_00402454_a0* a0) {
-    FIELD(u8, a0->f_8, 0) = (u8)(0);
+    a0->f_8->f_0 = (u8)(0);
 }
 
 }

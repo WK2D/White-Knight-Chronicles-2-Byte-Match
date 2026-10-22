@@ -26,4 +26,21 @@ void* fn_000781f8(void) {
     return (void*)(-1);
 }
 
+int fn_00078228(int a0) {
+    if ((int)(a0) != (int)(0)) {
+        if ((int)((u32)(a0) & 0xffffff80) != (int)(0)) {
+            if ((u32)(((int)(a0) + -15728640) + 16991) > (u32)(30)) {
+                if ((u32)(((int)(a0) + -15728640) + 16768) <= (u32)(16)) {
+                    return (int)(1);
+                }
+                return (int)(0);
+            }
+            return (int)(1);
+        } else {
+            return (int)(1);
+        }
+    }
+    return (int)(0);
+}
+
 }

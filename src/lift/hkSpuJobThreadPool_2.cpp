@@ -5,12 +5,17 @@
 extern "C" {
 
 
+struct unk_00c1ca74_a0_38;
+struct unk_00c1ca74_a0_38 {
+    char pad_0[36];
+    u32 f_24;
+};
 struct unk_00c1ca74_a0 {
     char pad_0[56];
-    u32 f_38;
+    unk_00c1ca74_a0_38* f_38;
 };
 int fn_00c1ca74(unk_00c1ca74_a0* a0) {
-    return (int)((int)FIELD(u32, a0->f_38, 36));
+    return (int)((int)a0->f_38->f_24);
 }
 
 }

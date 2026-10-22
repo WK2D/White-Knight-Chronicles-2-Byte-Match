@@ -42,4 +42,38 @@ u8 fn_001dec5c(int a0, int a1) {
     return (u8)((u8)t0);
 }
 
+struct unk_001e08c0_gm4c18;
+struct unk_001e08c0_gm4c18_0;
+struct unk_001e08c0_gm4c18_0_3c;
+struct unk_001e08c0_gm4c18 {
+    unk_001e08c0_gm4c18_0* f_0;
+};
+struct unk_001e08c0_gm4c18_0 {
+    char pad_0[60];
+    unk_001e08c0_gm4c18_0_3c* f_3c;
+};
+struct unk_001e08c0_gm4c18_0_3c {
+    char pad_0[7356];
+    u8 f_1cbc;
+    char pad_1cbd[1855];
+    u32 f_23fc;
+};
+extern unk_001e08c0_gm4c18 g_001e08c0_0;
+int fn_001e08c0(void) {
+    int v0;
+    int v1;
+    if ((int)((&g_001e08c0_0)->f_0->f_3c->f_23fc) != (int)(0)) {
+        if ((u32)((&g_001e08c0_0)->f_0->f_3c->f_1cbc) <= (u32)(7)) {
+            (&g_001e08c0_0)->f_0->f_3c->f_1cbc = (u8)((&g_001e08c0_0)->f_0->f_3c->f_1cbc + 1);
+            v0 = (int)(0);
+        } else {
+            v0 = (int)(1);
+        }
+        v1 = (int)(v0);
+    } else {
+        v1 = (int)(1);
+    }
+    return (int)(v1);
+}
+
 }

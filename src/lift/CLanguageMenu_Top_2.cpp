@@ -5,12 +5,17 @@
 extern "C" {
 
 
+struct unk_0086d1c8_a0_14c;
+struct unk_0086d1c8_a0_14c {
+    char pad_0[1710];
+    u16 f_6ae;
+};
 struct unk_0086d1c8_a0 {
     char pad_0[332];
-    u32 f_14c;
+    unk_0086d1c8_a0_14c* f_14c;
 };
 int fn_0086d1c8(unk_0086d1c8_a0* a0) {
-    return (int)((int)(short)(FIELD(u16, a0->f_14c, 1710)));
+    return (int)((int)(short)(a0->f_14c->f_6ae));
 }
 
 struct unk_0086d1f0_a0 {
@@ -33,9 +38,23 @@ int fn_0086d208(int a0, int a1) {
     return (int)(a1 + 15);
 }
 
-extern char g_0086d214_0[];
+struct unk_0086d214_gm68cc;
+struct unk_0086d214_gm68cc_0;
+struct unk_0086d214_gm68cc_0_a4;
+struct unk_0086d214_gm68cc {
+    unk_0086d214_gm68cc_0* f_0;
+};
+struct unk_0086d214_gm68cc_0 {
+    char pad_0[164];
+    unk_0086d214_gm68cc_0_a4* f_a4;
+};
+struct unk_0086d214_gm68cc_0_a4 {
+    char pad_0[208];
+    u32 f_d0;
+};
+extern unk_0086d214_gm68cc g_0086d214_0;
 u32 fn_0086d214(void) {
-    return (u32)(FIELD(u32, FIELD(u32, FIELD(u32, g_0086d214_0, 0), 164), 208));
+    return (u32)((&g_0086d214_0)->f_0->f_a4->f_d0);
 }
 
 }

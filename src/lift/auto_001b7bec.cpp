@@ -7,23 +7,32 @@ extern "C" {
 void* fn_00041bcc(void*);
 int fn_00b38808(void*);
 
-extern char g_001b7bec_0[];
+struct unk_001b7bec_gm5070;
+struct unk_001b7bec_gm5070 {
+    u32 f_0;
+};
+extern unk_001b7bec_gm5070 g_001b7bec_0;
 int fn_001b7bec(void) {
-    FIELD(u32, g_001b7bec_0, 0) = (u32)(FIELD(u32, g_001b7bec_0, 0) + 1);
+    (&g_001b7bec_0)->f_0 = (u32)((&g_001b7bec_0)->f_0 + 1);
     return (int)(1);
 }
 
-extern char g_001b7fe8_0[];
+struct unk_001b7fe8_gm5070;
+struct unk_001b7fe8_gm5070 {
+    char pad_0[4];
+    u32 f_4;
+};
+extern unk_001b7fe8_gm5070 g_001b7fe8_0;
 int fn_001b7fe8(void* a0, int a1) {
     void* t0;
     int t1;
     if ((int)(a1) != (int)(1)) {
-        FIELD(u32, g_001b7fe8_0, 4) = (u32)(0);
+        (&g_001b7fe8_0)->f_4 = (u32)(0);
         return (int)(1);
     }
     t0 = fn_00041bcc((void*)(a0));
     t1 = fn_00b38808((void*)(t0));
-    FIELD(u32, g_001b7fe8_0, 4) = (u32)(t1);
+    (&g_001b7fe8_0)->f_4 = (u32)(t1);
     return (int)(0);
 }
 

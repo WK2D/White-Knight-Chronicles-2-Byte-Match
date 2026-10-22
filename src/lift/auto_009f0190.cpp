@@ -6,9 +6,48 @@ extern "C" {
 
 static void* __attribute__((noinline)) stub_009f07f4(int p0, int p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 
-extern char g_009f01a0_0[];
+struct unk_009f01a0_gm2e84;
+struct unk_009f01a0_gm2e84 {
+    char pad_0[160];
+    u32 f_a0;
+};
+extern unk_009f01a0_gm2e84 g_009f01a0_0;
 void* fn_009f01a0(int a0) {
-    return (void*)((int)((int)(a0) * 148) + (int)(FIELD(u32, g_009f01a0_0, 160)));
+    return (void*)((int)((int)(a0) * 148) + (int)((&g_009f01a0_0)->f_a0));
+}
+
+struct unk_009f0748_gm2e84;
+struct unk_009f0748_gm2e84 {
+    char pad_0[52];
+    u32 f_34;
+    u32 f_38;
+};
+extern unk_009f0748_gm2e84 g_009f0748_0;
+void* fn_009f0748(int a0) {
+    if ((int)(a0) < (int)(0)) {
+        return (void*)(0);
+    }
+    if ((int)((&g_009f0748_0)->f_38) <= (int)(a0)) {
+        return (void*)(0);
+    }
+    return (void*)(FIELD(u32, (int)((u32)(a0) << 2) + (int)((&g_009f0748_0)->f_34), 0));
+}
+
+struct unk_009f0788_gm2e84;
+struct unk_009f0788_gm2e84 {
+    char pad_0[64];
+    u32 f_40;
+    u32 f_44;
+};
+extern unk_009f0788_gm2e84 g_009f0788_0;
+void* fn_009f0788(int a0) {
+    if ((int)(a0) < (int)(0)) {
+        return (void*)(0);
+    }
+    if ((int)((&g_009f0788_0)->f_44) <= (int)(a0)) {
+        return (void*)(0);
+    }
+    return (void*)(FIELD(u32, (int)((int)(a0) * 148) + (int)((&g_009f0788_0)->f_40), 0));
 }
 
 void* fn_009f08b0(int a0) {

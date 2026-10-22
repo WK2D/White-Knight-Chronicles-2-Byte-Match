@@ -106,6 +106,35 @@ void* fn_0002f9b4(unk_0002f9b4_a0* a0) {
     return (void*)((int)(a0->f_24) - (int)(a0->f_2c));
 }
 
+struct unk_000304e8_a1 {
+    u32 f_0;
+};
+void* fn_000304e8(int a0, unk_000304e8_a1* a1) {
+    if ((int)(a1) == (int)(0)) {
+        return (void*)(0);
+    }
+    if ((int)(a1->f_0) == (int)(-1)) {
+        return (void*)(0);
+    }
+    return (void*)((char*)a1 + -8);
+}
+
+struct unk_00030654_a0 {
+    char pad_0[40];
+    u32 f_28;
+    char pad_2c[12];
+    u32 f_38;
+};
+int fn_00030654(unk_00030654_a0* a0, int a1) {
+    if ((u32)(a0->f_38) <= (u32)(a1)) {
+        if ((u32)(a1) < (u32)((int)(a0->f_38) + (int)(a0->f_28))) {
+            return (int)(1);
+        }
+        return (int)(0);
+    }
+    return (int)(0);
+}
+
 struct unk_0003068c_a1 {
     char pad_0[4];
     u32 f_4;

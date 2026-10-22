@@ -16,9 +16,14 @@ void fn_0011aa84(unk_0011aa84_a0* a0, int a1) {
     a0->f_22c = (u8)(1);
 }
 
+struct unk_0011aa94_a0_529c;
+struct unk_0011aa94_a0_529c {
+    u32 f_0;
+    u32 f_4;
+};
 struct unk_0011aa94_a0 {
     char pad_0[21148];
-    u32 f_529c;
+    unk_0011aa94_a0_529c* f_529c;
     char pad_52a0[28];
     u32 f_52bc;
     u32 f_52c0;
@@ -33,8 +38,8 @@ void fn_0011aa94(unk_0011aa94_a0* a0) {
     }
     a0->f_52d8 = (void*)(a0);
     a0->f_52c8 = (u32)(30000);
-    a0->f_52bc = (u32)(FIELD(u32, a0->f_529c, 0));
-    a0->f_52c0 = (u32)(FIELD(u32, a0->f_529c, 4));
+    a0->f_52bc = (u32)(a0->f_529c->f_0);
+    a0->f_52c0 = (u32)(a0->f_529c->f_4);
 }
 
 }

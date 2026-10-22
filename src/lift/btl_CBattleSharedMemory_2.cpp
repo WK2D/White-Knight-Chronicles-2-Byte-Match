@@ -39,13 +39,30 @@ void fn_0058651c(unk_0058651c_a0* a0) {
     a0->f_0 = (u32)(0);
 }
 
+struct unk_005865d8_a0_0;
+struct unk_005865d8_a0_0 {
+    char pad_0[2];
+    u16 f_2;
+};
+struct unk_005865d8_a0 {
+    unk_005865d8_a0_0* f_0;
+};
+void fn_005865d8(unk_005865d8_a0* a0, int a1) {
+    a0->f_0->f_2 = (u16)((u32)(a1) | (u32)(a0->f_0->f_2));
+}
+
+struct unk_005865ec_a0_0;
+struct unk_005865ec_a0_0 {
+    char pad_0[4];
+    u32 f_4;
+};
 struct unk_005865ec_a0 {
-    u32 f_0;
+    unk_005865ec_a0_0* f_0;
 };
 void* fn_005865ec(unk_005865ec_a0* a0) {
     int v0;
     if ((int)(a0->f_0) != (int)(0)) {
-        v0 = (int)(FIELD(u32, a0->f_0, 4));
+        v0 = (int)(a0->f_0->f_4);
     } else {
         v0 = (int)(0);
     }

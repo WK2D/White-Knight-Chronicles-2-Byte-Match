@@ -8,11 +8,16 @@ void fn_00a19868(u32);
 void fn_00b3d088(void*, int, int);
 int fn_00b3f378(u32, u32);
 
-extern char g_00a1cffc_0[];
+struct unk_00a1cffc_gm2468;
+struct unk_00a1cffc_gm2468 {
+    u32 f_0;
+    u32 f_4;
+};
+extern unk_00a1cffc_gm2468 g_00a1cffc_0;
 void fn_00a1cffc(void) {
-    if ((int)(FIELD(u32, g_00a1cffc_0, 0)) != (int)(0)) {
-        fn_00a19868((u32)(FIELD(u32, g_00a1cffc_0, 4)));
-        fn_00b3d088((void*)(g_00a1cffc_0), (int)(0), (int)(4236));
+    if ((int)((&g_00a1cffc_0)->f_0) != (int)(0)) {
+        fn_00a19868((u32)((&g_00a1cffc_0)->f_4));
+        fn_00b3d088((void*)((&g_00a1cffc_0)), (int)(0), (int)(4236));
     }
 }
 

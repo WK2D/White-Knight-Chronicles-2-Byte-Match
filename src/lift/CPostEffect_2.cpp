@@ -5,9 +5,21 @@
 extern "C" {
 
 void fn_00b396f8(int, int, int);
+void fn_00b39708(int, int, u32);
+void fn_00b39718(int, int, int, int, int, int);
 
 void fn_004b25bc(int a0, int a1, int a2) {
     fn_00b396f8((int)(a1), (int)(a2), (int)(0));
+}
+
+struct unk_004b2cac_a0 {
+    char pad_0[16];
+    u32 f_10;
+};
+void fn_004b2cac(unk_004b2cac_a0* a0, int a1, int a2, int a3) {
+    fn_00b396f8((int)(a1), (int)(a3), (int)(1));
+    fn_00b39708((int)(a1), (int)(a3), (u32)(FIELD(u32, FIELD(u32, (int)((u32)(a2) << 2) + (int)(a0->f_10), 0), 4)));
+    fn_00b39718((int)(a1), (int)(a3), (int)(0), (int)(2), (int)(2), (int)(1));
 }
 
 }

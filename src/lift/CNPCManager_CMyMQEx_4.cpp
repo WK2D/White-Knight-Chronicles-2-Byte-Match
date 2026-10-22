@@ -5,14 +5,18 @@
 extern "C" {
 
 
-struct unk_00b7c8a0_a0 {
+struct unk_00b7c8a0_a0_0;
+struct unk_00b7c8a0_a0_0 {
     u32 f_0;
+};
+struct unk_00b7c8a0_a0 {
+    unk_00b7c8a0_a0_0* f_0;
     u32 f_4;
 };
 void* fn_00b7c8a0(unk_00b7c8a0_a0* a0) {
     int v2;
     if ((int)(a0->f_0) != (int)(0)) {
-        v2 = (int)((int)(FIELD(u32, a0->f_0, 0)) + (int)(a0->f_4));
+        v2 = (int)((int)(a0->f_0->f_0) + (int)(a0->f_4));
     } else {
         v2 = (int)(0);
     }

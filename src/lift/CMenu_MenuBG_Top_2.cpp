@@ -11,15 +11,22 @@ int fn_007c508c(int a0) {
     return (int)(1);
 }
 
+struct unk_007c50b0_a0_24;
+struct unk_007c50b0_a0_24 {
+    char pad_0[4284];
+    u32 f_10bc;
+    char pad_10c0[24];
+    u32 f_10d8;
+};
 struct unk_007c50b0_a0 {
     char pad_0[36];
-    u32 f_24;
+    unk_007c50b0_a0_24* f_24;
 };
 int fn_007c50b0(unk_007c50b0_a0* a0) {
-    if ((int)(FIELD(u32, a0->f_24, 4312)) != (int)(1)) {
+    if ((int)(a0->f_24->f_10d8) != (int)(1)) {
         return (int)(1);
     }
-    FIELD(u32, a0->f_24, 4284) = (u32)(0);
+    a0->f_24->f_10bc = (u32)(0);
     return (int)(1);
 }
 

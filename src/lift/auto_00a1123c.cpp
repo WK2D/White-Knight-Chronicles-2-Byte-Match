@@ -10,9 +10,14 @@ int fn_00a11424(int a0) {
     return (int)((int)((u32)(a0) << 5));
 }
 
-extern char g_00a11430_0[];
+struct unk_00a11430_gm2738;
+struct unk_00a11430_gm2738 {
+    char pad_0[44];
+    u32 f_2c;
+};
+extern unk_00a11430_gm2738 g_00a11430_0;
 int fn_00a11430(void) {
-    return (int)((int)(FIELD(u32, g_00a11430_0, 44)) >> 5);
+    return (int)((int)((&g_00a11430_0)->f_2c) >> 5);
 }
 
 extern char g_00a11a6c_0[];

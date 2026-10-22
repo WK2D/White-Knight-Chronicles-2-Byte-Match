@@ -21,4 +21,32 @@ int fn_007a57f8(int a0, unk_007a57f8_a1* a1) {
     return (int)(v1);
 }
 
+struct unk_007a5990_a0_1104;
+struct unk_007a5990_a0_1104 {
+    char pad_0[744];
+    u8 f_2e8;
+};
+struct unk_007a5990_a0 {
+    char pad_0[4356];
+    unk_007a5990_a0_1104* f_1104;
+    char pad_1108[293];
+    u8 f_122d;
+    u8 f_122e;
+};
+int fn_007a5990(unk_007a5990_a0* a0) {
+    int v2;
+    if ((int)(a0->f_122e) == (int)(0)) {
+        if ((int)(a0->f_1104) != (int)(0)) {
+            if ((int)(a0->f_1104->f_2e8) == (int)(0)) {
+            } else {
+                return (int)(1);
+            }
+        }
+        v2 = (int)(a0->f_122d);
+    } else {
+        v2 = (int)(1);
+    }
+    return (int)(v2);
+}
+
 }

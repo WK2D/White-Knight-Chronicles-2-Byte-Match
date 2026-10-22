@@ -11,14 +11,19 @@ void fn_00779464(int a0, void* a1, int a2, void* a3) {
     fn_00b38198((int)(a0), (void*)(g_00779464_0), (int)(a2), (void*)((char*)a1 + 1), (void*)((char*)a3 + 1));
 }
 
+struct unk_0077aadc_a0_10e0;
+struct unk_0077aadc_a0_10e0 {
+    char pad_0[992];
+    u16 f_3e0;
+};
 struct unk_0077aadc_a0 {
     char pad_0[4320];
-    u32 f_10e0;
+    unk_0077aadc_a0_10e0* f_10e0;
 };
 int fn_0077aadc(unk_0077aadc_a0* a0) {
     int v0;
     if ((int)(a0->f_10e0) != (int)(0)) {
-        v0 = (int)(FIELD(u16, a0->f_10e0, 992));
+        v0 = (int)(a0->f_10e0->f_3e0);
     } else {
         v0 = (int)(0);
     }

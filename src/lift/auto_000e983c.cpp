@@ -62,4 +62,16 @@ void fn_000eabac(unk_000eabac_a0* a0) {
     fn_000e9594((void*)(a0));
 }
 
+struct unk_000eabf4_a0 {
+    char pad_0[44];
+    u8 f_2c;
+    u8 f_2d;
+};
+void fn_000eabf4(unk_000eabf4_a0* a0) {
+    fn_000e95c8((void*)(a0), (int)(0));
+    a0->f_2d = (u8)(0);
+    a0->f_2c = (u8)(1);
+    fn_000e9594((void*)(a0));
+}
+
 }

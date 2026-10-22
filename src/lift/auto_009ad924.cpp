@@ -18,9 +18,14 @@ int fn_009ae0e0(void* a0, int a1, int a2, void* a3) {
     return (int)(v0);
 }
 
-extern char g_009ae128_0[];
+struct unk_009ae128_gm3b90;
+struct unk_009ae128_gm3b90 {
+    char pad_0[88];
+    u32 f_58;
+};
+extern unk_009ae128_gm3b90 g_009ae128_0;
 int fn_009ae128(void) {
-    FIELD(u32, g_009ae128_0, 88) = (u32)(0);
+    (&g_009ae128_0)->f_58 = (u32)(0);
     return (int)(0);
 }
 

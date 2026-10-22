@@ -58,10 +58,15 @@ void fn_009349a0(unk_009349a0_a0* a0) {
     a0->f_0 = (void*)(g_009349a0_1);
 }
 
-extern char g_00934fc0_0[];
+struct unk_00934fc0_gm4624;
+struct unk_00934fc0_gm4624 {
+    char pad_0[31];
+    u8 f_1f;
+};
+extern unk_00934fc0_gm4624 g_00934fc0_0;
 void fn_00934fc0(int a0) {
-    fn_00b3ccd8((void*)(g_00934fc0_0), (int)(a0), (int)(31));
-    FIELD(u8, g_00934fc0_0, 31) = (u8)(0);
+    fn_00b3ccd8((void*)((&g_00934fc0_0)), (int)(a0), (int)(31));
+    (&g_00934fc0_0)->f_1f = (u8)(0);
 }
 
 struct unk_009350d4_a0 {

@@ -7,13 +7,22 @@ extern "C" {
 void fn_00a19868(u32);
 void fn_00b3d088(void*, int, int);
 
-extern char g_009f5578_0[];
+struct unk_009f5578_gm2da0;
+struct unk_009f5578_gm2da0 {
+    u32 f_0;
+    u32 f_4;
+    char pad_8[12];
+    u32 f_14;
+    char pad_18[36];
+    u32 f_3c;
+};
+extern unk_009f5578_gm2da0 g_009f5578_0;
 void fn_009f5578(void) {
-    if ((int)(FIELD(u32, g_009f5578_0, 0)) != (int)(0)) {
-        fn_00a19868((u32)(FIELD(u32, g_009f5578_0, 60)));
-        fn_00a19868((u32)(FIELD(u32, g_009f5578_0, 20)));
-        fn_00a19868((u32)(FIELD(u32, g_009f5578_0, 4)));
-        fn_00b3d088((void*)(g_009f5578_0), (int)(0), (int)(100));
+    if ((int)((&g_009f5578_0)->f_0) != (int)(0)) {
+        fn_00a19868((u32)((&g_009f5578_0)->f_3c));
+        fn_00a19868((u32)((&g_009f5578_0)->f_14));
+        fn_00a19868((u32)((&g_009f5578_0)->f_4));
+        fn_00b3d088((void*)((&g_009f5578_0)), (int)(0), (int)(100));
     }
 }
 

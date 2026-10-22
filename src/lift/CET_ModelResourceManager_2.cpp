@@ -7,51 +7,89 @@ extern "C" {
 static void __attribute__((noinline)) stub_0091409c(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
 void fn_00b3cd48(void*);
 
-extern char g_009147a8_0[];
+struct unk_009147a8_gm4ce0;
+struct unk_009147a8_gm4ce0 {
+    u32 f_0;
+};
+extern unk_009147a8_gm4ce0 g_009147a8_0;
 int fn_009147a8(void) {
-    FIELD(u32, g_009147a8_0, 0) = (u32)(0);
+    (&g_009147a8_0)->f_0 = (u32)(0);
     return (int)(1);
 }
 
-extern char g_009147bc_0[];
+struct unk_009147bc_gm4ce0;
+struct unk_009147bc_gm4ce0 {
+    u32 f_0;
+};
+extern unk_009147bc_gm4ce0 g_009147bc_0;
 int fn_009147bc(void) {
-    FIELD(u32, g_009147bc_0, 0) = (u32)(0);
+    (&g_009147bc_0)->f_0 = (u32)(0);
     return (int)(1);
 }
 
-extern char g_009147e0_0[];
+struct unk_009147e0_gm4ce0;
+struct unk_009147e0_gm4ce0 {
+    char pad_0[4];
+    u8 f_4;
+};
+extern unk_009147e0_gm4ce0 g_009147e0_0;
 int fn_009147e0(void) {
-    FIELD(u8, g_009147e0_0, 4) = (u8)(0);
+    (&g_009147e0_0)->f_4 = (u8)(0);
     return (int)(1);
 }
 
-extern char g_009147f4_0[];
+struct unk_009147f4_gm4ce0;
+struct unk_009147f4_gm4ce0 {
+    char pad_0[4];
+    u8 f_4;
+};
+extern unk_009147f4_gm4ce0 g_009147f4_0;
 int fn_009147f4(void) {
-    FIELD(u8, g_009147f4_0, 4) = (u8)(0);
+    (&g_009147f4_0)->f_4 = (u8)(0);
     return (int)(1);
 }
 
-extern char g_00914808_0[];
+struct unk_00914808_gm4ce0;
+struct unk_00914808_gm4ce0 {
+    char pad_0[4];
+    u8 f_4;
+};
+extern unk_00914808_gm4ce0 g_00914808_0;
 int fn_00914808(void) {
-    FIELD(u8, g_00914808_0, 4) = (u8)(0);
+    (&g_00914808_0)->f_4 = (u8)(0);
     return (int)(1);
 }
 
-extern char g_0091481c_0[];
+struct unk_0091481c_gm4ce0;
+struct unk_0091481c_gm4ce0 {
+    char pad_0[4];
+    u8 f_4;
+};
+extern unk_0091481c_gm4ce0 g_0091481c_0;
 int fn_0091481c(void) {
-    FIELD(u8, g_0091481c_0, 4) = (u8)(0);
+    (&g_0091481c_0)->f_4 = (u8)(0);
     return (int)(1);
 }
 
-extern char g_00914830_0[];
+struct unk_00914830_gm4ce0;
+struct unk_00914830_gm4ce0 {
+    char pad_0[4];
+    u8 f_4;
+};
+extern unk_00914830_gm4ce0 g_00914830_0;
 int fn_00914830(void) {
-    FIELD(u8, g_00914830_0, 4) = (u8)(0);
+    (&g_00914830_0)->f_4 = (u8)(0);
     return (int)(1);
 }
 
-extern char g_00914844_0[];
+struct unk_00914844_gm4ce0;
+struct unk_00914844_gm4ce0 {
+    char pad_0[4];
+    u8 f_4;
+};
+extern unk_00914844_gm4ce0 g_00914844_0;
 int fn_00914844(void) {
-    FIELD(u8, g_00914844_0, 4) = (u8)(0);
+    (&g_00914844_0)->f_4 = (u8)(0);
     return (int)(1);
 }
 

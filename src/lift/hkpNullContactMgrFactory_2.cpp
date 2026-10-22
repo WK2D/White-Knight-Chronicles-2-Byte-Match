@@ -69,15 +69,20 @@ void fn_00d77928(unk_00d77928_a0* a0) {
     ((unk_00d77928_vc0*)(a0->f_8))->vf21();
 }
 
+struct unk_00d77a20_a0_58;
+struct unk_00d77a20_a0_58 {
+    char pad_0[24];
+    u8 f_18;
+};
 struct unk_00d77a20_a0 {
     char pad_0[88];
-    u32 f_58;
+    unk_00d77a20_a0_58* f_58;
 };
 void fn_00d77a20(unk_00d77a20_a0* a0) {
     if ((int)(a0->f_58) == (int)(0)) {
         return;
     }
-    FIELD(u8, a0->f_58, 24) = (u8)(1);
+    a0->f_58->f_18 = (u8)(1);
 }
 
 struct unk_00d77a3c_a0 {

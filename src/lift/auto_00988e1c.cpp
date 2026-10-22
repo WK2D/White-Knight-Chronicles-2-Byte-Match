@@ -18,13 +18,18 @@ int fn_00988f68(void) {
     return (int)(0);
 }
 
+struct unk_00989030_gm3e88;
+struct unk_00989030_gm3e88 {
+    char pad_0[3180];
+    u32 f_c6c;
+};
 struct unk_00989030_a0 {
     u32 f_0;
 };
-extern char g_00989030_0[];
+extern unk_00989030_gm3e88 g_00989030_0;
 u32 fn_00989030(unk_00989030_a0* a0) {
     int v1;
-    if ((int)(FIELD(u32, g_00989030_0, 3180)) == (int)(1)) {
+    if ((int)((&g_00989030_0)->f_c6c) == (int)(1)) {
         a0->f_0 = (u32)(-1);
         v1 = (int)(0);
     } else {

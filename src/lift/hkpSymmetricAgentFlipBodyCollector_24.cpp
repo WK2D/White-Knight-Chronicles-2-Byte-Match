@@ -5,11 +5,16 @@
 extern "C" {
 
 
+struct unk_00d45558_a0_8;
+struct unk_00d45558_a0_8 {
+    char pad_0[4];
+    u8 f_4;
+};
 struct unk_00d45558_a0 {
     char pad_0[4];
     u8 f_4;
     char pad_5[3];
-    u32 f_8;
+    unk_00d45558_a0_8* f_8;
 };
 struct unk_00d45558_vc0 {
     virtual void vf0();
@@ -18,7 +23,7 @@ struct unk_00d45558_vc0 {
 };
 void fn_00d45558(unk_00d45558_a0* a0, int a1, int a2) {
     ((unk_00d45558_vc0*)(a0->f_8))->vf2((int)(a2), (int)(a1));
-    a0->f_4 = (u8)(FIELD(u8, a0->f_8, 4));
+    a0->f_4 = (u8)(a0->f_8->f_4);
 }
 
 }

@@ -49,7 +49,11 @@ void fn_00dc754c(unk_00dc754c_a0* a0, int a1) {
     a0->f_a = (u8)(((u32)((int)(a0->f_8) + (int)(a0->f_9)) << 2) + 20);
 }
 
-extern char g_00dc7574_0[];
+struct unk_00dc7574_g4b90;
+struct unk_00dc7574_g4b90 {
+    u8 f_0;
+};
+extern unk_00dc7574_g4b90 g_00dc7574_0;
 void fn_00dc7574(int a0, int a1) {
     if ((int)(a0) != (int)(1)) {
         return;
@@ -57,7 +61,7 @@ void fn_00dc7574(int a0, int a1) {
     if ((int)(a1) != (int)(65535)) {
         return;
     }
-    FIELD(u8, g_00dc7574_0, 0) = (u8)(0);
+    (&g_00dc7574_0)->f_0 = (u8)(0);
 }
 
 }

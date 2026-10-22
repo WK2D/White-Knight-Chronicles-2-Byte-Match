@@ -32,6 +32,19 @@ void fn_000eb110(unk_000eb110_a0* a0) {
     fn_000e9594((void*)(a0));
 }
 
+struct unk_000eb164_a0 {
+    char pad_0[332];
+    u8 f_14c;
+    u8 f_14d;
+};
+void fn_000eb164(unk_000eb164_a0* a0) {
+    fn_000e95c8((void*)(a0), (int)(0));
+    a0->f_14d = (u8)(0);
+    a0->f_14c = (u8)(1);
+    fn_000e950c((void*)(a0));
+    fn_000e9594((void*)(a0));
+}
+
 struct unk_000eb6b4_a0 {
     char pad_0[16];
     u32 f_10;

@@ -8,9 +8,19 @@ static void* __attribute__((noinline)) stub_00096c04(void) { void* r; __asm__ vo
 void fn_00b38a78(void*);
 void fn_00b38a98(void*);
 
-extern char g_00096c34_0[];
+struct unk_00096c34_gm7504;
+struct unk_00096c34_gm7504_14;
+struct unk_00096c34_gm7504 {
+    char pad_0[20];
+    unk_00096c34_gm7504_14* f_14;
+};
+struct unk_00096c34_gm7504_14 {
+    char pad_0[2588];
+    u32 f_a1c;
+};
+extern unk_00096c34_gm7504 g_00096c34_0;
 void fn_00096c34(void) {
-    FIELD(u32, FIELD(u32, g_00096c34_0, 20), 2588) = (u32)(1);
+    (&g_00096c34_0)->f_14->f_a1c = (u32)(1);
 }
 
 void fn_00096cf8(void) {
@@ -22,9 +32,19 @@ void fn_00096cf8(void) {
     fn_00b38a98((void*)(t2));
 }
 
-extern char g_00096e04_0[];
+struct unk_00096e04_gm7504;
+struct unk_00096e04_gm7504_14;
+struct unk_00096e04_gm7504 {
+    char pad_0[20];
+    unk_00096e04_gm7504_14* f_14;
+};
+struct unk_00096e04_gm7504_14 {
+    char pad_0[2588];
+    u32 f_a1c;
+};
+extern unk_00096e04_gm7504 g_00096e04_0;
 void fn_00096e04(void) {
-    FIELD(u32, FIELD(u32, g_00096e04_0, 20), 2588) = (u32)(0);
+    (&g_00096e04_0)->f_14->f_a1c = (u32)(0);
 }
 
 }

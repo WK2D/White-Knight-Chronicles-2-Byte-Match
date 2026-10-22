@@ -4,10 +4,35 @@
 
 extern "C" {
 
+static void* __attribute__((noinline)) stub_0090ae70(void* p0) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static void* __attribute__((noinline)) stub_0090af1c(void* p0, void* p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
+static int __attribute__((noinline)) stub_0090b2e4(void* p0, void* p1, void* p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
 int fn_00b3cd18(void*, void*, int, int, int, int);
 int fn_00b41738(void*);
 void fn_00b41748(void*, int);
 void* fn_00b41758(void*);
+
+void* fn_0090b380(void* a0, void* a1, void* a2) {
+    void* t0;
+    void* t1;
+    int t2;
+    if ((int)(a2) != (int)(0)) {
+        t0 = stub_0090af1c((void*)(a0), (void*)(a1));
+        if ((int)(t0) != (int)(0)) {
+            return (void*)(t0);
+        }
+        t1 = stub_0090ae70((void*)(a0));
+        if ((int)(t1) == (int)(0)) {
+            return (void*)(t0);
+        }
+        t2 = stub_0090b2e4((void*)(t1), (void*)(a1), (void*)(a2));
+        if ((int)(t2) == (int)(0)) {
+            return (void*)(t0);
+        }
+        return (void*)(t1);
+    }
+    return (void*)(0);
+}
 
 struct unk_0090b5a8_a0 {
     u32 f_0;

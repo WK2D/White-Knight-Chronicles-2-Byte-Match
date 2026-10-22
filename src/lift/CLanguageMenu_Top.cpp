@@ -5,13 +5,18 @@
 extern "C" {
 
 
+struct unk_0086c00c_a0_28;
+struct unk_0086c00c_a0_28 {
+    char pad_0[4348];
+    u8 f_10fc;
+};
 struct unk_0086c00c_a0 {
     char pad_0[40];
-    u32 f_28;
+    unk_0086c00c_a0_28* f_28;
 };
 int fn_0086c00c(unk_0086c00c_a0* a0, int a1, int a2) {
     if ((int)(a2) != (int)(0)) {
-        FIELD(u8, a0->f_28, 4348) = (u8)(1);
+        a0->f_28->f_10fc = (u8)(1);
     }
     return (int)(1);
 }

@@ -4,16 +4,91 @@
 
 extern "C" {
 
+int fn_0036dee0(void*);
 
-extern char g_0047fee8_0[];
+struct unk_0047f308_a0 {
+    char pad_0[72];
+    u32 f_48;
+    char pad_4c[16];
+    u32 f_5c;
+    u32 f_60;
+    char pad_64[20];
+    u8 f_78;
+};
+void* fn_0047f308(unk_0047f308_a0* a0) {
+    int t0;
+    if ((int)(a0->f_78) == (int)(0)) {
+        return (void*)(0);
+    }
+    if ((int)(a0->f_60) == (int)(0)) {
+        return (void*)(0);
+    }
+    if ((int)(a0->f_5c) == (int)(0)) {
+        return (void*)(0);
+    }
+    if ((int)(a0->f_48) == (int)(0)) {
+        return (void*)(0);
+    }
+    t0 = fn_0036dee0((void*)(a0->f_48));
+    if ((int)((u32)(t0) & 0xff) == (int)(0)) {
+        return (void*)(0);
+    }
+    return (void*)(a0->f_60);
+}
+
+struct unk_0047f790_a0 {
+    char pad_0[24];
+    u32 f_18;
+    char pad_1c[4];
+    u32 f_20;
+    u32 f_24;
+    char pad_28[77];
+    u8 f_75;
+};
+void* fn_0047f790(unk_0047f790_a0* a0) {
+    int t0;
+    if ((int)(a0->f_75) == (int)(0)) {
+        return (void*)(0);
+    }
+    if ((int)(a0->f_24) == (int)(0)) {
+        return (void*)(0);
+    }
+    if ((int)(a0->f_20) == (int)(0)) {
+        return (void*)(0);
+    }
+    if ((int)(a0->f_18) == (int)(0)) {
+        return (void*)(0);
+    }
+    t0 = fn_0036dee0((void*)(a0->f_18));
+    if ((int)((u32)(t0) & 0xff) == (int)(0)) {
+        return (void*)(0);
+    }
+    return (void*)(a0->f_24);
+}
+
+struct unk_0047fee8_gm890;
+struct unk_0047fee8_gm890_0;
+struct unk_0047fee8_gm890 {
+    unk_0047fee8_gm890_0* f_0;
+};
+struct unk_0047fee8_gm890_0 {
+    char pad_0[4];
+    u8 f_4;
+    char pad_5[3];
+    u32 f_8;
+    u32 f_c;
+    char pad_10[4];
+    u32 f_14;
+};
+extern unk_0047fee8_gm890 g_0047fee8_0;
 int fn_0047fee8(void) {
     int v1;
     int v3;
     int v5;
-    if ((int)(FIELD(u32, FIELD(u32, g_0047fee8_0, 0), 20)) != (int)(0)) {
-        if ((int)(FIELD(u32, FIELD(u32, g_0047fee8_0, 0), 12)) != (int)(0)) {
-            if ((int)(FIELD(u32, FIELD(u32, g_0047fee8_0, 0), 8)) != (int)(0)) {
-                FIELD(u8, FIELD(u32, g_0047fee8_0, 0), 4) = (u8)(1);
+    if ((int)((&g_0047fee8_0)->f_0->f_14) != (int)(0)) {
+        if ((int)((&g_0047fee8_0)->f_0->f_c) != (int)(0)) {
+            if ((int)((&g_0047fee8_0)->f_0->f_8) != (int)(0)) {
+                (&g_0047fee8_0)->f_0->f_4 = (u8)(1);
                 v1 = (int)(1);
             } else {
                 v1 = (int)(0);

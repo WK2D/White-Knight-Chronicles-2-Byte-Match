@@ -19,4 +19,17 @@ void fn_000e4228(unk_000e4228_a0* a0) {
     fn_000e9594((void*)(a0));
 }
 
+struct unk_000e427c_a0 {
+    char pad_0[116];
+    u8 f_74;
+    u8 f_75;
+};
+void fn_000e427c(unk_000e427c_a0* a0) {
+    fn_000e95c8((void*)(a0), (int)(0));
+    a0->f_75 = (u8)(0);
+    a0->f_74 = (u8)(1);
+    fn_000e950c((void*)(a0));
+    fn_000e9594((void*)(a0));
+}
+
 }

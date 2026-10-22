@@ -6,19 +6,33 @@ extern "C" {
 
 static int __attribute__((noinline)) stub_00538268(void) { int r; __asm__ volatile ("" : "=r"(r)); return r; }
 
-extern char g_00538004_0[];
+struct unk_00538004_g1414;
+struct unk_00538004_g1414 {
+    u32 f_0;
+};
+extern unk_00538004_g1414 g_00538004_0;
 void fn_00538004(void) {
-    if ((int)(FIELD(u32, g_00538004_0, 0)) != (int)(2)) {
+    if ((int)((&g_00538004_0)->f_0) != (int)(2)) {
         return;
     }
-    FIELD(u32, g_00538004_0, 0) = (u32)(9);
+    (&g_00538004_0)->f_0 = (u32)(9);
 }
 
-extern char g_005380b4_0[];
+struct unk_005380b4_g1414;
+struct unk_005380b4_g1414_96c;
+struct unk_005380b4_g1414 {
+    char pad_0[2412];
+    unk_005380b4_g1414_96c* f_96c;
+};
+struct unk_005380b4_g1414_96c {
+    char pad_0[4];
+    u8 f_4;
+};
+extern unk_005380b4_g1414 g_005380b4_0;
 int fn_005380b4(void) {
     int v0;
-    if ((int)(FIELD(u32, g_005380b4_0, 2412)) != (int)(0)) {
-        v0 = (int)(FIELD(u8, FIELD(u32, g_005380b4_0, 2412), 4));
+    if ((int)((&g_005380b4_0)->f_96c) != (int)(0)) {
+        v0 = (int)((&g_005380b4_0)->f_96c->f_4);
     } else {
         v0 = (int)(0);
     }

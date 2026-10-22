@@ -6,9 +6,38 @@ extern "C" {
 
 void* fn_00b3cd18(void*, void*, int, int, int, int);
 
-extern char g_00873114_0[];
+struct unk_00873114_gm68c8;
+struct unk_00873114_gm68c8_0;
+struct unk_00873114_gm68c8_0_6c;
+struct unk_00873114_gm68c8_0_6c_8;
+struct unk_00873114_gm68c8_0_6c_8_fc;
+struct unk_00873114_gm68c8_0_6c_8_fc_4;
+struct unk_00873114_gm68c8 {
+    unk_00873114_gm68c8_0* f_0;
+};
+struct unk_00873114_gm68c8_0 {
+    char pad_0[108];
+    unk_00873114_gm68c8_0_6c* f_6c;
+};
+struct unk_00873114_gm68c8_0_6c {
+    char pad_0[8];
+    unk_00873114_gm68c8_0_6c_8* f_8;
+};
+struct unk_00873114_gm68c8_0_6c_8 {
+    char pad_0[252];
+    unk_00873114_gm68c8_0_6c_8_fc* f_fc;
+};
+struct unk_00873114_gm68c8_0_6c_8_fc {
+    char pad_0[4];
+    unk_00873114_gm68c8_0_6c_8_fc_4* f_4;
+};
+struct unk_00873114_gm68c8_0_6c_8_fc_4 {
+    char pad_0[128];
+    u32 f_80;
+};
+extern unk_00873114_gm68c8 g_00873114_0;
 int fn_00873114(void) {
-    return (int)((int)FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_00873114_0, 0), 108), 8), 252), 4), 128));
+    return (int)((int)(&g_00873114_0)->f_0->f_6c->f_8->f_fc->f_4->f_80);
 }
 
 extern char g_00874e34_0[];

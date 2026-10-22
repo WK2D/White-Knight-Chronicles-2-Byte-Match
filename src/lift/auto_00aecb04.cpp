@@ -5,9 +5,13 @@
 extern "C" {
 
 
-extern char g_00aed7b4_0[];
+struct unk_00aed7b4_gm604;
+struct unk_00aed7b4_gm604 {
+    u8 f_0;
+};
+extern unk_00aed7b4_gm604 g_00aed7b4_0;
 u32 fn_00aed7b4(void) {
-    return (u32)((u32)(FIELD(u8, g_00aed7b4_0, 0)) ^ 0x1);
+    return (u32)((u32)((&g_00aed7b4_0)->f_0) ^ 0x1);
 }
 
 }

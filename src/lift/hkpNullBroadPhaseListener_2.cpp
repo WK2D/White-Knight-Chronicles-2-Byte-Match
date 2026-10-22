@@ -5,10 +5,14 @@
 extern "C" {
 
 
-extern char g_00f578c0_0[];
+struct unk_00f578c0_gm7bb4;
+struct unk_00f578c0_gm7bb4 {
+    void* f_0;
+};
+extern unk_00f578c0_gm7bb4 g_00f578c0_0;
 extern char g_00f578c0_1[];
 void fn_00f578c0(void) {
-    FIELD(void*, g_00f578c0_0, 0) = (void*)(g_00f578c0_1);
+    (&g_00f578c0_0)->f_0 = (void*)(g_00f578c0_1);
 }
 
 }

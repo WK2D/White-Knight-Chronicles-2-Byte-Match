@@ -22,12 +22,17 @@ void* fn_00dd6818(unk_00dd6818_a0* a0) {
     return (void*)(a0->f_4 + -68);
 }
 
+struct unk_00dd6988_a0_28;
+struct unk_00dd6988_a0_28 {
+    char pad_0[2];
+    u16 f_2;
+};
 struct unk_00dd6988_a0 {
     char pad_0[40];
-    u32 f_28;
+    unk_00dd6988_a0_28* f_28;
 };
 void fn_00dd6988(unk_00dd6988_a0* a0, int a1) {
-    fn_00dc6fe0((void*)(a0->f_28), (u16)(FIELD(u16, a0->f_28, 2)), (int)(a1));
+    fn_00dc6fe0((void*)(a0->f_28), (u16)(a0->f_28->f_2), (int)(a1));
 }
 
 }

@@ -65,9 +65,11 @@ def paren(v):
 SIZES = {'u8': 1, 'u16': 2, 's16': 2, 'u32': 4, 'float': 4, 'void*': 4, 'double': 8, 'u64': 8}
 
 
-def struct_decl(tag, by_offset):
+def struct_decl(tag, by_offset, ptrs=None):
     """struct tag { fields at their offsets }, or None if they overlap, are
-    misaligned or lie before the start (negative offsets)."""
+    misaligned or lie before the start (negative offsets). ptrs: {offset:
+    struct tag} for word fields that point to a known struct."""
+    ptrs = ptrs or {}
     out, at = [f'struct {tag} {{'], 0
     for off in sorted(by_offset):
         t = by_offset[off]
@@ -75,15 +77,16 @@ def struct_decl(tag, by_offset):
             return None
         if off > at:
             out.append(f'    char pad_{at:x}[{off - at}];')
-        out.append(f'    {t} f_{off:x};')
+        out.append(f'    {ptrs[off] + "*" if off in ptrs else t} f_{off:x};')
         at = off + SIZES[t]
     out.append('};')
     return '\n'.join(out)
 
 
-def class_decl(tag, slots, fields):
+def class_decl(tag, slots, fields, ptrs=None):
     """A class with virtual functions vf0..vfN (the used slots with their
     signatures, the rest as fillers) and its fields after the vtable pointer."""
+    ptrs = ptrs or {}
     out = [f'struct {tag} {{']
     for k in range(max(slots) + 1):
         if k in slots:
@@ -98,7 +101,7 @@ def class_decl(tag, slots, fields):
             return None
         if off > at:
             out.append(f'    char pad_{at:x}[{off - at}];')
-        out.append(f'    {t} f_{off:x};')
+        out.append(f'    {ptrs[off] + "*" if off in ptrs else t} f_{off:x};')
         at = off + SIZES[t]
     out.append('};')
     return '\n'.join(out)
@@ -168,12 +171,12 @@ class Lifter:
     def __init__(self, address, words, arity, preset=None, layouts=None, poly=None):
         self.address, self.words, self.arity = address, words, arity
         self.preset = preset or {}
-        self.layouts = layouts or {}      # argument register -> {offset: type} (second pass)
+        self.layouts = layouts or {}      # access path -> {offset: type} (second pass)
         self.poly = poly or set()         # argument registers known (earlier pass) to be polymorphic
         # Offset-0 words are read as vtable pointers only where the function
         # makes an indirect call; elsewhere they are ordinary fields.
         self.virtual = 0x4E800421 in words
-        self.access = defaultdict(set)    # argument register -> {(offset, type)} (first pass)
+        self.access = defaultdict(set)    # access path -> {(offset, type)} (first pass)
         self.static = {}                  # callees called without a TOC slot: static in this file
         self.gpr = {r: None for r in range(32)}
         self.fpr = {r: None for r in range(32)}
@@ -190,17 +193,33 @@ class Lifter:
         self.latch_cond = None
         self.loop_broke = False
         self.while_entry = {}             # test block -> header, for loops entered by a jump to their test
-        self.return_exits = set()         # blocks outside a loop that only lead to a return
+        self.return_exits = set()
+        self.back_returns = set()         # targets of backward branches that are not loops
+        self.active_paths = set()         # return paths being lifted (guards against cycles)
+        self.made_call = False            # a call has clobbered r3-r12 somewhere before
+        self.slots = {}                   # stack offset -> (kind, value): int/float conversions go through memory         # blocks outside a loop that only lead to a return
         self.polymorphic = set()          # argument registers whose offset-0 word is a vptr
         self.vclasses = {}                # class tag -> {slot: (rtype, [types])}
         self.vars = []                    # merge variables: (type, name)
         self.returns = []                 # one dict per return statement
         self.ended = False                # the current path has returned
 
+    def tag(self, path):
+        """Struct name for an access path."""
+        parts = [f'a{path[0] - 3}' if path[0] != 'g' else (f'g{path[1]:x}' if path[1] >= 0 else f'gm{-path[1]:x}')]
+        parts += [f'{d:x}' if d >= 0 else f'm{-d:x}' for d in path[1 if path[0] != 'g' else 2:]]
+        return f'unk_{self.address:08x}_' + '_'.join(parts)
+
+    def pointer_fields(self, path):
+        """{offset: tag} for the word fields of path that point to structs."""
+        return {d: self.tag(path + (d,)) for d, t in self.layouts.get(path, {}).items()
+                if t == 'u32' and path + (d,) in self.layouts}
+
     def param(self, k):
         for j in range(3, k + 1):
             if j not in self.args:
                 v = Value(f'a{j - 3}', self.preset.get(j, 'int'))
+                v.path = (j,)
                 self.args[j] = v
                 if self.gpr[j] is None:
                     self.gpr[j] = v
@@ -254,7 +273,10 @@ class Lifter:
     def address_of_global(self, d):
         if d not in self.globals:
             self.globals[d] = f'g_{self.address:08x}_{len(self.globals)}'
-        return Value(self.globals[d], 'gaddr')
+        typed = ('g', d) in self.layouts
+        v = Value(f'(&{self.globals[d]})' if typed else self.globals[d], 'gaddr')
+        v.path = ('g', d)
+        return v
 
     def field(self, ctype, base, d):
         if base.ctype == 'toc':
@@ -266,11 +288,26 @@ class Lifter:
             for k, arg in self.args.items():
                 if obj is arg:
                     self.polymorphic.add(k)
-                    self.access[k].discard((0, 'u32'))
+                    self.access[(k,)].discard((0, 'u32'))
             return Value(f'/*vtable slot {d // 4}*/', 'u32', vt=('slot', obj, d // 4))
         if base.vt is not None and base.vt[0] == 'slot' and ctype == 'u32' and d in (0, 4):
             return Value('/*virtual*/', 'u32', vt=('code' if d == 0 else 'toc',) + base.vt[1:])
         self.pointer(base)
+        path = getattr(base, 'path', None)
+        if path is not None and not (d == 0 and ctype == 'u32' and (self.virtual or len(path) == 1 and path[0] in self.poly)):
+            self.access[path].add((d, ctype))
+            if self.layouts.get(path, {}).get(d) == ctype:
+                v = Value(f'{base.text}->f_{d:x}' if d >= 0 else f'{base.text}->f_m{-d:x}', ctype)
+                if ctype == 'u32':
+                    v.path = path + (d,)
+                    if v.path in self.layouts:
+                        v.ctype = 'ptr'
+                        v.cast = self.tag(v.path) + '*'   # stores need this type
+                return v
+            if ctype == 'u32':
+                v = Value(f'FIELD({ctype}, {base.text}, {d})', ctype)
+                v.path = path + (d,)
+                return v
         if getattr(base, 'ivbase', None) is not None:                # element of an array: base, offset + i * stride
             p_, i_ = base.ivbase
             return Value(f'FIELD({ctype}, (char*){paren(p_)}, {d} + {i_.text})', ctype)
@@ -280,9 +317,6 @@ class Lifter:
             if base is arg:
                 if d == 0 and ctype == 'u32' and k in self.poly:
                     return Value(f'FIELD(u32, {base.text}, 0)', 'u32', vt=('vptr', base))
-                self.access[k].add((d, ctype))
-                if k in self.layouts and self.layouts[k].get(d) == ctype:
-                    return Value(f'{base.text}->f_{d:x}' if d >= 0 else f'{base.text}->f_m{-d:x}', ctype)
         if self.virtual and d == 0 and ctype == 'u32':
             return Value(f'FIELD({ctype}, {base.text}, {d})', ctype, vt=('vptr', base))
         return Value(f'FIELD({ctype}, {base.text}, {d})', ctype)
@@ -292,6 +326,7 @@ class Lifter:
         w = self.words
         n = len(w)
         leaders = {0}
+        back = []                                          # backward branches: (source, target)
         for i, x in enumerate(w):
             op = x >> 26
             if op == 16:                                   # bc
@@ -299,14 +334,14 @@ class Lifter:
                 if x & 3 or t > n or t < 0:
                     raise Fail('absolute, linked or outside conditional branch')
                 if t <= i:                                 # a back edge to the header t
-                    self.loops[t] = max(self.loops.get(t, i), i)
+                    back.append((i, t))
                 leaders |= {t, i + 1}
             elif op == 18 and not x & 1:                   # b (not bl)
                 t = i + ((branch_target(0, x)) >> 2)
                 if x & 2 or t > n or t < 0:
                     raise Fail('outside branch')
                 if t <= i:
-                    self.loops[t] = max(self.loops.get(t, i), i)
+                    back.append((i, t))
                 leaders |= {t, i + 1}
             elif op == 19:
                 xo = (x >> 1) & 0x3FF
@@ -316,6 +351,14 @@ class Lifter:
                     raise Fail('indirect branch')
                 leaders.add(i + 1)
         self.leaders = sorted(l for l in leaders if l < n)
+        # A backward branch is a loop only if its target leads back to it.
+        # Otherwise GCC placed a shared tail (often the epilogue) earlier and
+        # jumps back to it: lift that as the path it is.
+        for i, t in back:
+            if self.block_start(i) in self.reach_all(t):
+                self.loops[t] = max(self.loops.get(t, i), i)
+            else:
+                self.back_returns.add(t)
         for h, l in self.loops.items():
             latch_block = self.leaders[bisect.bisect_right(self.leaders, l) - 1]
             for j in range(h, l + 1):                      # exits: the block after the loop, or a return path
@@ -325,7 +368,7 @@ class Lifter:
                     t = j + (s16(x & 0xFFFC) >> 2)
                 elif x >> 26 == 18 and not x & 1:
                     t = j + (branch_target(0, x) >> 2)
-                if t is None or h <= t <= l + 1:
+                if t is None or h <= t <= l + 1 or t in self.back_returns:
                     continue
                 if t > l + 1 and self.only_returns(t) and not any(
                         h2 <= x_ <= l2 for x_ in self.successors(t) for h2, l2 in self.loops.items()):
@@ -339,7 +382,7 @@ class Lifter:
                     t = j + (s16(x & 0xFFFC) >> 2)
                 elif x >> 26 == 18 and not x & 1:
                     t = j + (branch_target(0, x) >> 2)
-                if t is None or not h < t <= l:
+                if t is None or not h < t <= l or t in self.back_returns:
                     continue
                 if x >> 26 == 18 and j == h - 1 and t == latch_block and w[l] >> 26 == 16:
                     self.while_entry[t] = h                # while (cond) { body }: enter at the test
@@ -353,14 +396,43 @@ class Lifter:
     def return_path(self, b):
         """Lift a path from inside a loop that ends in a return, as plain
         forward code (outside the loop's context)."""
+        if b in self.active_paths:
+            raise Fail('return path loops back on itself')
+        self.active_paths.add(b)
         saved = (self.in_loop, self.loop_vars, self.loop_exits)
         self.in_loop, self.loop_vars, self.loop_exits = [], [], []
         try:
             self.region(b, None)
         finally:
             self.in_loop, self.loop_vars, self.loop_exits = saved
+            self.active_paths.discard(b)
         if not self.ended:
             raise Fail('return path does not return')
+
+    def block_start(self, i):
+        return self.leaders[bisect.bisect_right(self.leaders, i) - 1]
+
+    def reach_all(self, b):
+        """Blocks reachable from block b, following backward branches too."""
+        out, todo = set(), [b]
+        while todo:
+            x = todo.pop()
+            if x in out or x >= len(self.words):
+                continue
+            out.add(x)
+            last = self.block_end(x) - 1
+            t = self.words[last]
+            op = t >> 26
+            if op == 16:
+                todo += [last + (s16(t & 0xFFFC) >> 2), last + 1]
+            elif op == 18 and not t & 1:
+                todo.append(last + (branch_target(0, t) >> 2))
+            elif op == 19 and t != 0x4E800421:
+                if (t >> 21) & 0x14 != 0x14:
+                    todo.append(last + 1)
+            else:
+                todo.append(last + 1)
+        return out
 
     def only_returns(self, b):
         """Whether every path from block b ends in a return (no loop back)."""
@@ -710,6 +782,24 @@ class Lifter:
                 continue
             header = self.in_loop[-1] if self.in_loop else None
             exit_ = self.loops[header] + 1 if header is not None else None
+            if kind == 'goto' and data in self.back_returns and data <= b:
+                if header is not None:
+                    self.loop_exits[-1] += 1
+                self.return_path(data)                 # a shared tail placed earlier
+                return
+            if kind == 'cond' and data[0] in self.back_returns and data[0] <= b:
+                taken, fall, cond = data
+                state = self.snapshot()
+                outer, inner = self.stmts, []
+                self.stmts = inner
+                self.return_path(taken)
+                self.stmts = outer
+                self.restore(state)
+                self.stmts.append(['if', cond, inner, []])
+                if header is not None:
+                    self.loop_exits[-1] += 1
+                b = fall
+                continue
             if kind == 'goto' and header is not None and data in self.return_exits:
                 self.loop_exits[-1] += 1
                 self.return_path(data)                 # lifts through to its return
@@ -867,18 +957,48 @@ class Lifter:
             self.set(ra, res)
             self.cr[0] = (res, '0', 'signed')
             return
-        if w in (NOP, TOC_RESTORE, 0x7C0802A6, 0x7C0803A6):        # nop, TOC restore, mflr/mtlr r0
+        if w == 0x7C0802A6:                                          # mflr r0
+            self.gpr[0] = Value('/*return address*/', 'lr')
+            return
+        if w in (NOP, TOC_RESTORE, 0x7C0803A6):                      # nop, TOC restore, mtlr r0
             return
         if op == 62 and ra == 1:                                     # stdu r1 / std rX,d(r1)
             if w & 3 == 1 and rt == 1:
+                return
+            if w & 3 == 0 and (rt in (0, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)) and self.gpr[rt] is not None                     and self.gpr[rt].ctype != 'lr':
+                self.slots[d] = ('int64', self.reg(rt))              # an integer on its way to fcfid
                 return
             if w & 3 == 0 and (rt == 0 or rt == 2 or rt >= 14):  # r2: TOC saved around an indirect call
                 return
             raise Fail('spill')
         if op == 58 and w & 3 == 0 and ra == 1:                      # ld rX,d(r1)
+            if self.slots.get(d, (None,))[0] == 'fctid' and (rt == 0 or 3 <= rt <= 12):
+                f = self.slots[d][1]
+                v = Value(f'(u32)({f.text})', 'u32')                 # fctidz + clrldi: float to unsigned
+                v.conv = True
+                self.set(rt, v)
+                return
             if rt == 0 or rt >= 14:
                 return
             raise Fail('stack load')
+        if op == 54 and ra == 1:                                     # stfd fX,d(r1)
+            v = self.freg(rt)
+            if getattr(v, 'f2i', None) is None:
+                raise Fail('float spill')
+            self.slots[d] = v.f2i
+            return
+        if op == 50 and ra == 1:                                     # lfd fX,d(r1)
+            if self.slots.get(d, (None,))[0] != 'int64':
+                raise Fail('float stack load')
+            v = Value(self.slots[d][1].text, 'bits')
+            v.i2f = self.slots[d][1]
+            self.fpr[rt] = v
+            return
+        if op == 32 and ra == 1 and self.slots.get(d - 4, (None,))[0] == 'fctiw':   # lwz after fctiwz/stfd
+            v = Value(f'(int)({self.slots[d - 4][1].text})', 'int')
+            v.conv = True
+            self.set(rt, v)
+            return
         if op == 14 and rt == 1 and ra == 1:                         # frame pop
             return
         if op == 14:
@@ -936,6 +1056,8 @@ class Lifter:
             if ctype == 'u32' and value.ctype in ('ptr', 'addr', 'gaddr'):
                 ctype = 'void*'
             target = self.field(ctype, base, d)
+            if getattr(target, 'cast', None) is not None:
+                ctype = target.cast
             text = value.text if ctype in ('float', 'double') else f'({ctype})({value.text})'
             self.stmts.append(f'{target.text} = {text};')
             return
@@ -1010,6 +1132,9 @@ class Lifter:
             sh = ((w >> 11) & 31) | (((w >> 1) & 1) << 5)
             mb = ((w >> 6) & 31) | (((w >> 5) & 1) << 5)
             v = self.reg(rt)
+            if sh == 0 and mb == 32 and getattr(v, 'conv', False):  # clrldi 32 after a conversion
+                self.set(ra, v)
+                return
             if sh == 0 and mb == 32:                                 # clrldi 32: a pointer
                 if v.ctype == 'addr':
                     v = Value(v.text, 'ptr', v.prec)
@@ -1048,6 +1173,8 @@ class Lifter:
                 args.append(self.reg(r))
             elif floats:
                 args.append(floats.pop(0))
+            elif self.gpr[r] is None and (r in self.args or self.made_call):
+                break       # clobbered or never set: the callee's apparent read is not a real argument
             else:
                 args.append(self.reg(r))
         return args + floats
@@ -1064,6 +1191,7 @@ class Lifter:
                 self.gpr[r] = None
         for r in range(0, 14):
             self.fpr[r] = None
+        self.made_call = True
         self.gpr[3] = Value(info['temp'], 'int', 0, info)
         self.fresh = set()
         self.ffresh = set()
@@ -1096,12 +1224,28 @@ class Lifter:
         ft, fa, fb, fc = (w >> 21) & 31, (w >> 16) & 31, (w >> 11) & 31, (w >> 6) & 31
         xo5, xo10 = (w >> 1) & 31, (w >> 1) & 0x3FF
         t = 'float' if op == 59 else 'double'
+        if op == 63 and xo10 == 846:                                 # fcfid: integer bits to double
+            src = getattr(self.freg(fb), 'i2f', None)
+            if src is None:
+                raise Fail('fcfid of a non-integer')
+            t_ = 'u32' if src.ctype == 'u32' else 'int'
+            self.fpr[ft] = Value(f'(double)({t_})({src.text})', 'double')
+            self.fpr[ft].int_src = (t_, src)
+            self.ffresh.add(ft)
+            return
+        if op == 63 and xo10 in (815, 15):                           # fctidz / fctiwz: float to integer bits
+            v = Value(self.freg(fb).text, 'bits')
+            v.f2i = ('fctid' if xo10 == 815 else 'fctiw', self.freg(fb))
+            self.fpr[ft] = v
+            return
         if op == 63 and xo10 == 0:                                   # fcmpu crf,fa,fb
             self.cr[(w >> 23) & 7] = (self.freg(fa), self.freg(fb), 'float')
             return
         if op == 63 and xo10 in (72, 40, 264, 12):                   # fmr fneg fabs frsp
             v = self.freg(fb)
             text = {72: v.text, 40: f'-{paren(v)}', 264: f'__builtin_fabsf({v.text})', 12: f'(float)({v.text})'}[xo10]
+            if xo10 == 12 and getattr(v, 'int_src', None) is not None:
+                text = f'(float)({v.int_src[0]})({v.int_src[1].text})'
             self.fpr[ft] = Value(text, v.ctype if xo10 != 12 else 'float', 1 if xo10 == 40 else 0)
             self.ffresh.add(ft)
             return
@@ -1138,6 +1282,7 @@ class Lifter:
                 self.gpr[r] = None
         for r in range(0, 14):
             self.fpr[r] = None
+        self.made_call = True
         self.gpr[3] = Value(info['temp'], 'int', 0, info)
         self.fresh = set()
         self.ffresh = set()
@@ -1233,16 +1378,20 @@ class Lifter:
             body.pop()
         params = []
         structs = []
+        nested = [path for path in self.layouts if path[0] == 'g' or len(path) > 1]
+        structs += [f'struct {self.tag(path)};' for path in nested]   # forward declarations
+        for path in nested:
+            structs.append(struct_decl(self.tag(path), self.layouts[path], self.pointer_fields(path)))
         for k in sorted(self.args):
             tag = f'unk_{self.address:08x}_{self.args[k].text}'
             if tag in self.vclasses:
-                decl = class_decl(tag, self.vclasses.pop(tag), self.layouts.get(k, {}))
+                decl = class_decl(tag, self.vclasses.pop(tag), self.layouts.get((k,), {}), self.pointer_fields((k,)))
                 if decl is None:
                     raise Fail('class layout')
                 structs.append(decl)
                 params.append(f'{tag}* {self.args[k].text}')
-            elif k in self.layouts:
-                structs.append(struct_decl(tag, self.layouts[k]))
+            elif (k,) in self.layouts:
+                structs.append(struct_decl(tag, self.layouts[(k,)], self.pointer_fields((k,))))
                 params.append(f'{tag}* {self.args[k].text}')
             else:
                 params.append(f'{CTYPES.get(self.args[k].ctype, "int")} {self.args[k].text}')
@@ -1252,7 +1401,8 @@ class Lifter:
             params = [f'float {self.fargs[k].text}' for k in sorted(self.fargs)]
         for tag, slots in self.vclasses.items():           # objects that are not arguments
             structs.append(class_decl(tag, slots, {}))
-        decls = structs + [f'extern char {n}[];' for n in self.globals.values()]
+        decls = structs + [f'extern {self.tag(("g", d))} {n};' if ('g', d) in self.layouts else f'extern char {n}[];'
+                           for d, n in self.globals.items()]
         if any('/*vtable slot' in l or '/*virtual*/' in l for l in body):
             raise Fail('vtable internals used as an ordinary value')
         sig = f'{ret_type} fn_{self.address:08x}({", ".join(params) if params else "void"})'
@@ -1325,7 +1475,11 @@ def lift(address, words, arity):
         preset = {k: v.ctype for k, v in first.args.items()}
         typed = Lifter(address, words, arity, preset, poly=first.polymorphic).run()
         layouts = {}
-        for k, fields in typed.access.items():
+        for path, fields in sorted(typed.access.items(), key=lambda kv: (len(kv[0]), str(kv[0]))):
+            if len(path) > 1 and path[0] != 'g' or len(path) > 2:
+                parent = path[:-1]
+                if layouts.get(parent, {}).get(path[-1]) != 'u32':
+                    continue                      # loaded from something without a struct
             by_offset = {}
             for off, ctype in fields:
                 if by_offset.get(off, ctype) != ctype:
@@ -1333,15 +1487,38 @@ def lift(address, words, arity):
                 by_offset[off] = ctype
             else:
                 if struct_decl('x', by_offset) is not None:
-                    layouts[k] = by_offset
+                    layouts[path] = by_offset
         second = Lifter(address, words, arity, preset, layouts, poly=first.polymorphic).run()
         if not second.stmts and not second.args:
             return None
         return second.render()
+    except RecursionError:
+        return None
     except Fail as e:
         if WHY is not None:
             WHY[re.sub(r'\d+', 'N', str(e))] += 1
         return None
+
+
+def arity_finder(orig, functions):
+    """arity(target) for Lifter: (integer, float) argument counts the callee
+    reads. A TOC-switching linker stub (std r2,40(r1); addis/addi r2; b f)
+    has the arity of the function it jumps to."""
+    cache = {}
+    def arity(target):
+        if target not in cache:
+            size = functions.get(target)
+            words = struct.unpack(f'>{size // 4}I', orig.read(target, size)) if size else ()
+            if len(words) == 4 and words[0] == 0xF8410028 and words[1] >> 16 == 0x3C42 \
+                    and words[2] >> 16 == 0x3842 and words[3] >> 26 == 18 and not words[3] & 3:
+                real = target + 12 + branch_target(0, words[3])
+                size = functions.get(real)
+                words = struct.unpack(f'>{size // 4}I', orig.read(real, size)) if size else ()
+            cache[target] = reads_before_writes(words) if words else (None, None)
+        if cache[target][0] is None:
+            raise Fail('unknown callee')
+        return cache[target]
+    return arity
 
 
 def short_name(unit):
@@ -1359,14 +1536,7 @@ def main():
         from collections import Counter
         WHY = Counter()
         orig, functions = Original(), load_functions()
-        cache = {}
-        def arity(target):
-            if target not in cache:
-                size = functions.get(target)
-                cache[target] = reads_before_writes(struct.unpack(f'>{size // 4}I', orig.read(target, size)))                     if size else (None, None)
-            if cache[target][0] is None:
-                raise Fail('unknown callee')
-            return cache[target]
+        arity = arity_finder(orig, functions)
         for address, size in sorted(functions.items()):
             if size // 4 > MAX_WORDS:
                 continue
@@ -1380,15 +1550,13 @@ def main():
         # Print one function's lifted source (for experiments); write nothing.
         address = int(sys.argv[sys.argv.index('--one') + 1], 16)
         orig, functions = Original(), load_functions()
-        def arity(target):
-            size = functions.get(target)
-            if not size:
-                raise Fail('unknown callee')
-            return reads_before_writes(struct.unpack(f'>{size // 4}I', orig.read(target, size)))
+        arity = arity_finder(orig, functions)
         size = functions[address]
+        from collections import Counter
+        WHY = Counter()
         result = lift(address, struct.unpack(f'>{size // 4}I', orig.read(address, size)), arity)
         if result is None:
-            print('not lifted')
+            print('not lifted:', ', '.join(WHY) or 'nothing to lift')
             return
         decls, code, calls = result
         print('\n'.join(decls) + '\n' + code)
@@ -1424,15 +1592,7 @@ def main():
                   if l and not l.startswith('#')}
     elsewhere |= {int(l.split()[0], 16) for l in (ROOT / 'config' / 'symbols.txt').read_text().splitlines()
                   if l.split('#', 1)[0].strip()}
-    cache = {}
-    def arity(target):
-        if target not in cache:
-            size = functions.get(target)
-            cache[target] = reads_before_writes(struct.unpack(f'>{size // 4}I', orig.read(target, size))) \
-                if size else (None, None)
-        if cache[target][0] is None:
-            raise Fail('unknown callee')
-        return cache[target]
+    arity = arity_finder(orig, functions)
     by_unit = defaultdict(list)
     for address, size in sorted(functions.items()):
         if address in elsewhere or address in prune or size // 4 > MAX_WORDS:

@@ -6,22 +6,6 @@ extern "C" {
 
 void fn_00bfbe74(int, int);
 
-struct unk_00f3ed78_a0 {
-    u32 f_0;
-    void* f_4;
-};
-void fn_00f3ed78(unk_00f3ed78_a0* a0, int a1, void* a2) {
-    int v0;
-    a0->f_0 = (u32)(a1);
-    a0->f_4 = (void*)(a2);
-    if ((int)(a2) <= (int)(0)) {
-        return;
-    }
-    for (v0 = 0; v0 < (int)(a2); v0++) {
-        FIELD(u32, (int)((u32)((int)(v0) * 1) << 2) + (int)(FIELD(u32, a0->f_0, 0)), 0) = (u32)(-1);
-    }
-}
-
 int fn_00f3f960(int a0, int a1) {
     return (int)(a1);
 }

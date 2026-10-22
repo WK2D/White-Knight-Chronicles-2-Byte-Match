@@ -5,12 +5,16 @@
 extern "C" {
 
 
-extern char g_00b5aed4_0[];
+struct unk_00b5aed4_gm69b0;
+struct unk_00b5aed4_gm69b0 {
+    u32 f_0;
+};
+extern unk_00b5aed4_gm69b0 g_00b5aed4_0;
 void fn_00b5aed4(int a0) {
-    if ((int)(FIELD(u32, g_00b5aed4_0, 0)) != (int)(0)) {
+    if ((int)((&g_00b5aed4_0)->f_0) != (int)(0)) {
         return;
     }
-    FIELD(u32, g_00b5aed4_0, 0) = (u32)(a0);
+    (&g_00b5aed4_0)->f_0 = (u32)(a0);
 }
 
 }

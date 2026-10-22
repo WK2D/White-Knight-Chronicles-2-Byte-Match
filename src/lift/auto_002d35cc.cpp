@@ -5,18 +5,44 @@
 extern "C" {
 
 
+struct unk_002d3abc_a0_0;
+struct unk_002d3abc_a0_0_0;
+struct unk_002d3abc_a0_0_0_0;
+struct unk_002d3abc_a0_0 {
+    unk_002d3abc_a0_0_0* f_0;
+};
+struct unk_002d3abc_a0_0_0 {
+    unk_002d3abc_a0_0_0_0* f_0;
+};
+struct unk_002d3abc_a0_0_0_0 {
+    char pad_0[8];
+    u32 f_8;
+};
 struct unk_002d3abc_a0 {
-    u32 f_0;
+    unk_002d3abc_a0_0* f_0;
 };
 u32 fn_002d3abc(unk_002d3abc_a0* a0) {
-    return (u32)(FIELD(u32, FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 8));
+    return (u32)(a0->f_0->f_0->f_0->f_8);
 }
 
+struct unk_002d3ad0_a0_0;
+struct unk_002d3ad0_a0_0_0;
+struct unk_002d3ad0_a0_0_0_0;
+struct unk_002d3ad0_a0_0 {
+    unk_002d3ad0_a0_0_0* f_0;
+};
+struct unk_002d3ad0_a0_0_0 {
+    unk_002d3ad0_a0_0_0_0* f_0;
+};
+struct unk_002d3ad0_a0_0_0_0 {
+    char pad_0[28];
+    u16 f_1c;
+};
 struct unk_002d3ad0_a0 {
-    u32 f_0;
+    unk_002d3ad0_a0_0* f_0;
 };
 u16 fn_002d3ad0(unk_002d3ad0_a0* a0) {
-    return (u16)(FIELD(u16, FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 28));
+    return (u16)(a0->f_0->f_0->f_0->f_1c);
 }
 
 }

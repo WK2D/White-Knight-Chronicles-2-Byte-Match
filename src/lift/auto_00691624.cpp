@@ -32,20 +32,30 @@ int fn_00691968(int a0, int a1) {
     return (int)(v0);
 }
 
+struct unk_006919d8_a0_260;
+struct unk_006919d8_a0_260 {
+    char pad_0[2212];
+    u16 f_8a4;
+};
 struct unk_006919d8_a0 {
     char pad_0[608];
-    u32 f_260;
+    unk_006919d8_a0_260* f_260;
 };
 int fn_006919d8(unk_006919d8_a0* a0) {
-    return (int)((int)(short)(FIELD(u16, a0->f_260, 2212)));
+    return (int)((int)(short)(a0->f_260->f_8a4));
 }
 
+struct unk_006919e8_a0_270;
+struct unk_006919e8_a0_270 {
+    char pad_0[172];
+    u16 f_ac;
+};
 struct unk_006919e8_a0 {
     char pad_0[624];
-    u32 f_270;
+    unk_006919e8_a0_270* f_270;
 };
 int fn_006919e8(unk_006919e8_a0* a0) {
-    return (int)((int)(short)(FIELD(u16, a0->f_270, 172)));
+    return (int)((int)(short)(a0->f_270->f_ac));
 }
 
 struct unk_00691a00_a0 {

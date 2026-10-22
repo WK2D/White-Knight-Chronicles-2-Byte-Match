@@ -5,9 +5,47 @@
 extern "C" {
 
 
-extern char g_004248ac_0[];
+struct unk_004247ec_gmca8;
+struct unk_004247ec_gmca8_0;
+struct unk_004247ec_gmca8 {
+    unk_004247ec_gmca8_0* f_0;
+};
+struct unk_004247ec_gmca8_0 {
+    char pad_0[12];
+    u32 f_c;
+};
+extern unk_004247ec_gmca8 g_004247ec_0;
+int fn_004247ec(void) {
+    (&g_004247ec_0)->f_0->f_c = (u32)((&g_004247ec_0)->f_0->f_c + 1);
+    return (int)(1);
+}
+
+struct unk_004248ac_gmca8;
+struct unk_004248ac_gmca8_0;
+struct unk_004248ac_gmca8 {
+    unk_004248ac_gmca8_0* f_0;
+};
+struct unk_004248ac_gmca8_0 {
+    u16 f_0;
+};
+extern unk_004248ac_gmca8 g_004248ac_0;
 int fn_004248ac(void) {
-    FIELD(u16, FIELD(u32, g_004248ac_0, 0), 0) = (u16)(FIELD(u16, FIELD(u32, g_004248ac_0, 0), 0) + 1);
+    (&g_004248ac_0)->f_0->f_0 = (u16)((&g_004248ac_0)->f_0->f_0 + 1);
+    return (int)(1);
+}
+
+struct unk_004248c8_gmca8;
+struct unk_004248c8_gmca8_0;
+struct unk_004248c8_gmca8 {
+    unk_004248c8_gmca8_0* f_0;
+};
+struct unk_004248c8_gmca8_0 {
+    char pad_0[28];
+    u32 f_1c;
+};
+extern unk_004248c8_gmca8 g_004248c8_0;
+int fn_004248c8(void) {
+    (&g_004248c8_0)->f_0->f_1c = (u32)((&g_004248c8_0)->f_0->f_1c + 1);
     return (int)(1);
 }
 

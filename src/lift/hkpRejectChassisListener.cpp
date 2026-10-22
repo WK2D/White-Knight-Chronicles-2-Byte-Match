@@ -5,18 +5,23 @@
 extern "C" {
 
 
+struct unk_00eb93d4_a1_4;
+struct unk_00eb93d4_a1_4 {
+    char pad_0[24];
+    u8 f_18;
+};
 struct unk_00eb93d4_a0 {
     char pad_0[12];
     u32 f_c;
 };
 struct unk_00eb93d4_a1 {
     char pad_0[4];
-    u32 f_4;
+    unk_00eb93d4_a1_4* f_4;
     u32 f_8;
 };
 void fn_00eb93d4(unk_00eb93d4_a0* a0, unk_00eb93d4_a1* a1) {
     if ((int)(a0->f_c) != (int)(a1->f_4)) {
-        if ((int)(FIELD(u8, a1->f_4, 24)) == (int)(1)) {
+        if ((int)(a1->f_4->f_18) == (int)(1)) {
             return;
         }
     }

@@ -5,7 +5,11 @@
 extern "C" {
 
 
-extern char g_00f0d548_0[];
+struct unk_00f0d548_g7c54;
+struct unk_00f0d548_g7c54 {
+    u8 f_0;
+};
+extern unk_00f0d548_g7c54 g_00f0d548_0;
 void fn_00f0d548(int a0, int a1) {
     if ((int)(a0) != (int)(1)) {
         return;
@@ -13,10 +17,14 @@ void fn_00f0d548(int a0, int a1) {
     if ((int)(a1) != (int)(65535)) {
         return;
     }
-    FIELD(u8, g_00f0d548_0, 0) = (u8)(0);
+    (&g_00f0d548_0)->f_0 = (u8)(0);
 }
 
-extern char g_00f0d860_0[];
+struct unk_00f0d860_g7c78;
+struct unk_00f0d860_g7c78 {
+    u8 f_0;
+};
+extern unk_00f0d860_g7c78 g_00f0d860_0;
 void fn_00f0d860(int a0, int a1) {
     if ((int)(a0) != (int)(1)) {
         return;
@@ -24,7 +32,7 @@ void fn_00f0d860(int a0, int a1) {
     if ((int)(a1) != (int)(65535)) {
         return;
     }
-    FIELD(u8, g_00f0d860_0, 0) = (u8)(0);
+    (&g_00f0d860_0)->f_0 = (u8)(0);
 }
 
 struct unk_00f0da28_a0 {

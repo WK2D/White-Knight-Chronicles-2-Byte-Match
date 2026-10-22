@@ -10,11 +10,20 @@ void fn_00133608(int a0, int a1, int a2, int a3, int a4) {
     fn_000c0a70((int)(a0), (int)(a1), (int)(a2), (int)(a3), (int)(a4), (int)(5));
 }
 
-extern char g_0013553c_0[];
+struct unk_0013553c_gm6460;
+struct unk_0013553c_gm6460_0;
+struct unk_0013553c_gm6460 {
+    unk_0013553c_gm6460_0* f_0;
+};
+struct unk_0013553c_gm6460_0 {
+    char pad_0[144];
+    u32 f_90;
+};
+extern unk_0013553c_gm6460 g_0013553c_0;
 void* fn_0013553c(void) {
     int v0;
-    if ((int)(FIELD(u32, FIELD(u32, g_0013553c_0, 0), 144)) != (int)(0)) {
-        v0 = (int)(FIELD(u32, (int)(FIELD(u32, FIELD(u32, g_0013553c_0, 0), 144)) + 65536, 20856));
+    if ((int)((&g_0013553c_0)->f_0->f_90) != (int)(0)) {
+        v0 = (int)(FIELD(u32, (int)((&g_0013553c_0)->f_0->f_90) + 65536, 20856));
     } else {
         v0 = (int)(0);
     }

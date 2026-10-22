@@ -5,13 +5,17 @@
 extern "C" {
 
 
+struct unk_004403ec_gmb8c;
+struct unk_004403ec_gmb8c {
+    u32 f_0;
+};
 struct unk_004403ec_a0 {
     u32 f_0;
 };
-extern char g_004403ec_0[];
+extern unk_004403ec_gmb8c g_004403ec_0;
 void fn_004403ec(unk_004403ec_a0* a0) {
     a0->f_0 = (u32)(0);
-    FIELD(u32, g_004403ec_0, 0) = (u32)(0);
+    (&g_004403ec_0)->f_0 = (u32)(0);
 }
 
 struct unk_00441330_a0 {

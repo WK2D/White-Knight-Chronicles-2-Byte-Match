@@ -274,11 +274,16 @@ void* fn_00561b58(unk_00561b58_a0* a0) {
     return (void*)(a0->f_0 + 26616);
 }
 
+struct unk_00561fc8_a0_0;
+struct unk_00561fc8_a0_0 {
+    char pad_0[20932];
+    u32 f_51c4;
+};
 struct unk_00561fc8_a0 {
-    u32 f_0;
+    unk_00561fc8_a0_0* f_0;
 };
 void fn_00561fc8(unk_00561fc8_a0* a0) {
-    FIELD(u32, a0->f_0, 20932) = (u32)(0);
+    a0->f_0->f_51c4 = (u32)(0);
 }
 
 struct unk_00561fd8_a0 {

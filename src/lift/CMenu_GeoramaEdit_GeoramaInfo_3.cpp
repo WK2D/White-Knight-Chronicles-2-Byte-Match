@@ -5,13 +5,21 @@
 extern "C" {
 
 
-extern char g_00889d90_0[];
-extern char g_00889d90_1[];
+struct unk_00889d90_gm639c;
+struct unk_00889d90_gm63a0;
+struct unk_00889d90_gm639c {
+    u32 f_0;
+};
+struct unk_00889d90_gm63a0 {
+    u32 f_0;
+};
+extern unk_00889d90_gm63a0 g_00889d90_0;
+extern unk_00889d90_gm639c g_00889d90_1;
 void* fn_00889d90(int a0) {
     if ((int)(a0) == (int)(0)) {
-        return (void*)(FIELD(u32, g_00889d90_0, 0));
+        return (void*)((&g_00889d90_0)->f_0);
     }
-    return (void*)(FIELD(u32, g_00889d90_1, 0));
+    return (void*)((&g_00889d90_1)->f_0);
 }
 
 }

@@ -33,15 +33,20 @@ void* fn_009d6bbc(unk_009d6bbc_a0* a0) {
     return (void*)(v0);
 }
 
+struct unk_009d71ac_a0_4;
+struct unk_009d71ac_a0_4 {
+    char pad_0[96];
+    u32 f_60;
+};
 struct unk_009d71ac_a0 {
     char pad_0[4];
-    u32 f_4;
+    unk_009d71ac_a0_4* f_4;
 };
 void fn_009d71ac(unk_009d71ac_a0* a0) {
     if ((int)(a0->f_4) == (int)(0)) {
         return;
     }
-    FIELD(u32, a0->f_4, 96) = (u32)(0);
+    a0->f_4->f_60 = (u32)(0);
 }
 
 }

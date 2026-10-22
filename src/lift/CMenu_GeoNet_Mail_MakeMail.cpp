@@ -5,6 +5,7 @@
 extern "C" {
 
 int fn_00048e54(void*, int, int);
+int fn_00691ed8(u32);
 void fn_00b37fa8(void*, int, u32);
 
 struct unk_006f2568_a0 {
@@ -25,6 +26,35 @@ int fn_006f2568(unk_006f2568_a0* a0, int a1, int a2) {
 
 void fn_006f2780(void* a0) {
     fn_00b37fa8((void*)((char*)a0 + 2224), (int)(0), (u32)(36864));
+}
+
+struct unk_006f35a4_a0 {
+    char pad_0[44];
+    u32 f_2c;
+};
+struct unk_006f35a4_a1 {
+    u8 f_0;
+};
+int fn_006f35a4(unk_006f35a4_a0* a0, unk_006f35a4_a1* a1) {
+    int t0;
+    if ((int)(FIELD(u32, (int)(a0) + 65536, -19796)) != (int)(0)) {
+        a1->f_0 = (u8)(1);
+        return (int)(1);
+    }
+    t0 = fn_00691ed8((u32)(a0->f_2c));
+    if ((int)((u32)(t0) & 0xff) != (int)(0)) {
+        a1->f_0 = (u8)(1);
+        return (int)(1);
+    }
+    if ((int)(FIELD(u8, (int)(a0) + 65536, -19800)) != (int)(0)) {
+        a1->f_0 = (u8)(1);
+        return (int)(1);
+    }
+    if ((int)(FIELD(u8, (int)(a0) + 65536, -19798)) != (int)(0)) {
+        a1->f_0 = (u8)(1);
+        return (int)(1);
+    }
+    return (int)(1);
 }
 
 }

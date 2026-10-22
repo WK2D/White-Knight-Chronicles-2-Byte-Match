@@ -6,13 +6,18 @@ extern "C" {
 
 int fn_00b3a0f8(void);
 
-extern char g_000f4ae8_0[];
+struct unk_000f4ae8_gm6a44;
+struct unk_000f4ae8_gm6a44 {
+    char pad_0[2336];
+    u8 f_920;
+};
+extern unk_000f4ae8_gm6a44 g_000f4ae8_0;
 int fn_000f4ae8(void) {
     int t0;
     int v0;
     t0 = fn_00b3a0f8();
     if ((int)(t0) == (int)(0)) {
-        v0 = (int)((int)(signed char)(FIELD(u8, g_000f4ae8_0, 2336)));
+        v0 = (int)((int)(signed char)((&g_000f4ae8_0)->f_920));
     } else {
         v0 = (int)(0);
     }

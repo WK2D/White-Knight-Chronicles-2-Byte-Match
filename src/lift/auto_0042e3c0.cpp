@@ -5,15 +5,41 @@
 extern "C" {
 
 int fn_00041b48(int);
-static void __attribute__((noinline)) stub_0042e89c(u32 p0, u16 p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
+static void __attribute__((noinline)) stub_0042e89c(void* p0, u16 p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 
-extern char g_0042e498_0[];
+struct unk_0042e3c0_gmc34;
+struct unk_0042e3c0_gmc34_0;
+struct unk_0042e3c0_gmc34 {
+    unk_0042e3c0_gmc34_0* f_0;
+};
+struct unk_0042e3c0_gmc34_0 {
+    char pad_0[8];
+    u32 f_8;
+};
+extern unk_0042e3c0_gmc34 g_0042e3c0_0;
+void fn_0042e3c0(void) {
+    (&g_0042e3c0_0)->f_0->f_8 = (u32)((&g_0042e3c0_0)->f_0->f_8 + 44);
+}
+
+struct unk_0042e498_gmc34;
+struct unk_0042e498_gmc34_0;
+struct unk_0042e498_gmc34 {
+    unk_0042e498_gmc34_0* f_0;
+};
+struct unk_0042e498_gmc34_0 {
+    char pad_0[8];
+    u32 f_8;
+    u16 f_c;
+    char pad_e[6];
+    u32 f_14;
+};
+extern unk_0042e498_gmc34 g_0042e498_0;
 int fn_0042e498(void) {
     int v0;
     int v2;
-    if ((int)(FIELD(u32, FIELD(u32, g_0042e498_0, 0), 8)) != (int)(0)) {
-        if ((int)(FIELD(u16, FIELD(u32, g_0042e498_0, 0), 12)) != (int)(0)) {
-            FIELD(u32, FIELD(u32, g_0042e498_0, 0), 20) = (u32)(FIELD(u16, FIELD(u32, g_0042e498_0, 0), 12));
+    if ((int)((&g_0042e498_0)->f_0->f_8) != (int)(0)) {
+        if ((int)((&g_0042e498_0)->f_0->f_c) != (int)(0)) {
+            (&g_0042e498_0)->f_0->f_14 = (u32)((&g_0042e498_0)->f_0->f_c);
             v0 = (int)(1);
         } else {
             v0 = (int)(0);
@@ -25,21 +51,46 @@ int fn_0042e498(void) {
     return (int)(v2);
 }
 
-extern char g_0042e594_0[];
+struct unk_0042e594_gmc34;
+struct unk_0042e594_gmc34_0;
+struct unk_0042e594_gmc34_0_8;
+struct unk_0042e594_gmc34 {
+    unk_0042e594_gmc34_0* f_0;
+};
+struct unk_0042e594_gmc34_0 {
+    char pad_0[8];
+    unk_0042e594_gmc34_0_8* f_8;
+};
+struct unk_0042e594_gmc34_0_8 {
+    char pad_0[12];
+    u32 f_c;
+};
+extern unk_0042e594_gmc34 g_0042e594_0;
 int fn_0042e594(int a0) {
     int t0;
     t0 = fn_00041b48((int)(a0));
-    FIELD(u32, FIELD(u32, FIELD(u32, g_0042e594_0, 0), 8), 12) = (u32)(t0);
+    (&g_0042e594_0)->f_0->f_8->f_c = (u32)(t0);
     return (int)(1);
 }
 
-extern char g_0042e948_0[];
+struct unk_0042e948_gmc34;
+struct unk_0042e948_gmc34_0;
+struct unk_0042e948_gmc34 {
+    unk_0042e948_gmc34_0* f_0;
+};
+struct unk_0042e948_gmc34_0 {
+    char pad_0[12];
+    u16 f_c;
+    char pad_e[2];
+    u32 f_10;
+};
+extern unk_0042e948_gmc34 g_0042e948_0;
 int fn_0042e948(int a0) {
     int t0;
     t0 = fn_00041b48((int)(a0));
-    stub_0042e89c((u32)(FIELD(u32, g_0042e948_0, 0)), (u16)((u16)t0));
-    FIELD(u16, FIELD(u32, g_0042e948_0, 0), 12) = (u16)(0);
-    FIELD(u32, FIELD(u32, g_0042e948_0, 0), 16) = (u32)(t0);
+    stub_0042e89c((void*)((&g_0042e948_0)->f_0), (u16)((u16)t0));
+    (&g_0042e948_0)->f_0->f_c = (u16)(0);
+    (&g_0042e948_0)->f_0->f_10 = (u32)(t0);
     return (int)(1);
 }
 

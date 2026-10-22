@@ -13,11 +13,16 @@ void* fn_00ab4378(unk_00ab4378_a0* a0, int a1) {
     return (void*)((int)((int)(a1) - (int)(a0->f_0)) + (int)(a0->f_4));
 }
 
-struct unk_00ab439c_a0 {
+struct unk_00ab439c_a0_0;
+struct unk_00ab439c_a0_0 {
     u32 f_0;
+    u32 f_4;
+};
+struct unk_00ab439c_a0 {
+    unk_00ab439c_a0_0* f_0;
 };
 void* fn_00ab439c(unk_00ab439c_a0* a0, int a1) {
-    return (void*)((int)((int)(a1) - (int)(FIELD(u32, a0->f_0, 0))) + (int)(FIELD(u32, a0->f_0, 4)));
+    return (void*)((int)((int)(a1) - (int)(a0->f_0->f_0)) + (int)(a0->f_0->f_4));
 }
 
 struct unk_00ab4428_a0 {

@@ -5,24 +5,36 @@
 extern "C" {
 
 
+struct unk_00586f38_a0_0;
+struct unk_00586f38_a0_0 {
+    u8 f_0;
+    char pad_1[23];
+    u16 f_18;
+};
 struct unk_00586f38_a0 {
-    u32 f_0;
+    unk_00586f38_a0_0* f_0;
 };
 void fn_00586f38(unk_00586f38_a0* a0, int a1) {
-    if ((int)(FIELD(u8, a0->f_0, 0)) != (int)(0)) {
+    if ((int)(a0->f_0->f_0) != (int)(0)) {
         return;
     }
-    FIELD(u16, a0->f_0, 24) = (u16)((int)(signed char)(a1));
+    a0->f_0->f_18 = (u16)((int)(signed char)(a1));
 }
 
+struct unk_00586f54_a0_0;
+struct unk_00586f54_a0_0 {
+    u8 f_0;
+    char pad_1[23];
+    u16 f_18;
+};
 struct unk_00586f54_a0 {
-    u32 f_0;
+    unk_00586f54_a0_0* f_0;
 };
 void fn_00586f54(unk_00586f54_a0* a0, int a1) {
-    if ((int)(FIELD(u8, a0->f_0, 0)) != (int)(0)) {
+    if ((int)(a0->f_0->f_0) != (int)(0)) {
         return;
     }
-    FIELD(u16, a0->f_0, 24) = (u16)((int)(signed char)(a1));
+    a0->f_0->f_18 = (u16)((int)(signed char)(a1));
 }
 
 }

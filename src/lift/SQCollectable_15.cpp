@@ -6,13 +6,18 @@ extern "C" {
 
 int fn_00b42008(void*, int, int);
 
+struct unk_009cda60_gm3910;
+struct unk_009cda60_gm3910 {
+    char pad_0[4];
+    u32 f_4;
+};
 struct unk_009cda60_a0 {
     u32 f_0;
 };
-extern char g_009cda60_0[];
+extern unk_009cda60_gm3910 g_009cda60_0;
 int fn_009cda60(unk_009cda60_a0* a0) {
     int v1;
-    if ((int)(FIELD(u32, g_009cda60_0, 4)) != (int)(0)) {
+    if ((int)((&g_009cda60_0)->f_4) != (int)(0)) {
         a0->f_0 = (u32)(0);
         v1 = (int)(0);
     } else {

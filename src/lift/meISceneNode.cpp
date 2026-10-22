@@ -19,28 +19,45 @@ u32 fn_00aeb6ec(unk_00aeb6ec_a0* a0, int a1) {
     return (u32)(FIELD(u32, (int)((u32)(a1) << 2) + (int)(a0->f_18), 0));
 }
 
+struct unk_00aeb7a0_a0_14;
+struct unk_00aeb7a0_a0_14 {
+    u32 f_0;
+    u32 f_4;
+};
 struct unk_00aeb7a0_a0 {
     char pad_0[20];
-    u32 f_14;
+    unk_00aeb7a0_a0_14* f_14;
 };
 void* fn_00aeb7a0(unk_00aeb7a0_a0* a0) {
-    return (void*)((int)(FIELD(u32, a0->f_14, 4)) - (int)(FIELD(u32, a0->f_14, 0)));
+    return (void*)((int)(a0->f_14->f_4) - (int)(a0->f_14->f_0));
 }
 
+struct unk_00aeb7b8_a0_14;
+struct unk_00aeb7b8_a0_14 {
+    u32 f_0;
+    char pad_4[4];
+    u32 f_8;
+};
 struct unk_00aeb7b8_a0 {
     char pad_0[20];
-    u32 f_14;
+    unk_00aeb7b8_a0_14* f_14;
 };
 void* fn_00aeb7b8(unk_00aeb7b8_a0* a0) {
-    return (void*)((int)(FIELD(u32, a0->f_14, 8)) - (int)(FIELD(u32, a0->f_14, 0)));
+    return (void*)((int)(a0->f_14->f_8) - (int)(a0->f_14->f_0));
 }
 
+struct unk_00aeb7d0_a0_14;
+struct unk_00aeb7d0_a0_14 {
+    char pad_0[4];
+    u32 f_4;
+    u32 f_8;
+};
 struct unk_00aeb7d0_a0 {
     char pad_0[20];
-    u32 f_14;
+    unk_00aeb7d0_a0_14* f_14;
 };
 void* fn_00aeb7d0(unk_00aeb7d0_a0* a0) {
-    return (void*)((int)(FIELD(u32, a0->f_14, 4)) - (int)(FIELD(u32, a0->f_14, 8)));
+    return (void*)((int)(a0->f_14->f_4) - (int)(a0->f_14->f_8));
 }
 
 struct unk_00aeb7f8_a0 {

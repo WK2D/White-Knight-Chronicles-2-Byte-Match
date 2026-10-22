@@ -7,12 +7,17 @@ extern "C" {
 void fn_00aa3054(void*, int);
 void fn_00aa3128(void*);
 
+struct unk_00bd22f4_a0_4;
+struct unk_00bd22f4_a0_4 {
+    char pad_0[44];
+    u8 f_2c;
+};
 struct unk_00bd22f4_a0 {
     char pad_0[4];
-    u32 f_4;
+    unk_00bd22f4_a0_4* f_4;
 };
 void fn_00bd22f4(unk_00bd22f4_a0* a0) {
-    FIELD(u8, a0->f_4, 44) = (u8)(1);
+    a0->f_4->f_2c = (u8)(1);
 }
 
 struct unk_00bd2304_a0 {

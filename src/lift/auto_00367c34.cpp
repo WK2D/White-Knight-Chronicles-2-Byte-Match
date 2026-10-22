@@ -4,8 +4,11 @@
 
 extern "C" {
 
+int fn_00039e20(u32);
+int fn_0003ab18(u32);
 void fn_0003aedc(void*, void*);
-void fn_0003b004(int, int, int, int, int, int, void*, void*);
+void fn_0003b004(void*, int);
+void fn_002e1dfc(u32, void*, u8, int, int);
 void* fn_00404b48(void);
 void* fn_00404bc8(void);
 void* fn_00408460(void);
@@ -42,9 +45,63 @@ void fn_0036818c(void* a0) {
     fn_0003aedc((void*)(a0), (void*)(t0));
 }
 
-extern char g_0036bdd8_0[];
-void fn_0036bdd8(int a0, int a1, int a2, int a3, int a4, int a5) {
-    fn_0003b004((int)(a0), (int)((int)FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_0036bdd8_0, 0), 108), 8), 252), 4), 128)), (int)(a2), (int)(a3), (int)(a4), (int)(a5), (void*)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_0036bdd8_0, 0), 108), 8), 252)), (void*)(FIELD(u32, FIELD(u32, FIELD(u32, g_0036bdd8_0, 0), 108), 8)));
+struct unk_0036b3c8_gm173c;
+struct unk_0036b3c8_gm173c_0;
+struct unk_0036b3c8_gm173c {
+    unk_0036b3c8_gm173c_0* f_0;
+};
+struct unk_0036b3c8_gm173c_0 {
+    u32 f_0;
+};
+struct unk_0036b3c8_a2 {
+    u32 f_0;
+};
+extern unk_0036b3c8_gm173c g_0036b3c8_0;
+void fn_0036b3c8(void* a0, int a1, unk_0036b3c8_a2* a2) {
+    int t0;
+    int v0;
+    if ((int)(a1) > (int)(0)) {
+        t0 = fn_0003ab18((u32)(a2->f_0));
+        v0 = (int)(t0);
+    } else {
+        v0 = (int)(1);
+    }
+    fn_002e1dfc((u32)((&g_0036b3c8_0)->f_0->f_0), (void*)(-1), (u8)((u8)v0), (int)(0), (int)(0));
+    fn_0003b004((void*)(a0), (int)(1));
+}
+
+struct unk_0036b440_gm173c;
+struct unk_0036b440_gm173c_0;
+struct unk_0036b440_gm173c {
+    unk_0036b440_gm173c_0* f_0;
+};
+struct unk_0036b440_gm173c_0 {
+    u32 f_0;
+};
+struct unk_0036b440_a2 {
+    u32 f_0;
+    u32 f_4;
+};
+extern unk_0036b440_gm173c g_0036b440_0;
+void fn_0036b440(void* a0, int a1, unk_0036b440_a2* a2) {
+    int t0;
+    int t1;
+    int v1;
+    int v2;
+    if ((int)(a1) > (int)(0)) {
+        t0 = fn_00039e20((u32)(a2->f_0));
+        v1 = (int)(t0);
+    } else {
+        v1 = (int)(-1);
+    }
+    if ((int)(a1) > (int)(1)) {
+        t1 = fn_0003ab18((u32)(a2->f_4));
+        v2 = (int)(t1);
+    } else {
+        v2 = (int)(1);
+    }
+    fn_002e1dfc((u32)((&g_0036b440_0)->f_0->f_0), (void*)(v1), (u8)((u8)v2), (int)(0), (int)(0));
+    fn_0003b004((void*)(a0), (int)(1));
 }
 
 struct unk_0036df7c_a0 {

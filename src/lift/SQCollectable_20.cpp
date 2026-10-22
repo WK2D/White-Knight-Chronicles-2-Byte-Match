@@ -19,41 +19,55 @@ void* fn_009dabf4(void) {
     return (void*)(g_009dabf4_0);
 }
 
+struct unk_009dac30_a0_0;
+struct unk_009dac30_a0_0 {
+    u16 f_0;
+};
 struct unk_009dac30_a0 {
-    u32 f_0;
+    unk_009dac30_a0_0* f_0;
 };
 int fn_009dac30(unk_009dac30_a0* a0) {
     int v0;
     if (a0 != 0) {
-        v0 = (int)(FIELD(u16, a0->f_0, 0));
+        v0 = (int)(a0->f_0->f_0);
     } else {
         v0 = (int)(0);
     }
     return (int)(v0);
 }
 
+struct unk_009dac4c_a0_0;
+struct unk_009dac4c_a0_0 {
+    char pad_0[4];
+    u32 f_4;
+};
 struct unk_009dac4c_a0 {
-    u32 f_0;
+    unk_009dac4c_a0_0* f_0;
 };
 void* fn_009dac4c(unk_009dac4c_a0* a0) {
     int v0;
     if (a0 != 0) {
-        v0 = (int)(FIELD(u32, a0->f_0, 4));
+        v0 = (int)(a0->f_0->f_4);
     } else {
         v0 = (int)(0);
     }
     return (void*)(v0);
 }
 
+struct unk_009dac68_a0_0;
+struct unk_009dac68_a0_0 {
+    char pad_0[16];
+    u32 f_10;
+};
 struct unk_009dac68_a0 {
-    u32 f_0;
+    unk_009dac68_a0_0* f_0;
 };
 void* fn_009dac68(unk_009dac68_a0* a0) {
     int v0;
     int v1;
     if (a0 != 0) {
         if ((int)(a0->f_0) != (int)(0)) {
-            v0 = (int)(FIELD(u32, a0->f_0, 16));
+            v0 = (int)(a0->f_0->f_10);
         } else {
             v0 = (int)(0);
         }

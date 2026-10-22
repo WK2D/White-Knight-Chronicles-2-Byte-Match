@@ -22,43 +22,83 @@ void* fn_00177118(void* a0, void* a1, int a2) {
     return (void*)(a0);
 }
 
+struct unk_00177170_gm5b40;
+struct unk_00177170_gm5b40 {
+    u32 f_0;
+};
+struct unk_00177170_a0 {
+    char pad_0[1249];
+    u8 f_4e1;
+};
+extern unk_00177170_gm5b40 g_00177170_0;
+int fn_00177170(unk_00177170_a0* a0) {
+    if ((int)(a0->f_4e1) != (int)(5)) {
+        if ((int)(a0->f_4e1) != (int)(6)) {
+            return (int)(1);
+        }
+    }
+    if ((u32)((&g_00177170_0)->f_0) <= (u32)(2)) {
+        return (int)(1);
+    }
+    return (int)(0);
+}
+
+struct unk_001771bc_gm5b40;
+struct unk_001771bc_gm5b40 {
+    u32 f_0;
+};
 struct unk_001771bc_a0 {
     char pad_0[1249];
     u8 f_4e1;
 };
-extern char g_001771bc_0[];
+extern unk_001771bc_gm5b40 g_001771bc_0;
 void fn_001771bc(unk_001771bc_a0* a0) {
     if ((int)(a0->f_4e1) != (int)(5)) {
         if ((int)(a0->f_4e1) != (int)(6)) {
             return;
         }
     }
-    if ((u32)(FIELD(u32, g_001771bc_0, 0)) > (u32)(2)) {
+    if ((u32)((&g_001771bc_0)->f_0) > (u32)(2)) {
         return;
     }
-    FIELD(u32, g_001771bc_0, 0) = (u32)(FIELD(u32, g_001771bc_0, 0) + 1);
+    (&g_001771bc_0)->f_0 = (u32)((&g_001771bc_0)->f_0 + 1);
 }
 
+struct unk_001771ec_gm5b40;
+struct unk_001771ec_gm5b40 {
+    u32 f_0;
+};
 struct unk_001771ec_a0 {
     char pad_0[1249];
     u8 f_4e1;
 };
-extern char g_001771ec_0[];
+extern unk_001771ec_gm5b40 g_001771ec_0;
 void fn_001771ec(unk_001771ec_a0* a0) {
     if ((int)(a0->f_4e1) != (int)(5)) {
         if ((int)(a0->f_4e1) != (int)(6)) {
             return;
         }
     }
-    if ((int)(FIELD(u32, g_001771ec_0, 0)) == (int)(0)) {
+    if ((int)((&g_001771ec_0)->f_0) == (int)(0)) {
         return;
     }
-    FIELD(u32, g_001771ec_0, 0) = (u32)(FIELD(u32, g_001771ec_0, 0) + -1);
+    (&g_001771ec_0)->f_0 = (u32)((&g_001771ec_0)->f_0 + -1);
 }
 
+struct unk_00177630_a0_34;
+struct unk_00177630_a0_34_f4;
+struct unk_00177630_a0_34 {
+    char pad_0[244];
+    unk_00177630_a0_34_f4* f_f4;
+};
+struct unk_00177630_a0_34_f4 {
+    char pad_0[128];
+    float f_80;
+    float f_84;
+};
 struct unk_00177630_a0 {
     char pad_0[52];
-    u32 f_34;
+    unk_00177630_a0_34* f_34;
 };
 struct unk_00177630_a1 {
     float f_0;
@@ -70,11 +110,11 @@ void fn_00177630(unk_00177630_a0* a0, unk_00177630_a1* a1, unk_00177630_a2* a2) 
     if ((int)(a0->f_34) == (int)(0)) {
         return;
     }
-    if ((int)(FIELD(u32, a0->f_34, 244)) == (int)(0)) {
+    if ((int)(a0->f_34->f_f4) == (int)(0)) {
         return;
     }
-    a1->f_0 = FIELD(float, FIELD(u32, a0->f_34, 244), 128);
-    a2->f_0 = FIELD(float, FIELD(u32, a0->f_34, 244), 132);
+    a1->f_0 = a0->f_34->f_f4->f_80;
+    a2->f_0 = a0->f_34->f_f4->f_84;
 }
 
 }

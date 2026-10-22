@@ -21,9 +21,19 @@ int fn_0006a1d4(void) {
     return (int)(0);
 }
 
-extern char g_0006a2f8_0[];
+struct unk_0006a2f8_gm79d4;
+struct unk_0006a2f8_gm79d4_1ff4;
+struct unk_0006a2f8_gm79d4 {
+    char pad_0[8180];
+    unk_0006a2f8_gm79d4_1ff4* f_1ff4;
+};
+struct unk_0006a2f8_gm79d4_1ff4 {
+    char pad_0[120];
+    u32 f_78;
+};
+extern unk_0006a2f8_gm79d4 g_0006a2f8_0;
 u32 fn_0006a2f8(void) {
-    return (u32)(FIELD(u32, FIELD(u32, g_0006a2f8_0, 8180), 120));
+    return (u32)((&g_0006a2f8_0)->f_1ff4->f_78);
 }
 
 }

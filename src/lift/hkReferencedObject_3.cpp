@@ -5,19 +5,41 @@
 extern "C" {
 
 
-extern char g_00c03998_0[];
+struct unk_00c03998_g148;
+struct unk_00c03998_g148_0;
+struct unk_00c03998_g148 {
+    unk_00c03998_g148_0* f_0;
+};
+struct unk_00c03998_g148_0 {
+    char pad_0[8];
+    u32 f_8;
+};
+extern unk_00c03998_g148 g_00c03998_0;
 void fn_00c03998(int a0) {
-    FIELD(u32, FIELD(u32, g_00c03998_0, 0), 8) = (u32)(a0);
+    (&g_00c03998_0)->f_0->f_8 = (u32)(a0);
 }
 
-extern char g_00c039a8_0[];
+struct unk_00c039a8_g148;
+struct unk_00c039a8_g148 {
+    u32 f_0;
+};
+extern unk_00c039a8_g148 g_00c039a8_0;
 void* fn_00c039a8(void) {
-    return (void*)(FIELD(u32, g_00c039a8_0, 0) + 24);
+    return (void*)((&g_00c039a8_0)->f_0 + 24);
 }
 
-extern char g_00c039bc_0[];
+struct unk_00c039bc_g148;
+struct unk_00c039bc_g148_0;
+struct unk_00c039bc_g148 {
+    unk_00c039bc_g148_0* f_0;
+};
+struct unk_00c039bc_g148_0 {
+    char pad_0[8];
+    u32 f_8;
+};
+extern unk_00c039bc_g148 g_00c039bc_0;
 u32 fn_00c039bc(void) {
-    return (u32)(FIELD(u32, FIELD(u32, g_00c039bc_0, 0), 8));
+    return (u32)((&g_00c039bc_0)->f_0->f_8);
 }
 
 }

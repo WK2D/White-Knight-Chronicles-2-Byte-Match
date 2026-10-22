@@ -5,7 +5,11 @@
 extern "C" {
 
 
-extern char g_00e48a70_0[];
+struct unk_00e48a70_g5a3c;
+struct unk_00e48a70_g5a3c {
+    u8 f_0;
+};
+extern unk_00e48a70_g5a3c g_00e48a70_0;
 void fn_00e48a70(int a0, int a1) {
     if ((int)(a0) != (int)(1)) {
         return;
@@ -13,7 +17,7 @@ void fn_00e48a70(int a0, int a1) {
     if ((int)(a1) != (int)(65535)) {
         return;
     }
-    FIELD(u8, g_00e48a70_0, 0) = (u8)(0);
+    (&g_00e48a70_0)->f_0 = (u8)(0);
 }
 
 }

@@ -5,12 +5,17 @@
 extern "C" {
 
 
+struct unk_00ae202c_a0_8;
+struct unk_00ae202c_a0_8 {
+    char pad_0[32];
+    u32 f_20;
+};
 struct unk_00ae202c_a0 {
     char pad_0[8];
-    u32 f_8;
+    unk_00ae202c_a0_8* f_8;
 };
 void* fn_00ae202c(unk_00ae202c_a0* a0, int a1) {
-    return (void*)(FIELD(u32, (int)((u32)(a1) << 2) + (int)(FIELD(u32, a0->f_8, 32)), 0) + 8);
+    return (void*)(FIELD(u32, (int)((u32)(a1) << 2) + (int)(a0->f_8->f_20), 0) + 8);
 }
 
 }

@@ -10,14 +10,20 @@ void fn_005882e0(int a0) {
     fn_00b37fa8((int)(a0), (int)(0), (int)(1216));
 }
 
+struct unk_0058bec8_a0_0;
+struct unk_0058bec8_a0_0 {
+    u8 f_0;
+    char pad_1[23];
+    u16 f_18;
+};
 struct unk_0058bec8_a0 {
-    u32 f_0;
+    unk_0058bec8_a0_0* f_0;
 };
 void fn_0058bec8(unk_0058bec8_a0* a0) {
-    if ((int)(FIELD(u8, a0->f_0, 0)) != (int)(0)) {
+    if ((int)(a0->f_0->f_0) != (int)(0)) {
         return;
     }
-    FIELD(u16, a0->f_0, 24) = (u16)(FIELD(u8, a0->f_0, 0));
+    a0->f_0->f_18 = (u16)(a0->f_0->f_0);
 }
 
 }

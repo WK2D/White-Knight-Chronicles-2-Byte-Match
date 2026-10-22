@@ -8,71 +8,91 @@ void* fn_00076a98(void*, int, int, int, int, int);
 static void __attribute__((noinline)) stub_003c5fb8(void) { __asm__ volatile (""); }
 static int __attribute__((noinline)) stub_003c6b2c(void* p0, void* p1, int p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
 
+struct unk_003c4170_a0_4;
+struct unk_003c4170_a0_4 {
+    u32 f_0;
+};
 struct unk_003c4170_a0 {
     char pad_0[4];
-    u32 f_4;
+    unk_003c4170_a0_4* f_4;
 };
 void* fn_003c4170(unk_003c4170_a0* a0) {
     int v0;
     if ((int)(a0->f_4) != (int)(0)) {
-        v0 = (int)(FIELD(u32, a0->f_4, 0));
+        v0 = (int)(a0->f_4->f_0);
     } else {
         v0 = (int)(0);
     }
     return (void*)(v0);
 }
 
+struct unk_003c4190_a0_8;
+struct unk_003c4190_a0_8 {
+    u32 f_0;
+};
 struct unk_003c4190_a0 {
     char pad_0[8];
-    u32 f_8;
+    unk_003c4190_a0_8* f_8;
 };
 void fn_003c4190(unk_003c4190_a0* a0) {
     if ((int)(a0->f_8) == (int)(0)) {
         return;
     }
-    if ((u32)(FIELD(u32, a0->f_8, 0)) > (u32)(31)) {
+    if ((u32)(a0->f_8->f_0) > (u32)(31)) {
         return;
     }
-    FIELD(u32, a0->f_8, 0) = (u32)(FIELD(u32, a0->f_8, 0) + 1);
+    a0->f_8->f_0 = (u32)(a0->f_8->f_0 + 1);
 }
 
+struct unk_003c41b8_a0_8;
+struct unk_003c41b8_a0_8 {
+    u32 f_0;
+};
 struct unk_003c41b8_a0 {
     char pad_0[8];
-    u32 f_8;
+    unk_003c41b8_a0_8* f_8;
 };
 void fn_003c41b8(unk_003c41b8_a0* a0) {
     if ((int)(a0->f_8) == (int)(0)) {
         return;
     }
-    if ((int)(FIELD(u32, a0->f_8, 0)) == (int)(0)) {
+    if ((int)(a0->f_8->f_0) == (int)(0)) {
         return;
     }
-    FIELD(u32, a0->f_8, 0) = (u32)(FIELD(u32, a0->f_8, 0) + -1);
+    a0->f_8->f_0 = (u32)(a0->f_8->f_0 + -1);
 }
 
+struct unk_003c41e0_a0_8;
+struct unk_003c41e0_a0_8 {
+    u32 f_0;
+};
 struct unk_003c41e0_a0 {
     char pad_0[8];
-    u32 f_8;
+    unk_003c41e0_a0_8* f_8;
 };
 void* fn_003c41e0(unk_003c41e0_a0* a0) {
     int v0;
     if ((int)(a0->f_8) != (int)(0)) {
-        v0 = (int)(FIELD(u32, a0->f_8, 0));
+        v0 = (int)(a0->f_8->f_0);
     } else {
         v0 = (int)(0);
     }
     return (void*)(v0);
 }
 
+struct unk_003c4200_a0_8;
+struct unk_003c4200_a0_8 {
+    u32 f_0;
+};
 struct unk_003c4200_a0 {
     char pad_0[8];
-    u32 f_8;
+    unk_003c4200_a0_8* f_8;
 };
 void fn_003c4200(unk_003c4200_a0* a0, int a1) {
     if ((int)(a0->f_8) == (int)(0)) {
         return;
     }
-    FIELD(u32, a0->f_8, 0) = (u32)(a1);
+    a0->f_8->f_0 = (u32)(a1);
 }
 
 struct unk_003c45b0_a0 {
@@ -103,14 +123,19 @@ void* fn_003c4a58(unk_003c4a58_a0* a0) {
     return (void*)(v0);
 }
 
+struct unk_003c4d44_a0_4;
+struct unk_003c4d44_a0_4 {
+    char pad_0[15384];
+    u32 f_3c18;
+};
 struct unk_003c4d44_a0 {
     char pad_0[4];
-    u32 f_4;
+    unk_003c4d44_a0_4* f_4;
 };
 void* fn_003c4d44(unk_003c4d44_a0* a0) {
     int v0;
     if ((int)(a0->f_4) != (int)(0)) {
-        v0 = (int)(FIELD(u32, a0->f_4, 15384));
+        v0 = (int)(a0->f_4->f_3c18);
     } else {
         v0 = (int)(0);
     }
@@ -131,14 +156,19 @@ void* fn_003c55e4(unk_003c55e4_a0* a0) {
     return (void*)(v0);
 }
 
+struct unk_003c5600_a0_4;
+struct unk_003c5600_a0_4 {
+    char pad_0[6160];
+    u32 f_1810;
+};
 struct unk_003c5600_a0 {
     char pad_0[4];
-    u32 f_4;
+    unk_003c5600_a0_4* f_4;
 };
 void* fn_003c5600(unk_003c5600_a0* a0) {
     int v0;
     if ((int)(a0->f_4) != (int)(0)) {
-        v0 = (int)(FIELD(u32, a0->f_4, 6160));
+        v0 = (int)(a0->f_4->f_1810);
     } else {
         v0 = (int)(0);
     }

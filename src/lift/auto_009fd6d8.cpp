@@ -4,10 +4,29 @@
 
 extern "C" {
 
+int fn_00a056c4(void*);
 void fn_00a072e8(int, int, int, int);
+void fn_00a19cd0(int);
 
 void fn_009fdb24(int a0, int a1) {
     fn_00a072e8((int)(a0), (int)(a1), (int)(0), (int)(0));
+}
+
+struct unk_009fe644_gm2c90;
+struct unk_009fe644_gm2c90 {
+    char pad_0[8724];
+    u32 f_2214;
+    u32 f_2218;
+};
+extern unk_009fe644_gm2c90 g_009fe644_0;
+void fn_009fe644(void) {
+    int t0;
+    if ((int)((&g_009fe644_0)->f_2214) != (int)(0)) {
+        (&g_009fe644_0)->f_2218 = (u32)(1);
+        t0 = fn_00a056c4((void*)((&g_009fe644_0)->f_2214));
+        (&g_009fe644_0)->f_2214 = (u32)(0);
+    }
+    fn_00a19cd0((int)(0));
 }
 
 }

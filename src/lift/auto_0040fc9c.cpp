@@ -5,70 +5,100 @@
 extern "C" {
 
 
+struct unk_0040ff80_a0_4;
+struct unk_0040ff80_a0_4 {
+    char pad_0[36];
+    u8 f_24;
+};
 struct unk_0040ff80_a0 {
     char pad_0[4];
-    u32 f_4;
+    unk_0040ff80_a0_4* f_4;
 };
 void fn_0040ff80(unk_0040ff80_a0* a0, int a1) {
     if ((int)(a0->f_4) == (int)(0)) {
         return;
     }
-    FIELD(u8, a0->f_4, 36) = (u8)(a1);
+    a0->f_4->f_24 = (u8)(a1);
 }
 
+struct unk_0040ff98_a0_4;
+struct unk_0040ff98_a0_4 {
+    char pad_0[37];
+    u8 f_25;
+};
 struct unk_0040ff98_a0 {
     char pad_0[4];
-    u32 f_4;
+    unk_0040ff98_a0_4* f_4;
 };
 void fn_0040ff98(unk_0040ff98_a0* a0, int a1) {
     if ((int)(a0->f_4) == (int)(0)) {
         return;
     }
-    FIELD(u8, a0->f_4, 37) = (u8)(a1);
+    a0->f_4->f_25 = (u8)(a1);
 }
 
+struct unk_0040ffb0_a0_4;
+struct unk_0040ffb0_a0_4 {
+    char pad_0[33];
+    u8 f_21;
+};
 struct unk_0040ffb0_a0 {
     char pad_0[4];
-    u32 f_4;
+    unk_0040ffb0_a0_4* f_4;
 };
 void fn_0040ffb0(unk_0040ffb0_a0* a0, int a1) {
     if ((int)(a0->f_4) == (int)(0)) {
         return;
     }
-    FIELD(u8, a0->f_4, 33) = (u8)(a1);
+    a0->f_4->f_21 = (u8)(a1);
 }
 
+struct unk_0040ffc8_a0_4;
+struct unk_0040ffc8_a0_4 {
+    char pad_0[34];
+    u8 f_22;
+};
 struct unk_0040ffc8_a0 {
     char pad_0[4];
-    u32 f_4;
+    unk_0040ffc8_a0_4* f_4;
 };
 void fn_0040ffc8(unk_0040ffc8_a0* a0, int a1) {
     if ((int)(a0->f_4) == (int)(0)) {
         return;
     }
-    FIELD(u8, a0->f_4, 34) = (u8)(a1);
+    a0->f_4->f_22 = (u8)(a1);
 }
 
+struct unk_0040ffe0_a0_4;
+struct unk_0040ffe0_a0_4 {
+    char pad_0[35];
+    u8 f_23;
+};
 struct unk_0040ffe0_a0 {
     char pad_0[4];
-    u32 f_4;
+    unk_0040ffe0_a0_4* f_4;
 };
 void fn_0040ffe0(unk_0040ffe0_a0* a0, int a1) {
     if ((int)(a0->f_4) == (int)(0)) {
         return;
     }
-    FIELD(u8, a0->f_4, 35) = (u8)(a1);
+    a0->f_4->f_23 = (u8)(a1);
 }
 
+struct unk_004100d8_a0_4;
+struct unk_004100d8_a0_4 {
+    char pad_0[70];
+    u8 f_46;
+};
 struct unk_004100d8_a0 {
     char pad_0[4];
-    u32 f_4;
+    unk_004100d8_a0_4* f_4;
 };
 void fn_004100d8(unk_004100d8_a0* a0, int a1) {
     if ((int)(a0->f_4) == (int)(0)) {
         return;
     }
-    FIELD(u8, a0->f_4, 70) = (u8)(a1);
+    a0->f_4->f_46 = (u8)(a1);
 }
 
 }

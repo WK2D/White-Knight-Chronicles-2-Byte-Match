@@ -5,9 +5,33 @@
 extern "C" {
 
 
-extern char g_00495bd4_0[];
+struct unk_00495bb8_gm6c8;
+struct unk_00495bb8_gm6c8_0;
+struct unk_00495bb8_gm6c8 {
+    unk_00495bb8_gm6c8_0* f_0;
+};
+struct unk_00495bb8_gm6c8_0 {
+    char pad_0[20];
+    u32 f_14;
+};
+extern unk_00495bb8_gm6c8 g_00495bb8_0;
+int fn_00495bb8(void) {
+    (&g_00495bb8_0)->f_0->f_14 = (u32)((&g_00495bb8_0)->f_0->f_14 + 1);
+    return (int)(1);
+}
+
+struct unk_00495bd4_gm6c8;
+struct unk_00495bd4_gm6c8_0;
+struct unk_00495bd4_gm6c8 {
+    unk_00495bd4_gm6c8_0* f_0;
+};
+struct unk_00495bd4_gm6c8_0 {
+    char pad_0[24];
+    u32 f_18;
+};
+extern unk_00495bd4_gm6c8 g_00495bd4_0;
 int fn_00495bd4(void) {
-    FIELD(u32, FIELD(u32, g_00495bd4_0, 0), 24) = (u32)(0);
+    (&g_00495bd4_0)->f_0->f_18 = (u32)(0);
     return (int)(1);
 }
 

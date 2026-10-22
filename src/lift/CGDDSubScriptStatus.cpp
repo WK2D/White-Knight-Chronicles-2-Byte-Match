@@ -26,70 +26,94 @@ u8 fn_0040cd7c(void* a0, int a1) {
     return (u8)((u8)t1);
 }
 
+struct unk_0040d39c_a0_8;
+struct unk_0040d39c_a0_8 {
+    u32 f_0;
+};
 struct unk_0040d39c_a0 {
     char pad_0[8];
-    u32 f_8;
+    unk_0040d39c_a0_8* f_8;
 };
 void* fn_0040d39c(unk_0040d39c_a0* a0) {
     int v0;
     if ((int)(a0->f_8) != (int)(0)) {
-        v0 = (int)(FIELD(u32, a0->f_8, 0));
+        v0 = (int)(a0->f_8->f_0);
     } else {
         v0 = (int)(0);
     }
     return (void*)(v0);
 }
 
+struct unk_0040d3bc_a0_8;
+struct unk_0040d3bc_a0_8 {
+    char pad_0[4];
+    u32 f_4;
+};
 struct unk_0040d3bc_a0 {
     char pad_0[8];
-    u32 f_8;
+    unk_0040d3bc_a0_8* f_8;
 };
 void* fn_0040d3bc(unk_0040d3bc_a0* a0) {
     int v0;
     if ((int)(a0->f_8) != (int)(0)) {
-        v0 = (int)(FIELD(u32, a0->f_8, 4));
+        v0 = (int)(a0->f_8->f_4);
     } else {
         v0 = (int)(0);
     }
     return (void*)(v0);
 }
 
+struct unk_0040d3dc_a0_8;
+struct unk_0040d3dc_a0_8 {
+    char pad_0[16];
+    u32 f_10;
+};
 struct unk_0040d3dc_a0 {
     char pad_0[8];
-    u32 f_8;
+    unk_0040d3dc_a0_8* f_8;
 };
 void* fn_0040d3dc(unk_0040d3dc_a0* a0) {
     int v0;
     if ((int)(a0->f_8) != (int)(0)) {
-        v0 = (int)(FIELD(u32, a0->f_8, 16));
+        v0 = (int)(a0->f_8->f_10);
     } else {
         v0 = (int)(0);
     }
     return (void*)(v0);
 }
 
-struct unk_0040d3fc_a0 {
+struct unk_0040d3fc_a0_8;
+struct unk_0040d3fc_a0_8 {
     char pad_0[8];
     u32 f_8;
+};
+struct unk_0040d3fc_a0 {
+    char pad_0[8];
+    unk_0040d3fc_a0_8* f_8;
 };
 void* fn_0040d3fc(unk_0040d3fc_a0* a0) {
     int v0;
     if ((int)(a0->f_8) != (int)(0)) {
-        v0 = (int)(FIELD(u32, a0->f_8, 8));
+        v0 = (int)(a0->f_8->f_8);
     } else {
         v0 = (int)(0);
     }
     return (void*)(v0);
 }
 
+struct unk_0040d424_a0_8;
+struct unk_0040d424_a0_8 {
+    char pad_0[12];
+    u32 f_c;
+};
 struct unk_0040d424_a0 {
     char pad_0[8];
-    u32 f_8;
+    unk_0040d424_a0_8* f_8;
 };
 void* fn_0040d424(unk_0040d424_a0* a0) {
     int v0;
     if ((int)(a0->f_8) != (int)(0)) {
-        v0 = (int)(FIELD(u32, a0->f_8, 12));
+        v0 = (int)(a0->f_8->f_c);
     } else {
         v0 = (int)(0);
     }

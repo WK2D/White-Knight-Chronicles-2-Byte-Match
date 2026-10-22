@@ -7,20 +7,33 @@ extern "C" {
 int fn_00034a88(void);
 int fn_00531ed8(u32, u16, void*);
 
+struct unk_003b9d74_a0_4;
+struct unk_003b9d74_a0_8;
+struct unk_003b9d74_a0_4 {
+    u8 f_0;
+};
+struct unk_003b9d74_a0_8 {
+    u8 f_0;
+};
 struct unk_003b9d74_a0 {
     char pad_0[4];
-    u32 f_4;
-    u32 f_8;
+    unk_003b9d74_a0_4* f_4;
+    unk_003b9d74_a0_8* f_8;
 };
 int fn_003b9d74(unk_003b9d74_a0* a0) {
-    FIELD(u8, a0->f_4, 0) = (u8)(0);
-    FIELD(u8, a0->f_8, 0) = (u8)(0);
+    a0->f_4->f_0 = (u8)(0);
+    a0->f_8->f_0 = (u8)(0);
     return (int)(1);
 }
 
+struct unk_003ba94c_a0_8;
+struct unk_003ba94c_a0_8 {
+    char pad_0[6];
+    u16 f_6;
+};
 struct unk_003ba94c_a0 {
     char pad_0[8];
-    u32 f_8;
+    unk_003ba94c_a0_8* f_8;
 };
 struct unk_003ba94c_a1 {
     char pad_0[84];
@@ -29,7 +42,7 @@ struct unk_003ba94c_a1 {
 int fn_003ba94c(unk_003ba94c_a0* a0, unk_003ba94c_a1* a1) {
     int v0;
     if (a1 != 0) {
-        FIELD(u16, a0->f_8, 6) = (u16)(a1->f_54);
+        a0->f_8->f_6 = (u16)(a1->f_54);
         v0 = (int)(1);
     } else {
         v0 = (int)(0);
@@ -37,26 +50,36 @@ int fn_003ba94c(unk_003ba94c_a0* a0, unk_003ba94c_a1* a1) {
     return (int)(v0);
 }
 
+struct unk_003bab18_a0_8;
+struct unk_003bab18_a0_8 {
+    char pad_0[299];
+    u8 f_12b;
+};
 struct unk_003bab18_a0 {
     char pad_0[8];
-    u32 f_8;
+    unk_003bab18_a0_8* f_8;
 };
 void fn_003bab18(unk_003bab18_a0* a0, int a1) {
     if ((int)(a0->f_8) == (int)(0)) {
         return;
     }
-    FIELD(u8, a0->f_8, 299) = (u8)(a1);
+    a0->f_8->f_12b = (u8)(a1);
 }
 
+struct unk_003bab30_a0_8;
+struct unk_003bab30_a0_8 {
+    char pad_0[299];
+    u8 f_12b;
+};
 struct unk_003bab30_a0 {
     char pad_0[4];
     u32 f_4;
-    u32 f_8;
+    unk_003bab30_a0_8* f_8;
 };
 int fn_003bab30(unk_003bab30_a0* a0) {
     int v0;
     if ((int)(a0->f_4) != (int)(0)) {
-        v0 = (int)(FIELD(u8, a0->f_8, 299));
+        v0 = (int)(a0->f_8->f_12b);
     } else {
         v0 = (int)(0);
     }
@@ -84,6 +107,26 @@ int fn_003bac3c(int a0, int a1, unk_003bac3c_a2* a2) {
     int t0;
     t0 = fn_00034a88();
     a2->f_0 = (u32)((int)(t0) + 8388608);
+    return (int)(0);
+}
+
+struct unk_003bac78_a0_4;
+struct unk_003bac78_a0_4 {
+    char pad_0[8048];
+    u32 f_1f70;
+};
+struct unk_003bac78_a0 {
+    char pad_0[4];
+    unk_003bac78_a0_4* f_4;
+};
+struct unk_003bac78_a3 {
+    u32 f_0;
+};
+int fn_003bac78(unk_003bac78_a0* a0, int a1, int a2, unk_003bac78_a3* a3) {
+    int t0;
+    t0 = fn_00034a88();
+    a3->f_0 = (u32)((int)(t0) + 8388608);
+    a0->f_4->f_1f70 = (u32)(a2);
     return (int)(0);
 }
 
