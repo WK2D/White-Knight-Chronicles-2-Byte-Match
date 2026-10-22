@@ -8,6 +8,15 @@ int fn_00b096f8(int, void*);
 int fn_00b0a034(int, void*, int, int);
 void fn_00b0c6ac(int);
 void fn_00b0c728(int);
+void fn_00b357dc(void*, int, void*, int, void*);
+
+extern char g_00b3359c_0[];
+extern char g_00b3359c_1[];
+__thread char tls_00b3359c_0[4];
+void* fn_00b3359c(int a0) {
+    fn_00b357dc((void*)(tls_00b3359c_0), (int)(26), (void*)(g_00b3359c_1), (int)(a0), (void*)(g_00b3359c_0));
+    return (void*)(tls_00b3359c_0);
+}
 
 int fn_00b33768(int a0, void* a1) {
     int t1;

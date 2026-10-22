@@ -26,8 +26,8 @@ from common import (BUILD, CFLAGS, COMPILER, ROOT, Object, Original, load_flags,
 
 REL24 = {10}                                   # R_PPC64_REL24
 REL14 = {11, 12, 13}                           # R_PPC64_REL14[_BRTAKEN|_BRNTAKEN]
-HALF = {4, 5, 6, 47, 48, 49, 50}               # ADDR16_LO/HI/HA, TOC16, TOC16_LO/HI/HA
-HALF_DS = {56, 57, 63, 64}                     # ADDR16_DS/LO_DS, TOC16_DS/LO_DS
+HALF = {4, 5, 6, 47, 48, 49, 50, 69, 70, 71, 72}   # ADDR16_LO/HI/HA, TOC16, TOC16_LO/HI/HA, TPREL16*
+HALF_DS = {56, 57, 63, 64, 95, 96}             # ADDR16_DS/LO_DS, TOC16_DS/LO_DS, TPREL16_DS/LO_DS
 NOP, TOC_RESTORE = 0x60000000, 0xE8410028
 
 

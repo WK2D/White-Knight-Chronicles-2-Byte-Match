@@ -10,6 +10,24 @@ int fn_00b3f378(int, int);
 void* fn_00b3f818(int, int);
 void* fn_00b41a38(int, int);
 void* fn_00b42098(int, int);
+int fn_00c01c98(u32, u32, int, int);
+
+struct unk_00bf8d10_tm6dc8;
+struct unk_00bf8d10_tm6dc8 {
+    u32 f_0;
+};
+struct unk_00bf8d10_a0 {
+    u32 f_0;
+    char pad_4[4];
+    u32 f_8;
+};
+__thread unk_00bf8d10_tm6dc8 tls_00bf8d10_0;
+void fn_00bf8d10(unk_00bf8d10_a0* a0) {
+    int t0;
+    if ((int)(a0->f_8) >= (int)(0)) {
+        t0 = fn_00c01c98((u32)((&tls_00bf8d10_0)->f_0), (u32)(a0->f_0), (int)((int)((u32)(a0->f_8) << 2)), (int)(24));
+    }
+}
 
 int fn_00bf8e44(int a0, int a1, int a2) {
     int t0;

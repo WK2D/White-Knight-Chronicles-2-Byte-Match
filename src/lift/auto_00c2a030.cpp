@@ -4,6 +4,8 @@
 
 extern "C" {
 
+int fn_00c01c98(u32, u32, int, int);
+void fn_00c02a70(u32, int);
 int fn_00c2a8d8(void*, void*);
 int fn_00c2aa48(void*, void*);
 void* fn_00c2acbc(void*, int);
@@ -67,6 +69,24 @@ void fn_00c2a208(unk_00c2a208_a0* a0, int a1, int a2) {
     }
 }
 
+struct unk_00c2a584_tm6dc8;
+struct unk_00c2a584_tm6dc8 {
+    u32 f_0;
+};
+__thread unk_00c2a584_tm6dc8 tls_00c2a584_0;
+void fn_00c2a584(int a0) {
+    fn_00c02a70((u32)((&tls_00c2a584_0)->f_0), (int)(a0));
+}
+
+struct unk_00c2a5f4_tm6dc8;
+struct unk_00c2a5f4_tm6dc8 {
+    u32 f_0;
+};
+__thread unk_00c2a5f4_tm6dc8 tls_00c2a5f4_0;
+void fn_00c2a5f4(int a0) {
+    fn_00c02a70((u32)((&tls_00c2a5f4_0)->f_0), (int)(a0));
+}
+
 struct unk_00c2a728_a0 {
     u32 f_0;
     u32 f_4;
@@ -119,6 +139,57 @@ u32 fn_00c2afb8(unk_00c2afb8_a0* a0, int a1) {
         v0 = (int)(1);
     }
     return (u32)((u32)(v0) & 0x1);
+}
+
+struct unk_00c2b1a8_tm6dc8;
+struct unk_00c2b1a8_tm6dc8 {
+    u32 f_0;
+};
+struct unk_00c2b1a8_a0 {
+    u32 f_0;
+    u32 f_4;
+    u32 f_8;
+};
+__thread unk_00c2b1a8_tm6dc8 tls_00c2b1a8_0;
+void fn_00c2b1a8(unk_00c2b1a8_a0* a0) {
+    int t0;
+    if ((int)(a0->f_4) >= (int)(0)) {
+        t0 = fn_00c01c98((u32)((&tls_00c2b1a8_0)->f_0), (u32)(a0->f_0), (int)((int)((u32)(a0->f_8 + 1) << 3)), (int)(24));
+    }
+}
+
+struct unk_00c2b200_tm6dc8;
+struct unk_00c2b200_tm6dc8 {
+    u32 f_0;
+};
+struct unk_00c2b200_a0 {
+    u32 f_0;
+    u32 f_4;
+    u32 f_8;
+};
+__thread unk_00c2b200_tm6dc8 tls_00c2b200_0;
+void fn_00c2b200(unk_00c2b200_a0* a0) {
+    int t0;
+    if ((int)(a0->f_4) >= (int)(0)) {
+        t0 = fn_00c01c98((u32)((&tls_00c2b200_0)->f_0), (u32)(a0->f_0), (int)((int)((u32)(a0->f_8 + 1) << 3)), (int)(24));
+    }
+}
+
+struct unk_00c2b258_tm6dc8;
+struct unk_00c2b258_tm6dc8 {
+    u32 f_0;
+};
+struct unk_00c2b258_a0 {
+    u32 f_0;
+    u32 f_4;
+    u32 f_8;
+};
+__thread unk_00c2b258_tm6dc8 tls_00c2b258_0;
+void fn_00c2b258(unk_00c2b258_a0* a0) {
+    int t0;
+    if ((int)(a0->f_4) >= (int)(0)) {
+        t0 = fn_00c01c98((u32)((&tls_00c2b258_0)->f_0), (u32)(a0->f_0), (int)((int)((u32)(a0->f_8 + 1) << 4)), (int)(24));
+    }
 }
 
 void fn_00c2b4e0(void* a0, int a1) {

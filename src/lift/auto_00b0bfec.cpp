@@ -29,4 +29,9 @@ void fn_00b0c728(unk_00b0c728_a0* a0) {
     }
 }
 
+__thread char tls_00b0cbe0_0[4];
+void* fn_00b0cbe0(void) {
+    return (void*)(tls_00b0cbe0_0);
+}
+
 }

@@ -10,4 +10,9 @@ void fn_00b357d4(int a0, int a1, int a2) {
     stub_00b35434((int)(a0), (int)(a1), (int)(a2), (int)(0));
 }
 
+__thread char tls_00b36184_0[4];
+void* fn_00b36184(void) {
+    return (void*)(tls_00b36184_0);
+}
+
 }

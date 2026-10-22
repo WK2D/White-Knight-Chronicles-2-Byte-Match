@@ -6,7 +6,20 @@ extern "C" {
 
 void fn_00b0c6ac(int);
 void fn_00b0c728(int);
+static void __attribute__((noinline)) stub_00b0cc54(void* p0, u16 p1, void* p2, void* p3, void* p4) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4)); }
 int fn_00b0e19c(void*, int, void*, void*);
+
+__thread char tls_00b0cf30_0[4];
+__thread char tls_00b0cf30_1[4];
+void fn_00b0cf30(void* a0, int a1, void* a2) {
+    int v0;
+    if ((int)(a0) != (int)(0)) {
+        v0 = (int)(tls_00b0cf30_1);
+    } else {
+        v0 = (int)(0);
+    }
+    stub_00b0cc54((void*)(a0), (u16)((u16)a1), (void*)(a2), (void*)(tls_00b0cf30_0), (void*)(v0));
+}
 
 extern char g_00b0df38_0[];
 int fn_00b0df38(int a0, void* a1, void* a2) {

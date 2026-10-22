@@ -4,9 +4,26 @@
 
 extern "C" {
 
+int fn_00c01c98(u32, u32, u32, int);
 void fn_00c93fa4(void);
 void fn_00c941a0(void);
 void fn_00c9531c(void);
+
+struct unk_00c91104_tm6dc8;
+struct unk_00c91104_tm6dc8 {
+    u32 f_0;
+};
+struct unk_00c91104_a0 {
+    char pad_0[12];
+    u8 f_c;
+};
+__thread unk_00c91104_tm6dc8 tls_00c91104_0;
+void fn_00c91104(unk_00c91104_a0* a0) {
+    int t0;
+    if ((int)(FIELD(u32, (&a0->f_c), 8)) >= (int)(0)) {
+        t0 = fn_00c01c98((u32)((&tls_00c91104_0)->f_0), (u32)(FIELD(u32, (&a0->f_c), 0)), (u32)((u32)(FIELD(u32, (&a0->f_c), 8)) & 0x3fffffff), (int)(24));
+    }
+}
 
 void fn_00c91150(void) {
     fn_00c93fa4();

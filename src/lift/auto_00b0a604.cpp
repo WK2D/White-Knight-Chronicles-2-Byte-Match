@@ -15,6 +15,11 @@ void* fn_00b0abcc(void) {
     return (void*)((int)(signed char)((&g_00b0abcc_0)->f_0));
 }
 
+__thread char tls_00b0abe0_0[4];
+void* fn_00b0abe0(void) {
+    return (void*)(tls_00b0abe0_0);
+}
+
 void fn_00b0af88(int a0, int a1, int a2) {
     stub_00b0abf0((int)(a0), (int)(a1), (int)(a2), (int)(0));
 }

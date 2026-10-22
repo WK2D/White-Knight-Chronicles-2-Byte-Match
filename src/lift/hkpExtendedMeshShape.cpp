@@ -4,7 +4,44 @@
 
 extern "C" {
 
+int fn_00c02a70(u32, u32);
 int fn_00d46eb0(void*);
+
+struct unk_00cf4080_tm6dc8;
+struct unk_00cf4080_tm6dc8 {
+    u32 f_0;
+};
+struct unk_00cf4080_a0 {
+    char pad_0[189];
+    u8 f_bd;
+    char pad_be[2];
+    u32 f_c0;
+};
+__thread unk_00cf4080_tm6dc8 tls_00cf4080_0;
+void fn_00cf4080(unk_00cf4080_a0* a0) {
+    int t0;
+    if ((int)(a0->f_bd) != (int)(0)) {
+        t0 = fn_00c02a70((u32)((&tls_00cf4080_0)->f_0), (u32)(a0->f_c0));
+    }
+}
+
+struct unk_00cf40c4_tm6dc8;
+struct unk_00cf40c4_tm6dc8 {
+    u32 f_0;
+};
+struct unk_00cf40c4_a0 {
+    char pad_0[180];
+    u32 f_b4;
+    char pad_b8[4];
+    u8 f_bc;
+};
+__thread unk_00cf40c4_tm6dc8 tls_00cf40c4_0;
+void fn_00cf40c4(unk_00cf40c4_a0* a0) {
+    int t0;
+    if ((int)(a0->f_bc) != (int)(0)) {
+        t0 = fn_00c02a70((u32)((&tls_00cf40c4_0)->f_0), (u32)(a0->f_b4));
+    }
+}
 
 struct unk_00cf427c_a0 {
     char pad_0[16];

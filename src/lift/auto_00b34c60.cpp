@@ -5,6 +5,23 @@
 extern "C" {
 
 void fn_00b05128(void*);
+static void __attribute__((noinline)) stub_00b34c60(int p0, int p1, void* p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
+static void __attribute__((noinline)) stub_00b34e1c(int p0, int p1, int p2, void* p3) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); }
+
+__thread char tls_00b34de0_0[4];
+void fn_00b34de0(int a0, int a1) {
+    stub_00b34c60((int)(a0), (int)(a1), (void*)(tls_00b34de0_0));
+}
+
+__thread char tls_00b34fd4_0[4];
+void fn_00b34fd4(int a0, int a1, int a2) {
+    stub_00b34e1c((int)(a0), (int)(a1), (int)(a2), (void*)(tls_00b34fd4_0));
+}
+
+__thread char tls_00b35110_0[4];
+void* fn_00b35110(void) {
+    return (void*)(tls_00b35110_0);
+}
 
 extern char g_00b3538c_0[];
 void fn_00b3538c(void) {

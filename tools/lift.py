@@ -267,6 +267,7 @@ class Lifter:
         self.made_call = False            # a call has clobbered r3-r12 somewhere before
         self.bfresh = set()               # argument registers written since the last loop boundary
         self.local_refs = 0               # uses of the frame's locals (one struct l)
+        self.tls = {}                     # thread-pointer offset -> name of a __thread variable
         self.tails = set()                # indexes of tail calls (b to another function)
         self.budget = 16 * len(words)     # instructions step() may execute in total
         self.noreturn = set()             # callees that never return (the function ends in a call)
@@ -281,11 +282,11 @@ class Lifter:
         """Struct name for an access path."""
         if path[0] == 'l':
             parts = ['l']
-        elif path[0] == 'g':
-            parts = [f'g{path[1]:x}' if path[1] >= 0 else f'gm{-path[1]:x}']
+        elif path[0] in ('g', 't'):
+            parts = [f'{path[0]}{path[1]:x}' if path[1] >= 0 else f'{path[0]}m{-path[1]:x}']
         else:
             parts = [f'a{path[0] - 3}']
-        parts += [f'{d:x}' if d >= 0 else f'm{-d:x}' for d in path[2 if path[0] == 'g' else 1:]]
+        parts += [f'{d:x}' if d >= 0 else f'm{-d:x}' for d in path[2 if path[0] in ('g', 't') else 1:]]
         return f'unk_{self.address:08x}_' + '_'.join(parts)
 
     def pointer_fields(self, path):
@@ -314,6 +315,8 @@ class Lifter:
                 return v
             if r == 1:
                 return Value('/*frame*/', 'frame')
+            if r == 13:
+                return Value('/*thread pointer*/', 'tls')
             raise Fail(f'r{r} read before it is set')
         if v.call is not None:
             v.call['used'] = True
@@ -357,6 +360,16 @@ class Lifter:
         typed = ('g', d) in self.layouts
         v = Value(f'(&{self.globals[d]})' if typed else self.globals[d], 'gaddr')
         v.path = ('g', d)
+        return v
+
+    def address_of_tls(self, off):
+        """A __thread variable defined in this file (GCC then addresses it
+        with addis/addi from r13, like the game)."""
+        if off not in self.tls:
+            self.tls[off] = f'tls_{self.address:08x}_{len(self.tls)}'
+        typed = ('t', off) in self.layouts
+        v = Value(f'(&{self.tls[off]})' if typed else self.tls[off], 'gaddr')
+        v.path = ('t', off)
         return v
 
     def local_address(self, off):
@@ -1052,6 +1065,11 @@ class Lifter:
             return
         if op == 15 and ra != 0:                                     # addis rD,rA,imm
             base = self.reg(ra)
+            if base.ctype == 'tls':                                  # high half of a thread-local's address
+                v = Value('/*thread-local high*/', 'tlsha')
+                v.tls_off = d << 16
+                self.set(rt, v)
+                return
             if base.ctype == 'toc':
                 v = Value('TOC', 'toc')
                 v.toc_off = getattr(base, 'toc_off', 0) + (d << 16)
@@ -1150,6 +1168,11 @@ class Lifter:
             base = self.reg(ra)
             if base.ctype == 'toc':
                 raise Fail('address inside the TOC')
+            if base.ctype == 'tlsha':                                 # a thread-local variable's address
+                if not hasattr(base, 'tls_off'):
+                    raise Fail('merged thread-local address')
+                self.set(rt, self.address_of_tls(base.tls_off + d))
+                return
             iv = getattr(base, 'iv', None)
             if iv is not None:                                       # the induction step
                 index, stride, k = iv
@@ -1608,7 +1631,7 @@ class Lifter:
             body.pop()
         params = []
         structs = []
-        nested = [path for path in self.layouts if path[0] in ('g', 'l') or len(path) > 1]
+        nested = [path for path in self.layouts if path[0] in ('g', 'l', 't') or len(path) > 1]
         structs += [f'struct {self.tag(path)};' for path in nested]   # forward declarations
         for path in nested:
             structs.append(struct_decl(self.tag(path), self.layouts[path], self.pointer_fields(path)))
@@ -1633,6 +1656,8 @@ class Lifter:
             structs.append(class_decl(tag, slots, {}))
         decls = structs + [f'extern {self.tag(("g", d))} {n};' if ('g', d) in self.layouts else f'extern char {n}[];'
                            for d, n in self.globals.items()]
+        decls += [f'__thread {self.tag(("t", d))} {n};' if ('t', d) in self.layouts else f'__thread char {n}[4];'
+                  for d, n in self.tls.items()]
         for target in self.noreturn:                       # redeclared so GCC knows before the call
             rtype, types, local = callees[target]
             name = f'{"stub" if local else "fn"}_{target:08x}'
@@ -1712,7 +1737,7 @@ def lift(address, words, arity):
         paths = set(typed.access) | set(typed.addressed)
         for path, fields in sorted(((p_, typed.access.get(p_, set())) for p_ in paths),
                                    key=lambda kv: (len(kv[0]), str(kv[0]))):
-            if len(path) > 1 and path[0] != 'g' or len(path) > 2:
+            if len(path) > 1 and path[0] not in ('g', 't') or len(path) > 2:
                 parent = path[:-1]
                 if layouts.get(parent, {}).get(path[-1]) != 'u32':
                     continue                      # loaded from something without a struct
