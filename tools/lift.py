@@ -1219,6 +1219,23 @@ def main():
         for reason, n in WHY.most_common(25):
             print(f'{n:6d}  {reason}')
         return
+    if '--one' in sys.argv:
+        # Print one function's lifted source (for experiments); write nothing.
+        address = int(sys.argv[sys.argv.index('--one') + 1], 16)
+        orig, functions = Original(), load_functions()
+        def arity(target):
+            size = functions.get(target)
+            if not size:
+                raise Fail('unknown callee')
+            return reads_before_writes(struct.unpack(f'>{size // 4}I', orig.read(target, size)))
+        size = functions[address]
+        result = lift(address, struct.unpack(f'>{size // 4}I', orig.read(address, size)), arity)
+        if result is None:
+            print('not lifted')
+            return
+        decls, code, calls = result
+        print('\n'.join(decls) + '\n' + code)
+        return
     prune = set()
     pruned_path = BUILD / 'lift_pruned.txt'
     if '--prune' in sys.argv:

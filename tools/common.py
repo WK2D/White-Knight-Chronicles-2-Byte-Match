@@ -14,7 +14,7 @@ COMPILER = ROOT / 'tools' / 'ppu-gcc'                     # built by tools/build
 # optimization off: a counted loop at 0x004b32e8 matches only with
 # -fno-ivopts (or the broader -fno-tree-loop-optimize; more loops will tell
 # the two apart).
-CFLAGS = ['-O2', '-fno-ivopts']
+CFLAGS = os.environ.get('WKC2_CFLAGS', '-O2 -fno-ivopts').split()   # override for experiments
 
 
 def load_functions():

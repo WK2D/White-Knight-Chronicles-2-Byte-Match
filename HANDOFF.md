@@ -216,3 +216,16 @@ Rename units to their real source files as they are identified, and edit
 3. Identify real source files and rename units: assert-string paths, then
    class names.
 4. Submit the repository on bytematch.dev (the user signs in).
+
+## Open question: compiler flags (2026-10-22)
+
+- `fn_007f1cf8` matches 100% from natural array code
+  (`for (int i = 0; i < 4; i++) if (s->a[i] != s->b[i]) s->count++;`) with plain
+  `-O2`, but not with the project's `-O2 -fno-ivopts`. The old hand match
+  `fn_004b32e8` still needs `-fno-ivopts`. Flags may differ per source file.
+- `WKC2_CFLAGS="-O2" python tools/check.py -v` runs the corpus with other
+  flags. Compare it with the default run to see which functions (and units)
+  match only under each set, then consider per-unit flags in config/units.txt.
+- `python tools/try.py build/try/x.cpp [-d] [-O2 ...]` compiles one file and
+  compares its `fn_<addr>` functions: the fast loop for trying idioms.
+- `python tools/lift.py --one <addr>` prints one lifted function.
