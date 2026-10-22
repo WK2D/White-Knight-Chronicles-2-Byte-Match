@@ -39,12 +39,14 @@ more native with every green square.
   functions byte for byte.
 - **Compiler flags:** `-O2 -fno-ivopts`. A counted loop in `CPostEffectManager`
   matches only with induction-variable optimization off.
-- **Code:** 55,164 functions in 16.5 MB of PowerPC code. **8,218 match**
-  (0.53% of the code): three by hand, the rest small functions written by
+- **Code:** 55,164 functions in 16.5 MB of PowerPC code. **9,117 match**
+  (0.73% of the code): three by hand, the rest small functions written by
   [`tools/gen_simple.py`](tools/gen_simple.py) from their instruction shape
   (empty bodies, constant returns, field getters and setters, global loads,
   struct clears, tail calls with constant arguments, empty derived-class
-  destructors). Every one is verified byte for byte like any other.
+  destructors), and straight-line functions lifted to C by
+  [`tools/lift.py`](tools/lift.py). Every one is verified byte for byte like
+  any other.
 - **Units:** about 4,600, inferred from the stripped executable by
   [`tools/make_units.py`](tools/make_units.py). C++ RTTI names 1,032 classes,
   and their vtables, constructors and destructors label the code around them.
@@ -93,6 +95,7 @@ register and every instruction, has to be identical.
 | `progress/` | The objdiff-format progress report and the map drawn from it |
 | `tools/` | Compiler build, checker, class and unit inference, bulk generator, map scripts |
 | `src/gen/` | Generated small functions, one file per unit |
+| `src/lift/` | Straight-line functions lifted to C, one file per unit |
 | [`HANDOFF.md`](HANDOFF.md) | State, workflow and pitfalls for whoever picks this up next |
 | `orig/` | Your own game files (never committed) |
 
