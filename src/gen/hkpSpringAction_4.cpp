@@ -2,6 +2,11 @@
 // shape, from unit hkpSpringAction_4. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_b0_00e9b510 { virtual void f(); char pad[44]; };
+struct gen_b1_00e9b510 { virtual void f(); };
+struct gen_00e9b510 : gen_b0_00e9b510, gen_b1_00e9b510 { virtual void f(); };
+__attribute__((section(".text.gen_00e9b510"))) void gen_00e9b510::f() {}
+
 extern "C" {
 
 extern char g_00e9b508[];

@@ -2,6 +2,31 @@
 // shape, from unit hkpConvexPieceMeshShape_2. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_b0_00d4d390 { virtual void f(); char pad[12]; };
+struct gen_b1_00d4d390 { virtual void f(); };
+struct gen_00d4d390 : gen_b0_00d4d390, gen_b1_00d4d390 { virtual void f(); };
+__attribute__((section(".text.gen_00d4d390"))) void gen_00d4d390::f() {}
+
+struct gen_b0_00d4d700 { virtual void f(); char pad[12]; };
+struct gen_b1_00d4d700 { virtual void f(); };
+struct gen_00d4d700 : gen_b0_00d4d700, gen_b1_00d4d700 { virtual void f(); };
+__attribute__((section(".text.gen_00d4d700"))) void gen_00d4d700::f() {}
+
+struct gen_b0_00d4d810 { virtual void f(); char pad[12]; };
+struct gen_b1_00d4d810 { virtual void f(); };
+struct gen_00d4d810 : gen_b0_00d4d810, gen_b1_00d4d810 { virtual void f(); };
+__attribute__((section(".text.gen_00d4d810"))) void gen_00d4d810::f() {}
+
+struct gen_b0_00d4d8c0 { virtual void f(); char pad[12]; };
+struct gen_b1_00d4d8c0 { virtual void f(); };
+struct gen_00d4d8c0 : gen_b0_00d4d8c0, gen_b1_00d4d8c0 { virtual void f(); };
+__attribute__((section(".text.gen_00d4d8c0"))) void gen_00d4d8c0::f() {}
+
+struct gen_b0_00d4df4c { virtual void f(); char pad[12]; };
+struct gen_b1_00d4df4c { virtual void f(); };
+struct gen_00d4df4c : gen_b0_00d4df4c, gen_b1_00d4df4c { virtual void f(); };
+__attribute__((section(".text.gen_00d4df4c"))) void gen_00d4df4c::f() {}
+
 extern "C" {
 
 int fn_00d4d398(void) { return 0; }

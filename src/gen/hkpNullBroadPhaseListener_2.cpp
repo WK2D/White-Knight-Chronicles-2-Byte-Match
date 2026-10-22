@@ -2,6 +2,26 @@
 // shape, from unit hkpNullBroadPhaseListener_2. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_b0_00f576e8 { virtual void f(); char pad[4]; };
+struct gen_b1_00f576e8 { virtual void f(); };
+struct gen_00f576e8 : gen_b0_00f576e8, gen_b1_00f576e8 { virtual void f(); };
+__attribute__((section(".text.gen_00f576e8"))) void gen_00f576e8::f() {}
+
+struct gen_b0_00f576f4 { virtual void f(); char pad[4]; };
+struct gen_b1_00f576f4 { virtual void f(); };
+struct gen_00f576f4 : gen_b0_00f576f4, gen_b1_00f576f4 { virtual void f(); };
+__attribute__((section(".text.gen_00f576f4"))) void gen_00f576f4::f() {}
+
+struct gen_b0_00f57700 { virtual void f(); char pad[4]; };
+struct gen_b1_00f57700 { virtual void f(); };
+struct gen_00f57700 : gen_b0_00f57700, gen_b1_00f57700 { virtual void f(); };
+__attribute__((section(".text.gen_00f57700"))) void gen_00f57700::f() {}
+
+struct gen_b0_00f57760 { virtual void f(); char pad[4]; };
+struct gen_b1_00f57760 { virtual void f(); };
+struct gen_00f57760 : gen_b0_00f57760, gen_b1_00f57760 { virtual void f(); };
+__attribute__((section(".text.gen_00f57760"))) void gen_00f57760::f() {}
+
 extern "C" {
 
 void fn_00f576f0(void) {}

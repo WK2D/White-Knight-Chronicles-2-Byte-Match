@@ -2,6 +2,31 @@
 // shape, from unit hkpMeshShape. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_b0_00d07ee0 { virtual void f(); char pad[12]; };
+struct gen_b1_00d07ee0 { virtual void f(); };
+struct gen_00d07ee0 : gen_b0_00d07ee0, gen_b1_00d07ee0 { virtual void f(); };
+__attribute__((section(".text.gen_00d07ee0"))) void gen_00d07ee0::f() {}
+
+struct gen_b0_00d08220 { virtual void f(); char pad[12]; };
+struct gen_b1_00d08220 { virtual void f(); };
+struct gen_00d08220 : gen_b0_00d08220, gen_b1_00d08220 { virtual void f(); };
+__attribute__((section(".text.gen_00d08220"))) void gen_00d08220::f() {}
+
+struct gen_b0_00d08548 { virtual void f(); char pad[12]; };
+struct gen_b1_00d08548 { virtual void f(); };
+struct gen_00d08548 : gen_b0_00d08548, gen_b1_00d08548 { virtual void f(); };
+__attribute__((section(".text.gen_00d08548"))) void gen_00d08548::f() {}
+
+struct gen_b0_00d08958 { virtual void f(); char pad[12]; };
+struct gen_b1_00d08958 { virtual void f(); };
+struct gen_00d08958 : gen_b0_00d08958, gen_b1_00d08958 { virtual void f(); };
+__attribute__((section(".text.gen_00d08958"))) void gen_00d08958::f() {}
+
+struct gen_b0_00d08a2c { virtual void f(); char pad[12]; };
+struct gen_b1_00d08a2c { virtual void f(); };
+struct gen_00d08a2c : gen_b0_00d08a2c, gen_b1_00d08a2c { virtual void f(); };
+__attribute__((section(".text.gen_00d08a2c"))) void gen_00d08a2c::f() {}
+
 extern "C" {
 
 void fn_00d08f08(void) {}

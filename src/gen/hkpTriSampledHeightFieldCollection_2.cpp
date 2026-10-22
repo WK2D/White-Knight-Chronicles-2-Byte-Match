@@ -2,6 +2,36 @@
 // shape, from unit hkpTriSampledHeightFieldCollection_2. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_b0_00d56178 { virtual void f(); char pad[12]; };
+struct gen_b1_00d56178 { virtual void f(); };
+struct gen_00d56178 : gen_b0_00d56178, gen_b1_00d56178 { virtual void f(); };
+__attribute__((section(".text.gen_00d56178"))) void gen_00d56178::f() {}
+
+struct gen_b0_00d56188 { virtual void f(); char pad[12]; };
+struct gen_b1_00d56188 { virtual void f(); };
+struct gen_00d56188 : gen_b0_00d56188, gen_b1_00d56188 { virtual void f(); };
+__attribute__((section(".text.gen_00d56188"))) void gen_00d56188::f() {}
+
+struct gen_b0_00d5629c { virtual void f(); char pad[12]; };
+struct gen_b1_00d5629c { virtual void f(); };
+struct gen_00d5629c : gen_b0_00d5629c, gen_b1_00d5629c { virtual void f(); };
+__attribute__((section(".text.gen_00d5629c"))) void gen_00d5629c::f() {}
+
+struct gen_b0_00d565c0 { virtual void f(); char pad[12]; };
+struct gen_b1_00d565c0 { virtual void f(); };
+struct gen_00d565c0 : gen_b0_00d565c0, gen_b1_00d565c0 { virtual void f(); };
+__attribute__((section(".text.gen_00d565c0"))) void gen_00d565c0::f() {}
+
+struct gen_b0_00d56aa4 { virtual void f(); char pad[12]; };
+struct gen_b1_00d56aa4 { virtual void f(); };
+struct gen_00d56aa4 : gen_b0_00d56aa4, gen_b1_00d56aa4 { virtual void f(); };
+__attribute__((section(".text.gen_00d56aa4"))) void gen_00d56aa4::f() {}
+
+struct gen_b0_00d56be4 { virtual void f(); char pad[12]; };
+struct gen_b1_00d56be4 { virtual void f(); };
+struct gen_00d56be4 : gen_b0_00d56be4, gen_b1_00d56be4 { virtual void f(); };
+__attribute__((section(".text.gen_00d56be4"))) void gen_00d56be4::f() {}
+
 extern "C" {
 
 int fn_00d56180(void) { return 0; }

@@ -2,6 +2,31 @@
 // shape, from unit hkpConvexPieceShape. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_b0_00d4e19c { virtual void f(); char pad[16]; };
+struct gen_b1_00d4e19c { virtual void f(); };
+struct gen_00d4e19c : gen_b0_00d4e19c, gen_b1_00d4e19c { virtual void f(); };
+__attribute__((section(".text.gen_00d4e19c"))) void gen_00d4e19c::f() {}
+
+struct gen_b0_00d4e1ac { virtual void f(); char pad[16]; };
+struct gen_b1_00d4e1ac { virtual void f(); };
+struct gen_00d4e1ac : gen_b0_00d4e1ac, gen_b1_00d4e1ac { virtual void f(); };
+__attribute__((section(".text.gen_00d4e1ac"))) void gen_00d4e1ac::f() {}
+
+struct gen_b0_00d4e1d4 { virtual void f(); char pad[16]; };
+struct gen_b1_00d4e1d4 { virtual void f(); };
+struct gen_00d4e1d4 : gen_b0_00d4e1d4, gen_b1_00d4e1d4 { virtual void f(); };
+__attribute__((section(".text.gen_00d4e1d4"))) void gen_00d4e1d4::f() {}
+
+struct gen_b0_00d4eaa4 { virtual void f(); char pad[16]; };
+struct gen_b1_00d4eaa4 { virtual void f(); };
+struct gen_00d4eaa4 : gen_b0_00d4eaa4, gen_b1_00d4eaa4 { virtual void f(); };
+__attribute__((section(".text.gen_00d4eaa4"))) void gen_00d4eaa4::f() {}
+
+struct gen_b0_00d4eb1c { virtual void f(); char pad[16]; };
+struct gen_b1_00d4eb1c { virtual void f(); };
+struct gen_00d4eb1c : gen_b0_00d4eb1c, gen_b1_00d4eb1c { virtual void f(); };
+__attribute__((section(".text.gen_00d4eb1c"))) void gen_00d4eb1c::f() {}
+
 extern "C" {
 
 void* fn_00d4e190(void* self) { return (char*)self + 20; }

@@ -2,6 +2,21 @@
 // shape, from unit hkpBroadPhaseBorder. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_b0_00d92900 { virtual void f(); char pad[8]; };
+struct gen_b1_00d92900 { virtual void f(); };
+struct gen_00d92900 : gen_b0_00d92900, gen_b1_00d92900 { virtual void f(); };
+__attribute__((section(".text.gen_00d92900"))) void gen_00d92900::f() {}
+
+struct gen_b0_00d92a6c { virtual void f(); char pad[4]; };
+struct gen_b1_00d92a6c { virtual void f(); };
+struct gen_00d92a6c : gen_b0_00d92a6c, gen_b1_00d92a6c { virtual void f(); };
+__attribute__((section(".text.gen_00d92a6c"))) void gen_00d92a6c::f() {}
+
+struct gen_b0_00d92b74 { virtual void f(); char pad[8]; };
+struct gen_b1_00d92b74 { virtual void f(); };
+struct gen_00d92b74 : gen_b0_00d92b74, gen_b1_00d92b74 { virtual void f(); };
+__attribute__((section(".text.gen_00d92b74"))) void gen_00d92b74::f() {}
+
 extern "C" {
 
 void fn_00d928f8(void) {}

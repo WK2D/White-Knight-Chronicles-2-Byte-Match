@@ -2,6 +2,16 @@
 // shape, from unit hkpShapeCollection. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_b0_00cf3e38 { virtual void f(); char pad[12]; };
+struct gen_b1_00cf3e38 { virtual void f(); };
+struct gen_00cf3e38 : gen_b0_00cf3e38, gen_b1_00cf3e38 { virtual void f(); };
+__attribute__((section(".text.gen_00cf3e38"))) void gen_00cf3e38::f() {}
+
+struct gen_b0_00cf3ea0 { virtual void f(); char pad[12]; };
+struct gen_b1_00cf3ea0 { virtual void f(); };
+struct gen_00cf3ea0 : gen_b0_00cf3ea0, gen_b1_00cf3ea0 { virtual void f(); };
+__attribute__((section(".text.gen_00cf3ea0"))) void gen_00cf3ea0::f() {}
+
 extern "C" {
 
 void* fn_00cf31cc(void* self) { return (char*)self + 16; }

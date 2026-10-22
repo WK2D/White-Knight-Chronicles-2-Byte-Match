@@ -2,6 +2,21 @@
 // shape, from unit hkpGunProjectile. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_b0_00eb14d0 { virtual void f(); char pad[4]; };
+struct gen_b1_00eb14d0 { virtual void f(); };
+struct gen_00eb14d0 : gen_b0_00eb14d0, gen_b1_00eb14d0 { virtual void f(); };
+__attribute__((section(".text.gen_00eb14d0"))) void gen_00eb14d0::f() {}
+
+struct gen_b0_00eb14dc { virtual void f(); char pad[4]; };
+struct gen_b1_00eb14dc { virtual void f(); };
+struct gen_00eb14dc : gen_b0_00eb14dc, gen_b1_00eb14dc { virtual void f(); };
+__attribute__((section(".text.gen_00eb14dc"))) void gen_00eb14dc::f() {}
+
+struct gen_b0_00eb1524 { virtual void f(); char pad[4]; };
+struct gen_b1_00eb1524 { virtual void f(); };
+struct gen_00eb1524 : gen_b0_00eb1524, gen_b1_00eb1524 { virtual void f(); };
+__attribute__((section(".text.gen_00eb1524"))) void gen_00eb1524::f() {}
+
 extern "C" {
 
 void fn_00eb14c8(void) {}

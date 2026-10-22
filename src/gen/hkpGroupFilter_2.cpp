@@ -2,6 +2,46 @@
 // shape, from unit hkpGroupFilter_2. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_b0_00cf0580 { virtual void f(); char pad[16]; };
+struct gen_b1_00cf0580 { virtual void f(); };
+struct gen_00cf0580 : gen_b0_00cf0580, gen_b1_00cf0580 { virtual void f(); };
+__attribute__((section(".text.gen_00cf0580"))) void gen_00cf0580::f() {}
+
+struct gen_b0_00cf0588 { virtual void f(); char pad[12]; };
+struct gen_b1_00cf0588 { virtual void f(); };
+struct gen_00cf0588 : gen_b0_00cf0588, gen_b1_00cf0588 { virtual void f(); };
+__attribute__((section(".text.gen_00cf0588"))) void gen_00cf0588::f() {}
+
+struct gen_b0_00cf0590 { virtual void f(); char pad[8]; };
+struct gen_b1_00cf0590 { virtual void f(); };
+struct gen_00cf0590 : gen_b0_00cf0590, gen_b1_00cf0590 { virtual void f(); };
+__attribute__((section(".text.gen_00cf0590"))) void gen_00cf0590::f() {}
+
+struct gen_b0_00cf0598 { virtual void f(); char pad[4]; };
+struct gen_b1_00cf0598 { virtual void f(); };
+struct gen_00cf0598 : gen_b0_00cf0598, gen_b1_00cf0598 { virtual void f(); };
+__attribute__((section(".text.gen_00cf0598"))) void gen_00cf0598::f() {}
+
+struct gen_b0_00cf0688 { virtual void f(); char pad[16]; };
+struct gen_b1_00cf0688 { virtual void f(); };
+struct gen_00cf0688 : gen_b0_00cf0688, gen_b1_00cf0688 { virtual void f(); };
+__attribute__((section(".text.gen_00cf0688"))) void gen_00cf0688::f() {}
+
+struct gen_b0_00cf0690 { virtual void f(); char pad[12]; };
+struct gen_b1_00cf0690 { virtual void f(); };
+struct gen_00cf0690 : gen_b0_00cf0690, gen_b1_00cf0690 { virtual void f(); };
+__attribute__((section(".text.gen_00cf0690"))) void gen_00cf0690::f() {}
+
+struct gen_b0_00cf0698 { virtual void f(); char pad[8]; };
+struct gen_b1_00cf0698 { virtual void f(); };
+struct gen_00cf0698 : gen_b0_00cf0698, gen_b1_00cf0698 { virtual void f(); };
+__attribute__((section(".text.gen_00cf0698"))) void gen_00cf0698::f() {}
+
+struct gen_b0_00cf06a0 { virtual void f(); char pad[4]; };
+struct gen_b1_00cf06a0 { virtual void f(); };
+struct gen_00cf06a0 : gen_b0_00cf06a0, gen_b1_00cf06a0 { virtual void f(); };
+__attribute__((section(".text.gen_00cf06a0"))) void gen_00cf06a0::f() {}
+
 extern "C" {
 
 extern char g_00cf0830[];

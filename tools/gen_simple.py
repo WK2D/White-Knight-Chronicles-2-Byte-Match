@@ -68,6 +68,20 @@ def generate(address, words, ctx=None):
     n = len(words)
     if words == (BLR,):
         return f'void {name}(void) {{}}'
+    if n == 2 and words[0] >> 16 == 0x3863 and s16(words[0] & 0xFFFF) < 0 and -s16(words[0] & 0xFFFF) % 4 == 0 \
+            and words[1] >> 26 == 18 and words[1] & 3 == 0:
+        # A this-adjusting thunk (addi r3,r3,-N; b f): a class whose second
+        # base sits at offset N overrides that base's virtual function. The
+        # override goes in its own section so the thunk's branch keeps a
+        # relocation, as in the linked game.
+        off = -s16(words[0] & 0xFFFF)
+        cls, b0, b1 = f'gen_{address:08x}', f'gen_b0_{address:08x}', f'gen_b1_{address:08x}'
+        pad = f' char pad[{off - 4}];' if off > 4 else ''
+        code = (f'struct {b0} {{ virtual void f();{pad} }};\n'
+                f'struct {b1} {{ virtual void f(); }};\n'
+                f'struct {cls} : {b0}, {b1} {{ virtual void f(); }};\n'
+                f'__attribute__((section(".text.{cls}"))) void {cls}::f() {{}}')
+        return ('class', code, f'._ZThn{off}_N{len(cls)}{cls}1fEv')
     if n == 2 and words[1] == BLR:
         op, rt, ra, d = fields(words[0])
         if op == 14 and rt == 3 and ra == 0:

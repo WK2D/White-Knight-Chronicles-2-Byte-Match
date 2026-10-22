@@ -2,6 +2,11 @@
 // shape, from unit hkpKdTreeWorldManager_3. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_b0_00dc0584 { virtual void f(); char pad[4]; };
+struct gen_b1_00dc0584 { virtual void f(); };
+struct gen_00dc0584 : gen_b0_00dc0584, gen_b1_00dc0584 { virtual void f(); };
+__attribute__((section(".text.gen_00dc0584"))) void gen_00dc0584::f() {}
+
 extern "C" {
 
 void fn_00dc058c(void) {}

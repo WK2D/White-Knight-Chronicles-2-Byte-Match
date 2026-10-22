@@ -2,6 +2,26 @@
 // shape, from unit hkpExtendedMeshShape_2. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_b0_00cf5288 { virtual void f(); char pad[12]; };
+struct gen_b1_00cf5288 { virtual void f(); };
+struct gen_00cf5288 : gen_b0_00cf5288, gen_b1_00cf5288 { virtual void f(); };
+__attribute__((section(".text.gen_00cf5288"))) void gen_00cf5288::f() {}
+
+struct gen_b0_00cf5ed0 { virtual void f(); char pad[12]; };
+struct gen_b1_00cf5ed0 { virtual void f(); };
+struct gen_00cf5ed0 : gen_b0_00cf5ed0, gen_b1_00cf5ed0 { virtual void f(); };
+__attribute__((section(".text.gen_00cf5ed0"))) void gen_00cf5ed0::f() {}
+
+struct gen_b0_00cf60a0 { virtual void f(); char pad[12]; };
+struct gen_b1_00cf60a0 { virtual void f(); };
+struct gen_00cf60a0 : gen_b0_00cf60a0, gen_b1_00cf60a0 { virtual void f(); };
+__attribute__((section(".text.gen_00cf60a0"))) void gen_00cf60a0::f() {}
+
+struct gen_b0_00cf6c90 { virtual void f(); char pad[12]; };
+struct gen_b1_00cf6c90 { virtual void f(); };
+struct gen_00cf6c90 : gen_b0_00cf6c90, gen_b1_00cf6c90 { virtual void f(); };
+__attribute__((section(".text.gen_00cf6c90"))) void gen_00cf6c90::f() {}
+
 extern "C" {
 
 void fn_00cf85c8(void) {}

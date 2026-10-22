@@ -2,6 +2,26 @@
 // shape, from unit hkpListShape. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_b0_00cf8944 { virtual void f(); char pad[12]; };
+struct gen_b1_00cf8944 { virtual void f(); };
+struct gen_00cf8944 : gen_b0_00cf8944, gen_b1_00cf8944 { virtual void f(); };
+__attribute__((section(".text.gen_00cf8944"))) void gen_00cf8944::f() {}
+
+struct gen_b0_00cf8a64 { virtual void f(); char pad[12]; };
+struct gen_b1_00cf8a64 { virtual void f(); };
+struct gen_00cf8a64 : gen_b0_00cf8a64, gen_b1_00cf8a64 { virtual void f(); };
+__attribute__((section(".text.gen_00cf8a64"))) void gen_00cf8a64::f() {}
+
+struct gen_b0_00cf8d08 { virtual void f(); char pad[12]; };
+struct gen_b1_00cf8d08 { virtual void f(); };
+struct gen_00cf8d08 : gen_b0_00cf8d08, gen_b1_00cf8d08 { virtual void f(); };
+__attribute__((section(".text.gen_00cf8d08"))) void gen_00cf8d08::f() {}
+
+struct gen_b0_00cf8d28 { virtual void f(); char pad[12]; };
+struct gen_b1_00cf8d28 { virtual void f(); };
+struct gen_00cf8d28 : gen_b0_00cf8d28, gen_b1_00cf8d28 { virtual void f(); };
+__attribute__((section(".text.gen_00cf8d28"))) void gen_00cf8d28::f() {}
+
 extern "C" {
 
 extern char g_00cf8630[];

@@ -2,6 +2,66 @@
 // shape, from unit hkpDisableEntityCollisionFilter_2. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_b0_00e9d330 { virtual void f(); char pad[44]; };
+struct gen_b1_00e9d330 { virtual void f(); };
+struct gen_00e9d330 : gen_b0_00e9d330, gen_b1_00e9d330 { virtual void f(); };
+__attribute__((section(".text.gen_00e9d330"))) void gen_00e9d330::f() {}
+
+struct gen_b0_00e9d544 { virtual void f(); char pad[44]; };
+struct gen_b1_00e9d544 { virtual void f(); };
+struct gen_00e9d544 : gen_b0_00e9d544, gen_b1_00e9d544 { virtual void f(); };
+__attribute__((section(".text.gen_00e9d544"))) void gen_00e9d544::f() {}
+
+struct gen_b0_00e9d858 { virtual void f(); char pad[44]; };
+struct gen_b1_00e9d858 { virtual void f(); };
+struct gen_00e9d858 : gen_b0_00e9d858, gen_b1_00e9d858 { virtual void f(); };
+__attribute__((section(".text.gen_00e9d858"))) void gen_00e9d858::f() {}
+
+struct gen_b0_00e9d860 { virtual void f(); char pad[16]; };
+struct gen_b1_00e9d860 { virtual void f(); };
+struct gen_00e9d860 : gen_b0_00e9d860, gen_b1_00e9d860 { virtual void f(); };
+__attribute__((section(".text.gen_00e9d860"))) void gen_00e9d860::f() {}
+
+struct gen_b0_00e9d868 { virtual void f(); char pad[12]; };
+struct gen_b1_00e9d868 { virtual void f(); };
+struct gen_00e9d868 : gen_b0_00e9d868, gen_b1_00e9d868 { virtual void f(); };
+__attribute__((section(".text.gen_00e9d868"))) void gen_00e9d868::f() {}
+
+struct gen_b0_00e9d870 { virtual void f(); char pad[8]; };
+struct gen_b1_00e9d870 { virtual void f(); };
+struct gen_00e9d870 : gen_b0_00e9d870, gen_b1_00e9d870 { virtual void f(); };
+__attribute__((section(".text.gen_00e9d870"))) void gen_00e9d870::f() {}
+
+struct gen_b0_00e9d878 { virtual void f(); char pad[4]; };
+struct gen_b1_00e9d878 { virtual void f(); };
+struct gen_00e9d878 : gen_b0_00e9d878, gen_b1_00e9d878 { virtual void f(); };
+__attribute__((section(".text.gen_00e9d878"))) void gen_00e9d878::f() {}
+
+struct gen_b0_00e9dd20 { virtual void f(); char pad[44]; };
+struct gen_b1_00e9dd20 { virtual void f(); };
+struct gen_00e9dd20 : gen_b0_00e9dd20, gen_b1_00e9dd20 { virtual void f(); };
+__attribute__((section(".text.gen_00e9dd20"))) void gen_00e9dd20::f() {}
+
+struct gen_b0_00e9dd28 { virtual void f(); char pad[16]; };
+struct gen_b1_00e9dd28 { virtual void f(); };
+struct gen_00e9dd28 : gen_b0_00e9dd28, gen_b1_00e9dd28 { virtual void f(); };
+__attribute__((section(".text.gen_00e9dd28"))) void gen_00e9dd28::f() {}
+
+struct gen_b0_00e9dd30 { virtual void f(); char pad[12]; };
+struct gen_b1_00e9dd30 { virtual void f(); };
+struct gen_00e9dd30 : gen_b0_00e9dd30, gen_b1_00e9dd30 { virtual void f(); };
+__attribute__((section(".text.gen_00e9dd30"))) void gen_00e9dd30::f() {}
+
+struct gen_b0_00e9dd38 { virtual void f(); char pad[8]; };
+struct gen_b1_00e9dd38 { virtual void f(); };
+struct gen_00e9dd38 : gen_b0_00e9dd38, gen_b1_00e9dd38 { virtual void f(); };
+__attribute__((section(".text.gen_00e9dd38"))) void gen_00e9dd38::f() {}
+
+struct gen_b0_00e9dd40 { virtual void f(); char pad[4]; };
+struct gen_b1_00e9dd40 { virtual void f(); };
+struct gen_00e9dd40 : gen_b0_00e9dd40, gen_b1_00e9dd40 { virtual void f(); };
+__attribute__((section(".text.gen_00e9dd40"))) void gen_00e9dd40::f() {}
+
 extern "C" {
 
 void fn_00e9d338(void) {}

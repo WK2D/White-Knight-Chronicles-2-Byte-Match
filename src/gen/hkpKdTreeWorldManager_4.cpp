@@ -2,6 +2,26 @@
 // shape, from unit hkpKdTreeWorldManager_4. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_b0_00dc0a28 { virtual void f(); char pad[4]; };
+struct gen_b1_00dc0a28 { virtual void f(); };
+struct gen_00dc0a28 : gen_b0_00dc0a28, gen_b1_00dc0a28 { virtual void f(); };
+__attribute__((section(".text.gen_00dc0a28"))) void gen_00dc0a28::f() {}
+
+struct gen_b0_00dc0a3c { virtual void f(); char pad[8]; };
+struct gen_b1_00dc0a3c { virtual void f(); };
+struct gen_00dc0a3c : gen_b0_00dc0a3c, gen_b1_00dc0a3c { virtual void f(); };
+__attribute__((section(".text.gen_00dc0a3c"))) void gen_00dc0a3c::f() {}
+
+struct gen_b0_00dc0c6c { virtual void f(); char pad[4]; };
+struct gen_b1_00dc0c6c { virtual void f(); };
+struct gen_00dc0c6c : gen_b0_00dc0c6c, gen_b1_00dc0c6c { virtual void f(); };
+__attribute__((section(".text.gen_00dc0c6c"))) void gen_00dc0c6c::f() {}
+
+struct gen_b0_00dc0cc8 { virtual void f(); char pad[8]; };
+struct gen_b1_00dc0cc8 { virtual void f(); };
+struct gen_00dc0cc8 : gen_b0_00dc0cc8, gen_b1_00dc0cc8 { virtual void f(); };
+__attribute__((section(".text.gen_00dc0cc8"))) void gen_00dc0cc8::f() {}
+
 extern "C" {
 
 struct unk_00dc0a30 {

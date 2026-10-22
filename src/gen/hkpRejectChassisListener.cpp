@@ -2,6 +2,26 @@
 // shape, from unit hkpRejectChassisListener. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_b0_00eb93cc { virtual void f(); char pad[4]; };
+struct gen_b1_00eb93cc { virtual void f(); };
+struct gen_00eb93cc : gen_b0_00eb93cc, gen_b1_00eb93cc { virtual void f(); };
+__attribute__((section(".text.gen_00eb93cc"))) void gen_00eb93cc::f() {}
+
+struct gen_b0_00eb9400 { virtual void f(); char pad[4]; };
+struct gen_b1_00eb9400 { virtual void f(); };
+struct gen_00eb9400 : gen_b0_00eb9400, gen_b1_00eb9400 { virtual void f(); };
+__attribute__((section(".text.gen_00eb9400"))) void gen_00eb9400::f() {}
+
+struct gen_b0_00eb9428 { virtual void f(); char pad[4]; };
+struct gen_b1_00eb9428 { virtual void f(); };
+struct gen_00eb9428 : gen_b0_00eb9428, gen_b1_00eb9428 { virtual void f(); };
+__attribute__((section(".text.gen_00eb9428"))) void gen_00eb9428::f() {}
+
+struct gen_b0_00eb9488 { virtual void f(); char pad[4]; };
+struct gen_b1_00eb9488 { virtual void f(); };
+struct gen_00eb9488 : gen_b0_00eb9488, gen_b1_00eb9488 { virtual void f(); };
+__attribute__((section(".text.gen_00eb9488"))) void gen_00eb9488::f() {}
+
 extern "C" {
 
 void fn_00eb9408(void) {}
