@@ -4,6 +4,7 @@
 
 extern "C" {
 
+int fn_003d2758(u32, u32);
 
 struct unk_0070bd78_a0 {
     char pad_0[1194];
@@ -15,6 +16,36 @@ int fn_0070bd78(unk_0070bd78_a0* a0) {
 
 int fn_0070bd88(int a0, int a1) {
     return (int)(a1 + 15);
+}
+
+struct unk_0070bd94_g5568;
+struct unk_0070bd94_g5568_0;
+struct unk_0070bd94_g5568_0_6c;
+struct unk_0070bd94_g5568_0_6c_8;
+struct unk_0070bd94_g5568 {
+    unk_0070bd94_g5568_0* f_0;
+};
+struct unk_0070bd94_g5568_0 {
+    char pad_0[108];
+    unk_0070bd94_g5568_0_6c* f_6c;
+};
+struct unk_0070bd94_g5568_0_6c {
+    char pad_0[8];
+    unk_0070bd94_g5568_0_6c_8* f_8;
+};
+struct unk_0070bd94_g5568_0_6c_8 {
+    char pad_0[244];
+    u32 f_f4;
+};
+struct unk_0070bd94_a0 {
+    char pad_0[2740];
+    u32 f_ab4;
+};
+extern unk_0070bd94_g5568 g_0070bd94_0;
+u8 fn_0070bd94(unk_0070bd94_a0* a0) {
+    int t0;
+    t0 = fn_003d2758((u32)((&g_0070bd94_0)->f_0->f_6c->f_8->f_f4), (u32)(a0->f_ab4));
+    return (u8)((u8)t0);
 }
 
 }

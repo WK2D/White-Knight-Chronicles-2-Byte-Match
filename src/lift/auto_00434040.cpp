@@ -4,18 +4,22 @@
 
 extern "C" {
 
-static void __attribute__((noinline)) stub_00434040(void) { __asm__ volatile (""); }
+static void __attribute__((noinline)) stub_00433fc4(int p0) { __asm__ volatile ("" : : "r"(p0)); }
+static void __attribute__((noinline)) stub_00433fe0(int p0) { __asm__ volatile ("" : : "r"(p0)); }
+static void __attribute__((noinline)) stub_00434008(int p0) { __asm__ volatile ("" : : "r"(p0)); }
+static void __attribute__((noinline)) stub_00434024(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 
-void fn_0043408c(void) {
-    stub_00434040();
-}
-
-void fn_00434098(void) {
-    stub_00434040();
-}
-
-void fn_0043409c(void) {
-    stub_00434040();
+struct unk_00434040_gmbe0;
+struct unk_00434040_gmbe0 {
+    u32 f_0;
+};
+extern unk_00434040_gmbe0 g_00434040_0;
+void fn_00434040(int a0) {
+    (&g_00434040_0)->f_0 = (u32)(0);
+    stub_00433fc4((int)(a0));
+    stub_00433fe0((int)(a0));
+    stub_00434008((int)(a0));
+    stub_00434024((int)(a0));
 }
 
 }

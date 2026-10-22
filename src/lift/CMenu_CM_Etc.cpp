@@ -4,6 +4,8 @@
 
 extern "C" {
 
+void fn_0076afb0(void*);
+void fn_00fc88dc(void*);
 
 struct unk_00782788_a0 {
     virtual void vf0();
@@ -48,6 +50,34 @@ struct unk_00782824_a0 {
 };
 void* fn_00782824(unk_00782824_a0* a0) {
     return (void*)((char*)((char*)a0 + (int)((int)(a0->f_5f8) * 76)) + 1260);
+}
+
+struct unk_00782a44_a0 {
+    void* f_0;
+};
+extern char g_00782a44_0[];
+void fn_00782a44(unk_00782a44_a0* a0) {
+    a0->f_0 = (void*)(g_00782a44_0);
+    fn_0076afb0((void*)(a0));
+    fn_00fc88dc((void*)(a0));
+}
+
+struct unk_00782a88_a0 {
+    void* f_0;
+};
+extern char g_00782a88_0[];
+void fn_00782a88(unk_00782a88_a0* a0) {
+    a0->f_0 = (void*)(g_00782a88_0);
+    fn_0076afb0((void*)(a0));
+}
+
+struct unk_00782ab8_a0 {
+    void* f_0;
+};
+extern char g_00782ab8_0[];
+void fn_00782ab8(unk_00782ab8_a0* a0) {
+    a0->f_0 = (void*)(g_00782ab8_0);
+    fn_0076afb0((void*)(a0));
 }
 
 }

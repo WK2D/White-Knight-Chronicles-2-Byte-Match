@@ -4,12 +4,12 @@
 
 extern "C" {
 
-static int __attribute__((noinline)) stub_00186c28(void) { int r; __asm__ volatile ("" : "=r"(r)); return r; }
+static int __attribute__((noinline)) stub_00186c28(int p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 void fn_00b37fa8(int, int, int);
 
-u8 fn_00186cfc(void) {
+u8 fn_00186cfc(int a0) {
     int t0;
-    t0 = stub_00186c28();
+    t0 = stub_00186c28((int)(a0));
     return (u8)((u8)t0);
 }
 

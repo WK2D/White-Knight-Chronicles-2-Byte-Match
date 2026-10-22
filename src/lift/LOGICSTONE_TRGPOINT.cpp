@@ -5,10 +5,10 @@
 extern "C" {
 
 int fn_00034810(void*, int, void*, int);
-void fn_000c0398(void);
+void fn_000c0398(int);
 void fn_00308994(void*);
 void fn_003089cc(void*);
-static void __attribute__((noinline)) stub_005b6448(void) { __asm__ volatile (""); }
+static void __attribute__((noinline)) stub_005b6448(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 static void __attribute__((noinline)) stub_005b6714(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
 
 struct unk_005b5d50_a0 {
@@ -20,8 +20,8 @@ void fn_005b5d50(unk_005b5d50_a0* a0) {
     a0->f_24 = (u32)(0);
 }
 
-void fn_005b5d90(void) {
-    fn_000c0398();
+void fn_005b5d90(int a0) {
+    fn_000c0398((int)(a0));
 }
 
 struct unk_005b5db4_a0 {
@@ -50,12 +50,12 @@ int fn_005b67b0(void* a0) {
     return (int)(1);
 }
 
-void fn_005b67e0(void) {
-    stub_005b6448();
+void fn_005b67e0(int a0) {
+    stub_005b6448((int)(a0));
 }
 
-void fn_005b69b4(void) {
-    stub_005b6448();
+void fn_005b69b4(int a0) {
+    stub_005b6448((int)(a0));
 }
 
 }

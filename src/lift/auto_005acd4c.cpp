@@ -81,6 +81,17 @@ int fn_005ad288(int a0, void* a1, void* a2) {
     return (int)(v0);
 }
 
+int fn_005ad2ec(int a0, int a1) {
+    void* t0;
+    int t1;
+    t0 = stub_005ad060((int)(a0), (int)(a1));
+    if ((int)(t0) != (int)(0)) {
+        t1 = stub_005ace8c((void*)(t0));
+        return (int)(t1);
+    }
+    return (int)(0);
+}
+
 int fn_005ad33c(int a0) {
     void* t0;
     int t1;

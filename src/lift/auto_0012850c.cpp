@@ -11,6 +11,7 @@ static int __attribute__((noinline)) stub_00124f78(void* p0) { int r; __asm__ vo
 static void __attribute__((noinline)) stub_001260e4(void* p0, void* p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 static int __attribute__((noinline)) stub_001285c0(void* p0, u32 p1, void* p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
 static void __attribute__((noinline)) stub_001288e8(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
+static void __attribute__((noinline)) stub_00128ac4(void* p0, int p1, int p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
 int fn_00fc9c70(int);
 int fn_00fc9cf0(int);
 
@@ -59,6 +60,14 @@ int fn_00128a58(int a0, unk_00128a58_a1* a1, int a2) {
         }
     }
     return (int)(0);
+}
+
+struct unk_00128bec_a0 {
+    char pad_0[128];
+    u32 f_80;
+};
+void fn_00128bec(unk_00128bec_a0* a0, int a1) {
+    stub_00128ac4((void*)((char*)a0 + 132), (int)((int)a0->f_80), (int)(a1));
 }
 
 extern char g_00128e60_0[];

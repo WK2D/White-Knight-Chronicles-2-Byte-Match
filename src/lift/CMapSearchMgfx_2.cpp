@@ -7,15 +7,91 @@ extern "C" {
 void fn_002d2864(void*);
 void fn_00b8f724(void*, void*, void*, void*);
 void fn_00b8f800(void*, void*, void*, void*);
-void fn_00b8fd30(void);
-void fn_00b8fdc0(void);
+void* fn_00b8f8dc(void*);
+void* fn_00b8fb10(void*);
+void fn_00b8fd30(int);
+void fn_00b8fdc0(int);
 
-void fn_00b8fd94(void) {
-    fn_00b8fd30();
+struct unk_00b8f99c_a0_10;
+struct unk_00b8f99c_a0_14;
+struct unk_00b8f99c_a0_10_0;
+struct unk_00b8f99c_a0_14_0;
+struct unk_00b8f99c_a0_10 {
+    unk_00b8f99c_a0_10_0* f_0;
+};
+struct unk_00b8f99c_a0_14 {
+    unk_00b8f99c_a0_14_0* f_0;
+};
+struct unk_00b8f99c_a0_10_0 {
+    u32 f_0;
+};
+struct unk_00b8f99c_a0_14_0 {
+    u32 f_0;
+};
+struct unk_00b8f99c_a0 {
+    char pad_0[16];
+    unk_00b8f99c_a0_10* f_10;
+    unk_00b8f99c_a0_14* f_14;
+    u32 f_18;
+    u32 f_1c;
+};
+void* fn_00b8f99c(unk_00b8f99c_a0* a0) {
+    void* t0;
+    if ((int)(a0->f_10) == (int)(0)) {
+        return (void*)(0);
+    }
+    if ((int)(a0->f_14) == (int)(0)) {
+        return (void*)(0);
+    }
+    a0->f_18 = (u32)(a0->f_10->f_0->f_0);
+    a0->f_1c = (u32)(a0->f_14->f_0->f_0);
+    t0 = fn_00b8f8dc((void*)(a0));
+    return (void*)(t0);
 }
 
-void fn_00b8fe24(void) {
-    fn_00b8fdc0();
+struct unk_00b8fbc8_a0_10;
+struct unk_00b8fbc8_a0_14;
+struct unk_00b8fbc8_a0_10_0;
+struct unk_00b8fbc8_a0_14_0;
+struct unk_00b8fbc8_a0_10 {
+    unk_00b8fbc8_a0_10_0* f_0;
+};
+struct unk_00b8fbc8_a0_14 {
+    unk_00b8fbc8_a0_14_0* f_0;
+};
+struct unk_00b8fbc8_a0_10_0 {
+    u32 f_0;
+};
+struct unk_00b8fbc8_a0_14_0 {
+    u32 f_0;
+};
+struct unk_00b8fbc8_a0 {
+    char pad_0[16];
+    unk_00b8fbc8_a0_10* f_10;
+    unk_00b8fbc8_a0_14* f_14;
+    u32 f_18;
+    u32 f_1c;
+};
+void* fn_00b8fbc8(unk_00b8fbc8_a0* a0) {
+    void* t0;
+    if ((int)(a0->f_10) == (int)(0)) {
+        return (void*)(0);
+    }
+    if ((int)(a0->f_14) == (int)(0)) {
+        return (void*)(0);
+    }
+    a0->f_18 = (u32)(a0->f_10->f_0->f_0);
+    a0->f_1c = (u32)(a0->f_14->f_0->f_0);
+    t0 = fn_00b8fb10((void*)(a0));
+    return (void*)(t0);
+}
+
+void fn_00b8fd94(int a0) {
+    fn_00b8fd30((int)(a0));
+}
+
+void fn_00b8fe24(int a0) {
+    fn_00b8fdc0((int)(a0));
 }
 
 struct unk_00b8fe50_a1_0;

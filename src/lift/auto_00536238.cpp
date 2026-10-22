@@ -6,17 +6,17 @@ extern "C" {
 
 static void __attribute__((noinline)) stub_0053636c(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
 static void __attribute__((noinline)) stub_005363f4(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
-void* fn_00545d00(void);
+void* fn_00545d00(int);
 
-void fn_005363c4(void) {
+void fn_005363c4(int a0) {
     void* t0;
-    t0 = fn_00545d00();
+    t0 = fn_00545d00((int)(a0));
     stub_0053636c((void*)(t0));
 }
 
-void fn_0053644c(void) {
+void fn_0053644c(int a0) {
     void* t0;
-    t0 = fn_00545d00();
+    t0 = fn_00545d00((int)(a0));
     stub_005363f4((void*)(t0));
 }
 

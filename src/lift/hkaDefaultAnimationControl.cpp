@@ -4,12 +4,12 @@
 
 extern "C" {
 
-void fn_00f0a5e8(void);
+void fn_00f0a5e8(int);
 void fn_00f0a654(void);
 void fn_00f0a7d8(int);
 
-void fn_00ee82c8(void) {
-    fn_00f0a5e8();
+void fn_00ee82c8(int a0) {
+    fn_00f0a5e8((int)(a0));
 }
 
 void fn_00ee82ec(int a0) {

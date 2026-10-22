@@ -7,6 +7,8 @@ extern "C" {
 int fn_004b2364(void*, void*);
 int fn_004b239c(void*, void*);
 void fn_004b29f0(void*);
+void fn_004b2fbc(void*, void*, int);
+void fn_004b5320(u32, u32, void*);
 void* fn_00b38eb8(void*, void*, void*, int);
 void fn_00fc88dc(void*);
 
@@ -78,6 +80,79 @@ void fn_004b7e4c(unk_004b7e4c_a0* a0) {
     a0->f_0 = (void*)(g_004b7e4c_0);
     fn_004b29f0((void*)(a0));
     fn_00fc88dc((void*)(a0));
+}
+
+struct unk_004b7e90_a0 {
+    void* f_0;
+};
+extern char g_004b7e90_0[];
+void fn_004b7e90(unk_004b7e90_a0* a0) {
+    a0->f_0 = (void*)(g_004b7e90_0);
+    fn_004b29f0((void*)(a0));
+}
+
+struct unk_004b7ec0_a0 {
+    void* f_0;
+};
+extern char g_004b7ec0_0[];
+void fn_004b7ec0(unk_004b7ec0_a0* a0) {
+    a0->f_0 = (void*)(g_004b7ec0_0);
+    fn_004b29f0((void*)(a0));
+}
+
+struct unk_004b81ac_a0_3c;
+struct unk_004b81ac_a0_3c_10;
+struct unk_004b81ac_a0_3c_14;
+struct unk_004b81ac_a0_3c {
+    char pad_0[12];
+    u32 f_c;
+    unk_004b81ac_a0_3c_10* f_10;
+    unk_004b81ac_a0_3c_14* f_14;
+};
+struct unk_004b81ac_a0_3c_10 {
+    char pad_0[4];
+    u32 f_4;
+};
+struct unk_004b81ac_a0_3c_14 {
+    char pad_0[32];
+    u32 f_20;
+};
+struct unk_004b81ac_a0 {
+    char pad_0[60];
+    unk_004b81ac_a0_3c* f_3c;
+};
+struct unk_004b81ac_vc0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual void vf5();
+    virtual void vf6();
+    virtual void vf7();
+    virtual void vf8();
+    virtual void vf9();
+    virtual void vf10();
+    virtual void vf11();
+    virtual void vf12();
+    virtual void vf13();
+    virtual void vf14();
+    virtual void vf15();
+    virtual void vf16();
+    virtual void vf17();
+    virtual void vf18();
+    virtual void vf19();
+    virtual void vf20();
+    virtual void vf21();
+    virtual void vf22(void*);
+};
+void fn_004b81ac(unk_004b81ac_a0* a0, void* a1, int a2) {
+    if ((int)(a2) == (int)(0)) {
+        fn_004b5320((u32)(a0->f_3c->f_10->f_4), (u32)(a0->f_3c->f_c), (void*)(a0->f_3c->f_14->f_20 + -1));
+        ((unk_004b81ac_vc0*)(a0->f_3c))->vf22((void*)(a1));
+        return;
+    }
+    fn_004b2fbc((void*)(a0), (void*)(a1), (int)(a2));
 }
 
 }

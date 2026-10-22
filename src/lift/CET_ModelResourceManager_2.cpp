@@ -103,4 +103,22 @@ void fn_009160d4(unk_009160d4_a0* a0) {
     fn_00b3cd48((void*)(a0));
 }
 
+struct unk_00916114_a0 {
+    void* f_0;
+};
+extern char g_00916114_0[];
+void fn_00916114(unk_00916114_a0* a0) {
+    a0->f_0 = (void*)(g_00916114_0);
+    stub_0091409c((void*)(a0));
+}
+
+struct unk_00916124_a0 {
+    void* f_0;
+};
+extern char g_00916124_0[];
+void fn_00916124(unk_00916124_a0* a0) {
+    a0->f_0 = (void*)(g_00916124_0);
+    stub_0091409c((void*)(a0));
+}
+
 }

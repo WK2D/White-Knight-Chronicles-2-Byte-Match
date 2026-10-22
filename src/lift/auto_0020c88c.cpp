@@ -4,9 +4,9 @@
 
 extern "C" {
 
+void fn_0001c6e0(u32, int);
 void* fn_00076a98(void*, int, int, int, int, int);
 static void __attribute__((noinline)) stub_0020c6b0(void* p0, void* p1, void* p2, u8 p3, u16 p4, void* p5) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4), "r"(p5)); }
-static void __attribute__((noinline)) stub_0020cba4(int p0, int p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 
 extern char g_0020c88c_0[];
 void fn_0020c88c(void* a0, void* a1, int a2, int a3, int a4, void* a5) {
@@ -15,8 +15,18 @@ void fn_0020c88c(void* a0, void* a1, int a2, int a3, int a4, void* a5) {
     stub_0020c6b0((void*)(a0), (void*)(a1), (void*)(t0), (u8)((u8)a3), (u16)((u16)a4), (void*)(a5));
 }
 
-void fn_0020cd7c(int a0) {
-    stub_0020cba4((int)(a0), (int)(1));
+struct unk_0020d000_gm492c;
+struct unk_0020d000_gm492c_0;
+struct unk_0020d000_gm492c {
+    unk_0020d000_gm492c_0* f_0;
+};
+struct unk_0020d000_gm492c_0 {
+    char pad_0[120];
+    u32 f_78;
+};
+extern unk_0020d000_gm492c g_0020d000_0;
+void fn_0020d000(int a0, int a1) {
+    fn_0001c6e0((u32)((&g_0020d000_0)->f_0->f_78), (int)(a1));
 }
 
 }

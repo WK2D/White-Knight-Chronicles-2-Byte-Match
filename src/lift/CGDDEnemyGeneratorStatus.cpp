@@ -5,9 +5,11 @@
 extern "C" {
 
 void* fn_00076a98(void*, int, int, int, int, int);
-static void __attribute__((noinline)) stub_003c4ff4(void) { __asm__ volatile (""); }
-static void __attribute__((noinline)) stub_003c5fb8(void) { __asm__ volatile (""); }
+static void __attribute__((noinline)) stub_003c4ff4(int p0, int p1, int p2, int p3, int p4) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4)); }
+static void __attribute__((noinline)) stub_003c5fb8(int p0) { __asm__ volatile ("" : : "r"(p0)); }
+static int __attribute__((noinline)) stub_003c6880(void* p0, void* p1, void* p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
 static int __attribute__((noinline)) stub_003c6b2c(void* p0, void* p1, int p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
+void* fn_0043a40c(u32, int);
 
 struct unk_003c4170_a0_4;
 struct unk_003c4170_a0_4 {
@@ -143,8 +145,8 @@ void* fn_003c4d44(unk_003c4d44_a0* a0) {
     return (void*)(v0);
 }
 
-void fn_003c514c(void) {
-    stub_003c4ff4();
+void fn_003c514c(int a0, int a1, int a2, int a3, int a4) {
+    stub_003c4ff4((int)(a0), (int)(a1), (int)(a2), (int)(a3), (int)(a4));
 }
 
 struct unk_003c55e4_a0 {
@@ -180,9 +182,43 @@ void* fn_003c5600(unk_003c5600_a0* a0) {
     return (void*)(v0);
 }
 
-int fn_003c6050(void) {
-    stub_003c5fb8();
+int fn_003c6050(int a0) {
+    stub_003c5fb8((int)(a0));
     return (int)(1);
+}
+
+struct unk_003c6ab4_gm1378;
+struct unk_003c6ab4_gm1378_0;
+struct unk_003c6ab4_gm1378_0_6c;
+struct unk_003c6ab4_gm1378_0_6c_8;
+struct unk_003c6ab4_gm1378 {
+    unk_003c6ab4_gm1378_0* f_0;
+};
+struct unk_003c6ab4_gm1378_0 {
+    char pad_0[108];
+    unk_003c6ab4_gm1378_0_6c* f_6c;
+};
+struct unk_003c6ab4_gm1378_0_6c {
+    char pad_0[8];
+    unk_003c6ab4_gm1378_0_6c_8* f_8;
+};
+struct unk_003c6ab4_gm1378_0_6c_8 {
+    char pad_0[96];
+    u32 f_60;
+};
+extern unk_003c6ab4_gm1378 g_003c6ab4_0;
+int fn_003c6ab4(void* a0, int a1, void* a2) {
+    void* t0;
+    int t1;
+    int v0;
+    t0 = fn_0043a40c((u32)((&g_003c6ab4_0)->f_0->f_6c->f_8->f_60), (int)(a1));
+    if ((int)(t0) != (int)(0)) {
+        t1 = stub_003c6880((void*)(a0), (void*)(t0), (void*)(a2));
+        v0 = (int)((u32)(t1) & 0xffff);
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
 }
 
 extern char g_003c6c68_0[];

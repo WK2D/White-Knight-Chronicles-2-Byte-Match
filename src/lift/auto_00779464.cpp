@@ -4,11 +4,27 @@
 
 extern "C" {
 
-void fn_00b38198(int, void*, int, void*, void*);
+void fn_0016c59c(u32, int);
+void fn_00b38198(int, void*, int, void*, void*, int, int, int);
 
 extern char g_00779464_0[];
-void fn_00779464(int a0, void* a1, int a2, void* a3) {
-    fn_00b38198((int)(a0), (void*)(g_00779464_0), (int)(a2), (void*)((char*)a1 + 1), (void*)((char*)a3 + 1));
+void fn_00779464(int a0, void* a1, int a2, void* a3, int a4, int a5, int a6, int a7) {
+    fn_00b38198((int)(a0), (void*)(g_00779464_0), (int)(a2), (void*)((char*)a1 + 1), (void*)((char*)a3 + 1), (int)(a5), (int)(a6), (int)(a7));
+}
+
+struct unk_0077949c_g6614;
+struct unk_0077949c_g6614_0;
+struct unk_0077949c_g6614 {
+    unk_0077949c_g6614_0* f_0;
+};
+struct unk_0077949c_g6614_0 {
+    char pad_0[4];
+    u32 f_4;
+};
+extern unk_0077949c_g6614 g_0077949c_0;
+int fn_0077949c(void) {
+    fn_0016c59c((u32)((&g_0077949c_0)->f_0->f_4), (int)(10000));
+    return (int)(0);
 }
 
 struct unk_0077a170_g6608;

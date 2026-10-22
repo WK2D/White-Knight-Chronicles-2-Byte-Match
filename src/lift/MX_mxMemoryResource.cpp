@@ -9,7 +9,7 @@ void fn_00aeba40(u32);
 void fn_00afe96c(void*);
 void fn_00aff0c8(void*, int);
 void fn_00b41f98(int);
-void* fn_00b42288(void);
+void* fn_00b42288(int, int);
 int fn_00fc8cac(void*);
 void* fn_00fcca90(int);
 void* fn_00fccab0(int, int);
@@ -206,9 +206,9 @@ void* fn_00aee4bc(int a0, int a1) {
     return (void*)(t0);
 }
 
-void* fn_00aee820(void) {
+void* fn_00aee820(int a0, int a1) {
     void* t0;
-    t0 = fn_00b42288();
+    t0 = fn_00b42288((int)(a0), (int)(a1));
     return (void*)(t0);
 }
 

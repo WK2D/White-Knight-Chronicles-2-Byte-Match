@@ -8,8 +8,14 @@ int fn_00034a88(void);
 void fn_0004fe38(int, int, int);
 void fn_0004fe84(int, int, int, float);
 void fn_00077de8(void*, void*, int);
+void fn_001263b4(u32, int);
+void fn_0012c198(void*);
+void fn_003e70ac(u32, int);
+int fn_003e70bc(u32);
+int fn_003e70dc(u32);
 static void __attribute__((noinline)) stub_00692e30(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
 static int __attribute__((noinline)) stub_0069397c(void) { int r; __asm__ volatile ("" : "=r"(r)); return r; }
+static void __attribute__((noinline)) stub_00693b1c(int p0, u32 p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 void fn_00b37f58(int, void*, u32);
 void fn_00b37fa8(int, int, u32);
 int fn_00b38038(void*, int);
@@ -19,10 +25,114 @@ void fn_006933f8(int a0, int a1, int a2, int a3) {
     fn_0004fe84((int)(a1), (int)(a2), (int)(a3), (float)(0.6000000238418579f));
 }
 
+struct unk_00693648_g3f68;
+struct unk_00693648_g3f68_0;
+struct unk_00693648_g3f68_0_6c;
+struct unk_00693648_g3f68_0_6c_8;
+struct unk_00693648_g3f68 {
+    unk_00693648_g3f68_0* f_0;
+};
+struct unk_00693648_g3f68_0 {
+    char pad_0[108];
+    unk_00693648_g3f68_0_6c* f_6c;
+};
+struct unk_00693648_g3f68_0_6c {
+    char pad_0[8];
+    unk_00693648_g3f68_0_6c_8* f_8;
+};
+struct unk_00693648_g3f68_0_6c_8 {
+    char pad_0[264];
+    u32 f_108;
+};
+extern unk_00693648_g3f68 g_00693648_0;
+u8 fn_00693648(void) {
+    int t0;
+    t0 = fn_003e70dc((u32)((&g_00693648_0)->f_0->f_6c->f_8->f_108));
+    return (u8)((u8)t0);
+}
+
+struct unk_00693684_g3f68;
+struct unk_00693684_g3f68_0;
+struct unk_00693684_g3f68_0_6c;
+struct unk_00693684_g3f68_0_6c_8;
+struct unk_00693684_g3f68 {
+    unk_00693684_g3f68_0* f_0;
+};
+struct unk_00693684_g3f68_0 {
+    char pad_0[108];
+    unk_00693684_g3f68_0_6c* f_6c;
+};
+struct unk_00693684_g3f68_0_6c {
+    char pad_0[8];
+    unk_00693684_g3f68_0_6c_8* f_8;
+};
+struct unk_00693684_g3f68_0_6c_8 {
+    char pad_0[264];
+    u32 f_108;
+};
+extern unk_00693684_g3f68 g_00693684_0;
+u8 fn_00693684(void) {
+    int t0;
+    t0 = fn_003e70bc((u32)((&g_00693684_0)->f_0->f_6c->f_8->f_108));
+    return (u8)((u8)t0);
+}
+
+struct unk_006936c0_g3f68;
+struct unk_006936c0_g3f68_0;
+struct unk_006936c0_g3f68_0_6c;
+struct unk_006936c0_g3f68_0_6c_8;
+struct unk_006936c0_g3f68 {
+    unk_006936c0_g3f68_0* f_0;
+};
+struct unk_006936c0_g3f68_0 {
+    char pad_0[108];
+    unk_006936c0_g3f68_0_6c* f_6c;
+};
+struct unk_006936c0_g3f68_0_6c {
+    char pad_0[8];
+    unk_006936c0_g3f68_0_6c_8* f_8;
+};
+struct unk_006936c0_g3f68_0_6c_8 {
+    char pad_0[264];
+    u32 f_108;
+};
+extern unk_006936c0_g3f68 g_006936c0_0;
+void fn_006936c0(int a0, int a1) {
+    fn_003e70ac((u32)((&g_006936c0_0)->f_0->f_6c->f_8->f_108), (int)(a1));
+}
+
 int fn_006936f8(void* a0, int a1) {
     int t0;
     t0 = fn_00b38038((void*)((char*)a0 + 14248), (int)(a1));
     return (int)((int)((u32)(((int)((u32)((int)(t0) >> 31) ^ (u32)(t0)) - (int)((int)(t0) >> 31)) + -1) >> 31));
+}
+
+struct unk_006937d4_g3f68;
+struct unk_006937d4_g3f68_0;
+struct unk_006937d4_g3f68 {
+    unk_006937d4_g3f68_0* f_0;
+};
+struct unk_006937d4_g3f68_0 {
+    char pad_0[132];
+    u32 f_84;
+};
+extern unk_006937d4_g3f68 g_006937d4_0;
+void fn_006937d4(int a0, int a1) {
+    fn_001263b4((u32)((&g_006937d4_0)->f_0->f_84), (int)(a1));
+}
+
+struct unk_00693804_g3f68;
+struct unk_00693804_g3f68_0;
+struct unk_00693804_g3f68 {
+    unk_00693804_g3f68_0* f_0;
+};
+struct unk_00693804_g3f68_0 {
+    char pad_0[128];
+    u32 f_80;
+};
+extern unk_00693804_g3f68 g_00693804_0;
+void fn_00693804(void) {
+    fn_0012c198((void*)(((int)((&g_00693804_0)->f_0->f_80) + 851968) + 3904));
 }
 
 void* fn_00693840(void) {
@@ -40,6 +150,16 @@ u16 fn_00693af0(void) {
     int t0;
     t0 = stub_0069397c();
     return (u16)((u16)(((u32)(t0) & 0xff) + -1));
+}
+
+struct unk_00693ba4_g3f8c;
+struct unk_00693ba4_g3f8c {
+    char pad_0[88];
+    u32 f_58;
+};
+extern unk_00693ba4_g3f8c g_00693ba4_0;
+void fn_00693ba4(int a0) {
+    stub_00693b1c((int)(a0), (u32)((&g_00693ba4_0)->f_58));
 }
 
 void fn_00693bc4(int a0, void* a1) {

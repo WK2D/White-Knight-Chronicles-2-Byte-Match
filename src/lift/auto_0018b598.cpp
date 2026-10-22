@@ -4,7 +4,7 @@
 
 extern "C" {
 
-static void __attribute__((noinline)) stub_001936b0(void) { __asm__ volatile (""); }
+static void __attribute__((noinline)) stub_001936b0(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 
 struct unk_00193554_a0_4;
 struct unk_00193554_a0_4 {
@@ -90,8 +90,8 @@ int fn_00193690(unk_00193690_a0* a0) {
     return (int)(1);
 }
 
-void fn_00193750(void) {
-    stub_001936b0();
+void fn_00193750(int a0) {
+    stub_001936b0((int)(a0));
 }
 
 }

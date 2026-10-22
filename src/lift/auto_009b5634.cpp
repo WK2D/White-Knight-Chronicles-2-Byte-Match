@@ -4,11 +4,11 @@
 
 extern "C" {
 
-void fn_009b58f4(void);
+void fn_009b58f4(int);
 void* fn_009b5fb8(void);
 
-void fn_009b5708(void) {
-    fn_009b58f4();
+void fn_009b5708(int a0) {
+    fn_009b58f4((int)(a0));
 }
 
 void* fn_009b5998(void) {

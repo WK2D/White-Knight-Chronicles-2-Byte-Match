@@ -4,15 +4,15 @@
 
 extern "C" {
 
-void fn_00c85338(void);
-void fn_00c853a0(void);
+void fn_00c85338(int, int);
+void fn_00c853a0(int, int);
 
-void fn_00c601f8(void) {
-    fn_00c853a0();
+void fn_00c601f8(int a0, int a1) {
+    fn_00c853a0((int)(a0), (int)(a1));
 }
 
-void fn_00c604e4(void) {
-    fn_00c85338();
+void fn_00c604e4(int a0, int a1) {
+    fn_00c85338((int)(a0), (int)(a1));
 }
 
 }

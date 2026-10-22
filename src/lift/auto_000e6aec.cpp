@@ -4,13 +4,17 @@
 
 extern "C" {
 
+static void __attribute__((noinline)) stub_000e6684(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
+static void __attribute__((noinline)) stub_000e69e8(void* p0, int p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 static void __attribute__((noinline)) stub_000e6bec(void* p0, int p1, int p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
-void fn_000e950c(u32);
+static int __attribute__((noinline)) stub_000e6c98(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+int fn_000e950c(u32);
 void fn_000ea29c(u32, u32, int);
 void fn_00fcd050(void*);
 
-struct unk_000e6fb4_a0 {
-    char pad_0[48];
+struct unk_000e6d38_a0 {
+    u32 f_0;
+    char pad_4[44];
     u32 f_30;
     u32 f_34;
     u32 f_38;
@@ -20,15 +24,23 @@ struct unk_000e6fb4_a0 {
     u32 f_48;
     u32 f_4c;
 };
-int fn_000e6fb4(unk_000e6fb4_a0* a0) {
-    stub_000e6bec((void*)(a0), (int)(1), (int)(0));
-    fn_000e950c((u32)(a0->f_30));
-    fn_000e950c((u32)(a0->f_34));
-    fn_000e950c((u32)(a0->f_38));
-    fn_000e950c((u32)(a0->f_3c));
-    fn_000e950c((u32)(a0->f_44));
-    fn_000e950c((u32)(a0->f_48));
-    fn_000e950c((u32)(a0->f_4c));
+int fn_000e6d38(unk_000e6d38_a0* a0, int a1) {
+    int t0;
+    int t10;
+    t0 = stub_000e6c98((void*)(a0));
+    if ((int)((u32)(t0) & 0x1) != (int)(0)) {
+        stub_000e6bec((void*)(a0), (int)(1), (int)(0));
+        stub_000e69e8((void*)(a0), (int)(0));
+        a0->f_0 = (u32)(a1);
+        stub_000e6684((void*)(a0));
+        fn_000e950c((u32)(a0->f_30));
+        fn_000e950c((u32)(a0->f_34));
+        fn_000e950c((u32)(a0->f_38));
+        fn_000e950c((u32)(a0->f_3c));
+        fn_000e950c((u32)(a0->f_44));
+        fn_000e950c((u32)(a0->f_48));
+        t10 = fn_000e950c((u32)(a0->f_4c));
+    }
     return (int)(0);
 }
 

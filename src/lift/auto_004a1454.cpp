@@ -4,10 +4,11 @@
 
 extern "C" {
 
+int fn_000356fc(void*);
 int fn_00041b48(int);
 void fn_00041bcc(int);
 void fn_003ec650(u32, int);
-static void __attribute__((noinline)) stub_004a159c(void) { __asm__ volatile (""); }
+static void __attribute__((noinline)) stub_004a159c(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 
 struct unk_004a1454_gm62c;
 struct unk_004a1454_gm62c_0;
@@ -29,8 +30,27 @@ int fn_004a1574(int a0) {
     return (int)(1);
 }
 
-void fn_004a15e4(void) {
-    stub_004a159c();
+void fn_004a15e4(int a0) {
+    stub_004a159c((int)(a0));
+}
+
+struct unk_004a15e8_a0 {
+    char pad_0[4];
+    u32 f_4;
+};
+int fn_004a15e8(unk_004a15e8_a0* a0) {
+    int t0;
+    if ((int)(a0->f_4) != (int)(-1)) {
+        t0 = fn_000356fc((void*)(a0->f_4));
+        if ((int)(t0) == (int)(6)) {
+            return (int)(0);
+        }
+        if ((u32)(t0 + -1) <= (u32)(4)) {
+            return (int)(1);
+        }
+        return (int)(-1);
+    }
+    return (int)(2);
 }
 
 struct unk_004a1a9c_gm62c;

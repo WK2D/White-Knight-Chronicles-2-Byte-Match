@@ -4,16 +4,12 @@
 
 extern "C" {
 
-void fn_00fccd90(int, int);
+void fn_00a5e7c0(int);
 void fn_00fccdb0(void);
 void fn_00fcd050(void);
 
 void fn_00a5e79c(void) {
     fn_00fccdb0();
-}
-
-void fn_00a5e7c0(int a0) {
-    fn_00fccd90((int)(a0), (int)(0));
 }
 
 void fn_00a5e7e8(void) {
@@ -22,6 +18,22 @@ void fn_00a5e7e8(void) {
 
 void fn_00a5e80c(void) {
     fn_00fcd050();
+}
+
+struct unk_00a5e9e4_a0 {
+    u32 f_0;
+};
+void fn_00a5e9e4(unk_00a5e9e4_a0* a0, int a1) {
+    a0->f_0 = (u32)(a1);
+    fn_00a5e7c0((int)(a1));
+}
+
+struct unk_00a5ea10_a0 {
+    u32 f_0;
+};
+void fn_00a5ea10(unk_00a5ea10_a0* a0, int a1) {
+    a0->f_0 = (u32)(a1);
+    fn_00a5e7c0((int)(a1));
 }
 
 struct unk_00a5eb4c_a0 {

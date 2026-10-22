@@ -11,14 +11,14 @@ void fn_002c7fb8(void*);
 void fn_002c808c(void*, void*);
 void fn_002c8550(void*, void*);
 int fn_002c88d8(u32);
-void fn_00b8bba8(void*);
+void fn_00b8bba8(void*, void*);
 
 struct unk_002bb85c_a1 {
     u32 f_0;
 };
 void fn_002bb85c(void* a0, unk_002bb85c_a1* a1) {
     int t1;
-    fn_00b8bba8((void*)((char*)a0 + 12168));
+    fn_00b8bba8((void*)((char*)a0 + 12168), (void*)(a1));
     t1 = fn_002c88d8((u32)(a1->f_0));
     stub_002b97f8((void*)(a0), (u16)((u16)t1));
 }

@@ -7,8 +7,8 @@ extern "C" {
 int fn_009b3758(void*);
 int fn_009b4c80(u32, u32);
 int fn_009b4c94(u32);
+int fn_009b4ca4(void*);
 void fn_009b509c(void*, int);
-void fn_009b6cb4(int, int, int, int, int);
 
 struct unk_009a99e0_a0 {
     u32 f_0;
@@ -30,6 +30,16 @@ u32 fn_009a99e0(unk_009a99e0_a0* a0) {
         return (u32)((u32)(0) & (u32)(23));
     }
     return (u32)((u32)(3) & (u32)(23));
+}
+
+struct unk_009a9a54_a0 {
+    u32 f_0;
+};
+void fn_009a9a54(unk_009a9a54_a0* a0) {
+    int t0;
+    if ((int)(a0->f_0) != (int)(0)) {
+        t0 = fn_009b4ca4((void*)(a0));
+    }
 }
 
 struct unk_009aa640_l;
@@ -87,10 +97,6 @@ u32 fn_009ac6e0(unk_009ac6e0_a0* a0) {
         v0 = (int)(3);
     }
     return (u32)((u32)(v0) & 0x3);
-}
-
-void fn_009ad6dc(int a0, int a1, int a2) {
-    fn_009b6cb4((int)(a0), (int)(0), (int)(a1), (int)(1), (int)(a2));
 }
 
 }

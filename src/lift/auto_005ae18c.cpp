@@ -72,6 +72,24 @@ int fn_005ae628(int a0) {
     return (int)(v1);
 }
 
+int fn_005ae670(int a0, int a1) {
+    void* t0;
+    int v0;
+    int v1;
+    t0 = stub_005ad060((int)(a0), (int)(a1));
+    if ((int)(t0) != (int)(0)) {
+        if ((int)(FIELD(u32, t0, 0)) != (int)(0)) {
+            v0 = (int)(FIELD(u8, FIELD(u32, t0, 0), 7));
+        } else {
+            v0 = (int)(0);
+        }
+        v1 = (int)(v0);
+    } else {
+        v1 = (int)(0);
+    }
+    return (int)(v1);
+}
+
 struct unk_005ae6e0_a0_0;
 struct unk_005ae6e0_a0_0 {
     char pad_0[25];

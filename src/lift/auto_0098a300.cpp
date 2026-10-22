@@ -8,14 +8,14 @@ void* fn_0098b7a8(void);
 void* fn_0098b7b0(void);
 void* fn_0098b7b8(int, int);
 void* fn_0098b7c8(void);
-void* fn_0098bbc0(void);
-void* fn_0098bd5c(void);
-void* fn_0098bf0c(void);
-void* fn_0098c104(void);
-void* fn_0098c234(void);
-void* fn_0098c458(void);
-void* fn_0098c51c(void);
-void* fn_0098c56c(void);
+void* fn_0098bbc0(int, int, int, int, int);
+void* fn_0098bd5c(int, int, int);
+void* fn_0098bf0c(int, int);
+void* fn_0098c104(int);
+void* fn_0098c234(int, int, int, int);
+void* fn_0098c458(int, int, int, int);
+void* fn_0098c51c(int, int);
+void* fn_0098c56c(int, int);
 void* fn_0098c5bc(void);
 void fn_00b3ccd8(int, void*, int);
 
@@ -25,51 +25,51 @@ void* fn_0098a30c(void) {
     return (void*)(t0);
 }
 
-void* fn_0098a334(void) {
+void* fn_0098a334(int a0, int a1, int a2, int a3, int a4) {
     void* t0;
-    t0 = fn_0098bbc0();
+    t0 = fn_0098bbc0((int)(a0), (int)(a1), (int)(a2), (int)(a3), (int)(a4));
     return (void*)(t0);
 }
 
-void* fn_0098a35c(void) {
+void* fn_0098a35c(int a0, int a1, int a2) {
     void* t0;
-    t0 = fn_0098bd5c();
+    t0 = fn_0098bd5c((int)(a0), (int)(a1), (int)(a2));
     return (void*)(t0);
 }
 
-void* fn_0098a384(void) {
+void* fn_0098a384(int a0, int a1) {
     void* t0;
-    t0 = fn_0098bf0c();
+    t0 = fn_0098bf0c((int)(a0), (int)(a1));
     return (void*)(t0);
 }
 
-void* fn_0098af50(void) {
+void* fn_0098af50(int a0, int a1) {
     void* t0;
-    t0 = fn_0098c56c();
+    t0 = fn_0098c56c((int)(a0), (int)(a1));
     return (void*)(t0);
 }
 
-void* fn_0098b010(void) {
+void* fn_0098b010(int a0) {
     void* t0;
-    t0 = fn_0098c104();
+    t0 = fn_0098c104((int)(a0));
     return (void*)(t0);
 }
 
-void* fn_0098b038(void) {
+void* fn_0098b038(int a0, int a1, int a2, int a3) {
     void* t0;
-    t0 = fn_0098c234();
+    t0 = fn_0098c234((int)(a0), (int)(a1), (int)(a2), (int)(a3));
     return (void*)(t0);
 }
 
-void* fn_0098b060(void) {
+void* fn_0098b060(int a0, int a1, int a2, int a3) {
     void* t0;
-    t0 = fn_0098c458();
+    t0 = fn_0098c458((int)(a0), (int)(a1), (int)(a2), (int)(a3));
     return (void*)(t0);
 }
 
-void* fn_0098b088(void) {
+void* fn_0098b088(int a0, int a1, int a2, int a3) {
     void* t0;
-    t0 = fn_0098c458();
+    t0 = fn_0098c458((int)(a0), (int)(a1), (int)(a2), (int)(a3));
     return (void*)(t0);
 }
 
@@ -79,9 +79,9 @@ void* fn_0098b670(int a0, int a1) {
     return (void*)(t0);
 }
 
-void* fn_0098b698(void) {
+void* fn_0098b698(int a0, int a1) {
     void* t0;
-    t0 = fn_0098c51c();
+    t0 = fn_0098c51c((int)(a0), (int)(a1));
     return (void*)(t0);
 }
 

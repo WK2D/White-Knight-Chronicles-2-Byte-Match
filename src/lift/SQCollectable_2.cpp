@@ -4,7 +4,7 @@
 
 extern "C" {
 
-static int __attribute__((noinline)) stub_00937c98(int p0, void* p1, void* p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
+static int __attribute__((noinline)) stub_00937c98(int p0, void* p1, void* p2, int p3, int p4) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4)); return r; }
 
 struct unk_00938238_l;
 struct unk_00938238_l {
@@ -13,13 +13,13 @@ struct unk_00938238_l {
     u32 f_8;
 };
 extern char g_00938238_0[];
-int fn_00938238(int a0, int a1, int a2) {
+int fn_00938238(int a0, int a1, int a2, int a3, int a4) {
     int t0;
     unk_00938238_l l;
     l.f_0 = (u32)(a1);
     l.f_8 = (u32)(a2);
     l.f_4 = (u32)(0);
-    t0 = stub_00937c98((int)(a0), (void*)(g_00938238_0), (void*)((&l)));
+    t0 = stub_00937c98((int)(a0), (void*)(g_00938238_0), (void*)((&l)), (int)(a3), (int)(a4));
     return (int)(t0);
 }
 

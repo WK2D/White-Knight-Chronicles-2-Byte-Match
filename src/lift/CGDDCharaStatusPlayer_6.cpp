@@ -8,6 +8,7 @@ static void* __attribute__((noinline)) stub_00389cb4(int p0, int p1, int p2, int
 static int __attribute__((noinline)) stub_003a0c38(int p0, void* p1, void* p2, int p3) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); return r; }
 static int __attribute__((noinline)) stub_003a21c0(int p0, void* p1, void* p2, int p3) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); return r; }
 int fn_003dccd8(void*);
+int fn_003e0c9c(void*, u8);
 
 struct unk_003a01f0_a0 {
     virtual void vf0();
@@ -60,6 +61,56 @@ void* fn_003a01f0(unk_003a01f0_a0* a0) {
     t0 = a0->vf41();
     if ((int)(t0) != (int)(0)) {
         t1 = fn_003dccd8((void*)(t0));
+        v0 = (int)(t1);
+    } else {
+        v0 = (int)(0);
+    }
+    return (void*)(v0);
+}
+
+struct unk_003a03b0_a0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual void vf5();
+    virtual void vf6();
+    virtual void vf7();
+    virtual void vf8();
+    virtual void vf9();
+    virtual void vf10();
+    virtual void vf11();
+    virtual void vf12();
+    virtual void vf13();
+    virtual void vf14();
+    virtual void vf15();
+    virtual void vf16();
+    virtual void vf17();
+    virtual void vf18();
+    virtual void vf19();
+    virtual void vf20();
+    virtual void vf21();
+    virtual void vf22();
+    virtual void vf23();
+    virtual void vf24();
+    virtual void vf25();
+    virtual void vf26();
+    virtual void vf27();
+    virtual void vf28();
+    virtual void vf29();
+    virtual void vf30();
+    virtual void vf31();
+    virtual void vf32();
+    virtual void* vf33(int);
+};
+void* fn_003a03b0(unk_003a03b0_a0* a0, int a1) {
+    void* t0;
+    int t1;
+    int v0;
+    t0 = a0->vf33((int)(0));
+    if ((int)(t0) != (int)(0)) {
+        t1 = fn_003e0c9c((void*)(t0), (u8)((u8)a1));
         v0 = (int)(t1);
     } else {
         v0 = (int)(0);

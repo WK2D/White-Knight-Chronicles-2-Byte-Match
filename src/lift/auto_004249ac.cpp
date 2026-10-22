@@ -5,6 +5,60 @@
 extern "C" {
 
 int fn_0036dee0(void*);
+int fn_00439350(u32, int);
+int fn_00439424(u32, int);
+
+struct unk_004249ac_gmca4;
+struct unk_004249ac_gmca4_0;
+struct unk_004249ac_gmca4_0_6c;
+struct unk_004249ac_gmca4_0_6c_8;
+struct unk_004249ac_gmca4 {
+    unk_004249ac_gmca4_0* f_0;
+};
+struct unk_004249ac_gmca4_0 {
+    char pad_0[108];
+    unk_004249ac_gmca4_0_6c* f_6c;
+};
+struct unk_004249ac_gmca4_0_6c {
+    char pad_0[8];
+    unk_004249ac_gmca4_0_6c_8* f_8;
+};
+struct unk_004249ac_gmca4_0_6c_8 {
+    char pad_0[96];
+    u32 f_60;
+};
+extern unk_004249ac_gmca4 g_004249ac_0;
+u16 fn_004249ac(int a0, int a1) {
+    int t0;
+    t0 = fn_00439424((u32)((&g_004249ac_0)->f_0->f_6c->f_8->f_60), (int)(a1));
+    return (u16)((u16)t0);
+}
+
+struct unk_004249e8_gmca4;
+struct unk_004249e8_gmca4_0;
+struct unk_004249e8_gmca4_0_6c;
+struct unk_004249e8_gmca4_0_6c_8;
+struct unk_004249e8_gmca4 {
+    unk_004249e8_gmca4_0* f_0;
+};
+struct unk_004249e8_gmca4_0 {
+    char pad_0[108];
+    unk_004249e8_gmca4_0_6c* f_6c;
+};
+struct unk_004249e8_gmca4_0_6c {
+    char pad_0[8];
+    unk_004249e8_gmca4_0_6c_8* f_8;
+};
+struct unk_004249e8_gmca4_0_6c_8 {
+    char pad_0[96];
+    u32 f_60;
+};
+extern unk_004249e8_gmca4 g_004249e8_0;
+u16 fn_004249e8(int a0, int a1) {
+    int t0;
+    t0 = fn_00439350((u32)((&g_004249e8_0)->f_0->f_6c->f_8->f_60), (int)(a1));
+    return (u16)((u16)t0);
+}
 
 struct unk_004264f0_a0 {
     char pad_0[4];

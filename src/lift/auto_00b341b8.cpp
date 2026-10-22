@@ -5,6 +5,7 @@
 extern "C" {
 
 void fn_00b115bc(void*, void*);
+void* fn_00b35a78(void*, int, void*, int);
 
 extern char g_00b341b8_0[];
 extern char g_00b341b8_1[];
@@ -12,6 +13,17 @@ extern char g_00b341b8_2[];
 void* fn_00b341b8(void) {
     fn_00b115bc((void*)(g_00b341b8_0), (void*)(g_00b341b8_1));
     return (void*)(g_00b341b8_2);
+}
+
+struct unk_00b34644_a0 {
+    char pad_0[32];
+    void* f_20;
+};
+void* fn_00b34644(unk_00b34644_a0* a0, int a1) {
+    void* t0;
+    a0->f_20 = (void*)(a0);
+    t0 = fn_00b35a78((void*)(a0), (int)(32), (void*)((char*)a0 + 36), (int)(a1));
+    return (void*)(t0);
 }
 
 }

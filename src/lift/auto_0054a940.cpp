@@ -4,16 +4,63 @@
 
 extern "C" {
 
-static void __attribute__((noinline)) stub_0054a9b8(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
 
-struct unk_0054aa1c_a0 {
-    char pad_0[8];
+struct unk_0054a9b8_a0 {
+    char pad_0[4];
+    u8 f_4;
+    char pad_5[3];
     u32 f_8;
+    u32 f_c;
 };
-void fn_0054aa1c(unk_0054aa1c_a0* a0, int a1) {
-    a0->f_8 = (u32)(a1);
-    stub_0054a9b8((void*)(a0));
-    FIELD(u8, (int)(a0) + 131072, -3372) = (u8)(0);
+struct unk_0054a9b8_vc0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual void vf5();
+    virtual void vf6();
+    virtual void vf7();
+    virtual void vf8();
+    virtual void vf9();
+    virtual void vf10();
+    virtual void vf11();
+    virtual void vf12();
+    virtual int vf13(u32, u8, int);
+};
+void fn_0054a9b8(unk_0054a9b8_a0* a0) {
+    int t0;
+    if ((int)(FIELD(u8, (int)(a0) + 131072, -3371)) == (int)(0)) {
+        t0 = ((unk_0054a9b8_vc0*)(a0->f_8))->vf13((u32)(a0->f_c), (u8)(a0->f_4), (int)(0));
+    }
+}
+
+struct unk_0054aa58_a0 {
+    char pad_0[4];
+    u8 f_4;
+    char pad_5[3];
+    u32 f_8;
+    u32 f_c;
+};
+struct unk_0054aa58_vc0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual void vf5();
+    virtual void vf6();
+    virtual void vf7();
+    virtual void vf8();
+    virtual void vf9();
+    virtual void vf10();
+    virtual int vf11(u32, u8);
+};
+void fn_0054aa58(unk_0054aa58_a0* a0) {
+    int t0;
+    if ((int)(FIELD(u8, (int)(a0) + 131072, -3371)) == (int)(0)) {
+        t0 = ((unk_0054aa58_vc0*)(a0->f_8))->vf11((u32)(a0->f_c), (u8)(a0->f_4));
+    }
 }
 
 u8 fn_0054aabc(int a0, int a1) {

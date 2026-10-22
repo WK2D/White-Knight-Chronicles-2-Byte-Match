@@ -4,15 +4,15 @@
 
 extern "C" {
 
-void fn_00dd6828(void*);
-void fn_00dd6e28(void*);
+void fn_00dd6828(void*, int, int, int, int, int);
+void fn_00dd6e28(void*, int, int, int, int, int, int);
 
-void fn_00dc4ffc(void* a0) {
-    fn_00dd6e28((void*)((char*)a0 + 20));
+void fn_00dc4ffc(void* a0, int a1, int a2, int a3, int a4, int a5, int a6) {
+    fn_00dd6e28((void*)((char*)a0 + 20), (int)(a1), (int)(a2), (int)(a3), (int)(a4), (int)(a5), (int)(a6));
 }
 
-void fn_00dc5028(void* a0) {
-    fn_00dd6828((void*)((char*)a0 + 20));
+void fn_00dc5028(void* a0, int a1, int a2, int a3, int a4, int a5) {
+    fn_00dd6828((void*)((char*)a0 + 20), (int)(a1), (int)(a2), (int)(a3), (int)(a4), (int)(a5));
 }
 
 }

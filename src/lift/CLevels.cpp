@@ -5,10 +5,40 @@
 extern "C" {
 
 void fn_000c38d8(void*);
-void fn_000c39ac(void);
+void fn_000c39ac(int);
+void fn_000c39f4(void*);
+void fn_00fc88dc(void*);
 
-void fn_004bb1b8(void) {
-    fn_000c39ac();
+void fn_004bb1b8(int a0) {
+    fn_000c39ac((int)(a0));
+}
+
+struct unk_004bb258_a0 {
+    void* f_0;
+};
+extern char g_004bb258_0[];
+void fn_004bb258(unk_004bb258_a0* a0) {
+    a0->f_0 = (void*)(g_004bb258_0);
+    fn_000c39f4((void*)(a0));
+    fn_00fc88dc((void*)(a0));
+}
+
+struct unk_004bb29c_a0 {
+    void* f_0;
+};
+extern char g_004bb29c_0[];
+void fn_004bb29c(unk_004bb29c_a0* a0) {
+    a0->f_0 = (void*)(g_004bb29c_0);
+    fn_000c39f4((void*)(a0));
+}
+
+struct unk_004bb2cc_a0 {
+    void* f_0;
+};
+extern char g_004bb2cc_0[];
+void fn_004bb2cc(unk_004bb2cc_a0* a0) {
+    a0->f_0 = (void*)(g_004bb2cc_0);
+    fn_000c39f4((void*)(a0));
 }
 
 struct unk_004bb2fc_a0 {

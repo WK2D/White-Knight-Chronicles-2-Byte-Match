@@ -4,8 +4,48 @@
 
 extern "C" {
 
+void* fn_00b3fdc8(void*);
 void fn_00b40818(int, int);
 void* fn_00b40828(u32, int);
+
+struct unk_008c6ed4_gm57a0;
+struct unk_008c6ed4_gm57a4;
+struct unk_008c6ed4_gm57a0_0;
+struct unk_008c6ed4_gm57a4_0;
+struct unk_008c6ed4_gm57a4_0_6c;
+struct unk_008c6ed4_gm57a0 {
+    unk_008c6ed4_gm57a0_0* f_0;
+};
+struct unk_008c6ed4_gm57a4 {
+    unk_008c6ed4_gm57a4_0* f_0;
+};
+struct unk_008c6ed4_gm57a0_0 {
+    u32 f_0;
+};
+struct unk_008c6ed4_gm57a4_0 {
+    char pad_0[108];
+    unk_008c6ed4_gm57a4_0_6c* f_6c;
+};
+struct unk_008c6ed4_gm57a4_0_6c {
+    char pad_0[8];
+    u32 f_8;
+};
+extern unk_008c6ed4_gm57a4 g_008c6ed4_0;
+extern unk_008c6ed4_gm57a0 g_008c6ed4_1;
+void* fn_008c6ed4(void) {
+    void* t0;
+    if ((int)((&g_008c6ed4_0)->f_0->f_6c) == (int)(0)) {
+        return (void*)(0);
+    }
+    if ((int)((&g_008c6ed4_0)->f_0->f_6c->f_8) == (int)(0)) {
+        return (void*)(0);
+    }
+    if ((int)((&g_008c6ed4_1)->f_0->f_0) == (int)(0)) {
+        return (void*)(0);
+    }
+    t0 = fn_00b3fdc8((void*)((&g_008c6ed4_0)->f_0->f_6c->f_8));
+    return (void*)(FIELD(u32, FIELD(u32, t0, 8), 60));
+}
 
 void fn_008c6f48(int a0) {
     fn_00b40818((int)(a0), (int)(4));

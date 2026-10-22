@@ -5,6 +5,9 @@
 extern "C" {
 
 void fn_00bfbe74(int, int);
+void fn_00f3faa4(void*, int, void*);
+int fn_00f3fac8(int, void*);
+void* fn_00f3ffc0(int, int);
 
 int fn_00f3f960(int a0, int a1) {
     return (int)(a1);
@@ -39,6 +42,26 @@ struct unk_00f3fa1c_a0 {
 };
 void fn_00f3fa1c(unk_00f3fa1c_a0* a0, int a1, int a2) {
     FIELD(u32, (int)((u32)((int)((u32)(a0->f_8) << 1) + (int)(a1)) << 2) + (int)(a0->f_0), 8) = (u32)(a2);
+}
+
+struct unk_00f400e8_l;
+struct unk_00f400e8_l {
+    u8 f_0;
+};
+u32 fn_00f400e8(int a0, int a1) {
+    void* t0;
+    int t2;
+    unk_00f400e8_l l;
+    int v0;
+    t0 = fn_00f3ffc0((int)(a0), (int)(a1));
+    fn_00f3faa4((void*)((&l)), (int)(a0), (void*)(t0));
+    if ((int)(l.f_0) != (int)(0)) {
+        t2 = fn_00f3fac8((int)(a0), (void*)(t0));
+        v0 = (int)(0);
+    } else {
+        v0 = (int)(1);
+    }
+    return (u32)((u32)(v0) & 0x1);
 }
 
 void fn_00f40f90(int a0, int a1) {

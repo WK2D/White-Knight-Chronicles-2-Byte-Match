@@ -4,13 +4,13 @@
 
 extern "C" {
 
-void fn_00bd0cb8(void);
+void fn_00bd0cb8(void*);
 
 struct unk_00a2bda8_a0 {
     u32 f_0;
 };
 void fn_00a2bda8(unk_00a2bda8_a0* a0) {
-    fn_00bd0cb8();
+    fn_00bd0cb8((void*)(a0));
     a0->f_0 = (u32)(1718185811);
 }
 
@@ -18,7 +18,7 @@ struct unk_00a2bde4_a0 {
     u32 f_0;
 };
 void fn_00a2bde4(unk_00a2bde4_a0* a0) {
-    fn_00bd0cb8();
+    fn_00bd0cb8((void*)(a0));
     a0->f_0 = (u32)(1718185811);
 }
 

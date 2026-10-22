@@ -4,11 +4,11 @@
 
 extern "C" {
 
-int fn_00b09080(void);
+int fn_00b09080(int, int);
 
-int fn_00b19260(void) {
+int fn_00b19260(int a0, int a1) {
     int t0;
-    t0 = fn_00b09080();
+    t0 = fn_00b09080((int)(a0), (int)(a1));
     return (int)((int)(short)(t0));
 }
 

@@ -6,6 +6,7 @@ extern "C" {
 
 void* fn_00076a98(void*, int, int, int, int, int);
 static int __attribute__((noinline)) stub_001b7e44(void* p0, void* p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
+static void __attribute__((noinline)) stub_001bdd00(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
 
 extern char g_001bacf8_0[];
 u16 fn_001bacf8(void* a0, int a1) {
@@ -14,6 +15,26 @@ u16 fn_001bacf8(void* a0, int a1) {
     t0 = fn_00076a98((void*)(g_001bacf8_0), (int)(a1), (int)(0), (int)(-1), (int)(0), (int)(0));
     t1 = stub_001b7e44((void*)(a0), (void*)(t0));
     return (u16)((u16)t1);
+}
+
+struct unk_001bdd9c_a0 {
+    u32 f_0;
+};
+void fn_001bdd9c(unk_001bdd9c_a0* a0) {
+    if ((int)(a0->f_0) == (int)(0)) {
+        return;
+    }
+    stub_001bdd00((void*)(a0));
+}
+
+struct unk_001bddb0_a0 {
+    u32 f_0;
+};
+void fn_001bddb0(unk_001bddb0_a0* a0) {
+    if ((int)(a0->f_0) == (int)(0)) {
+        return;
+    }
+    stub_001bdd00((void*)(a0));
 }
 
 }

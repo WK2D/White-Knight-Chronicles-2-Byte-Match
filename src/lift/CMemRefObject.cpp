@@ -4,6 +4,7 @@
 
 extern "C" {
 
+void fn_00fc88dc(void*);
 void fn_00fccef0(void*);
 void fn_00fccf90(void*);
 
@@ -21,6 +22,15 @@ void fn_00032e98(unk_00032e98_a0* a0) {
     fn_00fccf90((void*)((char*)g_00032e98_0 + 4));
     a0->f_4->f_4 = (u32)(a0->f_4->f_4 + 1);
     fn_00fccef0((void*)((char*)g_00032e98_0 + 4));
+}
+
+struct unk_00032fb0_a0 {
+    void* f_0;
+};
+extern char g_00032fb0_0[];
+void fn_00032fb0(unk_00032fb0_a0* a0) {
+    a0->f_0 = (void*)(g_00032fb0_0);
+    fn_00fc88dc((void*)(a0));
 }
 
 struct unk_000330cc_a0 {

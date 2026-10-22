@@ -4,7 +4,7 @@
 
 extern "C" {
 
-int fn_00835ab0(u32);
+int fn_00835ab0(u32, int);
 void fn_00835c88(u32, void*, int);
 void* fn_008360c0(u32);
 int fn_00836da8(u32, void*, u8);
@@ -40,9 +40,9 @@ struct unk_0082b560_a0 {
     char pad_0[4348];
     u32 f_10fc;
 };
-u16 fn_0082b560(unk_0082b560_a0* a0) {
+u16 fn_0082b560(unk_0082b560_a0* a0, int a1) {
     int t0;
-    t0 = fn_00835ab0((u32)(a0->f_10fc));
+    t0 = fn_00835ab0((u32)(a0->f_10fc), (int)(a1));
     return (u16)((u16)t0);
 }
 

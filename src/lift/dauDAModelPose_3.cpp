@@ -4,6 +4,7 @@
 
 extern "C" {
 
+void* fn_00b52d9c(void*);
 
 struct unk_0019ac00_a0 {
     void* f_0;
@@ -13,6 +14,20 @@ extern char g_0019ac00_0[];
 void fn_0019ac00(unk_0019ac00_a0* a0, int a1) {
     a0->f_4 = (u32)(a1);
     a0->f_0 = (void*)(g_0019ac00_0);
+}
+
+struct unk_0019ac5c_a0_4;
+struct unk_0019ac5c_a0_4 {
+    u32 f_0;
+};
+struct unk_0019ac5c_a0 {
+    char pad_0[4];
+    unk_0019ac5c_a0_4* f_4;
+};
+u32 fn_0019ac5c(unk_0019ac5c_a0* a0) {
+    void* t0;
+    t0 = fn_00b52d9c((void*)(a0->f_4->f_0 + 8));
+    return (u32)(((u32)(FIELD(u32, t0, 12)) >> 18));
 }
 
 }

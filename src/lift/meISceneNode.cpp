@@ -8,7 +8,7 @@ void fn_00af6390(int, int);
 void fn_00af63a0(void);
 void* fn_00af63a4(int);
 void* fn_00af63b0(int);
-void fn_00af63bc(void);
+void fn_00af63bc(int);
 void fn_00b01ca4(u32, int, int, void*);
 
 struct unk_00aeb6ec_a0 {
@@ -81,8 +81,8 @@ void* fn_00aebc64(int a0) {
     return (void*)(t0);
 }
 
-void fn_00aebc8c(void) {
-    fn_00af63bc();
+void fn_00aebc8c(int a0) {
+    fn_00af63bc((int)(a0));
 }
 
 void fn_00aebcb0(void) {

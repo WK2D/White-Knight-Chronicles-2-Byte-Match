@@ -4,30 +4,30 @@
 
 extern "C" {
 
-void fn_00b8bd38(void);
-void fn_00b8bd80(void);
-void fn_00b8bdc8(void);
-void fn_00b8be10(void);
-void fn_00b8be58(void);
+void fn_00b8bd38(int);
+void fn_00b8bd80(int);
+void fn_00b8bdc8(int);
+void fn_00b8be10(int);
+void fn_00b8be58(int);
 
-void fn_00b8df28(void) {
-    fn_00b8bd38();
+void fn_00b8df28(int a0) {
+    fn_00b8bd38((int)(a0));
 }
 
-void fn_00b8df4c(void) {
-    fn_00b8bdc8();
+void fn_00b8df4c(int a0) {
+    fn_00b8bdc8((int)(a0));
 }
 
-void fn_00b8df70(void) {
-    fn_00b8be10();
+void fn_00b8df70(int a0) {
+    fn_00b8be10((int)(a0));
 }
 
-void fn_00b8df94(void) {
-    fn_00b8be58();
+void fn_00b8df94(int a0) {
+    fn_00b8be58((int)(a0));
 }
 
-void fn_00b8dfb8(void) {
-    fn_00b8bd80();
+void fn_00b8dfb8(int a0) {
+    fn_00b8bd80((int)(a0));
 }
 
 }

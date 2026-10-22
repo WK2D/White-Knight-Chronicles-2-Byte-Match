@@ -4,21 +4,56 @@
 
 extern "C" {
 
-static void* __attribute__((noinline)) stub_008f7740(int p0) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static void* __attribute__((noinline)) stub_008f7740(int p0, int p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static void* __attribute__((noinline)) stub_008f7780(int p0, u32 p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static int __attribute__((noinline)) stub_008f7b30(void* p0, void* p1, void* p2, void* p3) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); return r; }
 static void __attribute__((noinline)) stub_008f7cc8(int p0, void* p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 static int __attribute__((noinline)) stub_008f7d14(int p0, void* p1, u8 p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
 static int __attribute__((noinline)) stub_008f7d48(int p0, void* p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
-static int __attribute__((noinline)) stub_008f8450(int p0, u32 p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 void* fn_00ad8e20(int);
 void fn_00b41138(void*);
 void fn_00b41188(void*);
 void fn_00b411b8(void*);
 void fn_00b411c8(void*);
+void* fn_00b41248(void*, void*, int);
 void fn_00bbee80(void*);
 void fn_00bbef58(void*);
 void fn_00bbf030(void*);
+
+struct unk_008f88b8_gm50fc;
+struct unk_008f88b8_gm50fc_0;
+struct unk_008f88b8_gm50fc_0_6c;
+struct unk_008f88b8_gm50fc_0_6c_8;
+struct unk_008f88b8_gm50fc {
+    unk_008f88b8_gm50fc_0* f_0;
+};
+struct unk_008f88b8_gm50fc_0 {
+    char pad_0[108];
+    unk_008f88b8_gm50fc_0_6c* f_6c;
+};
+struct unk_008f88b8_gm50fc_0_6c {
+    char pad_0[8];
+    unk_008f88b8_gm50fc_0_6c_8* f_8;
+};
+struct unk_008f88b8_gm50fc_0_6c_8 {
+    char pad_0[32];
+    u32 f_20;
+};
+extern unk_008f88b8_gm50fc g_008f88b8_0;
+void* fn_008f88b8(int a0, void* a1) {
+    void* t0;
+    if ((int)((&g_008f88b8_0)->f_0->f_6c) == (int)(0)) {
+        return (void*)(0);
+    }
+    if ((int)((&g_008f88b8_0)->f_0->f_6c->f_8) == (int)(0)) {
+        return (void*)(0);
+    }
+    if ((int)((&g_008f88b8_0)->f_0->f_6c->f_8->f_20) == (int)(0)) {
+        return (void*)(0);
+    }
+    t0 = fn_00b41248((void*)((&g_008f88b8_0)->f_0->f_6c->f_8->f_20), (void*)(a1), (int)(0));
+    return (void*)(t0);
+}
 
 u8 fn_008f892c(void* a0, void* a1, void* a2, int a3) {
     void* t0;
@@ -53,25 +88,16 @@ void fn_008f8cec(unk_008f8cec_a0* a0) {
     a0->f_28 = (u32)(a0->f_b8);
 }
 
-int fn_008f9558(int a0) {
+int fn_008f9558(int a0, int a1) {
     void* t0;
     int v0;
-    t0 = stub_008f7740((int)(a0));
+    t0 = stub_008f7740((int)(a0), (int)(a1));
     if ((int)(t0) != (int)(0)) {
         v0 = (int)((u32)(FIELD(u32, t0, 12)) & 0x1);
     } else {
         v0 = (int)(0);
     }
     return (int)(v0);
-}
-
-struct unk_008f9d98_a1 {
-    u32 f_0;
-};
-u8 fn_008f9d98(int a0, unk_008f9d98_a1* a1) {
-    int t0;
-    t0 = stub_008f8450((int)(a0), (u32)(a1->f_0));
-    return (u8)((u8)t0);
 }
 
 struct unk_008fa31c_a1 {

@@ -8,10 +8,18 @@ int fn_00b125a0(void*, int);
 void fn_00b12b3c(void*, int);
 void* fn_00b13960(void*, int);
 void* fn_00b157ac(void*, int, int);
+void* fn_00b15a00(void*, int, int, int);
 void* fn_00b15b24(void*, int, int);
 void* fn_00b15b50(void*, int, int);
 void fn_00b15c1c(void);
 void fn_00b15dbc(void*);
+
+extern char g_00b15f2c_0[];
+void* fn_00b15f2c(int a0, int a1, int a2) {
+    void* t0;
+    t0 = fn_00b15a00((void*)(g_00b15f2c_0), (int)(a0), (int)(a1), (int)(a2));
+    return (void*)(t0);
+}
 
 extern char g_00b15f6c_0[];
 int fn_00b15f6c(int a0) {

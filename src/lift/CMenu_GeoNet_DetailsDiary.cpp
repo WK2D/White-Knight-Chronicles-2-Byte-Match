@@ -4,6 +4,7 @@
 
 extern "C" {
 
+void fn_006a0864(u32, u32);
 void fn_00b37fa8(void*, int, int);
 
 struct unk_00724a84_a0 {
@@ -12,6 +13,45 @@ struct unk_00724a84_a0 {
 };
 void* fn_00724a84(unk_00724a84_a0* a0) {
     return (void*)((char*)((char*)a0 + (int)((int)(a0->f_2ac) * 76)) + 228);
+}
+
+struct unk_00724ad8_g5a10;
+struct unk_00724ad8_g5a10 {
+    u32 f_0;
+    u32 f_4;
+    u32 f_8;
+    u32 f_c;
+    u32 f_10;
+};
+struct unk_00724ad8_a0 {
+    char pad_0[224];
+    u32 f_e0;
+    char pad_e4[456];
+    u32 f_2ac;
+};
+extern unk_00724ad8_g5a10 g_00724ad8_0;
+void fn_00724ad8(unk_00724ad8_a0* a0) {
+    if ((int)(FIELD(u8, (int)(a0) + 131072, -18243)) == (int)(0)) {
+        if ((int)(a0->f_2ac) != (int)(3)) {
+            fn_006a0864((u32)(a0->f_e0), (u32)((&g_00724ad8_0)->f_4));
+            return;
+        }
+        fn_006a0864((u32)(a0->f_e0), (u32)((&g_00724ad8_0)->f_0));
+        return;
+    }
+    if ((int)(FIELD(u8, (int)(a0) + 131072, -18243)) != (int)(1)) {
+        if ((int)(a0->f_2ac) != (int)(5)) {
+            fn_006a0864((u32)(a0->f_e0), (u32)((&g_00724ad8_0)->f_10));
+            return;
+        }
+        fn_006a0864((u32)(a0->f_e0), (u32)((&g_00724ad8_0)->f_c));
+        return;
+    }
+    if ((int)(a0->f_2ac) == (int)(4)) {
+        fn_006a0864((u32)(a0->f_e0), (u32)((&g_00724ad8_0)->f_0));
+        return;
+    }
+    fn_006a0864((u32)(a0->f_e0), (u32)((&g_00724ad8_0)->f_8));
 }
 
 void fn_00724cac(int a0) {

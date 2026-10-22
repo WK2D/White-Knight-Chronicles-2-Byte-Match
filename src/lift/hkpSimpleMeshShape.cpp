@@ -6,7 +6,7 @@ extern "C" {
 
 void fn_00d47ac0(int);
 void fn_00d47acc(int);
-void fn_00d47fa0(void);
+void fn_00d47fa0(int, int);
 
 void fn_00cfad54(int a0) {
     fn_00d47acc((int)(a0));
@@ -16,8 +16,8 @@ void fn_00cfb00c(int a0) {
     fn_00d47ac0((int)(a0));
 }
 
-void fn_00cfb030(void) {
-    fn_00d47fa0();
+void fn_00cfb030(int a0, int a1) {
+    fn_00d47fa0((int)(a0), (int)(a1));
 }
 
 }

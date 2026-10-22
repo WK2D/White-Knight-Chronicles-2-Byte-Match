@@ -4,15 +4,15 @@
 
 extern "C" {
 
-void fn_00cf4c80(int);
-void fn_00cf4fd8(void);
+void fn_00cf4c80(int, int);
+void fn_00cf4fd8(int);
 
-void fn_00cf8638(void) {
-    fn_00cf4fd8();
+void fn_00cf8638(int a0) {
+    fn_00cf4fd8((int)(a0));
 }
 
-void fn_00cf891c(int a0) {
-    fn_00cf4c80((int)(a0));
+void fn_00cf891c(int a0, int a1) {
+    fn_00cf4c80((int)(a0), (int)(a1));
 }
 
 struct unk_00cf8a6c_a0 {

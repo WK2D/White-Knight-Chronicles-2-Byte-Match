@@ -4,14 +4,82 @@
 
 extern "C" {
 
-static void __attribute__((noinline)) stub_00513904(int p0, u32 p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
+void* fn_00034810(void*, int, void*, int);
+void* fn_0049931c(u32, int, int);
+void* fn_004997d4(u32, int);
 
-struct unk_00513938_a1 {
+struct unk_005138c4_g93c;
+struct unk_005138c4_g93c_0;
+struct unk_005138c4_g93c_0_6c;
+struct unk_005138c4_g93c_0_6c_8;
+struct unk_005138c4_g93c {
+    unk_005138c4_g93c_0* f_0;
+};
+struct unk_005138c4_g93c_0 {
+    char pad_0[108];
+    unk_005138c4_g93c_0_6c* f_6c;
+};
+struct unk_005138c4_g93c_0_6c {
+    char pad_0[8];
+    unk_005138c4_g93c_0_6c_8* f_8;
+};
+struct unk_005138c4_g93c_0_6c_8 {
+    char pad_0[124];
+    u32 f_7c;
+};
+extern unk_005138c4_g93c g_005138c4_0;
+void* fn_005138c4(int a0, int a1) {
+    void* t0;
+    t0 = fn_0049931c((u32)((&g_005138c4_0)->f_0->f_6c->f_8->f_7c), (int)(a1), (int)(1));
+    return (void*)(t0);
+}
+
+struct unk_005139e4_g93c;
+struct unk_005139e4_g93c_0;
+struct unk_005139e4_g93c_0_6c;
+struct unk_005139e4_g93c_0_6c_8;
+struct unk_005139e4_g93c {
+    unk_005139e4_g93c_0* f_0;
+};
+struct unk_005139e4_g93c_0 {
+    char pad_0[108];
+    unk_005139e4_g93c_0_6c* f_6c;
+};
+struct unk_005139e4_g93c_0_6c {
+    char pad_0[8];
+    unk_005139e4_g93c_0_6c_8* f_8;
+};
+struct unk_005139e4_g93c_0_6c_8 {
+    char pad_0[124];
+    u32 f_7c;
+};
+extern unk_005139e4_g93c g_005139e4_0;
+void* fn_005139e4(int a0, int a1) {
+    void* t0;
+    t0 = fn_004997d4((u32)((&g_005139e4_0)->f_0->f_6c->f_8->f_7c), (int)(a1));
+    return (void*)(t0);
+}
+
+struct unk_00513b6c_a0_28;
+struct unk_00513b6c_a0_28 {
     char pad_0[4];
     u32 f_4;
 };
-void fn_00513938(int a0, unk_00513938_a1* a1) {
-    stub_00513904((int)(a0), (u32)(a1->f_4));
+struct unk_00513b6c_a0 {
+    char pad_0[40];
+    unk_00513b6c_a0_28* f_28;
+};
+extern char g_00513b6c_0[];
+void* fn_00513b6c(unk_00513b6c_a0* a0) {
+    void* t0;
+    if ((int)(a0->f_28) == (int)(0)) {
+        return (void*)(0);
+    }
+    if ((int)(a0->f_28->f_4) == (int)(0)) {
+        return (void*)(0);
+    }
+    t0 = fn_00034810((void*)(a0->f_28->f_4), (int)(0), (void*)(g_00513b6c_0), (int)(0));
+    return (void*)(t0);
 }
 
 }

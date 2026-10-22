@@ -4,8 +4,25 @@
 
 extern "C" {
 
+static void __attribute__((noinline)) stub_000cf978(float p0, float p1, float p2, float p3) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); }
+static void __attribute__((noinline)) stub_000cfbc4(float p0, float p1, float p2, float p3) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); }
 static void __attribute__((noinline)) stub_000cfd30(float p0, float p1, float p2, float p3) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); }
-void fn_000d668c(u32);
+void fn_000d668c(u32, int);
+
+struct unk_000cfa10_gm6dd8;
+struct unk_000cfa10_gm6dd8_0;
+struct unk_000cfa10_gm6dd8 {
+    unk_000cfa10_gm6dd8_0* f_0;
+};
+struct unk_000cfa10_gm6dd8_0 {
+    char pad_0[4];
+    float f_4;
+    float f_8;
+};
+extern unk_000cfa10_gm6dd8 g_000cfa10_0;
+void fn_000cfa10(float f0, float f1, float f2, float f3) {
+    stub_000cf978((float)(((f0 / (&g_000cfa10_0)->f_0->f_4) + (f0 / (&g_000cfa10_0)->f_0->f_4)) - 1.0f), (float)((f1 / (&g_000cfa10_0)->f_0->f_8) * -2.0f + 1.0f), (float)(((f2 / (&g_000cfa10_0)->f_0->f_4) + (f2 / (&g_000cfa10_0)->f_0->f_4)) - 1.0f), (float)((f3 / (&g_000cfa10_0)->f_0->f_8) * -2.0f + 1.0f));
+}
 
 struct unk_000cfdf4_a2 {
     float f_0;
@@ -21,8 +38,23 @@ struct unk_000d00a0_a0 {
     char pad_0[56];
     u32 f_38;
 };
-void fn_000d00a0(unk_000d00a0_a0* a0) {
-    fn_000d668c((u32)(a0->f_38));
+void fn_000d00a0(unk_000d00a0_a0* a0, int a1) {
+    fn_000d668c((u32)(a0->f_38), (int)(a1));
+}
+
+struct unk_000d01c8_gm6dd8;
+struct unk_000d01c8_gm6dd8_0;
+struct unk_000d01c8_gm6dd8 {
+    unk_000d01c8_gm6dd8_0* f_0;
+};
+struct unk_000d01c8_gm6dd8_0 {
+    char pad_0[4];
+    float f_4;
+    float f_8;
+};
+extern unk_000d01c8_gm6dd8 g_000d01c8_0;
+void fn_000d01c8(float f0, float f1, float f2, float f3) {
+    stub_000cfbc4((float)(((f0 / (&g_000d01c8_0)->f_0->f_4) + (f0 / (&g_000d01c8_0)->f_0->f_4)) - 1.0f), (float)((f1 / (&g_000d01c8_0)->f_0->f_8) * -2.0f + 1.0f), (float)(((f2 / (&g_000d01c8_0)->f_0->f_4) + (f2 / (&g_000d01c8_0)->f_0->f_4)) - 1.0f), (float)((f3 / (&g_000d01c8_0)->f_0->f_8) * -2.0f + 1.0f));
 }
 
 }

@@ -4,7 +4,38 @@
 
 extern "C" {
 
+static void __attribute__((noinline)) stub_00931fec(void* p0, int p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
+void fn_00a7c2bc(u32);
 void fn_00b41d68(void);
+
+struct unk_00931f98_gm46fc;
+struct unk_00931f98_gm46fc {
+    u32 f_0;
+};
+struct unk_00931f98_a0 {
+    char pad_0[56];
+    u16 f_38;
+    u16 f_3a;
+    u16 f_3c;
+};
+extern unk_00931f98_gm46fc g_00931f98_0;
+void fn_00931f98(unk_00931f98_a0* a0) {
+    if ((int)(a0->f_38) == (int)(0)) {
+        a0->f_3c = (u16)(a0->f_38);
+        a0->f_3a = (u16)(1);
+        return;
+    }
+    fn_00a7c2bc((u32)((&g_00931f98_0)->f_0));
+}
+
+struct unk_00932050_a0 {
+    void* f_0;
+};
+extern char g_00932050_0[];
+void fn_00932050(unk_00932050_a0* a0) {
+    a0->f_0 = (void*)(g_00932050_0);
+    stub_00931fec((void*)(a0), (int)(13016));
+}
 
 void fn_009324fc(void) {
     fn_00b41d68();

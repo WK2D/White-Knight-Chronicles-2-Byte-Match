@@ -4,11 +4,11 @@
 
 extern "C" {
 
-static int __attribute__((noinline)) stub_0002d16c(void) { int r; __asm__ volatile ("" : "=r"(r)); return r; }
+static int __attribute__((noinline)) stub_0002d16c(int p0, int p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 
-void* fn_0002d19c(void) {
+void* fn_0002d19c(int a0, int a1) {
     int t0;
-    t0 = stub_0002d16c();
+    t0 = stub_0002d16c((int)(a0), (int)(a1));
     return (void*)((int)((u32)(t0) >> 4) + (int)((u32)(-(int)((u32)(t0) & 0xf)) >> 31));
 }
 

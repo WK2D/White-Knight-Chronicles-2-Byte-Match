@@ -5,9 +5,59 @@
 extern "C" {
 
 void fn_000c0a70(int, int, int, int, int, int);
+void fn_00144200(u32, int);
+int fn_001447d0(u32);
+int fn_00144910(u32);
 
 void fn_00133608(int a0, int a1, int a2, int a3, int a4) {
     fn_000c0a70((int)(a0), (int)(a1), (int)(a2), (int)(a3), (int)(a4), (int)(5));
+}
+
+struct unk_00134cbc_gm6460;
+struct unk_00134cbc_gm6460_0;
+struct unk_00134cbc_gm6460 {
+    unk_00134cbc_gm6460_0* f_0;
+};
+struct unk_00134cbc_gm6460_0 {
+    char pad_0[140];
+    u32 f_8c;
+};
+extern unk_00134cbc_gm6460 g_00134cbc_0;
+void fn_00134cbc(void) {
+    fn_00144200((u32)((&g_00134cbc_0)->f_0->f_8c), (int)(1));
+}
+
+struct unk_00134cf0_gm6460;
+struct unk_00134cf0_gm6460_0;
+struct unk_00134cf0_gm6460 {
+    unk_00134cf0_gm6460_0* f_0;
+};
+struct unk_00134cf0_gm6460_0 {
+    char pad_0[140];
+    u32 f_8c;
+};
+extern unk_00134cf0_gm6460 g_00134cf0_0;
+int fn_00134cf0(void* a0) {
+    int t0;
+    t0 = fn_001447d0((u32)((&g_00134cf0_0)->f_0->f_8c));
+    FIELD(u32, (int)(a0) + 65536, 20864) = (u32)(t0);
+    return (int)(t0);
+}
+
+struct unk_00134d3c_gm6460;
+struct unk_00134d3c_gm6460_0;
+struct unk_00134d3c_gm6460 {
+    unk_00134d3c_gm6460_0* f_0;
+};
+struct unk_00134d3c_gm6460_0 {
+    char pad_0[140];
+    u32 f_8c;
+};
+extern unk_00134d3c_gm6460 g_00134d3c_0;
+u8 fn_00134d3c(void) {
+    int t0;
+    t0 = fn_00144910((u32)((&g_00134d3c_0)->f_0->f_8c));
+    return (u8)((u8)t0);
 }
 
 struct unk_0013553c_gm6460;

@@ -5,7 +5,7 @@
 extern "C" {
 
 static int __attribute__((noinline)) stub_00049088(void* p0, void* p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
-static void* __attribute__((noinline)) stub_0004cce0(void) { void* r; __asm__ volatile ("" : "=r"(r)); return r; }
+static void* __attribute__((noinline)) stub_0004cce0(int p0, int p1, int p2) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
 static void __attribute__((noinline)) stub_0004fa80(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4), "r"(p5), "r"(p6), "r"(p7)); }
 static void __attribute__((noinline)) stub_0004fc50(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4), "r"(p5), "r"(p6), "r"(p7)); }
 static void __attribute__((noinline)) stub_00050020(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4), "r"(p5), "r"(p6), "r"(p7)); }
@@ -14,7 +14,7 @@ static void __attribute__((noinline)) stub_00050270(int p0, int p1, int p2, int 
 void* fn_0004e0c4(int a0, int a1, int a2, int a3) {
     void* t0;
     int v0;
-    t0 = stub_0004cce0();
+    t0 = stub_0004cce0((int)(a0), (int)(a1), (int)(a2));
     if ((int)(t0) != (int)(0)) {
         v0 = (int)((u32)(a3) & (u32)(FIELD(u32, t0, 120)));
     } else {
@@ -23,10 +23,10 @@ void* fn_0004e0c4(int a0, int a1, int a2, int a3) {
     return (void*)(v0);
 }
 
-void* fn_0004e108(void) {
+void* fn_0004e108(int a0, int a1, int a2) {
     void* t0;
     int v0;
-    t0 = stub_0004cce0();
+    t0 = stub_0004cce0((int)(a0), (int)(a1), (int)(a2));
     if ((int)(t0) != (int)(0)) {
         v0 = (int)(FIELD(u32, t0, 120));
     } else {
@@ -35,10 +35,10 @@ void* fn_0004e108(void) {
     return (void*)(v0);
 }
 
-int fn_0004e368(void) {
+int fn_0004e368(int a0, int a1, int a2) {
     void* t0;
     int v0;
-    t0 = stub_0004cce0();
+    t0 = stub_0004cce0((int)(a0), (int)(a1), (int)(a2));
     if ((int)(t0) != (int)(0)) {
         v0 = (int)(FIELD(u16, t0, 188));
     } else {
@@ -50,7 +50,7 @@ int fn_0004e368(void) {
 int fn_0004e8c0(int a0, int a1, int a2, void* a3) {
     void* t0;
     int t1;
-    t0 = stub_0004cce0();
+    t0 = stub_0004cce0((int)(a0), (int)(a1), (int)(a2));
     if ((int)(t0) != (int)(0)) {
         t1 = stub_00049088((void*)(t0), (void*)(a3));
         return (int)(t1);

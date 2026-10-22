@@ -8,12 +8,19 @@ static void __attribute__((noinline)) stub_0004324c(void* p0) { __asm__ volatile
 void fn_00053780(void*);
 void fn_00054f34(void*);
 void fn_0006449c(void*);
+int fn_000645e0(void*, void*, int, int);
 int fn_00064664(void*);
 void fn_000647d8(void*);
 
 int fn_000452b0(void* a0) {
     int t0;
     t0 = fn_00064664((void*)((char*)a0 + 372));
+    return (int)(t0);
+}
+
+int fn_000452e0(void* a0, int a1, int a2) {
+    int t0;
+    t0 = fn_000645e0((void*)((char*)a0 + 372), (void*)(a0), (int)(a1), (int)(a2));
     return (int)(t0);
 }
 

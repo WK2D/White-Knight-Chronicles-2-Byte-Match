@@ -6,6 +6,9 @@ extern "C" {
 
 static void __attribute__((noinline)) stub_008cdfb8(u32 p0) { __asm__ volatile ("" : : "r"(p0)); }
 static void __attribute__((noinline)) stub_008cfa88(u32 p0) { __asm__ volatile ("" : : "r"(p0)); }
+static void __attribute__((noinline)) stub_008d33fc(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
+static void __attribute__((noinline)) stub_008d3460(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
+static void __attribute__((noinline)) stub_008d3538(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
 void fn_00b40cd8(u32, int);
 
 struct unk_008cfc10_gm56d8;
@@ -44,6 +47,17 @@ int fn_008cfc10(unk_008cfc10_a0* a0, unk_008cfc10_a1* a1) {
     fn_00b40cd8((u32)((&g_008cfc10_0)->f_0->f_6c->f_8->f_100), (int)(1));
     stub_008cdfb8((u32)(a0->f_10c));
     return (int)(0);
+}
+
+struct unk_008d35cc_a0 {
+    char pad_0[20];
+    u32 f_14;
+};
+void fn_008d35cc(unk_008d35cc_a0* a0) {
+    a0->f_14 = (u32)(0);
+    stub_008d3460((void*)(a0));
+    stub_008d3538((void*)(a0));
+    stub_008d33fc((void*)(a0));
 }
 
 }

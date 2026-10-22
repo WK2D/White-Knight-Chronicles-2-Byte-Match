@@ -4,7 +4,42 @@
 
 extern "C" {
 
+void* fn_009b59e8(void*, int);
+int fn_009b5c24(void*, int);
 void fn_009b9330(void*);
+
+struct unk_009a7a40_gm3cb0;
+struct unk_009a7a40_gm3cb0 {
+    u32 f_0;
+};
+extern unk_009a7a40_gm3cb0 g_009a7a40_0;
+void* fn_009a7a40(void) {
+    void* t0;
+    t0 = fn_009b59e8((void*)((&g_009a7a40_0)->f_0 + 28), (int)(0));
+    return (void*)(t0);
+}
+
+struct unk_009a7a7c_gm3cb0;
+struct unk_009a7a7c_gm3cb0_0;
+struct unk_009a7a7c_gm3cb0 {
+    unk_009a7a7c_gm3cb0_0* f_0;
+};
+struct unk_009a7a7c_gm3cb0_0 {
+    char pad_0[24];
+    u32 f_18;
+};
+extern unk_009a7a7c_gm3cb0 g_009a7a7c_0;
+void* fn_009a7a7c(void) {
+    int t0;
+    int v1;
+    if ((int)((&g_009a7a7c_0)->f_0->f_18) != (int)(0)) {
+        t0 = fn_009b5c24((void*)((char*)(&g_009a7a7c_0)->f_0 + 28), (int)(0));
+        v1 = (int)(t0);
+    } else {
+        v1 = (int)(5);
+    }
+    return (void*)(v1);
+}
 
 struct unk_009a7cd4_l;
 struct unk_009a7cd4_l {

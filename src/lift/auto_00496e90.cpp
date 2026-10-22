@@ -6,12 +6,22 @@ extern "C" {
 
 void* fn_00076a98(void*, int, int, int, int, int);
 static void __attribute__((noinline)) stub_00496b90(void* p0, void* p1, u8 p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
+static void __attribute__((noinline)) stub_00496c24(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
 
 extern char g_00496e90_0[];
 void fn_00496e90(void* a0, int a1, int a2) {
     void* t0;
     t0 = fn_00076a98((void*)(g_00496e90_0), (int)(a1), (int)(0), (int)(-1), (int)(0), (int)(0));
     stub_00496b90((void*)(a0), (void*)(t0), (u8)((u8)a2));
+}
+
+struct unk_00497044_a0 {
+    char pad_0[20];
+    u8 f_14;
+};
+void fn_00497044(unk_00497044_a0* a0) {
+    a0->f_14 = (u8)(0);
+    stub_00496c24((void*)(a0));
 }
 
 }

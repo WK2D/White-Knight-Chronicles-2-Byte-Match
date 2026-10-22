@@ -8,6 +8,38 @@ void fn_00b401f8(u32, u16);
 void fn_00b40208(u32, u16, void*);
 void* fn_00b40218(u32, u16);
 
+struct unk_008ad04c_a0 {
+    void* f_0;
+    u32 f_4;
+    u16 f_8;
+    char pad_a[2];
+    u32 f_c;
+};
+extern char g_008ad04c_0[];
+void fn_008ad04c(unk_008ad04c_a0* a0) {
+    a0->f_0 = (void*)(g_008ad04c_0);
+    if ((int)(a0->f_4) != (int)(1)) {
+        return;
+    }
+    fn_00b401f8((u32)(a0->f_c), (u16)(a0->f_8));
+}
+
+struct unk_008ad09c_a0 {
+    void* f_0;
+    u32 f_4;
+    u16 f_8;
+    char pad_a[2];
+    u32 f_c;
+};
+extern char g_008ad09c_0[];
+void fn_008ad09c(unk_008ad09c_a0* a0) {
+    a0->f_0 = (void*)(g_008ad09c_0);
+    if ((int)(a0->f_4) != (int)(1)) {
+        return;
+    }
+    fn_00b401f8((u32)(a0->f_c), (u16)(a0->f_8));
+}
+
 struct unk_008ad0ec_a0 {
     virtual void vf0();
     virtual void vf1(void);

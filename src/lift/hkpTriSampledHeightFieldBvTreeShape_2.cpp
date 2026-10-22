@@ -23,34 +23,6 @@ void* fn_00d54c18(unk_00d54c18_a0* a0) {
     return (void*)(t0);
 }
 
-struct unk_00d54c60_a0 {
-    char pad_0[24];
-    u32 f_18;
-    u32 f_1c;
-};
-struct unk_00d54c60_vc0 {
-    virtual void vf0();
-    virtual void vf1();
-    virtual void vf2();
-    virtual void vf3();
-    virtual void vf4();
-    virtual void vf5();
-    virtual void vf6();
-    virtual int vf7(int, int);
-};
-int fn_00d54c60(unk_00d54c60_a0* a0, int a1) {
-    int t0;
-    int v0;
-    t0 = ((unk_00d54c60_vc0*)(a0->f_18))->vf7((int)(a1), (int)(256));
-    if ((u32)(t0) <= (u32)(256)) {
-        a0->f_1c = (u32)(t0);
-        v0 = (int)(48);
-    } else {
-        v0 = (int)(-1);
-    }
-    return (int)(v0);
-}
-
 struct unk_00d54ea4_a0 {
     char pad_0[24];
     u32 f_18;

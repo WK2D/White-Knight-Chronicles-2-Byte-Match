@@ -102,6 +102,22 @@ int fn_004cd31c(int a0) {
     return (int)(1);
 }
 
+struct unk_004cd3ec_g2d0;
+struct unk_004cd3ec_g2d0_8;
+struct unk_004cd3ec_g2d0 {
+    char pad_0[8];
+    unk_004cd3ec_g2d0_8* f_8;
+};
+struct unk_004cd3ec_g2d0_8 {
+    char pad_0[48];
+    u32 f_30;
+};
+extern unk_004cd3ec_g2d0 g_004cd3ec_0;
+int fn_004cd3ec(int a0) {
+    fn_0003fab0((int)(a0), (int)((int)(&g_004cd3ec_0)->f_8->f_30));
+    return (int)(1);
+}
+
 int fn_004cd424(int a0) {
     fn_0003faa8((int)(a0));
     return (int)(1);

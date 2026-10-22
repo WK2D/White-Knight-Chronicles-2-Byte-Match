@@ -4,7 +4,29 @@
 
 extern "C" {
 
+int fn_0085b0e0(void*, u32, int);
 void fn_00b3ccc8(void*);
+
+struct unk_0085e824_a0_28;
+struct unk_0085e824_a0_28 {
+    char pad_0[4284];
+    u32 f_10bc;
+};
+struct unk_0085e824_a0 {
+    char pad_0[40];
+    unk_0085e824_a0_28* f_28;
+};
+struct unk_0085e824_a3 {
+    char pad_0[4];
+    u32 f_4;
+};
+int fn_0085e824(unk_0085e824_a0* a0, int a1, int a2, unk_0085e824_a3* a3) {
+    int t0;
+    if ((int)(a0->f_28->f_10bc) != (int)(0)) {
+        t0 = fn_0085b0e0((void*)(a0->f_28), (u32)(a3->f_4), (int)(2));
+    }
+    return (int)(1);
+}
 
 struct unk_0085e8b8_a0 {
     char pad_0[72];

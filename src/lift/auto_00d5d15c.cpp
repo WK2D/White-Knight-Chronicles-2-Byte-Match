@@ -4,10 +4,10 @@
 
 extern "C" {
 
-void fn_00dc7778(void);
+void fn_00dc7778(int, int);
 
-void fn_00d5df18(void) {
-    fn_00dc7778();
+void fn_00d5df18(int a0, int a1) {
+    fn_00dc7778((int)(a0), (int)(a1));
 }
 
 }

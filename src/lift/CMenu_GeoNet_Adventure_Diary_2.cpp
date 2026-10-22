@@ -4,10 +4,32 @@
 
 extern "C" {
 
+int fn_00691ed8(u32);
 void fn_00b37fa8(void*, int, u32);
 
 void fn_0071e6f0(void* a0) {
     fn_00b37fa8((void*)((char*)a0 + 3783), (int)(0), (u32)(36864));
+}
+
+struct unk_0071e944_a0 {
+    char pad_0[40];
+    u32 f_28;
+};
+struct unk_0071e944_a1 {
+    u8 f_0;
+};
+int fn_0071e944(unk_0071e944_a0* a0, unk_0071e944_a1* a1) {
+    int t0;
+    if ((int)(FIELD(u32, (int)(a0) + 65536, -18412)) != (int)(0)) {
+        a1->f_0 = (u8)(1);
+        return (int)(1);
+    }
+    t0 = fn_00691ed8((u32)(a0->f_28));
+    if ((int)((u32)(t0) & 0xff) != (int)(0)) {
+        a1->f_0 = (u8)(1);
+        return (int)(1);
+    }
+    return (int)(1);
 }
 
 }

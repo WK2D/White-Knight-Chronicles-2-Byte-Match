@@ -5,8 +5,8 @@
 extern "C" {
 
 void fn_00dec870(void*, u32, void*);
-void fn_00ded250(void*);
-void fn_00ded418(void*);
+void fn_00ded250(void*, int);
+void fn_00ded418(void*, int, int, int);
 
 struct unk_00d241d8_a1 {
     char pad_0[8];
@@ -16,12 +16,12 @@ void fn_00d241d8(void* a0, unk_00d241d8_a1* a1) {
     fn_00dec870((void*)((char*)a0 + 16), (u32)(a1->f_8), (void*)(a1));
 }
 
-void fn_00d24548(void* a0) {
-    fn_00ded418((void*)((char*)a0 + 16));
+void fn_00d24548(void* a0, int a1, int a2, int a3) {
+    fn_00ded418((void*)((char*)a0 + 16), (int)(a1), (int)(a2), (int)(a3));
 }
 
-void fn_00d24574(void* a0) {
-    fn_00ded250((void*)((char*)a0 + 16));
+void fn_00d24574(void* a0, int a1) {
+    fn_00ded250((void*)((char*)a0 + 16), (int)(a1));
 }
 
 }

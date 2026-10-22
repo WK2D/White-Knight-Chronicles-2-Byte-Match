@@ -7,9 +7,19 @@ extern "C" {
 void fn_00b396f8(int, int, int);
 void fn_00b39708(int, int, u32);
 void fn_00b39718(int, int, int, int, int, int);
+void fn_00fc88dc(void*);
 
 void fn_004b25bc(int a0, int a1, int a2) {
     fn_00b396f8((int)(a1), (int)(a2), (int)(0));
+}
+
+struct unk_004b29b4_a0 {
+    void* f_0;
+};
+extern char g_004b29b4_0[];
+void fn_004b29b4(unk_004b29b4_a0* a0) {
+    a0->f_0 = (void*)(g_004b29b4_0);
+    fn_00fc88dc((void*)(a0));
 }
 
 struct unk_004b2cac_a0 {

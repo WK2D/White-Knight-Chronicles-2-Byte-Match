@@ -4,8 +4,41 @@
 
 extern "C" {
 
+void fn_00a7c3b0(u32);
 void fn_00a7c85c(u32);
+void fn_00a7ceec(u32);
+void fn_00a7dc50(u32);
 void fn_00a7ec4c(u32);
+void fn_00a9bbbc(u32, u32);
+
+struct unk_009325c0_gm46fc;
+struct unk_009325c0_gm46fc {
+    u32 f_0;
+};
+extern unk_009325c0_gm46fc g_009325c0_0;
+void fn_009325c0(void) {
+    fn_00a7ec4c((u32)((&g_009325c0_0)->f_0));
+}
+
+struct unk_0093267c_gm46fc;
+struct unk_0093267c_gm46fc {
+    u32 f_0;
+};
+struct unk_0093267c_a0 {
+    char pad_0[56];
+    u16 f_38;
+    u16 f_3a;
+    u16 f_3c;
+};
+extern unk_0093267c_gm46fc g_0093267c_0;
+void fn_0093267c(unk_0093267c_a0* a0) {
+    if ((int)(a0->f_38) == (int)(0)) {
+        a0->f_3c = (u16)(a0->f_38);
+        a0->f_3a = (u16)(1);
+        return;
+    }
+    fn_00a7dc50((u32)((&g_0093267c_0)->f_0));
+}
 
 struct unk_009326d0_gm46fc;
 struct unk_009326d0_gm46fc {
@@ -15,6 +48,59 @@ extern unk_009326d0_gm46fc g_009326d0_0;
 void fn_009326d0(void) {
     fn_00a7c85c((u32)((&g_009326d0_0)->f_0));
     fn_00a7ec4c((u32)((&g_009326d0_0)->f_0));
+}
+
+struct unk_00932710_gm46fc;
+struct unk_00932710_gm46fc {
+    u32 f_0;
+};
+extern unk_00932710_gm46fc g_00932710_0;
+void fn_00932710(void) {
+    fn_00a7ceec((u32)((&g_00932710_0)->f_0));
+}
+
+struct unk_0093273c_gm46fc;
+struct unk_0093273c_gm46fc {
+    u32 f_0;
+};
+struct unk_0093273c_a0 {
+    char pad_0[56];
+    u16 f_38;
+    u16 f_3a;
+    u16 f_3c;
+};
+extern unk_0093273c_gm46fc g_0093273c_0;
+void fn_0093273c(unk_0093273c_a0* a0) {
+    if ((int)(a0->f_38) == (int)(0)) {
+        a0->f_3c = (u16)(a0->f_38);
+        a0->f_3a = (u16)(1);
+        return;
+    }
+    fn_00a7dc50((u32)((&g_0093273c_0)->f_0));
+}
+
+struct unk_00932790_gm46fc;
+struct unk_00932790_gm46fc {
+    u32 f_0;
+};
+extern unk_00932790_gm46fc g_00932790_0;
+void fn_00932790(void) {
+    fn_00a7c3b0((u32)((&g_00932790_0)->f_0));
+}
+
+struct unk_00932a10_gm4700;
+struct unk_00932a10_gm4708;
+struct unk_00932a10_gm4700 {
+    u32 f_0;
+};
+struct unk_00932a10_gm4708 {
+    char pad_0[4];
+    u32 f_4;
+};
+extern unk_00932a10_gm4708 g_00932a10_0;
+extern unk_00932a10_gm4700 g_00932a10_1;
+void fn_00932a10(void) {
+    fn_00a9bbbc((u32)((&g_00932a10_1)->f_0), (u32)((&g_00932a10_0)->f_4));
 }
 
 }

@@ -4,10 +4,10 @@
 
 extern "C" {
 
-static void __attribute__((noinline)) stub_008e0558(void) { __asm__ volatile (""); }
+static void __attribute__((noinline)) stub_008e0558(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 
-int fn_008e0640(void) {
-    stub_008e0558();
+int fn_008e0640(int a0) {
+    stub_008e0558((int)(a0));
     return (int)(1);
 }
 

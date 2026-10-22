@@ -4,15 +4,15 @@
 
 extern "C" {
 
-static int __attribute__((noinline)) stub_0045b9a8(int p0, u32 p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
+static int __attribute__((noinline)) stub_0045b9a8(int p0, u32 p1, int p2, int p3) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); return r; }
 
 struct unk_0045bb0c_a1 {
     char pad_0[4];
     u32 f_4;
 };
-u8 fn_0045bb0c(int a0, unk_0045bb0c_a1* a1) {
+u8 fn_0045bb0c(int a0, unk_0045bb0c_a1* a1, int a2, int a3) {
     int t0;
-    t0 = stub_0045b9a8((int)(a0), (u32)(a1->f_4));
+    t0 = stub_0045b9a8((int)(a0), (u32)(a1->f_4), (int)(a2), (int)(a3));
     return (u8)((u8)t0);
 }
 

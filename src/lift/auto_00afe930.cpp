@@ -5,6 +5,21 @@
 extern "C" {
 
 void fn_00b41f98(int);
+void* fn_00b42288(int, int);
+
+struct unk_00afebc4_gm1a8;
+struct unk_00afebc4_gm1a8 {
+    u32 f_0;
+    u32 f_4;
+};
+extern unk_00afebc4_gm1a8 g_00afebc4_0;
+void* fn_00afebc4(void) {
+    void* t0;
+    (&g_00afebc4_0)->f_0 = (u32)((&g_00afebc4_0)->f_0 + 1);
+    (&g_00afebc4_0)->f_4 = (u32)((&g_00afebc4_0)->f_4 + 52);
+    t0 = fn_00b42288((int)(16), (int)(52));
+    return (void*)(t0);
+}
 
 struct unk_00afece8_gm1a8;
 struct unk_00afece8_gm1a8 {

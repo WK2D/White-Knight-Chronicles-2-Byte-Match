@@ -8,6 +8,10 @@ int fn_009a34b4(void*);
 void* fn_009a3770(void*);
 void* fn_009b6df4(int, int, int, int);
 void* fn_009b6e04(int, int, int, int);
+int fn_009b9b0c(void*);
+void fn_009bad5c(void*, void*, u32);
+int fn_009bae00(void*, u32);
+int fn_009baf2c(void*, u32);
 void fn_00b3d088(void*, int, int);
 
 struct unk_009af40c_a0 {
@@ -42,6 +46,73 @@ void* fn_009af53c(int a0, int a1, int a2) {
     t0 = fn_009b6e04((int)(a0), (int)(2), (int)(a1), (int)(a2));
     t1 = fn_009a3770((void*)(t0));
     return (void*)(t1);
+}
+
+struct unk_009af620_a0 {
+    char pad_0[1040];
+    u32 f_410;
+    char pad_414[84];
+    u32 f_468;
+};
+u32 fn_009af620(unk_009af620_a0* a0, void* a1) {
+    int t0;
+    int v1;
+    if ((int)(a0->f_468) != (int)(0)) {
+        t0 = fn_009baf2c((void*)(a1), (u32)(a0->f_410));
+        v1 = (int)(0);
+    } else {
+        v1 = (int)(4);
+    }
+    return (u32)((u32)(v1) & 0x4);
+}
+
+struct unk_009af700_a0 {
+    char pad_0[1040];
+    u32 f_410;
+    char pad_414[84];
+    u32 f_468;
+};
+u32 fn_009af700(unk_009af700_a0* a0, void* a1) {
+    int t0;
+    int v1;
+    if ((int)(a0->f_468) != (int)(0)) {
+        t0 = fn_009bae00((void*)(a1), (u32)(a0->f_410));
+        v1 = (int)(0);
+    } else {
+        v1 = (int)(4);
+    }
+    return (u32)((u32)(v1) & 0x4);
+}
+
+struct unk_009af9ec_a0 {
+    char pad_0[1040];
+    u32 f_410;
+    char pad_414[24];
+    u32 f_42c;
+    char pad_430[56];
+    u32 f_468;
+};
+u32 fn_009af9ec(unk_009af9ec_a0* a0, void* a1, void* a2) {
+    int t0;
+    if (a0 != 0) {
+        if ((int)(a2) != (int)(0)) {
+            if ((int)(a0->f_468) != (int)(0)) {
+                if ((int)((u32)(a0->f_42c) & 0x1) != (int)(0)) {
+                    t0 = fn_009b9b0c((void*)(a1));
+                    if ((int)(t0) == (int)(0)) {
+                        return (u32)((u32)(3) & (u32)(1003));
+                    }
+                    fn_009bad5c((void*)(a1), (void*)(a2), (u32)(a0->f_410));
+                    return (u32)((u32)(0) & (u32)(1003));
+                } else {
+                    return (u32)((u32)(1000) & (u32)(1003));
+                }
+            } else {
+                return (u32)((u32)(1000) & (u32)(1003));
+            }
+        }
+    }
+    return (u32)((u32)(3) & (u32)(1003));
 }
 
 }

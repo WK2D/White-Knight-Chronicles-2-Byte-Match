@@ -5,12 +5,12 @@
 extern "C" {
 
 void fn_00ded250(int, int);
-void fn_00deeac8(int, int);
-void* fn_00df94a0(void);
+void fn_00deeac8(int, int, int, int);
+void* fn_00df94a0(int, int, int, int);
 
-void* fn_00deb7fc(void) {
+void* fn_00deb7fc(int a0, int a1, int a2, int a3) {
     void* t0;
-    t0 = fn_00df94a0();
+    t0 = fn_00df94a0((int)(a0), (int)(a1), (int)(a2), (int)(a3));
     return (void*)(t0);
 }
 
@@ -19,7 +19,7 @@ void fn_00dec360(int a0, int a1, int a2) {
 }
 
 void fn_00dec42c(int a0, int a1, int a2, int a3, int a4) {
-    fn_00deeac8((int)(a1), (int)(a4));
+    fn_00deeac8((int)(a1), (int)(a4), (int)(a2), (int)(a3));
 }
 
 }

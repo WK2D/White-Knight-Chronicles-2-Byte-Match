@@ -4,15 +4,15 @@
 
 extern "C" {
 
-void fn_0086f760(u32);
+void fn_0086f760(u32, int);
 void fn_00b3d148(void*, u32, int, int, int, int);
 
 struct unk_0088a074_a0 {
     char pad_0[36];
     u32 f_24;
 };
-void fn_0088a074(unk_0088a074_a0* a0) {
-    fn_0086f760((u32)(a0->f_24));
+void fn_0088a074(unk_0088a074_a0* a0, int a1) {
+    fn_0086f760((u32)(a0->f_24), (int)(a1));
 }
 
 struct unk_0088a280_a1 {

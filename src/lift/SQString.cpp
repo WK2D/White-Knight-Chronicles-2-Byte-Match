@@ -4,15 +4,29 @@
 
 extern "C" {
 
-void* fn_009588a4(u32);
+void fn_009580f8(u32, void*);
+void* fn_009588a4(u32, int, int);
+
+struct unk_009542d8_a0_c;
+struct unk_009542d8_a0_c {
+    char pad_0[20];
+    u32 f_14;
+};
+struct unk_009542d8_a0 {
+    char pad_0[12];
+    unk_009542d8_a0_c* f_c;
+};
+void fn_009542d8(unk_009542d8_a0* a0) {
+    fn_009580f8((u32)(a0->f_c->f_14), (void*)(a0));
+}
 
 struct unk_00954308_a0 {
     char pad_0[20];
     u32 f_14;
 };
-void* fn_00954308(unk_00954308_a0* a0) {
+void* fn_00954308(unk_00954308_a0* a0, int a1, int a2) {
     void* t0;
-    t0 = fn_009588a4((u32)(a0->f_14));
+    t0 = fn_009588a4((u32)(a0->f_14), (int)(a1), (int)(a2));
     FIELD(void*, t0, 12) = (void*)(a0);
     return (void*)(t0);
 }

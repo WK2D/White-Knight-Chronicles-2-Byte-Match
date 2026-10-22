@@ -17,12 +17,12 @@ static void __attribute__((noinline)) stub_001ee65c(void* p0, void* p1, void* p2
 static void __attribute__((noinline)) stub_001ee874(void* p0, void* p1, void* p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
 static void __attribute__((noinline)) stub_001eea8c(void* p0, void* p1, void* p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
 void fn_00b693f0(void*, void*, void*);
-void fn_00b6a04c(void*);
-void fn_00b6aca8(void*);
+void fn_00b6a04c(void*, int, int);
+void fn_00b6aca8(void*, int, int);
 void fn_00b6b8f0(void*, void*, void*);
-void fn_00b6cf68(void*);
-void fn_00b6dbc4(void*);
-void fn_00b6f23c(void*);
+void fn_00b6cf68(void*, int, int);
+void fn_00b6dbc4(void*, int, int);
+void fn_00b6f23c(void*, int, int);
 void fn_00b6fe98(void*, void*, void*);
 void fn_00b70ae0(void*, void*, void*);
 
@@ -120,12 +120,12 @@ void fn_001efc9c(void* a0, int a1, void* a2) {
     fn_00b693f0((void*)((char*)a0 + 232), (void*)(t0), (void*)(a2));
 }
 
-void fn_001efd04(void* a0) {
-    fn_00b6a04c((void*)((char*)a0 + 288));
+void fn_001efd04(void* a0, int a1, int a2) {
+    fn_00b6a04c((void*)((char*)a0 + 288), (int)(a1), (int)(a2));
 }
 
-void fn_001efd30(void* a0) {
-    fn_00b6aca8((void*)((char*)a0 + 316));
+void fn_001efd30(void* a0, int a1, int a2) {
+    fn_00b6aca8((void*)((char*)a0 + 316), (int)(a1), (int)(a2));
 }
 
 extern char g_001efd5c_0[];
@@ -135,16 +135,16 @@ void fn_001efd5c(void* a0, int a1, void* a2) {
     fn_00b6b8f0((void*)((char*)a0 + 260), (void*)(t0), (void*)(a2));
 }
 
-void fn_001efdc4(void* a0) {
-    fn_00b6cf68((void*)((char*)a0 + 148));
+void fn_001efdc4(void* a0, int a1, int a2) {
+    fn_00b6cf68((void*)((char*)a0 + 148), (int)(a1), (int)(a2));
 }
 
-void fn_001efec4(void* a0) {
-    fn_00b6dbc4((void*)((char*)a0 + 376));
+void fn_001efec4(void* a0, int a1, int a2) {
+    fn_00b6dbc4((void*)((char*)a0 + 376), (int)(a1), (int)(a2));
 }
 
-void fn_001effc4(void* a0) {
-    fn_00b6f23c((void*)((char*)a0 + 348));
+void fn_001effc4(void* a0, int a1, int a2) {
+    fn_00b6f23c((void*)((char*)a0 + 348), (int)(a1), (int)(a2));
 }
 
 extern char g_001f00c4_0[];

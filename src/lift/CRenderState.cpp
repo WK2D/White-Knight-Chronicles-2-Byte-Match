@@ -5,10 +5,10 @@
 extern "C" {
 
 void fn_000c38d8(void*);
-void fn_000c39ac(void);
+void fn_000c39ac(int);
 
-void fn_000c4194(void) {
-    fn_000c39ac();
+void fn_000c4194(int a0) {
+    fn_000c39ac((int)(a0));
 }
 
 struct unk_000c4218_a0 {

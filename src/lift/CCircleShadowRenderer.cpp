@@ -5,7 +5,7 @@
 extern "C" {
 
 int fn_00036140(int, void*);
-void fn_000c3a44(void);
+void fn_000c3a44(int);
 
 struct unk_004c1a80_a0 {
     char pad_0[560];
@@ -18,8 +18,8 @@ int fn_004c1a80(unk_004c1a80_a0* a0, int a1) {
     return (int)(t0);
 }
 
-void fn_004c1ac0(void) {
-    fn_000c3a44();
+void fn_004c1ac0(int a0) {
+    fn_000c3a44((int)(a0));
 }
 
 }

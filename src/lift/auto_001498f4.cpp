@@ -4,18 +4,30 @@
 
 extern "C" {
 
-static void __attribute__((noinline)) stub_00149a4c(void) { __asm__ volatile (""); }
+static void* __attribute__((noinline)) stub_0014949c(void* p0, void* p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
+static void __attribute__((noinline)) stub_001499bc(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
+static void __attribute__((noinline)) stub_00149a4c(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 static int __attribute__((noinline)) stub_00149ee0(int p0, int p1, int p2, int p3, int p4, int p5) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4), "r"(p5)); return r; }
 static int __attribute__((noinline)) stub_0014a5d4(void* p0, void* p1, void* p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
-int fn_00b38198(void*, void*, void*);
+static int __attribute__((noinline)) stub_0014a7cc(void* p0, void* p1, void* p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
 void fn_00b38278(void*, void*);
 
-void fn_00149b9c(void) {
-    stub_00149a4c();
+struct unk_00149a10_a0 {
+    char pad_0[3856];
+    u32 f_f10;
+};
+void fn_00149a10(unk_00149a10_a0* a0) {
+    a0->f_f10 = (u32)(4);
+    stub_001499bc((void*)(a0));
+    a0->f_f10 = (u32)(3);
 }
 
-void fn_00149ba0(void) {
-    stub_00149a4c();
+void fn_00149b9c(int a0) {
+    stub_00149a4c((int)(a0));
+}
+
+void fn_00149ba0(int a0) {
+    stub_00149a4c((int)(a0));
 }
 
 u8 fn_0014a174(int a0, int a1, int a2, int a3, int a4) {
@@ -39,13 +51,14 @@ int fn_0014a734(void* a0, void* a1, void* a2, void* a3) {
     return (int)(0);
 }
 
-extern char g_0014a7cc_0[];
-int fn_0014a7cc(int a0, void* a1, void* a2) {
-    int t0;
+int fn_0014aa34(void* a0, void* a1, void* a2) {
+    void* t0;
+    int t1;
     int v0;
     if ((int)(a1) != (int)(0)) {
-        t0 = fn_00b38198((void*)(a1), (void*)(g_0014a7cc_0), (void*)(a2));
-        v0 = (int)(1);
+        t0 = stub_0014949c((void*)(a0), (void*)(a2));
+        t1 = stub_0014a7cc((void*)(a0), (void*)(a1), (void*)(t0));
+        v0 = (int)((u32)(t1) & 0xff);
     } else {
         v0 = (int)(0);
     }

@@ -5,7 +5,7 @@
 extern "C" {
 
 void* fn_00fc931c(void*, u32, int);
-void fn_00fc932c(void*);
+void fn_00fc932c(void*, int, int);
 
 struct unk_00f45f80_a1 {
     u32 f_0;
@@ -16,8 +16,8 @@ void* fn_00f45f80(void* a0, unk_00f45f80_a1* a1) {
     return (void*)(t0);
 }
 
-void fn_00f45fb8(void* a0) {
-    fn_00fc932c((void*)((char*)a0 + 8));
+void fn_00f45fb8(void* a0, int a1, int a2) {
+    fn_00fc932c((void*)((char*)a0 + 8), (int)(a1), (int)(a2));
 }
 
 }

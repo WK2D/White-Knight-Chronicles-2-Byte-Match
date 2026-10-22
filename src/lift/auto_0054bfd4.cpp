@@ -4,12 +4,12 @@
 
 extern "C" {
 
-static void* __attribute__((noinline)) stub_0054b0c4(int p0) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static void* __attribute__((noinline)) stub_0054b0c4(int p0, int p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static void __attribute__((noinline)) stub_0054c0fc(int p0, void* p1, void* p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
-void fn_00587704(u32);
-void fn_00587784(u32);
-void fn_00587804(u32);
-void fn_005878cc(u32);
+void fn_00587704(u32, int, int, int);
+void fn_00587784(u32, int, int, int);
+void fn_00587804(u32, int, int, int, int, int);
+void fn_005878cc(u32, int, int, int, int, int);
 void fn_00588008(u32);
 void fn_00588010(u32);
 void fn_00588018(u32);
@@ -35,7 +35,7 @@ void* fn_0054c048(int a0, unk_0054c048_a1* a1, void* a2) {
 
 void fn_0054c18c(int a0, int a1, void* a2) {
     void* t0;
-    t0 = stub_0054b0c4((int)(a0));
+    t0 = stub_0054b0c4((int)(a0), (int)(a1));
     stub_0054c0fc((int)(a0), (void*)(t0), (void*)(a2));
 }
 
@@ -85,32 +85,32 @@ struct unk_0054c2e0_a0 {
     char pad_0[8];
     u32 f_8;
 };
-void fn_0054c2e0(unk_0054c2e0_a0* a0) {
-    fn_005878cc((u32)(a0->f_8));
+void fn_0054c2e0(unk_0054c2e0_a0* a0, int a1, int a2, int a3, int a4, int a5) {
+    fn_005878cc((u32)(a0->f_8), (int)(a1), (int)(a2), (int)(a3), (int)(a4), (int)(a5));
 }
 
 struct unk_0054c308_a0 {
     char pad_0[8];
     u32 f_8;
 };
-void fn_0054c308(unk_0054c308_a0* a0) {
-    fn_00587804((u32)(a0->f_8));
+void fn_0054c308(unk_0054c308_a0* a0, int a1, int a2, int a3, int a4, int a5) {
+    fn_00587804((u32)(a0->f_8), (int)(a1), (int)(a2), (int)(a3), (int)(a4), (int)(a5));
 }
 
 struct unk_0054c330_a0 {
     char pad_0[8];
     u32 f_8;
 };
-void fn_0054c330(unk_0054c330_a0* a0) {
-    fn_00587784((u32)(a0->f_8));
+void fn_0054c330(unk_0054c330_a0* a0, int a1, int a2, int a3) {
+    fn_00587784((u32)(a0->f_8), (int)(a1), (int)(a2), (int)(a3));
 }
 
 struct unk_0054c358_a0 {
     char pad_0[8];
     u32 f_8;
 };
-void fn_0054c358(unk_0054c358_a0* a0) {
-    fn_00587704((u32)(a0->f_8));
+void fn_0054c358(unk_0054c358_a0* a0, int a1, int a2, int a3) {
+    fn_00587704((u32)(a0->f_8), (int)(a1), (int)(a2), (int)(a3));
 }
 
 }

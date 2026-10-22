@@ -4,10 +4,33 @@
 
 extern "C" {
 
-static void __attribute__((noinline)) stub_008d8a38(void) { __asm__ volatile (""); }
+static void __attribute__((noinline)) stub_008d7600(int p0) { __asm__ volatile ("" : : "r"(p0)); }
+static void __attribute__((noinline)) stub_008d88f8(int p0) { __asm__ volatile ("" : : "r"(p0)); }
+void* fn_00b3e228(u32, int);
 
-void fn_008d8a70(void) {
-    stub_008d8a38();
+struct unk_008d7f78_gm5564;
+struct unk_008d7f78_gm5564_0;
+struct unk_008d7f78_gm5564 {
+    unk_008d7f78_gm5564_0* f_0;
+};
+struct unk_008d7f78_gm5564_0 {
+    char pad_0[156];
+    u32 f_9c;
+};
+extern unk_008d7f78_gm5564 g_008d7f78_0;
+int fn_008d7f78(int a0, int a1) {
+    void* t0;
+    t0 = fn_00b3e228((u32)((&g_008d7f78_0)->f_0->f_9c), (int)(a1));
+    if ((int)(t0) != (int)(0)) {
+        FIELD(u32, t0, 308) = (u32)(0);
+    }
+    return (int)(0);
+}
+
+int fn_008d8a38(int a0) {
+    stub_008d7600((int)(a0));
+    stub_008d88f8((int)(a0));
+    return (int)(1);
 }
 
 struct unk_008d8a88_a0 {

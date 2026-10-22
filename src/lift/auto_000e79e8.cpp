@@ -4,7 +4,7 @@
 
 extern "C" {
 
-int fn_000e93d8(void);
+int fn_000e93d8(void*);
 
 struct unk_000e81e4_a0 {
     char pad_0[16];
@@ -13,7 +13,7 @@ struct unk_000e81e4_a0 {
 int fn_000e81e4(unk_000e81e4_a0* a0) {
     int t0;
     int v0;
-    t0 = fn_000e93d8();
+    t0 = fn_000e93d8((void*)(a0));
     if ((int)(t0) >= (int)(0)) {
         v0 = (int)(a0->f_10);
     } else {

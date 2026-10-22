@@ -4,14 +4,14 @@
 
 extern "C" {
 
-static void __attribute__((noinline)) stub_002dd970(void) { __asm__ volatile (""); }
+static void __attribute__((noinline)) stub_002dd970(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 
-void fn_002dda14(void) {
-    stub_002dd970();
+void fn_002dda14(int a0) {
+    stub_002dd970((int)(a0));
 }
 
-void fn_002dda18(void) {
-    stub_002dd970();
+void fn_002dda18(int a0) {
+    stub_002dd970((int)(a0));
 }
 
 struct unk_002ddd48_a0 {

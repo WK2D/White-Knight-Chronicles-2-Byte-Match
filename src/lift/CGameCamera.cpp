@@ -17,4 +17,22 @@ void fn_00529a18(unk_00529a18_a0* a0) {
     fn_00522850((void*)(a0), (int)(416));
 }
 
+struct unk_00529a60_a0 {
+    void* f_0;
+};
+extern char g_00529a60_0[];
+void fn_00529a60(unk_00529a60_a0* a0) {
+    a0->f_0 = (void*)(g_00529a60_0);
+    fn_005228d4((void*)(a0));
+}
+
+struct unk_00529a90_a0 {
+    void* f_0;
+};
+extern char g_00529a90_0[];
+void fn_00529a90(unk_00529a90_a0* a0) {
+    a0->f_0 = (void*)(g_00529a90_0);
+    fn_005228d4((void*)(a0));
+}
+
 }

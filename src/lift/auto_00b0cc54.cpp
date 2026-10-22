@@ -4,17 +4,16 @@
 
 extern "C" {
 
-void fn_00b0c6ac(void*);
-void fn_00b0c728(void*);
-int fn_00b0e19c(void*, void*, void*, void*);
+void fn_00b0c6ac(int);
+void fn_00b0c728(int);
+int fn_00b0e19c(void*, int, void*, void*);
 
-extern char g_00b0e01c_0[];
-extern char g_00b0e01c_1[];
-int fn_00b0e01c(void* a0, void* a1) {
+extern char g_00b0df38_0[];
+int fn_00b0df38(int a0, void* a1, void* a2) {
     int t1;
-    fn_00b0c728((void*)(g_00b0e01c_0));
-    t1 = fn_00b0e19c((void*)(g_00b0e01c_1), (void*)(g_00b0e01c_0), (void*)(a0), (void*)(a1));
-    fn_00b0c6ac((void*)(g_00b0e01c_0));
+    fn_00b0c728((int)(a0));
+    t1 = fn_00b0e19c((void*)(g_00b0df38_0), (int)(a0), (void*)(a1), (void*)(a2));
+    fn_00b0c6ac((int)(a0));
     return (int)(t1);
 }
 

@@ -7,11 +7,11 @@ extern "C" {
 void* fn_00096c04(void);
 void fn_00b38a78(void*);
 int fn_00b38a98(void*);
-void fn_00b39208(void*);
+void fn_00b39208(void*, int);
 void fn_00b39368(u32);
 
-void fn_000accb0(void* a0) {
-    fn_00b39208((void*)((char*)a0 + 32));
+void fn_000accb0(void* a0, int a1) {
+    fn_00b39208((void*)((char*)a0 + 32), (int)(a1));
 }
 
 struct unk_000accdc_a0 {

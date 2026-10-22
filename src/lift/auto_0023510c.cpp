@@ -4,10 +4,33 @@
 
 extern "C" {
 
+int fn_0022a6b4(u8);
 void fn_00265b60(void*);
 
 void fn_002370d0(void* a0) {
     fn_00265b60((void*)((char*)a0 + 30544));
+}
+
+struct unk_00237778_a0 {
+    char pad_0[148];
+    u8 f_94;
+    u8 f_95;
+    char pad_96[122];
+    u8 f_110;
+};
+int fn_00237778(unk_00237778_a0* a0) {
+    int t0;
+    u8 v0;
+    if ((int)(a0->f_110) != (int)(2)) {
+        return (int)(0);
+    }
+    if ((int)(a0->f_95) == (int)(0)) {
+        v0 = (u8)(a0->f_94);
+    } else {
+        v0 = (u8)(a0->f_95);
+    }
+    t0 = fn_0022a6b4((u8)((u8)v0));
+    return (int)((int)((u32)(-(int)((u32)(t0) & (u32)(133120))) >> 31));
 }
 
 }

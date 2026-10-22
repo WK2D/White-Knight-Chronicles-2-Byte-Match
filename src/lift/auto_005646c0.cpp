@@ -5,13 +5,13 @@
 extern "C" {
 
 void* fn_0054af54(int);
-static void* __attribute__((noinline)) stub_0055c6d8(int p0) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static void* __attribute__((noinline)) stub_0055c6d8(int p0, int p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static void __attribute__((noinline)) stub_005648a4(int p0, void* p1, void* p2, void* p3, u8 p4, void* p5) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4), "r"(p5)); }
 static void __attribute__((noinline)) stub_00564a20(void* p0, void* p1, void* p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
 
 void fn_005648f0(int a0, int a1, void* a2, void* a3, int a4, int a5, void* a6) {
     void* t0;
-    t0 = stub_0055c6d8((int)(a0));
+    t0 = stub_0055c6d8((int)(a0), (int)(a1));
     stub_005648a4((int)(a0), (void*)(t0), (void*)(a2), (void*)(a3), (u8)((u8)a5), (void*)(a6));
 }
 

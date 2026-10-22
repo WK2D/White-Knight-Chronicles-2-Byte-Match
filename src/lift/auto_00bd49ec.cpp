@@ -5,6 +5,7 @@
 extern "C" {
 
 void fn_00acad68(int);
+void fn_00b3cd48(void*);
 void fn_00b3d438(int, void*, void*);
 
 void fn_00bd4b0c(int a0, int a1, int a2) {
@@ -33,6 +34,15 @@ struct unk_00bd5f74_a0 {
 };
 int fn_00bd5f74(unk_00bd5f74_a0* a0) {
     return (int)((int)(signed char)(a0->f_c));
+}
+
+struct unk_00bd5f80_a0 {
+    void* f_0;
+};
+extern char g_00bd5f80_0[];
+void fn_00bd5f80(unk_00bd5f80_a0* a0) {
+    a0->f_0 = (void*)(g_00bd5f80_0);
+    fn_00b3cd48((void*)(a0));
 }
 
 void* fn_00bd5fec(int a0, void* a1, void* a2, int a3, int a4) {

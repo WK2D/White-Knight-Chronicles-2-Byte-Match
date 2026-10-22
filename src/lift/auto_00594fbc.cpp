@@ -4,54 +4,54 @@
 
 extern "C" {
 
-void fn_00ba2268(void);
-int fn_00ba2290(void);
-void fn_00ba22dc(void);
-int fn_00ba2304(void);
-void fn_00ba2350(void);
-int fn_00ba2378(void);
-void fn_00ba23c4(void);
-int fn_00ba23ec(void);
+void fn_00ba2268(int);
+int fn_00ba2290(int);
+void fn_00ba22dc(int);
+int fn_00ba2304(int);
+void fn_00ba2350(int);
+int fn_00ba2378(int);
+void fn_00ba23c4(int);
+int fn_00ba23ec(int);
 void fn_00ba2434(int);
 int fn_00ba2440(int);
 
-void fn_0059598c(void) {
-    fn_00ba2268();
+void fn_0059598c(int a0) {
+    fn_00ba2268((int)(a0));
 }
 
-u8 fn_005959f8(void) {
+u8 fn_005959f8(int a0) {
     int t0;
-    t0 = fn_00ba2290();
+    t0 = fn_00ba2290((int)(a0));
     return (u8)((u8)t0);
 }
 
-void fn_00595a4c(void) {
-    fn_00ba22dc();
+void fn_00595a4c(int a0) {
+    fn_00ba22dc((int)(a0));
 }
 
-u8 fn_00595a70(void) {
+u8 fn_00595a70(int a0) {
     int t0;
-    t0 = fn_00ba2304();
+    t0 = fn_00ba2304((int)(a0));
     return (u8)((u8)t0);
 }
 
-void fn_00595ac0(void) {
-    fn_00ba2350();
+void fn_00595ac0(int a0) {
+    fn_00ba2350((int)(a0));
 }
 
-u8 fn_00595ae4(void) {
+u8 fn_00595ae4(int a0) {
     int t0;
-    t0 = fn_00ba2378();
+    t0 = fn_00ba2378((int)(a0));
     return (u8)((u8)t0);
 }
 
-void fn_00595b34(void) {
-    fn_00ba23c4();
+void fn_00595b34(int a0) {
+    fn_00ba23c4((int)(a0));
 }
 
-u8 fn_00595b58(void) {
+u8 fn_00595b58(int a0) {
     int t0;
-    t0 = fn_00ba23ec();
+    t0 = fn_00ba23ec((int)(a0));
     return (u8)((u8)t0);
 }
 

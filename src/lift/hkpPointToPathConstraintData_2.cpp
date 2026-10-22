@@ -4,12 +4,7 @@
 
 extern "C" {
 
-void fn_00c0031c(int, int, void*);
 void fn_00dc6fe0(void*, int, int);
-
-void fn_00dcb8d8(void* a0, int a1, int a2) {
-    fn_00c0031c((int)(a2), (int)(a1), (void*)((char*)a0 + 96));
-}
 
 void fn_00dcc748(void* a0, int a1) {
     fn_00dc6fe0((void*)((char*)a0 + 16), (int)(148), (int)(a1));

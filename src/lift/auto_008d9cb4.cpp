@@ -4,6 +4,8 @@
 
 extern "C" {
 
+static int __attribute__((noinline)) stub_008d8a94(int p0, int p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
+static void* __attribute__((noinline)) stub_008d9adc(int p0, int p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 int fn_00b41118(void*, int);
 void fn_00b41138(void*);
 void* fn_00b41148(void*, int);
@@ -30,6 +32,17 @@ int fn_008d9cb4(unk_008d9cb4_a0* a0, void* a1) {
         v0 = (int)(0);
     }
     return (int)(v0);
+}
+
+int fn_008d9e6c(int a0, int a1) {
+    void* t0;
+    int t1;
+    t0 = stub_008d9adc((int)(a0), (int)(a1));
+    if ((int)(t0) != (int)(0)) {
+        t1 = stub_008d8a94((int)(a0), (int)((int)FIELD(u32, t0, 40)));
+        return (int)(t1);
+    }
+    return (int)(0);
 }
 
 struct unk_008da260_a0 {

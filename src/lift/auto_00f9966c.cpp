@@ -6,6 +6,8 @@ extern "C" {
 
 void fn_00b0c6ac(u32);
 void fn_00b0c728(u32);
+void fn_00b22ae0(void*);
+void fn_00b232e0(void*);
 void fn_00b2bb1c(void*);
 void fn_00b2bb44(void*);
 
@@ -31,6 +33,25 @@ void fn_00f99f04(void* a0) {
 
 void fn_00f99f30(void* a0) {
     fn_00b2bb44((void*)((char*)a0 + 4));
+}
+
+struct unk_00f99f5c_a0 {
+    void* f_0;
+};
+extern char g_00f99f5c_0[];
+void fn_00f99f5c(unk_00f99f5c_a0* a0) {
+    a0->f_0 = (void*)(g_00f99f5c_0);
+    fn_00b232e0((void*)(a0));
+    fn_00b22ae0((void*)(a0));
+}
+
+struct unk_00f99fa0_a0 {
+    void* f_0;
+};
+extern char g_00f99fa0_0[];
+void fn_00f99fa0(unk_00f99fa0_a0* a0) {
+    a0->f_0 = (void*)(g_00f99fa0_0);
+    fn_00b232e0((void*)(a0));
 }
 
 }

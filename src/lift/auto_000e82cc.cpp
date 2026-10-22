@@ -4,44 +4,31 @@
 
 extern "C" {
 
-void fn_00017f2c(void);
-void fn_00017f68(void);
-static void __attribute__((noinline)) stub_000e8a54(int p0) { __asm__ volatile ("" : : "r"(p0)); }
-int fn_000e950c(void*);
-void fn_000e9594(void*);
-void fn_000e95c8(void*, int);
-void fn_000e95fc(void*);
+int fn_000e983c(void*);
 int fn_000e98b4(void*, u32);
+int fn_000e9940(void*);
+int fn_000e99b4(void*);
+void fn_00b39b18(int);
+void fn_00b39b28(int);
 
-struct unk_000e86c8_a0 {
-    char pad_0[420];
-    u32 f_1a4;
-};
-int fn_000e86c8(unk_000e86c8_a0* a0) {
-    int t1;
-    int v1;
-    fn_000e95c8((void*)(a0), (int)(0));
-    if ((int)(a0->f_1a4) != (int)(0)) {
-        a0->f_1a4 = (u32)(a0->f_1a4 + -1);
-        t1 = fn_000e950c((void*)(a0));
-        v1 = (int)(0);
-    } else {
-        v1 = (int)(-1);
-    }
-    fn_000e9594((void*)(a0));
-    return (int)(v1);
+void fn_000e8a54(int a0) {
+    fn_00b39b18((int)(a0));
+    fn_00b39b28((int)(a0));
 }
 
-struct unk_000e8a90_a0 {
-    char pad_0[284];
-    u32 f_11c;
+struct unk_000e950c_a0 {
+    u32 f_0;
+    u32 f_4;
 };
-int fn_000e8a90(unk_000e8a90_a0* a0) {
-    fn_00017f2c();
-    stub_000e8a54((int)((int)a0->f_11c));
-    fn_00017f68();
-    a0->f_11c = (u32)(-1);
-    fn_000e95fc((void*)(a0));
+int fn_000e950c(unk_000e950c_a0* a0) {
+    int t0;
+    if ((int)(a0->f_4) != (int)(0)) {
+        if ((int)(a0->f_0) == (int)(0)) {
+            return (int)(0);
+        }
+        t0 = fn_000e983c((void*)(a0));
+        return (int)(t0);
+    }
     return (int)(0);
 }
 
@@ -53,6 +40,26 @@ int fn_000e9568(unk_000e9568_a0* a0) {
     int t0;
     t0 = fn_000e98b4((void*)(a0), (u32)(a0->f_4));
     return (int)(t0);
+}
+
+struct unk_000e9594_a0 {
+    u32 f_0;
+};
+void fn_000e9594(unk_000e9594_a0* a0) {
+    int t0;
+    if ((int)(a0->f_0) != (int)(0)) {
+        t0 = fn_000e9940((void*)(a0));
+    }
+}
+
+struct unk_000e95c8_a0 {
+    u32 f_0;
+};
+void fn_000e95c8(unk_000e95c8_a0* a0) {
+    int t0;
+    if ((int)(a0->f_0) != (int)(0)) {
+        t0 = fn_000e99b4((void*)(a0));
+    }
 }
 
 }

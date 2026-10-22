@@ -4,16 +4,16 @@
 
 extern "C" {
 
-void* fn_0059004c(void);
-void fn_005a61b4(void);
+void* fn_0059004c(int, int);
+void fn_005a61b4(int, int, int);
 
-void fn_00539664(void) {
-    fn_005a61b4();
+void fn_00539664(int a0, int a1, int a2) {
+    fn_005a61b4((int)(a0), (int)(a1), (int)(a2));
 }
 
-void* fn_00539930(void) {
+void* fn_00539930(int a0, int a1) {
     void* t0;
-    t0 = fn_0059004c();
+    t0 = fn_0059004c((int)(a0), (int)(a1));
     return (void*)(t0);
 }
 

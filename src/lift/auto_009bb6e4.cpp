@@ -8,10 +8,10 @@ void fn_009b62f0(int, u32, int);
 void fn_009b66b4(int, u32);
 void fn_009b67e4(int, u32);
 void fn_009b6914(int, u32);
-void fn_009bda98(void);
+void fn_009bda98(int, int);
 
-void fn_009bcff8(void) {
-    fn_009bda98();
+void fn_009bcff8(int a0, int a1) {
+    fn_009bda98((int)(a0), (int)(a1));
 }
 
 struct unk_009bd100_a1 {

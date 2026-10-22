@@ -4,6 +4,36 @@
 
 extern "C" {
 
+void fn_00b3cd48(void*);
+void fn_00b3eeb8(void*);
+
+struct unk_0083e4f4_a0 {
+    void* f_0;
+};
+extern char g_0083e4f4_0[];
+void fn_0083e4f4(unk_0083e4f4_a0* a0) {
+    a0->f_0 = (void*)(g_0083e4f4_0);
+    fn_00b3eeb8((void*)((char*)a0 + 4));
+    fn_00b3cd48((void*)(a0));
+}
+
+struct unk_0083e544_a0 {
+    void* f_0;
+};
+extern char g_0083e544_0[];
+void fn_0083e544(unk_0083e544_a0* a0) {
+    a0->f_0 = (void*)(g_0083e544_0);
+    fn_00b3eeb8((void*)((char*)a0 + 4));
+}
+
+struct unk_0083e57c_a0 {
+    void* f_0;
+};
+extern char g_0083e57c_0[];
+void fn_0083e57c(unk_0083e57c_a0* a0) {
+    a0->f_0 = (void*)(g_0083e57c_0);
+    fn_00b3eeb8((void*)((char*)a0 + 4));
+}
 
 struct unk_0083e9e4_a1 {
     virtual void vf0();

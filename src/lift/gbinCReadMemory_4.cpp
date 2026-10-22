@@ -5,11 +5,19 @@
 extern "C" {
 
 void fn_00b42138(int);
+int fn_00fcab30(void*, int, int, int);
 void fn_00fcab70(void*);
 
 extern char g_00a58370_0[];
 void fn_00a58370(void) {
     fn_00fcab70((void*)(g_00a58370_0));
+}
+
+extern char g_00a58398_0[];
+int fn_00a58398(int a0, int a1, int a2) {
+    int t0;
+    t0 = fn_00fcab30((void*)(g_00a58398_0), (int)(a0), (int)(a1), (int)(a2));
+    return (int)(t0);
 }
 
 struct unk_00a58d94_a0 {

@@ -5,7 +5,498 @@
 extern "C" {
 
 void* fn_00076a98(void*, int, int, int, int, int);
+int fn_003c8568(u32);
 static void __attribute__((noinline)) stub_004046bc(void* p0, void* p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
+static int __attribute__((noinline)) stub_00404c18(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static int __attribute__((noinline)) stub_004056d0(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static int __attribute__((noinline)) stub_00405740(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static int __attribute__((noinline)) stub_004057b0(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static int __attribute__((noinline)) stub_00405820(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static int __attribute__((noinline)) stub_00405890(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static int __attribute__((noinline)) stub_00405900(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static int __attribute__((noinline)) stub_00405970(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static int __attribute__((noinline)) stub_004059e0(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static int __attribute__((noinline)) stub_00406938(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static int __attribute__((noinline)) stub_004069b0(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static int __attribute__((noinline)) stub_00408704(void* p0, void* p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
+
+struct unk_00409c14_gmea4;
+struct unk_00409c14_gmea4_0;
+struct unk_00409c14_gmea4_0_6c;
+struct unk_00409c14_gmea4_0_6c_8;
+struct unk_00409c14_gmea4 {
+    unk_00409c14_gmea4_0* f_0;
+};
+struct unk_00409c14_gmea4_0 {
+    char pad_0[108];
+    unk_00409c14_gmea4_0_6c* f_6c;
+};
+struct unk_00409c14_gmea4_0_6c {
+    char pad_0[8];
+    unk_00409c14_gmea4_0_6c_8* f_8;
+};
+struct unk_00409c14_gmea4_0_6c_8 {
+    char pad_0[244];
+    u32 f_f4;
+};
+extern unk_00409c14_gmea4 g_00409c14_0;
+u8 fn_00409c14(void) {
+    int t0;
+    t0 = fn_003c8568((u32)((&g_00409c14_0)->f_0->f_6c->f_8->f_f4));
+    return (u8)((u8)t0);
+}
+
+struct unk_00409d2c_gmea4;
+struct unk_00409d2c_gmea4_0;
+struct unk_00409d2c_gmea4_0_6c;
+struct unk_00409d2c_gmea4_0_6c_8;
+struct unk_00409d2c_gmea4 {
+    unk_00409d2c_gmea4_0* f_0;
+};
+struct unk_00409d2c_gmea4_0 {
+    char pad_0[108];
+    unk_00409d2c_gmea4_0_6c* f_6c;
+};
+struct unk_00409d2c_gmea4_0_6c {
+    char pad_0[8];
+    unk_00409d2c_gmea4_0_6c_8* f_8;
+};
+struct unk_00409d2c_gmea4_0_6c_8 {
+    char pad_0[276];
+    u32 f_114;
+};
+extern unk_00409d2c_gmea4 g_00409d2c_0;
+int fn_00409d2c(void) {
+    int t0;
+    if ((int)((&g_00409d2c_0)->f_0->f_6c) == (int)(0)) {
+        return (int)(0);
+    }
+    if ((int)((&g_00409d2c_0)->f_0->f_6c->f_8) == (int)(0)) {
+        return (int)(0);
+    }
+    if ((int)((&g_00409d2c_0)->f_0->f_6c->f_8->f_114) == (int)(0)) {
+        return (int)(0);
+    }
+    t0 = stub_004056d0((void*)((&g_00409d2c_0)->f_0->f_6c->f_8->f_114));
+    return (int)(t0);
+}
+
+struct unk_00409d6c_gmea4;
+struct unk_00409d6c_gmea4_0;
+struct unk_00409d6c_gmea4_0_6c;
+struct unk_00409d6c_gmea4_0_6c_8;
+struct unk_00409d6c_gmea4 {
+    unk_00409d6c_gmea4_0* f_0;
+};
+struct unk_00409d6c_gmea4_0 {
+    char pad_0[108];
+    unk_00409d6c_gmea4_0_6c* f_6c;
+};
+struct unk_00409d6c_gmea4_0_6c {
+    char pad_0[8];
+    unk_00409d6c_gmea4_0_6c_8* f_8;
+};
+struct unk_00409d6c_gmea4_0_6c_8 {
+    char pad_0[276];
+    u32 f_114;
+};
+extern unk_00409d6c_gmea4 g_00409d6c_0;
+int fn_00409d6c(void) {
+    int t0;
+    if ((int)((&g_00409d6c_0)->f_0->f_6c) == (int)(0)) {
+        return (int)(0);
+    }
+    if ((int)((&g_00409d6c_0)->f_0->f_6c->f_8) == (int)(0)) {
+        return (int)(0);
+    }
+    if ((int)((&g_00409d6c_0)->f_0->f_6c->f_8->f_114) == (int)(0)) {
+        return (int)(0);
+    }
+    t0 = stub_00405740((void*)((&g_00409d6c_0)->f_0->f_6c->f_8->f_114));
+    return (int)(t0);
+}
+
+struct unk_00409dac_gmea4;
+struct unk_00409dac_gmea4_0;
+struct unk_00409dac_gmea4_0_6c;
+struct unk_00409dac_gmea4_0_6c_8;
+struct unk_00409dac_gmea4 {
+    unk_00409dac_gmea4_0* f_0;
+};
+struct unk_00409dac_gmea4_0 {
+    char pad_0[108];
+    unk_00409dac_gmea4_0_6c* f_6c;
+};
+struct unk_00409dac_gmea4_0_6c {
+    char pad_0[8];
+    unk_00409dac_gmea4_0_6c_8* f_8;
+};
+struct unk_00409dac_gmea4_0_6c_8 {
+    char pad_0[276];
+    u32 f_114;
+};
+extern unk_00409dac_gmea4 g_00409dac_0;
+int fn_00409dac(void) {
+    int t0;
+    if ((int)((&g_00409dac_0)->f_0->f_6c) == (int)(0)) {
+        return (int)(0);
+    }
+    if ((int)((&g_00409dac_0)->f_0->f_6c->f_8) == (int)(0)) {
+        return (int)(0);
+    }
+    if ((int)((&g_00409dac_0)->f_0->f_6c->f_8->f_114) == (int)(0)) {
+        return (int)(0);
+    }
+    t0 = stub_004057b0((void*)((&g_00409dac_0)->f_0->f_6c->f_8->f_114));
+    return (int)(t0);
+}
+
+struct unk_00409dec_gmea4;
+struct unk_00409dec_gmea4_0;
+struct unk_00409dec_gmea4_0_6c;
+struct unk_00409dec_gmea4_0_6c_8;
+struct unk_00409dec_gmea4 {
+    unk_00409dec_gmea4_0* f_0;
+};
+struct unk_00409dec_gmea4_0 {
+    char pad_0[108];
+    unk_00409dec_gmea4_0_6c* f_6c;
+};
+struct unk_00409dec_gmea4_0_6c {
+    char pad_0[8];
+    unk_00409dec_gmea4_0_6c_8* f_8;
+};
+struct unk_00409dec_gmea4_0_6c_8 {
+    char pad_0[276];
+    u32 f_114;
+};
+extern unk_00409dec_gmea4 g_00409dec_0;
+int fn_00409dec(void) {
+    int t0;
+    if ((int)((&g_00409dec_0)->f_0->f_6c) == (int)(0)) {
+        return (int)(0);
+    }
+    if ((int)((&g_00409dec_0)->f_0->f_6c->f_8) == (int)(0)) {
+        return (int)(0);
+    }
+    if ((int)((&g_00409dec_0)->f_0->f_6c->f_8->f_114) == (int)(0)) {
+        return (int)(0);
+    }
+    t0 = stub_00405820((void*)((&g_00409dec_0)->f_0->f_6c->f_8->f_114));
+    return (int)(t0);
+}
+
+struct unk_00409e2c_gmea4;
+struct unk_00409e2c_gmea4_0;
+struct unk_00409e2c_gmea4_0_6c;
+struct unk_00409e2c_gmea4_0_6c_8;
+struct unk_00409e2c_gmea4 {
+    unk_00409e2c_gmea4_0* f_0;
+};
+struct unk_00409e2c_gmea4_0 {
+    char pad_0[108];
+    unk_00409e2c_gmea4_0_6c* f_6c;
+};
+struct unk_00409e2c_gmea4_0_6c {
+    char pad_0[8];
+    unk_00409e2c_gmea4_0_6c_8* f_8;
+};
+struct unk_00409e2c_gmea4_0_6c_8 {
+    char pad_0[276];
+    u32 f_114;
+};
+extern unk_00409e2c_gmea4 g_00409e2c_0;
+int fn_00409e2c(void) {
+    int t0;
+    if ((int)((&g_00409e2c_0)->f_0->f_6c) == (int)(0)) {
+        return (int)(0);
+    }
+    if ((int)((&g_00409e2c_0)->f_0->f_6c->f_8) == (int)(0)) {
+        return (int)(0);
+    }
+    if ((int)((&g_00409e2c_0)->f_0->f_6c->f_8->f_114) == (int)(0)) {
+        return (int)(0);
+    }
+    t0 = stub_00405890((void*)((&g_00409e2c_0)->f_0->f_6c->f_8->f_114));
+    return (int)(t0);
+}
+
+struct unk_00409e6c_gmea4;
+struct unk_00409e6c_gmea4_0;
+struct unk_00409e6c_gmea4_0_6c;
+struct unk_00409e6c_gmea4_0_6c_8;
+struct unk_00409e6c_gmea4 {
+    unk_00409e6c_gmea4_0* f_0;
+};
+struct unk_00409e6c_gmea4_0 {
+    char pad_0[108];
+    unk_00409e6c_gmea4_0_6c* f_6c;
+};
+struct unk_00409e6c_gmea4_0_6c {
+    char pad_0[8];
+    unk_00409e6c_gmea4_0_6c_8* f_8;
+};
+struct unk_00409e6c_gmea4_0_6c_8 {
+    char pad_0[276];
+    u32 f_114;
+};
+extern unk_00409e6c_gmea4 g_00409e6c_0;
+int fn_00409e6c(void) {
+    int t0;
+    if ((int)((&g_00409e6c_0)->f_0->f_6c) == (int)(0)) {
+        return (int)(0);
+    }
+    if ((int)((&g_00409e6c_0)->f_0->f_6c->f_8) == (int)(0)) {
+        return (int)(0);
+    }
+    if ((int)((&g_00409e6c_0)->f_0->f_6c->f_8->f_114) == (int)(0)) {
+        return (int)(0);
+    }
+    t0 = stub_00405900((void*)((&g_00409e6c_0)->f_0->f_6c->f_8->f_114));
+    return (int)(t0);
+}
+
+struct unk_00409eac_gmea4;
+struct unk_00409eac_gmea8;
+struct unk_00409eac_gmea4_0;
+struct unk_00409eac_gmea4_0_6c;
+struct unk_00409eac_gmea4_0_6c_8;
+struct unk_00409eac_gmea4 {
+    unk_00409eac_gmea4_0* f_0;
+};
+struct unk_00409eac_gmea8 {
+    u8 f_0;
+};
+struct unk_00409eac_gmea4_0 {
+    char pad_0[108];
+    unk_00409eac_gmea4_0_6c* f_6c;
+};
+struct unk_00409eac_gmea4_0_6c {
+    char pad_0[8];
+    unk_00409eac_gmea4_0_6c_8* f_8;
+};
+struct unk_00409eac_gmea4_0_6c_8 {
+    char pad_0[276];
+    u32 f_114;
+};
+extern unk_00409eac_gmea8 g_00409eac_0;
+extern unk_00409eac_gmea4 g_00409eac_1;
+int fn_00409eac(void* a0) {
+    int t0;
+    if ((int)((&g_00409eac_0)->f_0) == (int)(0)) {
+        return (int)(0);
+    }
+    if ((int)((&g_00409eac_1)->f_0->f_6c) == (int)(0)) {
+        return (int)(0);
+    }
+    if ((int)((&g_00409eac_1)->f_0->f_6c->f_8) == (int)(0)) {
+        return (int)(0);
+    }
+    if ((int)((&g_00409eac_1)->f_0->f_6c->f_8->f_114) == (int)(0)) {
+        return (int)(0);
+    }
+    t0 = stub_00408704((void*)((&g_00409eac_1)->f_0->f_6c->f_8->f_114), (void*)(a0));
+    return (int)(t0);
+}
+
+struct unk_0040a154_gmea4;
+struct unk_0040a154_gmea4_0;
+struct unk_0040a154_gmea4_0_6c;
+struct unk_0040a154_gmea4_0_6c_8;
+struct unk_0040a154_gmea4 {
+    unk_0040a154_gmea4_0* f_0;
+};
+struct unk_0040a154_gmea4_0 {
+    char pad_0[108];
+    unk_0040a154_gmea4_0_6c* f_6c;
+};
+struct unk_0040a154_gmea4_0_6c {
+    char pad_0[8];
+    unk_0040a154_gmea4_0_6c_8* f_8;
+};
+struct unk_0040a154_gmea4_0_6c_8 {
+    char pad_0[276];
+    u32 f_114;
+};
+extern unk_0040a154_gmea4 g_0040a154_0;
+int fn_0040a154(void) {
+    int t0;
+    if ((int)((&g_0040a154_0)->f_0->f_6c) == (int)(0)) {
+        return (int)(0);
+    }
+    if ((int)((&g_0040a154_0)->f_0->f_6c->f_8) == (int)(0)) {
+        return (int)(0);
+    }
+    if ((int)((&g_0040a154_0)->f_0->f_6c->f_8->f_114) == (int)(0)) {
+        return (int)(0);
+    }
+    t0 = stub_00405970((void*)((&g_0040a154_0)->f_0->f_6c->f_8->f_114));
+    return (int)(t0);
+}
+
+struct unk_0040ac20_gmea4;
+struct unk_0040ac20_gmea8;
+struct unk_0040ac20_gmea4_0;
+struct unk_0040ac20_gmea4_0_6c;
+struct unk_0040ac20_gmea4_0_6c_8;
+struct unk_0040ac20_gmea4 {
+    unk_0040ac20_gmea4_0* f_0;
+};
+struct unk_0040ac20_gmea8 {
+    u8 f_0;
+};
+struct unk_0040ac20_gmea4_0 {
+    char pad_0[108];
+    unk_0040ac20_gmea4_0_6c* f_6c;
+};
+struct unk_0040ac20_gmea4_0_6c {
+    char pad_0[8];
+    unk_0040ac20_gmea4_0_6c_8* f_8;
+};
+struct unk_0040ac20_gmea4_0_6c_8 {
+    char pad_0[276];
+    u32 f_114;
+};
+extern unk_0040ac20_gmea8 g_0040ac20_0;
+extern unk_0040ac20_gmea4 g_0040ac20_1;
+int fn_0040ac20(void) {
+    int t0;
+    if ((int)((&g_0040ac20_0)->f_0) == (int)(0)) {
+        return (int)(0);
+    }
+    if ((int)((&g_0040ac20_1)->f_0->f_6c) == (int)(0)) {
+        return (int)(0);
+    }
+    if ((int)((&g_0040ac20_1)->f_0->f_6c->f_8) == (int)(0)) {
+        return (int)(0);
+    }
+    if ((int)((&g_0040ac20_1)->f_0->f_6c->f_8->f_114) == (int)(0)) {
+        return (int)(0);
+    }
+    t0 = stub_00406938((void*)((&g_0040ac20_1)->f_0->f_6c->f_8->f_114));
+    return (int)(t0);
+}
+
+struct unk_0040ac70_gmea4;
+struct unk_0040ac70_gmea8;
+struct unk_0040ac70_gmea4_0;
+struct unk_0040ac70_gmea4_0_6c;
+struct unk_0040ac70_gmea4_0_6c_8;
+struct unk_0040ac70_gmea4 {
+    unk_0040ac70_gmea4_0* f_0;
+};
+struct unk_0040ac70_gmea8 {
+    u8 f_0;
+};
+struct unk_0040ac70_gmea4_0 {
+    char pad_0[108];
+    unk_0040ac70_gmea4_0_6c* f_6c;
+};
+struct unk_0040ac70_gmea4_0_6c {
+    char pad_0[8];
+    unk_0040ac70_gmea4_0_6c_8* f_8;
+};
+struct unk_0040ac70_gmea4_0_6c_8 {
+    char pad_0[276];
+    u32 f_114;
+};
+extern unk_0040ac70_gmea8 g_0040ac70_0;
+extern unk_0040ac70_gmea4 g_0040ac70_1;
+int fn_0040ac70(void) {
+    int t0;
+    if ((int)((&g_0040ac70_0)->f_0) == (int)(0)) {
+        return (int)(0);
+    }
+    if ((int)((&g_0040ac70_1)->f_0->f_6c) == (int)(0)) {
+        return (int)(0);
+    }
+    if ((int)((&g_0040ac70_1)->f_0->f_6c->f_8) == (int)(0)) {
+        return (int)(0);
+    }
+    if ((int)((&g_0040ac70_1)->f_0->f_6c->f_8->f_114) == (int)(0)) {
+        return (int)(0);
+    }
+    t0 = stub_004069b0((void*)((&g_0040ac70_1)->f_0->f_6c->f_8->f_114));
+    return (int)(t0);
+}
+
+struct unk_0040acc0_gmea4;
+struct unk_0040acc0_gmea8;
+struct unk_0040acc0_gmea4_0;
+struct unk_0040acc0_gmea4_0_6c;
+struct unk_0040acc0_gmea4_0_6c_8;
+struct unk_0040acc0_gmea4 {
+    unk_0040acc0_gmea4_0* f_0;
+};
+struct unk_0040acc0_gmea8 {
+    u8 f_0;
+};
+struct unk_0040acc0_gmea4_0 {
+    char pad_0[108];
+    unk_0040acc0_gmea4_0_6c* f_6c;
+};
+struct unk_0040acc0_gmea4_0_6c {
+    char pad_0[8];
+    unk_0040acc0_gmea4_0_6c_8* f_8;
+};
+struct unk_0040acc0_gmea4_0_6c_8 {
+    char pad_0[276];
+    u32 f_114;
+};
+extern unk_0040acc0_gmea8 g_0040acc0_0;
+extern unk_0040acc0_gmea4 g_0040acc0_1;
+int fn_0040acc0(void) {
+    int t0;
+    if ((int)((&g_0040acc0_0)->f_0) == (int)(0)) {
+        return (int)(0);
+    }
+    if ((int)((&g_0040acc0_1)->f_0->f_6c) == (int)(0)) {
+        return (int)(0);
+    }
+    if ((int)((&g_0040acc0_1)->f_0->f_6c->f_8) == (int)(0)) {
+        return (int)(0);
+    }
+    if ((int)((&g_0040acc0_1)->f_0->f_6c->f_8->f_114) == (int)(0)) {
+        return (int)(0);
+    }
+    t0 = stub_00404c18((void*)((&g_0040acc0_1)->f_0->f_6c->f_8->f_114));
+    return (int)(t0);
+}
+
+struct unk_0040ad10_gmea4;
+struct unk_0040ad10_gmea4_0;
+struct unk_0040ad10_gmea4_0_6c;
+struct unk_0040ad10_gmea4_0_6c_8;
+struct unk_0040ad10_gmea4 {
+    unk_0040ad10_gmea4_0* f_0;
+};
+struct unk_0040ad10_gmea4_0 {
+    char pad_0[108];
+    unk_0040ad10_gmea4_0_6c* f_6c;
+};
+struct unk_0040ad10_gmea4_0_6c {
+    char pad_0[8];
+    unk_0040ad10_gmea4_0_6c_8* f_8;
+};
+struct unk_0040ad10_gmea4_0_6c_8 {
+    char pad_0[276];
+    u32 f_114;
+};
+extern unk_0040ad10_gmea4 g_0040ad10_0;
+int fn_0040ad10(void) {
+    int t0;
+    if ((int)((&g_0040ad10_0)->f_0->f_6c) == (int)(0)) {
+        return (int)(0);
+    }
+    if ((int)((&g_0040ad10_0)->f_0->f_6c->f_8) == (int)(0)) {
+        return (int)(0);
+    }
+    if ((int)((&g_0040ad10_0)->f_0->f_6c->f_8->f_114) == (int)(0)) {
+        return (int)(0);
+    }
+    t0 = stub_004059e0((void*)((&g_0040ad10_0)->f_0->f_6c->f_8->f_114));
+    return (int)(t0);
+}
 
 extern char g_0040cb6c_0[];
 void fn_0040cb6c(void* a0, int a1) {

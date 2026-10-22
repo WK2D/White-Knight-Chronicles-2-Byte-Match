@@ -4,9 +4,19 @@
 
 extern "C" {
 
+void fn_000f3fc8(void*, u32, int);
 static void* __attribute__((noinline)) stub_0011aa3c(int p0, int p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static int __attribute__((noinline)) stub_0011cd38(int p0, u32 p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 int fn_00fccd90(void*, int);
+
+struct unk_0011c92c_a0 {
+    char pad_0[4];
+    u32 f_4;
+    u32 f_8;
+};
+void fn_0011c92c(unk_0011c92c_a0* a0) {
+    fn_000f3fc8((void*)(a0->f_8 + 21216), (u32)(a0->f_4), (int)(4407));
+}
 
 int fn_0011cd8c(int a0) {
     void* t0;

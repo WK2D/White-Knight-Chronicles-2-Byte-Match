@@ -4,7 +4,11 @@
 
 extern "C" {
 
+void fn_00858734(u32, int);
+static void __attribute__((noinline)) stub_00870040(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
 void* fn_00b3cd18(void*, void*, int, int, int, int);
+int fn_00b3fbf8(u32);
+void fn_00b3fc08(u32, u32, int);
 
 struct unk_00873084_a0 {
     char pad_0[8360];
@@ -12,6 +16,62 @@ struct unk_00873084_a0 {
 };
 u32 fn_00873084(unk_00873084_a0* a0) {
     return (u32)(((u32)(a0->f_20a8) >> 2) & 0x1);
+}
+
+struct unk_00873090_gm68c8;
+struct unk_00873090_gm68c8_0;
+struct unk_00873090_gm68c8_0_6c;
+struct unk_00873090_gm68c8_0_6c_8;
+struct unk_00873090_gm68c8 {
+    unk_00873090_gm68c8_0* f_0;
+};
+struct unk_00873090_gm68c8_0 {
+    char pad_0[108];
+    unk_00873090_gm68c8_0_6c* f_6c;
+};
+struct unk_00873090_gm68c8_0_6c {
+    char pad_0[8];
+    unk_00873090_gm68c8_0_6c_8* f_8;
+};
+struct unk_00873090_gm68c8_0_6c_8 {
+    char pad_0[236];
+    u32 f_ec;
+};
+extern unk_00873090_gm68c8 g_00873090_0;
+u8 fn_00873090(void) {
+    int t0;
+    t0 = fn_00b3fbf8((u32)((&g_00873090_0)->f_0->f_6c->f_8->f_ec));
+    return (u8)((u8)((u32)(t0) ^ 0x1));
+}
+
+struct unk_008730d0_gm689c;
+struct unk_008730d0_gm68c8;
+struct unk_008730d0_gm68c8_0;
+struct unk_008730d0_gm68c8_0_6c;
+struct unk_008730d0_gm68c8_0_6c_8;
+struct unk_008730d0_gm689c {
+    char pad_0[12];
+    u32 f_c;
+};
+struct unk_008730d0_gm68c8 {
+    unk_008730d0_gm68c8_0* f_0;
+};
+struct unk_008730d0_gm68c8_0 {
+    char pad_0[108];
+    unk_008730d0_gm68c8_0_6c* f_6c;
+};
+struct unk_008730d0_gm68c8_0_6c {
+    char pad_0[8];
+    unk_008730d0_gm68c8_0_6c_8* f_8;
+};
+struct unk_008730d0_gm68c8_0_6c_8 {
+    char pad_0[244];
+    u32 f_f4;
+};
+extern unk_008730d0_gm68c8 g_008730d0_0;
+extern unk_008730d0_gm689c g_008730d0_1;
+void fn_008730d0(int a0, int a1) {
+    fn_00b3fc08((u32)((&g_008730d0_0)->f_0->f_6c->f_8->f_f4), (u32)((&g_008730d0_1)->f_c), (int)(a1));
 }
 
 struct unk_00873114_gm68c8;
@@ -46,6 +106,21 @@ struct unk_00873114_gm68c8_0_6c_8_fc_4 {
 extern unk_00873114_gm68c8 g_00873114_0;
 int fn_00873114(void) {
     return (int)((int)(&g_00873114_0)->f_0->f_6c->f_8->f_fc->f_4->f_80);
+}
+
+struct unk_008740b4_gm68cc;
+struct unk_008740b4_gm68cc_0;
+struct unk_008740b4_gm68cc {
+    unk_008740b4_gm68cc_0* f_0;
+};
+struct unk_008740b4_gm68cc_0 {
+    char pad_0[192];
+    u32 f_c0;
+};
+extern unk_008740b4_gm68cc g_008740b4_0;
+void fn_008740b4(void* a0) {
+    fn_00858734((u32)((&g_008740b4_0)->f_0->f_c0), (int)(1));
+    stub_00870040((void*)(a0));
 }
 
 extern char g_00874e34_0[];

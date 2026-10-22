@@ -6,7 +6,6 @@ extern "C" {
 
 static void __attribute__((noinline)) stub_00b1a8a8(int p0, int p1, int p2, int p3) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); }
 static void __attribute__((noinline)) stub_00b1ac48(int p0, int p1, int p2, int p3) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); }
-static void __attribute__((noinline)) stub_00b1ae40(int p0, int p1, int p2, int p3) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); }
 
 void fn_00b1ac40(int a0, int a1, int a2) {
     stub_00b1a8a8((int)(a0), (int)(a1), (int)(a2), (int)(0));
@@ -14,10 +13,6 @@ void fn_00b1ac40(int a0, int a1, int a2) {
 
 void fn_00b1ae38(int a0, int a1, int a2) {
     stub_00b1ac48((int)(a0), (int)(a1), (int)(a2), (int)(0));
-}
-
-void fn_00b1b194(int a0, int a1, int a2) {
-    stub_00b1ae40((int)(a0), (int)(a1), (int)(a2), (int)(0));
 }
 
 }

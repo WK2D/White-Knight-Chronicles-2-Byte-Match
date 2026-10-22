@@ -4,6 +4,7 @@
 
 extern "C" {
 
+void* fn_003ef21c(u32, u16, int, int);
 
 struct unk_00653734_a0 {
     char pad_0[268];
@@ -26,6 +27,41 @@ int fn_00653750(unk_00653750_a0* a0, unk_00653750_a1* a1) {
     }
     a1->f_0 = (u8)(1);
     return (int)(1);
+}
+
+struct unk_00653c14_g355c;
+struct unk_00653c14_a0_24;
+struct unk_00653c14_g355c_0;
+struct unk_00653c14_g355c_0_6c;
+struct unk_00653c14_g355c_0_6c_8;
+struct unk_00653c14_g355c {
+    unk_00653c14_g355c_0* f_0;
+};
+struct unk_00653c14_a0_24 {
+    char pad_0[4424];
+    u16 f_1148;
+};
+struct unk_00653c14_g355c_0 {
+    char pad_0[108];
+    unk_00653c14_g355c_0_6c* f_6c;
+};
+struct unk_00653c14_g355c_0_6c {
+    char pad_0[8];
+    unk_00653c14_g355c_0_6c_8* f_8;
+};
+struct unk_00653c14_g355c_0_6c_8 {
+    char pad_0[252];
+    u32 f_fc;
+};
+struct unk_00653c14_a0 {
+    char pad_0[36];
+    unk_00653c14_a0_24* f_24;
+};
+extern unk_00653c14_g355c g_00653c14_0;
+void* fn_00653c14(unk_00653c14_a0* a0) {
+    void* t0;
+    t0 = fn_003ef21c((u32)((&g_00653c14_0)->f_0->f_6c->f_8->f_fc), (u16)(a0->f_24->f_1148), (int)(0), (int)(0));
+    return (void*)(t0);
 }
 
 }

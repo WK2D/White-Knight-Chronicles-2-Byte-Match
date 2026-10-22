@@ -5,6 +5,7 @@
 extern "C" {
 
 int fn_00b3e338(void*);
+int fn_00b3e348(u32, void*);
 
 struct unk_008a783c_a0 {
     char pad_0[272];
@@ -19,6 +20,28 @@ int fn_008a783c(unk_008a783c_a0* a0) {
         a0->f_118 = (u32)(-1);
     }
     a0->f_110 = (u32)(0);
+    return (int)(0);
+}
+
+struct unk_008a7a5c_gm5ed4;
+struct unk_008a7a5c_gm5ed4 {
+    u32 f_0;
+};
+struct unk_008a7a5c_a0 {
+    char pad_0[280];
+    u32 f_118;
+    u32 f_11c;
+    u32 f_120;
+};
+extern unk_008a7a5c_gm5ed4 g_008a7a5c_0;
+int fn_008a7a5c(unk_008a7a5c_a0* a0) {
+    int t0;
+    if ((u32)(a0->f_11c + -1) > (u32)(1)) {
+        t0 = fn_00b3e348((u32)((&g_008a7a5c_0)->f_0), (void*)(-1));
+        a0->f_11c = (u32)(1);
+        a0->f_120 = (u32)(0);
+        a0->f_118 = (u32)(t0);
+    }
     return (int)(0);
 }
 

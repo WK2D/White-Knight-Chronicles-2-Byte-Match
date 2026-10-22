@@ -5,7 +5,7 @@
 extern "C" {
 
 int fn_005e3158(u32, void*, int, int, void*, int);
-static void __attribute__((noinline)) stub_00667d94(void) { __asm__ volatile (""); }
+static void __attribute__((noinline)) stub_00667d94(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 static void __attribute__((noinline)) stub_006687a0(int p0, int p1, int p2, int p3, int p4) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4)); }
 
 struct unk_00667d38_a0 {
@@ -24,8 +24,8 @@ int fn_00667d38(unk_00667d38_a0* a0, int a1, void* a2) {
     return (int)(1);
 }
 
-int fn_00667e08(void) {
-    stub_00667d94();
+int fn_00667e08(int a0) {
+    stub_00667d94((int)(a0));
     return (int)(1);
 }
 

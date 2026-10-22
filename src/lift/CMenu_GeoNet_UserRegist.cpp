@@ -4,7 +4,7 @@
 
 extern "C" {
 
-void fn_0004e850(void*, u32, void*);
+void fn_0004e850(void*, u32, void*, void*, void*);
 int fn_00691ed8(u32);
 void fn_00b37fa8(void*, int, int);
 void fn_00b38268(void*, void*);
@@ -32,7 +32,7 @@ struct unk_006dcf20_a4 {
     u16 f_0;
 };
 void fn_006dcf20(unk_006dcf20_a0* a0, unk_006dcf20_a1* a1, int a2, unk_006dcf20_a3* a3, unk_006dcf20_a4* a4) {
-    fn_0004e850((void*)(a1), (u32)(a1->f_194), (void*)((int)(a2) + (int)(a0->f_a20)));
+    fn_0004e850((void*)(a1), (u32)(a1->f_194), (void*)((int)(a2) + (int)(a0->f_a20)), (void*)(a3), (void*)(a4));
     a3->f_0 = (u16)(a3->f_0 + -40);
     a4->f_0 = (u16)(a4->f_0 + -40);
 }

@@ -4,19 +4,42 @@
 
 extern "C" {
 
+static void* __attribute__((noinline)) stub_0054b0c4(void* p0, int p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
+static void __attribute__((noinline)) stub_0054c9ec(void* p0, int p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
+static int __attribute__((noinline)) stub_005536cc(void* p0, void* p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static int __attribute__((noinline)) stub_00557ca0(void* p0, u32 p1, int p2, int p3) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); return r; }
-void* fn_005b2dc4(void*);
+void fn_0055b328(u32, int);
+void fn_00570c88(u32, int);
+void* fn_005b2dc4(void*, int);
 
-void* fn_00553480(int a0) {
+void* fn_00553480(int a0, int a1) {
     void* t0;
     int v0;
-    t0 = fn_005b2dc4((void*)(((int)(a0) + 131072) + -3368));
+    t0 = fn_005b2dc4((void*)(((int)(a0) + 131072) + -3368), (int)(a1));
     if ((int)(t0) != (int)(0)) {
         v0 = (int)(FIELD(u32, t0, 60));
     } else {
         v0 = (int)(0);
     }
     return (void*)(v0);
+}
+
+struct unk_005538b4_a0 {
+    char pad_0[12];
+    u32 f_c;
+    char pad_10[776];
+    u32 f_318;
+};
+void fn_005538b4(unk_005538b4_a0* a0, int a1) {
+    void* t0;
+    int t2;
+    t0 = stub_0054b0c4((void*)(a0), (int)(a1));
+    fn_00570c88((u32)(a0->f_318), (int)(a1));
+    if ((int)(t0) != (int)(0)) {
+        t2 = stub_005536cc((void*)(a0), (void*)(t0));
+    }
+    stub_0054c9ec((void*)(a0), (int)(a1));
+    fn_0055b328((u32)(a0->f_c), (int)(a1));
 }
 
 struct unk_00557e2c_a0 {

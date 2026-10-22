@@ -147,6 +147,12 @@ def reads_before_writes(words):
                 srcs, dst = [ra, rb], rt
             elif xo == 104:
                 srcs, dst = [ra], rt
+            elif xo in (0, 32):                    # cmp / cmpl
+                srcs = [ra, rb]
+            elif xo == 339:                        # mflr / mfspr
+                dst = rt
+            elif xo == 467:                        # mtctr / mtspr
+                srcs = [rt]
             else:
                 break
         elif op in (21, 30):
@@ -155,8 +161,12 @@ def reads_before_writes(words):
             srcs, dst = [ra], rt
         elif op in (59, 63):
             fsrcs, fdst = [ra, rb, (w >> 6) & 31], rt
+        elif op in (10, 11):                       # cmpli / cmpi
+            srcs = [ra]
+        elif op == 16 or op == 18 and not w & 1:   # branches inside the function: keep reading
+            pass
         else:
-            break                                  # a branch or anything unknown ends the scan
+            break                                  # a call, a return or anything unknown ends the scan
         for r in srcs:
             if 3 <= r <= 10 and r not in written:
                 used.add(r)
@@ -1234,7 +1244,12 @@ class Lifter:
         while k in self.ffresh:
             floats.append(self.fpr[k])
             k += 1
-        last = max(gfresh | {first - 1, 2 + nint})
+        # The callee's reads give the count; registers the caller filled extend
+        # it only while they run on without a gap (a lone r9 is scratch, not
+        # a seventh argument).
+        last = max(first - 1, 2 + nint)
+        while last + 1 in gfresh:
+            last += 1
         args = []
         for r in range(first, last + 1):
             if r in gfresh:

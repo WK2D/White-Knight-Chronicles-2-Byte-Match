@@ -4,6 +4,22 @@
 
 extern "C" {
 
+int fn_00032efc(u32);
+
+struct unk_00b7c854_a0_0;
+struct unk_00b7c854_a0_0 {
+    u32 f_0;
+};
+struct unk_00b7c854_a0 {
+    unk_00b7c854_a0_0* f_0;
+};
+void fn_00b7c854(unk_00b7c854_a0* a0) {
+    int t0;
+    if ((int)(a0->f_0) != (int)(0)) {
+        t0 = fn_00032efc((u32)(a0->f_0->f_0));
+        a0->f_0 = (unk_00b7c854_a0_0*)(0);
+    }
+}
 
 struct unk_00b7c8a0_a0_0;
 struct unk_00b7c8a0_a0_0 {

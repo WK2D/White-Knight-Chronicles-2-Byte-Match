@@ -4,16 +4,16 @@
 
 extern "C" {
 
-void fn_00d08480(void);
+void fn_00d08480(int, int);
 void fn_00d4fd20(int);
-void fn_00d4fd30(void);
+void fn_00d4fd30(int, int);
 
-void fn_00d08f60(void) {
-    fn_00d08480();
+void fn_00d08f60(int a0, int a1) {
+    fn_00d08480((int)(a0), (int)(a1));
 }
 
-void fn_00d09338(void) {
-    fn_00d4fd30();
+void fn_00d09338(int a0, int a1) {
+    fn_00d4fd30((int)(a0), (int)(a1));
 }
 
 void fn_00d094f0(int a0) {

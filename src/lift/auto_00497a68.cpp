@@ -8,13 +8,13 @@ int fn_00041b48(void*);
 int fn_0036dee0(void*);
 static int __attribute__((noinline)) stub_00497618(u32 p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static void* __attribute__((noinline)) stub_00497830(u32 p0) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
-static void __attribute__((noinline)) stub_00497a68(void) { __asm__ volatile (""); }
+static void __attribute__((noinline)) stub_00497a68(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 void* fn_00b97128(void*, u32, int, u32, int);
 void* fn_00b971c0(void*, u32, int, u32, int);
 void* fn_00b97248(void*, u32, int, u32, int);
 
-void fn_00497ae4(void) {
-    stub_00497a68();
+void fn_00497ae4(int a0) {
+    stub_00497a68((int)(a0));
 }
 
 struct unk_00497cd4_a0 {

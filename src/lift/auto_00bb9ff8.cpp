@@ -6,9 +6,9 @@ extern "C" {
 
 void fn_00b3d088(u32, int, int);
 int fn_00b41108(void*, u32, int);
-void fn_00bba8b4(void);
-void fn_00bba948(void);
-void fn_00bba9dc(void);
+void fn_00bba8b4(int);
+void fn_00bba948(int);
+void fn_00bba9dc(int);
 
 struct unk_00bba3f4_a0 {
     u32 f_0;
@@ -98,18 +98,18 @@ int fn_00bba6e4(unk_00bba6e4_a0* a0, int a1) {
     return (int)(0);
 }
 
-int fn_00bba920(void) {
-    fn_00bba8b4();
+int fn_00bba920(int a0) {
+    fn_00bba8b4((int)(a0));
     return (int)(1);
 }
 
-int fn_00bba9b4(void) {
-    fn_00bba948();
+int fn_00bba9b4(int a0) {
+    fn_00bba948((int)(a0));
     return (int)(1);
 }
 
-int fn_00bbaa48(void) {
-    fn_00bba9dc();
+int fn_00bbaa48(int a0) {
+    fn_00bba9dc((int)(a0));
     return (int)(1);
 }
 

@@ -5,11 +5,38 @@
 extern "C" {
 
 void fn_00ce9ddc(int, int);
+void fn_00cf3068(int);
 void fn_00d173f8(int);
 void fn_00d2065c(int);
 void fn_00d21b28(int);
 void fn_00d2405c(int);
+void fn_00d246fc(int);
+void fn_00d26d40(int);
+void fn_00d28348(int);
+void fn_00d2b648(int);
+void fn_00d2c408(int);
+void fn_00d2ef68(int);
+void fn_00d33330(int);
+void fn_00d37258(int);
+void fn_00d3ec78(int);
+void fn_00d42328(int);
+void fn_00d430fc(int);
 void fn_00de650c(int);
+void fn_00de7644(int);
+void fn_00de78d0(int);
+void fn_00deb824(int);
+void fn_00df9874(int, int, int);
+
+void fn_00ce9b2c(int a0) {
+    fn_00d246fc((int)(a0));
+    fn_00ce9ddc((int)(a0), (int)(0));
+    fn_00de7644((int)(a0));
+    fn_00de78d0((int)(a0));
+    fn_00ce9ddc((int)(a0), (int)(1));
+    fn_00d2ef68((int)(a0));
+    fn_00deb824((int)(a0));
+    fn_00d37258((int)(a0));
+}
 
 void fn_00ce9bb8(int a0) {
     fn_00ce9ddc((int)(a0), (int)(0));
@@ -19,6 +46,36 @@ void fn_00ce9bb8(int a0) {
     fn_00d2405c((int)(a0));
     fn_00de650c((int)(a0));
     fn_00ce9ddc((int)(a0), (int)(1));
+}
+
+void fn_00ce9c38(int a0) {
+    fn_00cf3068((int)(a0));
+    fn_00d3ec78((int)(a0));
+    fn_00d33330((int)(a0));
+    fn_00ce9ddc((int)(a0), (int)(0));
+    fn_00d173f8((int)(a0));
+    fn_00d2065c((int)(a0));
+    fn_00d21b28((int)(a0));
+    fn_00d2405c((int)(a0));
+    fn_00de650c((int)(a0));
+    fn_00ce9ddc((int)(a0), (int)(1));
+    fn_00ce9ddc((int)(a0), (int)(0));
+    fn_00d26d40((int)(a0));
+    fn_00ce9ddc((int)(a0), (int)(1));
+    fn_00d246fc((int)(a0));
+    fn_00ce9ddc((int)(a0), (int)(0));
+    fn_00de7644((int)(a0));
+    fn_00de78d0((int)(a0));
+    fn_00ce9ddc((int)(a0), (int)(1));
+    fn_00d2ef68((int)(a0));
+    fn_00deb824((int)(a0));
+    fn_00d37258((int)(a0));
+    fn_00d430fc((int)(a0));
+    fn_00d42328((int)(a0));
+    fn_00d2b648((int)(a0));
+    fn_00df9874((int)(a0), (int)(17), (int)(17));
+    fn_00d2c408((int)(a0));
+    fn_00d28348((int)(a0));
 }
 
 struct unk_00ce9dc0_a1 {

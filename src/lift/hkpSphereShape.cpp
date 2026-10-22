@@ -5,10 +5,10 @@
 extern "C" {
 
 void fn_00c038f8(int, int, void*);
-void fn_00d04050(int);
+void fn_00d04050(int, int);
 
-void fn_00d05394(int a0) {
-    fn_00d04050((int)(a0));
+void fn_00d05394(int a0, int a1) {
+    fn_00d04050((int)(a0), (int)(a1));
 }
 
 extern char g_00d05404_0[];

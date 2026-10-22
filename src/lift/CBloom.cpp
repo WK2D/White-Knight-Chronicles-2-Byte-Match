@@ -8,38 +8,9 @@ void fn_004b2320(void);
 int fn_004b2364(void*, void*);
 int fn_004b239c(void*, void*);
 void fn_004b29f0(void*);
-void fn_004b30dc(void);
+void fn_004b30dc(int);
 void* fn_00b38eb8(void*, void*, void*, int);
 void fn_00fc88dc(void*);
-
-struct unk_004b57c0_a0 {
-    virtual void vf0();
-    virtual void vf1();
-    virtual void vf2();
-    virtual void vf3();
-    virtual void vf4();
-    virtual void vf5();
-    virtual void vf6();
-    virtual void vf7();
-    virtual void vf8();
-    virtual void vf9();
-    virtual void vf10();
-    virtual void vf11();
-    virtual void vf12();
-    virtual void vf13();
-    virtual void vf14();
-    virtual void vf15();
-    virtual void vf16();
-    virtual void vf17();
-    virtual void vf18();
-    virtual void vf19();
-    virtual void vf20(float, int, int);
-    char pad_4[52];
-    float f_38;
-};
-void fn_004b57c0(unk_004b57c0_a0* a0) {
-    a0->vf20((float)(a0->f_38), (int)(3), (int)(186));
-}
 
 struct unk_004b58d4_a0 {
     char pad_0[36];
@@ -93,8 +64,8 @@ void fn_004b5a4c(void) {
     fn_004b2320();
 }
 
-void fn_004b5a70(void) {
-    fn_004b30dc();
+void fn_004b5a70(int a0) {
+    fn_004b30dc((int)(a0));
 }
 
 struct unk_004b5a94_a0 {
@@ -105,6 +76,24 @@ void fn_004b5a94(unk_004b5a94_a0* a0) {
     a0->f_0 = (void*)(g_004b5a94_0);
     fn_004b29f0((void*)(a0));
     fn_00fc88dc((void*)(a0));
+}
+
+struct unk_004b5ad8_a0 {
+    void* f_0;
+};
+extern char g_004b5ad8_0[];
+void fn_004b5ad8(unk_004b5ad8_a0* a0) {
+    a0->f_0 = (void*)(g_004b5ad8_0);
+    fn_004b29f0((void*)(a0));
+}
+
+struct unk_004b5b08_a0 {
+    void* f_0;
+};
+extern char g_004b5b08_0[];
+void fn_004b5b08(unk_004b5b08_a0* a0) {
+    a0->f_0 = (void*)(g_004b5b08_0);
+    fn_004b29f0((void*)(a0));
 }
 
 }

@@ -4,7 +4,7 @@
 
 extern "C" {
 
-static void __attribute__((noinline)) stub_00511444(void) { __asm__ volatile (""); }
+static void __attribute__((noinline)) stub_00511444(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 
 u16 fn_0051132c(int a0) {
     return (u16)((u16)a0);
@@ -22,8 +22,8 @@ u32 fn_0051135c(int a0) {
     return (u32)(((u32)(a0) >> 16));
 }
 
-void fn_005119dc(void) {
-    stub_00511444();
+void fn_005119dc(int a0) {
+    stub_00511444((int)(a0));
 }
 
 }

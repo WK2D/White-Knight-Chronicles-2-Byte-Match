@@ -5,13 +5,13 @@
 extern "C" {
 
 void* fn_00076a98(void*, int, int, int, int, int);
-static void* __attribute__((noinline)) stub_0045b0a8(void) { void* r; __asm__ volatile ("" : "=r"(r)); return r; }
+static void* __attribute__((noinline)) stub_0045b0a8(int p0, int p1, int p2, int p3) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); return r; }
 static void __attribute__((noinline)) stub_0045b3c0(void* p0, void* p1, void* p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
 
-void* fn_0045b1dc(void) {
+void* fn_0045b1dc(int a0, int a1, int a2, int a3) {
     void* t0;
     int v0;
-    t0 = stub_0045b0a8();
+    t0 = stub_0045b0a8((int)(a0), (int)(a1), (int)(a2), (int)(a3));
     if ((int)(t0) != (int)(0)) {
         v0 = (int)(FIELD(u32, t0, 0));
     } else {

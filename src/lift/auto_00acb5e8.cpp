@@ -5,7 +5,7 @@
 extern "C" {
 
 void fn_00aed888(u32, int, int);
-void fn_00aedac4(u32);
+void fn_00aedac4(u32, int);
 void* fn_00aedca4(u32, int);
 void* fn_00aedef4(u32);
 void fn_00aeeab8(u32);
@@ -51,8 +51,8 @@ struct unk_00acb8e0_a0 {
     char pad_0[4];
     u32 f_4;
 };
-void fn_00acb8e0(unk_00acb8e0_a0* a0) {
-    fn_00aedac4((u32)(a0->f_4));
+void fn_00acb8e0(unk_00acb8e0_a0* a0, int a1) {
+    fn_00aedac4((u32)(a0->f_4), (int)(a1));
 }
 
 struct unk_00acb908_a0 {

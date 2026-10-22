@@ -8,7 +8,8 @@ static void __attribute__((noinline)) stub_00152ca4(void) { __asm__ volatile (""
 void fn_0019b024(void*);
 void* fn_001a7554(u32, u16);
 void* fn_001a7cf8(u32, u16);
-int fn_001a89b0(u32);
+int fn_001a89b0(u32, int);
+int fn_001fade0(void*);
 int fn_00208608(void*, void*);
 int fn_00208d80(void*, void*);
 
@@ -73,10 +74,26 @@ struct unk_001532a0_a0 {
     char pad_0[52];
     u32 f_34;
 };
-u16 fn_001532a0(unk_001532a0_a0* a0) {
+u16 fn_001532a0(unk_001532a0_a0* a0, int a1) {
     int t0;
-    t0 = fn_001a89b0((u32)(a0->f_34));
+    t0 = fn_001a89b0((u32)(a0->f_34), (int)(a1));
     return (u16)((u16)t0);
+}
+
+struct unk_00153410_a0 {
+    char pad_0[56];
+    u32 f_38;
+};
+int fn_00153410(unk_00153410_a0* a0) {
+    int t0;
+    int v1;
+    if ((int)(a0->f_38) != (int)(0)) {
+        t0 = fn_001fade0((void*)(a0->f_38));
+        v1 = (int)((u32)(t0) & 0xff);
+    } else {
+        v1 = (int)(0);
+    }
+    return (int)(v1);
 }
 
 struct unk_00153450_a0 {

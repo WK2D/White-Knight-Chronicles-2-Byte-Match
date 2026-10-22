@@ -7,16 +7,16 @@ extern "C" {
 void fn_00d17c38(int, int, int, int, int);
 void fn_00d18070(int, int, int, int);
 void fn_00d18420(int, int, int, int);
-void fn_00d26e08(int, int, int);
-void fn_00ded250(void*);
-void fn_00ded418(void*);
+void fn_00d26e08(int, int, int, int, int);
+void fn_00ded250(void*, int);
+void fn_00ded418(void*, int, int, int);
 
-void fn_00d21624(void* a0) {
-    fn_00ded418((void*)((char*)a0 + 48));
+void fn_00d21624(void* a0, int a1, int a2, int a3) {
+    fn_00ded418((void*)((char*)a0 + 48), (int)(a1), (int)(a2), (int)(a3));
 }
 
-void fn_00d21650(void* a0) {
-    fn_00ded250((void*)((char*)a0 + 48));
+void fn_00d21650(void* a0, int a1) {
+    fn_00ded250((void*)((char*)a0 + 48), (int)(a1));
 }
 
 void fn_00d217c0(int a0, int a1, int a2, int a3, int a4, int a5) {
@@ -31,8 +31,8 @@ void fn_00d2182c(int a0, int a1, int a2, int a3, int a4) {
     fn_00d18070((int)(a1), (int)(a2), (int)(a3), (int)(a4));
 }
 
-void fn_00d21860(int a0, int a1, int a2) {
-    fn_00d26e08((int)(a0), (int)(a2), (int)(a1));
+void fn_00d21860(int a0, int a1, int a2, int a3, int a4) {
+    fn_00d26e08((int)(a0), (int)(a2), (int)(a1), (int)(a3), (int)(a4));
 }
 
 }

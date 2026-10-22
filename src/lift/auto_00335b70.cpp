@@ -5,8 +5,10 @@
 extern "C" {
 
 void* fn_0003faa8(int);
+void fn_0003fab0(void*, int);
 void fn_0040cd28(u32, void*);
 void fn_0040cd7c(u32, void*);
+int fn_00b3b9a8(u32);
 
 struct unk_00335e38_gm1c30;
 struct unk_00335e38_gm1c30_0;
@@ -59,6 +61,68 @@ int fn_00335e80(int a0) {
     void* t0;
     t0 = fn_0003faa8((int)(a0));
     fn_0040cd28((u32)((&g_00335e80_0)->f_0->f_6c->f_8->f_114), (void*)(t0));
+    return (int)(1);
+}
+
+struct unk_003363a8_gm1c38;
+struct unk_003363a8_gm1c38_0;
+struct unk_003363a8_gm1c38_0_20;
+struct unk_003363a8_gm1c38_0_20_11c;
+struct unk_003363a8_gm1c38 {
+    unk_003363a8_gm1c38_0* f_0;
+};
+struct unk_003363a8_gm1c38_0 {
+    char pad_0[32];
+    unk_003363a8_gm1c38_0_20* f_20;
+};
+struct unk_003363a8_gm1c38_0_20 {
+    char pad_0[276];
+    u32 f_114;
+    char pad_118[4];
+    unk_003363a8_gm1c38_0_20_11c* f_11c;
+};
+struct unk_003363a8_gm1c38_0_20_11c {
+    char pad_0[4496];
+    u64 f_1190;
+};
+extern unk_003363a8_gm1c38 g_003363a8_0;
+int fn_003363a8(void* a0) {
+    int v1;
+    int v3;
+    int v6;
+    if ((int)((&g_003363a8_0)->f_0->f_20) != (int)(0)) {
+        if ((int)((&g_003363a8_0)->f_0->f_20->f_114) != (int)(0)) {
+            if ((int)((&g_003363a8_0)->f_0->f_20->f_11c) != (int)(0)) {
+                v1 = (int)(((u32)((&g_003363a8_0)->f_0->f_20->f_11c->f_1190) >> 28) & 0x1);
+            } else {
+                v1 = (int)(1);
+            }
+            v3 = (int)(v1);
+        } else {
+            v3 = (int)(1);
+        }
+        v6 = (int)(v3);
+    } else {
+        v6 = (int)(1);
+    }
+    fn_0003fab0((void*)(a0), (int)(v6));
+    return (int)(1);
+}
+
+struct unk_00336acc_gm1c38;
+struct unk_00336acc_gm1c38_0;
+struct unk_00336acc_gm1c38 {
+    unk_00336acc_gm1c38_0* f_0;
+};
+struct unk_00336acc_gm1c38_0 {
+    char pad_0[116];
+    u32 f_74;
+};
+extern unk_00336acc_gm1c38 g_00336acc_0;
+int fn_00336acc(void* a0) {
+    int t0;
+    t0 = fn_00b3b9a8((u32)((&g_00336acc_0)->f_0->f_74));
+    fn_0003fab0((void*)(a0), (int)((int)(short)(t0)));
     return (int)(1);
 }
 

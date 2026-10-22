@@ -4,15 +4,25 @@
 
 extern "C" {
 
-void fn_00eaaf90(void);
-void fn_00eab3b0(void);
+void fn_00dc7778(void*, int);
+void fn_00eaaf90(int, int, int, int, int, int);
+void fn_00eab3b0(int, int, int, int, int, int);
 
-void fn_00e95644(void) {
-    fn_00eaaf90();
+void fn_00e95644(int a0, int a1, int a2, int a3, int a4, int a5) {
+    fn_00eaaf90((int)(a0), (int)(a1), (int)(a2), (int)(a3), (int)(a4), (int)(a5));
 }
 
-void fn_00e95668(void) {
-    fn_00eab3b0();
+void fn_00e95668(int a0, int a1, int a2, int a3, int a4, int a5) {
+    fn_00eab3b0((int)(a0), (int)(a1), (int)(a2), (int)(a3), (int)(a4), (int)(a5));
+}
+
+struct unk_00e958a0_a0 {
+    void* f_0;
+};
+extern char g_00e958a0_0[];
+void fn_00e958a0(unk_00e958a0_a0* a0, int a1) {
+    a0->f_0 = (void*)(g_00e958a0_0);
+    fn_00dc7778((void*)((char*)a0 + 32), (int)(a1));
 }
 
 }

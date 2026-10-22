@@ -4,6 +4,7 @@
 
 extern "C" {
 
+static void* __attribute__((noinline)) stub_00018e20(void* p0) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static void* __attribute__((noinline)) stub_00018f68(int p0) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static void* __attribute__((noinline)) stub_00019044(int p0) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static void* __attribute__((noinline)) stub_000190cc(int p0) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
@@ -19,6 +20,24 @@ int fn_00018fb0(int a0) {
         v0 = (int)(-1);
     }
     return (int)(v0);
+}
+
+struct unk_00018fe4_a0 {
+    char pad_0[23680];
+    u32 f_5c80;
+    char pad_5c84[4];
+    u8 f_5c88;
+};
+int fn_00018fe4(unk_00018fe4_a0* a0) {
+    void* t0;
+    if ((int)(a0->f_5c88) != (int)(0)) {
+        return (int)((int)a0->f_5c80);
+    }
+    t0 = stub_00018e20((void*)(a0));
+    if ((int)(t0) == (int)(0)) {
+        return (int)(-1);
+    }
+    return (int)((int)FIELD(u32, t0, 16));
 }
 
 int fn_00019098(int a0) {

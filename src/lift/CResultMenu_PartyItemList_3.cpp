@@ -4,11 +4,32 @@
 
 extern "C" {
 
-static int __attribute__((noinline)) stub_00844690(void) { int r; __asm__ volatile ("" : "=r"(r)); return r; }
+static int __attribute__((noinline)) stub_00844690(int p0, int p1, int p2, int p3, int p4) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4)); return r; }
+int fn_00b3cd58(void*, u32, u32, int, int);
 
-u8 fn_00844ecc(void) {
+struct unk_00842d70_a0 {
+    char pad_0[300];
+    u32 f_12c;
+};
+struct unk_00842d70_a1 {
+    char pad_0[404];
+    u32 f_194;
+};
+int fn_00842d70(unk_00842d70_a0* a0, unk_00842d70_a1* a1) {
     int t0;
-    t0 = stub_00844690();
+    int v0;
+    if ((int)(a1) != (int)(0)) {
+        t0 = fn_00b3cd58((void*)(a1), (u32)(a1->f_194), (u32)(a0->f_12c), (int)(1), (int)(1));
+        v0 = (int)(1);
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
+u8 fn_00844ecc(int a0, int a1, int a2, int a3, int a4) {
+    int t0;
+    t0 = stub_00844690((int)(a0), (int)(a1), (int)(a2), (int)(a3), (int)(a4));
     return (u8)((u8)t0);
 }
 

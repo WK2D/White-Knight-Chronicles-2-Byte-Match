@@ -4,7 +4,7 @@
 
 extern "C" {
 
-static int __attribute__((noinline)) stub_002d4d38(void) { int r; __asm__ volatile ("" : "=r"(r)); return r; }
+static int __attribute__((noinline)) stub_002d4d38(void* p0, int p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 
 struct unk_002d4f00_a0_0;
 struct unk_002d4f00_a0_0_0;
@@ -351,10 +351,10 @@ struct unk_002d5d34_a0 {
     unk_002d5d34_a0_4* f_4;
     unk_002d5d34_a0_8* f_8;
 };
-void* fn_002d5d34(unk_002d5d34_a0* a0) {
+void* fn_002d5d34(unk_002d5d34_a0* a0, int a1) {
     int t0;
     int v1;
-    t0 = stub_002d4d38();
+    t0 = stub_002d4d38((void*)(a0), (int)(a1));
     if ((int)((u32)(t0) & 0xffff) != (int)(65535)) {
         v1 = (int)((int)(a0->f_4->f_0->f_0) + (int)(FIELD(u32, (int)((u32)((u32)(t0) & 0xffff) << 2) + (int)(a0->f_8->f_0->f_0), 0)));
     } else {

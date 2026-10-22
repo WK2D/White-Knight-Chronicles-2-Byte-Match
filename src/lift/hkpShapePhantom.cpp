@@ -4,10 +4,20 @@
 
 extern "C" {
 
-void fn_00d74038(void);
+void fn_00d74038(int);
+void fn_00d74d28(void*);
 
-void fn_00d751c4(void) {
-    fn_00d74038();
+struct unk_00d75194_a0 {
+    void* f_0;
+};
+extern char g_00d75194_0[];
+void fn_00d75194(unk_00d75194_a0* a0) {
+    a0->f_0 = (void*)(g_00d75194_0);
+    fn_00d74d28((void*)(a0));
+}
+
+void fn_00d751c4(int a0) {
+    fn_00d74038((int)(a0));
 }
 
 }

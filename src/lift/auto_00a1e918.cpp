@@ -4,13 +4,13 @@
 
 extern "C" {
 
-static int __attribute__((noinline)) stub_00a20b04(void) { int r; __asm__ volatile ("" : "=r"(r)); return r; }
+static int __attribute__((noinline)) stub_00a20b04(int p0, int p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 
 extern char g_00a20c04_0[];
-void* fn_00a20c04(void) {
+void* fn_00a20c04(int a0, int a1) {
     int t0;
     int v0;
-    t0 = stub_00a20b04();
+    t0 = stub_00a20b04((int)(a0), (int)(a1));
     if ((int)(t0) >= (int)(0)) {
         v0 = (int)((char*)((char*)g_00a20c04_0 + 8) + (int)((int)(t0) * 600));
     } else {

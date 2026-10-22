@@ -17,4 +17,13 @@ void fn_00ba1424(unk_00ba1424_a0* a0) {
     fn_00522850((void*)(a0), (int)(304));
 }
 
+struct unk_00ba146c_a0 {
+    void* f_0;
+};
+extern char g_00ba146c_0[];
+void fn_00ba146c(unk_00ba146c_a0* a0) {
+    a0->f_0 = (void*)(g_00ba146c_0);
+    fn_005228d4((void*)(a0));
+}
+
 }

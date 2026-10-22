@@ -5,7 +5,7 @@
 extern "C" {
 
 static void __attribute__((noinline)) stub_00365104(int p0) { __asm__ volatile ("" : : "r"(p0)); }
-static void __attribute__((noinline)) stub_00365330(void) { __asm__ volatile (""); }
+static void __attribute__((noinline)) stub_00365330(int p0, int p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 
 void fn_00365174(int a0) {
     stub_00365104((int)(a0));
@@ -15,8 +15,8 @@ void fn_00365178(int a0) {
     stub_00365104((int)(a0));
 }
 
-void fn_0036548c(void) {
-    stub_00365330();
+void fn_0036548c(int a0, int a1) {
+    stub_00365330((int)(a0), (int)(a1));
 }
 
 }

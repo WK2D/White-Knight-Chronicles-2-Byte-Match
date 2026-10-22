@@ -5,6 +5,27 @@
 extern "C" {
 
 void fn_0003f9e0(int);
+void fn_0003fab0(int, u32);
+
+struct unk_0032c214_gm1c38;
+struct unk_0032c214_gm1c38_0;
+struct unk_0032c214_gm1c38_0_9c;
+struct unk_0032c214_gm1c38 {
+    unk_0032c214_gm1c38_0* f_0;
+};
+struct unk_0032c214_gm1c38_0 {
+    char pad_0[156];
+    unk_0032c214_gm1c38_0_9c* f_9c;
+};
+struct unk_0032c214_gm1c38_0_9c {
+    char pad_0[31384];
+    u64 f_7a98;
+};
+extern unk_0032c214_gm1c38 g_0032c214_0;
+int fn_0032c214(int a0) {
+    fn_0003fab0((int)(a0), (u32)(((u32)((&g_0032c214_0)->f_0->f_9c->f_7a98) >> 26) & 0x1));
+    return (int)(1);
+}
 
 int fn_0032c250(int a0) {
     fn_0003f9e0((int)(a0));

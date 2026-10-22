@@ -4,6 +4,22 @@
 
 extern "C" {
 
+void fn_00b39da8(int, u32, u32, u32, u32, float, float);
+
+struct unk_002cde58_gm26d8;
+struct unk_002cde58_gm26d8 {
+    char pad_0[4];
+    u32 f_4;
+    u32 f_8;
+    u32 f_c;
+    u32 f_10;
+    float f_14;
+    float f_18;
+};
+extern unk_002cde58_gm26d8 g_002cde58_0;
+void fn_002cde58(int a0, int a1, int a2) {
+    fn_00b39da8((int)(a2), (u32)((&g_002cde58_0)->f_4), (u32)((&g_002cde58_0)->f_8), (u32)((&g_002cde58_0)->f_c), (u32)((&g_002cde58_0)->f_10), (float)((&g_002cde58_0)->f_14), (float)((&g_002cde58_0)->f_18));
+}
 
 struct unk_002ce268_a0_38;
 struct unk_002ce268_a0_38_0;

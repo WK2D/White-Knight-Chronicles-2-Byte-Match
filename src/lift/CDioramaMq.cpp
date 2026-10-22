@@ -18,6 +18,24 @@ void fn_008c9bc0(unk_008c9bc0_a0* a0) {
     fn_00b3cd48((void*)(a0));
 }
 
+struct unk_008c9c04_a0 {
+    void* f_0;
+};
+extern char g_008c9c04_0[];
+void fn_008c9c04(unk_008c9c04_a0* a0) {
+    a0->f_0 = (void*)(g_008c9c04_0);
+    fn_00b3e6a8((void*)(a0));
+}
+
+struct unk_008c9c34_a0 {
+    void* f_0;
+};
+extern char g_008c9c34_0[];
+void fn_008c9c34(unk_008c9c34_a0* a0) {
+    a0->f_0 = (void*)(g_008c9c34_0);
+    fn_00b3e6a8((void*)(a0));
+}
+
 struct unk_008c9c64_a0 {
     void* f_0;
     char pad_4[264];

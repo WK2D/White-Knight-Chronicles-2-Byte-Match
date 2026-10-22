@@ -4,11 +4,30 @@
 
 extern "C" {
 
-int fn_00b40618(void);
+static void __attribute__((noinline)) stub_00a2ab14(u32 p0, int p1, int p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
+int fn_00b40618(int, int, int, int, int, int, int, int);
 
-int fn_00a2ac60(void) {
+struct unk_00a2abb0_gm20c4;
+struct unk_00a2abb0_gm20c4 {
+    u32 f_0;
+};
+extern unk_00a2abb0_gm20c4 g_00a2abb0_0;
+void fn_00a2abb0(int a0) {
+    stub_00a2ab14((u32)((&g_00a2abb0_0)->f_0), (int)(a0), (int)(1));
+}
+
+struct unk_00a2abc4_gm20c4;
+struct unk_00a2abc4_gm20c4 {
+    u32 f_0;
+};
+extern unk_00a2abc4_gm20c4 g_00a2abc4_0;
+void fn_00a2abc4(int a0) {
+    stub_00a2ab14((u32)((&g_00a2abc4_0)->f_0), (int)(a0), (int)(0));
+}
+
+int fn_00a2ac60(int a0, int a1, int a2, int a3, int a4, int a5, int a6, int a7) {
     int t0;
-    t0 = fn_00b40618();
+    t0 = fn_00b40618((int)(a0), (int)(a1), (int)(a2), (int)(a3), (int)(a4), (int)(a5), (int)(a6), (int)(a7));
     return (int)(t0);
 }
 

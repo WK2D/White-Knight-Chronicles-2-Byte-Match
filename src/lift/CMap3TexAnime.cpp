@@ -4,7 +4,21 @@
 
 extern "C" {
 
+void fn_00b397e8(u32, u32);
 void fn_00b3b5a8(u32);
+
+struct unk_002b9138_gm29f8;
+struct unk_002b9138_gm29f8 {
+    u32 f_0;
+};
+struct unk_002b9138_a0 {
+    char pad_0[16];
+    u32 f_10;
+};
+extern unk_002b9138_gm29f8 g_002b9138_0;
+void fn_002b9138(unk_002b9138_a0* a0) {
+    fn_00b397e8((u32)((&g_002b9138_0)->f_0), (u32)(a0->f_10));
+}
 
 struct unk_002b9168_a0 {
     char pad_0[12];

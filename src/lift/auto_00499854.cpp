@@ -15,12 +15,40 @@ static void __attribute__((noinline)) stub_0049939c(void* p0, void* p1) { __asm_
 static void __attribute__((noinline)) stub_00499558(void* p0, void* p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 static void __attribute__((noinline)) stub_00499720(void* p0, void* p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 static void __attribute__((noinline)) stub_004997d4(void* p0, void* p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
+int fn_00b97708(void*, u32, u32);
 
 extern char g_00499854_0[];
 void fn_00499854(void* a0, int a1) {
     void* t0;
     t0 = fn_00076a98((void*)(g_00499854_0), (int)(a1), (int)(0), (int)(-1), (int)(0), (int)(0));
     stub_004997d4((void*)(a0), (void*)(t0));
+}
+
+struct unk_00499b5c_gm6a0;
+struct unk_00499b5c_gm6a0_0;
+struct unk_00499b5c_gm6a0 {
+    unk_00499b5c_gm6a0_0* f_0;
+};
+struct unk_00499b5c_gm6a0_0 {
+    u32 f_0;
+    char pad_4[68];
+    u32 f_48;
+    u32 f_4c;
+    char pad_50[4];
+    u32 f_54;
+};
+extern unk_00499b5c_gm6a0 g_00499b5c_0;
+int fn_00499b5c(void) {
+    int t0;
+    int v3;
+    if ((int)((&g_00499b5c_0)->f_0->f_48) != (int)(0)) {
+        t0 = fn_00b97708((void*)((&g_00499b5c_0)->f_0), (u32)((&g_00499b5c_0)->f_0->f_4c), (u32)((&g_00499b5c_0)->f_0->f_54));
+        (&g_00499b5c_0)->f_0->f_0 = (u32)(0);
+        v3 = (int)(1);
+    } else {
+        v3 = (int)(0);
+    }
+    return (int)(v3);
 }
 
 extern char g_0049a824_0[];

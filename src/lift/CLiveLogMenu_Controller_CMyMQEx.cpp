@@ -4,6 +4,33 @@
 
 extern "C" {
 
+void fn_00045f6c(void*, int);
+int fn_0040f31c(void*);
+void fn_0079fd28(void*);
+
+struct unk_0079d628_a0_10c;
+struct unk_0079d628_a0_10c {
+    char pad_0[4456];
+    u32 f_1168;
+};
+struct unk_0079d628_a0 {
+    char pad_0[268];
+    unk_0079d628_a0_10c* f_10c;
+};
+struct unk_0079d628_a1 {
+    char pad_0[4];
+    u32 f_4;
+};
+int fn_0079d628(unk_0079d628_a0* a0, unk_0079d628_a1* a1) {
+    if ((int)(a1->f_4) != (int)(32001)) {
+        return (int)(0);
+    }
+    if ((int)(a0->f_10c->f_1168) == (int)(0)) {
+        return (int)(0);
+    }
+    fn_0079fd28((void*)(a0->f_10c->f_1168));
+    return (int)(0);
+}
 
 struct unk_0079d6f8_a0_1168;
 struct unk_0079d6f8_a0_1168 {
@@ -54,6 +81,62 @@ void fn_0079d754(unk_0079d754_a0* a0, int a1) {
         return;
     }
     a0->f_1168->f_1914 = (u16)(a1);
+}
+
+struct unk_0079d7a0_a0 {
+    char pad_0[4372];
+    u32 f_1114;
+};
+int fn_0079d7a0(unk_0079d7a0_a0* a0) {
+    if ((int)(a0->f_1114) != (int)(5)) {
+        return (int)(1);
+    }
+    fn_00045f6c((void*)((char*)a0 + 272), (int)(-1));
+    return (int)(1);
+}
+
+struct unk_0079d9dc_g6de4;
+struct unk_0079d9dc_g6de4_0;
+struct unk_0079d9dc_g6de4_0_6c;
+struct unk_0079d9dc_g6de4_0_6c_8;
+struct unk_0079d9dc_g6de4 {
+    unk_0079d9dc_g6de4_0* f_0;
+};
+struct unk_0079d9dc_g6de4_0 {
+    char pad_0[108];
+    unk_0079d9dc_g6de4_0_6c* f_6c;
+};
+struct unk_0079d9dc_g6de4_0_6c {
+    char pad_0[8];
+    unk_0079d9dc_g6de4_0_6c_8* f_8;
+};
+struct unk_0079d9dc_g6de4_0_6c_8 {
+    char pad_0[236];
+    u32 f_ec;
+};
+extern unk_0079d9dc_g6de4 g_0079d9dc_0;
+int fn_0079d9dc(void) {
+    int t0;
+    int v1;
+    int v3;
+    int v4;
+    if ((int)((&g_0079d9dc_0)->f_0->f_6c) != (int)(0)) {
+        if ((int)((&g_0079d9dc_0)->f_0->f_6c->f_8) != (int)(0)) {
+            if ((int)((&g_0079d9dc_0)->f_0->f_6c->f_8->f_ec) != (int)(0)) {
+                t0 = fn_0040f31c((void*)((&g_0079d9dc_0)->f_0->f_6c->f_8->f_ec));
+                v1 = (int)((int)(signed char)(t0));
+            } else {
+                v1 = (int)(9);
+            }
+            v3 = (int)(v1);
+        } else {
+            v3 = (int)(9);
+        }
+        v4 = (int)(v3);
+    } else {
+        v4 = (int)(9);
+    }
+    return (int)(v4);
 }
 
 }

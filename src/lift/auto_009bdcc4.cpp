@@ -5,6 +5,7 @@
 extern "C" {
 
 static void __attribute__((noinline)) stub_009be10c(void) { __asm__ volatile (""); }
+static int __attribute__((noinline)) stub_009be37c(u32 p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 
 struct unk_009be26c_gm3a70;
 struct unk_009be26c_gm3a70_0;
@@ -27,6 +28,25 @@ int fn_009be26c(unk_009be26c_a0* a0) {
     (&g_009be26c_0)->f_0->f_84 = (u32)(a0->f_4);
     (&g_009be26c_0)->f_0->f_88 = (u32)(a0->f_0);
     return (int)(0);
+}
+
+struct unk_009be48c_gm3af8;
+struct unk_009be48c_gm3af8 {
+    char pad_0[140];
+    u32 f_8c;
+    u32 f_90;
+};
+extern unk_009be48c_gm3af8 g_009be48c_0;
+int fn_009be48c(int a0) {
+    int t0;
+    if ((int)((&g_009be48c_0)->f_8c) == (int)(0)) {
+        return (int)(0);
+    }
+    if ((u32)((&g_009be48c_0)->f_90) <= (u32)(a0)) {
+        return (int)(0);
+    }
+    t0 = stub_009be37c((u32)(FIELD(u32, (int)((u32)(a0) << 2) + (int)((&g_009be48c_0)->f_8c), 0)));
+    return (int)(t0);
 }
 
 }

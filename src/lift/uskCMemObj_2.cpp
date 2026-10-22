@@ -6,7 +6,9 @@ extern "C" {
 
 static int __attribute__((noinline)) stub_00081f60(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static int __attribute__((noinline)) stub_00082098(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static void __attribute__((noinline)) stub_00083070(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 static int __attribute__((noinline)) stub_000840e0(u32 p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static void __attribute__((noinline)) stub_00084b64(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 static int __attribute__((noinline)) stub_0008539c(void* p0, void* p1, u8 p2, u8 p3, void* p4) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4)); return r; }
 void fn_000886b0(void*);
 int fn_0008893c(void*, void*, void*);
@@ -110,6 +112,11 @@ int fn_000842a4(unk_000842a4_a0* a0) {
         v0 = (int)(0);
     }
     return (int)(v0);
+}
+
+void fn_00084bf8(int a0) {
+    stub_00083070((int)(a0));
+    stub_00084b64((int)(a0));
 }
 
 int fn_000855b4(void* a0, void* a1, int a2, int a3, void* a4) {

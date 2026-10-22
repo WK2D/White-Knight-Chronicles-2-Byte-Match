@@ -5,6 +5,41 @@
 extern "C" {
 
 void fn_002d3820(int, int, void*);
+void fn_002d3940(u32, u32);
+void fn_00fc88dc(void*);
+
+struct unk_002d2b14_a0 {
+    void* f_0;
+};
+extern char g_002d2b14_0[];
+void fn_002d2b14(unk_002d2b14_a0* a0) {
+    a0->f_0 = (void*)(g_002d2b14_0);
+    fn_00fc88dc((void*)(a0));
+}
+
+struct unk_002d2bb4_a0_0;
+struct unk_002d2bb4_a0_0 {
+    u32 f_0;
+};
+struct unk_002d2bb4_a0 {
+    unk_002d2bb4_a0_0* f_0;
+    u32 f_4;
+};
+void fn_002d2bb4(unk_002d2bb4_a0* a0) {
+    fn_002d3940((u32)(a0->f_0->f_0), (u32)(a0->f_4));
+}
+
+struct unk_002d2be4_a0_0;
+struct unk_002d2be4_a0_0 {
+    u32 f_0;
+};
+struct unk_002d2be4_a0 {
+    unk_002d2be4_a0_0* f_0;
+    u32 f_4;
+};
+void fn_002d2be4(unk_002d2be4_a0* a0) {
+    fn_002d3940((u32)(a0->f_0->f_0), (u32)(a0->f_4));
+}
 
 struct unk_002d2c14_a0 {
     char pad_0[4];

@@ -4,6 +4,45 @@
 
 extern "C" {
 
+void fn_00394944(u32, u32);
+
+struct unk_00327008_gm1ccc;
+struct unk_00327008_gm1ccc_0;
+struct unk_00327008_gm1ccc_0_6c;
+struct unk_00327008_gm1ccc_0_6c_8;
+struct unk_00327008_gm1ccc {
+    unk_00327008_gm1ccc_0* f_0;
+};
+struct unk_00327008_gm1ccc_0 {
+    char pad_0[108];
+    unk_00327008_gm1ccc_0_6c* f_6c;
+};
+struct unk_00327008_gm1ccc_0_6c {
+    char pad_0[8];
+    unk_00327008_gm1ccc_0_6c_8* f_8;
+    char pad_c[4];
+    u8 f_10;
+};
+struct unk_00327008_gm1ccc_0_6c_8 {
+    char pad_0[248];
+    u32 f_f8;
+};
+struct unk_00327008_a0 {
+    u32 f_0;
+    char pad_4[52];
+    u8 f_38;
+};
+extern unk_00327008_gm1ccc g_00327008_0;
+int fn_00327008(unk_00327008_a0* a0) {
+    if ((int)(a0->f_38) == (int)(0)) {
+        if ((int)((&g_00327008_0)->f_0->f_6c->f_10) == (int)(0)) {
+            return (int)(0);
+        }
+        fn_00394944((u32)((&g_00327008_0)->f_0->f_6c->f_8->f_f8), (u32)(a0->f_0));
+        return (int)(0);
+    }
+    return (int)(0);
+}
 
 struct unk_003293f0_a0 {
     char pad_0[27];

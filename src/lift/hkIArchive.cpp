@@ -23,23 +23,6 @@ int fn_00c0dcc8(unk_00c0dcc8_a0* a0) {
     return (int)(t0);
 }
 
-struct unk_00c0e488_a0 {
-    char pad_0[8];
-    u32 f_8;
-};
-struct unk_00c0e488_vc0 {
-    virtual void vf0();
-    virtual void vf1();
-    virtual void vf2();
-    virtual void vf3();
-    virtual void vf4();
-    virtual void vf5(int, int);
-};
-void* fn_00c0e488(unk_00c0e488_a0* a0, int a1) {
-    ((unk_00c0e488_vc0*)(a0->f_8))->vf5((int)(a1), (int)(1));
-    return (void*)(a0);
-}
-
 struct unk_00c0e4e0_a0 {
     char pad_0[8];
     u32 f_8;

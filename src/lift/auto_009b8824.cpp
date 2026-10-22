@@ -4,9 +4,9 @@
 
 extern "C" {
 
-void* fn_009b95cc(void);
-void* fn_009b9664(void);
-void* fn_009b96fc(void);
+void* fn_009b95cc(int);
+void* fn_009b9664(int);
+void* fn_009b96fc(int);
 
 struct unk_009b8bec_a0 {
     u32 f_0;
@@ -24,21 +24,21 @@ int fn_009b8bec(unk_009b8bec_a0* a0, unk_009b8bec_a1* a1, unk_009b8bec_a2* a2) {
     return (int)(0);
 }
 
-void* fn_009b8d1c(void) {
+void* fn_009b8d1c(int a0) {
     void* t0;
-    t0 = fn_009b95cc();
+    t0 = fn_009b95cc((int)(a0));
     return (void*)(t0);
 }
 
-void* fn_009b8d44(void) {
+void* fn_009b8d44(int a0) {
     void* t0;
-    t0 = fn_009b9664();
+    t0 = fn_009b9664((int)(a0));
     return (void*)(t0);
 }
 
-void* fn_009b8d6c(void) {
+void* fn_009b8d6c(int a0) {
     void* t0;
-    t0 = fn_009b96fc();
+    t0 = fn_009b96fc((int)(a0));
     return (void*)(t0);
 }
 

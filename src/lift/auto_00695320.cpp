@@ -4,28 +4,43 @@
 
 extern "C" {
 
-void* fn_00043544(void*);
-void fn_000c0398(void);
+void* fn_00043544(void*, int);
+void fn_000c0398(int);
+void fn_0012bd5c(void*);
 static void __attribute__((noinline)) stub_00695f10(void* p0, void* p1, void* p2, int p3) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); }
 static void __attribute__((noinline)) stub_006960dc(void* p0, int p1, void* p2, void* p3, int p4, int p5, u8 p6) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4), "r"(p5), "r"(p6)); }
-void fn_0070a2f0(u32);
-void fn_0070a37c(u32);
+void fn_0070a2f0(u32, int, int, int);
+void fn_0070a37c(u32, int);
 void fn_00b38268(void*, int);
+
+struct unk_00695c00_g3f68;
+struct unk_00695c00_g3f68_0;
+struct unk_00695c00_g3f68 {
+    unk_00695c00_g3f68_0* f_0;
+};
+struct unk_00695c00_g3f68_0 {
+    char pad_0[128];
+    u32 f_80;
+};
+extern unk_00695c00_g3f68 g_00695c00_0;
+void fn_00695c00(void) {
+    fn_0012bd5c((void*)(((int)((&g_00695c00_0)->f_0->f_80) + 851968) + 3904));
+}
 
 struct unk_00695c3c_a0 {
     char pad_0[612];
     u32 f_264;
 };
-void fn_00695c3c(unk_00695c3c_a0* a0) {
-    fn_0070a2f0((u32)(a0->f_264));
+void fn_00695c3c(unk_00695c3c_a0* a0, int a1, int a2, int a3) {
+    fn_0070a2f0((u32)(a0->f_264), (int)(a1), (int)(a2), (int)(a3));
 }
 
 struct unk_00695c64_a0 {
     char pad_0[612];
     u32 f_264;
 };
-void fn_00695c64(unk_00695c64_a0* a0) {
-    fn_0070a37c((u32)(a0->f_264));
+void fn_00695c64(unk_00695c64_a0* a0, int a1) {
+    fn_0070a37c((u32)(a0->f_264), (int)(a1));
 }
 
 struct unk_00696164_a0 {
@@ -40,13 +55,13 @@ int fn_00696164(unk_00696164_a0* a0, int a1, void* a2, void* a3, int a4, int a5)
 
 int fn_00696618(void* a0, int a1, void* a2, int a3) {
     void* t0;
-    t0 = fn_00043544((void*)((char*)a0 + 936));
+    t0 = fn_00043544((void*)((char*)a0 + 936), (int)(a1));
     stub_00695f10((void*)(a0), (void*)(t0), (void*)(a2), (int)(a3));
     return (int)(1);
 }
 
-void fn_0069840c(void) {
-    fn_000c0398();
+void fn_0069840c(int a0) {
+    fn_000c0398((int)(a0));
 }
 
 }

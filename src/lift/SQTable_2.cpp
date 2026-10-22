@@ -4,6 +4,35 @@
 
 extern "C" {
 
+int fn_00935b68(void*, void*);
+void fn_00953204(int, int);
+static void __attribute__((noinline)) stub_00962a44(int p0, int p1, int p2, int p3, int p4, int p5) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4), "r"(p5)); }
+
+void fn_00962bd8(int a0, int a1, int a2, int a3, int a4, int a5) {
+    stub_00962a44((int)(a0), (int)(a1), (int)(a2), (int)(a3), (int)(a4), (int)(a5));
+    fn_00953204((int)(a0), (int)(0));
+}
+
+struct unk_009640bc_a0 {
+    char pad_0[144];
+    u32 f_90;
+    u32 f_94;
+};
+extern char g_009640bc_0[];
+extern char g_009640bc_1[];
+int fn_009640bc(unk_009640bc_a0* a0) {
+    int t0;
+    int t1;
+    if ((int)(a0->f_94) != (int)(0)) {
+        t0 = fn_00935b68((void*)(a0), (void*)(g_009640bc_0));
+        return (int)(t0);
+    }
+    if ((int)(a0->f_90) == (int)(2)) {
+        return (int)(-666);
+    }
+    t1 = fn_00935b68((void*)(a0), (void*)(g_009640bc_1));
+    return (int)(t1);
+}
 
 struct unk_00964124_a0 {
     char pad_0[24];

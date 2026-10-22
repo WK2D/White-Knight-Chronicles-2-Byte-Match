@@ -4,14 +4,14 @@
 
 extern "C" {
 
-static void* __attribute__((noinline)) stub_008e1d0c(void) { void* r; __asm__ volatile ("" : "=r"(r)); return r; }
+static void* __attribute__((noinline)) stub_008e1d0c(int p0, int p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static int __attribute__((noinline)) stub_008e1fa8(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 
-int fn_008e2094(void) {
+int fn_008e2094(int a0, int a1) {
     void* t0;
     int t1;
     int v0;
-    t0 = stub_008e1d0c();
+    t0 = stub_008e1d0c((int)(a0), (int)(a1));
     if ((int)(t0) != (int)(0)) {
         t1 = stub_008e1fa8((void*)(t0));
         v0 = (int)(1);
