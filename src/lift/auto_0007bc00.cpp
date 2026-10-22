@@ -26,6 +26,27 @@ u16 fn_0007d5e8(int a0) {
     return (u16)((u16)t1);
 }
 
+struct unk_0007d640_a0 {
+    u32 f_0;
+};
+void fn_0007d640(unk_0007d640_a0* a0) {
+    a0->f_0 = (u32)(2147483647);
+}
+
+struct unk_0007d678_a0 {
+    u32 f_0;
+};
+int fn_0007d678(unk_0007d678_a0* a0) {
+    return (int)((int)((u32)(~((u32)(a0->f_0) | (u32)(a0->f_0))) >> 31));
+}
+
+struct unk_0007d6a8_a0 {
+    u32 f_0;
+};
+int fn_0007d6a8(unk_0007d6a8_a0* a0) {
+    return (int)((int)((u32)(-(int)((u32)(~((u32)(a0->f_0) | (u32)(a0->f_0))) & 0x7fffffff)) >> 31));
+}
+
 struct unk_0007d6d4_a0 {
     u32 f_0;
 };

@@ -5,6 +5,14 @@
 extern "C" {
 
 
+struct unk_00882fb8_a0 {
+    char pad_0[116];
+    u32 f_74;
+};
+void* fn_00882fb8(unk_00882fb8_a0* a0) {
+    return (void*)((char*)((char*)a0 + (int)((int)(a0->f_74) * 76)) + 40);
+}
+
 struct unk_00882fd4_a0 {
     char pad_0[120];
     u8 f_78;

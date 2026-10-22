@@ -4,10 +4,49 @@
 
 extern "C" {
 
-static void __attribute__((noinline)) stub_00514ecc(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
+void* fn_00096c04(void);
+static int __attribute__((noinline)) stub_00514cf4(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+int fn_00b38a78(void*);
+void fn_00b38a98(void*);
 
-int fn_00514f68(void* a0) {
-    stub_00514ecc((void*)((char*)a0 + 332));
+struct unk_00514ecc_a0 {
+    char pad_0[1024];
+    u32 f_400;
+};
+int fn_00514ecc(unk_00514ecc_a0* a0) {
+    void* t0;
+    int t1;
+    int t2;
+    void* t3;
+    u32 v0;
+    int v1;
+    int v2;
+    void* v3;
+    u32 v4;
+    int v5;
+    t0 = fn_00096c04();
+    t1 = fn_00b38a78((void*)(t0));
+    if ((int)(a0->f_400) != (int)(0)) {
+        v0 = (u32)(a0->f_400);
+        v1 = (int)(t1);
+        v2 = (int)(0);
+        v3 = (void*)(a0);
+        do {
+            t2 = stub_00514cf4((void*)(v3));
+            v0 = (u32)(a0->f_400);
+            v1 = (int)(t2);
+            v2 = (int)(v2 + 1);
+            v3 = (void*)((char*)v3 + 8);
+        } while ((u32)(v0) > (u32)(v2));
+        v4 = (u32)(a0->f_400);
+        v5 = (int)(t2);
+    } else {
+        v4 = (u32)(a0->f_400);
+        v5 = (int)(t1);
+    }
+    t3 = fn_00096c04();
+    fn_00b38a98((void*)(t3));
+    a0->f_400 = (u32)(0);
     return (int)(1);
 }
 

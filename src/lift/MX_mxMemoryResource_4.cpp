@@ -8,6 +8,14 @@ void fn_00af6390(int, int);
 void fn_00af63a0(void);
 void fn_00af63bc(void);
 
+struct unk_00af9df8_a0 {
+    char pad_0[32];
+    u8 f_20;
+};
+void fn_00af9df8(unk_00af9df8_a0* a0, int a1) {
+    a0->f_20 = (u8)((u32)(a1) | 0x20);
+}
+
 struct unk_00af9e04_a0 {
     char pad_0[8];
     u32 f_8;

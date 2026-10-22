@@ -33,4 +33,33 @@ int fn_00417ebc(int a0, int a1, int a2) {
     return (int)(a2);
 }
 
+struct unk_00417f94_a0 {
+    char pad_0[2394];
+    u16 f_95a;
+    char pad_95c[8];
+    u32 f_964;
+};
+int fn_00417f94(unk_00417f94_a0* a0, int a1) {
+    int v0;
+    int v1;
+    if ((int)(a0->f_964) != (int)(0)) {
+        if ((u32)(a0->f_95a) > (u32)(a1)) {
+            v0 = (int)((int)(short)(FIELD(u16, (int)((u32)(a1) << 1) + (int)(a0->f_964), 0)));
+        } else {
+            v0 = (int)(0);
+        }
+        v1 = (int)(v0);
+    } else {
+        v1 = (int)((int)(short)(a1));
+    }
+    return (int)(v1);
+}
+
+struct unk_00417fd0_a1 {
+    u32 f_0;
+};
+int fn_00417fd0(int a0, unk_00417fd0_a1* a1) {
+    return (int)((int)(short)(FIELD(u16, a1->f_0, 12)));
+}
+
 }

@@ -5,9 +5,34 @@
 extern "C" {
 
 void fn_00046268(void*);
+int fn_00691ed8(u32);
+
+struct unk_006c3508_a0 {
+    char pad_0[120];
+    u32 f_78;
+};
+void* fn_006c3508(unk_006c3508_a0* a0) {
+    return (void*)((char*)((char*)a0 + (int)((int)(a0->f_78) * 76)) + 44);
+}
 
 void fn_006c35e0(void* a0) {
     fn_00046268((void*)((char*)a0 + 44));
+}
+
+struct unk_006c360c_a0 {
+    char pad_0[36];
+    u32 f_24;
+};
+struct unk_006c360c_a1 {
+    u8 f_0;
+};
+int fn_006c360c(unk_006c360c_a0* a0, unk_006c360c_a1* a1) {
+    int t0;
+    t0 = fn_00691ed8((u32)(a0->f_24));
+    if ((int)((u32)(t0) & 0xff) != (int)(0)) {
+        a1->f_0 = (u8)(1);
+    }
+    return (int)(1);
 }
 
 }

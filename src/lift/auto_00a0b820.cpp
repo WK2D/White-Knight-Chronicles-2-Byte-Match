@@ -34,6 +34,14 @@ int fn_00a0cd38(unk_00a0cd38_a0* a0) {
     return (int)((int)(a0->f_44) - (int)((int)(a0->f_48) - (int)(a0->f_40)));
 }
 
+struct unk_00a0ce74_a1 {
+    char pad_0[8];
+    u8 f_8;
+};
+int fn_00a0ce74(int a0, unk_00a0ce74_a1* a1, int a2) {
+    return (int)((int)((u32)((u32)(a1->f_8 + 1) << 24) | (u32)(a2)));
+}
+
 int fn_00a0ce8c(int a0, int a1) {
     if ((int)(a0) != (int)(0)) {
         return (int)(a0);

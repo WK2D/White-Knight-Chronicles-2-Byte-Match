@@ -4,6 +4,7 @@
 
 extern "C" {
 
+void fn_0012d83c(void*);
 int fn_00b388d8(void);
 int fn_00b388e8(void);
 void fn_00b388f8(void*, void*, void*, u16, u16);
@@ -15,6 +16,10 @@ void fn_00102154(int a0, void* a1, void* a2) {
     t0 = fn_00b388d8();
     t1 = fn_00b388e8();
     fn_00b388f8((void*)(a1), (void*)(a2), (void*)(g_00102154_0), (u16)((u16)t0), (u16)((u16)t1));
+}
+
+void fn_00102e60(int a0) {
+    fn_0012d83c((void*)(((int)(a0) + 851968) + 3904));
 }
 
 }

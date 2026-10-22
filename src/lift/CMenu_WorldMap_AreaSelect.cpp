@@ -41,6 +41,20 @@ int fn_007a1dfc(unk_007a1dfc_a0* a0, unk_007a1dfc_a1* a1) {
     return (int)(1);
 }
 
+struct unk_007a1e2c_a0 {
+    char pad_0[50];
+    u16 f_32;
+    char pad_34[2];
+    u16 f_36;
+};
+int fn_007a1e2c(unk_007a1e2c_a0* a0) {
+    return (int)((int)(short)((int)(a0->f_32) + (int)(a0->f_36)));
+}
+
+int fn_007a1e40(int a0, int a1) {
+    return (int)((int)(short)(((u32)(a1) << 2) + -32));
+}
+
 struct unk_007a1f1c_a0 {
     char pad_0[120];
     u8 f_78;

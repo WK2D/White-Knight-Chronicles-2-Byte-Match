@@ -15,4 +15,24 @@ u8 fn_00250d08(int a0, int a1) {
     return (u8)((u8)t1);
 }
 
+struct unk_00262640_a0 {
+    char pad_0[134];
+    u16 f_86;
+};
+int fn_00262640(unk_00262640_a0* a0, int a1) {
+    return (int)((int)((u32)(-(int)((u32)(a0->f_86) & (u32)(a1))) >> 31));
+}
+
+struct unk_00262658_a0 {
+    char pad_0[134];
+    u16 f_86;
+};
+void fn_00262658(unk_00262658_a0* a0, int a1, int a2) {
+    if ((int)(a2) != (int)(0)) {
+        a0->f_86 = (u16)((u32)(a1) | (u32)(a0->f_86));
+        return;
+    }
+    a0->f_86 = (u16)((u32)(a0->f_86) & ~(u32)(a1));
+}
+
 }

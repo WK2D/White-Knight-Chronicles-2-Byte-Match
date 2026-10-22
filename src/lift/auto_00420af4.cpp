@@ -29,4 +29,52 @@ void* fn_00420dd0(unk_00420dd0_a0* a0, int a1, int a2) {
     return (void*)(v0);
 }
 
+struct unk_00420e34_a0 {
+    char pad_0[16];
+    u32 f_10;
+    char pad_14[4];
+    u32 f_18;
+};
+void* fn_00420e34(unk_00420e34_a0* a0, int a1) {
+    int v0;
+    if ((u32)(a0->f_18) > (u32)(a1)) {
+        v0 = (int)(FIELD(u32, (int)((u32)(a1) << 4) + (int)(a0->f_10), 0));
+    } else {
+        v0 = (int)(0);
+    }
+    return (void*)(v0);
+}
+
+struct unk_00420f94_a0 {
+    char pad_0[12];
+    u32 f_c;
+    char pad_10[12];
+    u32 f_1c;
+};
+void* fn_00420f94(unk_00420f94_a0* a0, int a1) {
+    int v0;
+    if ((u32)(a0->f_c) > (u32)(a1)) {
+        v0 = (int)(FIELD(u32, (int)((u32)(a1) << 3) + (int)(a0->f_1c), 4));
+    } else {
+        v0 = (int)(0);
+    }
+    return (void*)(v0);
+}
+
+struct unk_00421018_a0 {
+    char pad_0[16];
+    u32 f_10;
+    char pad_14[4];
+    u32 f_18;
+};
+void* fn_00421018(unk_00421018_a0* a0, int a1) {
+    int v0;
+    if ((u32)(a0->f_18) > (u32)(a1)) {
+        v0 = (int)(FIELD(u32, (int)((u32)(a1) << 4) + (int)(a0->f_10), 12));
+    } else {
+        v0 = (int)(0);
+    }
+    return (void*)(v0);
+}
+
 }

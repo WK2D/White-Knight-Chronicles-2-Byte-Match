@@ -9,6 +9,17 @@ static int __attribute__((noinline)) stub_0006f598(void* p0, u16 p1) { int r; __
 static int __attribute__((noinline)) stub_00070600(void* p0, u8 p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static void* __attribute__((noinline)) stub_00071f20(void* p0, int p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 
+extern char g_0006f0f4_0[];
+void* fn_0006f0f4(int a0) {
+    int v0;
+    if ((u32)(a0) <= (u32)(15)) {
+        v0 = (int)((char*)g_0006f0f4_0 + (int)((int)(a0) * 2500));
+    } else {
+        v0 = (int)(0);
+    }
+    return (void*)(v0);
+}
+
 void* fn_0006f114(void) {
     return (void*)(-1);
 }
@@ -19,6 +30,17 @@ u8 fn_0006f758(int a0) {
     t0 = stub_0006f220();
     t1 = stub_0006f598((void*)(t0), (u16)((u16)a0));
     return (u8)((u8)t1);
+}
+
+extern char g_0006f8ec_0[];
+int fn_0006f8ec(int a0) {
+    int v0;
+    if ((u32)(a0) <= (u32)(15)) {
+        v0 = (int)((u32)((int)(FIELD(u16, (int)(g_0006f8ec_0) + 65536, -25518)) >> (int)((u32)(a0) & 0xf)) & 0x1);
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
 }
 
 u8 fn_000711b8(int a0) {

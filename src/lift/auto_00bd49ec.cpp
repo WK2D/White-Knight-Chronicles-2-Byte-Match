@@ -19,6 +19,22 @@ int fn_00bd5f60(int a0, int a1) {
     return (int)(a1);
 }
 
+struct unk_00bd5f68_a0 {
+    char pad_0[13];
+    u8 f_d;
+};
+int fn_00bd5f68(unk_00bd5f68_a0* a0) {
+    return (int)((int)(signed char)(a0->f_d));
+}
+
+struct unk_00bd5f74_a0 {
+    char pad_0[12];
+    u8 f_c;
+};
+int fn_00bd5f74(unk_00bd5f74_a0* a0) {
+    return (int)((int)(signed char)(a0->f_c));
+}
+
 void* fn_00bd5fec(int a0, void* a1, void* a2, int a3, int a4) {
     fn_00b3d438((int)(a4), (void*)(a1), (void*)((int)(a2) - (int)(a1)));
     return (void*)(a2);

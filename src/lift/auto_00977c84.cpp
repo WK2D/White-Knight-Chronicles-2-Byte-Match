@@ -4,28 +4,96 @@
 
 extern "C" {
 
+int fn_0093524c(int);
 int fn_0093556c(void);
+int fn_00935968(int, int, int, int);
 void fn_00936ff8(int, int);
+int fn_00938a98(int, int);
 void fn_0093925c(void);
 void fn_00939384(void);
+int fn_00939664(int, int);
+int fn_009397e0(int, int);
+int fn_00939c08(int, int, int);
 int fn_0093a500(int, int);
+int fn_0093ab54(int, int, int);
 int fn_0093ad4c(int, int);
 void fn_0093afec(int, int);
+int fn_0093b1d4(int, int);
+int fn_0093b3f4(int, int);
 int fn_0093bba8(int, int);
 int fn_0093c484(int, int);
 void fn_0093d5a0(int, int);
+int fn_0093da60(int, int);
 int fn_0093f298(int, int);
 void fn_009645d8(void*, void*);
+
+int fn_00977eb0(int a0) {
+    int t0;
+    t0 = fn_00938a98((int)(a0), (int)(1));
+    return (int)((int)((u32)((int)(t0) >> 31) | 0x1));
+}
+
+int fn_00977ee4(int a0) {
+    int t0;
+    t0 = fn_009397e0((int)(a0), (int)(1));
+    return (int)((int)((u32)((int)(t0) >> 31) | 0x1));
+}
+
+int fn_00977f18(int a0) {
+    int t0;
+    t0 = fn_00939664((int)(a0), (int)(-1));
+    return (int)((int)((u32)((int)(t0) >> 31) | 0x1));
+}
+
+int fn_00977f4c(int a0) {
+    int t0;
+    t0 = fn_0093b3f4((int)(a0), (int)(-3));
+    return (int)((int)((u32)((int)(t0) >> 31) | 0x1));
+}
+
+int fn_00977f80(int a0) {
+    int t0;
+    t0 = fn_0093b1d4((int)(a0), (int)(-2));
+    return (int)((int)((u32)((int)(t0) >> 31) | 0x1));
+}
 
 int fn_00977fec(void* a0) {
     fn_009645d8((void*)(a0), (void*)((char*)a0 + 56));
     return (int)(1);
 }
 
+int fn_00978020(int a0) {
+    int t0;
+    int t1;
+    t0 = fn_0093524c((int)(a0));
+    t1 = fn_00935968((int)(a0), (int)(t0 + -1), (int)(1), (int)(1));
+    return (int)((int)((u32)((int)(t1) >> 31) | 0x1));
+}
+
+int fn_00978078(int a0) {
+    int t0;
+    int t1;
+    t0 = fn_0093524c((int)(a0));
+    t1 = fn_00935968((int)(a0), (int)(t0 + -1), (int)(1), (int)(0));
+    return (int)((int)((u32)((int)(t1) >> 31) | 0x1));
+}
+
+int fn_009780d0(int a0) {
+    int t0;
+    t0 = fn_0093da60((int)(a0), (int)(1));
+    return (int)((int)((u32)((int)(t0) >> 31) | 0x1));
+}
+
 int fn_0097825c(int a0) {
     int t0;
     t0 = fn_0093a500((int)(a0), (int)(-1));
     return (int)(t0);
+}
+
+int fn_00978288(int a0) {
+    int t0;
+    t0 = fn_0093ab54((int)(a0), (int)(1), (int)(1));
+    return (int)((int)((u32)((int)(t0) >> 31) | 0x1));
 }
 
 int fn_009782c0(int a0) {
@@ -50,6 +118,12 @@ int fn_009783c8(int a0) {
     return (int)(1);
 }
 
+int fn_009783f4(int a0) {
+    int t0;
+    t0 = fn_0093bba8((int)(a0), (int)(-2));
+    return (int)((int)((u32)((int)(t0) >> 31) | 0x1));
+}
+
 int fn_00978428(int a0) {
     int t0;
     t0 = fn_0093bba8((int)(a0), (int)(-2));
@@ -59,6 +133,12 @@ int fn_00978428(int a0) {
     }
     fn_00936ff8((int)(a0), (int)(0));
     return (int)(1);
+}
+
+int fn_009784a0(int a0) {
+    int t0;
+    t0 = fn_00939c08((int)(a0), (int)(1), (int)(1));
+    return (int)((int)((u32)((int)(t0) >> 31) | 0x1));
 }
 
 int fn_009784d8(int a0) {

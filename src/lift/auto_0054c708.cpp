@@ -11,6 +11,7 @@ void fn_0056c22c(u32);
 void* fn_00587494(u32);
 int fn_00587540(u32);
 void fn_00587c4c(u32);
+void fn_00b37f58(void*, int, int);
 
 struct unk_0054c954_a0 {
     char pad_0[8];
@@ -38,6 +39,10 @@ struct unk_0054c9ec_a0 {
 };
 void fn_0054c9ec(unk_0054c9ec_a0* a0) {
     fn_00587c4c((u32)(a0->f_8));
+}
+
+void fn_0054ca50(int a0, int a1) {
+    fn_00b37f58((void*)(((int)(a0) + 131072) + 8392), (int)(a1), (int)(224));
 }
 
 struct unk_0054d17c_a0 {

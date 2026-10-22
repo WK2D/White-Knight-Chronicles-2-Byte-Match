@@ -5,6 +5,19 @@
 extern "C" {
 
 static int __attribute__((noinline)) stub_00557ca0(void* p0, u32 p1, int p2, int p3) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); return r; }
+void* fn_005b2dc4(void*);
+
+void* fn_00553480(int a0) {
+    void* t0;
+    int v0;
+    t0 = fn_005b2dc4((void*)(((int)(a0) + 131072) + -3368));
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)(FIELD(u32, t0, 60));
+    } else {
+        v0 = (int)(0);
+    }
+    return (void*)(v0);
+}
 
 struct unk_00557e2c_a0 {
     char pad_0[24];

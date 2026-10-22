@@ -30,4 +30,20 @@ int fn_00a5ec0c(unk_00a5ec0c_a0* a0, unk_00a5ec0c_a1* a1) {
     return (int)(1);
 }
 
+struct unk_00a5ec6c_a0 {
+    char pad_0[20];
+    u32 f_14;
+};
+u32 fn_00a5ec6c(unk_00a5ec6c_a0* a0, int a1) {
+    return (u32)(FIELD(u32, (int)((u32)(a1) << 2) + (int)(a0->f_14), 0));
+}
+
+struct unk_00a5ec84_a0 {
+    char pad_0[20];
+    u32 f_14;
+};
+u32 fn_00a5ec84(unk_00a5ec84_a0* a0, int a1) {
+    return (u32)(FIELD(u32, (int)((u32)(a1) << 2) + (int)(a0->f_14), 0));
+}
+
 }

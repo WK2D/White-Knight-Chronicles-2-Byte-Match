@@ -28,4 +28,12 @@ int fn_00b91788(unk_00b91788_a0* a0, int a1) {
     return (int)(a1);
 }
 
+struct unk_00b91794_a0 {
+    char pad_0[1032];
+    u8 f_408;
+};
+int fn_00b91794(unk_00b91794_a0* a0) {
+    return (int)((int)(signed char)(a0->f_408));
+}
+
 }

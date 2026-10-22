@@ -6,6 +6,11 @@ extern "C" {
 
 void* fn_00b38008(void);
 
+extern char g_0003576c_0[];
+u32 fn_0003576c(void) {
+    return (u32)(FIELD(u32, (int)(g_0003576c_0) + 196608, 7356));
+}
+
 void* fn_00035aa8(void) {
     void* t0;
     t0 = fn_00b38008();

@@ -6,6 +6,29 @@ extern "C" {
 
 void* fn_00076a98(void*, int, int, int, int, int);
 static int __attribute__((noinline)) stub_00124e30(void* p0, void* p1, void* p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
+static int __attribute__((noinline)) stub_00124f78(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static int __attribute__((noinline)) stub_001285c0(void* p0, u32 p1, void* p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
+
+struct unk_00128848_a0 {
+    char pad_0[5080];
+    u32 f_13d8;
+};
+int fn_00128848(unk_00128848_a0* a0, void* a1) {
+    int t0;
+    int t1;
+    int v0;
+    int v1;
+    t0 = stub_00124f78((void*)(a0));
+    if ((int)(t0) == (int)(0)) {
+        t1 = stub_001285c0((void*)((char*)a0 + 1092), (u32)(a0->f_13d8), (void*)(a1));
+        v0 = (int)((u32)(t1) & 0xff);
+        v1 = (int)(t1);
+    } else {
+        v0 = (int)(0);
+        v1 = (int)((char*)a0 + 1092);
+    }
+    return (int)(v0);
+}
 
 extern char g_00128e60_0[];
 u8 fn_00128e60(void* a0, int a1, void* a2) {

@@ -29,4 +29,22 @@ int fn_00a2b9a4(void) {
     return (int)(1);
 }
 
+struct unk_00a2bce0_a0 {
+    u32 f_0;
+    u32 f_4;
+};
+void fn_00a2bce0(unk_00a2bce0_a0* a0) {
+    a0->f_0 = (u32)(1179209555);
+    a0->f_4 = (u32)(1868720672);
+}
+
+struct unk_00a2bcfc_a0 {
+    u32 f_0;
+    u32 f_4;
+};
+void fn_00a2bcfc(unk_00a2bcfc_a0* a0) {
+    a0->f_0 = (u32)(1179209555);
+    a0->f_4 = (u32)(1868720672);
+}
+
 }

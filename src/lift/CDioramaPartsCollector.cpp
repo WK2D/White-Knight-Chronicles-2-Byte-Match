@@ -6,6 +6,22 @@ extern "C" {
 
 void* fn_00bb9d5c(void*);
 
+struct unk_008c6cf0_a0 {
+    char pad_0[204];
+    u32 f_cc;
+};
+void fn_008c6cf0(unk_008c6cf0_a0* a0, int a1) {
+    a0->f_cc = (u32)((u32)(a0->f_cc) | (u32)(a1));
+}
+
+struct unk_008c6d00_a0 {
+    char pad_0[204];
+    u32 f_cc;
+};
+void fn_008c6d00(unk_008c6d00_a0* a0, int a1) {
+    a0->f_cc = (u32)((u32)(a0->f_cc) & ~(u32)(a1));
+}
+
 void* fn_008c6d7c(void* a0) {
     void* t0;
     t0 = fn_00bb9d5c((void*)((char*)a0 + 196));

@@ -37,6 +37,28 @@ void fn_00a5ea10(unk_00a5ea10_a0* a0, int a1) {
     fn_00a5e7c0((int)(a1));
 }
 
+struct unk_00a5eb4c_a0 {
+    char pad_0[32];
+    u32 f_20;
+};
+u32 fn_00a5eb4c(unk_00a5eb4c_a0* a0, int a1) {
+    return (u32)(FIELD(u32, (int)((u32)(a1) << 2) + (int)(a0->f_20), 0));
+}
+
+struct unk_00a5eb6c_a0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual int vf5(void);
+};
+u32 fn_00a5eb6c(unk_00a5eb6c_a0* a0) {
+    int t0;
+    t0 = a0->vf5();
+    return (u32)((u32)(((u32)(t0 + 15) & 0xfffffff0) + 48) & 0xfffffff0);
+}
+
 struct unk_00a5ebbc_a2 {
     u32 f_0;
 };

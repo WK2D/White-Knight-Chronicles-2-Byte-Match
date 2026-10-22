@@ -39,12 +39,12 @@ more native with every green square.
   functions byte for byte.
 - **Compiler flags:** `-O2 -fno-ivopts`. A counted loop in `CPostEffectManager`
   matches only with induction-variable optimization off.
-- **Code:** 55,164 functions in 16.5 MB of PowerPC code. **11,068 match**
-  (1.46% of the code): three by hand, the rest small functions written by
+- **Code:** 55,164 functions in 16.5 MB of PowerPC code. **11,956 match**
+  (1.74% of the code): three by hand, the rest small functions written by
   [`tools/gen_simple.py`](tools/gen_simple.py) from their instruction shape
   (empty bodies, constant returns, field getters and setters, global loads,
   struct clears, tail calls with constant arguments, empty derived-class
-  destructors), and functions with forward-only control flow lifted to C by
+  destructors), and functions lifted to C from their machine code by
   [`tools/lift.py`](tools/lift.py). Every one is verified byte for byte like
   any other.
 - **Units:** about 4,600, inferred from the stripped executable by

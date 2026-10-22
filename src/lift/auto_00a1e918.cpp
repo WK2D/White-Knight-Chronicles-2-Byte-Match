@@ -4,41 +4,15 @@
 
 extern "C" {
 
-static int __attribute__((noinline)) stub_00a20c04(int p0, void* p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
+static int __attribute__((noinline)) stub_00a20b04(void) { int r; __asm__ volatile ("" : "=r"(r)); return r; }
 
-extern char g_00a20c44_0[];
-void* fn_00a20c44(int a0) {
+extern char g_00a20c04_0[];
+void* fn_00a20c04(void) {
     int t0;
     int v0;
-    t0 = stub_00a20c04((int)(a0), (void*)(g_00a20c44_0));
-    if ((int)(t0) != (int)(0)) {
-        v0 = (int)(t0 + 284);
-    } else {
-        v0 = (int)(0);
-    }
-    return (void*)(v0);
-}
-
-extern char g_00a20c7c_0[];
-void* fn_00a20c7c(int a0) {
-    int t0;
-    int v0;
-    t0 = stub_00a20c04((int)(a0), (void*)(g_00a20c7c_0));
-    if ((int)(t0) != (int)(0)) {
-        v0 = (int)(t0 + 28);
-    } else {
-        v0 = (int)(0);
-    }
-    return (void*)(v0);
-}
-
-extern char g_00a20dc0_0[];
-void* fn_00a20dc0(int a0) {
-    int t0;
-    int v0;
-    t0 = stub_00a20c04((int)(a0), (void*)(g_00a20dc0_0));
-    if ((int)(t0) != (int)(0)) {
-        v0 = (int)(t0 + 12);
+    t0 = stub_00a20b04();
+    if ((int)(t0) >= (int)(0)) {
+        v0 = (int)((char*)((char*)g_00a20c04_0 + 8) + (int)((int)(t0) * 600));
     } else {
         v0 = (int)(0);
     }

@@ -6,6 +6,14 @@ extern "C" {
 
 void* fn_00b3ccb8(u32);
 
+struct unk_007fb768_a0 {
+    char pad_0[116];
+    u32 f_74;
+};
+void* fn_007fb768(unk_007fb768_a0* a0) {
+    return (void*)((char*)((char*)a0 + (int)((int)(a0->f_74) * 76)) + 40);
+}
+
 struct unk_007fb880_a0 {
     char pad_0[36];
     u32 f_24;

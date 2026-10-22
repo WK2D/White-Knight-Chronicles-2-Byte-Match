@@ -18,4 +18,12 @@ void fn_00b04584(unk_00b04584_a0* a0) {
     a0->f_8 = (u32)(a0->f_8 + 4);
 }
 
+struct unk_00b04594_a0 {
+    char pad_0[8];
+    u32 f_8;
+};
+void fn_00b04594(unk_00b04594_a0* a0, int a1) {
+    a0->f_8 = (u32)((int)(a0->f_8) + (int)((u32)(a1) << 2));
+}
+
 }

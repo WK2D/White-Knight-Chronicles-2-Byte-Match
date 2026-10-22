@@ -9,4 +9,14 @@ void* fn_000784d8(void) {
     return (void*)(-1);
 }
 
+int fn_00078e7c(int a0) {
+    if ((int)(a0) != (int)(50111)) {
+        if ((int)((u32)(a0) & 0x400) != (int)(0)) {
+            return (int)((int)((u32)(a0) & 0xfffe));
+        }
+        return (int)((int)((u32)(a0) & (u32)(65503)));
+    }
+    return (int)((int)50616);
+}
+
 }

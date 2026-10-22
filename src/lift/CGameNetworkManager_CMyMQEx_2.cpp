@@ -4,12 +4,25 @@
 
 extern "C" {
 
-void* fn_00b4ecb4(int, int);
 
-void* fn_00b4ecc0(int a0, int a1, int a2) {
-    void* t0;
-    t0 = fn_00b4ecb4((int)((int)(a0) + (int)(a1)), (int)(a2));
-    return (void*)(t0);
+void* fn_00b4e914(int a0, int a1) {
+    return (void*)((u32)((int)(a0) + (int)(a1)) & ~(u32)(a1));
+}
+
+void* fn_00b4ec84(int a0, int a1) {
+    return (void*)((u32)((int)(a0) + (int)(a1)) & ~(u32)(a1));
+}
+
+void* fn_00b4ec94(int a0, int a1) {
+    return (void*)((u32)((int)(a0) + (int)(a1)) & ~(u32)(a1));
+}
+
+void* fn_00b4eca4(int a0, int a1) {
+    return (void*)((u32)((int)(a0) + (int)(a1)) & ~(u32)(a1));
+}
+
+int fn_00b4ecb4(int a0, int a1) {
+    return (int)((int)((u32)(a0) & ~(u32)(a1)));
 }
 
 }

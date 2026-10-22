@@ -17,4 +17,20 @@ void fn_00bd60e8(unk_00bd60e8_a0* a0) {
     fn_00aa3054((void*)(a0), (int)(8));
 }
 
+struct unk_00bd6160_a0 {
+    char pad_0[16];
+    u32 f_10;
+};
+int fn_00bd6160(unk_00bd6160_a0* a0, int a1) {
+    return (int)((int)(signed char)(FIELD(u16, (int)(((u32)(a1) << 1) & 0x1fe) + (int)(a0->f_10), 0)));
+}
+
+struct unk_00bd617c_a0 {
+    char pad_0[12];
+    u32 f_c;
+};
+int fn_00bd617c(unk_00bd617c_a0* a0, int a1) {
+    return (int)((int)(signed char)(FIELD(u16, (int)(((u32)(a1) << 1) & 0x1fe) + (int)(a0->f_c), 0)));
+}
+
 }

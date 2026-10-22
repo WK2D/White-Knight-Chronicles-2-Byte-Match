@@ -5,6 +5,18 @@
 extern "C" {
 
 
+struct unk_0016040c_a0 {
+    char pad_0[32];
+    u16 f_20;
+};
+void fn_0016040c(unk_0016040c_a0* a0, int a1, int a2) {
+    if ((int)(a2) != (int)(0)) {
+        a0->f_20 = (u16)((u32)(a1) | (u32)(a0->f_20));
+        return;
+    }
+    a0->f_20 = (u16)((u32)(a0->f_20) & ~(u32)(a1));
+}
+
 struct unk_001607fc_a1 {
     u32 f_0;
 };

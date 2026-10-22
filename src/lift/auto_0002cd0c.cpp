@@ -4,6 +4,13 @@
 
 extern "C" {
 
+static int __attribute__((noinline)) stub_0002d16c(void) { int r; __asm__ volatile ("" : "=r"(r)); return r; }
+
+void* fn_0002d19c(void) {
+    int t0;
+    t0 = stub_0002d16c();
+    return (void*)((int)((u32)(t0) >> 4) + (int)((u32)(-(int)((u32)(t0) & 0xf)) >> 31));
+}
 
 struct unk_0002d3d8_a0 {
     char pad_0[32];

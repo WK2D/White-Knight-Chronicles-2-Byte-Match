@@ -16,6 +16,105 @@ u8 fn_003d5740(void* a0, int a1, int a2, int a3, void* a4) {
     return (u8)((u8)t1);
 }
 
+struct unk_003d5890_a0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual void vf5();
+    virtual void vf6();
+    virtual void vf7();
+    virtual void vf8();
+    virtual void vf9();
+    virtual void vf10();
+    virtual void vf11();
+    virtual void vf12();
+    virtual void vf13();
+    virtual void vf14();
+    virtual void vf15();
+    virtual void vf16();
+    virtual void vf17();
+    virtual void* vf18(void);
+};
+int fn_003d5890(unk_003d5890_a0* a0) {
+    void* t0;
+    int v0;
+    t0 = a0->vf18();
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)((int)(short)(FIELD(u16, t0, 0)));
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
+struct unk_003d5a24_a0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual void vf5();
+    virtual void vf6();
+    virtual void vf7();
+    virtual void vf8();
+    virtual void vf9();
+    virtual void vf10();
+    virtual void vf11();
+    virtual void vf12();
+    virtual void vf13();
+    virtual void vf14();
+    virtual void vf15();
+    virtual void vf16();
+    virtual void vf17();
+    virtual void* vf18(void);
+};
+int fn_003d5a24(unk_003d5a24_a0* a0) {
+    void* t0;
+    int v0;
+    t0 = a0->vf18();
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)((int)(short)(FIELD(u16, t0, 2)));
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
+struct unk_003d5a80_a0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual void vf5();
+    virtual void vf6();
+    virtual void vf7();
+    virtual void vf8();
+    virtual void vf9();
+    virtual void vf10();
+    virtual void vf11();
+    virtual void vf12();
+    virtual void vf13();
+    virtual void vf14();
+    virtual void vf15();
+    virtual void vf16();
+    virtual void vf17();
+    virtual void* vf18(void);
+};
+int fn_003d5a80(unk_003d5a80_a0* a0) {
+    void* t0;
+    int v0;
+    t0 = a0->vf18();
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)((int)(signed char)(FIELD(u8, t0, 4)));
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
 struct unk_003d5adc_a0 {
     virtual void vf0();
     virtual void vf1();

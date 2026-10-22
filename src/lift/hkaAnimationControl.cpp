@@ -5,6 +5,28 @@
 extern "C" {
 
 
+extern char g_00f0d548_0[];
+void fn_00f0d548(int a0, int a1) {
+    if ((int)(a0) != (int)(1)) {
+        return;
+    }
+    if ((int)(a1) != (int)(65535)) {
+        return;
+    }
+    FIELD(u8, g_00f0d548_0, 0) = (u8)(0);
+}
+
+extern char g_00f0d860_0[];
+void fn_00f0d860(int a0, int a1) {
+    if ((int)(a0) != (int)(1)) {
+        return;
+    }
+    if ((int)(a1) != (int)(65535)) {
+        return;
+    }
+    FIELD(u8, g_00f0d860_0, 0) = (u8)(0);
+}
+
 struct unk_00f0da28_a0 {
     float f_0;
     float f_4;

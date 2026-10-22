@@ -11,6 +11,7 @@ int fn_0055c880(u32, int);
 void fn_0055c900(u32, int, int);
 int fn_00562724(u32, int);
 int fn_0058f9e0(void);
+void fn_005b4194(void*);
 
 u8 fn_0054fd78(void) {
     int t0;
@@ -72,6 +73,10 @@ u8 fn_00550228(unk_00550228_a0* a0, int a1, int a2) {
     int t0;
     t0 = stub_005500a4((void*)(a0), (u32)(a0->f_18), (int)(a1), (int)(a2));
     return (u8)((u8)t0);
+}
+
+void fn_00551240(int a0) {
+    fn_005b4194((void*)(((int)(a0) + 131072) + -3368));
 }
 
 }

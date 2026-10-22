@@ -183,6 +183,8 @@ class Lifter:
         self.cr = {}                      # condition field -> (lhs, rhs, 'signed'|'unsigned'|'pointer')
         self.ctr = None                   # value moved to CTR (mtctr)
         self.ffresh = set()               # float argument registers written since the last call
+        self.loops = {}                   # loop header index -> latch index (the backward branch)
+        self.in_loop = []                 # headers of the loops being lifted
         self.polymorphic = set()          # argument registers whose offset-0 word is a vptr
         self.vclasses = {}                # class tag -> {slot: (rtype, [types])}
         self.vars = []                    # merge variables: (type, name)
@@ -204,7 +206,9 @@ class Lifter:
                 self.param(r)
                 return self.gpr[r]
             if r == 2:
-                return Value('TOC', 'toc')
+                v = Value('TOC', 'toc')
+                v.toc_off = 0
+                return v
             raise Fail(f'r{r} read before it is set')
         if v.call is not None:
             v.call['used'] = True
@@ -250,7 +254,7 @@ class Lifter:
         if base.ctype == 'toc':
             if ctype != 'u32':
                 raise Fail('non-word TOC load')
-            return self.address_of_global(d)
+            return self.address_of_global(d + getattr(base, 'toc_off', 0))
         if self.virtual and base.vt is not None and base.vt[0] == 'vptr' and ctype == 'u32' and d % 4 == 0 and d >= 0:
             obj = base.vt[1]
             for k, arg in self.args.items():
@@ -281,8 +285,12 @@ class Lifter:
             op = x >> 26
             if op == 16:                                   # bc
                 t = i + (s16(x & 0xFFFC) >> 2)
-                if x & 3 or t <= i or t > n:
-                    raise Fail('backward, absolute or linked conditional branch')
+                if x & 3 or t > n or t < 0:
+                    raise Fail('absolute, linked or outside conditional branch')
+                if t <= i:                                 # a loop latch: back to the header t
+                    if t in self.loops and self.loops[t] != i:
+                        raise Fail('two latches for one header')
+                    self.loops[t] = i
                 leaders |= {t, i + 1}
             elif op == 18 and not x & 1:                   # b (not bl)
                 t = i + ((branch_target(0, x)) >> 2)
@@ -297,6 +305,19 @@ class Lifter:
                     raise Fail('indirect branch')
                 leaders.add(i + 1)
         self.leaders = sorted(l for l in leaders if l < n)
+        for h, l in self.loops.items():
+            for j in range(h, l):                          # no other way into or out of the loop body
+                x = w[j]
+                if x >> 26 == 16:
+                    t = j + (s16(x & 0xFFFC) >> 2)
+                    if not h <= t <= l + 1:
+                        raise Fail('branch out of a loop body')
+                elif x >> 26 == 18 and not x & 1:
+                    t = j + (branch_target(0, x) >> 2)
+                    if not h <= t <= l + 1:
+                        raise Fail('jump out of a loop body')
+                elif x >> 26 == 19 and x != 0x4E800421:
+                    raise Fail('return from inside a loop')
         self.region(0, None)
         if not self.ended:
             raise Fail('falls off the end')
@@ -318,7 +339,8 @@ class Lifter:
             t = self.words[last]
             op = t >> 26
             if op == 16:
-                todo += [last + (s16(t & 0xFFFC) >> 2), last + 1]
+                target = last + (s16(t & 0xFFFC) >> 2)
+                todo += ([target] if target > last else []) + [last + 1]
             elif op == 18 and not t & 1:
                 todo.append(last + (branch_target(0, t) >> 2))
             elif op == 19 and t != 0x4E800421:
@@ -344,6 +366,8 @@ class Lifter:
         if (bit, true) not in ops:
             raise Fail('summary-overflow bit')
         bt = b.text if isinstance(b, Value) else b
+        if kind == 'float':
+            return f'{a.text} {ops[bit, true]} {bt}'
         if kind == 'unsigned':
             return f'(u32)({a.text}) {ops[bit, true]} (u32)({bt})'
         if kind == 'pointer':
@@ -353,6 +377,9 @@ class Lifter:
     def branch_condition(self, word):
         """C condition under which a bc/bclr is taken."""
         bo, bi = (word >> 21) & 31, (word >> 16) & 31
+        if bo & 0x16 == 0x10:                           # bdnz: decrement CTR, loop while non-zero
+            return 'BDNZ'
+
         if bo & 0x1E in (12, 14):
             true = True
         elif bo & 0x1E in (4, 6):
@@ -418,9 +445,92 @@ class Lifter:
             merged[r] = Value(name, ctype)
         self.gpr, self.fpr, self.fresh, self.cr, self.ended = merged, dict(a[1]), fresh, {}, False
 
+    def written_in(self, start, end):
+        """Registers the instructions in [start, end) write (a call writes r0, r3-r12)."""
+        out = set()
+        for x in self.words[start:end]:
+            op = x >> 26
+            rt, ra = (x >> 21) & 31, (x >> 16) & 31
+            if op in (14, 15, 7, 32, 34, 40, 42, 58) or (op == 31 and (x >> 1) & 0x3FF in (266, 40, 235, 491, 459, 104)):
+                out.add(rt)
+            elif op in (24, 25, 28, 29, 21, 30) or (op == 31 and (x >> 1) & 0x3FF in (444, 28, 316, 124, 24, 536, 792, 986, 922, 954, 824)):
+                out.add(ra)
+            elif op in (33, 35, 41, 43, 37, 39, 45):        # update forms write the base too
+                out |= {rt, ra}
+            elif op == 18 and x & 1:
+                out |= {0} | set(range(3, 13))
+        out.discard(1)
+        out.discard(2)
+        return out
+
+    def loop(self, header):
+        """Lift the loop at header as do { body } while (cond); return the exit block."""
+        latch = self.loops[header]
+        counted = self.branch_condition(self.words[latch]) == 'BDNZ'
+        carried = {}
+        for r in sorted(self.written_in(header, latch + 1)):
+            v = self.gpr[r]
+            if v is None:
+                continue
+            ctype = 'int' if v.ctype in ('call',) else v.ctype
+            name = f'v{len(self.vars)}'
+            self.vars.append((CTYPES.get(ctype, 'int'), name))
+            self.stmts.append(f'{name} = ({CTYPES.get(ctype, "int")})({v.text});')
+            if v.call is not None:
+                v.call['used'] = True
+            carried[r] = Value(name, ctype)
+            self.gpr[r] = carried[r]
+        counter = None
+        if counted:
+            if self.ctr is None:
+                raise Fail('counted loop without mtctr')
+            counter = f'v{len(self.vars)}'
+            self.vars.append(('u32', counter))
+            self.stmts.append(f'{counter} = (u32)({self.ctr.text});')
+            self.ctr = None
+        outer, body = self.stmts, []
+        self.stmts = body
+        self.in_loop.append(header)
+        self.latch_state = None
+        self.region(header, latch + 1)
+        self.in_loop.pop()
+        if self.latch_state is None:
+            raise Fail('loop body did not reach its latch')
+        # End of an iteration: the carried registers take their new values.
+        updates = {}
+        for r, var in carried.items():
+            now = self.gpr[r]
+            if now is None:
+                raise Fail('carried register clobbered')
+            if now is not var:
+                body.append(f'{var.text} = ({CTYPES.get(var.ctype, "int")})({now.text});')
+                updates[id(now)] = var
+        # The condition, in terms of the updated variables.
+        if counted:
+            cond = f'--{counter} != 0'
+        else:
+            word = self.words[latch]
+            bi = (word >> 16) & 31
+            if (bi >> 2) not in self.cr:
+                raise Fail('loop condition field never set')
+            a, b_, kind = self.cr[bi >> 2]
+            a = updates.get(id(a), a)
+            b_ = updates.get(id(b_), b_) if isinstance(b_, Value) else b_
+            self.cr[bi >> 2] = (a, b_, kind)
+            cond = self.branch_condition(word)
+        self.stmts = outer
+        self.stmts.append(['do', body, cond])
+        for r in self.written_in(header, latch + 1):
+            if r not in carried:
+                self.gpr[r] = None
+        return latch + 1
+
     def region(self, b, stop):
         """Lift blocks from b until stop (or a return), appending to self.stmts."""
         while b is not None and b != stop and b < len(self.words):
+            if b in self.loops and b not in self.in_loop:
+                b = self.loop(b)
+                continue
             kind, data = self.run_block(b)
             if kind == 'ret':
                 self.emit_return()
@@ -441,6 +551,11 @@ class Lifter:
                 b = after
                 continue
             taken, fall, cond = data
+            if self.in_loop and taken == self.in_loop[-1]:
+                self.latch_state = True                  # the loop's own backward branch
+                return
+            if cond == 'BDNZ':
+                raise Fail('bdnz that is not a latch')
             reach_t, reach_f = self.successors(taken), self.successors(fall)
             common = sorted(reach_t & reach_f)
             join = common[0] if common else None
@@ -495,6 +610,33 @@ class Lifter:
             crf = (w >> 23) & 7
             kind = 'pointer' if l64 else ('signed' if ((w >> 1) & 0x3FF) == 0 else 'unsigned')
             self.cr[crf] = (self.reg(ra), self.reg(rb), kind)
+            return
+        if op == 15 and ra != 0:                                     # addis rD,rA,imm
+            base = self.reg(ra)
+            if base.ctype == 'toc':
+                v = Value('TOC', 'toc')
+                v.toc_off = getattr(base, 'toc_off', 0) + (d << 16)
+                self.set(rt, v)
+                return
+            self.set(rt, Value(f'(int)({base.text}) + {d << 16}', 'int', 1))
+            return
+        if op in (24, 25, 26, 27) and w != NOP:                      # ori oris xori xoris
+            v = self.reg(rt)
+            imm = (w & 0xFFFF) << (16 if op in (25, 27) else 0)
+            sym = '|' if op in (24, 25) else '^'
+            if op in (24, 25) and re.fullmatch(r'-?\d+', v.text):     # lis/li then ori: a constant
+                self.set(ra, Value(str((int(v.text) | imm) & 0xFFFFFFFF), 'u32'))
+                return
+            self.set(ra, Value(f'(u32)({v.text}) {sym} {imm:#x}', 'u32', 1))
+            return
+        if op == 7:                                                  # mulli
+            self.set(rt, Value(f'(int)({self.reg(ra).text}) * {d}', 'int', 1))
+            return
+        if op == 21:                                                 # rlwinm
+            self.rlwinm(w)
+            return
+        if op in (59, 63):                                           # floating point
+            self.float_op(w)
             return
         if op == 28:                                                 # andi.
             v = self.reg(rt)
@@ -570,6 +712,40 @@ class Lifter:
             if xo == 444 and rt == rb:                               # mr
                 v = self.gpr[rt] if self.gpr[rt] is not None else self.reg(rt)
                 self.set(ra, v)
+                return
+            if xo in (922, 954):                                     # extsh / extsb
+                v = self.reg(rt)
+                t = 'short' if xo == 922 else 'signed char'
+                self.set(ra, Value(f'(int)({t})({v.text})', 'int'))
+                if w & 1:
+                    self.cr[0] = (self.gpr[ra], '0', 'signed')
+                return
+            if xo == 824:                                            # srawi
+                n = rb
+                self.set(ra, Value(f'(int)({self.reg(rt).text}) >> {n}', 'int', 1))
+                if w & 1:
+                    self.cr[0] = (self.gpr[ra], '0', 'signed')
+                return
+            if xo in (28, 316, 124, 60) or (xo == 444 and rt != rb):  # and xor nor andc or
+                a, b = self.reg(rt), self.reg(rb)
+                text = {28: f'(u32)({a.text}) & (u32)({b.text})', 316: f'(u32)({a.text}) ^ (u32)({b.text})',
+                        124: f'~((u32)({a.text}) | (u32)({b.text}))', 60: f'(u32)({a.text}) & ~(u32)({b.text})',
+                        444: f'(u32)({a.text}) | (u32)({b.text})'}[xo]
+                self.set(ra, Value(text, 'u32', 1))
+                if w & 1:
+                    self.cr[0] = (self.gpr[ra], '0', 'signed')
+                return
+            if xo == 104:                                            # neg
+                self.set(rt, Value(f'-(int)({self.reg(ra).text})', 'int', 1))
+                return
+            if xo == 235:                                            # mullw
+                self.set(rt, Value(f'(int)({self.reg(ra).text}) * (int)({self.reg(rb).text})', 'int', 1))
+                return
+            if xo in (24, 536, 792):                                 # slw srw sraw
+                a, b = self.reg(rt), self.reg(rb)
+                text = {24: f'(u32)({a.text}) << (int)({b.text})', 536: f'(u32)({a.text}) >> (int)({b.text})',
+                        792: f'(int)({a.text}) >> (int)({b.text})'}[xo]
+                self.set(ra, Value(text, 'int' if xo == 792 else 'u32', 1))
                 return
             if xo == 986:                                            # extsw
                 v = self.reg(rt)
@@ -653,6 +829,58 @@ class Lifter:
         self.fresh = set()
         self.ffresh = set()
 
+    def rlwinm(self, w):
+        rs, ra = (w >> 21) & 31, (w >> 16) & 31
+        sh, mb, me = (w >> 11) & 31, (w >> 6) & 31, (w >> 1) & 31
+        if mb > me:
+            raise Fail('wrapping rlwinm mask')
+        x = f'(u32)({self.reg(rs).text})'
+        mask = ((1 << (32 - mb)) - 1) & ~((1 << (31 - me)) - 1) & 0xFFFFFFFF
+        if sh == 0:
+            text = f'{x} & {mask:#x}'
+        elif mb == 0 and me == 31 - sh:                              # slwi
+            text = f'{x} << {sh}'
+        elif me == 31 and mb == 32 - sh:                             # srwi
+            text = f'{x} >> {mb}'
+        elif me == 31 and mb >= 32 - sh:                             # extract a field from the top part
+            text = f'({x} >> {32 - sh}) & {(1 << (32 - mb)) - 1:#x}'
+        elif mask & ((1 << sh) - 1) == 0:                           # shift left, then mask
+            text = f'({x} << {sh}) & {mask:#x}'
+        else:
+            raise Fail('rlwinm rotate')
+        self.set(ra, Value(text, 'u32', 1))
+        if w & 1:
+            self.cr[0] = (self.gpr[ra], '0', 'signed')
+
+    def float_op(self, w):
+        op = w >> 26
+        ft, fa, fb, fc = (w >> 21) & 31, (w >> 16) & 31, (w >> 11) & 31, (w >> 6) & 31
+        xo5, xo10 = (w >> 1) & 31, (w >> 1) & 0x3FF
+        t = 'float' if op == 59 else 'double'
+        if op == 63 and xo10 == 0:                                   # fcmpu crf,fa,fb
+            self.cr[(w >> 23) & 7] = (self.freg(fa), self.freg(fb), 'float')
+            return
+        if op == 63 and xo10 in (72, 40, 264, 12):                   # fmr fneg fabs frsp
+            v = self.freg(fb)
+            text = {72: v.text, 40: f'-{paren(v)}', 264: f'__builtin_fabsf({v.text})', 12: f'(float)({v.text})'}[xo10]
+            self.fpr[ft] = Value(text, v.ctype if xo10 != 12 else 'float', 1 if xo10 == 40 else 0)
+            self.ffresh.add(ft)
+            return
+        bin_ops = {21: '+', 20: '-', 18: '/'}
+        if xo5 in bin_ops:
+            a, b = self.freg(fa), self.freg(fb)
+            self.fpr[ft] = Value(f'{paren(a)} {bin_ops[xo5]} {paren(b)}', t, 1)
+        elif xo5 == 25:                                              # fmul: fa * fc
+            a, c = self.freg(fa), self.freg(fc)
+            self.fpr[ft] = Value(f'{paren(a)} * {paren(c)}', t, 1)
+        elif xo5 in (29, 28):                                        # fmadd / fmsub
+            a, b, c = self.freg(fa), self.freg(fb), self.freg(fc)
+            sign = '+' if xo5 == 29 else '-'
+            self.fpr[ft] = Value(f'{paren(a)} * {paren(c)} {sign} {paren(b)}', t, 1)
+        else:
+            raise Fail(f'float op {op}/{xo5}')
+        self.ffresh.add(ft)
+
     def vcall(self):
         c = self.ctr
         if c is None or c.vt is None or c.vt[0] != 'code':
@@ -732,6 +960,10 @@ class Lifter:
                 elif isinstance(st, list) and st[0] == 'return':
                     r = self.returns[st[1]]
                     out.append(pad + (f'return ({ret_type})({r["value"].text});' if valued else 'return;'))
+                elif isinstance(st, list) and st[0] == 'do':
+                    out.append(pad + 'do {')
+                    out += lines(st[1], indent + 1)
+                    out.append(pad + f'}} while ({st[2]});')
                 elif isinstance(st, list) and st[0] == 'if':
                     out.append(pad + f'if ({st[1]}) {{')
                     out += lines(st[2], indent + 1)
@@ -774,6 +1006,9 @@ class Lifter:
         return decls, sig + ' {\n    ' + '\n    '.join(body) + '\n}', callees
 
 
+WHY = None   # set to a Counter by --why: failure reasons
+
+
 def lift(address, words, arity):
     try:
         first = Lifter(address, words, arity).run()
@@ -793,7 +1028,9 @@ def lift(address, words, arity):
         if not second.stmts and not second.args:
             return None
         return second.render()
-    except Fail:
+    except Fail as e:
+        if WHY is not None:
+            WHY[re.sub(r'\d+', 'N', str(e))] += 1
         return None
 
 
@@ -806,6 +1043,29 @@ def short_name(unit):
 
 
 def main():
+    global WHY
+    if '--why' in sys.argv:
+        # Only report why functions with loops fail to lift; write nothing.
+        from collections import Counter
+        WHY = Counter()
+        orig, functions = Original(), load_functions()
+        cache = {}
+        def arity(target):
+            if target not in cache:
+                size = functions.get(target)
+                cache[target] = reads_before_writes(struct.unpack(f'>{size // 4}I', orig.read(target, size)))                     if size else (None, None)
+            if cache[target][0] is None:
+                raise Fail('unknown callee')
+            return cache[target]
+        for address, size in sorted(functions.items()):
+            if size // 4 > MAX_WORDS:
+                continue
+            words = struct.unpack(f'>{size // 4}I', orig.read(address, size))
+            if any(w >> 26 == 16 and s16(w & 0xFFFC) <= 0 for w in words):
+                lift(address, words, arity)
+        for reason, n in WHY.most_common(25):
+            print(f'{n:6d}  {reason}')
+        return
     prune = set()
     pruned_path = BUILD / 'lift_pruned.txt'
     if '--prune' in sys.argv:

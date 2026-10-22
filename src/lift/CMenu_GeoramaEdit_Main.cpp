@@ -14,4 +14,12 @@ int fn_0087af4c(unk_0087af4c_a0* a0) {
     return (int)(1);
 }
 
+struct unk_0087af64_a0 {
+    char pad_0[116];
+    u32 f_74;
+};
+void* fn_0087af64(unk_0087af64_a0* a0) {
+    return (void*)((char*)((char*)a0 + (int)((int)(a0->f_74) * 76)) + 40);
+}
+
 }

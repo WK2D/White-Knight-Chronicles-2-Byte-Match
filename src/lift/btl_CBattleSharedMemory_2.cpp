@@ -4,9 +4,22 @@
 
 extern "C" {
 
+void fn_0055f1b0(void*);
+void fn_0055f2a4(void*);
+void fn_0055f324(void*);
+void fn_0055f364(void*);
 static void __attribute__((noinline)) stub_00586500(void* p0, int p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
+void fn_00b37fa8(void*, int, u32);
 void fn_00ba220c(void*);
 void fn_00fc88dc(void*);
+
+void fn_005829b0(void* a0) {
+    fn_00b37fa8((void*)(a0), (int)(0), (u32)(48216));
+    fn_0055f364((void*)((char*)a0 + 20936));
+    fn_0055f324((void*)((char*)a0 + 21200));
+    fn_0055f2a4((void*)((char*)a0 + 26840));
+    fn_0055f1b0((void*)((char*)a0 + 27352));
+}
 
 struct unk_00582a30_a0 {
     void* f_0;

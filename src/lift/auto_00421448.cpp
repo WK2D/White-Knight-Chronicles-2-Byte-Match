@@ -35,6 +35,20 @@ int fn_004214a8(void) {
     return (int)(1);
 }
 
+struct unk_0042251c_a0 {
+    u32 f_0;
+};
+int fn_0042251c(unk_0042251c_a0* a0) {
+    return (int)((int)(short)(FIELD(u16, a0->f_0, 4)));
+}
+
+struct unk_0042252c_a0 {
+    u32 f_0;
+};
+int fn_0042252c(unk_0042252c_a0* a0) {
+    return (int)((int)(short)(FIELD(u16, a0->f_0, 18)));
+}
+
 struct unk_00422700_a0 {
     u32 f_0;
 };

@@ -5,8 +5,11 @@
 extern "C" {
 
 void fn_004b2320(void);
+int fn_004b2364(void*, void*);
+int fn_004b239c(void*, void*);
 void fn_004b29f0(void*);
 void fn_004b30dc(void);
+void* fn_00b38eb8(void*, void*, void*, int);
 void fn_00fc88dc(void*);
 
 struct unk_004b57c0_a0 {
@@ -36,6 +39,70 @@ struct unk_004b57c0_a0 {
 };
 void fn_004b57c0(unk_004b57c0_a0* a0) {
     a0->vf20((float)(a0->f_38), (int)(3), (int)(186));
+}
+
+struct unk_004b58d4_a0 {
+    char pad_0[36];
+    float f_24;
+    float f_28;
+};
+extern char g_004b58d4_0[];
+extern char g_004b58d4_1[];
+int fn_004b58d4(unk_004b58d4_a0* a0, void* a1) {
+    int t0;
+    void* t1;
+    void* v0;
+    int v1;
+    t0 = fn_004b239c((void*)(a0), (void*)(a1));
+    if ((int)((u32)(t0) & 0xff) != (int)(0)) {
+        if ((int)(a1) != (int)(0)) {
+            t1 = fn_00b38eb8((void*)(a1), (void*)(g_004b58d4_1), (void*)(g_004b58d4_0), (int)(0));
+            if ((int)(t1) != (int)(0)) {
+                a0->f_24 = FIELD(float, t1, 12);
+                a0->f_28 = FIELD(float, t1, 16);
+                return (int)(1);
+            }
+            v0 = (void*)(t1);
+        } else {
+            v0 = (void*)(a1);
+        }
+        v1 = (int)(v0);
+    } else {
+        v1 = (int)((u32)(t0) & 0xff);
+    }
+    return (int)(0);
+}
+
+struct unk_004b5990_a0 {
+    char pad_0[36];
+    float f_24;
+    float f_28;
+};
+extern char g_004b5990_0[];
+extern char g_004b5990_1[];
+int fn_004b5990(unk_004b5990_a0* a0, void* a1) {
+    int t0;
+    void* t1;
+    void* v0;
+    int v1;
+    t0 = fn_004b2364((void*)(a0), (void*)(a1));
+    if ((int)((u32)(t0) & 0xff) != (int)(0)) {
+        if ((int)(a1) != (int)(0)) {
+            t1 = fn_00b38eb8((void*)(a1), (void*)(g_004b5990_1), (void*)(g_004b5990_0), (int)(0));
+            if ((int)(t1) != (int)(0)) {
+                a0->f_24 = FIELD(float, t1, 12);
+                a0->f_28 = FIELD(float, t1, 16);
+                return (int)(1);
+            }
+            v0 = (void*)(t1);
+        } else {
+            v0 = (void*)(a1);
+        }
+        v1 = (int)(v0);
+    } else {
+        v1 = (int)((u32)(t0) & 0xff);
+    }
+    return (int)(0);
 }
 
 void fn_004b5a4c(void) {

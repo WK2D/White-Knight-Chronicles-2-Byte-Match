@@ -5,6 +5,22 @@
 extern "C" {
 
 static void __attribute__((noinline)) stub_0091b810(void* p0, int p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
+static int __attribute__((noinline)) stub_0091b874(void* p0, void* p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
+
+int fn_0091b894(void* a0, void* a1) {
+    int t0;
+    int v0;
+    int v1;
+    if ((int)(a1) != (int)(4)) {
+        t0 = stub_0091b874((void*)(a0), (void*)(a1));
+        v0 = (int)((u32)(t0) & 0xff);
+        v1 = (int)(t0);
+    } else {
+        v0 = (int)(1);
+        v1 = (int)(a0);
+    }
+    return (int)(v0);
+}
 
 struct unk_0091b8d4_a0 {
     char pad_0[12];

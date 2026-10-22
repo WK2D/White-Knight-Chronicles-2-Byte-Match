@@ -8,6 +8,10 @@ void fn_00032fec(void*);
 void fn_00033058(void*);
 void fn_00fc88dc(void*);
 
+u32 fn_001beea8(int a0, int a1, int a2) {
+    return (u32)((u32)((int)((u32)(a0 + 15) & 0xfffffff0) + (int)((u32)((int)(a1) + (int)(a2)) << 5)) & 0xfffffff0);
+}
+
 struct unk_001bf064_a0 {
     void* f_0;
 };

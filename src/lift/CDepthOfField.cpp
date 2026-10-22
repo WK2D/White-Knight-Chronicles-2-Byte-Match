@@ -6,7 +6,49 @@ extern "C" {
 
 int fn_00035ad0(void*);
 int fn_00035cbc(void*);
+int fn_004b239c(void*, void*);
 void fn_004b30dc(void*);
+void* fn_00b38eb8(void*, void*, void*, int);
+
+struct unk_004b6914_a0 {
+    char pad_0[36];
+    float f_24;
+    float f_28;
+    float f_2c;
+    float f_30;
+    float f_34;
+    float f_38;
+};
+extern char g_004b6914_0[];
+extern char g_004b6914_1[];
+int fn_004b6914(unk_004b6914_a0* a0, void* a1) {
+    int t0;
+    void* t1;
+    void* v0;
+    int v1;
+    t0 = fn_004b239c((void*)(a0), (void*)(a1));
+    if ((int)((u32)(t0) & 0xff) != (int)(0)) {
+        if ((int)(a1) != (int)(0)) {
+            t1 = fn_00b38eb8((void*)(a1), (void*)(g_004b6914_1), (void*)(g_004b6914_0), (int)(0));
+            if ((int)(t1) != (int)(0)) {
+                FIELD(float, t1, 12) = a0->f_24;
+                FIELD(float, t1, 16) = a0->f_28;
+                FIELD(float, t1, 20) = a0->f_2c;
+                FIELD(float, t1, 24) = a0->f_30;
+                FIELD(float, t1, 28) = a0->f_34;
+                FIELD(float, t1, 32) = a0->f_38;
+                return (int)(1);
+            }
+            v0 = (void*)(t1);
+        } else {
+            v0 = (void*)(a1);
+        }
+        v1 = (int)(v0);
+    } else {
+        v1 = (int)((u32)(t0) & 0xff);
+    }
+    return (int)(0);
+}
 
 struct unk_004b6b44_a0 {
     char pad_0[76];

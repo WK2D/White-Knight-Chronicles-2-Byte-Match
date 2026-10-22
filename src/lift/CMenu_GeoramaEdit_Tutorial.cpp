@@ -24,6 +24,14 @@ void fn_0089c6ac(unk_0089c6ac_a0* a0) {
     FIELD(u32, g_0089c6ac_0, 0) = (u32)(a0->f_24);
 }
 
+struct unk_0089c704_a0 {
+    char pad_0[116];
+    u32 f_74;
+};
+void* fn_0089c704(unk_0089c704_a0* a0) {
+    return (void*)((char*)((char*)a0 + (int)((int)(a0->f_74) * 76)) + 40);
+}
+
 struct unk_0089c738_a0 {
     char pad_0[120];
     u8 f_78;

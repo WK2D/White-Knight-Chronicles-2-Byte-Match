@@ -6,6 +6,18 @@ extern "C" {
 
 void fn_00fc981c(void*, void*);
 
+extern char g_00f88ce0_0[];
+extern char g_00f88ce0_1[];
+void fn_00f88ce0(int a0, int a1) {
+    if ((int)(a0) != (int)(1)) {
+        return;
+    }
+    if ((int)(a1) != (int)(65535)) {
+        return;
+    }
+    FIELD(float, g_00f88ce0_1, 0) = FIELD(float, g_00f88ce0_0, 24);
+}
+
 void fn_00f935ac(void* a0, void* a1) {
     fn_00fc981c((void*)(a0), (void*)(a1));
     fn_00fc981c((void*)((char*)a0 + 48), (void*)((char*)a1 + 96));

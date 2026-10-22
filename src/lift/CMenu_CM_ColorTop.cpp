@@ -42,4 +42,12 @@ int fn_00789ab4(unk_00789ab4_a0* a0) {
     return (int)(3);
 }
 
+struct unk_00789b50_a0 {
+    char pad_0[1528];
+    u32 f_5f8;
+};
+void* fn_00789b50(unk_00789b50_a0* a0) {
+    return (void*)((char*)((char*)a0 + (int)((int)(a0->f_5f8) * 76)) + 1260);
+}
+
 }

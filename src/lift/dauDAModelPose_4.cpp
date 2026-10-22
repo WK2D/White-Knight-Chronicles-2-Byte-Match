@@ -26,4 +26,104 @@ void fn_0019b114(unk_0019b114_a0* a0, int a1) {
     a0->f_0 = (void*)(g_0019b114_0);
 }
 
+struct unk_0019b288_a0 {
+    char pad_0[176];
+    u32 f_b0;
+    u32 f_b4;
+};
+void fn_0019b288(unk_0019b288_a0* a0, int a1, int a2) {
+    if ((u32)(a0->f_b0) <= (u32)(a1)) {
+        return;
+    }
+    FIELD(u16, (int)((u32)(a1) << 1) + (int)(a0->f_b4), 0) = (u16)(a2);
+}
+
+struct unk_0019b2ac_a0 {
+    char pad_0[176];
+    u32 f_b0;
+    u32 f_b4;
+};
+void* fn_0019b2ac(unk_0019b2ac_a0* a0, int a1) {
+    int v0;
+    if ((u32)(a0->f_b0) > (u32)(a1)) {
+        v0 = (int)(FIELD(u16, (int)((u32)(a1) << 1) + (int)(a0->f_b4), 0));
+    } else {
+        v0 = (int)(-1);
+    }
+    return (void*)(v0);
+}
+
+struct unk_0019b304_a0 {
+    char pad_0[176];
+    u32 f_b0;
+    char pad_b4[8];
+    u32 f_bc;
+};
+void* fn_0019b304(unk_0019b304_a0* a0, int a1) {
+    u32 v0;
+    int v1;
+    if ((u32)(a0->f_b0) > (u32)(a1)) {
+        v0 = (u32)(a0->f_bc);
+        v1 = (int)((int)((u32)(a1) << 6) + (int)(a0->f_bc));
+    } else {
+        v0 = (u32)(a0->f_b0);
+        v1 = (int)(0);
+    }
+    return (void*)(v1);
+}
+
+struct unk_0019b5b4_a0 {
+    char pad_0[236];
+    u32 f_ec;
+    u32 f_f0;
+};
+void* fn_0019b5b4(unk_0019b5b4_a0* a0, int a1) {
+    u32 v0;
+    int v1;
+    if ((u32)(a0->f_ec) > (u32)(a1)) {
+        v0 = (u32)(a0->f_f0);
+        v1 = (int)((int)((u32)(a1) << 5) + (int)(a0->f_f0));
+    } else {
+        v0 = (u32)(a0->f_ec);
+        v1 = (int)(0);
+    }
+    return (void*)(v1);
+}
+
+struct unk_0019b5d8_a0 {
+    char pad_0[252];
+    u32 f_fc;
+    u32 f_100;
+};
+void* fn_0019b5d8(unk_0019b5d8_a0* a0, int a1) {
+    u32 v0;
+    int v1;
+    if ((u32)(a0->f_fc) > (u32)(a1)) {
+        v0 = (u32)(a0->f_100);
+        v1 = (int)((int)((u32)(a1) << 4) + (int)(a0->f_100));
+    } else {
+        v0 = (u32)(a0->f_fc);
+        v1 = (int)(0);
+    }
+    return (void*)(v1);
+}
+
+struct unk_0019b5fc_a0 {
+    char pad_0[260];
+    u32 f_104;
+    u32 f_108;
+};
+void* fn_0019b5fc(unk_0019b5fc_a0* a0, int a1) {
+    u32 v0;
+    int v1;
+    if ((u32)(a0->f_104) > (u32)(a1)) {
+        v0 = (u32)(a0->f_108);
+        v1 = (int)((int)((u32)(a1) << 5) + (int)(a0->f_108));
+    } else {
+        v0 = (u32)(a0->f_104);
+        v1 = (int)(0);
+    }
+    return (void*)(v1);
+}
+
 }

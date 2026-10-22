@@ -6,6 +6,51 @@ extern "C" {
 
 static int __attribute__((noinline)) stub_002dddac(void) { int r; __asm__ volatile ("" : "=r"(r)); return r; }
 
+struct unk_002deb18_a0 {
+    char pad_0[648];
+    u32 f_288;
+};
+int fn_002deb18(unk_002deb18_a0* a0) {
+    void* v0;
+    u32 v1;
+    a0->f_288 = (u32)(0);
+    v0 = (void*)((char*)a0 + 652);
+    v1 = (u32)(8);
+    do {
+        FIELD(u32, v0, 0) = (u32)(0);
+        v0 = (void*)((char*)v0 + 4);
+    } while (--v1 != 0);
+    return (int)(1);
+}
+
+struct unk_002deb84_a0 {
+    char pad_0[368];
+    u32 f_170;
+};
+struct unk_002deb84_vc0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual void vf5();
+    virtual int vf6(void);
+};
+int fn_002deb84(unk_002deb84_a0* a0) {
+    int t0;
+    int v0;
+    int v1;
+    if ((int)(a0->f_170) != (int)(0)) {
+        t0 = ((unk_002deb84_vc0*)(a0->f_170))->vf6();
+        v0 = (int)(t0);
+        v1 = (int)((u32)(t0) & 0xffff);
+    } else {
+        v0 = (int)(a0->f_170);
+        v1 = (int)(0);
+    }
+    return (int)(v1);
+}
+
 struct unk_002debe0_a0 {
     char pad_0[368];
     u32 f_170;

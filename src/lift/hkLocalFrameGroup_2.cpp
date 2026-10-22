@@ -13,4 +13,25 @@ int fn_00c29f98(int a0, int a1) {
     return (int)(a1);
 }
 
+struct unk_00c29fa8_a0 {
+    u32 f_0;
+};
+u32 fn_00c29fa8(unk_00c29fa8_a0* a0, int a1) {
+    return (u32)(FIELD(u32, (int)((u32)(a1) << 3) + (int)(a0->f_0), 0));
+}
+
+struct unk_00c29fc0_a0 {
+    u32 f_0;
+};
+u32 fn_00c29fc0(unk_00c29fc0_a0* a0, int a1) {
+    return (u32)(FIELD(u32, (int)((u32)(a1) << 3) + (int)(a0->f_0), 4));
+}
+
+struct unk_00c29fd8_a0 {
+    u32 f_0;
+};
+void fn_00c29fd8(unk_00c29fd8_a0* a0, int a1, int a2) {
+    FIELD(u32, (int)((u32)(a1) << 3) + (int)(a0->f_0), 4) = (u32)(a2);
+}
+
 }

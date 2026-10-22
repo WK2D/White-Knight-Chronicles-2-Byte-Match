@@ -5,6 +5,21 @@
 extern "C" {
 
 
+struct unk_0014b8f4_a0 {
+    u8 f_0;
+    char pad_1[11];
+    u32 f_c;
+};
+void* fn_0014b8f4(unk_0014b8f4_a0* a0) {
+    int v0;
+    if ((int)((u32)(a0->f_0) & 0x1) != (int)(0)) {
+        v0 = (int)(a0->f_c);
+    } else {
+        v0 = (int)(3);
+    }
+    return (void*)(v0);
+}
+
 struct unk_0014bb40_a2 {
     char pad_0[4];
     u32 f_4;

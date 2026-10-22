@@ -9,4 +9,8 @@ int fn_00270f38(void) {
     return (int)(268369920);
 }
 
+u32 fn_00270f40(void) {
+    return (u32)(65472);
+}
+
 }

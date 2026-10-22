@@ -18,11 +18,95 @@ void fn_00c4aa08(unk_00c4aa08_a0* a0, int a1, unk_00c4aa08_a2* a2) {
     a0->f_0 = (u32)((int)(a2->f_12) + (int)(a1));
 }
 
+struct unk_00c4aa50_a0 {
+    u32 f_0;
+};
+void* fn_00c4aa50(unk_00c4aa50_a0* a0, int a1) {
+    return (void*)((int)((u32)(a1) << 2) + (int)(a0->f_0));
+}
+
+struct unk_00c4aa64_a0 {
+    u32 f_0;
+};
+void* fn_00c4aa64(unk_00c4aa64_a0* a0, int a1) {
+    return (void*)((int)((u32)(a1) << 2) + (int)(a0->f_0));
+}
+
+struct unk_00c4aa78_a0 {
+    u32 f_0;
+};
+void* fn_00c4aa78(unk_00c4aa78_a0* a0, int a1) {
+    return (void*)((int)((u32)(a1) << 2) + (int)(a0->f_0));
+}
+
 struct unk_00c4aa8c_a0 {
     u32 f_0;
 };
 void* fn_00c4aa8c(unk_00c4aa8c_a0* a0, int a1) {
     return (void*)((int)(a1) + (int)(a0->f_0));
+}
+
+struct unk_00c4aa9c_a0 {
+    u32 f_0;
+};
+void* fn_00c4aa9c(unk_00c4aa9c_a0* a0, int a1) {
+    return (void*)((int)((u32)(a1) << 2) + (int)(a0->f_0));
+}
+
+struct unk_00c4aab0_a0 {
+    u32 f_0;
+};
+void* fn_00c4aab0(unk_00c4aab0_a0* a0, int a1) {
+    return (void*)((int)((u32)(a1) << 1) + (int)(a0->f_0));
+}
+
+struct unk_00c4aac4_a0 {
+    u32 f_0;
+};
+void* fn_00c4aac4(unk_00c4aac4_a0* a0, int a1) {
+    return (void*)((int)((u32)(a1) << 2) + (int)(a0->f_0));
+}
+
+struct unk_00c4aad8_a0 {
+    u32 f_0;
+};
+void* fn_00c4aad8(unk_00c4aad8_a0* a0, int a1) {
+    return (void*)((int)((u32)(a1) << 2) + (int)(a0->f_0));
+}
+
+struct unk_00c4aaec_a0 {
+    u32 f_0;
+};
+void* fn_00c4aaec(unk_00c4aaec_a0* a0, int a1) {
+    return (void*)((int)((u32)(a1) << 3) + (int)(a0->f_0));
+}
+
+struct unk_00c4ab00_a0 {
+    u32 f_0;
+};
+void* fn_00c4ab00(unk_00c4ab00_a0* a0, int a1) {
+    return (void*)((int)((u32)(a1) << 3) + (int)(a0->f_0));
+}
+
+struct unk_00c4ab14_a0 {
+    u32 f_0;
+};
+void* fn_00c4ab14(unk_00c4ab14_a0* a0, int a1) {
+    return (void*)((int)((u32)(a1) << 2) + (int)(a0->f_0));
+}
+
+struct unk_00c4ab28_a0 {
+    u32 f_0;
+};
+void* fn_00c4ab28(unk_00c4ab28_a0* a0, int a1) {
+    return (void*)((int)((u32)(a1) << 1) + (int)(a0->f_0));
+}
+
+struct unk_00c4ab3c_a0 {
+    u32 f_0;
+};
+void* fn_00c4ab3c(unk_00c4ab3c_a0* a0, int a1) {
+    return (void*)((int)((u32)(a1) << 1) + (int)(a0->f_0));
 }
 
 struct unk_00c4ab50_a0 {
@@ -37,6 +121,34 @@ struct unk_00c4ab60_a0 {
 };
 void* fn_00c4ab60(unk_00c4ab60_a0* a0, int a1) {
     return (void*)((int)(a1) + (int)(a0->f_0));
+}
+
+struct unk_00c4ab70_a0 {
+    u32 f_0;
+};
+void* fn_00c4ab70(unk_00c4ab70_a0* a0, int a1) {
+    return (void*)((int)((u32)(a1) << 4) + (int)(a0->f_0));
+}
+
+struct unk_00c4aba0_a0 {
+    u32 f_0;
+};
+void* fn_00c4aba0(unk_00c4aba0_a0* a0, int a1) {
+    return (void*)((int)((u32)(a1) << 6) + (int)(a0->f_0));
+}
+
+struct unk_00c4abd0_a0 {
+    u32 f_0;
+};
+void* fn_00c4abd0(unk_00c4abd0_a0* a0, int a1) {
+    return (void*)((int)((u32)(a1) << 3) + (int)(a0->f_0));
+}
+
+struct unk_00c4ac00_a0 {
+    u32 f_0;
+};
+void* fn_00c4ac00(unk_00c4ac00_a0* a0, int a1) {
+    return (void*)((int)((u32)(a1) << 3) + (int)(a0->f_0));
 }
 
 struct unk_00c4ac34_a0 {

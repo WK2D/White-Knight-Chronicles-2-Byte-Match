@@ -6,6 +6,7 @@ extern "C" {
 
 static int __attribute__((noinline)) stub_005ace94(u32 p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static int __attribute__((noinline)) stub_005acee8(u32 p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static int __attribute__((noinline)) stub_005acf3c(void* p0, void* p1, void* p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
 static void* __attribute__((noinline)) stub_005ad060(int p0, int p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 
 struct unk_005aceac_a0 {
@@ -17,6 +18,14 @@ u8 fn_005aceac(unk_005aceac_a0* a0) {
     return (u8)((u8)t0);
 }
 
+struct unk_005aced4_a0 {
+    char pad_0[2];
+    u8 f_2;
+};
+void fn_005aced4(unk_005aced4_a0* a0, int a1) {
+    a0->f_2 = (u8)((u32)((u32)(a1) & 0x3) | (u32)(a0->f_2));
+}
+
 struct unk_005acef4_a0 {
     u32 f_0;
 };
@@ -24,6 +33,20 @@ u8 fn_005acef4(unk_005acef4_a0* a0) {
     int t0;
     t0 = stub_005acee8((u32)(a0->f_0));
     return (u8)((u8)t0);
+}
+
+struct unk_005acf1c_a0 {
+    char pad_0[2];
+    u8 f_2;
+};
+void fn_005acf1c(unk_005acf1c_a0* a0, int a1) {
+    int v0;
+    if ((u32)(a1) <= (u32)(15)) {
+        v0 = (int)((u32)(a1) << 4);
+    } else {
+        v0 = (int)(0);
+    }
+    a0->f_2 = (u8)((u32)(a0->f_2) | (u32)(v0));
 }
 
 int fn_005ad240(int a0) {
@@ -42,6 +65,31 @@ int fn_005ad240(int a0) {
         v1 = (int)(0);
     }
     return (int)(v1);
+}
+
+int fn_005ad288(int a0, void* a1, void* a2) {
+    void* t0;
+    int t1;
+    int v0;
+    int v1;
+    t0 = stub_005ad060((int)(a0), (int)(0));
+    if ((int)(t0) != (int)(0)) {
+        t1 = stub_005acf3c((void*)(t0), (void*)(a1), (void*)(a2));
+        v0 = (int)((u32)(t1) & 0xff);
+        v1 = (int)(t1);
+    } else {
+        v0 = (int)(0);
+        v1 = (int)(t0);
+    }
+    return (int)(v0);
+}
+
+struct unk_005ad46c_a0 {
+    char pad_0[7];
+    u8 f_7;
+};
+void fn_005ad46c(unk_005ad46c_a0* a0, int a1, int a2) {
+    a0->f_7 = (u8)((u32)((u32)(1) << (int)(a1)) | (u32)((u32)(1) << (int)(a2)));
 }
 
 }

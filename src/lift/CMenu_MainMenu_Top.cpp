@@ -5,6 +5,14 @@
 extern "C" {
 
 
+struct unk_00666f74_a0 {
+    char pad_0[188];
+    u32 f_bc;
+};
+void* fn_00666f74(unk_00666f74_a0* a0) {
+    return (void*)((char*)((char*)a0 + (int)((int)(a0->f_bc) * 76)) + 40);
+}
+
 struct unk_00666fa0_a0 {
     char pad_0[260];
     u32 f_104;
@@ -18,6 +26,16 @@ int fn_00666fa0(unk_00666fa0_a0* a0, unk_00666fa0_a1* a1) {
     }
     a1->f_0 = (u8)(1);
     return (int)(1);
+}
+
+struct unk_00666fbc_a0 {
+    char pad_0[42];
+    u16 f_2a;
+    char pad_2c[152];
+    u32 f_c4;
+};
+u32 fn_00666fbc(unk_00666fbc_a0* a0) {
+    return (u32)(FIELD(u32, (int)((u32)((int)(short)(a0->f_2a)) << 2) + (int)(a0->f_c4), 0));
 }
 
 }

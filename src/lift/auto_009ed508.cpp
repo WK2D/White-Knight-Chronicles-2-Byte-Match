@@ -6,6 +6,45 @@ extern "C" {
 
 static void* __attribute__((noinline)) stub_009eea38(int p0, void* p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 
+extern char g_009eeae4_0[];
+int fn_009eeae4(int a0) {
+    void* t0;
+    int v0;
+    t0 = stub_009eea38((int)(a0), (void*)(g_009eeae4_0));
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)((int)(signed char)(FIELD(u8, t0, 23)));
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
+extern char g_009eeb20_0[];
+int fn_009eeb20(int a0) {
+    void* t0;
+    int v0;
+    t0 = stub_009eea38((int)(a0), (void*)(g_009eeb20_0));
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)((int)(signed char)(FIELD(u8, t0, 21)));
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
+extern char g_009eeb5c_0[];
+int fn_009eeb5c(int a0) {
+    void* t0;
+    int v0;
+    t0 = stub_009eea38((int)(a0), (void*)(g_009eeb5c_0));
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)((int)(signed char)(FIELD(u8, t0, 20)));
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
 extern char g_009eecb8_0[];
 int fn_009eecb8(int a0) {
     void* t0;
@@ -56,6 +95,19 @@ void* fn_009eef18(int a0) {
         v0 = (int)(0);
     }
     return (void*)(v0);
+}
+
+extern char g_009eef58_0[];
+int fn_009eef58(int a0) {
+    void* t0;
+    int v0;
+    t0 = stub_009eea38((int)(a0), (void*)(g_009eef58_0));
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)((int)(short)(FIELD(u16, t0, 16)));
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
 }
 
 extern char g_009eef94_0[];

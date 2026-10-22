@@ -5,6 +5,27 @@
 extern "C" {
 
 
+struct unk_00691e50_a0 {
+    char pad_0[5404];
+    u32 f_151c;
+};
+u32 fn_00691e50(unk_00691e50_a0* a0, int a1) {
+    return (u32)(FIELD(u32, (int)((u32)(a1) << 2) + (int)(a0->f_151c), 0));
+}
+
+extern char g_00691e78_0[];
+u16 fn_00691e78(void) {
+    return (u16)(FIELD(u16, (int)(FIELD(u32, FIELD(u32, g_00691e78_0, 0), 128)) + 851968, 4292));
+}
+
+struct unk_00691f5c_a0 {
+    char pad_0[14680];
+    u8 f_3958;
+};
+u32 fn_00691f5c(unk_00691f5c_a0* a0) {
+    return (u32)((u32)(a0->f_3958) ^ 0x1);
+}
+
 struct unk_00692240_a0 {
     char pad_0[628];
     u32 f_274;
@@ -139,6 +160,165 @@ struct unk_00692340_a0 {
 };
 void fn_00692340(unk_00692340_a0* a0) {
     FIELD(u32, a0->f_274, 1548) = (u32)(35);
+}
+
+struct unk_0069238c_a0 {
+    char pad_0[628];
+    u32 f_274;
+};
+int fn_0069238c(unk_0069238c_a0* a0) {
+    return (int)((int)(short)(FIELD(u16, a0->f_274, 1562)));
+}
+
+struct unk_006923a8_a0 {
+    char pad_0[628];
+    u32 f_274;
+};
+int fn_006923a8(unk_006923a8_a0* a0) {
+    return (int)((int)(short)(FIELD(u16, a0->f_274, 1564)));
+}
+
+struct unk_00692450_a0 {
+    char pad_0[644];
+    u32 f_284;
+};
+void fn_00692450(unk_00692450_a0* a0, int a1) {
+    FIELD(u32, (int)(a0->f_284) + 65536, -5884) = (u32)(a1);
+}
+
+struct unk_00692460_a0 {
+    char pad_0[644];
+    u32 f_284;
+};
+int fn_00692460(unk_00692460_a0* a0) {
+    return (int)((int)FIELD(u32, (int)(a0->f_284) + 65536, -5884));
+}
+
+struct unk_00692474_a0 {
+    char pad_0[644];
+    u32 f_284;
+};
+void fn_00692474(unk_00692474_a0* a0, int a1) {
+    FIELD(u32, (int)(a0->f_284) + 65536, -5880) = (u32)(a1);
+}
+
+struct unk_00692484_a0 {
+    char pad_0[644];
+    u32 f_284;
+};
+int fn_00692484(unk_00692484_a0* a0) {
+    return (int)((int)FIELD(u32, (int)(a0->f_284) + 65536, -5880));
+}
+
+struct unk_00692498_a0 {
+    char pad_0[644];
+    u32 f_284;
+};
+void fn_00692498(unk_00692498_a0* a0, int a1) {
+    FIELD(u32, (int)(a0->f_284) + 65536, -5876) = (u32)(a1);
+}
+
+struct unk_006924a8_a0 {
+    char pad_0[644];
+    u32 f_284;
+};
+int fn_006924a8(unk_006924a8_a0* a0) {
+    return (int)((int)FIELD(u32, (int)(a0->f_284) + 65536, -5876));
+}
+
+struct unk_006924bc_a0 {
+    char pad_0[644];
+    u32 f_284;
+};
+void fn_006924bc(unk_006924bc_a0* a0, int a1) {
+    FIELD(u32, (int)(a0->f_284) + 65536, -5872) = (u32)(a1);
+}
+
+struct unk_006924cc_a0 {
+    char pad_0[644];
+    u32 f_284;
+};
+int fn_006924cc(unk_006924cc_a0* a0) {
+    return (int)((int)FIELD(u32, (int)(a0->f_284) + 65536, -5872));
+}
+
+struct unk_006924f4_a0 {
+    char pad_0[644];
+    u32 f_284;
+};
+struct unk_006924f4_a1 {
+    u16 f_0;
+};
+struct unk_006924f4_a2 {
+    u16 f_0;
+};
+void fn_006924f4(unk_006924f4_a0* a0, unk_006924f4_a1* a1, unk_006924f4_a2* a2) {
+    a1->f_0 = (u16)(FIELD(u16, (int)(a0->f_284) + 65536, -5906));
+    a2->f_0 = (u16)(FIELD(u16, (int)(a0->f_284) + 65536, -5904));
+}
+
+struct unk_00692658_a0 {
+    char pad_0[664];
+    u32 f_298;
+};
+void fn_00692658(unk_00692658_a0* a0, int a1) {
+    FIELD(u8, (int)(a0->f_298) + 65536, -25744) = (u8)(a1);
+}
+
+struct unk_00692718_a0 {
+    char pad_0[656];
+    u32 f_290;
+};
+void fn_00692718(unk_00692718_a0* a0, int a1) {
+    FIELD(u8, (int)(a0->f_290) + 65536, -22226) = (u8)(a1);
+}
+
+struct unk_00692728_a0 {
+    char pad_0[656];
+    u32 f_290;
+};
+u8 fn_00692728(unk_00692728_a0* a0) {
+    return (u8)(FIELD(u8, (int)(a0->f_290) + 65536, -22226));
+}
+
+struct unk_00692738_a0 {
+    char pad_0[656];
+    u32 f_290;
+};
+void fn_00692738(unk_00692738_a0* a0, int a1) {
+    FIELD(u8, (int)(a0->f_290) + 65536, -22225) = (u8)(a1);
+}
+
+struct unk_00692748_a0 {
+    char pad_0[656];
+    u32 f_290;
+};
+u8 fn_00692748(unk_00692748_a0* a0) {
+    return (u8)(FIELD(u8, (int)(a0->f_290) + 65536, -22225));
+}
+
+struct unk_00692758_a0 {
+    char pad_0[656];
+    u32 f_290;
+};
+void fn_00692758(unk_00692758_a0* a0, int a1) {
+    FIELD(u8, (int)(a0->f_290) + 65536, -22224) = (u8)(a1);
+}
+
+struct unk_00692768_a0 {
+    char pad_0[656];
+    u32 f_290;
+};
+u8 fn_00692768(unk_00692768_a0* a0) {
+    return (u8)(FIELD(u8, (int)(a0->f_290) + 65536, -22224));
+}
+
+struct unk_00692778_a0 {
+    char pad_0[656];
+    u32 f_290;
+};
+void fn_00692778(unk_00692778_a0* a0, int a1) {
+    FIELD(u8, (int)(a0->f_290) + 65536, -19662) = (u8)(a1);
 }
 
 }

@@ -11,6 +11,14 @@ void* fn_00af63b0(int);
 void fn_00af63bc(void);
 void fn_00b01ca4(u32, int, int, void*);
 
+struct unk_00aeb6ec_a0 {
+    char pad_0[24];
+    u32 f_18;
+};
+u32 fn_00aeb6ec(unk_00aeb6ec_a0* a0, int a1) {
+    return (u32)(FIELD(u32, (int)((u32)(a1) << 2) + (int)(a0->f_18), 0));
+}
+
 struct unk_00aeb7a0_a0 {
     char pad_0[20];
     u32 f_14;

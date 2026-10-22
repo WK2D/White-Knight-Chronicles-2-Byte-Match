@@ -96,6 +96,21 @@ int fn_00b00ce4(int a0, unk_00b00ce4_a1* a1) {
     return (int)((int)a1->f_28);
 }
 
+struct unk_00b011f8_a0 {
+    u32 f_0;
+    char pad_4[16];
+    u32 f_14;
+};
+void* fn_00b011f8(unk_00b011f8_a0* a0) {
+    u32 v0;
+    if ((int)(a0->f_0) == (int)(7003)) {
+        v0 = (u32)(FIELD(u32, (char*)a0 + (int)(a0->f_14), 4));
+    } else {
+        v0 = (u32)(2149646591);
+    }
+    return (void*)(v0);
+}
+
 extern char g_00b01c60_0[];
 u32 fn_00b01c60(void) {
     return (u32)(FIELD(u32, FIELD(u32, g_00b01c60_0, 0), 8));

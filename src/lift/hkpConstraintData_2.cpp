@@ -36,4 +36,28 @@ void fn_00dc753c(unk_00dc753c_a0* a0, int a1) {
     a0->f_4 = (void*)(g_00dc753c_0);
 }
 
+struct unk_00dc754c_a0 {
+    char pad_0[8];
+    u8 f_8;
+    u8 f_9;
+    u8 f_a;
+};
+void fn_00dc754c(unk_00dc754c_a0* a0, int a1) {
+    if ((int)(a1) == (int)(0)) {
+        return;
+    }
+    a0->f_a = (u8)(((u32)((int)(a0->f_8) + (int)(a0->f_9)) << 2) + 20);
+}
+
+extern char g_00dc7574_0[];
+void fn_00dc7574(int a0, int a1) {
+    if ((int)(a0) != (int)(1)) {
+        return;
+    }
+    if ((int)(a1) != (int)(65535)) {
+        return;
+    }
+    FIELD(u8, g_00dc7574_0, 0) = (u8)(0);
+}
+
 }

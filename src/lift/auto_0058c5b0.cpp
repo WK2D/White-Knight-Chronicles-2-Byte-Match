@@ -15,6 +15,16 @@ void fn_0058d3ac(unk_0058d3ac_a0* a0) {
     FIELD(u16, a0->f_0, 22) = (u16)(FIELD(u8, a0->f_0, 0));
 }
 
+struct unk_0058da34_a0 {
+    u32 f_0;
+};
+void fn_0058da34(unk_0058da34_a0* a0, int a1) {
+    if ((int)(FIELD(u8, a0->f_0, 0)) != (int)(0)) {
+        return;
+    }
+    FIELD(u16, a0->f_0, 22) = (u16)((int)(signed char)(a1));
+}
+
 struct unk_0058df10_a0 {
     u32 f_0;
 };

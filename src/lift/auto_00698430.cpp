@@ -5,6 +5,36 @@
 extern "C" {
 
 
+extern char g_006a0b20_0[];
+u16 fn_006a0b20(void) {
+    return (u16)(FIELD(u16, (int)(FIELD(u32, FIELD(u32, g_006a0b20_0, 0), 128)) + 851968, 4294));
+}
+
+extern char g_006a0bf0_0[];
+void fn_006a0bf0(int a0, int a1) {
+    FIELD(u8, (int)(FIELD(u32, FIELD(u32, g_006a0bf0_0, 0), 128)) + 851968, 4289) = (u8)(a1);
+}
+
+extern char g_006a0c08_0[];
+void fn_006a0c08(int a0, int a1) {
+    FIELD(u8, (int)(FIELD(u32, FIELD(u32, g_006a0c08_0, 0), 128)) + 851968, 4288) = (u8)(a1);
+}
+
+extern char g_006a0c20_0[];
+u8 fn_006a0c20(void) {
+    return (u8)(FIELD(u8, (int)(FIELD(u32, FIELD(u32, g_006a0c20_0, 0), 128)) + 851968, 4289));
+}
+
+extern char g_006a0c38_0[];
+u8 fn_006a0c38(void) {
+    return (u8)(FIELD(u8, (int)(FIELD(u32, FIELD(u32, g_006a0c38_0, 0), 128)) + 851968, 4288));
+}
+
+extern char g_006a0c50_0[];
+u8 fn_006a0c50(void) {
+    return (u8)(FIELD(u8, (int)(FIELD(u32, FIELD(u32, g_006a0c50_0, 0), 128)) + 851968, 4290));
+}
+
 struct unk_006a3124_a0 {
     char pad_0[600];
     u32 f_258;

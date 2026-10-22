@@ -77,6 +77,16 @@ void* fn_003bab50(unk_003bab50_a0* a0) {
     return (void*)(v0);
 }
 
+struct unk_003bac3c_a2 {
+    u32 f_0;
+};
+int fn_003bac3c(int a0, int a1, unk_003bac3c_a2* a2) {
+    int t0;
+    t0 = fn_00034a88();
+    a2->f_0 = (u32)((int)(t0) + 8388608);
+    return (int)(0);
+}
+
 struct unk_003bad38_a0 {
     char pad_0[152];
     u32 f_98;

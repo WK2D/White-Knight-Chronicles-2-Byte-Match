@@ -4,7 +4,28 @@
 
 extern "C" {
 
+static void* __attribute__((noinline)) stub_0011aa3c(int p0, int p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static void __attribute__((noinline)) stub_0011aa84(void* p0, int p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
+
+struct unk_0011aee8_a0 {
+    char pad_0[568];
+    u8 f_238;
+};
+int fn_0011aee8(unk_0011aee8_a0* a0) {
+    if ((int)(FIELD(u8, (int)(a0) + 65536, -22176)) != (int)(0)) {
+        return (int)(1);
+    }
+    a0->f_238 = (u8)(1);
+    return (int)(1);
+}
+
+struct unk_0011af0c_a0 {
+    char pad_0[15424];
+    u16 f_3c40;
+};
+int fn_0011af0c(unk_0011af0c_a0* a0) {
+    return (int)((int)(short)(a0->f_3c40));
+}
 
 struct unk_0011b058_a0 {
     char pad_0[16382];
@@ -14,6 +35,191 @@ int fn_0011b058(unk_0011b058_a0* a0) {
     stub_0011aa84((void*)(a0), (int)(1));
     a0->f_3ffe = (u16)(3);
     return (int)(1);
+}
+
+struct unk_0011b094_a0 {
+    char pad_0[16382];
+    u16 f_3ffe;
+};
+int fn_0011b094(unk_0011b094_a0* a0) {
+    if ((int)(FIELD(u8, (int)(a0) + 65536, -22176)) != (int)(0)) {
+        return (int)(1);
+    }
+    a0->f_3ffe = (u16)(4);
+    return (int)(1);
+}
+
+int fn_0011b0dc(int a0) {
+    void* t0;
+    int v0;
+    t0 = stub_0011aa3c((int)(a0), (int)(1));
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)((int)(signed char)(FIELD(u8, t0, 16)));
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
+int fn_0011b350(int a0) {
+    void* t0;
+    int v0;
+    t0 = stub_0011aa3c((int)(a0), (int)(3));
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)((int)(signed char)(FIELD(u8, t0, 16)));
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
+int fn_0011b38c(int a0) {
+    void* t0;
+    int v0;
+    t0 = stub_0011aa3c((int)(a0), (int)(4));
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)((int)(signed char)(FIELD(u8, t0, 16)));
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
+int fn_0011b48c(int a0) {
+    void* t0;
+    int v0;
+    t0 = stub_0011aa3c((int)(a0), (int)(5));
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)((int)(signed char)(FIELD(u8, t0, 16)));
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
+int fn_0011b4c8(int a0) {
+    void* t0;
+    int v0;
+    t0 = stub_0011aa3c((int)(a0), (int)(6));
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)((int)(signed char)(FIELD(u8, t0, 16)));
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
+int fn_0011b504(int a0) {
+    void* t0;
+    int v0;
+    t0 = stub_0011aa3c((int)(a0), (int)(7));
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)((int)(signed char)(FIELD(u8, t0, 16)));
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
+int fn_0011b678(int a0) {
+    void* t0;
+    int v0;
+    t0 = stub_0011aa3c((int)(a0), (int)(8));
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)((int)(signed char)(FIELD(u8, t0, 16)));
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
+int fn_0011b6b4(int a0) {
+    void* t0;
+    int v0;
+    t0 = stub_0011aa3c((int)(a0), (int)(9));
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)((int)(signed char)(FIELD(u8, t0, 16)));
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
+int fn_0011b728(int a0) {
+    void* t0;
+    int v0;
+    t0 = stub_0011aa3c((int)(a0), (int)(10));
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)((int)(signed char)(FIELD(u8, t0, 16)));
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
+int fn_0011b8a4(int a0) {
+    void* t0;
+    int v0;
+    t0 = stub_0011aa3c((int)(a0), (int)(11));
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)((int)(signed char)(FIELD(u8, t0, 16)));
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
+int fn_0011b9d8(int a0) {
+    void* t0;
+    int v0;
+    t0 = stub_0011aa3c((int)(a0), (int)(13));
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)((int)(signed char)(FIELD(u8, t0, 16)));
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
+int fn_0011ba14(int a0) {
+    void* t0;
+    int v0;
+    t0 = stub_0011aa3c((int)(a0), (int)(12));
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)((int)(signed char)(FIELD(u8, t0, 16)));
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
+int fn_0011ba50(int a0) {
+    void* t0;
+    int v0;
+    t0 = stub_0011aa3c((int)(a0), (int)(14));
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)((int)(signed char)(FIELD(u8, t0, 16)));
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
+struct unk_0011bb1c_a0 {
+    char pad_0[19920];
+    u8 f_4dd0;
+};
+int fn_0011bb1c(unk_0011bb1c_a0* a0) {
+    u8 v0;
+    int v1;
+    if ((int)(FIELD(u8, (int)(a0) + 65536, -22176)) == (int)(1)) {
+        v0 = (u8)(a0->f_4dd0);
+        v1 = (int)((int)(signed char)(a0->f_4dd0));
+    } else {
+        v0 = (u8)(FIELD(u8, (int)(a0) + 65536, -22176));
+        v1 = (int)(0);
+    }
+    return (int)(v1);
 }
 
 }

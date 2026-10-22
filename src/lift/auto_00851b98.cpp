@@ -22,6 +22,26 @@ void fn_0085265c(void* a0, int a1, void* a2) {
     fn_00b3f328((void*)((char*)a0 + 2452), (void*)(a2));
 }
 
+int fn_008526b0(int a0) {
+    if ((u32)((u32)(a0) & 0xffff) <= (u32)(36)) {
+        if ((u32)((u32)(a0) & 0xffff) <= (u32)(9)) {
+            return (int)((int)(signed char)(a0 + 48));
+        }
+        return (int)((int)(signed char)(a0 + 55));
+    }
+    return (int)(48);
+}
+
+extern char g_00852738_0[];
+u32 fn_00852738(void) {
+    return (u32)((u32)((u32)((int)(FIELD(u8, g_00852738_0, 0) + -1) >> 31) & (u32)(237)) & (u32)(237));
+}
+
+extern char g_0085275c_0[];
+u32 fn_0085275c(void) {
+    return (u32)((u32)((u32)((int)(FIELD(u8, g_0085275c_0, 0) + -1) >> 31) & (u32)(6800)) & (u32)(6800));
+}
+
 struct unk_008529b4_a0 {
     char pad_0[4];
     u32 f_4;

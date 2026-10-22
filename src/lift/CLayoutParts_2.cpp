@@ -5,8 +5,22 @@
 extern "C" {
 
 static void* __attribute__((noinline)) stub_0004cce0(void) { void* r; __asm__ volatile ("" : "=r"(r)); return r; }
+static void* __attribute__((noinline)) stub_0004e8c0(void) { void* r; __asm__ volatile ("" : "=r"(r)); return r; }
 static void* __attribute__((noinline)) stub_0004eb10(void) { void* r; __asm__ volatile ("" : "=r"(r)); return r; }
 static int __attribute__((noinline)) stub_0004ec4c(int p0, int p1, int p2, int p3, int p4, int p5) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4), "r"(p5)); return r; }
+static void* __attribute__((noinline)) stub_0004ef28(void) { void* r; __asm__ volatile ("" : "=r"(r)); return r; }
+
+void* fn_0004e0c4(int a0, int a1, int a2, int a3) {
+    void* t0;
+    int v0;
+    t0 = stub_0004cce0();
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)((u32)(a3) & (u32)(FIELD(u32, t0, 120)));
+    } else {
+        v0 = (int)(0);
+    }
+    return (void*)(v0);
+}
 
 void* fn_0004e108(void) {
     void* t0;
@@ -18,6 +32,18 @@ void* fn_0004e108(void) {
         v0 = (int)(0);
     }
     return (void*)(v0);
+}
+
+int fn_0004e368(void) {
+    void* t0;
+    int v0;
+    t0 = stub_0004cce0();
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)(FIELD(u16, t0, 188));
+    } else {
+        v0 = (int)(65535);
+    }
+    return (int)(v0);
 }
 
 int fn_0004ebc4(int a0, int a1, int a2, int a3, int a4) {
@@ -68,6 +94,42 @@ u8 fn_0004ed7c(int a0, int a1, int a2, int a3) {
     int t0;
     t0 = stub_0004ec4c((int)(a0), (int)(a1), (int)(a2), (int)(a3), (int)(268435456), (int)(1));
     return (u8)((u8)t0);
+}
+
+int fn_0004efd4(void) {
+    void* t0;
+    int v0;
+    t0 = stub_0004ef28();
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)((int)(short)(FIELD(u16, t0, 18)));
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
+int fn_0004f00c(void) {
+    void* t0;
+    int v0;
+    t0 = stub_0004ef28();
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)((int)(short)(FIELD(u16, t0, 16)));
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
+int fn_0004f3e8(void) {
+    void* t0;
+    int v0;
+    t0 = stub_0004e8c0();
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)((u32)(FIELD(u16, t0, 44)) & 0x7);
+    } else {
+        v0 = (int)(-1);
+    }
+    return (int)(v0);
 }
 
 }

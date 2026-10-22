@@ -8,6 +8,22 @@ void* fn_009b95cc(void);
 void* fn_009b9664(void);
 void* fn_009b96fc(void);
 
+struct unk_009b8bec_a0 {
+    u32 f_0;
+    u32 f_4;
+};
+struct unk_009b8bec_a1 {
+    u32 f_0;
+    u32 f_4;
+};
+struct unk_009b8bec_a2 {
+    u32 f_0;
+};
+int fn_009b8bec(unk_009b8bec_a0* a0, unk_009b8bec_a1* a1, unk_009b8bec_a2* a2) {
+    a2->f_0 = (u32)((int)((int)(a1->f_4) - (int)(a0->f_4)) + (int)((int)((int)(a1->f_0) - (int)(a0->f_0)) * (int)(1000000)));
+    return (int)(0);
+}
+
 void* fn_009b8d1c(void) {
     void* t0;
     t0 = fn_009b95cc();

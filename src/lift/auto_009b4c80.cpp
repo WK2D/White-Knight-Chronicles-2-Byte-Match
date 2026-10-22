@@ -18,4 +18,32 @@ int fn_009b4c94(int a0) {
     return (int)(0);
 }
 
+struct unk_009b5148_a0 {
+    u8 f_0;
+};
+u32 fn_009b5148(unk_009b5148_a0* a0, int a1) {
+    int v0;
+    if (a0 != 0) {
+        a0->f_0 = (u8)(a1);
+        v0 = (int)(0);
+    } else {
+        v0 = (int)(2);
+    }
+    return (u32)((u32)(v0) & 0x2);
+}
+
+struct unk_009b518c_a0 {
+    u8 f_0;
+};
+u32 fn_009b518c(unk_009b518c_a0* a0, int a1) {
+    int v0;
+    if (a0 != 0) {
+        a0->f_0 = (u8)(a1);
+        v0 = (int)(0);
+    } else {
+        v0 = (int)(2);
+    }
+    return (u32)((u32)(v0) & 0x2);
+}
+
 }

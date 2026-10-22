@@ -14,6 +14,33 @@ int fn_00f3f968(int a0, int a1) {
     return (int)(a1);
 }
 
+struct unk_00f3f9d8_a0 {
+    u32 f_0;
+    char pad_4[4];
+    u32 f_8;
+};
+u32 fn_00f3f9d8(unk_00f3f9d8_a0* a0, int a1) {
+    return (u32)(FIELD(u32, (int)((u32)((int)(a1) + (int)(a0->f_8)) << 2) + (int)(a0->f_0), 4));
+}
+
+struct unk_00f3f9f8_a0 {
+    u32 f_0;
+    char pad_4[4];
+    u32 f_8;
+};
+u32 fn_00f3f9f8(unk_00f3f9f8_a0* a0, int a1) {
+    return (u32)(FIELD(u32, (int)((u32)((int)((u32)(a0->f_8) << 1) + (int)(a1)) << 2) + (int)(a0->f_0), 8));
+}
+
+struct unk_00f3fa1c_a0 {
+    u32 f_0;
+    char pad_4[4];
+    u32 f_8;
+};
+void fn_00f3fa1c(unk_00f3fa1c_a0* a0, int a1, int a2) {
+    FIELD(u32, (int)((u32)((int)((u32)(a0->f_8) << 1) + (int)(a1)) << 2) + (int)(a0->f_0), 8) = (u32)(a2);
+}
+
 void fn_00f40f90(int a0, int a1) {
     fn_00bfbe74((int)(a1), (int)(a0));
 }

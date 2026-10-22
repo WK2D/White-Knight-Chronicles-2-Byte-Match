@@ -7,6 +7,14 @@ extern "C" {
 void fn_00b37fa8(void*, int, int);
 void fn_00b38268(void*, void*);
 
+struct unk_0070700c_a0 {
+    char pad_0[192];
+    u32 f_c0;
+};
+void* fn_0070700c(unk_0070700c_a0* a0) {
+    return (void*)((char*)((char*)a0 + (int)((int)(a0->f_c0) * 76)) + 40);
+}
+
 void fn_00707270(void* a0, void* a1) {
     fn_00b37fa8((void*)((char*)a0 + 278), (int)(0), (int)(512));
     fn_00b38268((void*)((char*)a0 + 278), (void*)(a1));

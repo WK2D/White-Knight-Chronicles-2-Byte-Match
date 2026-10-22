@@ -4,8 +4,30 @@
 
 extern "C" {
 
+int fn_009eecb8(int);
+int fn_009eeed8(int);
 void fn_00a19868(u32);
 void fn_00b3d088(void*, int, int);
+
+struct unk_00a0df6c_a0 {
+    char pad_0[28];
+    u16 f_1c;
+};
+int fn_00a0df6c(unk_00a0df6c_a0* a0) {
+    int t0;
+    t0 = fn_009eecb8((int)((int)(short)(a0->f_1c)));
+    return (int)(t0);
+}
+
+struct unk_00a0f0e8_a0 {
+    char pad_0[28];
+    u16 f_1c;
+};
+u8 fn_00a0f0e8(unk_00a0f0e8_a0* a0, int a1) {
+    int t0;
+    t0 = fn_009eeed8((int)((int)(short)(a0->f_1c)));
+    return (u8)(FIELD(u8, (int)(t0) + (int)(a1), 0));
+}
 
 extern char g_00a10770_0[];
 void fn_00a10770(void) {

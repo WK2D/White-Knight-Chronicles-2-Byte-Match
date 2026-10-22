@@ -6,6 +6,14 @@ extern "C" {
 
 static void __attribute__((noinline)) stub_00795344(void) { __asm__ volatile (""); }
 
+struct unk_0079482c_a0 {
+    char pad_0[36];
+    u16 f_24;
+};
+void* fn_0079482c(unk_0079482c_a0* a0) {
+    return (void*)((char*)((char*)a0 + (int)((int)((int)(short)(a0->f_24)) * 76)) + 40);
+}
+
 int fn_0079540c(void) {
     stub_00795344();
     return (int)(1);

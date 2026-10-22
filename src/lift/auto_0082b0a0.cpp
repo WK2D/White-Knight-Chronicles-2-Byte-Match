@@ -7,7 +7,29 @@ extern "C" {
 int fn_00835ab0(u32);
 void fn_00835c88(u32, void*, int);
 void* fn_008360c0(u32);
+int fn_00836da8(u32, void*, u8);
 int fn_00836f38(u32, void*, int, int);
+
+struct unk_0082b4e0_a0 {
+    char pad_0[4348];
+    u32 f_10fc;
+    char pad_1100[32];
+    u32 f_1120;
+};
+int fn_0082b4e0(unk_0082b4e0_a0* a0, int a1) {
+    int t0;
+    int v0;
+    int v1;
+    if ((int)(a0->f_1120) != (int)(2)) {
+        t0 = fn_00836da8((u32)(a0->f_10fc), (void*)((char*)a0 + 280), (u8)((u8)a1));
+        v0 = (int)((u32)(t0) & 0xff);
+        v1 = (int)(t0);
+    } else {
+        v0 = (int)(0);
+        v1 = (int)(a0);
+    }
+    return (int)(v0);
+}
 
 struct unk_0082b52c_a0 {
     char pad_0[4348];

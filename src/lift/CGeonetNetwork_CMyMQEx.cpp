@@ -10,4 +10,15 @@ void fn_00133608(int a0, int a1, int a2, int a3, int a4) {
     fn_000c0a70((int)(a0), (int)(a1), (int)(a2), (int)(a3), (int)(a4), (int)(5));
 }
 
+extern char g_0013553c_0[];
+void* fn_0013553c(void) {
+    int v0;
+    if ((int)(FIELD(u32, FIELD(u32, g_0013553c_0, 0), 144)) != (int)(0)) {
+        v0 = (int)(FIELD(u32, (int)(FIELD(u32, FIELD(u32, g_0013553c_0, 0), 144)) + 65536, 20856));
+    } else {
+        v0 = (int)(0);
+    }
+    return (void*)(v0);
+}
+
 }

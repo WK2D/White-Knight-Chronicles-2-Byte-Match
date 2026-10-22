@@ -5,6 +5,11 @@
 extern "C" {
 
 
+extern char g_0002b45c_0[];
+void* fn_0002b45c(int a0) {
+    return (void*)((char*)g_0002b45c_0 + (int)((int)((u32)(a0) << 5) + (int)((u32)(a0) << 7)));
+}
+
 extern char g_0002b6e0_0[];
 void fn_0002b6e0(int a0) {
     if ((int)(FIELD(u32, g_0002b6e0_0, 4816)) != (int)(a0)) {

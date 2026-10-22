@@ -289,6 +289,33 @@ void fn_0038ac98(unk_0038ac98_a0* a0) {
     }
 }
 
+struct unk_0038af18_a0 {
+    char pad_0[4866];
+    u8 f_1302;
+};
+int fn_0038af18(unk_0038af18_a0* a0) {
+    return (int)((int)(signed char)(a0->f_1302));
+}
+
+struct unk_0038af24_a0 {
+    char pad_0[4865];
+    u8 f_1301;
+};
+int fn_0038af24(unk_0038af24_a0* a0) {
+    return (int)((int)(signed char)(a0->f_1301));
+}
+
+struct unk_0038afe4_a0 {
+    char pad_0[5072];
+    u32 f_13d0;
+};
+void fn_0038afe4(unk_0038afe4_a0* a0) {
+    if ((int)(a0->f_13d0) < (int)(0)) {
+        return;
+    }
+    a0->f_13d0 = (u32)((u32)(a0->f_13d0) | 0x80000000);
+}
+
 struct unk_0038affc_a0 {
     virtual void vf0();
     virtual void vf1();

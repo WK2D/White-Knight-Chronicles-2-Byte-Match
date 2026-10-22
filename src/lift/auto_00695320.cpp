@@ -6,18 +6,8 @@ extern "C" {
 
 void* fn_00043544(void*);
 void fn_000c0398(void);
-static void __attribute__((noinline)) stub_00692450(void* p0, int p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
-static void __attribute__((noinline)) stub_00692474(void* p0, int p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
-static void __attribute__((noinline)) stub_00692498(void* p0, int p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
-static void __attribute__((noinline)) stub_006924bc(void* p0, int p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
-static void __attribute__((noinline)) stub_0069270c(void* p0, int p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
-static void __attribute__((noinline)) stub_00692c94(void* p0, void* p1, void* p2, void* p3, void* p4) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4)); }
-static void __attribute__((noinline)) stub_00692db0(void* p0, int p1, int p2, int p3) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); }
-static void __attribute__((noinline)) stub_00695e08(void* p0, int p1, int p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
 static void __attribute__((noinline)) stub_00695f10(void* p0, void* p1, void* p2, int p3) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); }
 static void __attribute__((noinline)) stub_006960dc(void* p0, int p1, void* p2, void* p3, int p4, int p5, u8 p6) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4), "r"(p5), "r"(p6)); }
-static void __attribute__((noinline)) stub_006968ac(void* p0, int p1, u32 p2, int p3) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); }
-void fn_006eeae0(u32);
 void fn_0070a2f0(u32);
 void fn_0070a37c(u32);
 void fn_00b38268(void*, int);
@@ -53,27 +43,6 @@ int fn_00696618(void* a0, int a1, void* a2, int a3) {
     t0 = fn_00043544((void*)((char*)a0 + 936));
     stub_00695f10((void*)(a0), (void*)(t0), (void*)(a2), (int)(a3));
     return (int)(1);
-}
-
-struct unk_006968f8_a0 {
-    char pad_0[644];
-    u32 f_284;
-};
-struct unk_006968f8_a6 {
-    char pad_0[4];
-    u32 f_4;
-};
-void fn_006968f8(unk_006968f8_a0* a0, int a1, void* a2, void* a3, void* a4, void* a5, unk_006968f8_a6* a6) {
-    stub_00692db0((void*)(a0), (int)(1), (int)(0), (int)(0));
-    stub_006968ac((void*)(a0), (int)(23), (u32)(a6->f_4), (int)(0));
-    stub_00695e08((void*)(a0), (int)(20), (int)(0));
-    stub_00692450((void*)(a0), (int)(23));
-    stub_00692474((void*)(a0), (int)(23));
-    stub_00692498((void*)(a0), (int)(20));
-    stub_006924bc((void*)(a0), (int)(a1));
-    stub_00692c94((void*)(a0), (void*)(a2), (void*)(a3), (void*)(a4), (void*)(a5));
-    stub_0069270c((void*)(a0), (int)(1));
-    fn_006eeae0((u32)(a0->f_284));
 }
 
 void fn_0069840c(void) {

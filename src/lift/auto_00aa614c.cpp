@@ -37,6 +37,25 @@ void fn_00aa7528(unk_00aa7528_a0* a0) {
     a0->f_614 = (u32)(a0->f_610);
 }
 
+struct unk_00aa7534_a0 {
+    char pad_0[1568];
+    u32 f_620;
+    char pad_624[4];
+    u32 f_628;
+};
+void* fn_00aa7534(unk_00aa7534_a0* a0, int a1) {
+    return (void*)((int)((int)(a1) * (int)(a0->f_628)) + (int)(a0->f_620));
+}
+
+struct unk_00aa758c_a0 {
+    char pad_0[1604];
+    u32 f_644;
+    u32 f_648;
+};
+void* fn_00aa758c(unk_00aa758c_a0* a0, int a1) {
+    return (void*)((int)((int)(a1) * (int)(a0->f_648)) + (int)(a0->f_644));
+}
+
 struct unk_00aa766c_a0 {
     char pad_0[4];
     u32 f_4;

@@ -5,6 +5,10 @@
 extern "C" {
 
 
+int fn_000b977c(int a0, int a1) {
+    return (int)((int)((u32)((u32)(a1) << 16) | (u32)(a0)));
+}
+
 u16 fn_000b978c(int a0) {
     return (u16)((u16)a0);
 }

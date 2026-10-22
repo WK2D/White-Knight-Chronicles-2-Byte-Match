@@ -31,6 +31,17 @@ u32 fn_00ad0dec(unk_00ad0dec_a0* a0, unk_00ad0dec_a1* a1) {
     return (u32)(a0->f_34);
 }
 
+struct unk_00ad0e14_a0 {
+    char pad_0[16];
+    u32 f_10;
+    char pad_14[36];
+    u32 f_38;
+    u32 f_3c;
+};
+void* fn_00ad0e14(unk_00ad0e14_a0* a0, int a1) {
+    return (void*)((char*)((char*)a0 + (int)((int)((int)(a1) * (int)(a0->f_3c)) + (int)(a0->f_38))) + (int)(a0->f_10));
+}
+
 struct unk_00ad0e38_a0 {
     char pad_0[16];
     u32 f_10;

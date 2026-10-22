@@ -4,16 +4,10 @@
 
 extern "C" {
 
-void fn_00b37fa8(void*, int, int);
-void fn_00b38268(void*, void*);
+void fn_00b37fa8(void*, int, u32);
 
-void fn_006f27b8(void* a0) {
-    fn_00b37fa8((void*)((char*)a0 + 1968), (int)(0), (int)(256));
-}
-
-void fn_006f2c44(void* a0, void* a1) {
-    fn_00b37fa8((void*)((char*)a0 + 1968), (int)(0), (int)(256));
-    fn_00b38268((void*)((char*)a0 + 1968), (void*)(a1));
+void fn_006f2780(void* a0) {
+    fn_00b37fa8((void*)((char*)a0 + 2224), (int)(0), (u32)(36864));
 }
 
 }

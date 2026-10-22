@@ -4,6 +4,23 @@
 
 extern "C" {
 
+static void* __attribute__((noinline)) stub_00078040(int p0) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+
+struct unk_00078070_a0 {
+    u8 f_0;
+    u8 f_1;
+};
+void* fn_00078070(unk_00078070_a0* a0) {
+    void* t0;
+    t0 = stub_00078040((int)((int)(signed char)(a0->f_0)));
+    if ((u32)(t0) > (u32)(1)) {
+        if ((int)(a0->f_1) != (int)(0)) {
+            return (void*)(t0);
+        }
+        return (void*)(1);
+    }
+    return (void*)(t0);
+}
 
 void* fn_000781f8(void) {
     return (void*)(-1);

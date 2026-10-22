@@ -6,6 +6,20 @@ extern "C" {
 
 void fn_00b37fa8(int, int, int);
 
+struct unk_000fa68c_a0 {
+    u8 f_0;
+};
+void fn_000fa68c(unk_000fa68c_a0* a0) {
+    a0->f_0 = (u8)((u32)(a0->f_0) & 0x3f);
+}
+
+struct unk_000fa69c_a0 {
+    u8 f_0;
+};
+void fn_000fa69c(unk_000fa69c_a0* a0) {
+    a0->f_0 = (u8)((u32)(a0->f_0) & (u32)(207));
+}
+
 void fn_000faab0(int a0) {
     fn_00b37fa8((int)(a0), (int)(0), (int)(1052));
 }

@@ -4,11 +4,28 @@
 
 extern "C" {
 
-int fn_0003f9e0(int);
+void* fn_0003f9e0(int, int, int, int, int, int, void*);
+int fn_0003fab0(void*, int, int, int, int, int, void*, int);
+int fn_00212c98(void*, void*, int);
 static void __attribute__((noinline)) stub_0032daa8(void) { __asm__ volatile (""); }
 
 int fn_0032dd54(void) {
     stub_0032daa8();
+    return (int)(1);
+}
+
+extern char g_00334414_0[];
+int fn_00334414(int a0, int a1, int a2, int a3, int a4, int a5) {
+    void* t0;
+    int t1;
+    int v0;
+    t0 = fn_0003f9e0((int)(a0), (int)(a1), (int)(a2), (int)(a3), (int)(a4), (int)(a5), (void*)(g_00334414_0));
+    if ((int)(FIELD(u32, FIELD(u32, g_00334414_0, 0), 112)) != (int)(0)) {
+        t1 = fn_00212c98((void*)(FIELD(u32, FIELD(u32, g_00334414_0, 0), 112)), (void*)(t0), (int)(0));
+        v0 = (int)(t1);
+    } else {
+        v0 = (int)(FIELD(u32, FIELD(u32, g_00334414_0, 0), 112));
+    }
     return (int)(1);
 }
 
@@ -18,18 +35,20 @@ int fn_0033500c(void) {
     return (int)(1);
 }
 
-extern char g_00335858_0[];
-int fn_00335858(int a0) {
+extern char g_00335804_0[];
+int fn_00335804(void* a0, int a1, int a2, int a3, int a4, int a5) {
     int t0;
     int v0;
-    t0 = fn_0003f9e0((int)(a0));
-    if ((int)(FIELD(u32, FIELD(u32, g_00335858_0, 0), 100)) != (int)(0)) {
-        FIELD(u32, FIELD(u32, FIELD(u32, g_00335858_0, 0), 100), 1004) = (u32)(t0);
-        v0 = (int)(1);
+    int v1;
+    if ((int)(FIELD(u32, FIELD(u32, g_00335804_0, 0), 100)) != (int)(0)) {
+        t0 = fn_0003fab0((void*)(a0), (int)((int)FIELD(u32, FIELD(u32, FIELD(u32, g_00335804_0, 0), 100), 1004)), (int)(a2), (int)(a3), (int)(a4), (int)(a5), (void*)(FIELD(u32, FIELD(u32, g_00335804_0, 0), 100)), (int)(0));
+        v0 = (int)(t0);
+        v1 = (int)(1);
     } else {
-        v0 = (int)(0);
+        v0 = (int)(a0);
+        v1 = (int)(0);
     }
-    return (int)(v0);
+    return (int)(v1);
 }
 
 }

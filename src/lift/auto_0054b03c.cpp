@@ -19,4 +19,12 @@ void* fn_0054b0a4(unk_0054b0a4_a0* a0) {
     return (void*)(v0);
 }
 
+u16 fn_0054b154(int a0, int a1) {
+    return (u16)(FIELD(u16, (int)((u32)(a1) << 3) + (int)(a0), 0));
+}
+
+u16 fn_0054b168(int a0, int a1) {
+    return (u16)(FIELD(u16, (int)((u32)(a1) << 3) + (int)(a0), 2));
+}
+
 }

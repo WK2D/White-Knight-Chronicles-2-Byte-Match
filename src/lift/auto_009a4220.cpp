@@ -4,6 +4,43 @@
 
 extern "C" {
 
+static void* __attribute__((noinline)) stub_009a4668(void* p0, int p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
+
+struct unk_009a48dc_a2 {
+    u32 f_0;
+};
+u32 fn_009a48dc(void* a0, int a1, unk_009a48dc_a2* a2) {
+    void* t0;
+    void* v0;
+    void* v1;
+    void* v2;
+    if ((int)(a0) != (int)(0)) {
+        if ((u32)(a1) <= (u32)(255)) {
+            if ((int)(a2) != (int)(0)) {
+                a2->f_0 = (u32)(16777215);
+                t0 = stub_009a4668((void*)(a0), (int)(a1));
+                if ((int)(t0) != (int)(0)) {
+                    if ((int)(FIELD(u32, t0, 32)) != (int)(0)) {
+                        a2->f_0 = (u32)(1);
+                        return (u32)((u32)(25) & (u32)(27));
+                    }
+                    a2->f_0 = (u32)(FIELD(u32, t0, 32));
+                    return (u32)((u32)(25) & (u32)(27));
+                }
+                v0 = (void*)(t0);
+            } else {
+                v0 = (void*)(a0);
+            }
+            v1 = (void*)(v0);
+        } else {
+            v1 = (void*)(a0);
+        }
+        v2 = (void*)(v1);
+    } else {
+        v2 = (void*)(a0);
+    }
+    return (u32)((u32)(3) & (u32)(27));
+}
 
 u8 fn_009a49a0(int a0) {
     return (u8)((u8)a0);

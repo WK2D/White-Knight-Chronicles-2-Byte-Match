@@ -4,6 +4,41 @@
 
 extern "C" {
 
+static int __attribute__((noinline)) stub_0052e93c(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+
+struct unk_0052ea8c_a0 {
+    char pad_0[280];
+    u32 f_118;
+};
+int fn_0052ea8c(unk_0052ea8c_a0* a0) {
+    int t0;
+    u32 v0;
+    void* v1;
+    int v2;
+    void* v3;
+    u32 v4;
+    int v5;
+    if ((int)(a0->f_118) > (int)(0)) {
+        v0 = (u32)(a0->f_118);
+        v1 = (void*)(a0);
+        v2 = (int)(0);
+        v3 = (void*)((char*)a0 + 24);
+        do {
+            t0 = stub_0052e93c((void*)(v3));
+            v0 = (u32)(a0->f_118);
+            v1 = (void*)(t0);
+            v2 = (int)(v2 + 1);
+            v3 = (void*)((char*)v3 + 16);
+        } while ((int)(v0) > (int)(v2));
+        v4 = (u32)(a0->f_118);
+        v5 = (int)(t0);
+    } else {
+        v4 = (u32)(a0->f_118);
+        v5 = (int)(a0);
+    }
+    a0->f_118 = (u32)(0);
+    return (int)(0);
+}
 
 struct unk_00530050_a0 {
     char pad_0[4];

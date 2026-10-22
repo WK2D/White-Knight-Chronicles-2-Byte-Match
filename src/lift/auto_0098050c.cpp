@@ -11,4 +11,22 @@ int fn_0098050c(void) {
     return (int)(0);
 }
 
+extern char g_00980524_0[];
+extern char g_00980524_1[];
+void* fn_00980524(int a0) {
+    int v0;
+    void* v1;
+    void* v2;
+    if ((u32)(FIELD(u32, FIELD(u32, g_00980524_0, 0), 248)) > (u32)(a0)) {
+        v0 = (int)(FIELD(u32, (int)((u32)(a0) << 2) + (int)(FIELD(u32, g_00980524_1, 372)), 0));
+        v1 = (void*)((int)((u32)(a0) << 2) + (int)(FIELD(u32, g_00980524_1, 372)));
+        v2 = (void*)(g_00980524_1);
+    } else {
+        v0 = (int)(0);
+        v1 = (void*)(FIELD(u32, g_00980524_0, 0));
+        v2 = (void*)(g_00980524_0);
+    }
+    return (void*)(v0);
+}
+
 }

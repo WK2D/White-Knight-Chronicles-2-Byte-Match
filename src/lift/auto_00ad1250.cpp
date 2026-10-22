@@ -29,6 +29,34 @@ void* fn_00ad1338(unk_00ad1338_a0* a0, unk_00ad1338_a1* a1) {
     return (void*)((char*)((char*)a0 + (int)(a1->f_2)) + (int)(a0->f_10));
 }
 
+struct unk_00ad1354_a0 {
+    char pad_0[16];
+    u32 f_10;
+};
+struct unk_00ad1354_a1 {
+    char pad_0[5];
+    u8 f_5;
+    char pad_6[18];
+    u32 f_18;
+};
+void* fn_00ad1354(unk_00ad1354_a0* a0, unk_00ad1354_a1* a1) {
+    return (void*)((char*)((char*)((char*)a0 + (int)(a1->f_18)) + (int)(a0->f_10)) + (int)((u32)(a1->f_5) << 2));
+}
+
+struct unk_00ad137c_a0 {
+    char pad_0[16];
+    u32 f_10;
+};
+struct unk_00ad137c_a1 {
+    char pad_0[5];
+    u8 f_5;
+    char pad_6[26];
+    u32 f_20;
+};
+void* fn_00ad137c(unk_00ad137c_a0* a0, unk_00ad137c_a1* a1) {
+    return (void*)((char*)((char*)((char*)a0 + (int)(a1->f_20)) + (int)(a0->f_10)) + (int)((u32)(a1->f_5) << 2));
+}
+
 struct unk_00ad1798_a0 {
     char pad_0[16];
     u32 f_10;

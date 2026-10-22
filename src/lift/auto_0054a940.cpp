@@ -4,9 +4,58 @@
 
 extern "C" {
 
+static void __attribute__((noinline)) stub_0054a9b8(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
+
+struct unk_0054aa1c_a0 {
+    char pad_0[8];
+    u32 f_8;
+};
+void fn_0054aa1c(unk_0054aa1c_a0* a0, int a1) {
+    a0->f_8 = (u32)(a1);
+    stub_0054a9b8((void*)(a0));
+    FIELD(u8, (int)(a0) + 131072, -3372) = (u8)(0);
+}
 
 u8 fn_0054aabc(int a0, int a1) {
     return (u8)((u8)(a1 + 1));
+}
+
+int fn_0054aac8(int a0, int a1) {
+    int v0;
+    if ((int)(a0) != (int)(0)) {
+        v0 = (int)((u32)((u32)(a1 + 1) | (u32)(((u32)(a0) & 0xe0) + 32)) & 0xff);
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
+int fn_0054aaf0(int a0) {
+    int v0;
+    if ((int)(a0) != (int)(0)) {
+        v0 = (int)(((u32)(a0) & 0x1f) + -1);
+    } else {
+        v0 = (int)(-1);
+    }
+    return (int)(v0);
+}
+
+int fn_0054af3c(int a0, int a1) {
+    return (int)((int)((u32)((u32)(a1) & 0xf0) | (u32)(((u32)(a1) & 0xf) + 1)));
+}
+
+int fn_0054af54(int a0) {
+    int v0;
+    if ((int)(a0) != (int)(0)) {
+        v0 = (int)(((u32)(a0) & 0xff) + -1);
+    } else {
+        v0 = (int)(-1);
+    }
+    return (int)(v0);
+}
+
+u16 fn_0054af70(int a0, int a1) {
+    return (u16)((u16)((u32)((u32)(a1) << 8) | (u32)(a0 + 1)));
 }
 
 }

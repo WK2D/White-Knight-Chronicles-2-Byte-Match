@@ -4,7 +4,39 @@
 
 extern "C" {
 
+static int __attribute__((noinline)) stub_005acc58(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static void* __attribute__((noinline)) stub_005ad060(int p0, int p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
+
+struct unk_005ae1b4_a0 {
+    u32 f_0;
+};
+int fn_005ae1b4(unk_005ae1b4_a0* a0) {
+    return (int)((int)(signed char)(FIELD(u8, a0->f_0, 24)));
+}
+
+struct unk_005ae230_a0 {
+    u16 f_0;
+    char pad_2[12];
+    u16 f_e;
+};
+void fn_005ae230(unk_005ae230_a0* a0, int a1, int a2) {
+    a0->f_e = (u16)(a1);
+    a0->f_0 = (u16)((u32)(a2) | (u32)(a0->f_0));
+}
+
+struct unk_005ae374_a0 {
+    u32 f_0;
+};
+int fn_005ae374(unk_005ae374_a0* a0) {
+    return (int)((int)(short)(FIELD(u16, a0->f_0, 20)));
+}
+
+struct unk_005ae528_a0 {
+    u32 f_0;
+};
+void* fn_005ae528(unk_005ae528_a0* a0) {
+    return (void*)((u32)(FIELD(u16, a0->f_0, 12)) | (u32)((u32)(FIELD(u16, a0->f_0, 14)) << 16));
+}
 
 int fn_005ae628(int a0) {
     void* t0;
@@ -22,6 +54,21 @@ int fn_005ae628(int a0) {
         v1 = (int)(0);
     }
     return (int)(v1);
+}
+
+struct unk_005ae6e0_a0 {
+    u32 f_0;
+};
+int fn_005ae6e0(unk_005ae6e0_a0* a0) {
+    int t0;
+    int v0;
+    t0 = stub_005acc58((void*)(a0));
+    if ((int)((u32)(t0) & 0xff) != (int)(0)) {
+        v0 = (int)((int)(signed char)(FIELD(u8, a0->f_0, 25)));
+    } else {
+        v0 = (int)(-1);
+    }
+    return (int)(v0);
 }
 
 }

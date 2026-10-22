@@ -6,6 +6,19 @@ extern "C" {
 
 static void* __attribute__((noinline)) stub_00a08b84(int p0, void* p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 
+extern char g_00a093f0_0[];
+int fn_00a093f0(int a0) {
+    void* t0;
+    int v0;
+    t0 = stub_00a08b84((int)(a0), (void*)(g_00a093f0_0));
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)((int)(short)(FIELD(u16, t0, 18)));
+    } else {
+        v0 = (int)(-1);
+    }
+    return (int)(v0);
+}
+
 extern char g_00a09a0c_0[];
 int fn_00a09a0c(int a0) {
     void* t0;
@@ -13,6 +26,41 @@ int fn_00a09a0c(int a0) {
     t0 = stub_00a08b84((int)(a0), (void*)(g_00a09a0c_0));
     if ((int)(t0) != (int)(0)) {
         v0 = (int)(FIELD(u32, t0, 48));
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
+extern char g_00a09b6c_0[];
+int fn_00a09b6c(int a0, int a1) {
+    void* t0;
+    int v0;
+    t0 = stub_00a08b84((int)(a0), (void*)(g_00a09b6c_0));
+    if ((int)(t0) != (int)(0)) {
+        if ((int)(a1) != (int)(1)) {
+            if ((int)(a1) != (int)(2)) {
+                if ((int)(a1) == (int)(0)) {
+                    v0 = (int)((u32)((int)((int)(FIELD(u32, t0, 48)) >> 31) - (int)(FIELD(u32, t0, 48))) >> 31);
+                } else {
+                    v0 = (int)(0);
+                }
+                return (int)(v0);
+            }
+            return (int)((int)((u32)((int)((int)(FIELD(u32, t0, 56)) >> 31) - (int)(FIELD(u32, t0, 56))) >> 31));
+        }
+        return (int)((int)((u32)((int)((int)(FIELD(u32, t0, 32)) >> 31) - (int)(FIELD(u32, t0, 32))) >> 31));
+    }
+    return (int)(0);
+}
+
+extern char g_00a09c24_0[];
+int fn_00a09c24(int a0) {
+    void* t0;
+    int v0;
+    t0 = stub_00a08b84((int)(a0), (void*)(g_00a09c24_0));
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)((int)(signed char)(FIELD(u8, t0, 16)));
     } else {
         v0 = (int)(0);
     }

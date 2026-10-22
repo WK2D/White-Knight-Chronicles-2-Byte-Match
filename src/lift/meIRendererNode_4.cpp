@@ -23,6 +23,16 @@ void* fn_00ae06ac(unk_00ae06ac_a0* a0) {
     return (void*)(a0->f_8);
 }
 
+struct unk_00ae06c0_a0 {
+    char pad_0[8];
+    u32 f_8;
+    u32 f_c;
+};
+void fn_00ae06c0(unk_00ae06c0_a0* a0, int a1) {
+    a0->f_8 = (u32)((int)(a0->f_8) + (int)((u32)(a1) << 3));
+    FIELD(u32, a0->f_c, 20) = (u32)(a1);
+}
+
 struct unk_00ae06dc_a0 {
     char pad_0[20];
     u32 f_14;

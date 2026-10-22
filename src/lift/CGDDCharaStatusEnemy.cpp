@@ -69,6 +69,135 @@ void* fn_00390194(unk_00390194_a0* a0) {
     return (void*)(v0);
 }
 
+struct unk_003901ec_a0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual void vf5();
+    virtual void vf6();
+    virtual void vf7();
+    virtual void vf8();
+    virtual void vf9();
+    virtual void vf10();
+    virtual void vf11();
+    virtual void vf12();
+    virtual void vf13();
+    virtual void vf14();
+    virtual void vf15();
+    virtual void vf16();
+    virtual void* vf17(int);
+};
+int fn_003901ec(unk_003901ec_a0* a0) {
+    void* t0;
+    int v0;
+    t0 = a0->vf17((int)(0));
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)((int)(signed char)(FIELD(u8, t0, 2)));
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
+struct unk_0039024c_a0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual void vf5();
+    virtual void vf6();
+    virtual void vf7();
+    virtual void vf8();
+    virtual void vf9();
+    virtual void vf10();
+    virtual void vf11();
+    virtual void vf12();
+    virtual void vf13();
+    virtual void vf14();
+    virtual void vf15();
+    virtual void vf16();
+    virtual void* vf17(int);
+};
+int fn_0039024c(unk_0039024c_a0* a0) {
+    void* t0;
+    int v0;
+    t0 = a0->vf17((int)(0));
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)((int)(signed char)(FIELD(u8, t0, 3)));
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
+struct unk_003902ac_a0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual void vf5();
+    virtual void vf6();
+    virtual void vf7();
+    virtual void vf8();
+    virtual void vf9();
+    virtual void vf10();
+    virtual void vf11();
+    virtual void vf12();
+    virtual void vf13();
+    virtual void vf14();
+    virtual void vf15();
+    virtual void vf16();
+    virtual void vf17();
+    virtual void vf18();
+    virtual void vf19();
+    virtual void vf20();
+    virtual void vf21();
+    virtual void vf22();
+    virtual void vf23();
+    virtual int vf24(int);
+};
+int fn_003902ac(unk_003902ac_a0* a0) {
+    int t0;
+    t0 = a0->vf24((int)(3));
+    return (int)((int)(short)((u32)(1) << (int)((int)(signed char)(t0))));
+}
+
+struct unk_00390390_a0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual void vf5();
+    virtual void vf6();
+    virtual void vf7();
+    virtual void vf8();
+    virtual void vf9();
+    virtual void vf10();
+    virtual void vf11();
+    virtual void vf12();
+    virtual void vf13();
+    virtual void vf14();
+    virtual void vf15();
+    virtual void vf16();
+    virtual void* vf17(void);
+};
+int fn_00390390(unk_00390390_a0* a0) {
+    void* t0;
+    int v0;
+    t0 = a0->vf17();
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)((int)(signed char)(FIELD(u8, t0, 16)));
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
 struct unk_003904e4_a0 {
     virtual void vf0();
     virtual void vf1();
@@ -392,6 +521,278 @@ void* fn_003906ac(unk_003906ac_a0* a0) {
     void* t0;
     t0 = a0->vf76();
     return (void*)(t0);
+}
+
+struct unk_00390960_a0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual void vf5();
+    virtual void vf6();
+    virtual void vf7();
+    virtual void vf8();
+    virtual void vf9();
+    virtual void vf10();
+    virtual void vf11();
+    virtual void vf12();
+    virtual void vf13();
+    virtual void vf14();
+    virtual void vf15();
+    virtual void vf16();
+    virtual void vf17();
+    virtual void vf18();
+    virtual void vf19();
+    virtual void vf20();
+    virtual void vf21();
+    virtual void vf22();
+    virtual void vf23();
+    virtual void vf24();
+    virtual void vf25();
+    virtual void vf26();
+    virtual void vf27();
+    virtual void vf28();
+    virtual void vf29();
+    virtual void vf30();
+    virtual void vf31();
+    virtual void vf32();
+    virtual void vf33();
+    virtual void vf34();
+    virtual void vf35();
+    virtual void vf36();
+    virtual void vf37();
+    virtual void vf38();
+    virtual void vf39();
+    virtual void vf40();
+    virtual void vf41();
+    virtual void vf42();
+    virtual void vf43();
+    virtual void vf44();
+    virtual void vf45();
+    virtual void vf46();
+    virtual void vf47();
+    virtual void vf48();
+    virtual void vf49();
+    virtual void vf50();
+    virtual void vf51();
+    virtual void vf52();
+    virtual void vf53();
+    virtual void vf54();
+    virtual void vf55();
+    virtual void vf56();
+    virtual void vf57();
+    virtual void vf58();
+    virtual void vf59();
+    virtual void vf60();
+    virtual void vf61();
+    virtual void vf62();
+    virtual void vf63();
+    virtual void vf64();
+    virtual void vf65();
+    virtual void vf66();
+    virtual void vf67();
+    virtual void vf68();
+    virtual void vf69();
+    virtual void vf70();
+    virtual void vf71();
+    virtual void vf72();
+    virtual void vf73();
+    virtual void vf74();
+    virtual void vf75();
+    virtual void vf76();
+    virtual void vf77();
+    virtual void vf78();
+    virtual void vf79();
+    virtual void vf80();
+    virtual void vf81();
+    virtual void vf82();
+    virtual void vf83();
+    virtual void vf84();
+    virtual void vf85();
+    virtual void vf86();
+    virtual void vf87();
+    virtual void vf88();
+    virtual void vf89();
+    virtual void vf90();
+    virtual void vf91();
+    virtual void vf92();
+    virtual void vf93();
+    virtual void vf94();
+    virtual void vf95();
+    virtual void vf96();
+    virtual void vf97();
+    virtual void vf98();
+    virtual void vf99();
+    virtual void vf100();
+    virtual void vf101();
+    virtual void vf102();
+    virtual void vf103();
+    virtual void vf104();
+    virtual void vf105();
+    virtual void vf106();
+    virtual void vf107();
+    virtual void vf108();
+    virtual void vf109();
+    virtual void vf110();
+    virtual void vf111();
+    virtual void vf112();
+    virtual void vf113();
+    virtual void vf114();
+    virtual void vf115();
+    virtual void vf116();
+    virtual void vf117();
+    virtual void vf118();
+    virtual void vf119();
+    virtual void vf120();
+    virtual void vf121();
+    virtual void vf122();
+    virtual void vf123();
+    virtual void vf124();
+    virtual void vf125(void*, int);
+    virtual int vf126(int);
+};
+void* fn_00390960(unk_00390960_a0* a0, int a1, int a2) {
+    int t0;
+    t0 = a0->vf126((int)(a2));
+    a0->vf125((void*)((u32)(t0) | (u32)(a1)), (int)(a2));
+    return (void*)((u32)(t0) | (u32)(a1));
+}
+
+struct unk_00390a04_a0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual void vf5();
+    virtual void vf6();
+    virtual void vf7();
+    virtual void vf8();
+    virtual void vf9();
+    virtual void vf10();
+    virtual void vf11();
+    virtual void vf12();
+    virtual void vf13();
+    virtual void vf14();
+    virtual void vf15();
+    virtual void vf16();
+    virtual void vf17();
+    virtual void vf18();
+    virtual void vf19();
+    virtual void vf20();
+    virtual void vf21();
+    virtual void vf22();
+    virtual void vf23();
+    virtual void vf24();
+    virtual void vf25();
+    virtual void vf26();
+    virtual void vf27();
+    virtual void vf28();
+    virtual void vf29();
+    virtual void vf30();
+    virtual void vf31();
+    virtual void vf32();
+    virtual void vf33();
+    virtual void vf34();
+    virtual void vf35();
+    virtual void vf36();
+    virtual void vf37();
+    virtual void vf38();
+    virtual void vf39();
+    virtual void vf40();
+    virtual void vf41();
+    virtual void vf42();
+    virtual void vf43();
+    virtual void vf44();
+    virtual void vf45();
+    virtual void vf46();
+    virtual void vf47();
+    virtual void vf48();
+    virtual void vf49();
+    virtual void vf50();
+    virtual void vf51();
+    virtual void vf52();
+    virtual void vf53();
+    virtual void vf54();
+    virtual void vf55();
+    virtual void vf56();
+    virtual void vf57();
+    virtual void vf58();
+    virtual void vf59();
+    virtual void vf60();
+    virtual void vf61();
+    virtual void vf62();
+    virtual void vf63();
+    virtual void vf64();
+    virtual void vf65();
+    virtual void vf66();
+    virtual void vf67();
+    virtual void vf68();
+    virtual void vf69();
+    virtual void vf70();
+    virtual void vf71();
+    virtual void vf72();
+    virtual void vf73();
+    virtual void vf74();
+    virtual void vf75();
+    virtual void vf76();
+    virtual void vf77();
+    virtual void vf78();
+    virtual void vf79();
+    virtual void vf80();
+    virtual void vf81();
+    virtual void vf82();
+    virtual void vf83();
+    virtual void vf84();
+    virtual void vf85();
+    virtual void vf86();
+    virtual void vf87();
+    virtual void vf88();
+    virtual void vf89();
+    virtual void vf90();
+    virtual void vf91();
+    virtual void vf92();
+    virtual void vf93();
+    virtual void vf94();
+    virtual void vf95();
+    virtual void vf96();
+    virtual void vf97();
+    virtual void vf98();
+    virtual void vf99();
+    virtual void vf100();
+    virtual void vf101();
+    virtual void vf102();
+    virtual void vf103();
+    virtual void vf104();
+    virtual void vf105();
+    virtual void vf106();
+    virtual void vf107();
+    virtual void vf108();
+    virtual void vf109();
+    virtual void vf110();
+    virtual void vf111();
+    virtual void vf112();
+    virtual void vf113();
+    virtual void vf114();
+    virtual void vf115();
+    virtual void vf116();
+    virtual void vf117();
+    virtual void vf118();
+    virtual void vf119();
+    virtual void vf120();
+    virtual void vf121();
+    virtual void vf122();
+    virtual void vf123();
+    virtual void vf124();
+    virtual void vf125(void*, int);
+    virtual int vf126(int);
+};
+void* fn_00390a04(unk_00390a04_a0* a0, int a1, int a2) {
+    int t0;
+    t0 = a0->vf126((int)(a2));
+    a0->vf125((void*)((u32)(t0) & ~(u32)(a1)), (int)(a2));
+    return (void*)((u32)(t0) & ~(u32)(a1));
 }
 
 struct unk_0039107c_a0 {
@@ -6020,6 +6421,20 @@ int fn_003947f4(int a0, unk_003947f4_a1* a1) {
         v1 = (int)(0);
     }
     return (int)(v1);
+}
+
+struct unk_00394b88_a0 {
+    char pad_0[8];
+    u32 f_8;
+};
+void* fn_00394b88(unk_00394b88_a0* a0, int a1) {
+    int v0;
+    if ((u32)(a1) <= (u32)(11)) {
+        v0 = (int)((int)((u32)(a1) << 12) + (int)(a0->f_8));
+    } else {
+        v0 = (int)(0);
+    }
+    return (void*)(v0);
 }
 
 struct unk_00395a54_a0 {

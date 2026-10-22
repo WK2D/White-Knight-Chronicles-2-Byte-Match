@@ -6,6 +6,17 @@ extern "C" {
 
 void fn_00b37fa8(void*, int, int);
 
+extern char g_00535634_0[];
+void* fn_00535634(int a0) {
+    int v0;
+    if ((u32)(a0) <= (u32)(15)) {
+        v0 = (int)((char*)g_00535634_0 + (int)((u32)(a0) << 5));
+    } else {
+        v0 = (int)(0);
+    }
+    return (void*)(v0);
+}
+
 struct unk_00535c88_a0 {
     virtual void vf0();
     virtual void vf1();

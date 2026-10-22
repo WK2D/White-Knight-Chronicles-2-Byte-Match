@@ -4,12 +4,27 @@
 
 extern "C" {
 
+static int __attribute__((noinline)) stub_002d4d38(void) { int r; __asm__ volatile ("" : "=r"(r)); return r; }
 
 struct unk_002d4f00_a0 {
     u32 f_0;
 };
 u32 fn_002d4f00(unk_002d4f00_a0* a0) {
     return (u32)(FIELD(u32, (char*)FIELD(u32, FIELD(u32, a0->f_0, 0), 0) + (int)(FIELD(u32, FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 28)), 0));
+}
+
+struct unk_002d4f24_a0 {
+    u32 f_0;
+};
+u32 fn_002d4f24(unk_002d4f24_a0* a0, int a1) {
+    return (u32)(FIELD(u32, (char*)FIELD(u32, FIELD(u32, a0->f_0, 0), 0) + (int)((int)((int)(a1) * (int)(FIELD(u32, (char*)FIELD(u32, FIELD(u32, a0->f_0, 0), 0) + (int)(FIELD(u32, FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 16)), 20))) + (int)(FIELD(u32, FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 40))), 4));
+}
+
+struct unk_002d4f60_a0 {
+    u32 f_0;
+};
+u8 fn_002d4f60(unk_002d4f60_a0* a0, int a1) {
+    return (u8)(FIELD(u8, (char*)FIELD(u32, FIELD(u32, a0->f_0, 0), 0) + (int)((int)((int)(a1) * (int)(FIELD(u32, (char*)FIELD(u32, FIELD(u32, a0->f_0, 0), 0) + (int)(FIELD(u32, FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 16)), 16))) + (int)(FIELD(u32, FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 36))), 44));
 }
 
 struct unk_002d5324_a0 {
@@ -26,12 +41,110 @@ u16 fn_002d5338(unk_002d5338_a0* a0) {
     return (u16)(FIELD(u16, FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 24));
 }
 
+struct unk_002d5388_a0 {
+    u32 f_0;
+};
+u8 fn_002d5388(unk_002d5388_a0* a0, int a1) {
+    return (u8)(FIELD(u8, (char*)FIELD(u32, FIELD(u32, a0->f_0, 0), 0) + (int)((int)((int)(a1) * (int)(FIELD(u32, (char*)FIELD(u32, FIELD(u32, a0->f_0, 0), 0) + (int)(FIELD(u32, FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 16)), 16))) + (int)(FIELD(u32, FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 36))), 45));
+}
+
+struct unk_002d53c4_a0 {
+    u32 f_0;
+};
+u32 fn_002d53c4(unk_002d53c4_a0* a0, int a1) {
+    return (u32)(FIELD(u32, (char*)FIELD(u32, FIELD(u32, a0->f_0, 0), 0) + (int)((int)((int)(a1) * (int)(FIELD(u32, (char*)FIELD(u32, FIELD(u32, a0->f_0, 0), 0) + (int)(FIELD(u32, FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 16)), 16))) + (int)(FIELD(u32, FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 36))), 36));
+}
+
+struct unk_002d5498_a0 {
+    u32 f_0;
+};
+void* fn_002d5498(unk_002d5498_a0* a0, int a1) {
+    return (void*)((char*)FIELD(u32, FIELD(u32, a0->f_0, 0), 0) + (int)(FIELD(u32, (char*)FIELD(u32, FIELD(u32, a0->f_0, 0), 0) + (int)((int)((int)(a1) * (int)(FIELD(u32, (char*)FIELD(u32, FIELD(u32, a0->f_0, 0), 0) + (int)(FIELD(u32, FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 16)), 16))) + (int)(FIELD(u32, FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 36))), 40)));
+}
+
+struct unk_002d54dc_a0 {
+    u32 f_0;
+};
+u16 fn_002d54dc(unk_002d54dc_a0* a0, int a1) {
+    return (u16)(FIELD(u16, (char*)FIELD(u32, FIELD(u32, a0->f_0, 0), 0) + (int)((int)((int)(a1) * (int)(FIELD(u32, (char*)FIELD(u32, FIELD(u32, a0->f_0, 0), 0) + (int)(FIELD(u32, FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 16)), 20))) + (int)(FIELD(u32, FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 40))), 22));
+}
+
+struct unk_002d5554_a0 {
+    u32 f_0;
+};
+void* fn_002d5554(unk_002d5554_a0* a0, int a1) {
+    return (void*)((char*)FIELD(u32, FIELD(u32, a0->f_0, 0), 0) + (int)(FIELD(u32, (char*)FIELD(u32, FIELD(u32, a0->f_0, 0), 0) + (int)((int)((int)(a1) * (int)(FIELD(u32, (char*)FIELD(u32, FIELD(u32, a0->f_0, 0), 0) + (int)(FIELD(u32, FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 16)), 20))) + (int)(FIELD(u32, FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 40))), 16)));
+}
+
+struct unk_002d5598_a0 {
+    u32 f_0;
+};
+u32 fn_002d5598(unk_002d5598_a0* a0, int a1) {
+    return (u32)(FIELD(u32, (char*)FIELD(u32, FIELD(u32, a0->f_0, 0), 0) + (int)((int)((int)(a1) * (int)(FIELD(u32, (char*)FIELD(u32, FIELD(u32, a0->f_0, 0), 0) + (int)(FIELD(u32, FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 16)), 20))) + (int)(FIELD(u32, FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 40))), 12));
+}
+
+struct unk_002d55d4_a0 {
+    u32 f_0;
+};
+void* fn_002d55d4(unk_002d55d4_a0* a0, int a1) {
+    return (void*)((char*)FIELD(u32, FIELD(u32, a0->f_0, 0), 0) + (int)(FIELD(u32, (char*)FIELD(u32, FIELD(u32, a0->f_0, 0), 0) + (int)((int)((int)(a1) * (int)(FIELD(u32, (char*)FIELD(u32, FIELD(u32, a0->f_0, 0), 0) + (int)(FIELD(u32, FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 16)), 20))) + (int)(FIELD(u32, FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 40))), 8)));
+}
+
+struct unk_002d5618_a0 {
+    u32 f_0;
+};
+void* fn_002d5618(unk_002d5618_a0* a0, int a1) {
+    return (void*)((char*)FIELD(u32, FIELD(u32, a0->f_0, 0), 0) + (int)(FIELD(u32, (char*)((char*)FIELD(u32, FIELD(u32, a0->f_0, 0), 0) + (int)((int)((u32)(a1) & 0xffff) * (int)(FIELD(u32, (char*)FIELD(u32, FIELD(u32, a0->f_0, 0), 0) + (int)(FIELD(u32, FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 16)), 32)))) + (int)(FIELD(u32, FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 48)), 4)));
+}
+
+struct unk_002d5660_a0 {
+    u32 f_0;
+};
+void* fn_002d5660(unk_002d5660_a0* a0, int a1) {
+    return (void*)((char*)FIELD(u32, FIELD(u32, a0->f_0, 0), 0) + (int)(FIELD(u32, (char*)((char*)FIELD(u32, FIELD(u32, a0->f_0, 0), 0) + (int)((int)((u32)(a1) & 0xffff) * (int)(FIELD(u32, (char*)FIELD(u32, FIELD(u32, a0->f_0, 0), 0) + (int)(FIELD(u32, FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 16)), 32)))) + (int)(FIELD(u32, FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 48)), 8)));
+}
+
+struct unk_002d56a8_a0 {
+    u32 f_0;
+};
+u16 fn_002d56a8(unk_002d56a8_a0* a0, int a1) {
+    return (u16)(FIELD(u16, (char*)FIELD(u32, FIELD(u32, a0->f_0, 0), 0) + (int)((int)((int)((u32)(a1) & 0xffff) * (int)(FIELD(u32, (char*)FIELD(u32, FIELD(u32, a0->f_0, 0), 0) + (int)(FIELD(u32, FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 16)), 32))) + (int)(FIELD(u32, FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 48))), 12));
+}
+
+struct unk_002d5d34_a0 {
+    char pad_0[4];
+    u32 f_4;
+    u32 f_8;
+};
+void* fn_002d5d34(unk_002d5d34_a0* a0) {
+    int t0;
+    u32 v0;
+    int v1;
+    t0 = stub_002d4d38();
+    if ((int)((u32)(t0) & 0xffff) != (int)(65535)) {
+        v0 = (u32)(FIELD(u32, (int)((u32)((u32)(t0) & 0xffff) << 2) + (int)(FIELD(u32, FIELD(u32, a0->f_8, 0), 0)), 0));
+        v1 = (int)((int)(FIELD(u32, FIELD(u32, a0->f_4, 0), 0)) + (int)(FIELD(u32, (int)((u32)((u32)(t0) & 0xffff) << 2) + (int)(FIELD(u32, FIELD(u32, a0->f_8, 0), 0)), 0)));
+    } else {
+        v0 = (u32)(65535);
+        v1 = (int)(0);
+    }
+    return (void*)(v1);
+}
+
 struct unk_002d63f4_a0 {
     u32 f_0;
     u32 f_4;
 };
 u32 fn_002d63f4(unk_002d63f4_a0* a0) {
     return (u32)(FIELD(u32, (int)(a0->f_4) + (int)(FIELD(u32, FIELD(u32, a0->f_0, 0), 0)), 24));
+}
+
+struct unk_002d6458_a0 {
+    u32 f_0;
+    u32 f_4;
+};
+u32 fn_002d6458(unk_002d6458_a0* a0, int a1) {
+    return (u32)(FIELD(u32, (char*)((int)(a0->f_4) + (int)(FIELD(u32, FIELD(u32, a0->f_0, 0), 0))) + (int)((int)((int)(a1) * (int)(FIELD(u32, (char*)((int)(a0->f_4) + (int)(FIELD(u32, FIELD(u32, a0->f_0, 0), 0))) + (int)(FIELD(u32, (int)(a0->f_4) + (int)(FIELD(u32, FIELD(u32, a0->f_0, 0), 0)), 16)), 16))) + (int)(FIELD(u32, (int)(a0->f_4) + (int)(FIELD(u32, FIELD(u32, a0->f_0, 0), 0)), 20))), 8));
 }
 
 }

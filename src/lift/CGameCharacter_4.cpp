@@ -8,6 +8,11 @@ static void* __attribute__((noinline)) stub_001858ac(int p0) { void* r; __asm__ 
 static void* __attribute__((noinline)) stub_00185b24(void) { void* r; __asm__ volatile ("" : "=r"(r)); return r; }
 void fn_00b37fa8(int, int, int);
 
+extern char g_00185894_0[];
+void* fn_00185894(int a0) {
+    return (void*)((int)((u32)(a0) << 3) + (int)(FIELD(u32, g_00185894_0, 0)));
+}
+
 int fn_00185930(int a0) {
     void* t0;
     int v0;
