@@ -4,24 +4,7 @@
 
 extern "C" {
 
-int fn_009a7cd4(void);
 void* fn_009a99e0(int);
-
-struct unk_009a10a8_a0 {
-    u32 f_0;
-};
-u32 fn_009a10a8(unk_009a10a8_a0* a0) {
-    int t0;
-    int v0;
-    if (a0 != 0) {
-        t0 = fn_009a7cd4();
-        a0->f_0 = (u32)(t0);
-        v0 = (int)(0);
-    } else {
-        v0 = (int)(3);
-    }
-    return (u32)((u32)(v0) & 0x3);
-}
 
 void* fn_009a1b20(int a0) {
     void* t0;

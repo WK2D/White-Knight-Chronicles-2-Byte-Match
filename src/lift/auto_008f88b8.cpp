@@ -15,9 +15,45 @@ void fn_00b41138(void*);
 void fn_00b41188(void*);
 void fn_00b411b8(void*);
 void fn_00b411c8(void*);
+void* fn_00b41248(void*, void*, int);
 void fn_00bbee80(void*);
 void fn_00bbef58(void*);
 void fn_00bbf030(void*);
+
+struct unk_008f88b8_gm50fc;
+struct unk_008f88b8_gm50fc_0;
+struct unk_008f88b8_gm50fc_0_6c;
+struct unk_008f88b8_gm50fc_0_6c_8;
+struct unk_008f88b8_gm50fc {
+    unk_008f88b8_gm50fc_0* f_0;
+};
+struct unk_008f88b8_gm50fc_0 {
+    char pad_0[108];
+    unk_008f88b8_gm50fc_0_6c* f_6c;
+};
+struct unk_008f88b8_gm50fc_0_6c {
+    char pad_0[8];
+    unk_008f88b8_gm50fc_0_6c_8* f_8;
+};
+struct unk_008f88b8_gm50fc_0_6c_8 {
+    char pad_0[32];
+    u32 f_20;
+};
+extern unk_008f88b8_gm50fc g_008f88b8_0;
+void* fn_008f88b8(int a0, void* a1) {
+    void* t0;
+    if ((int)((&g_008f88b8_0)->f_0->f_6c) == (int)(0)) {
+        return (void*)(0);
+    }
+    if ((int)((&g_008f88b8_0)->f_0->f_6c->f_8) == (int)(0)) {
+        return (void*)(0);
+    }
+    if ((int)((&g_008f88b8_0)->f_0->f_6c->f_8->f_20) == (int)(0)) {
+        return (void*)(0);
+    }
+    t0 = fn_00b41248((void*)((&g_008f88b8_0)->f_0->f_6c->f_8->f_20), (void*)(a1), (int)(0));
+    return (void*)(t0);
+}
 
 u8 fn_008f892c(void* a0, void* a1, void* a2, int a3) {
     void* t0;

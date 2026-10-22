@@ -11,6 +11,7 @@ void* fn_001a7cf8(u32, u16);
 int fn_001a89b0(u32, int);
 int fn_001fade0(void*);
 int fn_00208608(void*, void*);
+int fn_00208d80(void*, void*);
 
 void fn_00152da4(int a0, int a1) {
     stub_00152ca4((int)(a0), (int)(a1));
@@ -97,6 +98,22 @@ int fn_00153410(unk_00153410_a0* a0) {
         v1 = (int)(0);
     }
     return (int)(v1);
+}
+
+struct unk_00153450_a0 {
+    char pad_0[56];
+    u32 f_38;
+};
+void* fn_00153450(unk_00153450_a0* a0, void* a1) {
+    int t0;
+    int v0;
+    if ((int)(a0->f_38) != (int)(0)) {
+        t0 = fn_00208d80((void*)(a0->f_38), (void*)(a1));
+        v0 = (int)(t0);
+    } else {
+        v0 = (int)(0);
+    }
+    return (void*)(v0);
 }
 
 }

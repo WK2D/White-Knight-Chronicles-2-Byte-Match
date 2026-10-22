@@ -4,8 +4,10 @@
 
 extern "C" {
 
+void fn_00043928(void*, void*, float, float);
 void fn_00769980(void*, int, int, int, int, int, int, int);
 void fn_0076afb0(void*);
+void fn_00772438(void*, u8);
 void fn_00fc88dc(void*);
 
 struct unk_00783d48_a0 {
@@ -123,6 +125,44 @@ extern char g_00784078_0[];
 void fn_00784078(unk_00784078_a0* a0) {
     a0->f_0 = (void*)(g_00784078_0);
     fn_0076afb0((void*)(a0));
+}
+
+struct unk_00784178_g6a88;
+struct unk_00784178_g6a8c;
+struct unk_00784178_g6a88 {
+    float f_0;
+};
+struct unk_00784178_g6a8c {
+    float f_0;
+};
+struct unk_00784178_a0 {
+    char pad_0[1188];
+    u32 f_4a4;
+    char pad_4a8[70];
+    u16 f_4ee;
+    char pad_4f0[2];
+    u16 f_4f2;
+    char pad_4f4[68];
+    u8 f_538;
+    char pad_539[155];
+    u32 f_5d4;
+    char pad_5d8[32];
+    u32 f_5f8;
+};
+extern unk_00784178_g6a8c g_00784178_0;
+extern unk_00784178_g6a88 g_00784178_1;
+int fn_00784178(unk_00784178_a0* a0, void* a1, int a2) {
+    int v0;
+    if ((int)(a1) != (int)(0)) {
+        a0->f_5f8 = (u32)(0);
+        fn_00772438((void*)((int)((int)((int)((int)(short)(a0->f_4ee)) + (int)((int)(short)(a0->f_4f2))) * 88) + (int)(a0->f_5d4)), (u8)((u8)a2));
+        a0->f_4a4 = (u32)(0);
+        fn_00043928((void*)(a1), (void*)((&a0->f_538)), (float)((&g_00784178_1)->f_0), (float)((&g_00784178_0)->f_0));
+        v0 = (int)(0);
+    } else {
+        v0 = (int)(-1);
+    }
+    return (int)(v0);
 }
 
 }

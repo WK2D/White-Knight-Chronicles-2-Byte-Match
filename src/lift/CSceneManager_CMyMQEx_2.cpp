@@ -14,6 +14,7 @@ void fn_000bf55c(void*, int);
 void fn_00164b54(u32);
 void fn_00222434(u32, int);
 static void __attribute__((noinline)) stub_002deca0(void* p0, int p1, int p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
+static int __attribute__((noinline)) stub_002df820(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static void __attribute__((noinline)) stub_002dff10(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 static void __attribute__((noinline)) stub_002e3974(int p0, int p1, int p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
 
@@ -348,6 +349,23 @@ struct unk_002f059c_gm2340 {
 extern unk_002f059c_gm2340 g_002f059c_0;
 void fn_002f059c(void) {
     fn_00222434((u32)((&g_002f059c_0)->f_0), (int)(0));
+}
+
+struct unk_002f13a4_gm2418;
+struct unk_002f13a4_gm2418_0;
+struct unk_002f13a4_gm2418 {
+    unk_002f13a4_gm2418_0* f_0;
+};
+struct unk_002f13a4_gm2418_0 {
+    u32 f_0;
+};
+extern unk_002f13a4_gm2418 g_002f13a4_0;
+int fn_002f13a4(void) {
+    int t0;
+    if ((int)((&g_002f13a4_0)->f_0->f_0) != (int)(0)) {
+        t0 = stub_002df820((void*)((&g_002f13a4_0)->f_0->f_0));
+    }
+    return (int)(0);
 }
 
 }

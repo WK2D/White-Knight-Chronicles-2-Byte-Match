@@ -265,7 +265,7 @@ class Lifter:
         self.back_returns = set()         # targets of backward branches that are not loops
         self.active_paths = set()         # return paths being lifted (guards against cycles)
         self.made_call = False            # a call has clobbered r3-r12 somewhere before
-        self.bfresh = set()               # argument registers written in the current block
+        self.bfresh = set()               # argument registers written since the last loop boundary
         self.uses_locals = False          # the frame holds locals: one struct l
         self.tails = set()                # indexes of tail calls (b to another function)
         self.budget = 16 * len(words)     # instructions step() may execute in total
@@ -631,7 +631,6 @@ class Lifter:
 
     def run_block(self, b):
         """Execute block b up to its terminator; return (kind, data)."""
-        self.bfresh = set()
         end = self.block_end(b)
         for i in range(b, end - 1):
             self.step(self.words[i], i)
@@ -736,6 +735,7 @@ class Lifter:
     def loop(self, header, test=None):
         """Lift the loop at header; return the block after it. With test, the
         loop is entered by a jump to its test block: while (cond) { body }."""
+        self.bfresh = set()                  # values from before or inside a loop are not call setup
         latch = self.loops[header]
         exit_ = latch + 1
         last = self.words[latch]
@@ -790,6 +790,7 @@ class Lifter:
             self.in_loop.pop()
             self.stmts = outer
             self.stmts.append(['cfor', index, trips, body])
+            self.bfresh = set()
             for r in written:
                 self.gpr[r] = carried.get(r)
             self.ended = False
@@ -880,6 +881,7 @@ class Lifter:
             if reached_latch:
                 body.append(['if', negate(cond), ['break;'], []])
             self.stmts.append(['for', body])
+        self.bfresh = set()
         # After the loop: the loop variables; anything else the body wrote is unknown.
         for r in written:
             self.gpr[r] = carried.get(r)
@@ -1332,8 +1334,8 @@ class Lifter:
         # it only while they run on without a gap (a lone r9 is scratch, not
         # a seventh argument).
         # A complete scan of the callee is trusted, plus registers the caller
-        # set in the call's own block (an argument the callee ignores, like
-        # a trailing 0, is still passed); leftovers from earlier blocks are not.
+        # set since the last loop (an argument the callee ignores, like a
+        # trailing 0, is still passed); values left over from a loop are not.
         last = max(first - 1, 2 + nint)
         extend = gfresh & self.bfresh if complete else gfresh
         while last + 1 in extend:

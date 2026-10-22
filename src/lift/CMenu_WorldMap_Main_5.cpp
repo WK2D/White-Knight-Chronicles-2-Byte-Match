@@ -5,6 +5,7 @@
 extern "C" {
 
 void fn_0002b48c(void*, int);
+int fn_001a81b0(void*);
 int fn_001ab5b0(void*);
 int fn_001ab724(void*, int);
 int fn_001ab7ac(void*);
@@ -85,6 +86,17 @@ int fn_007ae228(unk_007ae228_a0* a0) {
     int t0;
     if ((int)(a0->f_0) != (int)(0)) {
         t0 = fn_001ab724((void*)(a0->f_0), (int)(0));
+    }
+    return (int)(0);
+}
+
+struct unk_007ae364_a0 {
+    u32 f_0;
+};
+int fn_007ae364(unk_007ae364_a0* a0) {
+    int t0;
+    if ((int)(a0->f_0) != (int)(0)) {
+        t0 = fn_001a81b0((void*)(a0->f_0));
     }
     return (int)(0);
 }

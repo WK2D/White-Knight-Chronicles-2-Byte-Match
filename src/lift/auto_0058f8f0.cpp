@@ -4,6 +4,8 @@
 
 extern "C" {
 
+void* fn_00395ef8(void*, void*);
+void* fn_005355ec(void);
 void* fn_00536144(int, int);
 int fn_005380fc(void);
 void* fn_00545d00(int);
@@ -20,6 +22,49 @@ u8 fn_0058f9e0(void) {
     int t0;
     t0 = fn_005380fc();
     return (u8)((u8)t0);
+}
+
+struct unk_0058fbac_vc0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual void vf5();
+    virtual void vf6();
+    virtual void vf7();
+    virtual void vf8();
+    virtual void vf9();
+    virtual void vf10();
+    virtual void vf11();
+    virtual void vf12();
+    virtual void vf13();
+    virtual void vf14();
+    virtual void vf15();
+    virtual void vf16();
+    virtual void vf17();
+    virtual void vf18();
+    virtual void vf19();
+    virtual void vf20();
+    virtual void vf21();
+    virtual void vf22();
+    virtual void vf23();
+    virtual void vf24();
+    virtual int vf25(int);
+};
+int fn_0058fbac(void* a0) {
+    void* t0;
+    void* t1;
+    int t2;
+    t0 = fn_005355ec();
+    if ((int)(t0) != (int)(0)) {
+        t1 = fn_00395ef8((void*)(t0), (void*)(a0));
+        if ((int)(t1) != (int)(0)) {
+            t2 = ((unk_0058fbac_vc0*)(t1))->vf25((int)(3));
+            return (int)((int)((u32)(t2) & 0xff));
+        }
+    }
+    return (int)(0);
 }
 
 u8 fn_0058fcdc(int a0) {

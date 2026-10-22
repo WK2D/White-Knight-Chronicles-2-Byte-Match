@@ -4,8 +4,24 @@
 
 extern "C" {
 
+int fn_001646bc(void*, void*);
+void* fn_002e4f08(void);
 void fn_00522850(void*, int);
 void fn_005228d4(void*);
+
+void* fn_00524840(int a0, void* a1) {
+    void* t0;
+    int t1;
+    int v0;
+    t0 = fn_002e4f08();
+    if ((int)(t0) != (int)(0)) {
+        t1 = fn_001646bc((void*)(a1), (void*)(t0));
+        v0 = (int)(t1);
+    } else {
+        v0 = (int)(0);
+    }
+    return (void*)(v0);
+}
 
 struct unk_00524898_a0 {
     void* f_0;

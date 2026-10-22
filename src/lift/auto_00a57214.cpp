@@ -7,7 +7,9 @@ extern "C" {
 void fn_00a2bde4(int);
 static void __attribute__((noinline)) stub_00a574fc(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 void fn_00b3cd48(void*);
+int fn_00b42128(void*, int);
 void fn_00bd1674(int);
+int fn_00fcb1b0(void);
 
 struct unk_00a57214_a0 {
     void* f_0;
@@ -34,6 +36,25 @@ void fn_00a57704(int a0) {
 void fn_00a57740(int a0) {
     fn_00bd1674((int)(a0));
     fn_00a2bde4((int)(a0));
+}
+
+extern char g_00a57b08_0[];
+void fn_00a57b08(void) {
+    int t0;
+    int t1;
+    t0 = fn_00fcb1b0();
+    if ((int)(t0) != (int)(0)) {
+        t1 = fn_00b42128((void*)(g_00a57b08_0), (int)(0));
+    }
+}
+
+extern char g_00a57b44_0[];
+u32 fn_00a57b44(int a0) {
+    int t0;
+    if ((int)(a0) == (int)(0)) {
+        t0 = fn_00b42128((void*)(g_00a57b44_0), (int)(0));
+    }
+    return (u32)((u32)(((u32)(a0) << 5) + 128) & 0xffffffe0);
 }
 
 }

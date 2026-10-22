@@ -5,9 +5,98 @@
 extern "C" {
 
 void fn_00b3d088(u32, int, int);
+int fn_00b41108(void*, u32, int);
 void fn_00bba8b4(int);
 void fn_00bba948(int);
 void fn_00bba9dc(int);
+
+struct unk_00bba3f4_a0 {
+    u32 f_0;
+    u32 f_4;
+    u32 f_8;
+};
+int fn_00bba3f4(unk_00bba3f4_a0* a0, int a1) {
+    int t0;
+    if ((int)(a0->f_0) != (int)(0)) {
+        if ((int)(a0->f_4) != (int)(0)) {
+            return (int)(0);
+        }
+        t0 = fn_00b41108((void*)(a0->f_0), (u32)((u32)((int)(a1) * 1288) & 0xfffffff8), (int)(1));
+        a0->f_4 = (u32)(t0);
+        if ((int)(t0) == (int)(0)) {
+            return (int)(0);
+        }
+        a0->f_8 = (u32)(a1);
+        return (int)(1);
+    }
+    return (int)(0);
+}
+
+struct unk_00bba490_a0 {
+    u32 f_0;
+    u32 f_4;
+    u32 f_8;
+};
+int fn_00bba490(unk_00bba490_a0* a0, int a1) {
+    int t0;
+    if ((int)(a0->f_0) != (int)(0)) {
+        if ((int)(a0->f_4) != (int)(0)) {
+            return (int)(0);
+        }
+        t0 = fn_00b41108((void*)(a0->f_0), (u32)((u32)((int)(a1) * 1224) & 0xfffffff8), (int)(1));
+        a0->f_4 = (u32)(t0);
+        if ((int)(t0) == (int)(0)) {
+            return (int)(0);
+        }
+        a0->f_8 = (u32)(a1);
+        return (int)(1);
+    }
+    return (int)(0);
+}
+
+struct unk_00bba52c_a0 {
+    u32 f_0;
+    u32 f_4;
+    u32 f_8;
+};
+int fn_00bba52c(unk_00bba52c_a0* a0, int a1) {
+    int t0;
+    if ((int)(a0->f_0) != (int)(0)) {
+        if ((int)(a0->f_4) != (int)(0)) {
+            return (int)(0);
+        }
+        t0 = fn_00b41108((void*)(a0->f_0), (u32)((u32)(a1) << 5), (int)(1));
+        a0->f_4 = (u32)(t0);
+        if ((int)(t0) == (int)(0)) {
+            return (int)(0);
+        }
+        a0->f_8 = (u32)(a1);
+        return (int)(1);
+    }
+    return (int)(0);
+}
+
+struct unk_00bba6e4_a0 {
+    u32 f_0;
+    u32 f_4;
+    u32 f_8;
+};
+int fn_00bba6e4(unk_00bba6e4_a0* a0, int a1) {
+    int t0;
+    if ((int)(a0->f_0) != (int)(0)) {
+        if ((int)(a0->f_4) != (int)(0)) {
+            return (int)(0);
+        }
+        t0 = fn_00b41108((void*)(a0->f_0), (u32)((u32)(a1) << 5), (int)(1));
+        a0->f_4 = (u32)(t0);
+        if ((int)(t0) == (int)(0)) {
+            return (int)(0);
+        }
+        a0->f_8 = (u32)(a1);
+        return (int)(1);
+    }
+    return (int)(0);
+}
 
 int fn_00bba920(int a0) {
     fn_00bba8b4((int)(a0));
