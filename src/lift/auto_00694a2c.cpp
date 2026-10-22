@@ -11,17 +11,21 @@ void fn_006c1ec4(u32, void*);
 struct unk_00694b94_a0 {
     char pad_0[568];
     u32 f_238;
+    char pad_23c[364];
+    u8 f_3a8;
 };
 void fn_00694b94(unk_00694b94_a0* a0) {
-    fn_006c1ec4((u32)(a0->f_238), (void*)((char*)a0 + 936));
+    fn_006c1ec4((u32)(a0->f_238), (void*)((&a0->f_3a8)));
 }
 
 struct unk_00694d10_a0 {
     char pad_0[568];
     u32 f_238;
+    char pad_23c[364];
+    u8 f_3a8;
 };
 void fn_00694d10(unk_00694d10_a0* a0) {
-    fn_006c1bd4((u32)(a0->f_238), (void*)((char*)a0 + 936));
+    fn_006c1bd4((u32)(a0->f_238), (void*)((&a0->f_3a8)));
 }
 
 struct unk_006952f0_g3f68;

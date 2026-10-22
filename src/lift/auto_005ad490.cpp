@@ -4,42 +4,36 @@
 
 extern "C" {
 
-int fn_00416e4c(int, void*);
-static int __attribute__((noinline)) stub_005acccc(void* p0, u8 p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
+static int __attribute__((noinline)) stub_005ad998(void* p0, u32 p1, int p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
 static void __attribute__((noinline)) stub_005addc8(u32 p0) { __asm__ volatile ("" : : "r"(p0)); }
 
-struct unk_005ad998_a0_0;
-struct unk_005ad998_a0_0 {
-    char pad_0[2];
-    u8 f_2;
+struct unk_005ada7c_a0_0;
+struct unk_005ada7c_a0_0 {
+    char pad_0[12];
+    u16 f_c;
+    u16 f_e;
+    char pad_10[8];
+    u8 f_18;
 };
-struct unk_005ad998_a0 {
-    unk_005ad998_a0_0* f_0;
+struct unk_005ada7c_a0 {
+    unk_005ada7c_a0_0* f_0;
 };
-extern char g_005ad998_0[];
-int fn_005ad998(unk_005ad998_a0* a0, void* a1, int a2) {
+struct unk_005ada7c_a2 {
+    u32 f_0;
+    u8 f_4;
+};
+int fn_005ada7c(unk_005ada7c_a0* a0, int a1, unk_005ada7c_a2* a2) {
     int t0;
-    int t1;
     int v0;
-    void* v2;
-    t0 = fn_00416e4c((int)(a2), (void*)(a1));
-    if ((int)(t0) >= (int)(0)) {
-        t1 = stub_005acccc((void*)(a0), (u8)((u8)t0));
-        if ((int)((u32)(t1) & 0xff) == (int)(0)) {
-            v2 = (void*)((char*)g_005ad998_0 + 20);
-            for (v0 = 0; v0 < 5; v0++) {
-                if ((int)((u32)((int)(a0->f_0->f_2) >> (int)((int)(v0) * 1)) & 0x1) != (int)(0)) {
-                    if ((int)(FIELD(u32, v2, 0)) == (int)(a1)) {
-                        return (int)(1);
-                    }
-                }
-                v2 = (void*)((char*)v2 + 4);
-            }
-        } else {
-            return (int)(1);
-        }
+    t0 = stub_005ad998((void*)(a0), (u32)(528768369), (int)(a1));
+    if ((int)((u32)(t0) & 0xff) != (int)(0)) {
+        a2->f_0 = (u32)((u32)(a0->f_0->f_c) | (u32)((u32)(a0->f_0->f_e) << 16));
+        a2->f_4 = (u8)(a0->f_0->f_18);
+        v0 = (int)(1);
+    } else {
+        v0 = (int)(0);
     }
-    return (int)(0);
+    return (int)(v0);
 }
 
 struct unk_005ade18_a0 {

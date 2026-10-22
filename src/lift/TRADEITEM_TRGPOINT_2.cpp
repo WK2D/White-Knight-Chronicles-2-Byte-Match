@@ -10,18 +10,30 @@ static void __attribute__((noinline)) stub_008d4f84(void) { __asm__ volatile (""
 void fn_00b40f98(void*);
 void fn_00b40fa8(void*);
 
-void fn_008d4044(void* a0) {
-    fn_00b40f98((void*)((char*)a0 + 36));
+struct unk_008d4044_a0 {
+    char pad_0[36];
+    u8 f_24;
+};
+void fn_008d4044(unk_008d4044_a0* a0) {
+    fn_00b40f98((void*)((&a0->f_24)));
     stub_008d330c((void*)(a0));
 }
 
-void fn_008d4080(void* a0) {
-    fn_00b40f98((void*)((char*)a0 + 36));
+struct unk_008d4080_a0 {
+    char pad_0[36];
+    u8 f_24;
+};
+void fn_008d4080(unk_008d4080_a0* a0) {
+    fn_00b40f98((void*)((&a0->f_24)));
     stub_008d330c((void*)(a0));
 }
 
-void fn_008d40bc(void* a0) {
-    fn_00b40fa8((void*)((char*)a0 + 4));
+struct unk_008d40bc_a0 {
+    char pad_0[4];
+    u8 f_4;
+};
+void fn_008d40bc(unk_008d40bc_a0* a0) {
+    fn_00b40fa8((void*)((&a0->f_4)));
 }
 
 void fn_008d4d14(int a0) {

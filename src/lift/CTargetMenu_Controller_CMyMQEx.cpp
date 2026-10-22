@@ -38,15 +38,19 @@ int fn_00821e74(unk_00821e74_a0* a0) {
 }
 
 struct unk_0082adb4_a0 {
-    char pad_0[4280];
+    char pad_0[272];
+    u8 f_110;
+    char pad_111[4007];
     u32 f_10b8;
+    char pad_10bc[20];
+    u8 f_10d0;
 };
 int fn_0082adb4(unk_0082adb4_a0* a0) {
     if ((int)(a0->f_10b8) != (int)(2)) {
         return (int)(0);
     }
-    stub_0082ab5c((void*)((char*)a0 + 4304));
-    fn_00b3e7e8((void*)((char*)a0 + 272), (int)(-1));
+    stub_0082ab5c((void*)((&a0->f_10d0)));
+    fn_00b3e7e8((void*)((&a0->f_110)), (int)(-1));
     return (int)(0);
 }
 

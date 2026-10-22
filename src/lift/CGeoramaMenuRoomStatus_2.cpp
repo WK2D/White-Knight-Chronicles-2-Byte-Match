@@ -21,11 +21,13 @@ int fn_00862800(void* a0, int a1, void* a2) {
 }
 
 struct unk_00862900_a0 {
-    char pad_0[72];
+    char pad_0[44];
+    u8 f_2c;
+    char pad_2d[27];
     u32 f_48;
 };
 int fn_00862900(unk_00862900_a0* a0) {
-    fn_00b3ccc8((void*)((char*)a0 + 44));
+    fn_00b3ccc8((void*)((&a0->f_2c)));
     a0->f_48 = (u32)(32);
     return (int)(1);
 }

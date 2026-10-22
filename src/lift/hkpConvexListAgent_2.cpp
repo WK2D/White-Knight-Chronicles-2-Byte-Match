@@ -10,7 +10,9 @@ int fn_00d5b0d4(void*, u16);
 void fn_00ded250(void*, void*);
 
 struct unk_00d2e7fc_a0 {
-    char pad_0[120];
+    char pad_0[48];
+    u8 f_30;
+    char pad_31[71];
     u8 f_78;
 };
 void fn_00d2e7fc(unk_00d2e7fc_a0* a0, void* a1) {
@@ -18,7 +20,7 @@ void fn_00d2e7fc(unk_00d2e7fc_a0* a0, void* a1) {
         fn_00d59d14((void*)(a0), (void*)(a1));
         return;
     }
-    fn_00ded250((void*)((char*)a0 + 48), (void*)(a1));
+    fn_00ded250((void*)((&a0->f_30)), (void*)(a1));
 }
 
 struct unk_00d2e864_a0 {

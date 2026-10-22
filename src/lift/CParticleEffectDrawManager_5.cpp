@@ -17,55 +17,115 @@ void fn_00bbb9e0(void*);
 void fn_00bbbaac(void*);
 
 struct unk_00bbb5b8_a0 {
-    char pad_0[1284];
+    char pad_0[224];
+    u8 f_e0;
+    char pad_e1[147];
+    u8 f_174;
+    char pad_175[147];
+    u8 f_208;
+    char pad_209[147];
+    u8 f_29c;
+    char pad_29d[147];
+    u8 f_330;
+    char pad_331[147];
+    u8 f_3c4;
+    char pad_3c5[159];
+    u8 f_464;
+    char pad_465[159];
     u32 f_504;
 };
 void fn_00bbb5b8(unk_00bbb5b8_a0* a0) {
     fn_00b3d088((void*)(a0), (int)(0), (int)(128));
-    fn_00bbb554((void*)((char*)a0 + 372));
-    fn_00bbb554((void*)((char*)a0 + 520));
-    fn_00bbb4f0((void*)((char*)a0 + 668));
-    fn_00bbb48c((void*)((char*)a0 + 816));
-    stub_008df76c((void*)((char*)a0 + 964));
-    stub_008df76c((void*)((char*)a0 + 1124));
-    fn_00bbb428((void*)((char*)a0 + 224));
+    fn_00bbb554((void*)((&a0->f_174)));
+    fn_00bbb554((void*)((&a0->f_208)));
+    fn_00bbb4f0((void*)((&a0->f_29c)));
+    fn_00bbb48c((void*)((&a0->f_330)));
+    stub_008df76c((void*)((&a0->f_3c4)));
+    stub_008df76c((void*)((&a0->f_464)));
+    fn_00bbb428((void*)((&a0->f_e0)));
     a0->f_504 = (u32)(0);
 }
 
 struct unk_00bbb700_a0 {
-    char pad_0[1220];
+    char pad_0[160];
+    u8 f_a0;
+    char pad_a1[147];
+    u8 f_134;
+    char pad_135[147];
+    u8 f_1c8;
+    char pad_1c9[147];
+    u8 f_25c;
+    char pad_25d[147];
+    u8 f_2f0;
+    char pad_2f1[147];
+    u8 f_384;
+    char pad_385[159];
+    u8 f_424;
+    char pad_425[159];
     u32 f_4c4;
 };
 void fn_00bbb700(unk_00bbb700_a0* a0) {
     fn_00b3d088((void*)(a0), (int)(0), (int)(128));
-    fn_00bbb554((void*)((char*)a0 + 308));
-    fn_00bbb554((void*)((char*)a0 + 456));
-    fn_00bbb4f0((void*)((char*)a0 + 604));
-    fn_00bbb48c((void*)((char*)a0 + 752));
-    stub_008df76c((void*)((char*)a0 + 900));
-    stub_008df76c((void*)((char*)a0 + 1060));
-    fn_00bbb428((void*)((char*)a0 + 160));
+    fn_00bbb554((void*)((&a0->f_134)));
+    fn_00bbb554((void*)((&a0->f_1c8)));
+    fn_00bbb4f0((void*)((&a0->f_25c)));
+    fn_00bbb48c((void*)((&a0->f_2f0)));
+    stub_008df76c((void*)((&a0->f_384)));
+    stub_008df76c((void*)((&a0->f_424)));
+    fn_00bbb428((void*)((&a0->f_a0)));
     a0->f_4c4 = (u32)(0);
 }
 
-void fn_00bbbb78(void* a0) {
-    fn_00bbb9e0((void*)((char*)a0 + 224));
-    fn_00bbbaac((void*)((char*)a0 + 372));
-    fn_00bbbaac((void*)((char*)a0 + 520));
-    fn_00bbb914((void*)((char*)a0 + 668));
-    fn_00bbb848((void*)((char*)a0 + 816));
-    stub_008e06dc((void*)((char*)a0 + 964));
-    stub_008e06dc((void*)((char*)a0 + 1124));
+struct unk_00bbbb78_a0 {
+    char pad_0[224];
+    u8 f_e0;
+    char pad_e1[147];
+    u8 f_174;
+    char pad_175[147];
+    u8 f_208;
+    char pad_209[147];
+    u8 f_29c;
+    char pad_29d[147];
+    u8 f_330;
+    char pad_331[147];
+    u8 f_3c4;
+    char pad_3c5[159];
+    u8 f_464;
+};
+void fn_00bbbb78(unk_00bbbb78_a0* a0) {
+    fn_00bbb9e0((void*)((&a0->f_e0)));
+    fn_00bbbaac((void*)((&a0->f_174)));
+    fn_00bbbaac((void*)((&a0->f_208)));
+    fn_00bbb914((void*)((&a0->f_29c)));
+    fn_00bbb848((void*)((&a0->f_330)));
+    stub_008e06dc((void*)((&a0->f_3c4)));
+    stub_008e06dc((void*)((&a0->f_464)));
 }
 
-void fn_00bbbd0c(void* a0) {
-    fn_00bbb9e0((void*)((char*)a0 + 160));
-    fn_00bbbaac((void*)((char*)a0 + 308));
-    fn_00bbbaac((void*)((char*)a0 + 456));
-    fn_00bbb914((void*)((char*)a0 + 604));
-    fn_00bbb848((void*)((char*)a0 + 752));
-    stub_008e06dc((void*)((char*)a0 + 900));
-    stub_008e06dc((void*)((char*)a0 + 1060));
+struct unk_00bbbd0c_a0 {
+    char pad_0[160];
+    u8 f_a0;
+    char pad_a1[147];
+    u8 f_134;
+    char pad_135[147];
+    u8 f_1c8;
+    char pad_1c9[147];
+    u8 f_25c;
+    char pad_25d[147];
+    u8 f_2f0;
+    char pad_2f1[147];
+    u8 f_384;
+    char pad_385[159];
+    u8 f_424;
+};
+void fn_00bbbd0c(unk_00bbbd0c_a0* a0) {
+    fn_00bbb9e0((void*)((&a0->f_a0)));
+    fn_00bbbaac((void*)((&a0->f_134)));
+    fn_00bbbaac((void*)((&a0->f_1c8)));
+    fn_00bbb914((void*)((&a0->f_25c)));
+    fn_00bbb848((void*)((&a0->f_2f0)));
+    stub_008e06dc((void*)((&a0->f_384)));
+    stub_008e06dc((void*)((&a0->f_424)));
 }
 
 }

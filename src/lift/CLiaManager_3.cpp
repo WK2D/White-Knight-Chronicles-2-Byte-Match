@@ -12,11 +12,15 @@ struct unk_0005ee64_gm7a24 {
     char pad_0[4];
     u32 f_4;
 };
+struct unk_0005ee64_a0 {
+    char pad_0[8];
+    u8 f_8;
+};
 extern unk_0005ee64_gm7a24 g_0005ee64_0;
-int fn_0005ee64(void* a0) {
+int fn_0005ee64(unk_0005ee64_a0* a0) {
     int t0;
     t0 = fn_0003f9e0((void*)(a0));
-    fn_0003fab0((void*)((char*)a0 + 8), (int)((int)FIELD(u32, (int)((u32)(t0) << 2) + (int)((&g_0005ee64_0)->f_4), 0)));
+    fn_0003fab0((void*)((&a0->f_8)), (int)((int)FIELD(u32, (int)((u32)(t0) << 2) + (int)((&g_0005ee64_0)->f_4), 0)));
     return (int)(0);
 }
 

@@ -30,13 +30,21 @@ int fn_00671040(unk_00671040_a0* a0) {
     return (int)(0);
 }
 
-int fn_0067109c(void* a0, int a1, int a2) {
-    fn_00043698((void*)((char*)a0 + 272), (int)(a1), (int)(a2));
+struct unk_0067109c_a0 {
+    char pad_0[272];
+    u8 f_110;
+};
+int fn_0067109c(unk_0067109c_a0* a0, int a1, int a2) {
+    fn_00043698((void*)((&a0->f_110)), (int)(a1), (int)(a2));
     return (int)(1);
 }
 
-int fn_006711c0(void* a0, int a1) {
-    fn_000436f4((void*)((char*)a0 + 272), (int)(a1));
+struct unk_006711c0_a0 {
+    char pad_0[272];
+    u8 f_110;
+};
+int fn_006711c0(unk_006711c0_a0* a0, int a1) {
+    fn_000436f4((void*)((&a0->f_110)), (int)(a1));
     return (int)(1);
 }
 

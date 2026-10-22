@@ -4,6 +4,8 @@
 
 extern "C" {
 
+void fn_0004dfb8(void*, u32, int, int, int);
+void fn_0004fe84(void*, u32, int, float);
 void fn_0012937c(void*);
 void fn_001293a4(void*, int, int);
 void fn_00129ffc(void*);
@@ -22,6 +24,8 @@ int fn_003e70fc(u32);
 void fn_003ea750(u32, int);
 void fn_003eb104(u32, int);
 void fn_003eb85c(u32, int);
+static void __attribute__((noinline)) stub_00693558(void* p0, void* p1, u32 p2, int p3) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); }
+static void __attribute__((noinline)) stub_006935d0(void* p0, void* p1, u32 p2, int p3) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); }
 
 struct unk_006a00e8_g3f68;
 struct unk_006a00e8_g3f68_0;
@@ -45,6 +49,38 @@ struct unk_006a00e8_g3f68_0_6c_8 {
 extern unk_006a00e8_g3f68 g_006a00e8_0;
 void fn_006a00e8(int a0, int a1) {
     fn_003eb85c((u32)((&g_006a00e8_0)->f_0->f_6c->f_8->f_108), (int)(a1));
+}
+
+struct unk_006a04f0_a0 {
+    char pad_0[936];
+    u8 f_3a8;
+};
+void fn_006a04f0(unk_006a04f0_a0* a0) {
+    stub_00693558((void*)(a0), (void*)((&a0->f_3a8)), (u32)(FIELD(u32, (&a0->f_3a8), 404)), (int)(1651));
+}
+
+struct unk_006a0508_a0 {
+    char pad_0[936];
+    u8 f_3a8;
+};
+void fn_006a0508(unk_006a0508_a0* a0) {
+    stub_006935d0((void*)(a0), (void*)((&a0->f_3a8)), (u32)(FIELD(u32, (&a0->f_3a8), 404)), (int)(1651));
+}
+
+struct unk_006a0724_a0 {
+    char pad_0[936];
+    u8 f_3a8;
+};
+void fn_006a0724(unk_006a0724_a0* a0) {
+    fn_0004fe84((void*)((&a0->f_3a8)), (u32)(FIELD(u32, (&a0->f_3a8), 404)), (int)(590), (float)(0.0f));
+}
+
+struct unk_006a07c8_a0 {
+    char pad_0[936];
+    u8 f_3a8;
+};
+void fn_006a07c8(unk_006a07c8_a0* a0) {
+    fn_0004fe84((void*)((&a0->f_3a8)), (u32)(FIELD(u32, (&a0->f_3a8), 404)), (int)(88), (float)(0.0f));
 }
 
 struct unk_006a0b20_g3f68;
@@ -607,6 +643,14 @@ struct unk_006a3124_a0 {
 };
 int fn_006a3124(unk_006a3124_a0* a0) {
     return (int)((int)a0->f_258->f_dc);
+}
+
+struct unk_006a9af8_a0 {
+    char pad_0[936];
+    u8 f_3a8;
+};
+void fn_006a9af8(unk_006a9af8_a0* a0) {
+    fn_0004dfb8((void*)((&a0->f_3a8)), (u32)(FIELD(u32, (&a0->f_3a8), 404)), (int)(1611), (int)(1), (int)(0));
 }
 
 }

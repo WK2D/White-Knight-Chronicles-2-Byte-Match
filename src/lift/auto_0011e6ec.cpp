@@ -12,15 +12,17 @@ struct unk_0011f9d8_a0 {
     u8 f_435c;
     char pad_435d[1];
     u16 f_435e;
+    char pad_4360[3968];
+    u8 f_52e0;
 };
 int fn_0011f9d8(unk_0011f9d8_a0* a0) {
     int t0;
     int t1;
-    t0 = fn_000f5c90((void*)((char*)a0 + 21216));
+    t0 = fn_000f5c90((void*)((&a0->f_52e0)));
     if ((int)(t0) != (int)(2)) {
         if ((int)(t0) != (int)(1)) {
             a0->f_435c = (u8)(0);
-            t1 = fn_000f5788((void*)((char*)a0 + 21216), (int)(1));
+            t1 = fn_000f5788((void*)((&a0->f_52e0)), (int)(1));
         }
         return (int)(1);
     }

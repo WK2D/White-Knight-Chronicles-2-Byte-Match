@@ -57,8 +57,12 @@ int fn_0066f028(void) {
     return (int)(3);
 }
 
-int fn_0066f1f0(void* a0) {
-    fn_00046268((void*)((char*)a0 + 40));
+struct unk_0066f1f0_a0 {
+    char pad_0[40];
+    u8 f_28;
+};
+int fn_0066f1f0(unk_0066f1f0_a0* a0) {
+    fn_00046268((void*)((&a0->f_28)));
     return (int)(0);
 }
 

@@ -224,18 +224,22 @@ int fn_0022c620(void) {
 
 struct unk_0022fb0c_a0 {
     u8 f_0;
+    char pad_1[3];
+    u8 f_4;
 };
 void fn_0022fb0c(unk_0022fb0c_a0* a0) {
     a0->f_0 = (u8)(0);
-    fn_00b37fa8((void*)((char*)a0 + 4), (int)(0), (int)(80));
+    fn_00b37fa8((void*)((&a0->f_4)), (int)(0), (int)(80));
 }
 
 struct unk_0022fb4c_a0 {
     u8 f_0;
+    char pad_1[3];
+    u8 f_4;
 };
 void fn_0022fb4c(unk_0022fb4c_a0* a0) {
     a0->f_0 = (u8)(0);
-    fn_00b37fa8((void*)((char*)a0 + 4), (int)(0), (int)(80));
+    fn_00b37fa8((void*)((&a0->f_4)), (int)(0), (int)(80));
 }
 
 }

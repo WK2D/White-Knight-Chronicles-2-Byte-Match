@@ -15,7 +15,7 @@ extern char g_00c4cca0_0[];
 extern char g_00c4cca0_1[];
 void* fn_00c4cca0(unk_00c4cca0_a0* a0) {
     if ((int)(a0->f_28) != (int)(255)) {
-        return (void*)((char*)a0 + 40);
+        return (void*)((&a0->f_28));
     }
     if ((int)(a0->f_c) == (int)(1)) {
         return (void*)(g_00c4cca0_0);

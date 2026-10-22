@@ -7,8 +7,12 @@ extern "C" {
 static void __attribute__((noinline)) stub_00514cf4(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 static void __attribute__((noinline)) stub_00514ecc(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
 
-int fn_00514f68(void* a0) {
-    stub_00514ecc((void*)((char*)a0 + 332));
+struct unk_00514f68_a0 {
+    char pad_0[332];
+    u8 f_14c;
+};
+int fn_00514f68(unk_00514f68_a0* a0) {
+    stub_00514ecc((void*)((&a0->f_14c)));
     return (int)(1);
 }
 

@@ -8,21 +8,30 @@ static void __attribute__((noinline)) stub_0014688c(void* p0) { __asm__ volatile
 
 struct unk_00146914_a0 {
     u32 f_0;
-    char pad_4[8];
+    u8 f_4;
+    char pad_5[3];
+    u8 f_8;
+    char pad_9[3];
     u32 f_c;
-    char pad_10[8];
+    u8 f_10;
+    char pad_11[3];
+    u8 f_14;
+    char pad_15[3];
     u32 f_18;
+    u8 f_1c;
+    char pad_1d[3];
+    u8 f_20;
 };
 void fn_00146914(unk_00146914_a0* a0) {
     a0->f_0 = (u32)(-1);
-    stub_0014688c((void*)((char*)a0 + 4));
-    stub_0014688c((void*)((char*)a0 + 8));
+    stub_0014688c((void*)((&a0->f_4)));
+    stub_0014688c((void*)((&a0->f_8)));
     a0->f_c = (u32)(-1);
-    stub_0014688c((void*)((char*)a0 + 16));
-    stub_0014688c((void*)((char*)a0 + 20));
+    stub_0014688c((void*)((&a0->f_10)));
+    stub_0014688c((void*)((&a0->f_14)));
     a0->f_18 = (u32)(-1);
-    stub_0014688c((void*)((char*)a0 + 28));
-    stub_0014688c((void*)((char*)a0 + 32));
+    stub_0014688c((void*)((&a0->f_1c)));
+    stub_0014688c((void*)((&a0->f_20)));
 }
 
 int fn_00146d7c(void) {

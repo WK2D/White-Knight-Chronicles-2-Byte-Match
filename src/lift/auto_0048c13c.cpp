@@ -18,7 +18,8 @@ struct unk_0048c2d0_gm7c0_0 {
     char pad_0[96];
     u32 f_60;
     u32 f_64;
-    char pad_68[4056];
+    u8 f_68;
+    char pad_69[4055];
     u8 f_1040;
 };
 extern unk_0048c2d0_gm7c0 g_0048c2d0_0;
@@ -30,8 +31,8 @@ int fn_0048c2d0(void) {
     if ((int)((&g_0048c2d0_0)->f_0->f_1040) != (int)(0)) {
         if ((int)((&g_0048c2d0_0)->f_0->f_60) != (int)(0)) {
             if ((int)((&g_0048c2d0_0)->f_0->f_64) != (int)(0)) {
-                if ((u32)((&g_0048c2d0_0)->f_0->f_64) > (u32)(FIELD(u32, (char*)(&g_0048c2d0_0)->f_0 + 104, 0))) {
-                    FIELD(u32, (char*)(&g_0048c2d0_0)->f_0 + 104, 0) = (u32)(FIELD(u32, (char*)(&g_0048c2d0_0)->f_0 + 104, 0) + 1);
+                if ((u32)((&g_0048c2d0_0)->f_0->f_64) > (u32)(FIELD(u32, (&(&g_0048c2d0_0)->f_0->f_68), 0))) {
+                    FIELD(u32, (&(&g_0048c2d0_0)->f_0->f_68), 0) = (u32)(FIELD(u32, (&(&g_0048c2d0_0)->f_0->f_68), 0) + 1);
                     v0 = (int)(1);
                 } else {
                     v0 = (int)(0);
@@ -52,11 +53,13 @@ int fn_0048c2d0(void) {
 }
 
 struct unk_0048c5c8_a0 {
-    char pad_0[416];
+    char pad_0[160];
+    u8 f_a0;
+    char pad_a1[255];
     u32 f_1a0;
 };
 void fn_0048c5c8(unk_0048c5c8_a0* a0) {
-    fn_00b37fa8((void*)((char*)a0 + 160), (int)(0), (int)(256));
+    fn_00b37fa8((void*)((&a0->f_a0)), (int)(0), (int)(256));
     a0->f_1a0 = (u32)(0);
 }
 

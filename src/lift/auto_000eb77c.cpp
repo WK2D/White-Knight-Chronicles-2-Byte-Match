@@ -38,9 +38,13 @@ struct unk_000ec71c_l;
 struct unk_000ec71c_l {
     u32 f_0;
 };
-u32 fn_000ec71c(void* a0) {
+struct unk_000ec71c_a0 {
+    char pad_0[168];
+    u8 f_a8;
+};
+u32 fn_000ec71c(unk_000ec71c_a0* a0) {
     unk_000ec71c_l l;
-    stub_000ec5f4((void*)((char*)a0 + 168), (void*)((&l)));
+    stub_000ec5f4((void*)((&a0->f_a8)), (void*)((&l)));
     return (u32)(l.f_0);
 }
 
@@ -48,9 +52,13 @@ struct unk_000ec74c_l;
 struct unk_000ec74c_l {
     u32 f_0;
 };
-u32 fn_000ec74c(void* a0) {
+struct unk_000ec74c_a0 {
+    char pad_0[92];
+    u8 f_5c;
+};
+u32 fn_000ec74c(unk_000ec74c_a0* a0) {
     unk_000ec74c_l l;
-    stub_000ec5f4((void*)((char*)a0 + 92), (void*)((&l)));
+    stub_000ec5f4((void*)((&a0->f_5c)), (void*)((&l)));
     return (u32)(l.f_0);
 }
 
@@ -94,12 +102,14 @@ int fn_000ed4ac(unk_000ed4ac_a0* a0) {
 }
 
 struct unk_000ed4c8_a0 {
-    char pad_0[116];
+    char pad_0[76];
+    u8 f_4c;
+    char pad_4d[39];
     u32 f_74;
 };
 void fn_000ed4c8(unk_000ed4c8_a0* a0) {
     fn_000e93a0((void*)(a0));
-    stub_000ea624((void*)((char*)a0 + 76));
+    stub_000ea624((void*)((&a0->f_4c)));
     a0->f_74 = (u32)(0);
 }
 

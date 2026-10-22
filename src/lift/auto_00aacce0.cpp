@@ -10,8 +10,12 @@ u32 fn_00aad2a0(int a0) {
     return (u32)((u32)(a0) << 4);
 }
 
-void fn_00aae970(int a0, void* a1, int a2, int a3) {
-    stub_00aae784((void*)((char*)a1 + 8), (int)(a2), (int)(a3));
+struct unk_00aae970_a1 {
+    char pad_0[8];
+    u8 f_8;
+};
+void fn_00aae970(int a0, unk_00aae970_a1* a1, int a2, int a3) {
+    stub_00aae784((void*)((&a1->f_8)), (int)(a2), (int)(a3));
 }
 
 }

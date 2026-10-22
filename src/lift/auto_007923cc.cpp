@@ -24,11 +24,13 @@ int fn_00792494(unk_00792494_a0* a0) {
 }
 
 struct unk_007925cc_a0 {
-    char pad_0[4336];
+    char pad_0[280];
+    u8 f_118;
+    char pad_119[4055];
     u32 f_10f0;
 };
 void fn_007925cc(unk_007925cc_a0* a0, int a1, int a2) {
-    fn_0079be9c((u32)(a0->f_10f0), (void*)((char*)a0 + 280), (int)(a1), (int)(a2));
+    fn_0079be9c((u32)(a0->f_10f0), (void*)((&a0->f_118)), (int)(a1), (int)(a2));
 }
 
 }

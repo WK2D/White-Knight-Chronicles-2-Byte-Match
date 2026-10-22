@@ -6,11 +6,15 @@ extern "C" {
 
 int fn_00b3ccd8(void*, void*, int);
 
-int fn_009ae0e0(void* a0, int a1, int a2, void* a3) {
+struct unk_009ae0e0_a0 {
+    char pad_0[1052];
+    u8 f_41c;
+};
+int fn_009ae0e0(unk_009ae0e0_a0* a0, int a1, int a2, void* a3) {
     int t0;
     int v0;
     if ((int)(a0) != (int)(0)) {
-        t0 = fn_00b3ccd8((void*)((char*)a0 + 1052), (void*)(a3), (int)(16));
+        t0 = fn_00b3ccd8((void*)((&a0->f_41c)), (void*)(a3), (int)(16));
         v0 = (int)(16);
     } else {
         v0 = (int)(-1);

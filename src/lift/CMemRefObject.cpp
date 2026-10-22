@@ -5,24 +5,6 @@
 extern "C" {
 
 void fn_00fc88dc(void*);
-void fn_00fccef0(void*);
-void fn_00fccf90(void*);
-
-struct unk_00032e98_a0_4;
-struct unk_00032e98_a0_4 {
-    char pad_0[4];
-    u32 f_4;
-};
-struct unk_00032e98_a0 {
-    char pad_0[4];
-    unk_00032e98_a0_4* f_4;
-};
-extern char g_00032e98_0[];
-void fn_00032e98(unk_00032e98_a0* a0) {
-    fn_00fccf90((void*)((char*)g_00032e98_0 + 4));
-    a0->f_4->f_4 = (u32)(a0->f_4->f_4 + 1);
-    fn_00fccef0((void*)((char*)g_00032e98_0 + 4));
-}
 
 struct unk_00032fb0_a0 {
     void* f_0;

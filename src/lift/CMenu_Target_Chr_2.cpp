@@ -15,7 +15,7 @@ struct unk_00810084_a0 {
 void fn_00810084(unk_00810084_a0* a0, int a1, void* a2, int a3, int a4) {
     int t0;
     t0 = fn_00b3cda8((int)(a1), (int)(a3), (int)(1000));
-    fn_00b3ced8((int)(a1), (void*)(a2), (void*)((int)(t0) + (int)((u32)(a4) & 0xffff)), (int)(0), (void*)((char*)a0 + 2568), (void*)((char*)a0 + 2570));
+    fn_00b3ced8((int)(a1), (void*)(a2), (void*)((int)(t0) + (int)((u32)(a4) & 0xffff)), (int)(0), (void*)((&a0->f_a08)), (void*)((&a0->f_a0a)));
     a0->f_a08 = (u16)(a0->f_a08 + -43);
     a0->f_a0a = (u16)(a0->f_a0a + -20);
 }

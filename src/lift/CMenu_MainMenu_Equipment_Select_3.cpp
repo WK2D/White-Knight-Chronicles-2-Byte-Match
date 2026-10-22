@@ -7,7 +7,9 @@ extern "C" {
 static int __attribute__((noinline)) stub_005f55c8(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 
 struct unk_005f56c4_a0 {
-    char pad_0[1572];
+    char pad_0[40];
+    u8 f_28;
+    char pad_29[1531];
     u32 f_624;
 };
 int fn_005f56c4(unk_005f56c4_a0* a0) {
@@ -15,7 +17,7 @@ int fn_005f56c4(unk_005f56c4_a0* a0) {
     if ((int)(a0->f_624) != (int)(2)) {
         return (int)(0);
     }
-    t0 = stub_005f55c8((void*)((char*)a0 + 40));
+    t0 = stub_005f55c8((void*)((&a0->f_28)));
     return (int)(t0);
 }
 

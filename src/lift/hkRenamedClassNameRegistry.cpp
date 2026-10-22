@@ -30,7 +30,9 @@ void* fn_00c652f8(unk_00c652f8_a0* a0) {
 }
 
 struct unk_00c653fc_a0 {
-    char pad_0[24];
+    char pad_0[8];
+    u8 f_8;
+    char pad_9[15];
     u32 f_18;
 };
 struct unk_00c653fc_vc0 {
@@ -45,7 +47,7 @@ void* fn_00c653fc(unk_00c653fc_a0* a0, int a1) {
     void* t0;
     int t1;
     int v0;
-    t0 = fn_00f401e8((void*)((char*)a0 + 8), (int)(a1), (int)(a1));
+    t0 = fn_00f401e8((void*)((&a0->f_8)), (int)(a1), (int)(a1));
     if ((int)(a0->f_18) != (int)(0)) {
         t1 = ((unk_00c653fc_vc0*)(a0->f_18))->vf5((void*)(t0));
         v0 = (int)(t1);

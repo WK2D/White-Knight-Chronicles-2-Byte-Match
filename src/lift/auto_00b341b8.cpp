@@ -18,11 +18,12 @@ void* fn_00b341b8(void) {
 struct unk_00b34644_a0 {
     char pad_0[32];
     void* f_20;
+    u8 f_24;
 };
 void* fn_00b34644(unk_00b34644_a0* a0, int a1) {
     void* t0;
     a0->f_20 = (void*)(a0);
-    t0 = fn_00b35a78((void*)(a0), (int)(32), (void*)((char*)a0 + 36), (int)(a1));
+    t0 = fn_00b35a78((void*)(a0), (int)(32), (void*)((&a0->f_24)), (int)(a1));
     return (void*)(t0);
 }
 

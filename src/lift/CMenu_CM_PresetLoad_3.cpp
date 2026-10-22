@@ -9,12 +9,14 @@ void fn_00fc88dc(void*);
 
 struct unk_007895c4_a0 {
     void* f_0;
+    char pad_4[180];
+    u8 f_b8;
 };
 extern char g_007895c4_0[];
 extern char g_007895c4_1[];
 void fn_007895c4(unk_007895c4_a0* a0) {
     a0->f_0 = (void*)(g_007895c4_0);
-    stub_00787594((void*)((char*)a0 + 184));
+    stub_00787594((void*)((&a0->f_b8)));
     a0->f_0 = (void*)(g_007895c4_1);
     fn_00fc88dc((void*)(a0));
 }

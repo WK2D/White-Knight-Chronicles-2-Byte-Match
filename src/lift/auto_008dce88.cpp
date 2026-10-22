@@ -28,7 +28,9 @@ int fn_008dd840(int a0) {
 }
 
 struct unk_008df76c_a0 {
-    char pad_0[132];
+    char pad_0[80];
+    u8 f_50;
+    char pad_51[51];
     u32 f_84;
     u32 f_88;
     u32 f_8c;
@@ -45,7 +47,7 @@ void fn_008df76c(unk_008df76c_a0* a0) {
     a0->f_9c = (u32)(0);
     a0->f_90 = (u32)(0);
     a0->f_94 = (u32)(0);
-    stub_008df730((void*)((char*)a0 + 80));
+    stub_008df730((void*)((&a0->f_50)));
     a0->f_8c = (u32)(0);
 }
 

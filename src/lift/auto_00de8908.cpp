@@ -5,12 +5,20 @@
 extern "C" {
 
 
-void* fn_00deb3dc(int a0, void* a1) {
-    return (void*)((char*)a1 + 16);
+struct unk_00deb3dc_a1 {
+    char pad_0[16];
+    u8 f_10;
+};
+void* fn_00deb3dc(int a0, unk_00deb3dc_a1* a1) {
+    return (void*)((&a1->f_10));
 }
 
-void* fn_00deb4fc(int a0, void* a1) {
-    return (void*)((char*)a1 + 16);
+struct unk_00deb4fc_a1 {
+    char pad_0[16];
+    u8 f_10;
+};
+void* fn_00deb4fc(int a0, unk_00deb4fc_a1* a1) {
+    return (void*)((&a1->f_10));
 }
 
 }

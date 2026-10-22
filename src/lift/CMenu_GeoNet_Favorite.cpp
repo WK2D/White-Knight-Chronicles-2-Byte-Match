@@ -15,9 +15,13 @@ void* fn_00746844(unk_00746844_a0* a0) {
     return (void*)((char*)((char*)a0 + (int)((int)(a0->f_10c) * 76)) + 40);
 }
 
-void fn_00746c60(void* a0, void* a1) {
+struct unk_00746c60_a0 {
+    char pad_0[310];
+    u8 f_136;
+};
+void fn_00746c60(unk_00746c60_a0* a0, void* a1) {
     stub_00746bd4((void*)(a0));
-    fn_00b38268((void*)((char*)a0 + 310), (void*)(a1));
+    fn_00b38268((void*)((&a0->f_136)), (void*)(a1));
 }
 
 }

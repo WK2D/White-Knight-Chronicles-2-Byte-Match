@@ -10,11 +10,13 @@ static void __attribute__((noinline)) stub_00530fd8(void* p0) { __asm__ volatile
 static void __attribute__((noinline)) stub_005310dc(void* p0, int p1, int p2, void* p3, u16 p4) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4)); }
 
 struct unk_0053120c_a0 {
-    char pad_0[120];
+    char pad_0[108];
+    u8 f_6c;
+    char pad_6d[11];
     u16 f_78;
 };
 void fn_0053120c(unk_0053120c_a0* a0, int a1, int a2) {
-    stub_005310dc((void*)(a0), (int)(a1), (int)(a2), (void*)((char*)a0 + 108), (u16)(a0->f_78));
+    stub_005310dc((void*)(a0), (int)(a1), (int)(a2), (void*)((&a0->f_6c)), (u16)(a0->f_78));
 }
 
 struct unk_0053127c_a0 {

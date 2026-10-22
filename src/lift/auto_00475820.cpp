@@ -104,12 +104,20 @@ void fn_00475d44(int a0) {
     }
 }
 
-void fn_0047641c(void* a0) {
-    fn_00b37fa8((void*)((char*)a0 + 236), (int)(0), (int)(216));
+struct unk_0047641c_a0 {
+    char pad_0[236];
+    u8 f_ec;
+};
+void fn_0047641c(unk_0047641c_a0* a0) {
+    fn_00b37fa8((void*)((&a0->f_ec)), (int)(0), (int)(216));
 }
 
-void fn_00476450(void* a0) {
-    fn_00b37fa8((void*)((char*)a0 + 16), (int)(0), (int)(216));
+struct unk_00476450_a0 {
+    char pad_0[16];
+    u8 f_10;
+};
+void fn_00476450(unk_00476450_a0* a0) {
+    fn_00b37fa8((void*)((&a0->f_10)), (int)(0), (int)(216));
 }
 
 }

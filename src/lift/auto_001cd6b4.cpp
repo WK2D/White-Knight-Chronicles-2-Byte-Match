@@ -22,7 +22,9 @@ struct unk_001cfca4_a0_7c4 {
 struct unk_001cfca4_a0 {
     char pad_0[1988];
     unk_001cfca4_a0_7c4* f_7c4;
-    char pad_7c8[184];
+    char pad_7c8[32];
+    u8 f_7e8;
+    char pad_7e9[151];
     u8 f_880;
 };
 extern char g_001cfca4_0[];
@@ -34,7 +36,7 @@ int fn_001cfca4(unk_001cfca4_a0* a0, void* a1, void* a2) {
             if ((int)(a0->f_7c4->f_26) == (int)(0)) {
                 return (int)(0);
             }
-            fn_00b37fa8((void*)((char*)a0 + 2024), (int)(0), (int)(152));
+            fn_00b37fa8((void*)((&a0->f_7e8)), (int)(0), (int)(152));
             a0->f_880 = (u8)(0);
             stub_001cb650((void*)(a0), (void*)(a1), (void*)(a2), (void*)(g_001cfca4_0));
             stub_001cb0bc((void*)(a0), (int)(11), (int)(19));
@@ -50,12 +52,16 @@ struct unk_001d17b4_gm4d34 {
     char pad_0[4];
     u32 f_4;
 };
+struct unk_001d17b4_a0 {
+    char pad_0[8];
+    u8 f_8;
+};
 extern unk_001d17b4_gm4d34 g_001d17b4_0;
-int fn_001d17b4(void* a0) {
+int fn_001d17b4(unk_001d17b4_a0* a0) {
     void* t0;
     void* t1;
     t0 = fn_00041b48((void*)(a0));
-    t1 = fn_00041bcc((void*)((char*)a0 + 8));
+    t1 = fn_00041bcc((void*)((&a0->f_8)));
     stub_001d170c((u32)((&g_001d17b4_0)->f_4), (void*)(t0), (void*)(t1));
     return (int)(1);
 }

@@ -17,9 +17,13 @@ void fn_008addb0(unk_008addb0_a0* a0) {
     a0->f_34 = 1.0f;
 }
 
-void* fn_008addc0(void* a0) {
+struct unk_008addc0_a0 {
+    char pad_0[24];
+    u8 f_18;
+};
+void* fn_008addc0(unk_008addc0_a0* a0) {
     void* t0;
-    t0 = fn_00bb8aa8((void*)((char*)a0 + 24));
+    t0 = fn_00bb8aa8((void*)((&a0->f_18)));
     return (void*)(t0);
 }
 

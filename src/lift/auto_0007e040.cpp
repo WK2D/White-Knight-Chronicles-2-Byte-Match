@@ -30,18 +30,22 @@ void fn_0007e714(int a0) {
 
 struct unk_0007e888_a0 {
     u8 f_0;
+    char pad_1[31];
+    u8 f_20;
 };
 void fn_0007e888(unk_0007e888_a0* a0) {
-    fn_0007d628((void*)((char*)a0 + 32));
+    fn_0007d628((void*)((&a0->f_20)));
     a0->f_0 = (u8)(0);
 }
 
 struct unk_0007e988_a0 {
     u8 f_0;
+    char pad_1[31];
+    u8 f_20;
 };
 void fn_0007e988(unk_0007e988_a0* a0) {
     a0->f_0 = (u8)(0);
-    fn_0007d628((void*)((char*)a0 + 32));
+    fn_0007d628((void*)((&a0->f_20)));
 }
 
 void fn_0007eab8(int a0, int a1, int a2, int a3) {

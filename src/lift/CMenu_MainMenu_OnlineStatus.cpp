@@ -21,8 +21,12 @@ int fn_0063ed24(unk_0063ed24_a0* a0, unk_0063ed24_a1* a1) {
     return (int)(1);
 }
 
-void fn_0063ef34(void* a0) {
-    fn_00b37fa8((void*)((char*)a0 + 180), (int)(0), (int)(128));
+struct unk_0063ef34_a0 {
+    char pad_0[180];
+    u8 f_b4;
+};
+void fn_0063ef34(unk_0063ef34_a0* a0) {
+    fn_00b37fa8((void*)((&a0->f_b4)), (int)(0), (int)(128));
 }
 
 }

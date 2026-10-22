@@ -9,23 +9,27 @@ static void __attribute__((noinline)) stub_00762724(void* p0) { __asm__ volatile
 
 struct unk_007627ac_a0 {
     void* f_0;
+    char pad_4[488];
+    u8 f_1ec;
 };
 extern char g_007627ac_0[];
 extern char g_007627ac_1[];
 void fn_007627ac(unk_007627ac_a0* a0) {
     a0->f_0 = (void*)(g_007627ac_0);
-    stub_00762724((void*)((char*)a0 + 492));
+    stub_00762724((void*)((&a0->f_1ec)));
     a0->f_0 = (void*)(g_007627ac_1);
 }
 
 struct unk_007627f0_a0 {
     void* f_0;
+    char pad_4[100];
+    u8 f_68;
 };
 extern char g_007627f0_0[];
 extern char g_007627f0_1[];
 void fn_007627f0(unk_007627f0_a0* a0) {
     a0->f_0 = (void*)(g_007627f0_0);
-    stub_007626bc((void*)((char*)a0 + 104));
+    stub_007626bc((void*)((&a0->f_68)));
     a0->f_0 = (void*)(g_007627f0_1);
 }
 

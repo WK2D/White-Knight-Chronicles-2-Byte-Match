@@ -21,14 +21,6 @@ static int __attribute__((noinline)) stub_003fe570(void* p0, void* p1) { int r; 
 static int __attribute__((noinline)) stub_003fe630(void* p0, void* p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static int __attribute__((noinline)) stub_003fe708(void* p0, void* p1, int p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
 static int __attribute__((noinline)) stub_003fe910(void* p0, int p1, void* p2, u8 p3) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); return r; }
-static void __attribute__((noinline)) stub_00401bf0(void* p0, void* p1, void* p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
-static void __attribute__((noinline)) stub_00401ce0(void* p0, void* p1, void* p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
-static void __attribute__((noinline)) stub_00401dd0(void* p0, void* p1, void* p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
-static void __attribute__((noinline)) stub_00401ec0(void* p0, void* p1, void* p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
-static void __attribute__((noinline)) stub_00401fb0(void* p0, void* p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
-static void __attribute__((noinline)) stub_0040206c(void* p0, void* p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
-static void __attribute__((noinline)) stub_00402128(void* p0, void* p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
-static void __attribute__((noinline)) stub_004021e4(void* p0, void* p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 
 extern char g_00400a28_0[];
 void fn_00400a28(void* a0, int a1) {
@@ -169,78 +161,6 @@ u8 fn_004013b8(void* a0, int a1) {
     t0 = fn_00076a98((void*)(g_004013b8_0), (int)(a1), (int)(0), (int)(-1), (int)(0), (int)(0));
     t1 = stub_003fdc08((void*)(a0), (void*)(t0));
     return (u8)((u8)t1);
-}
-
-extern char g_00401c80_0[];
-void* fn_00401c80(void* a0, void* a1) {
-    if ((int)(FIELD(u8, (char*)g_00401c80_0 + 128, 0)) == (int)(0)) {
-        FIELD(u8, (char*)g_00401c80_0 + 128, 0) = (u8)(1);
-    }
-    stub_00401bf0((void*)(a0), (void*)(a1), (void*)((char*)g_00401c80_0 + 144));
-    return (void*)((char*)g_00401c80_0 + 144);
-}
-
-extern char g_00401d70_0[];
-void* fn_00401d70(void* a0, void* a1) {
-    if ((int)(FIELD(u8, (char*)g_00401d70_0 + 160, 0)) == (int)(0)) {
-        FIELD(u8, (char*)g_00401d70_0 + 160, 0) = (u8)(1);
-    }
-    stub_00401ce0((void*)(a0), (void*)(a1), (void*)((char*)g_00401d70_0 + 176));
-    return (void*)((char*)g_00401d70_0 + 176);
-}
-
-extern char g_00401e60_0[];
-void* fn_00401e60(void* a0, void* a1) {
-    if ((int)(FIELD(u8, (char*)g_00401e60_0 + 192, 0)) == (int)(0)) {
-        FIELD(u8, (char*)g_00401e60_0 + 192, 0) = (u8)(1);
-    }
-    stub_00401dd0((void*)(a0), (void*)(a1), (void*)((char*)g_00401e60_0 + 208));
-    return (void*)((char*)g_00401e60_0 + 208);
-}
-
-extern char g_00401f50_0[];
-void* fn_00401f50(void* a0, void* a1) {
-    if ((int)(FIELD(u8, (char*)g_00401f50_0 + 224, 0)) == (int)(0)) {
-        FIELD(u8, (char*)g_00401f50_0 + 224, 0) = (u8)(1);
-    }
-    stub_00401ec0((void*)(a0), (void*)(a1), (void*)((char*)g_00401f50_0 + 240));
-    return (void*)((char*)g_00401f50_0 + 240);
-}
-
-extern char g_00402010_0[];
-void* fn_00402010(void* a0) {
-    if ((int)(FIELD(u8, (char*)g_00402010_0 + 256, 0)) == (int)(0)) {
-        FIELD(u8, (char*)g_00402010_0 + 256, 0) = (u8)(1);
-    }
-    stub_00401fb0((void*)(a0), (void*)((char*)g_00402010_0 + 272));
-    return (void*)((char*)g_00402010_0 + 272);
-}
-
-extern char g_004020cc_0[];
-void* fn_004020cc(void* a0) {
-    if ((int)(FIELD(u8, (char*)g_004020cc_0 + 288, 0)) == (int)(0)) {
-        FIELD(u8, (char*)g_004020cc_0 + 288, 0) = (u8)(1);
-    }
-    stub_0040206c((void*)(a0), (void*)((char*)g_004020cc_0 + 304));
-    return (void*)((char*)g_004020cc_0 + 304);
-}
-
-extern char g_00402188_0[];
-void* fn_00402188(void* a0) {
-    if ((int)(FIELD(u8, (char*)g_00402188_0 + 320, 0)) == (int)(0)) {
-        FIELD(u8, (char*)g_00402188_0 + 320, 0) = (u8)(1);
-    }
-    stub_00402128((void*)(a0), (void*)((char*)g_00402188_0 + 336));
-    return (void*)((char*)g_00402188_0 + 336);
-}
-
-extern char g_004023c8_0[];
-void* fn_004023c8(void* a0) {
-    if ((int)(FIELD(u8, (char*)g_004023c8_0 + 352, 0)) == (int)(0)) {
-        FIELD(u8, (char*)g_004023c8_0 + 352, 0) = (u8)(1);
-    }
-    stub_004021e4((void*)(a0), (void*)((char*)g_004023c8_0 + 368));
-    return (void*)((char*)g_004023c8_0 + 368);
 }
 
 struct unk_00402444_a0_8;

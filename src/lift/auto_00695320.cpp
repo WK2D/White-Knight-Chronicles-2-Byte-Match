@@ -53,9 +53,13 @@ int fn_00696164(unk_00696164_a0* a0, int a1, void* a2, void* a3, int a4, int a5)
     return (int)(1);
 }
 
-int fn_00696618(void* a0, int a1, void* a2, int a3) {
+struct unk_00696618_a0 {
+    char pad_0[936];
+    u8 f_3a8;
+};
+int fn_00696618(unk_00696618_a0* a0, int a1, void* a2, int a3) {
     void* t0;
-    t0 = fn_00043544((void*)((char*)a0 + 936), (int)(a1));
+    t0 = fn_00043544((void*)((&a0->f_3a8)), (int)(a1));
     stub_00695f10((void*)(a0), (void*)(t0), (void*)(a2), (int)(a3));
     return (int)(1);
 }

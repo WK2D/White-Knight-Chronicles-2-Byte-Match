@@ -8,20 +8,32 @@ void fn_00dec870(void*, u32, void*);
 void fn_00ded250(void*, int);
 void fn_00ded418(void*, int, int, int);
 
+struct unk_00d241d8_a0 {
+    char pad_0[16];
+    u8 f_10;
+};
 struct unk_00d241d8_a1 {
     char pad_0[8];
     u32 f_8;
 };
-void fn_00d241d8(void* a0, unk_00d241d8_a1* a1) {
-    fn_00dec870((void*)((char*)a0 + 16), (u32)(a1->f_8), (void*)(a1));
+void fn_00d241d8(unk_00d241d8_a0* a0, unk_00d241d8_a1* a1) {
+    fn_00dec870((void*)((&a0->f_10)), (u32)(a1->f_8), (void*)(a1));
 }
 
-void fn_00d24548(void* a0, int a1, int a2, int a3) {
-    fn_00ded418((void*)((char*)a0 + 16), (int)(a1), (int)(a2), (int)(a3));
+struct unk_00d24548_a0 {
+    char pad_0[16];
+    u8 f_10;
+};
+void fn_00d24548(unk_00d24548_a0* a0, int a1, int a2, int a3) {
+    fn_00ded418((void*)((&a0->f_10)), (int)(a1), (int)(a2), (int)(a3));
 }
 
-void fn_00d24574(void* a0, int a1) {
-    fn_00ded250((void*)((char*)a0 + 16), (int)(a1));
+struct unk_00d24574_a0 {
+    char pad_0[16];
+    u8 f_10;
+};
+void fn_00d24574(unk_00d24574_a0* a0, int a1) {
+    fn_00ded250((void*)((&a0->f_10)), (int)(a1));
 }
 
 }

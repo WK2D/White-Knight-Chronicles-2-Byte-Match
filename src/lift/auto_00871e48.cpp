@@ -7,6 +7,7 @@ extern "C" {
 static void __attribute__((noinline)) stub_00870d04(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 void fn_008c6d00(u32, int);
 void fn_008c6d10(u32);
+void fn_00b3ced8(void*, u32, int, int, void*, void*);
 void fn_00b3cee8(void*, float, float, float, int, int, int, int);
 void fn_00b3e378(int, void*, int);
 
@@ -64,9 +65,25 @@ struct unk_00872314_gm689c {
     float f_4;
     float f_8;
 };
+struct unk_00872314_a0 {
+    char pad_0[344];
+    u8 f_158;
+};
 extern unk_00872314_gm689c g_00872314_0;
-void fn_00872314(void* a0, int a1, int a2, int a3, int a4, int a5) {
-    fn_00b3cee8((void*)((char*)a0 + 344), (float)(1.0f), (float)((&g_00872314_0)->f_4), (float)((&g_00872314_0)->f_8), (int)(a4), (int)(a5), (int)(1), (int)(4));
+void fn_00872314(unk_00872314_a0* a0, int a1, int a2, int a3, int a4, int a5) {
+    fn_00b3cee8((void*)((&a0->f_158)), (float)(1.0f), (float)((&g_00872314_0)->f_4), (float)((&g_00872314_0)->f_8), (int)(a4), (int)(a5), (int)(1), (int)(4));
+}
+
+struct unk_00872358_a0 {
+    char pad_0[344];
+    u8 f_158;
+    char pad_159[9855];
+    u8 f_27d8;
+    char pad_27d9[1];
+    u8 f_27da;
+};
+void fn_00872358(unk_00872358_a0* a0) {
+    fn_00b3ced8((void*)((&a0->f_158)), (u32)(FIELD(u32, (&a0->f_158), 404)), (int)(26), (int)(0), (void*)((&a0->f_27d8)), (void*)((&a0->f_27da)));
 }
 
 }

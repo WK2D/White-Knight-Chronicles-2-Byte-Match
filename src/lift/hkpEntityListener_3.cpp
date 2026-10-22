@@ -20,8 +20,12 @@ struct unk_00dc09f8_a0 {
     char pad_0[20];
     u32 f_14;
 };
-void fn_00dc09f8(unk_00dc09f8_a0* a0, void* a1) {
-    fn_00fc8f6c((u32)(a0->f_14), (void*)((char*)a1 + 16));
+struct unk_00dc09f8_a1 {
+    char pad_0[16];
+    u8 f_10;
+};
+void fn_00dc09f8(unk_00dc09f8_a0* a0, unk_00dc09f8_a1* a1) {
+    fn_00fc8f6c((u32)(a0->f_14), (void*)((&a1->f_10)));
 }
 
 }

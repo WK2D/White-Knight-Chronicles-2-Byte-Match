@@ -18,13 +18,15 @@ void* fn_00ad826c(unk_00ad826c_a0* a0) {
 struct unk_00ad82e0_a1 {
     char pad_0[4];
     u32 f_4;
+    char pad_8[8];
+    u8 f_10;
 };
 struct unk_00ad82e0_a2 {
     u32 f_0;
 };
 void* fn_00ad82e0(int a0, unk_00ad82e0_a1* a1, unk_00ad82e0_a2* a2) {
     a2->f_0 = (u32)(a1->f_4);
-    return (void*)((char*)a1 + 16);
+    return (void*)((&a1->f_10));
 }
 
 struct unk_00ad8318_a0 {

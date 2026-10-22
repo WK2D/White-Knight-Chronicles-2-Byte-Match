@@ -27,12 +27,16 @@ struct unk_00dc0c74_a0 {
     u8 f_18;
     u8 f_19;
 };
-void fn_00dc0c74(unk_00dc0c74_a0* a0, void* a1) {
+struct unk_00dc0c74_a1 {
+    char pad_0[16];
+    u8 f_10;
+};
+void fn_00dc0c74(unk_00dc0c74_a0* a0, unk_00dc0c74_a1* a1) {
     if ((int)(a0->f_19) == (int)(0)) {
         a0->f_18 = (u8)(1);
         return;
     }
-    fn_00fc8f6c((u32)(a0->f_14), (void*)((char*)a1 + 16));
+    fn_00fc8f6c((u32)(a0->f_14), (void*)((&a1->f_10)));
 }
 
 struct unk_00dc0cd0_a0 {
@@ -51,7 +55,7 @@ void fn_00dc0cd0(unk_00dc0cd0_a0* a0, unk_00dc0cd0_a1* a1) {
             a0->f_18 = (u8)(1);
             return;
         }
-        fn_00fc8f6c((u32)(a0->f_14), (void*)((char*)a1 + 16));
+        fn_00fc8f6c((u32)(a0->f_14), (void*)((&a1->f_10)));
         return;
     }
 }

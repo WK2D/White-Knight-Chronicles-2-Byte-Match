@@ -5,6 +5,9 @@
 extern "C" {
 
 void fn_000d98c4(void*);
+static void __attribute__((noinline)) stub_001a6c0c(void* p0, int p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
+static void __attribute__((noinline)) stub_001a778c(int p0) { __asm__ volatile ("" : : "r"(p0)); }
+static void __attribute__((noinline)) stub_001a7f60(void* p0, void* p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 static void __attribute__((noinline)) stub_001a8110(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 void fn_00b395e8(u32);
 void fn_00b39608(u32);
@@ -76,6 +79,32 @@ extern char g_001a7bbc_1[];
 void fn_001a7bbc(void) {
     fn_00b39608((u32)((&g_001a7bbc_0)->f_0));
     FIELD(u8, (int)(g_001a7bbc_1) + 65536, 720) = (u8)(0);
+}
+
+struct unk_001a7fec_a0 {
+    char pad_0[944];
+    u32 f_3b0;
+    u8 f_3b4;
+    char pad_3b5[63];
+    u8 f_3f4;
+};
+void fn_001a7fec(unk_001a7fec_a0* a0) {
+    u32 v0;
+    int v11;
+    void* v12;
+    if ((int)(a0->f_3b0) != (int)(0)) {
+        v0 = (u32)(a0->f_3b0);
+        v11 = (int)(0);
+        v12 = (void*)((&a0->f_3b4));
+        do {
+            stub_001a6c0c((void*)(v12), (int)(0));
+            v0 = (u32)(a0->f_3b0);
+            v11 = (int)(v11 + 1);
+            v12 = (void*)((char*)v12 + 16);
+        } while ((u32)(v0) > (u32)(v11));
+    }
+    stub_001a7f60((void*)(a0), (void*)((&a0->f_3f4)));
+    stub_001a778c((int)(0));
 }
 
 void fn_001a81ac(int a0) {

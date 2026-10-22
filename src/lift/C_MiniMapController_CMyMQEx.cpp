@@ -92,8 +92,12 @@ void* fn_005bb07c(unk_005bb07c_a0* a0, void* a1, int a2) {
     return (void*)(v0);
 }
 
-void fn_005bb0c4(void* a0) {
-    stub_005ba724((void*)((char*)a0 + 688));
+struct unk_005bb0c4_a0 {
+    char pad_0[688];
+    u8 f_2b0;
+};
+void fn_005bb0c4(unk_005bb0c4_a0* a0) {
+    stub_005ba724((void*)((&a0->f_2b0)));
 }
 
 struct unk_005bb558_a1 {

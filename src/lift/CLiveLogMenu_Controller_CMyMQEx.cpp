@@ -84,14 +84,16 @@ void fn_0079d754(unk_0079d754_a0* a0, int a1) {
 }
 
 struct unk_0079d7a0_a0 {
-    char pad_0[4372];
+    char pad_0[272];
+    u8 f_110;
+    char pad_111[4099];
     u32 f_1114;
 };
 int fn_0079d7a0(unk_0079d7a0_a0* a0) {
     if ((int)(a0->f_1114) != (int)(5)) {
         return (int)(1);
     }
-    fn_00045f6c((void*)((char*)a0 + 272), (int)(-1));
+    fn_00045f6c((void*)((&a0->f_110)), (int)(-1));
     return (int)(1);
 }
 

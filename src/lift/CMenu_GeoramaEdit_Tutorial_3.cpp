@@ -69,7 +69,9 @@ void fn_0089f464(unk_0089f464_a0* a0) {
 }
 
 struct unk_0089f674_a0 {
-    char pad_0[4280];
+    char pad_0[272];
+    u8 f_110;
+    char pad_111[4007];
     u32 f_10b8;
     u32 f_10bc;
 };
@@ -80,7 +82,7 @@ int fn_0089f674(unk_0089f674_a0* a0) {
     if ((int)(a0->f_10bc) == (int)(0)) {
         return (int)(0);
     }
-    fn_00b3e7e8((void*)((char*)a0 + 272), (int)(-1));
+    fn_00b3e7e8((void*)((&a0->f_110)), (int)(-1));
     return (int)(0);
 }
 

@@ -5,9 +5,19 @@
 extern "C" {
 
 static void __attribute__((noinline)) stub_00898b88(int p0) { __asm__ volatile ("" : : "r"(p0)); }
+void fn_00b3ccc8(void*);
 
 void fn_00898cb8(int a0) {
     stub_00898b88((int)(a0));
+}
+
+struct unk_00898cbc_a0 {
+    char pad_0[40];
+    u8 f_28;
+};
+void fn_00898cbc(unk_00898cbc_a0* a0) {
+    fn_00b3ccc8((void*)((&a0->f_28)));
+    FIELD(u8, (&a0->f_28), 72) = (u8)(1);
 }
 
 }

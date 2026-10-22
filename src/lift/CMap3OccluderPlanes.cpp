@@ -9,11 +9,13 @@ void fn_00fc89fc(void*);
 void fn_00fc8a0c(void*, int);
 
 struct unk_002b3760_a0 {
-    char pad_0[6416];
+    char pad_0[16];
+    u8 f_10;
+    char pad_11[6399];
     u32 f_1910;
 };
 void fn_002b3760(unk_002b3760_a0* a0, int a1, int a2) {
-    fn_00b37f58((void*)((char*)a0 + 16), (int)(a1), (u32)((u32)(a2) << 6));
+    fn_00b37f58((void*)((&a0->f_10)), (int)(a1), (u32)((u32)(a2) << 6));
     a0->f_1910 = (u32)(a2);
 }
 

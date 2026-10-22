@@ -64,8 +64,12 @@ void fn_0089c7fc(void) {
     stub_0089c7b0((int)((int)(&g_0089c7fc_0)->f_0->f_2838));
 }
 
-void fn_0089c810(void* a0) {
-    fn_00b3ccc8((void*)((char*)a0 + 40));
+struct unk_0089c810_a0 {
+    char pad_0[40];
+    u8 f_28;
+};
+void fn_0089c810(unk_0089c810_a0* a0) {
+    fn_00b3ccc8((void*)((&a0->f_28)));
 }
 
 }

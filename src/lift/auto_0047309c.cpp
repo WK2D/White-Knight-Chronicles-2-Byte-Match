@@ -226,6 +226,10 @@ struct unk_004757e4_a0 {
     u8 f_0;
     u8 f_1;
     u8 f_2;
+    char pad_3[13];
+    u8 f_10;
+    char pad_11[219];
+    u8 f_ec;
 };
 void* fn_004757e4(unk_004757e4_a0* a0) {
     if ((int)(a0->f_2) != (int)(0)) {
@@ -235,9 +239,9 @@ void* fn_004757e4(unk_004757e4_a0* a0) {
         return (void*)(0);
     }
     if ((int)(a0->f_0) != (int)(0)) {
-        return (void*)((char*)a0 + 236);
+        return (void*)((&a0->f_ec));
     }
-    return (void*)((char*)a0 + 16);
+    return (void*)((&a0->f_10));
 }
 
 }

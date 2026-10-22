@@ -40,9 +40,13 @@ struct unk_005f2cb0_g2750_0_6c_8 {
     char pad_0[236];
     u32 f_ec;
 };
+struct unk_005f2cb0_a0 {
+    char pad_0[292];
+    u8 f_124;
+};
 extern unk_005f2cb0_g2750 g_005f2cb0_0;
-void fn_005f2cb0(void* a0, int a1) {
-    fn_00410318((u32)((&g_005f2cb0_0)->f_0->f_6c->f_8->f_ec), (u8)((u8)a1), (void*)((char*)a0 + 292));
+void fn_005f2cb0(unk_005f2cb0_a0* a0, int a1) {
+    fn_00410318((u32)((&g_005f2cb0_0)->f_0->f_6c->f_8->f_ec), (u8)((u8)a1), (void*)((&a0->f_124)));
 }
 
 }

@@ -9,23 +9,25 @@ static void __attribute__((noinline)) stub_002db8f0(void* p0) { __asm__ volatile
 struct unk_002db904_a0 {
     void* f_0;
     u32 f_4;
+    u8 f_8;
 };
 extern char g_002db904_0[];
 void fn_002db904(unk_002db904_a0* a0) {
     a0->f_0 = (void*)(g_002db904_0);
     a0->f_4 = (u32)(0);
-    stub_002db8f0((void*)((char*)a0 + 8));
+    stub_002db8f0((void*)((&a0->f_8)));
 }
 
 struct unk_002db924_a0 {
     void* f_0;
     u32 f_4;
+    u8 f_8;
 };
 extern char g_002db924_0[];
 void fn_002db924(unk_002db924_a0* a0) {
     a0->f_0 = (void*)(g_002db924_0);
     a0->f_4 = (u32)(0);
-    stub_002db8f0((void*)((char*)a0 + 8));
+    stub_002db8f0((void*)((&a0->f_8)));
 }
 
 }

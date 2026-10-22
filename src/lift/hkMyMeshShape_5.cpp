@@ -6,15 +6,20 @@ extern "C" {
 
 void fn_00fc8a6c(void*);
 
+struct unk_00b8eb68_gm27d8;
+struct unk_00b8eb68_gm27d8 {
+    char pad_0[88];
+    u8 f_58;
+};
 struct unk_00b8eb68_a0 {
     void* f_0;
     char pad_4[12];
     void* f_10;
 };
-extern char g_00b8eb68_0[];
+extern unk_00b8eb68_gm27d8 g_00b8eb68_0;
 void fn_00b8eb68(unk_00b8eb68_a0* a0) {
-    a0->f_0 = (void*)(g_00b8eb68_0);
-    a0->f_10 = (void*)((char*)g_00b8eb68_0 + 88);
+    a0->f_0 = (void*)((&g_00b8eb68_0));
+    a0->f_10 = (void*)((&(&g_00b8eb68_0)->f_58));
     fn_00fc8a6c((void*)(a0));
 }
 

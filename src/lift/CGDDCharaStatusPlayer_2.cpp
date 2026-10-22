@@ -283,6 +283,8 @@ struct unk_0039a078_a0 {
     virtual void vf273();
     virtual void vf274();
     virtual int vf275(int);
+    char pad_4[588];
+    u8 f_250;
 };
 int fn_0039a078(unk_0039a078_a0* a0, void* a1, int a2) {
     int t0;
@@ -290,7 +292,7 @@ int fn_0039a078(unk_0039a078_a0* a0, void* a1, int a2) {
     int v0;
     t0 = a0->vf275((int)(a2));
     if ((int)((u32)(t0) & 0xff) == (int)(0)) {
-        t1 = fn_00b37f58((void*)((char*)a0 + 592), (void*)(a1), (int)(2520));
+        t1 = fn_00b37f58((void*)((&a0->f_250)), (void*)(a1), (int)(2520));
         v0 = (int)(0);
     } else {
         v0 = (int)(-1);

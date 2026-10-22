@@ -22,12 +22,14 @@ int fn_0078e844(unk_0078e844_a0* a0, unk_0078e844_a1* a1) {
 }
 
 struct unk_0078e978_a0 {
-    char pad_0[35];
+    char pad_0[4];
+    u8 f_4;
+    char pad_5[30];
     u8 f_23;
 };
 extern char g_0078e978_0[];
 int fn_0078e978(unk_0078e978_a0* a0) {
-    fn_00b37f88((void*)((char*)a0 + 4), (void*)(g_0078e978_0), (int)(32));
+    fn_00b37f88((void*)((&a0->f_4)), (void*)(g_0078e978_0), (int)(32));
     a0->f_23 = (u8)(0);
     return (int)(1);
 }

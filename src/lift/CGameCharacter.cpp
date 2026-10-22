@@ -14,18 +14,22 @@ void* fn_003ee888(void*);
 struct unk_001777f8_a0 {
     char pad_0[1250];
     u8 f_4e2;
+    char pad_4e3[1];
+    u8 f_4e4;
 };
 void fn_001777f8(unk_001777f8_a0* a0) {
-    fn_00152710((void*)((char*)a0 + 1252), (float)(1.0f));
+    fn_00152710((void*)((&a0->f_4e4)), (float)(1.0f));
     a0->f_4e2 = (u8)(0);
 }
 
 struct unk_00177934_a0 {
     char pad_0[1250];
     u8 f_4e2;
+    char pad_4e3[1];
+    u8 f_4e4;
 };
 void fn_00177934(unk_00177934_a0* a0) {
-    fn_0015264c((void*)((char*)a0 + 1252), (float)(1.0f));
+    fn_0015264c((void*)((&a0->f_4e4)), (float)(1.0f));
     a0->f_4e2 = (u8)(0);
 }
 

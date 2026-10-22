@@ -44,20 +44,36 @@ void* fn_00a7c1f8(void) {
     return (void*)(t0);
 }
 
-void fn_00a7c28c(void* a0) {
-    fn_00fccd90((void*)((char*)a0 + 32), (int)(0));
+struct unk_00a7c28c_a0 {
+    char pad_0[32];
+    u8 f_20;
+};
+void fn_00a7c28c(unk_00a7c28c_a0* a0) {
+    fn_00fccd90((void*)((&a0->f_20)), (int)(0));
 }
 
-void fn_00a7c2bc(void* a0) {
-    fn_00fccd90((void*)((char*)a0 + 8), (int)(0));
+struct unk_00a7c2bc_a0 {
+    char pad_0[8];
+    u8 f_8;
+};
+void fn_00a7c2bc(unk_00a7c2bc_a0* a0) {
+    fn_00fccd90((void*)((&a0->f_8)), (int)(0));
 }
 
-void fn_00a7c384(void* a0) {
-    fn_00fccdb0((void*)((char*)a0 + 32));
+struct unk_00a7c384_a0 {
+    char pad_0[32];
+    u8 f_20;
+};
+void fn_00a7c384(unk_00a7c384_a0* a0) {
+    fn_00fccdb0((void*)((&a0->f_20)));
 }
 
-void fn_00a7c3b0(void* a0) {
-    fn_00fccdb0((void*)((char*)a0 + 8));
+struct unk_00a7c3b0_a0 {
+    char pad_0[8];
+    u8 f_8;
+};
+void fn_00a7c3b0(unk_00a7c3b0_a0* a0) {
+    fn_00fccdb0((void*)((&a0->f_8)));
 }
 
 }

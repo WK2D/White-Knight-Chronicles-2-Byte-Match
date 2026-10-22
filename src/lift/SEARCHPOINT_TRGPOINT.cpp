@@ -22,32 +22,37 @@ void* fn_0048ffac(unk_0048ffac_a0* a0) {
 }
 
 struct unk_0048ffe4_a0 {
-    char pad_0[36];
+    char pad_0[4];
+    u8 f_4;
+    char pad_5[31];
     u32 f_24;
 };
 void fn_0048ffe4(unk_0048ffe4_a0* a0) {
-    fn_003089cc((void*)((char*)a0 + 4));
+    fn_003089cc((void*)((&a0->f_4)));
     a0->f_24 = (u32)(0);
 }
 
 struct unk_00490024_a0 {
-    char pad_0[36];
+    char pad_0[4];
+    u8 f_4;
+    char pad_5[31];
     u32 f_24;
 };
 void fn_00490024(unk_00490024_a0* a0) {
-    fn_00308994((void*)((char*)a0 + 4));
+    fn_00308994((void*)((&a0->f_4)));
     a0->f_24 = (u32)(0);
 }
 
 struct unk_004907b0_a0 {
     char pad_0[424];
     u32 f_1a8;
+    u8 f_1ac;
 };
 int fn_004907b0(unk_004907b0_a0* a0) {
     int t0;
     int v0;
     if ((int)(a0->f_1a8) != (int)(0)) {
-        t0 = stub_0048f8a4((void*)(a0), (void*)((char*)a0 + 428), (void*)(a0->f_1a8));
+        t0 = stub_0048f8a4((void*)(a0), (void*)((&a0->f_1ac)), (void*)(a0->f_1a8));
         v0 = (int)(1);
     } else {
         v0 = (int)(0);
@@ -58,12 +63,13 @@ int fn_004907b0(unk_004907b0_a0* a0) {
 struct unk_004907f8_a0 {
     char pad_0[1580];
     u32 f_62c;
+    u8 f_630;
 };
 int fn_004907f8(unk_004907f8_a0* a0) {
     int t0;
     int v0;
     if ((int)(a0->f_62c) != (int)(0)) {
-        t0 = stub_0048f5b8((void*)(a0), (void*)((char*)a0 + 1584), (void*)(a0->f_62c));
+        t0 = stub_0048f5b8((void*)(a0), (void*)((&a0->f_630)), (void*)(a0->f_62c));
         v0 = (int)(1);
     } else {
         v0 = (int)(0);

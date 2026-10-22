@@ -7,7 +7,9 @@ extern "C" {
 void fn_00fc9d30(void*);
 
 struct unk_00126238_a0 {
-    char pad_0[5171];
+    char pad_0[88];
+    u8 f_58;
+    char pad_59[5082];
     u8 f_1433;
     u32 f_1434;
     u32 f_1438;
@@ -18,7 +20,7 @@ int fn_00126238(unk_00126238_a0* a0) {
             return (int)(0);
         }
         a0->f_1434 = (u32)(a0->f_1433);
-        fn_00fc9d30((void*)((char*)a0 + 88));
+        fn_00fc9d30((void*)((&a0->f_58)));
         return (int)(0);
     }
     return (int)(0);

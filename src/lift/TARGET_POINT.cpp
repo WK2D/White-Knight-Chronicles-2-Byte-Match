@@ -36,11 +36,12 @@ int fn_00308a34(float f0, float f1, float f2, float f3) {
 
 struct unk_00308fc8_a0 {
     void* f_0;
+    u8 f_4;
 };
 extern char g_00308fc8_0[];
 void fn_00308fc8(unk_00308fc8_a0* a0) {
     a0->f_0 = (void*)(g_00308fc8_0);
-    stub_003089cc((void*)((char*)a0 + 4));
+    stub_003089cc((void*)((&a0->f_4)));
 }
 
 }

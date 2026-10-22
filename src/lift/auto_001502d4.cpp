@@ -27,22 +27,26 @@ void fn_00150618(void) {
 }
 
 struct unk_00150648_a0 {
-    char pad_0[768];
+    char pad_0[512];
+    u8 f_200;
+    char pad_201[255];
     u32 f_300;
 };
 void fn_00150648(unk_00150648_a0* a0) {
     fn_00b37fa8((void*)(a0), (int)(0), (int)(512));
-    fn_00b37fa8((void*)((char*)a0 + 512), (int)(0), (int)(256));
+    fn_00b37fa8((void*)((&a0->f_200)), (int)(0), (int)(256));
     a0->f_300 = (u32)(0);
 }
 
 struct unk_001506ac_a0 {
-    char pad_0[768];
+    char pad_0[512];
+    u8 f_200;
+    char pad_201[255];
     u32 f_300;
 };
 void fn_001506ac(unk_001506ac_a0* a0) {
     fn_00b37fa8((void*)(a0), (int)(0), (int)(512));
-    fn_00b37fa8((void*)((char*)a0 + 512), (int)(0), (int)(256));
+    fn_00b37fa8((void*)((&a0->f_200)), (int)(0), (int)(256));
     a0->f_300 = (u32)(0);
 }
 

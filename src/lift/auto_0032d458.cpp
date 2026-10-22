@@ -146,12 +146,16 @@ struct unk_0032e208_gm1c38 {
 struct unk_0032e208_gm1c38_0 {
     u32 f_0;
 };
+struct unk_0032e208_a0 {
+    char pad_0[8];
+    u8 f_8;
+};
 extern unk_0032e208_gm1c38 g_0032e208_0;
-int fn_0032e208(void* a0) {
+int fn_0032e208(unk_0032e208_a0* a0) {
     int t1;
     fn_0003f9e0((void*)(a0));
     t1 = fn_002e5a74((u32)((&g_0032e208_0)->f_0->f_0));
-    fn_0003fab0((void*)((char*)a0 + 8), (u8)((u8)t1));
+    fn_0003fab0((void*)((&a0->f_8)), (u8)((u8)t1));
     return (int)(1);
 }
 

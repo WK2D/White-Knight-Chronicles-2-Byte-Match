@@ -38,9 +38,13 @@ int fn_0011cdd8(int a0) {
     return (int)(1);
 }
 
-int fn_0011ce24(void* a0) {
+struct unk_0011ce24_a0 {
+    char pad_0[20392];
+    u8 f_4fa8;
+};
+int fn_0011ce24(unk_0011ce24_a0* a0) {
     int t0;
-    t0 = fn_00fccd90((void*)((char*)a0 + 20392), (int)(0));
+    t0 = fn_00fccd90((void*)((&a0->f_4fa8)), (int)(0));
     return (int)((int)((u32)(((int)((u32)((int)(t0) >> 31) ^ (u32)(t0)) - (int)((int)(t0) >> 31)) + -1) >> 31));
 }
 

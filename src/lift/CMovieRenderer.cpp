@@ -34,12 +34,14 @@ int fn_000eac44(unk_000eac44_a0* a0, void* a1) {
 }
 
 struct unk_000eafdc_a0 {
-    char pad_0[116];
+    char pad_0[76];
+    u8 f_4c;
+    char pad_4d[39];
     u32 f_74;
 };
 void fn_000eafdc(unk_000eafdc_a0* a0) {
     fn_000e93a0((void*)(a0));
-    stub_000ea624((void*)((char*)a0 + 76));
+    stub_000ea624((void*)((&a0->f_4c)));
     a0->f_74 = (u32)(0);
 }
 

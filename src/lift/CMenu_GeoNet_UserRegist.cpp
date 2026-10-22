@@ -37,13 +37,21 @@ void fn_006dcf20(unk_006dcf20_a0* a0, unk_006dcf20_a1* a1, int a2, unk_006dcf20_
     a4->f_0 = (u16)(a4->f_0 + -40);
 }
 
-void fn_006dd010(void* a0) {
-    fn_00b37fa8((void*)((char*)a0 + 1567), (int)(0), (int)(1024));
+struct unk_006dd010_a0 {
+    char pad_0[1567];
+    u8 f_61f;
+};
+void fn_006dd010(unk_006dd010_a0* a0) {
+    fn_00b37fa8((void*)((&a0->f_61f)), (int)(0), (int)(1024));
 }
 
-void fn_006dd044(void* a0, void* a1) {
-    fn_00b37fa8((void*)((char*)a0 + 1567), (int)(0), (int)(1024));
-    fn_00b38268((void*)((char*)a0 + 1567), (void*)(a1));
+struct unk_006dd044_a0 {
+    char pad_0[1567];
+    u8 f_61f;
+};
+void fn_006dd044(unk_006dd044_a0* a0, void* a1) {
+    fn_00b37fa8((void*)((&a0->f_61f)), (int)(0), (int)(1024));
+    fn_00b38268((void*)((&a0->f_61f)), (void*)(a1));
 }
 
 struct unk_006dd6e4_a0 {

@@ -11,13 +11,15 @@ void fn_0012d83c(void) {
 }
 
 struct unk_0012d9d8_a0 {
-    char pad_0[608];
+    char pad_0[448];
+    u8 f_1c0;
+    char pad_1c1[159];
     u32 f_260;
 };
 void* fn_0012d9d8(unk_0012d9d8_a0* a0) {
     int v0;
     if ((int)(a0->f_260) != (int)(0)) {
-        v0 = (int)((char*)a0 + 448);
+        v0 = (int)((&a0->f_1c0));
     } else {
         v0 = (int)(0);
     }

@@ -30,10 +30,14 @@ void* fn_002df680(u32);
 void fn_00313a0c(void*, void*);
 void fn_00314750(void*, void*);
 
-int fn_004ce4b8(void* a0) {
+struct unk_004ce4b8_a0 {
+    char pad_0[8];
+    u8 f_8;
+};
+int fn_004ce4b8(unk_004ce4b8_a0* a0) {
     int t0;
     t0 = fn_0003f9e0((void*)(a0));
-    fn_0003fac8((void*)((char*)a0 + 8), (float)((float)(int)(t0)));
+    fn_0003fac8((void*)((&a0->f_8)), (float)((float)(int)(t0)));
     return (int)(1);
 }
 

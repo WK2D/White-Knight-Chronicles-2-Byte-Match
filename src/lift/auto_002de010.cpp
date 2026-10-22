@@ -9,12 +9,13 @@ static int __attribute__((noinline)) stub_002dddac(void* p0, int p1) { int r; __
 struct unk_002deb18_a0 {
     char pad_0[648];
     u32 f_288;
+    u8 f_28c;
 };
 int fn_002deb18(unk_002deb18_a0* a0) {
     int v0;
     void* v1;
     a0->f_288 = (u32)(0);
-    v1 = (void*)((char*)a0 + 652);
+    v1 = (void*)((&a0->f_28c));
     for (v0 = 0; v0 < 8; v0++) {
         FIELD(u32, v1, 0) = (u32)(0);
         v1 = (void*)((char*)v1 + 4);

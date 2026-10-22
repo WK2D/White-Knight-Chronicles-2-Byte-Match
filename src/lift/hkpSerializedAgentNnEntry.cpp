@@ -18,11 +18,13 @@ void fn_00e95668(int a0, int a1, int a2, int a3, int a4, int a5) {
 
 struct unk_00e958a0_a0 {
     void* f_0;
+    char pad_4[28];
+    u8 f_20;
 };
 extern char g_00e958a0_0[];
 void fn_00e958a0(unk_00e958a0_a0* a0, int a1) {
     a0->f_0 = (void*)(g_00e958a0_0);
-    fn_00dc7778((void*)((char*)a0 + 32), (int)(a1));
+    fn_00dc7778((void*)((&a0->f_20)), (int)(a1));
 }
 
 }

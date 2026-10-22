@@ -6,6 +6,18 @@ extern "C" {
 
 void fn_00015b60(u32, int, int);
 void fn_00015d18(u32);
+static void __attribute__((noinline)) stub_000bbdfc(void* p0, int p1, int p2, int p3, int p4, int p5) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4), "r"(p5)); }
+
+struct unk_000bbf2c_a0 {
+    char pad_0[4];
+    u8 f_4;
+};
+int fn_000bbf2c(unk_000bbf2c_a0* a0, int a1, int a2, int a3, int a4, int a5) {
+    stub_000bbdfc((void*)(a0), (int)(a1), (int)(a2), (int)(a3), (int)(a4), (int)(a5));
+    FIELD(u32, (&a0->f_4), 12) = (u32)(0);
+    FIELD(float, (&a0->f_4), 8) = 0.20000000298023224f;
+    return (int)(1);
+}
 
 struct unk_000bc034_gm70d0;
 struct unk_000bc034_gm70d0_0;

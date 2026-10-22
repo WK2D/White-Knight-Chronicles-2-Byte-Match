@@ -8,12 +8,14 @@ static void __attribute__((noinline)) stub_006600b8(void* p0) { __asm__ volatile
 
 struct unk_00660164_a0 {
     void* f_0;
+    char pad_4[36];
+    u8 f_28;
 };
 extern char g_00660164_0[];
 extern char g_00660164_1[];
 void fn_00660164(unk_00660164_a0* a0) {
     a0->f_0 = (void*)(g_00660164_0);
-    stub_006600b8((void*)((char*)a0 + 40));
+    stub_006600b8((void*)((&a0->f_28)));
     a0->f_0 = (void*)(g_00660164_1);
 }
 

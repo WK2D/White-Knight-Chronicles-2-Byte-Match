@@ -24,8 +24,12 @@ int fn_006f2568(unk_006f2568_a0* a0, int a1, int a2) {
     return (int)(0);
 }
 
-void fn_006f2780(void* a0) {
-    fn_00b37fa8((void*)((char*)a0 + 2224), (int)(0), (u32)(36864));
+struct unk_006f2780_a0 {
+    char pad_0[2224];
+    u8 f_8b0;
+};
+void fn_006f2780(unk_006f2780_a0* a0) {
+    fn_00b37fa8((void*)((&a0->f_8b0)), (int)(0), (u32)(36864));
 }
 
 struct unk_006f35a4_a0 {

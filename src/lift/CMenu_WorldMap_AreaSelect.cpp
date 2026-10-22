@@ -54,11 +54,13 @@ int fn_007a1e40(int a0, int a1) {
 }
 
 struct unk_007a1f1c_a0 {
-    char pad_0[120];
+    char pad_0[48];
+    u8 f_30;
+    char pad_31[71];
     u8 f_78;
 };
 int fn_007a1f1c(unk_007a1f1c_a0* a0) {
-    fn_00046268((void*)((char*)a0 + 48));
+    fn_00046268((void*)((&a0->f_30)));
     a0->f_78 = (u8)(1);
     return (int)(0);
 }

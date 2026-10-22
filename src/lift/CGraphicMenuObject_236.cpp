@@ -18,8 +18,12 @@ void fn_00863d34(unk_00863d34_a0* a0) {
     a0->f_1054 = (u32)(2);
 }
 
-void fn_00863df4(void* a0) {
-    fn_00b3d088((void*)((char*)a0 + 3088), (int)(0), (int)(1024));
+struct unk_00863df4_a0 {
+    char pad_0[3088];
+    u8 f_c10;
+};
+void fn_00863df4(unk_00863df4_a0* a0) {
+    fn_00b3d088((void*)((&a0->f_c10)), (int)(0), (int)(1024));
 }
 
 }

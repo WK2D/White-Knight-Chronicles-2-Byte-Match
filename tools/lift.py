@@ -190,6 +190,7 @@ class Lifter:
         # makes an indirect call; elsewhere they are ordinary fields.
         self.virtual = 0x4E800421 in words
         self.access = defaultdict(set)    # access path -> {(offset, type)} (first pass)
+        self.addressed = defaultdict(set) # access path -> offsets whose address is taken
         self.static = {}                  # callees called without a TOC slot: static in this file
         self.gpr = {r: None for r in range(32)}
         self.fpr = {r: None for r in range(32)}
@@ -1084,6 +1085,12 @@ class Lifter:
                 v.iv = (index, stride, k + 1)
                 self.set(rt, v)
                 return
+            path = getattr(base, 'path', None)
+            if base.ctype in ('ptr', 'addr', 'gaddr') and path is not None and d >= 0:
+                self.addressed[path].add(d)                          # &p->f_d: a member's address
+                if d in self.layouts.get(path, {}):
+                    self.set(rt, Value(f'(&{base.text}->f_{d:x})', 'addr'))
+                    return
             if base.ctype in ('ptr', 'addr', 'gaddr'):
                 self.set(rt, Value(f'(char*){paren(base)} + {d}', 'addr', 1))
             else:
@@ -1578,7 +1585,9 @@ def lift(address, words, arity):
         preset = {k: v.ctype for k, v in first.args.items()}
         typed = Lifter(address, words, arity, preset, poly=first.polymorphic).run()
         layouts = {}
-        for path, fields in sorted(typed.access.items(), key=lambda kv: (len(kv[0]), str(kv[0]))):
+        paths = set(typed.access) | set(typed.addressed)
+        for path, fields in sorted(((p_, typed.access.get(p_, set())) for p_ in paths),
+                                   key=lambda kv: (len(kv[0]), str(kv[0]))):
             if len(path) > 1 and path[0] != 'g' or len(path) > 2:
                 parent = path[:-1]
                 if layouts.get(parent, {}).get(path[-1]) != 'u32':
@@ -1589,7 +1598,11 @@ def lift(address, words, arity):
                     break
                 by_offset[off] = ctype
             else:
-                if struct_decl('x', by_offset) is not None:
+                # Offsets whose address is taken get a byte member where nothing overlaps.
+                for off in sorted(typed.addressed.get(path, ())):
+                    if off not in by_offset and all(not o <= off < o + SIZES[t] for o, t in by_offset.items()):
+                        by_offset[off] = 'u8'
+                if by_offset and struct_decl('x', by_offset) is not None:
                     layouts[path] = by_offset
         second = Lifter(address, words, arity, preset, layouts, poly=first.polymorphic).run()
         if not second.stmts and not second.args:

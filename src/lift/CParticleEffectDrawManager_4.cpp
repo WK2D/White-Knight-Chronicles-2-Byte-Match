@@ -20,28 +20,40 @@ u32 fn_008e8e5c(int a0, unk_008e8e5c_a1* a1) {
     return (u32)((u32)(0) & 0x4000000);
 }
 
-int fn_008e90c0(void* a0, void* a1) {
+struct unk_008e90c0_a1 {
+    char pad_0[64];
+    u8 f_40;
+};
+int fn_008e90c0(void* a0, unk_008e90c0_a1* a1) {
     int t0;
     if ((int)(a1) != (int)(0)) {
-        t0 = stub_008e8b94((void*)(a0), (void*)((char*)a1 + 64));
+        t0 = stub_008e8b94((void*)(a0), (void*)((&a1->f_40)));
         return (int)(t0);
     }
     return (int)(0);
 }
 
-int fn_008e90e4(void* a0, void* a1) {
+struct unk_008e90e4_a1 {
+    char pad_0[1124];
+    u8 f_464;
+};
+int fn_008e90e4(void* a0, unk_008e90e4_a1* a1) {
     int t0;
     if ((int)(a1) != (int)(0)) {
-        t0 = stub_008e8dc0((void*)(a0), (void*)((char*)a1 + 1124));
+        t0 = stub_008e8dc0((void*)(a0), (void*)((&a1->f_464)));
         return (int)(t0);
     }
     return (int)(0);
 }
 
-int fn_008e9108(void* a0, void* a1) {
+struct unk_008e9108_a1 {
+    char pad_0[1060];
+    u8 f_424;
+};
+int fn_008e9108(void* a0, unk_008e9108_a1* a1) {
     int t0;
     if ((int)(a1) != (int)(0)) {
-        t0 = stub_008e8dc0((void*)(a0), (void*)((char*)a1 + 1060));
+        t0 = stub_008e8dc0((void*)(a0), (void*)((&a1->f_424)));
         return (int)(t0);
     }
     return (int)(0);

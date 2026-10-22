@@ -6,6 +6,25 @@ extern "C" {
 
 void fn_009b66b4(int, void*);
 void* fn_009b9330(void);
+void fn_009b9334(void*);
+int fn_00b3d088(void*, int, int);
+
+struct unk_009b97d4_gm3b24;
+struct unk_009b97d4_gm3b24 {
+    char pad_0[408];
+    u8 f_198;
+    char pad_199[15];
+    u32 f_1a8;
+};
+extern unk_009b97d4_gm3b24 g_009b97d4_0;
+void fn_009b97d4(void) {
+    int t0;
+    if ((int)((&g_009b97d4_0)->f_1a8) == (int)(0)) {
+        t0 = fn_00b3d088((void*)((&g_009b97d4_0)), (int)(0), (int)(408));
+        (&g_009b97d4_0)->f_1a8 = (u32)(1);
+    }
+    fn_009b9334((void*)((&(&g_009b97d4_0)->f_198)));
+}
 
 void* fn_009b9a90(void) {
     void* t0;
@@ -13,9 +32,13 @@ void* fn_009b9a90(void) {
     return (void*)(t0);
 }
 
-int fn_009bb37c(int a0, void* a1) {
+struct unk_009bb37c_a1 {
+    char pad_0[4];
+    u8 f_4;
+};
+int fn_009bb37c(int a0, unk_009bb37c_a1* a1) {
     fn_009b66b4((int)(a0), (void*)(a1));
-    fn_009b66b4((int)(a0), (void*)((char*)a1 + 4));
+    fn_009b66b4((int)(a0), (void*)((&a1->f_4)));
     return (int)(0);
 }
 

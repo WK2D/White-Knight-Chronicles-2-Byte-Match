@@ -11,12 +11,20 @@ void fn_00d26e08(int, int, int, int, int);
 void fn_00ded250(void*, int);
 void fn_00ded418(void*, int, int, int);
 
-void fn_00d21624(void* a0, int a1, int a2, int a3) {
-    fn_00ded418((void*)((char*)a0 + 48), (int)(a1), (int)(a2), (int)(a3));
+struct unk_00d21624_a0 {
+    char pad_0[48];
+    u8 f_30;
+};
+void fn_00d21624(unk_00d21624_a0* a0, int a1, int a2, int a3) {
+    fn_00ded418((void*)((&a0->f_30)), (int)(a1), (int)(a2), (int)(a3));
 }
 
-void fn_00d21650(void* a0, int a1) {
-    fn_00ded250((void*)((char*)a0 + 48), (int)(a1));
+struct unk_00d21650_a0 {
+    char pad_0[48];
+    u8 f_30;
+};
+void fn_00d21650(unk_00d21650_a0* a0, int a1) {
+    fn_00ded250((void*)((&a0->f_30)), (int)(a1));
 }
 
 void fn_00d217c0(int a0, int a1, int a2, int a3, int a4, int a5) {

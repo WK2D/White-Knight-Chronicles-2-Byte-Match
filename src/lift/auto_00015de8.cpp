@@ -4,10 +4,23 @@
 
 extern "C" {
 
+void fn_00b37fa8(void*, int, int);
 void fn_00fca710(void);
 
 void fn_0001787c(void) {
     fn_00fca710();
+}
+
+struct unk_00017c80_gm7f30;
+struct unk_00017c80_gm7f30 {
+    u16 f_0;
+    char pad_2[6];
+    u8 f_8;
+};
+extern unk_00017c80_gm7f30 g_00017c80_0;
+void fn_00017c80(void) {
+    (&g_00017c80_0)->f_0 = (u16)(0);
+    fn_00b37fa8((void*)((&(&g_00017c80_0)->f_8)), (int)(0), (int)(5248));
 }
 
 }

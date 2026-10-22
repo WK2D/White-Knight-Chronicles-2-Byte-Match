@@ -79,14 +79,16 @@ int fn_00777a7c(int a0, unk_00777a7c_a1* a1) {
 }
 
 struct unk_00777c88_a0 {
-    char pad_0[4328];
+    char pad_0[272];
+    u8 f_110;
+    char pad_111[4055];
     u32 f_10e8;
 };
 int fn_00777c88(unk_00777c88_a0* a0) {
     if ((int)(a0->f_10e8) != (int)(2)) {
         return (int)(0);
     }
-    fn_00045f6c((void*)((char*)a0 + 272), (int)(-1));
+    fn_00045f6c((void*)((&a0->f_110)), (int)(-1));
     return (int)(0);
 }
 
@@ -114,7 +116,9 @@ u8 fn_00777e40(unk_00777e40_a0* a0, int a1, int a2) {
 }
 
 struct unk_00777e78_a0 {
-    char pad_0[4476];
+    char pad_0[272];
+    u8 f_110;
+    char pad_111[4203];
     u32 f_117c;
     char pad_1180[16];
     u32 f_1190;
@@ -123,7 +127,7 @@ struct unk_00777e78_a0 {
 u8 fn_00777e78(unk_00777e78_a0* a0, int a1, int a2) {
     void* t0;
     int t1;
-    t0 = fn_0004361c((void*)((char*)a0 + 272), (int)(a1));
+    t0 = fn_0004361c((void*)((&a0->f_110)), (int)(a1));
     if ((int)(t0) != (int)(0)) {
         a0->f_1190 = (u32)(FIELD(u32, t0, 0));
     }

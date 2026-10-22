@@ -19,8 +19,12 @@ int fn_00048fec(int a0, int a1, int a2, int a3) {
     return (int)((int)(short)((int)((int)((u32)(a2) >> 1) - (int)((u32)(a3) >> 1)) + (int)(a1)));
 }
 
-void fn_0004a510(void* a0, int a1, int a2, int a3) {
-    stub_0004a4bc((void*)(a0), (void*)((char*)a0 + 104), (int)(a1), (int)(a3), (int)(a3));
+struct unk_0004a510_a0 {
+    char pad_0[104];
+    u8 f_68;
+};
+void fn_0004a510(unk_0004a510_a0* a0, int a1, int a2, int a3) {
+    stub_0004a4bc((void*)(a0), (void*)((&a0->f_68)), (int)(a1), (int)(a3), (int)(a3));
 }
 
 struct unk_0004a970_a0 {

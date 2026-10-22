@@ -61,20 +61,28 @@ void fn_0090b5a8(unk_0090b5a8_a0* a0, int a1) {
     a0->f_0 = (u32)(a1);
 }
 
-int fn_0090bb98(void* a0) {
+struct unk_0090bb98_a0 {
+    char pad_0[8];
+    u8 f_8;
+};
+int fn_0090bb98(unk_0090bb98_a0* a0) {
     int t0;
     t0 = fn_00b41738((void*)(a0));
-    fn_00b41748((void*)((char*)a0 + 8), (int)(t0 + 1));
+    fn_00b41748((void*)((&a0->f_8)), (int)(t0 + 1));
     return (int)(1);
 }
 
+struct unk_0090bbe8_a0 {
+    char pad_0[8];
+    u8 f_8;
+};
 extern char g_0090bbe8_0[];
-int fn_0090bbe8(void* a0) {
+int fn_0090bbe8(unk_0090bbe8_a0* a0) {
     void* t0;
     int t1;
     t0 = fn_00b41758((void*)(a0));
     t1 = fn_00b3cd18((void*)(g_0090bbe8_0), (void*)(t0), (int)(0), (int)(-1), (int)(0), (int)(0));
-    fn_00b41748((void*)((char*)a0 + 8), (int)(t1));
+    fn_00b41748((void*)((&a0->f_8)), (int)(t1));
     return (int)(1);
 }
 

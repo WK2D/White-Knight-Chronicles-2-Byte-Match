@@ -9,12 +9,14 @@ int fn_00863d48(void*);
 struct unk_00866308_a0 {
     char pad_0[476];
     u32 f_1dc;
+    char pad_1e0[64];
+    u8 f_220;
 };
 int fn_00866308(unk_00866308_a0* a0) {
     int t0;
     int v1;
     if ((int)(a0->f_1dc) != (int)(0)) {
-        t0 = fn_00863d48((void*)((char*)a0 + 544));
+        t0 = fn_00863d48((void*)((&a0->f_220)));
         v1 = (int)((u32)(t0) & 0xff);
     } else {
         v1 = (int)(1);

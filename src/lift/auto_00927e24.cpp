@@ -4,6 +4,16 @@
 
 extern "C" {
 
+void fn_00b3d088(void*, int, int);
+
+struct unk_0092848c_a0 {
+    char pad_0[972];
+    u8 f_3cc;
+};
+void fn_0092848c(unk_0092848c_a0* a0) {
+    fn_00b3d088((void*)((&a0->f_3cc)), (int)(-1), (int)(780));
+    FIELD(u32, (&a0->f_3cc), 776) = (u32)(0);
+}
 
 u8 fn_009289f4(int a0) {
     return (u8)((u8)a0);

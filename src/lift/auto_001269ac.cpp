@@ -13,8 +13,12 @@ int fn_00127298(int a0, int a1) {
     return (int)(t0);
 }
 
-void fn_00127d60(void* a0, int a1) {
-    stub_00127cc4((void*)((char*)a0 + 1092), (int)(a1));
+struct unk_00127d60_a0 {
+    char pad_0[1092];
+    u8 f_444;
+};
+void fn_00127d60(unk_00127d60_a0* a0, int a1) {
+    stub_00127cc4((void*)((&a0->f_444)), (int)(a1));
 }
 
 }

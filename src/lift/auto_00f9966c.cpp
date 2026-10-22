@@ -27,12 +27,20 @@ void fn_00f99dbc(unk_00f99dbc_a0* a0) {
     fn_00b0c728((u32)(a0->f_6c));
 }
 
-void fn_00f99f04(void* a0) {
-    fn_00b2bb1c((void*)((char*)a0 + 4));
+struct unk_00f99f04_a0 {
+    char pad_0[4];
+    u8 f_4;
+};
+void fn_00f99f04(unk_00f99f04_a0* a0) {
+    fn_00b2bb1c((void*)((&a0->f_4)));
 }
 
-void fn_00f99f30(void* a0) {
-    fn_00b2bb44((void*)((char*)a0 + 4));
+struct unk_00f99f30_a0 {
+    char pad_0[4];
+    u8 f_4;
+};
+void fn_00f99f30(unk_00f99f30_a0* a0) {
+    fn_00b2bb44((void*)((&a0->f_4)));
 }
 
 struct unk_00f99f5c_a0 {

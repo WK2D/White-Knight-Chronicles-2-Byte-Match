@@ -122,7 +122,7 @@ void fn_00b8fe50(unk_00b8fe50_a0* a0, unk_00b8fe50_a1* a1, unk_00b8fe50_a2* a2, 
     fn_002d2864((void*)(a2));
     a0->f_18 = (u32)(a1->f_0->f_0);
     a0->f_1c = (u32)(a2->f_0->f_0);
-    fn_00b8f800((void*)(a0), (void*)((char*)a0 + 24), (void*)((char*)a0 + 28), (void*)(a3));
+    fn_00b8f800((void*)(a0), (void*)((&a0->f_18)), (void*)((&a0->f_1c)), (void*)(a3));
 }
 
 struct unk_00b8fefc_a1_0;
@@ -153,7 +153,7 @@ void fn_00b8fefc(unk_00b8fefc_a0* a0, unk_00b8fefc_a1* a1, unk_00b8fefc_a2* a2, 
     fn_002d2864((void*)(a2));
     a0->f_18 = (u32)(a1->f_0->f_0);
     a0->f_1c = (u32)(a2->f_0->f_0);
-    fn_00b8f724((void*)(a0), (void*)((char*)a0 + 24), (void*)((char*)a0 + 28), (void*)(a3));
+    fn_00b8f724((void*)(a0), (void*)((&a0->f_18)), (void*)((&a0->f_1c)), (void*)(a3));
 }
 
 }

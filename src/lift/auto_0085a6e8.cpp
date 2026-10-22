@@ -31,7 +31,9 @@ int fn_0085a6e8(unk_0085a6e8_a0* a0) {
 }
 
 struct unk_0085a948_a0 {
-    char pad_0[4280];
+    char pad_0[272];
+    u8 f_110;
+    char pad_111[4007];
     u32 f_10b8;
     char pad_10bc[60];
     u32 f_10f8;
@@ -43,12 +45,12 @@ int fn_0085a948(unk_0085a948_a0* a0) {
     if ((int)(a0->f_10b8) != (int)(2)) {
         return (int)(0);
     }
-    t0 = fn_00b3e188((void*)((char*)a0 + 272), (int)((int)a0->f_10f8));
+    t0 = fn_00b3e188((void*)((&a0->f_110)), (int)((int)a0->f_10f8));
     if ((int)(t0) == (int)(0)) {
         return (int)(0);
     }
-    fn_00b3ce78((void*)((char*)a0 + 272), (u32)(FIELD(u32, t0, 4)), (int)(1));
-    fn_00861e00((u32)(a0->f_1128), (void*)((char*)a0 + 272));
+    fn_00b3ce78((void*)((&a0->f_110)), (u32)(FIELD(u32, t0, 4)), (int)(1));
+    fn_00861e00((u32)(a0->f_1128), (void*)((&a0->f_110)));
     return (int)(1);
 }
 

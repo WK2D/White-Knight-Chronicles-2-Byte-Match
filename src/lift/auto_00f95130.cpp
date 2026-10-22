@@ -16,6 +16,20 @@ int fn_00f964b0(void) {
     return (int)(t0);
 }
 
+struct unk_00f964dc_a0 {
+    char pad_0[4];
+    u8 f_4;
+};
+void* fn_00f964dc(unk_00f964dc_a0* a0) {
+    int v0;
+    if ((u32)(FIELD(u32, (&a0->f_4), 24)) > (u32)(15)) {
+        v0 = (int)(FIELD(u32, (&a0->f_4), 4));
+    } else {
+        v0 = (int)((char*)(&a0->f_4) + 4);
+    }
+    return (void*)(v0);
+}
+
 struct unk_00f967a0_a4 {
     u32 f_0;
 };

@@ -62,10 +62,14 @@ struct unk_00343e80_gm1c30_0_6c_8 {
     char pad_0[252];
     u32 f_fc;
 };
+struct unk_00343e80_a0 {
+    char pad_0[8];
+    u8 f_8;
+};
 extern char g_00343e80_0[];
 extern unk_00343e80_gm1c30 g_00343e80_1;
 extern unk_00343e80_gm1c38 g_00343e80_2;
-int fn_00343e80(void* a0) {
+int fn_00343e80(unk_00343e80_a0* a0) {
     void* t0;
     void* t1;
     void* t2;
@@ -73,7 +77,7 @@ int fn_00343e80(void* a0) {
     int t4;
     int t5;
     t0 = fn_0003f9e0((void*)(a0));
-    t1 = fn_0003faa8((void*)((char*)a0 + 8));
+    t1 = fn_0003faa8((void*)((&a0->f_8)));
     t2 = fn_00076a98((void*)(g_00343e80_0), (void*)(t1), (int)(0), (int)(-1), (int)(0), (int)(0));
     t3 = fn_003ee764((u32)((&g_00343e80_1)->f_0->f_6c->f_8->f_fc), (void*)(t0));
     if ((int)(t3) != (int)(0)) {

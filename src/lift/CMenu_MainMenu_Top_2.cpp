@@ -13,13 +13,15 @@ struct unk_00667d38_a0 {
     u32 f_24;
     char pad_28[220];
     u32 f_104;
-    char pad_108[376];
+    char pad_108[8];
+    u8 f_110;
+    char pad_111[367];
     u16 f_280;
 };
 int fn_00667d38(unk_00667d38_a0* a0, int a1, void* a2) {
     int t0;
     if ((int)(((u32)(a0->f_104) >> 30) & 0x1) != (int)(0)) {
-        t0 = fn_005e3158((u32)(a0->f_24), (void*)((char*)a0 + 272), (int)(30), (int)((int)(short)(a0->f_280)), (void*)(a2), (int)(0));
+        t0 = fn_005e3158((u32)(a0->f_24), (void*)((&a0->f_110)), (int)(30), (int)((int)(short)(a0->f_280)), (void*)(a2), (int)(0));
     }
     return (int)(1);
 }

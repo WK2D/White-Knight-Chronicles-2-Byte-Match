@@ -17,8 +17,12 @@ void fn_00152da4(void) {
     stub_00152ca4();
 }
 
-void fn_00153058(void* a0) {
-    fn_0019b024((void*)((char*)a0 + 748));
+struct unk_00153058_a0 {
+    char pad_0[748];
+    u8 f_2ec;
+};
+void fn_00153058(unk_00153058_a0* a0) {
+    fn_0019b024((void*)((&a0->f_2ec)));
 }
 
 struct unk_001531ec_a0 {

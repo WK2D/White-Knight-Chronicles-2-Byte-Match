@@ -10,8 +10,12 @@ struct unk_00df9ed0_a0 {
     char pad_0[2];
     u8 f_2;
 };
-void fn_00df9ed0(unk_00df9ed0_a0* a0, void* a1, int a2, int a3) {
-    fn_00e272a0((void*)((char*)a1 + 12), (int)(a2), (int)(a3));
+struct unk_00df9ed0_a1 {
+    char pad_0[12];
+    u8 f_c;
+};
+void fn_00df9ed0(unk_00df9ed0_a0* a0, unk_00df9ed0_a1* a1, int a2, int a3) {
+    fn_00e272a0((void*)((&a1->f_c)), (int)(a2), (int)(a3));
     a0->f_2 = (u8)(0);
 }
 

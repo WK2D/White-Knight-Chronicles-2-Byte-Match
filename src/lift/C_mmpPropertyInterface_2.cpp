@@ -17,10 +17,12 @@ struct unk_005cbaf4_a0 {
     virtual void vf6();
     virtual void vf7();
     virtual void vf8(void);
+    char pad_4[12];
+    u8 f_10;
 };
 void fn_005cbaf4(unk_005cbaf4_a0* a0) {
     fn_000c36fc((void*)(a0));
-    stub_005cba90((void*)((char*)a0 + 16));
+    stub_005cba90((void*)((&a0->f_10)));
     a0->vf8();
 }
 

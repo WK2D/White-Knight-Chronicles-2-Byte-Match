@@ -7,7 +7,9 @@ extern "C" {
 void fn_00045f6c(void*, int);
 
 struct unk_00792b3c_a0 {
-    char pad_0[4328];
+    char pad_0[280];
+    u8 f_118;
+    char pad_119[4047];
     u32 f_10e8;
     u32 f_10ec;
 };
@@ -18,7 +20,7 @@ int fn_00792b3c(unk_00792b3c_a0* a0) {
     if ((int)(a0->f_10ec) == (int)(0)) {
         return (int)(0);
     }
-    fn_00045f6c((void*)((char*)a0 + 280), (int)(-1));
+    fn_00045f6c((void*)((&a0->f_118)), (int)(-1));
     return (int)(0);
 }
 

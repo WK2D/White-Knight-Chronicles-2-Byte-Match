@@ -38,8 +38,12 @@ u32 fn_00ca3c04(int a0, unk_00ca3c04_a1* a1) {
     return (u32)(a1->f_0);
 }
 
-void* fn_00ca3c0c(int a0, void* a1) {
-    return (void*)((char*)a1 + 16);
+struct unk_00ca3c0c_a1 {
+    char pad_0[16];
+    u8 f_10;
+};
+void* fn_00ca3c0c(int a0, unk_00ca3c0c_a1* a1) {
+    return (void*)((&a1->f_10));
 }
 
 struct unk_00ca3c18_a0_8;

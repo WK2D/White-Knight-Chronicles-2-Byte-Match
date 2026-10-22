@@ -4,6 +4,7 @@
 
 extern "C" {
 
+void fn_00046268(void*);
 int fn_00691ed8(u32);
 void fn_006a0864(u32, u32);
 
@@ -24,6 +25,15 @@ void fn_0070989c(unk_0070989c_a0* a0) {
         return;
     }
     a0->f_7c = (u8)(0);
+}
+
+struct unk_00709954_a0 {
+    char pad_0[40];
+    u8 f_28;
+};
+void fn_00709954(unk_00709954_a0* a0) {
+    fn_00046268((void*)((&a0->f_28)));
+    FIELD(u8, (&a0->f_28), 72) = (u8)(1);
 }
 
 struct unk_00709a30_a0 {

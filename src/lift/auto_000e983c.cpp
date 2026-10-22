@@ -13,19 +13,25 @@ static void __attribute__((noinline)) stub_000ea64c(void* p0, int p1) { __asm__ 
 struct unk_000e9d34_a0 {
     char pad_0[4];
     u32 f_4;
+    char pad_8[12];
+    u8 f_14;
 };
 struct unk_000e9d34_a1 {
     u32 f_0;
 };
 int fn_000e9d34(unk_000e9d34_a0* a0, unk_000e9d34_a1* a1) {
-    stub_000e99b4((void*)((char*)a0 + 20), (int)(0));
+    stub_000e99b4((void*)((&a0->f_14)), (int)(0));
     a1->f_0 = (u32)(a0->f_4);
-    stub_000e9940((void*)((char*)a0 + 20));
+    stub_000e9940((void*)((&a0->f_14)));
     return (int)(0);
 }
 
-void fn_000ea6a4(void* a0, int a1) {
-    stub_000ea64c((void*)((char*)a0 + 12), (int)(a1));
+struct unk_000ea6a4_a0 {
+    char pad_0[12];
+    u8 f_c;
+};
+void fn_000ea6a4(unk_000ea6a4_a0* a0, int a1) {
+    stub_000ea64c((void*)((&a0->f_c)), (int)(a1));
 }
 
 struct unk_000eaa64_a0 {

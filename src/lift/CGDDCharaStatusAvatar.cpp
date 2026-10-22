@@ -668,10 +668,12 @@ struct unk_0038affc_a0 {
     virtual void vf339();
     virtual void vf340();
     virtual void vf341(void);
+    char pad_4[4148];
+    u8 f_1038;
 };
 void* fn_0038affc(unk_0038affc_a0* a0) {
     a0->vf341();
-    return (void*)((char*)a0 + 4152);
+    return (void*)((&a0->f_1038));
 }
 
 struct unk_0038b054_a0 {
@@ -1384,10 +1386,12 @@ struct unk_0038b118_a0 {
     virtual void vf344();
     virtual void vf345();
     virtual void vf346(void);
+    char pad_4[4660];
+    u8 f_1238;
 };
 void* fn_0038b118(unk_0038b118_a0* a0) {
     a0->vf346();
-    return (void*)((char*)a0 + 4664);
+    return (void*)((&a0->f_1238));
 }
 
 struct unk_0038b178_a0 {

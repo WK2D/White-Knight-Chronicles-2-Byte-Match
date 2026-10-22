@@ -8,8 +8,12 @@ void fn_008f26d4(void*);
 void fn_00acb958(int, int, int);
 void fn_00acbed8(int);
 
-void fn_008e489c(void* a0) {
-    fn_008f26d4((void*)((char*)a0 + 16));
+struct unk_008e489c_a0 {
+    char pad_0[16];
+    u8 f_10;
+};
+void fn_008e489c(unk_008e489c_a0* a0) {
+    fn_008f26d4((void*)((&a0->f_10)));
 }
 
 void fn_008e48c8(int a0, int a1) {

@@ -61,12 +61,20 @@ void fn_0091d014(int a0, unk_0091d014_a1* a1) {
     stub_0091cfd0((int)(a0), (u32)(a1->f_0));
 }
 
-void fn_0091d2e0(void* a0) {
-    stub_0091d2a8((void*)((char*)a0 + 4));
+struct unk_0091d2e0_a0 {
+    char pad_0[4];
+    u8 f_4;
+};
+void fn_0091d2e0(unk_0091d2e0_a0* a0) {
+    stub_0091d2a8((void*)((&a0->f_4)));
 }
 
-void fn_0091d2ec(void* a0) {
-    stub_0091d2a8((void*)((char*)a0 + 4));
+struct unk_0091d2ec_a0 {
+    char pad_0[4];
+    u8 f_4;
+};
+void fn_0091d2ec(unk_0091d2ec_a0* a0) {
+    stub_0091d2a8((void*)((&a0->f_4)));
 }
 
 void fn_0091d454(int a0) {

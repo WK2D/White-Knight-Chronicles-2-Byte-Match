@@ -16,7 +16,13 @@ int fn_00611c54(unk_00611c54_a0* a0) {
 }
 
 struct unk_00611e98_a0 {
-    char pad_0[132];
+    char pad_0[124];
+    u8 f_7c;
+    char pad_7d[3];
+    u8 f_80;
+    char pad_81[1];
+    u8 f_82;
+    char pad_83[1];
     u32 f_84;
 };
 struct unk_00611e98_a2 {
@@ -27,7 +33,7 @@ int fn_00611e98(unk_00611e98_a0* a0, int a1, unk_00611e98_a2* a2) {
     int t0;
     int v0;
     if ((int)(a2) != (int)(0)) {
-        t0 = fn_00045178((void*)(a2), (u32)(a2->f_194), (u32)(a0->f_84), (void*)((char*)a0 + 124), (void*)((char*)a0 + 128), (void*)((char*)a0 + 130), (float)(1.0f));
+        t0 = fn_00045178((void*)(a2), (u32)(a2->f_194), (u32)(a0->f_84), (void*)((&a0->f_7c)), (void*)((&a0->f_80)), (void*)((&a0->f_82)), (float)(1.0f));
         v0 = (int)(3);
     } else {
         v0 = (int)(4);

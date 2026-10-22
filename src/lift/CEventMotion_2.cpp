@@ -8,10 +8,11 @@ void fn_00b37fa8(void*, int, int);
 
 struct unk_00503ef4_a0 {
     u32 f_0;
+    u8 f_4;
 };
 void fn_00503ef4(unk_00503ef4_a0* a0) {
     a0->f_0 = (u32)(0);
-    fn_00b37fa8((void*)((char*)a0 + 4), (int)(0), (int)(80));
+    fn_00b37fa8((void*)((&a0->f_4)), (int)(0), (int)(80));
 }
 
 struct unk_00504d58_a0 {

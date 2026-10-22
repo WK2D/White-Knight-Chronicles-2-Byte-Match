@@ -9,17 +9,21 @@ static void __attribute__((noinline)) stub_004c6c10(u16 p0, void* p1, int p2) { 
 struct unk_004c6c68_a0 {
     char pad_0[156];
     u16 f_9c;
+    char pad_9e[14];
+    u8 f_ac;
 };
 void fn_004c6c68(unk_004c6c68_a0* a0, int a1) {
-    stub_004c6c10((u16)(a0->f_9c), (void*)((char*)a0 + 172), (int)(a1));
+    stub_004c6c10((u16)(a0->f_9c), (void*)((&a0->f_ac)), (int)(a1));
 }
 
 struct unk_004c6c7c_a0 {
     char pad_0[16];
     u16 f_10;
+    char pad_12[126];
+    u8 f_90;
 };
 void fn_004c6c7c(unk_004c6c7c_a0* a0, int a1) {
-    stub_004c6c10((u16)(a0->f_10), (void*)((char*)a0 + 144), (int)(a1));
+    stub_004c6c10((u16)(a0->f_10), (void*)((&a0->f_90)), (int)(a1));
 }
 
 }

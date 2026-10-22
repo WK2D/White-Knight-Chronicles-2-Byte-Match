@@ -196,14 +196,18 @@ struct unk_004830b0_gm848_0 {
     u16 f_2c;
     u16 f_2e;
 };
+struct unk_004830b0_a0 {
+    char pad_0[8];
+    u8 f_8;
+};
 extern unk_004830b0_gm848 g_004830b0_0;
-int fn_004830b0(void* a0) {
+int fn_004830b0(unk_004830b0_a0* a0) {
     int t0;
     int t1;
     int v2;
     if ((int)((&g_004830b0_0)->f_0->f_1c) != (int)(0)) {
         t0 = fn_00041b48((void*)(a0));
-        t1 = fn_00041b48((void*)((char*)a0 + 8));
+        t1 = fn_00041b48((void*)((&a0->f_8)));
         (&g_004830b0_0)->f_0->f_2c = (u16)(t0);
         (&g_004830b0_0)->f_0->f_2e = (u16)(t1);
         v2 = (int)(1);

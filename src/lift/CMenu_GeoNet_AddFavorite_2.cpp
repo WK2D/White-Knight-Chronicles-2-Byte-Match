@@ -8,9 +8,13 @@ int fn_00691ed8(u32);
 static void __attribute__((noinline)) stub_0074393c(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
 void fn_00b38268(void*, void*);
 
-void fn_007439c8(void* a0, void* a1) {
+struct unk_007439c8_a0 {
+    char pad_0[312];
+    u8 f_138;
+};
+void fn_007439c8(unk_007439c8_a0* a0, void* a1) {
     stub_0074393c((void*)(a0));
-    fn_00b38268((void*)((char*)a0 + 312), (void*)(a1));
+    fn_00b38268((void*)((&a0->f_138)), (void*)(a1));
 }
 
 struct unk_00743adc_a0 {

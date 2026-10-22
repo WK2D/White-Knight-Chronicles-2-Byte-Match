@@ -7,8 +7,12 @@ extern "C" {
 int fn_00691ed8(u32);
 void fn_00b37fa8(void*, int, u32);
 
-void fn_0071e6f0(void* a0) {
-    fn_00b37fa8((void*)((char*)a0 + 3783), (int)(0), (u32)(36864));
+struct unk_0071e6f0_a0 {
+    char pad_0[3783];
+    u8 f_ec7;
+};
+void fn_0071e6f0(unk_0071e6f0_a0* a0) {
+    fn_00b37fa8((void*)((&a0->f_ec7)), (int)(0), (u32)(36864));
 }
 
 struct unk_0071e944_a0 {

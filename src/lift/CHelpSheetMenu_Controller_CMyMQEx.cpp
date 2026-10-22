@@ -10,13 +10,21 @@ static void __attribute__((noinline)) stub_00858734(void* p0, int p1) { __asm__ 
 void fn_00b3e318(void*);
 void fn_00b3e358(void*);
 
-void fn_00857f80(void* a0) {
-    fn_00b3e318((void*)((char*)a0 + 368));
+struct unk_00857f80_a0 {
+    char pad_0[368];
+    u8 f_170;
+};
+void fn_00857f80(unk_00857f80_a0* a0) {
+    fn_00b3e318((void*)((&a0->f_170)));
     stub_00857c40((void*)(a0));
 }
 
-void fn_00857fbc(void* a0) {
-    fn_00b3e358((void*)((char*)a0 + 368));
+struct unk_00857fbc_a0 {
+    char pad_0[368];
+    u8 f_170;
+};
+void fn_00857fbc(unk_00857fbc_a0* a0) {
+    fn_00b3e358((void*)((&a0->f_170)));
 }
 
 struct unk_00858974_a0_10c;

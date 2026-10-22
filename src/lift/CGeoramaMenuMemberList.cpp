@@ -29,11 +29,13 @@ int fn_0085e824(unk_0085e824_a0* a0, int a1, int a2, unk_0085e824_a3* a3) {
 }
 
 struct unk_0085e8b8_a0 {
-    char pad_0[72];
+    char pad_0[44];
+    u8 f_2c;
+    char pad_2d[27];
     u32 f_48;
 };
 int fn_0085e8b8(unk_0085e8b8_a0* a0) {
-    fn_00b3ccc8((void*)((char*)a0 + 44));
+    fn_00b3ccc8((void*)((&a0->f_2c)));
     a0->f_48 = (u32)(32);
     return (int)(1);
 }

@@ -17,22 +17,26 @@ u8 fn_005d9f0c(int a0, int a1, int a2, int a3, int a4) {
 }
 
 struct unk_005da168_a0 {
-    char pad_0[4104];
+    char pad_0[8];
+    u8 f_8;
+    char pad_9[4095];
     u32 f_1008;
 };
 void fn_005da168(unk_005da168_a0* a0, int a1) {
-    fn_0066793c((u32)(a0->f_1008), (void*)((char*)a0 + 8), (int)(a1));
+    fn_0066793c((u32)(a0->f_1008), (void*)((&a0->f_8)), (int)(a1));
 }
 
 struct unk_005da19c_a0 {
-    char pad_0[4104];
+    char pad_0[8];
+    u8 f_8;
+    char pad_9[4095];
     u32 f_1008;
 };
 int fn_005da19c(unk_005da19c_a0* a0) {
     int t0;
     int v1;
     if ((int)(a0->f_1008) != (int)(0)) {
-        t0 = fn_0066a460((void*)(a0->f_1008), (void*)((char*)a0 + 8));
+        t0 = fn_0066a460((void*)(a0->f_1008), (void*)((&a0->f_8)));
         v1 = (int)((u32)(t0) & 0xff);
     } else {
         v1 = (int)(0);
@@ -41,14 +45,16 @@ int fn_005da19c(unk_005da19c_a0* a0) {
 }
 
 struct unk_005da46c_a0 {
-    char pad_0[4108];
+    char pad_0[8];
+    u8 f_8;
+    char pad_9[4099];
     u32 f_100c;
 };
 int fn_005da46c(unk_005da46c_a0* a0) {
     int t0;
     int v1;
     if ((int)(a0->f_100c) != (int)(0)) {
-        t0 = fn_005fbffc((void*)(a0->f_100c), (void*)((char*)a0 + 8));
+        t0 = fn_005fbffc((void*)(a0->f_100c), (void*)((&a0->f_8)));
         v1 = (int)((u32)(t0) & 0xff);
     } else {
         v1 = (int)(0);
@@ -57,14 +63,16 @@ int fn_005da46c(unk_005da46c_a0* a0) {
 }
 
 struct unk_005da4b4_a0 {
-    char pad_0[4108];
+    char pad_0[8];
+    u8 f_8;
+    char pad_9[4099];
     u32 f_100c;
 };
 int fn_005da4b4(unk_005da4b4_a0* a0) {
     int t0;
     int v1;
     if ((int)(a0->f_100c) != (int)(0)) {
-        t0 = fn_005fe484((void*)(a0->f_100c), (void*)((char*)a0 + 8));
+        t0 = fn_005fe484((void*)(a0->f_100c), (void*)((&a0->f_8)));
         v1 = (int)((u32)(t0) & 0xff);
     } else {
         v1 = (int)(0);

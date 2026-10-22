@@ -12,7 +12,9 @@ struct unk_0086b620_gm6920 {
     u32 f_0;
 };
 struct unk_0086b620_a0 {
-    char pad_0[4280];
+    char pad_0[272];
+    u8 f_110;
+    char pad_111[4007];
     u32 f_10b8;
     char pad_10bc[56];
     u32 f_10f4;
@@ -24,7 +26,7 @@ int fn_0086b620(unk_0086b620_a0* a0) {
     int t1;
     if ((int)(a0->f_10b8) == (int)(0)) {
         a0->f_10fc = (u8)(a0->f_10b8);
-        fn_00b3e358((void*)((char*)a0 + 272));
+        fn_00b3e358((void*)((&a0->f_110)));
         t1 = fn_00b3e348((u32)((&g_0086b620_0)->f_0), (void*)(-1));
         a0->f_10f4 = (u32)(t1);
         a0->f_10b8 = (u32)(1);

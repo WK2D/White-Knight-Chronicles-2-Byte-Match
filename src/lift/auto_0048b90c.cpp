@@ -12,13 +12,14 @@ static void __attribute__((noinline)) stub_0048bbf8(void* p0, int p1, u32 p2, u3
 struct unk_0048bc94_a0 {
     char pad_0[424];
     u32 f_1a8;
+    u8 f_1ac;
 };
 int fn_0048bc94(unk_0048bc94_a0* a0, void* a1, int a2) {
     int t0;
     if ((int)(a0->f_1a8) == (int)(0)) {
         return (int)(0);
     }
-    t0 = stub_0048ba34((void*)(a0), (void*)((char*)a0 + 428), (void*)(a0->f_1a8), (void*)(a1), (u8)((u8)a2));
+    t0 = stub_0048ba34((void*)(a0), (void*)((&a0->f_1ac)), (void*)(a0->f_1a8), (void*)(a1), (u8)((u8)a2));
     return (int)(t0);
 }
 
@@ -34,26 +35,28 @@ void fn_0048bcc8(unk_0048bcc8_a0* a0, int a1) {
 struct unk_0048bcd4_a0 {
     char pad_0[1580];
     u32 f_62c;
+    u8 f_630;
 };
 int fn_0048bcd4(unk_0048bcd4_a0* a0, void* a1, int a2) {
     int t0;
     if ((int)(a0->f_62c) == (int)(0)) {
         return (int)(0);
     }
-    t0 = stub_0048bad0((void*)(a0), (void*)((char*)a0 + 1584), (void*)(a0->f_62c), (void*)(a1), (u8)((u8)a2));
+    t0 = stub_0048bad0((void*)(a0), (void*)((&a0->f_630)), (void*)(a0->f_62c), (void*)(a1), (u8)((u8)a2));
     return (int)(t0);
 }
 
 struct unk_0048bd08_a0 {
     char pad_0[2480];
     u32 f_9b0;
+    u8 f_9b4;
 };
 int fn_0048bd08(unk_0048bd08_a0* a0, void* a1, int a2) {
     int t0;
     if ((int)(a0->f_9b0) == (int)(0)) {
         return (int)(0);
     }
-    t0 = stub_0048bb6c((void*)(a0), (void*)((char*)a0 + 2484), (void*)(a0->f_9b0), (void*)(a1), (u8)((u8)a2));
+    t0 = stub_0048bb6c((void*)(a0), (void*)((&a0->f_9b4)), (void*)(a0->f_9b0), (void*)(a1), (u8)((u8)a2));
     return (int)(t0);
 }
 

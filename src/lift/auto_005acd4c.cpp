@@ -10,6 +10,20 @@ static int __attribute__((noinline)) stub_005acf3c(void* p0, void* p1, void* p2)
 static void* __attribute__((noinline)) stub_005ad060(int p0, int p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static void* __attribute__((noinline)) stub_005ad150(int p0, int p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 
+struct unk_005ace50_a0 {
+    char pad_0[4];
+    u8 f_4;
+};
+void* fn_005ace50(unk_005ace50_a0* a0, int a1) {
+    int v0;
+    if ((u32)(FIELD(u32, (&a0->f_4), 320)) > (u32)(a1)) {
+        v0 = (int)((char*)(&a0->f_4) + (int)((u32)(a1) << 3));
+    } else {
+        v0 = (int)(0);
+    }
+    return (void*)(v0);
+}
+
 struct unk_005aceac_a0 {
     u32 f_0;
 };

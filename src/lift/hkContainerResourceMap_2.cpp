@@ -9,12 +9,13 @@ void fn_00f3fd64(void*);
 
 struct unk_00c85410_a0 {
     void* f_0;
+    u8 f_4;
 };
 extern char g_00c85410_0[];
 extern char g_00c85410_1[];
 void fn_00c85410(unk_00c85410_a0* a0) {
     a0->f_0 = (void*)(g_00c85410_0);
-    fn_00f3fd64((void*)((char*)a0 + 4));
+    fn_00f3fd64((void*)((&a0->f_4)));
     a0->f_0 = (void*)(g_00c85410_1);
     fn_00b3cd48((void*)(a0));
 }

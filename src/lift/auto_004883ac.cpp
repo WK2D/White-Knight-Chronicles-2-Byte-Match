@@ -9,11 +9,12 @@ static int __attribute__((noinline)) stub_0048850c(void* p0, void* p1, u32 p2) {
 struct unk_00488634_a1 {
     char pad_0[24];
     u32 f_18;
+    u8 f_1c;
 };
 int fn_00488634(void* a0, unk_00488634_a1* a1) {
     int t0;
     if ((int)(a1) != (int)(0)) {
-        t0 = stub_0048850c((void*)(a0), (void*)((char*)a1 + 28), (u32)(a1->f_18));
+        t0 = stub_0048850c((void*)(a0), (void*)((&a1->f_1c)), (u32)(a1->f_18));
         return (int)(t0);
     }
     return (int)(0);

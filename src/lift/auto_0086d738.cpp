@@ -369,21 +369,25 @@ void fn_0086fb60(unk_0086fb60_a0* a0, int a1, int a2) {
 }
 
 struct unk_0086fe00_a0 {
-    char pad_0[8628];
+    char pad_0[344];
+    u8 f_158;
+    char pad_159[8283];
     u32 f_21b4;
 };
 void fn_0086fe00(unk_0086fe00_a0* a0) {
-    stub_0086fd54((void*)(a0), (void*)((char*)a0 + 344), (u32)(a0->f_21b4), (int)(-150), (float)(1.0f));
+    stub_0086fd54((void*)(a0), (void*)((&a0->f_158)), (u32)(a0->f_21b4), (int)(-150), (float)(1.0f));
 }
 
 struct unk_008702f0_a0 {
-    char pad_0[8556];
+    char pad_0[344];
+    u8 f_158;
+    char pad_159[8211];
     u32 f_216c;
 };
 void fn_008702f0(unk_008702f0_a0* a0) {
     void* t0;
-    t0 = fn_00b3e188((void*)((char*)a0 + 344), (int)((int)a0->f_216c));
-    fn_00b3e3b8((void*)((char*)a0 + 344), (u32)(FIELD(u32, t0, 4)));
+    t0 = fn_00b3e188((void*)((&a0->f_158)), (int)((int)a0->f_216c));
+    fn_00b3e3b8((void*)((&a0->f_158)), (u32)(FIELD(u32, t0, 4)));
 }
 
 struct unk_00870520_a0 {

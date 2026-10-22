@@ -97,7 +97,9 @@ struct unk_007857fc_a0 {
     u16 f_4ee;
     char pad_4f0[2];
     u16 f_4f2;
-    char pad_4f4[224];
+    char pad_4f4[68];
+    u8 f_538;
+    char pad_539[155];
     u32 f_5d4;
     char pad_5d8[32];
     u32 f_5f8;
@@ -110,7 +112,7 @@ int fn_007857fc(unk_007857fc_a0* a0, void* a1, int a2) {
         a0->f_5f8 = (u32)(0);
         fn_00772438((void*)((int)((int)((int)((int)(short)(a0->f_4ee)) + (int)((int)(short)(a0->f_4f2))) * 88) + (int)(a0->f_5d4)), (u8)((u8)a2));
         a0->f_4a4 = (u32)(0);
-        fn_00043928((void*)(a1), (void*)((char*)a0 + 1336), (float)((&g_007857fc_1)->f_0), (float)((&g_007857fc_0)->f_0));
+        fn_00043928((void*)(a1), (void*)((&a0->f_538)), (float)((&g_007857fc_1)->f_0), (float)((&g_007857fc_0)->f_0));
         v0 = (int)(0);
     } else {
         v0 = (int)(-1);

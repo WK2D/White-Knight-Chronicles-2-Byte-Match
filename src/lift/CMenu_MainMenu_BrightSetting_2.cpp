@@ -8,22 +8,26 @@ void fn_00046268(void*);
 void fn_00b37f88(void*, void*, int);
 
 struct unk_005ce5b8_a0 {
-    char pad_0[68];
+    char pad_0[40];
+    u8 f_28;
+    char pad_29[27];
     u32 f_44;
 };
 int fn_005ce5b8(unk_005ce5b8_a0* a0) {
-    fn_00046268((void*)((char*)a0 + 40));
+    fn_00046268((void*)((&a0->f_28)));
     a0->f_44 = (u32)(1);
     return (int)(1);
 }
 
 struct unk_005ce5fc_a0 {
-    char pad_0[35];
+    char pad_0[4];
+    u8 f_4;
+    char pad_5[30];
     u8 f_23;
 };
 extern char g_005ce5fc_0[];
 int fn_005ce5fc(unk_005ce5fc_a0* a0) {
-    fn_00b37f88((void*)((char*)a0 + 4), (void*)(g_005ce5fc_0), (int)(32));
+    fn_00b37f88((void*)((&a0->f_4)), (void*)(g_005ce5fc_0), (int)(32));
     a0->f_23 = (u8)(0);
     return (int)(1);
 }

@@ -6,8 +6,6 @@ extern "C" {
 
 void* fn_00a20c44(int);
 void fn_00a21528(int, int);
-void fn_00fccd90(void*, int);
-void fn_00fccdb0(void*);
 
 void* fn_00a217b8(void) {
     void* t0;
@@ -17,12 +15,6 @@ void* fn_00a217b8(void) {
 
 void fn_00a217e4(int a0) {
     fn_00a21528((int)(1), (int)(a0));
-}
-
-extern char g_00a21840_0[];
-void fn_00a21840(void) {
-    fn_00fccd90((void*)((char*)g_00a21840_0 + 32), (int)(0));
-    fn_00fccdb0((void*)((char*)g_00a21840_0 + 32));
 }
 
 }

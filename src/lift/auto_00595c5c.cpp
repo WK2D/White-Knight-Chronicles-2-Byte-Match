@@ -9,9 +9,10 @@ static void __attribute__((noinline)) stub_0059598c(void* p0) { __asm__ volatile
 struct unk_005962f8_a0 {
     u32 f_0;
     u32 f_4;
+    u8 f_8;
 };
 void fn_005962f8(unk_005962f8_a0* a0) {
-    stub_0059598c((void*)((char*)a0 + 8));
+    stub_0059598c((void*)((&a0->f_8)));
     a0->f_0 = (u32)(0);
     a0->f_4 = (u32)(67242);
 }

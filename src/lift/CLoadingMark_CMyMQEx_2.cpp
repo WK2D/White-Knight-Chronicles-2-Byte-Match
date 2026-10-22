@@ -65,16 +65,28 @@ void fn_000e2094(int a0) {
     fn_000e9684((int)(a0));
 }
 
-void fn_000e2148(void* a0) {
-    fn_000e3ffc((void*)((char*)a0 + 1408));
+struct unk_000e2148_a0 {
+    char pad_0[1408];
+    u8 f_580;
+};
+void fn_000e2148(unk_000e2148_a0* a0) {
+    fn_000e3ffc((void*)((&a0->f_580)));
 }
 
-void fn_000e2174(void* a0) {
-    fn_000eaad0((void*)((char*)a0 + 1032));
+struct unk_000e2174_a0 {
+    char pad_0[1032];
+    u8 f_408;
+};
+void fn_000e2174(unk_000e2174_a0* a0) {
+    fn_000eaad0((void*)((&a0->f_408)));
 }
 
-void fn_000e22b4(void* a0) {
-    fn_000ed584((void*)((char*)a0 + 1032));
+struct unk_000e22b4_a0 {
+    char pad_0[1032];
+    u8 f_408;
+};
+void fn_000e22b4(unk_000e22b4_a0* a0) {
+    fn_000ed584((void*)((&a0->f_408)));
 }
 
 }

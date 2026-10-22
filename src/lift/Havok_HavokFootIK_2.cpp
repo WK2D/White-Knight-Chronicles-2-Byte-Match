@@ -10,8 +10,12 @@ int fn_00b38a98(void*);
 void fn_00b39208(void*, int);
 void fn_00b39368(u32);
 
-void fn_000accb0(void* a0, int a1) {
-    fn_00b39208((void*)((char*)a0 + 32), (int)(a1));
+struct unk_000accb0_a0 {
+    char pad_0[32];
+    u8 f_20;
+};
+void fn_000accb0(unk_000accb0_a0* a0, int a1) {
+    fn_00b39208((void*)((&a0->f_20)), (int)(a1));
 }
 
 struct unk_000accdc_a0 {

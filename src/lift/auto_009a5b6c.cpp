@@ -27,13 +27,14 @@ struct unk_009a7a7c_gm3cb0 {
 struct unk_009a7a7c_gm3cb0_0 {
     char pad_0[24];
     u32 f_18;
+    u8 f_1c;
 };
 extern unk_009a7a7c_gm3cb0 g_009a7a7c_0;
 void* fn_009a7a7c(void) {
     int t0;
     int v1;
     if ((int)((&g_009a7a7c_0)->f_0->f_18) != (int)(0)) {
-        t0 = fn_009b5c24((void*)((char*)(&g_009a7a7c_0)->f_0 + 28), (int)(0));
+        t0 = fn_009b5c24((void*)((&(&g_009a7a7c_0)->f_0->f_1c)), (int)(0));
         v1 = (int)(t0);
     } else {
         v1 = (int)(5);

@@ -11,9 +11,13 @@ static void __attribute__((noinline)) stub_0091fbf8(int p0) { __asm__ volatile (
 static void __attribute__((noinline)) stub_0091fc14(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 void fn_00b40588(void*);
 
-void fn_0091fa40(void* a0) {
+struct unk_0091fa40_a0 {
+    char pad_0[16];
+    u8 f_10;
+};
+void fn_0091fa40(unk_0091fa40_a0* a0) {
     fn_00b40588((void*)(a0));
-    stub_0091f964((void*)((char*)a0 + 16));
+    stub_0091f964((void*)((&a0->f_10)));
 }
 
 void fn_0091fb08(int a0) {
@@ -24,8 +28,12 @@ void fn_0091fb0c(int a0) {
     stub_0091fa7c((int)(a0));
 }
 
-void fn_0091fbec(void* a0) {
-    stub_0091fb10((void*)((char*)a0 + 16));
+struct unk_0091fbec_a0 {
+    char pad_0[16];
+    u8 f_10;
+};
+void fn_0091fbec(unk_0091fbec_a0* a0) {
+    stub_0091fb10((void*)((&a0->f_10)));
 }
 
 void fn_0091fc0c(int a0) {

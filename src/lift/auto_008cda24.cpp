@@ -17,12 +17,20 @@ u8 fn_008cdf40(void* a0, int a1) {
     return (u8)((u8)t1);
 }
 
-void fn_008cdf84(void* a0) {
-    fn_00b3d088((void*)((char*)a0 + 2536), (int)(0), (int)(768));
+struct unk_008cdf84_a0 {
+    char pad_0[2536];
+    u8 f_9e8;
+};
+void fn_008cdf84(unk_008cdf84_a0* a0) {
+    fn_00b3d088((void*)((&a0->f_9e8)), (int)(0), (int)(768));
 }
 
-void fn_008cdfb8(void* a0) {
-    fn_00b3d088((void*)((char*)a0 + 804), (int)(0), (int)(1728));
+struct unk_008cdfb8_a0 {
+    char pad_0[804];
+    u8 f_324;
+};
+void fn_008cdfb8(unk_008cdfb8_a0* a0) {
+    fn_00b3d088((void*)((&a0->f_324)), (int)(0), (int)(1728));
 }
 
 void fn_008ceec4(int a0) {

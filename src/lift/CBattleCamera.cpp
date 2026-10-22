@@ -10,8 +10,12 @@ static void __attribute__((noinline)) stub_0051b9f8(void* p0) { __asm__ volatile
 void fn_00522850(void*, int);
 void fn_005228d4(void*);
 
-void fn_0051baf4(void* a0) {
-    stub_0051b9f8((void*)((char*)a0 + 448));
+struct unk_0051baf4_a0 {
+    char pad_0[448];
+    u8 f_1c0;
+};
+void fn_0051baf4(unk_0051baf4_a0* a0) {
+    stub_0051b9f8((void*)((&a0->f_1c0)));
 }
 
 struct unk_0051bee8_gad8;

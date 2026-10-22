@@ -29,10 +29,12 @@ void fn_00bc32b0(unk_00bc32b0_a0* a0, int a1) {
 
 struct unk_00bc3308_a0 {
     u32 f_0;
+    char pad_4[12];
+    u8 f_10;
 };
 int fn_00bc3308(unk_00bc3308_a0* a0) {
     int t0;
-    t0 = fn_0094dce8((void*)((char*)a0 + 16));
+    t0 = fn_0094dce8((void*)((&a0->f_10)));
     a0->f_0 = (u32)(t0);
     return (int)(t0);
 }

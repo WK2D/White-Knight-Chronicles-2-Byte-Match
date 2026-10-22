@@ -59,8 +59,12 @@ void* fn_0086d31c(void) {
     return (void*)((&g_0086d31c_0)->f_0->f_6c->f_8->f_fc->f_8 + 108);
 }
 
-void fn_0086d4f4(void* a0, int a1) {
-    fn_00b3f898((void*)((char*)a0 + 10300), (int)(a1), (int)(512));
+struct unk_0086d4f4_a0 {
+    char pad_0[10300];
+    u8 f_283c;
+};
+void fn_0086d4f4(unk_0086d4f4_a0* a0, int a1) {
+    fn_00b3f898((void*)((&a0->f_283c)), (int)(a1), (int)(512));
 }
 
 }

@@ -83,13 +83,15 @@ void fn_00d2e3fc(unk_00d2e3fc_a0* a0) {
 struct unk_00d2e440_a0 {
     char pad_0[8];
     u32 f_8;
-    char pad_c[104];
+    char pad_c[36];
+    u8 f_30;
+    char pad_31[67];
     u32 f_74;
     u8 f_78;
 };
 void fn_00d2e440(unk_00d2e440_a0* a0, int a1) {
-    fn_00deeac8((void*)((char*)a0 + 48), (u32)(a0->f_74), (u32)(a0->f_8), (int)(a1));
-    FIELD(u32, (char*)a0 + 48, 0) = (u32)(0);
+    fn_00deeac8((void*)((&a0->f_30)), (u32)(a0->f_74), (u32)(a0->f_8), (int)(a1));
+    FIELD(u32, (&a0->f_30), 0) = (u32)(0);
     a0->f_78 = (u8)(1);
 }
 

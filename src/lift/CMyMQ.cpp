@@ -8,10 +8,11 @@ static void __attribute__((noinline)) stub_000be260(void* p0) { __asm__ volatile
 
 struct unk_000be284_a0 {
     u32 f_0;
+    u8 f_4;
 };
 void fn_000be284(unk_000be284_a0* a0) {
     a0->f_0 = (u32)(0);
-    stub_000be260((void*)((char*)a0 + 4));
+    stub_000be260((void*)((&a0->f_4)));
 }
 
 }

@@ -18,11 +18,13 @@ int fn_007fe408(unk_007fe408_a0* a0) {
 }
 
 struct unk_007fec74_a0 {
-    char pad_0[112];
+    char pad_0[40];
+    u8 f_28;
+    char pad_29[71];
     u8 f_70;
 };
 void fn_007fec74(unk_007fec74_a0* a0) {
-    fn_00b3ccc8((void*)((char*)a0 + 40));
+    fn_00b3ccc8((void*)((&a0->f_28)));
     a0->f_70 = (u8)(1);
 }
 

@@ -8,11 +8,6 @@ static void* __attribute__((noinline)) stub_001248a4(int p0, int p1) { void* r; 
 static int __attribute__((noinline)) stub_00124ccc(int p0, void* p1, void* p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
 static void* __attribute__((noinline)) stub_00124d84(int p0) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 
-extern char g_00124884_0[];
-void* fn_00124884(void) {
-    return (void*)((char*)g_00124884_0 + 1024);
-}
-
 int fn_001248e8(int a0, int a1) {
     void* t0;
     int v0;

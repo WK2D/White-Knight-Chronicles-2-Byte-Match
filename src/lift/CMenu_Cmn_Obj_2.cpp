@@ -32,7 +32,9 @@ int fn_007c2a10(int a0, unk_007c2a10_a1* a1) {
 }
 
 struct unk_007c2b98_a0 {
-    char pad_0[4284];
+    char pad_0[272];
+    u8 f_110;
+    char pad_111[4011];
     u32 f_10bc;
     char pad_10c0[16];
     u32 f_10d0;
@@ -51,10 +53,10 @@ int fn_007c2b98(unk_007c2b98_a0* a0, int a1) {
         if ((int)(a0->f_10bc) != (int)(2)) {
             return (int)(0);
         }
-        t0 = fn_00043544((void*)((char*)a0 + 272), (int)((int)a0->f_10d0));
+        t0 = fn_00043544((void*)((&a0->f_110)), (int)((int)a0->f_10d0));
         if ((int)(t0) != (int)(0)) {
             if ((int)(FIELD(u32, t0, 4)) != (int)(0)) {
-                fn_00043698((void*)((char*)a0 + 272), (void*)(FIELD(u32, t0, 4)), (int)(4));
+                fn_00043698((void*)((&a0->f_110)), (void*)(FIELD(u32, t0, 4)), (int)(4));
                 return (int)(1);
             }
         }

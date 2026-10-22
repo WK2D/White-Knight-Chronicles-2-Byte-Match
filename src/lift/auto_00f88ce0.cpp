@@ -27,11 +27,27 @@ void fn_00f88ce0(int a0, int a1) {
     (&g_00f88ce0_1)->f_0 = (&g_00f88ce0_0)->f_18;
 }
 
-void fn_00f935ac(void* a0, void* a1) {
+struct unk_00f935ac_a0 {
+    char pad_0[48];
+    u8 f_30;
+    char pad_31[47];
+    u8 f_60;
+    char pad_61[47];
+    u8 f_90;
+};
+struct unk_00f935ac_a1 {
+    char pad_0[48];
+    u8 f_30;
+    char pad_31[47];
+    u8 f_60;
+    char pad_61[47];
+    u8 f_90;
+};
+void fn_00f935ac(unk_00f935ac_a0* a0, unk_00f935ac_a1* a1) {
     fn_00fc981c((void*)(a0), (void*)(a1));
-    fn_00fc981c((void*)((char*)a0 + 48), (void*)((char*)a1 + 96));
-    fn_00fc981c((void*)((char*)a0 + 96), (void*)((char*)a1 + 48));
-    fn_00fc981c((void*)((char*)a0 + 144), (void*)((char*)a1 + 144));
+    fn_00fc981c((void*)((&a0->f_30)), (void*)((&a1->f_60)));
+    fn_00fc981c((void*)((&a0->f_60)), (void*)((&a1->f_30)));
+    fn_00fc981c((void*)((&a0->f_90)), (void*)((&a1->f_90)));
 }
 
 }

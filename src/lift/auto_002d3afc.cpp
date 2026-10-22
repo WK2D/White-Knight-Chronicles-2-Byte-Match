@@ -9,14 +9,22 @@ void fn_002d6620(int);
 void fn_00b8fab4(void*, int);
 void fn_00b8fcd4(void*, int);
 
-void fn_002d3bd0(void* a0, int a1) {
+struct unk_002d3bd0_a0 {
+    char pad_0[36];
+    u8 f_24;
+};
+void fn_002d3bd0(unk_002d3bd0_a0* a0, int a1) {
     fn_002d6620((int)(a1));
-    fn_00b8fcd4((void*)((char*)a0 + 36), (int)(a1));
+    fn_00b8fcd4((void*)((&a0->f_24)), (int)(a1));
 }
 
-void fn_002d3c24(void* a0, int a1) {
+struct unk_002d3c24_a0 {
+    char pad_0[4];
+    u8 f_4;
+};
+void fn_002d3c24(unk_002d3c24_a0* a0, int a1) {
     fn_002d4f9c((int)(a1));
-    fn_00b8fab4((void*)((char*)a0 + 4), (int)(a1));
+    fn_00b8fab4((void*)((&a0->f_4)), (int)(a1));
 }
 
 struct unk_002d405c_a0_0;

@@ -7,12 +7,20 @@ extern "C" {
 void fn_00dd6828(void*, int, int, int, int, int);
 void fn_00dd6e28(void*, int, int, int, int, int, int);
 
-void fn_00dc4ffc(void* a0, int a1, int a2, int a3, int a4, int a5, int a6) {
-    fn_00dd6e28((void*)((char*)a0 + 20), (int)(a1), (int)(a2), (int)(a3), (int)(a4), (int)(a5), (int)(a6));
+struct unk_00dc4ffc_a0 {
+    char pad_0[20];
+    u8 f_14;
+};
+void fn_00dc4ffc(unk_00dc4ffc_a0* a0, int a1, int a2, int a3, int a4, int a5, int a6) {
+    fn_00dd6e28((void*)((&a0->f_14)), (int)(a1), (int)(a2), (int)(a3), (int)(a4), (int)(a5), (int)(a6));
 }
 
-void fn_00dc5028(void* a0, int a1, int a2, int a3, int a4, int a5) {
-    fn_00dd6828((void*)((char*)a0 + 20), (int)(a1), (int)(a2), (int)(a3), (int)(a4), (int)(a5));
+struct unk_00dc5028_a0 {
+    char pad_0[20];
+    u8 f_14;
+};
+void fn_00dc5028(unk_00dc5028_a0* a0, int a1, int a2, int a3, int a4, int a5) {
+    fn_00dd6828((void*)((&a0->f_14)), (int)(a1), (int)(a2), (int)(a3), (int)(a4), (int)(a5));
 }
 
 }

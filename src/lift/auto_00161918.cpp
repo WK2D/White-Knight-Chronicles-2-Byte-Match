@@ -10,10 +10,14 @@ struct unk_001619fc_l;
 struct unk_001619fc_l {
     void* f_0;
 };
-void fn_001619fc(void* a0) {
+struct unk_001619fc_a0 {
+    char pad_0[4728];
+    u8 f_1278;
+};
+void fn_001619fc(unk_001619fc_a0* a0) {
     unk_001619fc_l l;
     l.f_0 = (void*)(a0);
-    fn_001d4d00((void*)((char*)a0 + 4728), (void*)((&l)));
+    fn_001d4d00((void*)((&a0->f_1278)), (void*)((&l)));
 }
 
 }

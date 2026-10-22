@@ -15,7 +15,9 @@ int fn_009baf2c(void*, u32);
 void fn_00b3d088(void*, int, int);
 
 struct unk_009af40c_a0 {
-    char pad_0[84];
+    char pad_0[8];
+    u8 f_8;
+    char pad_9[75];
     u32 f_54;
 };
 u32 fn_009af40c(unk_009af40c_a0* a0) {
@@ -24,7 +26,7 @@ u32 fn_009af40c(unk_009af40c_a0* a0) {
     if ((int)(a0) != (int)(0)) {
         fn_00b3d088((void*)(a0), (int)(0), (int)(88));
         a0->f_54 = (u32)(1);
-        t1 = fn_009a34b4((void*)((char*)a0 + 8));
+        t1 = fn_009a34b4((void*)((&a0->f_8)));
         v0 = (int)(0);
     } else {
         v0 = (int)(3);

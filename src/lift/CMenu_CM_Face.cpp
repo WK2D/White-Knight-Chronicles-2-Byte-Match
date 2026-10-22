@@ -5,6 +5,7 @@
 extern "C" {
 
 void fn_00043928(void*, void*, float, float);
+void fn_00769980(void*, int, int, int, int, int, int, int);
 void fn_0076afb0(void*);
 void fn_00772438(void*, u8);
 void fn_00fc88dc(void*);
@@ -54,6 +55,50 @@ void* fn_00783de4(unk_00783de4_a0* a0) {
     return (void*)((char*)((char*)a0 + (int)((int)(a0->f_5f8) * 76)) + 1260);
 }
 
+struct unk_00783ee0_g6a80;
+struct unk_00783ee0_g6a80 {
+    char pad_0[612];
+    u8 f_264;
+    char pad_265[35];
+    u8 f_288;
+    char pad_289[31];
+    u8 f_2a8;
+};
+struct unk_00783ee0_a0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual void vf5();
+    virtual void vf6();
+    virtual void vf7();
+    virtual void vf8();
+    virtual void vf9();
+    virtual void vf10();
+    virtual void vf11();
+    virtual void vf12();
+    virtual void vf13();
+    virtual void vf14();
+    virtual void vf15();
+    virtual void vf16();
+    virtual void vf17();
+    virtual void vf18();
+    virtual void vf19();
+    virtual void vf20();
+    virtual void vf21();
+    virtual void vf22();
+    virtual void vf23();
+    virtual void vf24();
+    virtual void vf25(void*, void*, void*, void*, void*, int);
+};
+extern unk_00783ee0_g6a80 g_00783ee0_0;
+int fn_00783ee0(unk_00783ee0_a0* a0, int a1, void* a2) {
+    fn_00769980((void*)(a0), (int)(106), (int)(165), (int)(165), (int)(0), (int)(0), (int)(48), (int)(424));
+    a0->vf25((void*)(a2), (void*)((&g_00783ee0_0)), (void*)((&(&g_00783ee0_0)->f_264)), (void*)((&(&g_00783ee0_0)->f_288)), (void*)((&(&g_00783ee0_0)->f_2a8)), (int)(9));
+    return (int)(2);
+}
+
 struct unk_00784004_a0 {
     void* f_0;
 };
@@ -97,7 +142,9 @@ struct unk_00784178_a0 {
     u16 f_4ee;
     char pad_4f0[2];
     u16 f_4f2;
-    char pad_4f4[224];
+    char pad_4f4[68];
+    u8 f_538;
+    char pad_539[155];
     u32 f_5d4;
     char pad_5d8[32];
     u32 f_5f8;
@@ -110,7 +157,7 @@ int fn_00784178(unk_00784178_a0* a0, void* a1, int a2) {
         a0->f_5f8 = (u32)(0);
         fn_00772438((void*)((int)((int)((int)((int)(short)(a0->f_4ee)) + (int)((int)(short)(a0->f_4f2))) * 88) + (int)(a0->f_5d4)), (u8)((u8)a2));
         a0->f_4a4 = (u32)(0);
-        fn_00043928((void*)(a1), (void*)((char*)a0 + 1336), (float)((&g_00784178_1)->f_0), (float)((&g_00784178_0)->f_0));
+        fn_00043928((void*)(a1), (void*)((&a0->f_538)), (float)((&g_00784178_1)->f_0), (float)((&g_00784178_0)->f_0));
         v0 = (int)(0);
     } else {
         v0 = (int)(-1);

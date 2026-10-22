@@ -9,24 +9,28 @@ void fn_00fc88dc(void*);
 
 struct unk_007626c8_a0 {
     void* f_0;
+    char pad_4[100];
+    u8 f_68;
 };
 extern char g_007626c8_0[];
 extern char g_007626c8_1[];
 void fn_007626c8(unk_007626c8_a0* a0) {
     a0->f_0 = (void*)(g_007626c8_0);
-    stub_007626bc((void*)((char*)a0 + 104));
+    stub_007626bc((void*)((&a0->f_68)));
     a0->f_0 = (void*)(g_007626c8_1);
     fn_00fc88dc((void*)(a0));
 }
 
 struct unk_00762724_a0 {
     void* f_0;
+    char pad_4[100];
+    u8 f_68;
 };
 extern char g_00762724_0[];
 extern char g_00762724_1[];
 void fn_00762724(unk_00762724_a0* a0) {
     a0->f_0 = (void*)(g_00762724_0);
-    stub_007626bc((void*)((char*)a0 + 104));
+    stub_007626bc((void*)((&a0->f_68)));
     a0->f_0 = (void*)(g_00762724_1);
 }
 

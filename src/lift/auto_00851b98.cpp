@@ -60,43 +60,57 @@ void fn_008521b0(void* a0) {
 }
 
 struct unk_00852208_a0 {
-    char pad_0[728];
+    char pad_0[640];
+    u8 f_280;
+    char pad_281[87];
     u32 f_2d8;
+    char pad_2dc[1720];
+    u8 f_994;
 };
 extern char g_00852208_0[];
 extern char g_00852208_1[];
 void fn_00852208(unk_00852208_a0* a0) {
     int t0;
-    t0 = fn_00fcafd0((int)(0), (void*)((char*)a0 + 2452), (u32)(a0->f_2d8), (void*)((char*)a0 + 640), (void*)(g_00852208_1), (void*)(g_00852208_0), (void*)(-1), (void*)(a0));
+    t0 = fn_00fcafd0((int)(0), (void*)((&a0->f_994)), (u32)(a0->f_2d8), (void*)((&a0->f_280)), (void*)(g_00852208_1), (void*)(g_00852208_0), (void*)(-1), (void*)(a0));
     stub_00851988((void*)(a0), (int)(t0));
     fn_00fcd030((int)(0));
 }
 
 struct unk_00852284_a0 {
-    char pad_0[728];
+    char pad_0[640];
+    u8 f_280;
+    char pad_281[87];
     u32 f_2d8;
+    char pad_2dc[1720];
+    u8 f_994;
 };
 extern char g_00852284_0[];
 extern char g_00852284_1[];
 void fn_00852284(unk_00852284_a0* a0) {
     int t0;
-    t0 = fn_00fcae30((int)(0), (void*)((char*)a0 + 2452), (u32)(a0->f_2d8), (void*)((char*)a0 + 640), (void*)(g_00852284_1), (void*)(g_00852284_0), (void*)(-1), (void*)(a0));
+    t0 = fn_00fcae30((int)(0), (void*)((&a0->f_994)), (u32)(a0->f_2d8), (void*)((&a0->f_280)), (void*)(g_00852284_1), (void*)(g_00852284_0), (void*)(-1), (void*)(a0));
     stub_00851988((void*)(a0), (int)(t0));
     fn_00fcd030((int)(0));
 }
 
 struct unk_00852530_a0 {
-    char pad_0[688];
+    char pad_0[576];
+    u8 f_240;
+    char pad_241[111];
     void* f_2b0;
 };
 void fn_00852530(unk_00852530_a0* a0, int a1) {
-    fn_00b3d2f8((void*)((char*)a0 + 576), (int)(a1));
-    a0->f_2b0 = (void*)((char*)a0 + 576);
+    fn_00b3d2f8((void*)((&a0->f_240)), (int)(a1));
+    a0->f_2b0 = (void*)((&a0->f_240));
 }
 
-void fn_0085265c(void* a0, int a1, void* a2) {
-    fn_00b3d2f8((void*)((char*)a0 + 2452), (int)(a1));
-    fn_00b3f328((void*)((char*)a0 + 2452), (void*)(a2));
+struct unk_0085265c_a0 {
+    char pad_0[2452];
+    u8 f_994;
+};
+void fn_0085265c(unk_0085265c_a0* a0, int a1, void* a2) {
+    fn_00b3d2f8((void*)((&a0->f_994)), (int)(a1));
+    fn_00b3f328((void*)((&a0->f_994)), (void*)(a2));
 }
 
 int fn_008526b0(int a0) {

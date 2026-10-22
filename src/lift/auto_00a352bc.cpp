@@ -8,11 +8,15 @@ static void* __attribute__((noinline)) stub_00a3473c(void* p0, u8 p1, void* p2, 
 void fn_00a54e00(void*);
 void fn_00a54eb8(void*);
 
-void* fn_00a35fdc(void* a0, int a1, void* a2, void* a3, void* a4, void* a5) {
+struct unk_00a35fdc_a0 {
+    char pad_0[328];
+    u8 f_148;
+};
+void* fn_00a35fdc(unk_00a35fdc_a0* a0, int a1, void* a2, void* a3, void* a4, void* a5) {
     void* t1;
-    fn_00a54eb8((void*)((char*)a0 + 328));
+    fn_00a54eb8((void*)((&a0->f_148)));
     t1 = stub_00a3473c((void*)(a0), (u8)((u8)a1), (void*)(a2), (void*)(a3), (void*)(a4), (void*)(a5));
-    fn_00a54e00((void*)((char*)a0 + 328));
+    fn_00a54e00((void*)((&a0->f_148)));
     return (void*)(t1);
 }
 

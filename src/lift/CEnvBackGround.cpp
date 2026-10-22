@@ -22,9 +22,15 @@ void fn_004c5cec(int a0, int a1) {
     stub_004c5a7c((int)(a0), (int)(a1));
 }
 
-void fn_004c60c8(void* a0, int a1) {
-    fn_00b39e48((int)(a1), (int)(35), (void*)((char*)a0 + 4180), (int)(4));
-    fn_00b39e48((int)(a1), (int)(36), (void*)((char*)a0 + 4196), (int)(4));
+struct unk_004c60c8_a0 {
+    char pad_0[4180];
+    u8 f_1054;
+    char pad_1055[15];
+    u8 f_1064;
+};
+void fn_004c60c8(unk_004c60c8_a0* a0, int a1) {
+    fn_00b39e48((int)(a1), (int)(35), (void*)((&a0->f_1054)), (int)(4));
+    fn_00b39e48((int)(a1), (int)(36), (void*)((&a0->f_1064)), (int)(4));
 }
 
 struct unk_004c64e4_gdc;

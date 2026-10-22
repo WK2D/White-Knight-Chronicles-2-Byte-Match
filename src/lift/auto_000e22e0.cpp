@@ -7,14 +7,16 @@ extern "C" {
 int fn_000ed4ac(void*);
 
 struct unk_000e2730_a0 {
-    char pad_0[1788];
+    char pad_0[1032];
+    u8 f_408;
+    char pad_409[755];
     u8 f_6fc;
 };
 int fn_000e2730(unk_000e2730_a0* a0) {
     int t0;
     int v1;
     if ((int)(a0->f_6fc) != (int)(0)) {
-        t0 = fn_000ed4ac((void*)((char*)a0 + 1032));
+        t0 = fn_000ed4ac((void*)((&a0->f_408)));
         v1 = (int)((u32)(t0) & 0xff);
     } else {
         v1 = (int)(0);

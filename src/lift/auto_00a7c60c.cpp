@@ -17,8 +17,12 @@ void fn_00fccd90(void*, int);
 int fn_00fccdb0(void*);
 void fn_00fcd0f0(void*);
 
-void fn_00a7c85c(void* a0) {
-    stub_00a7c71c((void*)((char*)a0 + 120));
+struct unk_00a7c85c_a0 {
+    char pad_0[120];
+    u8 f_78;
+};
+void fn_00a7c85c(unk_00a7c85c_a0* a0) {
+    stub_00a7c71c((void*)((&a0->f_78)));
 }
 
 struct unk_00a7c92c_gm16c8;
@@ -92,7 +96,11 @@ struct unk_00a7d168_gm16c4 {
 struct unk_00a7d168_a0 {
     char pad_0[4];
     u32 f_4;
-    char pad_8[96];
+    char pad_8[56];
+    u8 f_40;
+    char pad_41[23];
+    u8 f_58;
+    char pad_59[15];
     u8 f_68;
     char pad_69[1];
     u8 f_6a;
@@ -102,10 +110,10 @@ void fn_00a7d168(unk_00a7d168_a0* a0) {
     int t3;
     fn_00a74b28((u32)(a0->f_4));
     if ((int)(a0->f_6a) == (int)(0)) {
-        fn_00fccd90((void*)((char*)a0 + 64), (int)(0));
+        fn_00fccd90((void*)((&a0->f_40)), (int)(0));
         a0->f_68 = (u8)(1);
-        fn_00fcd0f0((void*)((char*)a0 + 88));
-        t3 = fn_00fccdb0((void*)((char*)a0 + 64));
+        fn_00fcd0f0((void*)((&a0->f_58)));
+        t3 = fn_00fccdb0((void*)((&a0->f_40)));
         a0->f_6a = (u8)(1);
     }
     fn_00a74bb4((u32)(a0->f_4));

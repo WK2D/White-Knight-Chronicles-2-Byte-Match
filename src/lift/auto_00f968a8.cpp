@@ -7,12 +7,20 @@ extern "C" {
 void fn_00b2bb1c(void*);
 void fn_00b2bb44(void*);
 
-void fn_00f969d4(void* a0) {
-    fn_00b2bb1c((void*)((char*)a0 + 4));
+struct unk_00f969d4_a0 {
+    char pad_0[4];
+    u8 f_4;
+};
+void fn_00f969d4(unk_00f969d4_a0* a0) {
+    fn_00b2bb1c((void*)((&a0->f_4)));
 }
 
-void fn_00f96a00(void* a0) {
-    fn_00b2bb44((void*)((char*)a0 + 4));
+struct unk_00f96a00_a0 {
+    char pad_0[4];
+    u8 f_4;
+};
+void fn_00f96a00(unk_00f96a00_a0* a0) {
+    fn_00b2bb44((void*)((&a0->f_4)));
 }
 
 }

@@ -5,8 +5,11 @@
 extern "C" {
 
 void fn_00043928(void*, void*, float, float);
+void fn_00769980(void*, int, int, int, int, int, int, int);
 void fn_0076afb0(void*);
 void fn_00772438(void*, u8);
+void fn_00779a80(u32, float, float);
+void fn_00779b44(u32);
 void fn_00fc88dc(void*);
 
 struct unk_007869e8_a0 {
@@ -54,6 +57,57 @@ void* fn_00786a34(unk_00786a34_a0* a0) {
     return (void*)((char*)((char*)a0 + (int)((int)(a0->f_5f8) * 76)) + 1260);
 }
 
+struct unk_00786b30_g6ae0;
+struct unk_00786b30_g6ae0 {
+    char pad_0[252];
+    u8 f_fc;
+    char pad_fd[15];
+    u8 f_10c;
+    char pad_10d[31];
+    u8 f_12c;
+};
+struct unk_00786b30_a0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual void vf5();
+    virtual void vf6();
+    virtual void vf7();
+    virtual void vf8();
+    virtual void vf9();
+    virtual void vf10();
+    virtual void vf11();
+    virtual void vf12();
+    virtual void vf13();
+    virtual void vf14();
+    virtual void vf15();
+    virtual void vf16();
+    virtual void vf17();
+    virtual void vf18();
+    virtual void vf19();
+    virtual void vf20();
+    virtual void vf21();
+    virtual void vf22();
+    virtual void vf23();
+    virtual void vf24();
+    virtual void vf25(void*, void*, void*, void*, void*, int);
+    char pad_4[1252];
+    u32 f_4e8;
+    char pad_4ec[316];
+    u8 f_628;
+};
+extern unk_00786b30_g6ae0 g_00786b30_0;
+int fn_00786b30(unk_00786b30_a0* a0, int a1, void* a2) {
+    a0->f_628 = (u8)(0);
+    fn_00769980((void*)(a0), (int)(106), (int)(165), (int)(165), (int)(0), (int)(0), (int)(48), (int)(424));
+    a0->vf25((void*)(a2), (void*)((&g_00786b30_0)), (void*)((&(&g_00786b30_0)->f_fc)), (void*)((&(&g_00786b30_0)->f_10c)), (void*)((&(&g_00786b30_0)->f_12c)), (int)(9));
+    fn_00779b44((u32)(a0->f_4e8));
+    fn_00779a80((u32)(a0->f_4e8), (float)(0.0f), (float)(0.30000001192092896f));
+    return (int)(2);
+}
+
 struct unk_00786c84_a0 {
     void* f_0;
 };
@@ -97,7 +151,9 @@ struct unk_00786df8_a0 {
     u16 f_4ee;
     char pad_4f0[2];
     u16 f_4f2;
-    char pad_4f4[224];
+    char pad_4f4[68];
+    u8 f_538;
+    char pad_539[155];
     u32 f_5d4;
     char pad_5d8[32];
     u32 f_5f8;
@@ -110,7 +166,7 @@ int fn_00786df8(unk_00786df8_a0* a0, void* a1, int a2) {
         a0->f_5f8 = (u32)(0);
         fn_00772438((void*)((int)((int)((int)((int)(short)(a0->f_4ee)) + (int)((int)(short)(a0->f_4f2))) * 88) + (int)(a0->f_5d4)), (u8)((u8)a2));
         a0->f_4a4 = (u32)(0);
-        fn_00043928((void*)(a1), (void*)((char*)a0 + 1336), (float)((&g_00786df8_1)->f_0), (float)((&g_00786df8_0)->f_0));
+        fn_00043928((void*)(a1), (void*)((&a0->f_538)), (float)((&g_00786df8_1)->f_0), (float)((&g_00786df8_0)->f_0));
         v0 = (int)(0);
     } else {
         v0 = (int)(-1);

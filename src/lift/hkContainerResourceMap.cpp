@@ -8,12 +8,13 @@ void fn_00f3fd64(void*);
 
 struct unk_00c84b84_a0 {
     void* f_0;
+    u8 f_4;
 };
 extern char g_00c84b84_0[];
 extern char g_00c84b84_1[];
 void fn_00c84b84(unk_00c84b84_a0* a0) {
     a0->f_0 = (void*)(g_00c84b84_0);
-    fn_00f3fd64((void*)((char*)a0 + 4));
+    fn_00f3fd64((void*)((&a0->f_4)));
     a0->f_0 = (void*)(g_00c84b84_1);
 }
 

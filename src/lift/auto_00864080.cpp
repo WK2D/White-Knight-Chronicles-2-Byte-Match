@@ -41,8 +41,12 @@ int fn_00865ec4(unk_00865ec4_a0* a0) {
     return (int)(v0);
 }
 
-int fn_00865fe4(void* a0) {
-    fn_00863d34((void*)((char*)a0 + 544));
+struct unk_00865fe4_a0 {
+    char pad_0[544];
+    u8 f_220;
+};
+int fn_00865fe4(unk_00865fe4_a0* a0) {
+    fn_00863d34((void*)((&a0->f_220)));
     return (int)(1);
 }
 

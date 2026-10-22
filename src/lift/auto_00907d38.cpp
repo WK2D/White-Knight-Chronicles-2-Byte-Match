@@ -11,15 +11,18 @@ struct unk_00908e48_a0 {
     u32 f_0;
     u32 f_4;
     u32 f_8;
-    char pad_c[116];
+    u8 f_c;
+    char pad_d[47];
+    u8 f_3c;
+    char pad_3d[67];
     u32 f_80;
 };
 void fn_00908e48(unk_00908e48_a0* a0) {
     a0->f_0 = (u32)(0);
     a0->f_4 = (u32)(0);
     a0->f_8 = (u32)(0);
-    fn_00b411c8((void*)((char*)a0 + 12));
-    fn_00b41138((void*)((char*)a0 + 60));
+    fn_00b411c8((void*)((&a0->f_c)));
+    fn_00b41138((void*)((&a0->f_3c)));
     a0->f_80 = (u32)(0);
 }
 

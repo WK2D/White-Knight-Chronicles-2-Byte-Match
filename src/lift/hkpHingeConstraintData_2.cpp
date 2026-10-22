@@ -22,8 +22,12 @@ u32 fn_00dc8aa0(unk_00dc8aa0_a0* a0) {
     return (u32)(((u32)(a0->f_a6) >> 1) & 0x7f);
 }
 
-void fn_00dc8ae0(void* a0, int a1) {
-    fn_00dc6fe0((void*)((char*)a0 + 16), (int)(156), (int)(a1));
+struct unk_00dc8ae0_a0 {
+    char pad_0[16];
+    u8 f_10;
+};
+void fn_00dc8ae0(unk_00dc8ae0_a0* a0, int a1) {
+    fn_00dc6fe0((void*)((&a0->f_10)), (int)(156), (int)(a1));
 }
 
 }

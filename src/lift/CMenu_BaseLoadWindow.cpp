@@ -32,18 +32,24 @@ u32 fn_00764bc0(unk_00764bc0_a0* a0) {
     return (u32)((u32)(v0) & 0xfe);
 }
 
-int fn_00764eec(void* a0) {
-    fn_00046268((void*)((char*)a0 + 40));
+struct unk_00764eec_a0 {
+    char pad_0[40];
+    u8 f_28;
+};
+int fn_00764eec(unk_00764eec_a0* a0) {
+    fn_00046268((void*)((&a0->f_28)));
     return (int)(1);
 }
 
 struct unk_00764f1c_a0 {
-    char pad_0[35];
+    char pad_0[4];
+    u8 f_4;
+    char pad_5[30];
     u8 f_23;
 };
 extern char g_00764f1c_0[];
 int fn_00764f1c(unk_00764f1c_a0* a0) {
-    fn_00b37f88((void*)((char*)a0 + 4), (void*)(g_00764f1c_0), (int)(32));
+    fn_00b37f88((void*)((&a0->f_4)), (void*)(g_00764f1c_0), (int)(32));
     a0->f_23 = (u8)(0);
     return (int)(1);
 }

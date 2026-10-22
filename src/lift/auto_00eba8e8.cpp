@@ -14,6 +14,8 @@ struct unk_00ebab78_l {
 struct unk_00ebab78_a0 {
     char pad_0[28];
     u32 f_1c;
+    char pad_20[52];
+    u8 f_54;
 };
 struct unk_00ebab78_a1 {
     char pad_0[32];
@@ -25,7 +27,7 @@ void fn_00ebab78(unk_00ebab78_a0* a0, unk_00ebab78_a1* a1, int a2) {
     unk_00ebab78_l l;
     l.f_0 = a1->f_20;
     l.f_4 = a1->f_30;
-    fn_00fc92bc((void*)((&l)), (void*)(a0->f_1c + 164), (int)(a2), (void*)((char*)a0 + 84));
+    fn_00fc92bc((void*)((&l)), (void*)(a0->f_1c + 164), (int)(a2), (void*)((&a0->f_54)));
 }
 
 }

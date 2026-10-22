@@ -6,8 +6,12 @@ extern "C" {
 
 void fn_00a3cac8(void*, int, int);
 
-void fn_00a44108(void* a0, int a1) {
-    fn_00a3cac8((void*)((char*)a0 + 4), (int)(a1), (int)(256));
+struct unk_00a44108_a0 {
+    char pad_0[4];
+    u8 f_4;
+};
+void fn_00a44108(unk_00a44108_a0* a0, int a1) {
+    fn_00a3cac8((void*)((&a0->f_4)), (int)(a1), (int)(256));
 }
 
 }

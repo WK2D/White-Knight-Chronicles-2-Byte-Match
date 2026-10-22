@@ -385,7 +385,9 @@ struct unk_003e75b4_a0_8;
 struct unk_003e75b4_a0_8 {
     char pad_0[1296];
     u16 f_510;
-    char pad_512[8746];
+    char pad_512[7786];
+    u8 f_237c;
+    char pad_237d[959];
     u16 f_273c;
 };
 struct unk_003e75b4_a0 {
@@ -395,7 +397,7 @@ struct unk_003e75b4_a0 {
 void fn_003e75b4(unk_003e75b4_a0* a0) {
     fn_00b37fa8((void*)((char*)a0->f_8 + 208), (int)(0), (int)(1088));
     a0->f_8->f_510 = (u16)(0);
-    fn_00b37fa8((void*)((char*)a0->f_8 + 9084), (int)(0), (int)(960));
+    fn_00b37fa8((void*)((&a0->f_8->f_237c)), (int)(0), (int)(960));
     a0->f_8->f_273c = (u16)(0);
 }
 

@@ -44,8 +44,12 @@ int fn_000e6d38(unk_000e6d38_a0* a0, int a1) {
     return (int)(0);
 }
 
-int fn_000e7040(void* a0) {
-    fn_00fcd050((void*)((char*)a0 + 16));
+struct unk_000e7040_a0 {
+    char pad_0[16];
+    u8 f_10;
+};
+int fn_000e7040(unk_000e7040_a0* a0) {
+    fn_00fcd050((void*)((&a0->f_10)));
     return (int)(0);
 }
 

@@ -15,8 +15,12 @@ void* fn_0071c190(unk_0071c190_a0* a0) {
     return (void*)((char*)((char*)a0 + (int)((int)(a0->f_15c) * 76)) + 44);
 }
 
-void fn_0071c37c(void* a0) {
-    fn_00b37fa8((void*)((char*)a0 + 380), (int)(0), (int)(64));
+struct unk_0071c37c_a0 {
+    char pad_0[380];
+    u8 f_17c;
+};
+void fn_0071c37c(unk_0071c37c_a0* a0) {
+    fn_00b37fa8((void*)((&a0->f_17c)), (int)(0), (int)(64));
 }
 
 struct unk_0071c508_a0 {

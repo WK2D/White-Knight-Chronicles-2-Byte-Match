@@ -42,27 +42,33 @@ int fn_007a5a54(unk_007a5a54_a0* a0) {
 }
 
 struct unk_007a5a8c_a0 {
-    char pad_0[4360];
+    char pad_0[280];
+    u8 f_118;
+    char pad_119[4079];
     u32 f_1108;
 };
 void fn_007a5a8c(unk_007a5a8c_a0* a0) {
-    fn_007a4064((u32)(a0->f_1108), (void*)((char*)a0 + 280));
+    fn_007a4064((u32)(a0->f_1108), (void*)((&a0->f_118)));
 }
 
 struct unk_007a5abc_a0 {
-    char pad_0[4376];
+    char pad_0[280];
+    u8 f_118;
+    char pad_119[4095];
     u32 f_1118;
 };
 void fn_007a5abc(unk_007a5abc_a0* a0) {
-    fn_007b23ac((u32)(a0->f_1118), (void*)((char*)a0 + 280));
+    fn_007b23ac((u32)(a0->f_1118), (void*)((&a0->f_118)));
 }
 
 struct unk_007a5aec_a0 {
-    char pad_0[4364];
+    char pad_0[280];
+    u8 f_118;
+    char pad_119[4083];
     u32 f_110c;
 };
 void fn_007a5aec(unk_007a5aec_a0* a0) {
-    fn_007b4d40((u32)(a0->f_110c), (void*)((char*)a0 + 280));
+    fn_007b4d40((u32)(a0->f_110c), (void*)((&a0->f_118)));
 }
 
 struct unk_007a5d1c_g6f30;

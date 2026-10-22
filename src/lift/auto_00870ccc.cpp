@@ -8,13 +8,17 @@ static int __attribute__((noinline)) stub_0086d0c4(void* p0) { int r; __asm__ vo
 void fn_00b3e2e8(int);
 int fn_00b3e7e8(void*, int);
 
-int fn_00870ffc(void* a0) {
+struct unk_00870ffc_a0 {
+    char pad_0[4352];
+    u8 f_1100;
+};
+int fn_00870ffc(unk_00870ffc_a0* a0) {
     int t0;
     int t1;
     int v0;
     t0 = stub_0086d0c4((void*)(a0));
     if ((int)((u32)(t0) & 0xff) != (int)(0)) {
-        t1 = fn_00b3e7e8((void*)((char*)a0 + 4352), (int)(-1));
+        t1 = fn_00b3e7e8((void*)((&a0->f_1100)), (int)(-1));
         v0 = (int)(1);
     } else {
         v0 = (int)(0);

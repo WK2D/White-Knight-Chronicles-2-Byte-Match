@@ -44,11 +44,13 @@ struct unk_00ab44f8_a0_0 {
 };
 struct unk_00ab44f8_a0 {
     unk_00ab44f8_a0_0* f_0;
-    char pad_4[12];
+    char pad_4[4];
+    u8 f_8;
+    char pad_9[7];
     u32 f_10;
 };
 void fn_00ab44f8(unk_00ab44f8_a0* a0) {
-    fn_00b02180((void*)((char*)a0 + 8), (u8)(a0->f_0->f_1b), (u32)(a0->f_10));
+    fn_00b02180((void*)((&a0->f_8)), (u8)(a0->f_0->f_1b), (u32)(a0->f_10));
 }
 
 struct unk_00ab4534_a0 {
@@ -68,11 +70,13 @@ struct unk_00ab48b8_a0_0 {
 };
 struct unk_00ab48b8_a0 {
     unk_00ab48b8_a0_0* f_0;
-    char pad_4[12];
+    char pad_4[4];
+    u8 f_8;
+    char pad_9[7];
     u32 f_10;
 };
 void fn_00ab48b8(unk_00ab48b8_a0* a0) {
-    fn_00b02180((void*)((char*)a0 + 8), (u8)(a0->f_0->f_1b), (u32)(a0->f_10));
+    fn_00b02180((void*)((&a0->f_8)), (u8)(a0->f_0->f_1b), (u32)(a0->f_10));
 }
 
 struct unk_00ab55e4_a0 {

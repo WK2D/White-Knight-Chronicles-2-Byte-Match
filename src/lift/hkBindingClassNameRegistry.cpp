@@ -6,9 +6,13 @@ extern "C" {
 
 void* fn_00f401e8(void*, int, int);
 
-void* fn_00c893f0(void* a0, int a1) {
+struct unk_00c893f0_a0 {
+    char pad_0[44];
+    u8 f_2c;
+};
+void* fn_00c893f0(unk_00c893f0_a0* a0, int a1) {
     void* t0;
-    t0 = fn_00f401e8((void*)((char*)a0 + 44), (int)(a1), (int)(a1));
+    t0 = fn_00f401e8((void*)((&a0->f_2c)), (int)(a1), (int)(a1));
     return (void*)(t0);
 }
 

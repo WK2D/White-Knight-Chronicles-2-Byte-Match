@@ -45,7 +45,7 @@ void* fn_000c52dc(unk_000c52dc_a0* a0, int a1, int a2) {
     void* t1;
     stub_000c5254((void*)(a0), (int)(a1));
     a0->f_8 = (u32)(a2);
-    t1 = fn_00b39838((u32)(a0->f_4), (void*)((char*)a0 + 8));
+    t1 = fn_00b39838((u32)(a0->f_4), (void*)((&a0->f_8)));
     return (void*)(t1);
 }
 

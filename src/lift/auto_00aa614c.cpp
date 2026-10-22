@@ -84,12 +84,20 @@ void* fn_00aa7688(unk_00aa7688_a0* a0) {
     return (void*)((int)(a0->f_4) + (int)(a0->f_c));
 }
 
-void fn_00aa7ab4(void* a0) {
-    fn_00fccd90((void*)((char*)a0 + 32), (int)(0));
+struct unk_00aa7ab4_a0 {
+    char pad_0[32];
+    u8 f_20;
+};
+void fn_00aa7ab4(unk_00aa7ab4_a0* a0) {
+    fn_00fccd90((void*)((&a0->f_20)), (int)(0));
 }
 
-void fn_00aa7b38(void* a0) {
-    fn_00fccdb0((void*)((char*)a0 + 32));
+struct unk_00aa7b38_a0 {
+    char pad_0[32];
+    u8 f_20;
+};
+void fn_00aa7b38(unk_00aa7b38_a0* a0) {
+    fn_00fccdb0((void*)((&a0->f_20)));
 }
 
 struct unk_00aa7c9c_a0 {

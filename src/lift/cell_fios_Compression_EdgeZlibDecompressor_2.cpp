@@ -10,25 +10,29 @@ void* fn_00fc891c(int);
 void* fn_00fc892c(void);
 
 struct unk_00b48118_a0 {
-    char pad_0[11976];
+    char pad_0[128];
+    u8 f_80;
+    char pad_81[11847];
     u32 f_2ec8;
     u32 f_2ecc;
 };
 void* fn_00b48118(unk_00b48118_a0* a0) {
     void* t0;
-    t0 = fn_00fc88fc((u32)(a0->f_2ec8), (void*)((char*)a0 + 128), (u32)(a0->f_2ecc));
+    t0 = fn_00fc88fc((u32)(a0->f_2ec8), (void*)((&a0->f_80)), (u32)(a0->f_2ecc));
     return (void*)(t0);
 }
 
 struct unk_00b48150_a0 {
-    char pad_0[11972];
+    char pad_0[10752];
+    u8 f_2a00;
+    char pad_2a01[1219];
     u32 f_2ec4;
     char pad_2ec8[8];
     u32 f_2ed0;
 };
 void* fn_00b48150(unk_00b48150_a0* a0) {
     void* t0;
-    t0 = fn_00fc890c((u32)(a0->f_2ec4), (u32)(a0->f_2ed0), (void*)((char*)a0 + 10752), (int)(512));
+    t0 = fn_00fc890c((u32)(a0->f_2ec4), (u32)(a0->f_2ed0), (void*)((&a0->f_2a00)), (int)(512));
     return (void*)(t0);
 }
 

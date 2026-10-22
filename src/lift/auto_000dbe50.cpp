@@ -9,23 +9,39 @@ void fn_000da594(void*);
 static void __attribute__((noinline)) stub_000dbcc4(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
 static void __attribute__((noinline)) stub_000dbccc(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
 
-void fn_000dbf18(void* a0) {
+struct unk_000dbf18_a0 {
+    char pad_0[92];
+    u8 f_5c;
+};
+void fn_000dbf18(unk_000dbf18_a0* a0) {
     stub_000dbcc4((void*)(a0));
-    fn_000da594((void*)((char*)a0 + 92));
+    fn_000da594((void*)((&a0->f_5c)));
 }
 
-void fn_000dbf58(void* a0) {
+struct unk_000dbf58_a0 {
+    char pad_0[92];
+    u8 f_5c;
+};
+void fn_000dbf58(unk_000dbf58_a0* a0) {
     stub_000dbcc4((void*)(a0));
-    fn_000da594((void*)((char*)a0 + 92));
+    fn_000da594((void*)((&a0->f_5c)));
 }
 
-void fn_000dc0b0(void* a0) {
-    fn_000d9a04((void*)((char*)a0 + 92));
+struct unk_000dc0b0_a0 {
+    char pad_0[92];
+    u8 f_5c;
+};
+void fn_000dc0b0(unk_000dc0b0_a0* a0) {
+    fn_000d9a04((void*)((&a0->f_5c)));
     stub_000dbccc((void*)(a0));
 }
 
-void fn_000dc0ec(void* a0) {
-    fn_000d9a04((void*)((char*)a0 + 92));
+struct unk_000dc0ec_a0 {
+    char pad_0[92];
+    u8 f_5c;
+};
+void fn_000dc0ec(unk_000dc0ec_a0* a0) {
+    fn_000d9a04((void*)((&a0->f_5c)));
     stub_000dbccc((void*)(a0));
 }
 

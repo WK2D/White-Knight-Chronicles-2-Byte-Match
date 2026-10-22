@@ -8,19 +8,27 @@ void* fn_00b56adc(void*, void*);
 void* fn_00b56cd8(void*, void*);
 void* fn_00fc894c(void*, int, int);
 
-void* fn_00b56c88(void* a0, int a1) {
+struct unk_00b56c88_a0 {
+    char pad_0[16];
+    u8 f_10;
+};
+void* fn_00b56c88(unk_00b56c88_a0* a0, int a1) {
     void* t0;
     void* t1;
     t0 = fn_00fc894c((void*)(a0), (int)(a1), (int)(16));
-    t1 = fn_00b56adc((void*)((char*)a0 + 16), (void*)(t0));
+    t1 = fn_00b56adc((void*)((&a0->f_10)), (void*)(t0));
     return (void*)(t1);
 }
 
-void* fn_00b56e84(void* a0, int a1) {
+struct unk_00b56e84_a0 {
+    char pad_0[16];
+    u8 f_10;
+};
+void* fn_00b56e84(unk_00b56e84_a0* a0, int a1) {
     void* t0;
     void* t1;
     t0 = fn_00fc894c((void*)(a0), (int)(a1), (int)(16));
-    t1 = fn_00b56cd8((void*)((char*)a0 + 16), (void*)(t0));
+    t1 = fn_00b56cd8((void*)((&a0->f_10)), (void*)(t0));
     return (void*)(t1);
 }
 

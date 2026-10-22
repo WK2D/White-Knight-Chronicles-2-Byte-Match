@@ -12,28 +12,44 @@ int fn_000645e0(void*, void*, int, int);
 int fn_00064664(void*);
 void fn_000647d8(void*);
 
-int fn_000452b0(void* a0) {
+struct unk_000452b0_a0 {
+    char pad_0[372];
+    u8 f_174;
+};
+int fn_000452b0(unk_000452b0_a0* a0) {
     int t0;
-    t0 = fn_00064664((void*)((char*)a0 + 372));
+    t0 = fn_00064664((void*)((&a0->f_174)));
     return (int)(t0);
 }
 
-int fn_000452e0(void* a0, int a1, int a2) {
+struct unk_000452e0_a0 {
+    char pad_0[372];
+    u8 f_174;
+};
+int fn_000452e0(unk_000452e0_a0* a0, int a1, int a2) {
     int t0;
-    t0 = fn_000645e0((void*)((char*)a0 + 372), (void*)(a0), (int)(a1), (int)(a2));
+    t0 = fn_000645e0((void*)((&a0->f_174)), (void*)(a0), (int)(a1), (int)(a2));
     return (int)(t0);
 }
 
-int fn_000460bc(void* a0) {
+struct unk_000460bc_a0 {
+    char pad_0[372];
+    u8 f_174;
+};
+int fn_000460bc(unk_000460bc_a0* a0) {
     fn_00053780((void*)(a0));
-    fn_000647d8((void*)((char*)a0 + 372));
+    fn_000647d8((void*)((&a0->f_174)));
     stub_0004324c((void*)(a0));
     return (int)(0);
 }
 
-int fn_00046118(void* a0) {
+struct unk_00046118_a0 {
+    char pad_0[372];
+    u8 f_174;
+};
+int fn_00046118(unk_00046118_a0* a0) {
     stub_0004324c((void*)(a0));
-    fn_0006449c((void*)((char*)a0 + 372));
+    fn_0006449c((void*)((&a0->f_174)));
     fn_00054f34((void*)(a0));
     return (int)(0);
 }

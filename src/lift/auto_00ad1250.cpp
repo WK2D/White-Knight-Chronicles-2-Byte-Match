@@ -67,6 +67,16 @@ u32 fn_00ad1798(unk_00ad1798_a0* a0) {
     return (u32)(FIELD(u32, (char*)a0 + (int)((int)(a0->f_10) + (int)(a0->f_38)), 16));
 }
 
+struct unk_00ad17b4_a1 {
+    char pad_0[22];
+    u16 f_16;
+    char pad_18[8];
+    u8 f_20;
+};
+void* fn_00ad17b4(int a0, unk_00ad17b4_a1* a1) {
+    return (void*)((char*)(&a1->f_20) + (int)((u32)(a1->f_16) << 4));
+}
+
 struct unk_00ad17cc_a0 {
     char pad_0[16];
     u32 f_10;

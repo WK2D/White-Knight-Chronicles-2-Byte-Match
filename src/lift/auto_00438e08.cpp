@@ -135,19 +135,23 @@ u32 fn_004394f8(unk_004394f8_a0* a0) {
 struct unk_004396d4_a0 {
     char pad_0[272];
     u16 f_110;
+    char pad_112[2];
+    u8 f_114;
 };
 void fn_004396d4(unk_004396d4_a0* a0) {
     a0->f_110 = (u16)(0);
-    fn_00b37fa8((void*)((char*)a0 + 276), (int)(0), (int)(256));
+    fn_00b37fa8((void*)((&a0->f_114)), (int)(0), (int)(256));
 }
 
 struct unk_00439714_a0 {
     char pad_0[76];
     u16 f_4c;
+    char pad_4e[2];
+    u8 f_50;
 };
 void fn_00439714(unk_00439714_a0* a0) {
     a0->f_4c = (u16)(0);
-    fn_00b37fa8((void*)((char*)a0 + 80), (int)(0), (int)(192));
+    fn_00b37fa8((void*)((&a0->f_50)), (int)(0), (int)(192));
 }
 
 void fn_004399d8(int a0) {

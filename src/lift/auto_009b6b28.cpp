@@ -30,16 +30,31 @@ void fn_009b6df4(int a0, int a1, int a2, int a3) {
     stub_009b6b3c((int)(a0), (int)(a1), (int)(a2), (int)(2), (int)(0), (int)(a3));
 }
 
-void fn_009b734c(int a0, void* a1) {
+struct unk_009b734c_a1 {
+    char pad_0[1];
+    u8 f_1;
+    u8 f_2;
+    char pad_3[1];
+    u8 f_4;
+    char pad_5[1];
+    u8 f_6;
+    char pad_7[1];
+    u8 f_8;
+    char pad_9[3];
+    u8 f_c;
+    char pad_d[3];
+    u8 f_10;
+};
+void fn_009b734c(int a0, unk_009b734c_a1* a1) {
     fn_009b6914((int)(a0), (void*)(a1));
-    fn_009b6914((int)(a0), (void*)((char*)a1 + 1));
-    fn_009b67e4((int)(a0), (void*)((char*)a1 + 2));
-    fn_009b67e4((int)(a0), (void*)((char*)a1 + 4));
-    fn_009b67e4((int)(a0), (void*)((char*)a1 + 6));
-    fn_009b6914((int)(a0), (void*)((char*)a1 + 8));
+    fn_009b6914((int)(a0), (void*)((&a1->f_1)));
+    fn_009b67e4((int)(a0), (void*)((&a1->f_2)));
+    fn_009b67e4((int)(a0), (void*)((&a1->f_4)));
+    fn_009b67e4((int)(a0), (void*)((&a1->f_6)));
+    fn_009b6914((int)(a0), (void*)((&a1->f_8)));
     fn_009b6424((int)(a0), (int)(3));
-    fn_009b66b4((int)(a0), (void*)((char*)a1 + 12));
-    fn_009b66b4((int)(a0), (void*)((char*)a1 + 16));
+    fn_009b66b4((int)(a0), (void*)((&a1->f_c)));
+    fn_009b66b4((int)(a0), (void*)((&a1->f_10)));
 }
 
 }

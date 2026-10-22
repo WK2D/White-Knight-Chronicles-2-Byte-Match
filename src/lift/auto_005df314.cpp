@@ -14,12 +14,20 @@ static void __attribute__((noinline)) stub_005e3158(void* p0, void* p1, int p2, 
 static void __attribute__((noinline)) stub_005e75c4(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
 void fn_00669778(void*);
 
-void fn_005df954(void* a0) {
-    fn_0004693c((void*)((char*)a0 + 8));
+struct unk_005df954_a0 {
+    char pad_0[8];
+    u8 f_8;
+};
+void fn_005df954(unk_005df954_a0* a0) {
+    fn_0004693c((void*)((&a0->f_8)));
 }
 
-void fn_005df980(void* a0) {
-    fn_0004693c((void*)((char*)a0 + 8));
+struct unk_005df980_a0 {
+    char pad_0[8];
+    u8 f_8;
+};
+void fn_005df980(unk_005df980_a0* a0) {
+    fn_0004693c((void*)((&a0->f_8)));
 }
 
 struct unk_005e066c_g2214;
@@ -183,7 +191,11 @@ void fn_005e0f64(unk_005e0f64_a0* a0) {
 }
 
 struct unk_005e4c44_a0 {
-    char pad_0[5076];
+    char pad_0[8];
+    u8 f_8;
+    char pad_9[4699];
+    u8 f_1264;
+    char pad_1265[367];
     u16 f_13d4;
     u8 f_13d6;
 };
@@ -191,12 +203,16 @@ void fn_005e4c44(unk_005e4c44_a0* a0) {
     if ((int)(a0->f_13d6) == (int)(0)) {
         return;
     }
-    stub_005e3158((void*)(a0), (void*)((char*)a0 + 4708), (int)(30), (int)((int)(short)(a0->f_13d4)), (void*)((char*)a0 + 8), (int)(1), (void*)(a0));
+    stub_005e3158((void*)(a0), (void*)((&a0->f_1264)), (int)(30), (int)((int)(short)(a0->f_13d4)), (void*)((&a0->f_8)), (int)(1), (void*)(a0));
 }
 
-int fn_005e7bf0(void* a0) {
+struct unk_005e7bf0_a0 {
+    char pad_0[8];
+    u8 f_8;
+};
+int fn_005e7bf0(unk_005e7bf0_a0* a0) {
     stub_005e75c4((void*)(a0));
-    fn_000460bc((void*)((char*)a0 + 8));
+    fn_000460bc((void*)((&a0->f_8)));
     stub_005dabf4((void*)(a0));
     return (int)(0);
 }

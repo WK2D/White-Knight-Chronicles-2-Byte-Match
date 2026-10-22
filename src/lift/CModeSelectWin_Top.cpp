@@ -35,12 +35,13 @@ int fn_008a5e00(unk_008a5e00_a0* a0, unk_008a5e00_a1* a1) {
 struct unk_008a6018_a0 {
     char pad_0[36];
     u32 f_24;
-    char pad_28[72];
+    u8 f_28;
+    char pad_29[71];
     u8 f_70;
 };
 int fn_008a6018(unk_008a6018_a0* a0) {
     void* t1;
-    fn_00b3ccc8((void*)((char*)a0 + 40));
+    fn_00b3ccc8((void*)((&a0->f_28)));
     a0->f_70 = (u8)(1);
     t1 = fn_008a3414((u32)(a0->f_24));
     stub_008a5de0((void*)(a0), (void*)(t1));

@@ -4,6 +4,7 @@
 
 extern "C" {
 
+void fn_00769980(void*, int, int, int, int, int, int, int);
 void fn_0076afb0(void*);
 void fn_00fc88dc(void*);
 
@@ -50,6 +51,50 @@ struct unk_00782824_a0 {
 };
 void* fn_00782824(unk_00782824_a0* a0) {
     return (void*)((char*)((char*)a0 + (int)((int)(a0->f_5f8) * 76)) + 1260);
+}
+
+struct unk_00782920_g6a40;
+struct unk_00782920_g6a40 {
+    char pad_0[144];
+    u8 f_90;
+    char pad_91[7];
+    u8 f_98;
+    char pad_99[35];
+    u8 f_bc;
+};
+struct unk_00782920_a0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual void vf5();
+    virtual void vf6();
+    virtual void vf7();
+    virtual void vf8();
+    virtual void vf9();
+    virtual void vf10();
+    virtual void vf11();
+    virtual void vf12();
+    virtual void vf13();
+    virtual void vf14();
+    virtual void vf15();
+    virtual void vf16();
+    virtual void vf17();
+    virtual void vf18();
+    virtual void vf19();
+    virtual void vf20();
+    virtual void vf21();
+    virtual void vf22();
+    virtual void vf23();
+    virtual void vf24();
+    virtual void vf25(void*, void*, void*, void*, void*, int);
+};
+extern unk_00782920_g6a40 g_00782920_0;
+int fn_00782920(unk_00782920_a0* a0, int a1, void* a2) {
+    fn_00769980((void*)(a0), (int)(106), (int)(165), (int)(165), (int)(106), (int)(165), (int)(48), (int)(424));
+    a0->vf25((void*)(a2), (void*)((&g_00782920_0)), (void*)((&(&g_00782920_0)->f_90)), (void*)((&(&g_00782920_0)->f_98)), (void*)((&(&g_00782920_0)->f_bc)), (int)(8));
+    return (int)(2);
 }
 
 struct unk_00782a44_a0 {

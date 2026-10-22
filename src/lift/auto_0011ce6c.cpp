@@ -8,8 +8,12 @@ static void* __attribute__((noinline)) stub_0011aa3c(int p0, int p1) { void* r; 
 static int __attribute__((noinline)) stub_0011d184(int p0, u32 p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 void fn_00fccdb0(void*);
 
-void fn_0011d158(void* a0) {
-    fn_00fccdb0((void*)((char*)a0 + 20392));
+struct unk_0011d158_a0 {
+    char pad_0[20392];
+    u8 f_4fa8;
+};
+void fn_0011d158(unk_0011d158_a0* a0) {
+    fn_00fccdb0((void*)((&a0->f_4fa8)));
 }
 
 int fn_0011d2ac(int a0) {

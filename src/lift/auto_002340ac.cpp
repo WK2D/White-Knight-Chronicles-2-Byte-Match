@@ -10,25 +10,29 @@ int fn_00b5c638(void*);
 struct unk_002345c0_a0 {
     char pad_0[297];
     u8 f_129;
+    char pad_12a[422];
+    u8 f_2d0;
 };
 int fn_002345c0(unk_002345c0_a0* a0) {
     int t0;
     if ((int)(((u32)(a0->f_129) >> 4) & 0x1) != (int)(0)) {
         return (int)(1);
     }
-    t0 = fn_00b5c638((void*)((char*)a0 + 720));
+    t0 = fn_00b5c638((void*)((&a0->f_2d0)));
     if ((int)((u32)(t0) & 0xff) == (int)(0)) {
         return (int)(0);
     }
-    return (int)((int)(((u32)(FIELD(u32, FIELD(u32, FIELD(u32, (char*)a0 + 720, 0), 0), 68)) >> 30) & 0x1));
+    return (int)((int)(((u32)(FIELD(u32, FIELD(u32, FIELD(u32, (&a0->f_2d0), 0), 0), 68)) >> 30) & 0x1));
 }
 
 struct unk_002347e0_a0 {
-    char pad_0[31392];
+    char pad_0[29488];
+    u8 f_7330;
+    char pad_7331[1903];
     u8 f_7aa0;
 };
 void fn_002347e0(unk_002347e0_a0* a0) {
-    fn_00b37fa8((void*)((char*)a0 + 29488), (int)(0), (int)(256));
+    fn_00b37fa8((void*)((&a0->f_7330)), (int)(0), (int)(256));
     a0->f_7aa0 = (u8)(0);
 }
 
