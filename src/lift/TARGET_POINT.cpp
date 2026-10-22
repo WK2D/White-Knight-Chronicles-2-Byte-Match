@@ -4,6 +4,11 @@
 
 extern "C" {
 
+static void __attribute__((noinline)) stub_00308994(int p0) { __asm__ volatile ("" : : "r"(p0)); }
+
+void fn_00308a2c(int a0, int a1) {
+    stub_00308994((int)(a1));
+}
 
 int fn_00308a34(float f0, float f1, float f2, float f3) {
     if (f0 < f2) {

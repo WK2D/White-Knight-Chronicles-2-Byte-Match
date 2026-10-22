@@ -4,6 +4,7 @@
 
 extern "C" {
 
+int fn_009b3758(void*);
 int fn_009b4c80(u32, u32);
 int fn_009b4c94(u32);
 void fn_009b509c(void*, int);
@@ -40,6 +41,52 @@ u32 fn_009aa640(int a0) {
     l.f_0 = (u32)(0);
     fn_009b509c((void*)((&l)), (int)(a0));
     return (u32)(l.f_0);
+}
+
+struct unk_009ac6e0_l;
+struct unk_009ac6e0_l {
+    char pad_0[12];
+    float f_c;
+    float f_10;
+    char pad_14[4];
+    float f_18;
+    float f_1c;
+    char pad_20[4];
+    float f_24;
+    float f_28;
+    char pad_2c[4];
+    float f_30;
+    float f_34;
+};
+struct unk_009ac6e0_a0 {
+    float f_0;
+    float f_4;
+    float f_8;
+    float f_c;
+    float f_10;
+    float f_14;
+    float f_18;
+    float f_1c;
+};
+u32 fn_009ac6e0(unk_009ac6e0_a0* a0) {
+    int t0;
+    unk_009ac6e0_l l;
+    int v0;
+    if (a0 != 0) {
+        t0 = fn_009b3758((void*)((&l)));
+        a0->f_8 = l.f_18;
+        a0->f_c = l.f_1c;
+        a0->f_0 = l.f_c;
+        a0->f_4 = l.f_10;
+        a0->f_18 = l.f_30;
+        a0->f_1c = l.f_34;
+        a0->f_10 = l.f_24;
+        a0->f_14 = l.f_28;
+        v0 = (int)(0);
+    } else {
+        v0 = (int)(3);
+    }
+    return (u32)((u32)(v0) & 0x3);
 }
 
 void fn_009ad6dc(int a0, int a1, int a2) {

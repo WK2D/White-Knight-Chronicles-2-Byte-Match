@@ -4,10 +4,19 @@
 
 extern "C" {
 
+static void __attribute__((noinline)) stub_0002b478(int p0, int p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 
 extern char g_0002b45c_0[];
 void* fn_0002b45c(int a0) {
     return (void*)((char*)g_0002b45c_0 + (int)((int)((u32)(a0) << 5) + (int)((u32)(a0) << 7)));
+}
+
+void fn_0002b48c(int a0, int a1) {
+    stub_0002b478((int)(a0), (int)(a1));
+}
+
+void fn_0002b490(int a0, int a1) {
+    stub_0002b478((int)(a0), (int)(a1));
 }
 
 struct unk_0002b6e0_gm7d54;

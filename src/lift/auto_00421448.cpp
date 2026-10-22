@@ -5,6 +5,7 @@
 extern "C" {
 
 int fn_00041b48(int);
+static void __attribute__((noinline)) stub_00421f34(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 
 struct unk_00421448_gmccc;
 struct unk_00421448_gmccc_0;
@@ -172,6 +173,22 @@ int fn_0042190c(int a0) {
     FIELD(u32, (int)((u32)((&g_0042190c_0)->f_0->f_4) << 2) + (int)((&g_0042190c_0)->f_0->f_10), 0) = (u32)(t0);
     (&g_0042190c_0)->f_0->f_4 = (u32)((&g_0042190c_0)->f_0->f_4 + 1);
     return (int)(1);
+}
+
+void fn_00421f70(int a0) {
+    stub_00421f34((int)(a0));
+}
+
+struct unk_0042236c_a0_0;
+struct unk_0042236c_a0_0 {
+    char pad_0[16];
+    u32 f_10;
+};
+struct unk_0042236c_a0 {
+    unk_0042236c_a0_0* f_0;
+};
+u32 fn_0042236c(unk_0042236c_a0* a0) {
+    return (u32)(((u32)(a0->f_0->f_10) >> 4) & 0x1);
 }
 
 struct unk_0042251c_a0_0;

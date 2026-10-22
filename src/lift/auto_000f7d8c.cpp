@@ -16,6 +16,22 @@ void fn_000f92f8(int a0) {
     (&g_000f92f8_0)->f_4 = (u32)((u32)((u32)(1) << (int)(a0)) | (u32)((&g_000f92f8_0)->f_4));
 }
 
+struct unk_000f9360_gm69b0;
+struct unk_000f9360_gm69b0 {
+    char pad_0[4];
+    u32 f_4;
+};
+extern unk_000f9360_gm69b0 g_000f9360_0;
+int fn_000f9360(void) {
+    int v0;
+    if ((int)((u32)((&g_000f9360_0)->f_4) & 0x1) != (int)(0)) {
+        v0 = (int)(((u32)((&g_000f9360_0)->f_4) >> 1) & 0x1);
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
 int fn_000f944c(int a0) {
     int t0;
     t0 = stub_000f9408((int)(a0), (int)(3));

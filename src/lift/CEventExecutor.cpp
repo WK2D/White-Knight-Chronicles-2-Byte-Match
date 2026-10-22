@@ -10,6 +10,7 @@ void fn_0003fa14(int);
 void* fn_0003faa8(int);
 void fn_0003fac8(void*, float);
 void* fn_000e1f24(void);
+int fn_000e22e0(void*, int, float);
 void fn_000e2c9c(void*);
 void fn_000e3380(void*);
 int fn_000e37ac(void);
@@ -39,6 +40,26 @@ int fn_004ce76c(void) {
         fn_000e3380((void*)(t0));
         t3 = fn_000e37ac();
         (&g_004ce76c_0)->f_10 = (u8)(0);
+    }
+    return (int)(1);
+}
+
+int fn_004ceb0c(void) {
+    void* t0;
+    int t1;
+    t0 = fn_000e1f24();
+    if ((int)(t0) != (int)(0)) {
+        t1 = fn_000e22e0((void*)(t0), (int)(0), (float)(0.0f));
+    }
+    return (int)(1);
+}
+
+int fn_004ceb50(void) {
+    void* t0;
+    int t1;
+    t0 = fn_000e1f24();
+    if ((int)(t0) != (int)(0)) {
+        t1 = fn_000e22e0((void*)(t0), (int)(1), (float)(0.0f));
     }
     return (int)(1);
 }

@@ -22,6 +22,19 @@ int fn_0082ae2c(int a0, unk_0082ae2c_a1* a1) {
     return (int)(v1);
 }
 
+struct unk_0082af5c_a0_10fc;
+struct unk_0082af5c_a0_10fc {
+    char pad_0[212];
+    u32 f_d4;
+};
+struct unk_0082af5c_a0 {
+    char pad_0[4348];
+    unk_0082af5c_a0_10fc* f_10fc;
+};
+u32 fn_0082af5c(unk_0082af5c_a0* a0) {
+    return (u32)(((u32)(a0->f_10fc->f_d4) >> 29) & 0x1);
+}
+
 struct unk_0082b054_a0 {
     char pad_0[4292];
     u32 f_10c4;

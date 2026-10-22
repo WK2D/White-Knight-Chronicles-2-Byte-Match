@@ -26,4 +26,12 @@ void* fn_000a8098(unk_000a8098_a0* a0, int a1, int a2) {
     return (void*)(FIELD(u32, (int)((u32)(a1) << 2) + (int)(FIELD(u32, FIELD(u32, (int)((u32)(a2) << 2) + (int)(a0->f_c->f_c), 0), 8)), 0));
 }
 
+struct unk_000aba30_a0 {
+    char pad_0[28];
+    float f_1c;
+};
+void fn_000aba30(unk_000aba30_a0* a0) {
+    a0->f_1c = 1.0f;
+}
+
 }

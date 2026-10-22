@@ -5,6 +5,16 @@
 extern "C" {
 
 void fn_0007c1ac(void*, void*, int);
+static void __attribute__((noinline)) stub_00086b70(void* p0, void* p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
+static void __attribute__((noinline)) stub_00086bf8(void* p0, int p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
+
+void fn_00086c3c(void* a0, int a1, void* a2) {
+    if ((int)(a1) != (int)(2)) {
+        stub_00086bf8((void*)(a0), (int)(0));
+        return;
+    }
+    stub_00086b70((void*)(a0), (void*)(a2));
+}
 
 struct unk_00086d08_l;
 struct unk_00086d08_l {

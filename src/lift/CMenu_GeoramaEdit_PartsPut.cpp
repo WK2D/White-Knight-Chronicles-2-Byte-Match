@@ -38,4 +38,20 @@ int fn_00881908(unk_00881908_a0* a0, int a1) {
     return (int)(v1);
 }
 
+struct unk_00881938_a0 {
+    char pad_0[128];
+    u32 f_80;
+    char pad_84[4];
+    u32 f_88;
+};
+int fn_00881938(unk_00881938_a0* a0) {
+    int v1;
+    if ((int)(a0->f_80) == (int)(1)) {
+        v1 = (int)(((u32)((u32)(a0->f_88) ^ 0x10) >> 4) & 0x1);
+    } else {
+        v1 = (int)(0);
+    }
+    return (int)(v1);
+}
+
 }

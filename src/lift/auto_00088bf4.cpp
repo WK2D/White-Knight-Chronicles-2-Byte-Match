@@ -4,12 +4,33 @@
 
 extern "C" {
 
+static void __attribute__((noinline)) stub_00089350(void* p0, int p1, int p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
 int fn_00089864(void*);
 
 int fn_00088db4(void* a0) {
     int t0;
     t0 = fn_00089864((void*)((char*)a0 + 32));
     return (int)(t0);
+}
+
+void fn_00089380(void* a0) {
+    stub_00089350((void*)(a0), (int)(0), (int)(72));
+    stub_00089350((void*)((char*)a0 + 72), (int)(0), (int)(4096));
+}
+
+void fn_000893c8(void* a0) {
+    stub_00089350((void*)(a0), (int)(0), (int)(72));
+    stub_00089350((void*)((char*)a0 + 72), (int)(0), (int)(4096));
+}
+
+void fn_00089410(void* a0) {
+    stub_00089350((void*)(a0), (int)(0), (int)(72));
+    stub_00089350((void*)((char*)a0 + 72), (int)(0), (int)(4096));
+}
+
+void fn_00089458(void* a0) {
+    stub_00089350((void*)(a0), (int)(0), (int)(72));
+    stub_00089350((void*)((char*)a0 + 72), (int)(0), (int)(4096));
 }
 
 }

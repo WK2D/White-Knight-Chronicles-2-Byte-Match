@@ -6,6 +6,11 @@ extern "C" {
 
 static void* __attribute__((noinline)) stub_0011aa3c(int p0, int p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static int __attribute__((noinline)) stub_0011d184(int p0, u32 p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
+void fn_00fccdb0(void*);
+
+void fn_0011d158(void* a0) {
+    fn_00fccdb0((void*)((char*)a0 + 20392));
+}
 
 int fn_0011d2ac(int a0) {
     void* t0;

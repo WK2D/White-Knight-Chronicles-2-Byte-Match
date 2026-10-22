@@ -7,6 +7,8 @@ extern "C" {
 int fn_00aa33f8(u32, u32);
 void fn_00b41f98(int);
 void* fn_00b41fb8(int);
+void fn_00fccd90(void*, int);
+void fn_00fccdb0(void*);
 
 struct unk_00aa6dd0_a0 {
     char pad_0[12];
@@ -80,6 +82,14 @@ struct unk_00aa7688_a0 {
 };
 void* fn_00aa7688(unk_00aa7688_a0* a0) {
     return (void*)((int)(a0->f_4) + (int)(a0->f_c));
+}
+
+void fn_00aa7ab4(void* a0) {
+    fn_00fccd90((void*)((char*)a0 + 32), (int)(0));
+}
+
+void fn_00aa7b38(void* a0) {
+    fn_00fccdb0((void*)((char*)a0 + 32));
 }
 
 struct unk_00aa7c9c_a0 {

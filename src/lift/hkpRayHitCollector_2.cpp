@@ -13,4 +13,8 @@ u16 fn_000b978c(int a0) {
     return (u16)((u16)a0);
 }
 
+u32 fn_000b9794(int a0) {
+    return (u32)(((u32)(a0) >> 16));
+}
+
 }

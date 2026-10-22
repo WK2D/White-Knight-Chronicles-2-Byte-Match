@@ -4,31 +4,17 @@
 
 extern "C" {
 
-static void* __attribute__((noinline)) stub_00127cc4(void* p0) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
-static void* __attribute__((noinline)) stub_00127d60(int p0) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static void __attribute__((noinline)) stub_00127cc4(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
+int fn_00fc9950(int);
 
-void* fn_00127d6c(int a0) {
-    void* t0;
-    int v0;
-    t0 = stub_00127d60((int)(a0));
-    if ((int)(t0) != (int)(0)) {
-        v0 = (int)(FIELD(u32, t0, 0));
-    } else {
-        v0 = (int)(0);
-    }
-    return (void*)(v0);
+int fn_00127298(int a0, int a1) {
+    int t0;
+    t0 = fn_00fc9950((int)(a1));
+    return (int)(t0);
 }
 
-void* fn_00127da0(void* a0) {
-    void* t0;
-    int v0;
-    t0 = stub_00127cc4((void*)((char*)a0 + 1092));
-    if ((int)(t0) != (int)(0)) {
-        v0 = (int)(FIELD(u32, t0, 4));
-    } else {
-        v0 = (int)(0);
-    }
-    return (void*)(v0);
+void fn_00127d60(void* a0) {
+    stub_00127cc4((void*)((char*)a0 + 1092));
 }
 
 }

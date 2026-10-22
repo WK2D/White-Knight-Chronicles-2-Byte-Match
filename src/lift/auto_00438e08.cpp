@@ -6,6 +6,9 @@ extern "C" {
 
 int fn_00041b48(int);
 int fn_0036dee0(void*);
+static void __attribute__((noinline)) stub_0043983c(void) { __asm__ volatile (""); }
+static void __attribute__((noinline)) stub_0043a804(void) { __asm__ volatile (""); }
+static void __attribute__((noinline)) stub_0043a9bc(void) { __asm__ volatile (""); }
 
 struct unk_00439180_gmbb4;
 struct unk_00439180_gmbb4_0;
@@ -120,6 +123,18 @@ int fn_00439310(void) {
     return (int)(1);
 }
 
+struct unk_004394f8_a0 {
+    char pad_0[20];
+    u32 f_14;
+};
+u32 fn_004394f8(unk_004394f8_a0* a0) {
+    return (u32)(((u32)(a0->f_14) >> 2) & 0x3);
+}
+
+void fn_004399d8(void) {
+    stub_0043983c();
+}
+
 struct unk_0043a080_a0 {
     char pad_0[28];
     u32 f_1c;
@@ -178,6 +193,30 @@ void* fn_0043a194(unk_0043a194_a0* a0) {
         return (void*)(0);
     }
     return (void*)(a0->f_18);
+}
+
+void fn_0043a9b0(void) {
+    stub_0043a804();
+}
+
+void fn_0043a9b4(void) {
+    stub_0043a804();
+}
+
+void fn_0043a9b8(void) {
+    stub_0043a804();
+}
+
+void fn_0043acf4(void) {
+    stub_0043a9bc();
+}
+
+void fn_0043acf8(void) {
+    stub_0043a9bc();
+}
+
+void fn_0043acfc(void) {
+    stub_0043a9bc();
 }
 
 struct unk_0043ba10_gmbb4;

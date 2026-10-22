@@ -6,6 +6,7 @@ extern "C" {
 
 int fn_00416e4c(int, void*);
 static int __attribute__((noinline)) stub_005acccc(void* p0, u8 p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
+static void __attribute__((noinline)) stub_005addc8(u32 p0) { __asm__ volatile ("" : : "r"(p0)); }
 
 struct unk_005ad998_a0_0;
 struct unk_005ad998_a0_0 {
@@ -39,6 +40,115 @@ int fn_005ad998(unk_005ad998_a0* a0, void* a1, int a2) {
         }
     }
     return (int)(0);
+}
+
+struct unk_005ade18_a0 {
+    u32 f_0;
+};
+void fn_005ade18(unk_005ade18_a0* a0) {
+    stub_005addc8((u32)(a0->f_0));
+}
+
+struct unk_005ae040_a0_0;
+struct unk_005ae040_a0_0 {
+    char pad_0[2];
+    u8 f_2;
+};
+struct unk_005ae040_a0 {
+    unk_005ae040_a0_0* f_0;
+};
+u32 fn_005ae040(unk_005ae040_a0* a0) {
+    return (u32)(((u32)(a0->f_0->f_2) >> 7) & 0x1);
+}
+
+struct unk_005ae050_a0_0;
+struct unk_005ae050_a0_0 {
+    char pad_0[2];
+    u8 f_2;
+};
+struct unk_005ae050_a0 {
+    unk_005ae050_a0_0* f_0;
+};
+u32 fn_005ae050(unk_005ae050_a0* a0) {
+    return (u32)(((u32)(a0->f_0->f_2) >> 6) & 0x1);
+}
+
+struct unk_005ae060_a0_0;
+struct unk_005ae060_a0_0 {
+    char pad_0[2];
+    u8 f_2;
+};
+struct unk_005ae060_a0 {
+    unk_005ae060_a0_0* f_0;
+};
+u32 fn_005ae060(unk_005ae060_a0* a0) {
+    return (u32)(((u32)(a0->f_0->f_2) >> 5) & 0x1);
+}
+
+struct unk_005ae070_a0_0;
+struct unk_005ae070_a0_0 {
+    u16 f_0;
+};
+struct unk_005ae070_a0 {
+    unk_005ae070_a0_0* f_0;
+};
+u32 fn_005ae070(unk_005ae070_a0* a0) {
+    return (u32)(((u32)(a0->f_0->f_0) >> 6) & 0x1);
+}
+
+struct unk_005ae080_a0_0;
+struct unk_005ae080_a0_0 {
+    u16 f_0;
+};
+struct unk_005ae080_a0 {
+    unk_005ae080_a0_0* f_0;
+};
+u32 fn_005ae080(unk_005ae080_a0* a0) {
+    return (u32)(((u32)(a0->f_0->f_0) >> 5) & 0x1);
+}
+
+struct unk_005ae090_a0_0;
+struct unk_005ae090_a0_0 {
+    u16 f_0;
+};
+struct unk_005ae090_a0 {
+    unk_005ae090_a0_0* f_0;
+};
+u32 fn_005ae090(unk_005ae090_a0* a0) {
+    return (u32)(((u32)(a0->f_0->f_0) >> 4) & 0x1);
+}
+
+struct unk_005ae0a0_a0_0;
+struct unk_005ae0a0_a0_0 {
+    u16 f_0;
+};
+struct unk_005ae0a0_a0 {
+    unk_005ae0a0_a0_0* f_0;
+};
+u32 fn_005ae0a0(unk_005ae0a0_a0* a0) {
+    return (u32)(((u32)(a0->f_0->f_0) >> 2) & 0x1);
+}
+
+struct unk_005ae0b0_a0_0;
+struct unk_005ae0b0_a0_0 {
+    u16 f_0;
+};
+struct unk_005ae0b0_a0 {
+    unk_005ae0b0_a0_0* f_0;
+};
+u32 fn_005ae0b0(unk_005ae0b0_a0* a0) {
+    return (u32)((u32)(a0->f_0->f_0) & 0x1);
+}
+
+struct unk_005ae0c0_a0_0;
+struct unk_005ae0c0_a0_0 {
+    u16 f_0;
+};
+struct unk_005ae0c0_a0 {
+    unk_005ae0c0_a0_0* f_0;
+};
+u32 fn_005ae0c0(unk_005ae0c0_a0* a0) {
+    return (u32)(((u32)(a0->f_0->f_0) >> 1) & 0x1);
 }
 
 struct unk_005ae0d0_a0_0;

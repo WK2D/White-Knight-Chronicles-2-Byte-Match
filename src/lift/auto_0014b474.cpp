@@ -4,6 +4,22 @@
 
 extern "C" {
 
+static int __attribute__((noinline)) stub_0014b770(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+
+struct unk_0014b8d4_a0 {
+    u8 f_0;
+    char pad_1[7];
+    u32 f_8;
+};
+void* fn_0014b8d4(unk_0014b8d4_a0* a0) {
+    int v0;
+    if ((int)(((u32)(a0->f_0) >> 2) & 0x1) != (int)(0)) {
+        v0 = (int)(a0->f_8);
+    } else {
+        v0 = (int)(3);
+    }
+    return (void*)(v0);
+}
 
 struct unk_0014b8f4_a0 {
     u8 f_0;
@@ -18,6 +34,48 @@ void* fn_0014b8f4(unk_0014b8f4_a0* a0) {
         v0 = (int)(3);
     }
     return (void*)(v0);
+}
+
+struct unk_0014b914_a0 {
+    char pad_0[1];
+    u8 f_1;
+    char pad_2[14];
+    u32 f_10;
+};
+void* fn_0014b914(unk_0014b914_a0* a0) {
+    int v0;
+    if ((int)(((u32)(a0->f_1) >> 6) & 0x1) != (int)(0)) {
+        v0 = (int)(a0->f_10);
+    } else {
+        v0 = (int)(3);
+    }
+    return (void*)(v0);
+}
+
+struct unk_0014b964_a0 {
+    char pad_0[28];
+    u32 f_1c;
+};
+int fn_0014b964(unk_0014b964_a0* a0) {
+    int t0;
+    if ((int)(a0->f_1c) == (int)(0)) {
+        return (int)(0);
+    }
+    t0 = stub_0014b770((void*)(a0->f_1c));
+    return (int)(t0);
+}
+
+struct unk_0014b99c_a0 {
+    char pad_0[32];
+    u32 f_20;
+};
+int fn_0014b99c(unk_0014b99c_a0* a0) {
+    int t0;
+    if ((int)(a0->f_20) == (int)(0)) {
+        return (int)(0);
+    }
+    t0 = stub_0014b770((void*)(a0->f_20));
+    return (int)(t0);
 }
 
 struct unk_0014bb40_a2 {

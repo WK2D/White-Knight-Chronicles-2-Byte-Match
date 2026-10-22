@@ -8,6 +8,7 @@ static void* __attribute__((noinline)) stub_000391d8(int p0, int p1, void* p2) {
 static void* __attribute__((noinline)) stub_000392b8(int p0, int p1, void* p2) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
 static void* __attribute__((noinline)) stub_00039398(int p0, int p1, void* p2) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
 static int __attribute__((noinline)) stub_00039598(void* p0, int p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
+static void __attribute__((noinline)) stub_0003a194(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 
 struct unk_00039288_l;
 struct unk_00039288_l {
@@ -144,6 +145,14 @@ struct unk_0003a148_a0 {
 void fn_0003a148(unk_0003a148_a0* a0, int a1) {
     a0->f_4 = (u32)(a1);
     a0->f_0 = (u8)(5);
+}
+
+void fn_0003a21c(int a0) {
+    stub_0003a194((int)(a0));
+}
+
+void fn_0003a220(int a0) {
+    stub_0003a194((int)(a0));
 }
 
 }

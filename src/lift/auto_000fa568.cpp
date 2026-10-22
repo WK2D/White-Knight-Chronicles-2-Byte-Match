@@ -6,6 +6,25 @@ extern "C" {
 
 void fn_00b37fa8(int, int, int);
 
+struct unk_000fa568_gm699c;
+struct unk_000fa568_gm699c_0;
+struct unk_000fa568_gm699c_0_78;
+struct unk_000fa568_gm699c {
+    unk_000fa568_gm699c_0* f_0;
+};
+struct unk_000fa568_gm699c_0 {
+    char pad_0[120];
+    unk_000fa568_gm699c_0_78* f_78;
+};
+struct unk_000fa568_gm699c_0_78 {
+    char pad_0[6040];
+    u64 f_1798;
+};
+extern unk_000fa568_gm699c g_000fa568_0;
+u32 fn_000fa568(void) {
+    return (u32)(((u32)((&g_000fa568_0)->f_0->f_78->f_1798) >> 31));
+}
+
 struct unk_000fa68c_a0 {
     u8 f_0;
 };

@@ -7,6 +7,11 @@ extern "C" {
 void* fn_00032cbc(int, int);
 void* fn_00076a98(void*, int, int, int, int, int);
 static int __attribute__((noinline)) stub_001fb73c(void* p0, void* p1, int p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
+static void __attribute__((noinline)) stub_001fc7f4(void* p0, void* p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
+static void __attribute__((noinline)) stub_001fcb80(void* p0, void* p1, void* p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
+static void __attribute__((noinline)) stub_001fd808(void* p0, void* p1, void* p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
+static void __attribute__((noinline)) stub_001fe1b8(void* p0, void* p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
+static void __attribute__((noinline)) stub_001fe2d4(void* p0, void* p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 
 extern char g_001fb8fc_0[];
 u8 fn_001fb8fc(void* a0, int a1) {
@@ -21,6 +26,41 @@ void* fn_001fb954(int a0, int a1) {
     void* t0;
     t0 = fn_00032cbc((int)(a1), (int)(a0));
     return (void*)(t0);
+}
+
+extern char g_001fcb34_0[];
+void fn_001fcb34(void* a0, int a1) {
+    void* t0;
+    t0 = fn_00076a98((void*)(g_001fcb34_0), (int)(a1), (int)(0), (int)(-1), (int)(0), (int)(0));
+    stub_001fc7f4((void*)(a0), (void*)(t0));
+}
+
+extern char g_001fcdd8_0[];
+void fn_001fcdd8(void* a0, int a1, void* a2) {
+    void* t0;
+    t0 = fn_00076a98((void*)(g_001fcdd8_0), (int)(a1), (int)(0), (int)(-1), (int)(0), (int)(0));
+    stub_001fcb80((void*)(a0), (void*)(t0), (void*)(a2));
+}
+
+extern char g_001fdd78_0[];
+void fn_001fdd78(void* a0, int a1, void* a2) {
+    void* t0;
+    t0 = fn_00076a98((void*)(g_001fdd78_0), (int)(a1), (int)(0), (int)(-1), (int)(0), (int)(0));
+    stub_001fd808((void*)(a0), (void*)(t0), (void*)(a2));
+}
+
+extern char g_001fe288_0[];
+void fn_001fe288(void* a0, int a1) {
+    void* t0;
+    t0 = fn_00076a98((void*)(g_001fe288_0), (int)(a1), (int)(0), (int)(-1), (int)(0), (int)(0));
+    stub_001fe1b8((void*)(a0), (void*)(t0));
+}
+
+extern char g_001fe614_0[];
+void fn_001fe614(void* a0, int a1) {
+    void* t0;
+    t0 = fn_00076a98((void*)(g_001fe614_0), (int)(a1), (int)(0), (int)(-1), (int)(0), (int)(0));
+    stub_001fe2d4((void*)(a0), (void*)(t0));
 }
 
 }

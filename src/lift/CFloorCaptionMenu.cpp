@@ -40,6 +40,25 @@ int fn_0083ea5c(unk_0083ea5c_a0* a0) {
     return (int)(v0);
 }
 
+struct unk_0083ea7c_a0_12c8;
+struct unk_0083ea7c_a0_12c8 {
+    char pad_0[428];
+    u32 f_1ac;
+};
+struct unk_0083ea7c_a0 {
+    char pad_0[4808];
+    unk_0083ea7c_a0_12c8* f_12c8;
+};
+int fn_0083ea7c(unk_0083ea7c_a0* a0) {
+    int v1;
+    if ((int)(a0->f_12c8) != (int)(0)) {
+        v1 = (int)(((u32)(a0->f_12c8->f_1ac) >> 28) & 0x1);
+    } else {
+        v1 = (int)(0);
+    }
+    return (int)(v1);
+}
+
 struct unk_0083eaa0_gm72e0;
 struct unk_0083eaa0_gm72e0_0;
 struct unk_0083eaa0_gm72e0_0_78;

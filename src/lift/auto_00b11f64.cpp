@@ -5,6 +5,11 @@
 extern "C" {
 
 void* fn_00b11ff8(void);
+static void __attribute__((noinline)) stub_00b154b4(void) { __asm__ volatile (""); }
+
+void fn_00b157ac(void) {
+    stub_00b154b4();
+}
 
 void* fn_00b15f04(void) {
     void* t0;

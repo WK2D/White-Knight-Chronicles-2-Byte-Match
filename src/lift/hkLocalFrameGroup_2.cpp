@@ -34,4 +34,20 @@ void fn_00c29fd8(unk_00c29fd8_a0* a0, int a1, int a2) {
     FIELD(u32, (int)((u32)(a1) << 3) + (int)(a0->f_0), 4) = (u32)(a2);
 }
 
+struct unk_00c2a014_a0 {
+    char pad_0[4];
+    u32 f_4;
+};
+u32 fn_00c2a014(unk_00c2a014_a0* a0) {
+    return (u32)((u32)(a0->f_4) & 0x7fffffff);
+}
+
+struct unk_00c2a020_a0 {
+    char pad_0[8];
+    u32 f_8;
+};
+u32 fn_00c2a020(unk_00c2a020_a0* a0) {
+    return (u32)((u32)(a0->f_8 + 1) & 0x7fffffff);
+}
+
 }

@@ -89,6 +89,34 @@ u8 fn_006a0c50(void) {
     return (u8)(FIELD(u8, (int)((&g_006a0c50_0)->f_0->f_80) + 851968, 4290));
 }
 
+struct unk_006a0d6c_g3f68;
+struct unk_006a0d6c_g3f68_0;
+struct unk_006a0d6c_g3f68 {
+    unk_006a0d6c_g3f68_0* f_0;
+};
+struct unk_006a0d6c_g3f68_0 {
+    char pad_0[128];
+    u32 f_80;
+};
+extern unk_006a0d6c_g3f68 g_006a0d6c_0;
+u32 fn_006a0d6c(void) {
+    return (u32)(((u32)(FIELD(u32, (int)((&g_006a0d6c_0)->f_0->f_80) + 851968, 4176)) >> 1) & 0x1);
+}
+
+struct unk_006a0dc4_g3f68;
+struct unk_006a0dc4_g3f68_0;
+struct unk_006a0dc4_g3f68 {
+    unk_006a0dc4_g3f68_0* f_0;
+};
+struct unk_006a0dc4_g3f68_0 {
+    char pad_0[128];
+    u32 f_80;
+};
+extern unk_006a0dc4_g3f68 g_006a0dc4_0;
+u32 fn_006a0dc4(void) {
+    return (u32)((u32)(FIELD(u32, (int)((&g_006a0dc4_0)->f_0->f_80) + 851968, 4176)) & 0x1);
+}
+
 struct unk_006a3124_a0_258;
 struct unk_006a3124_a0_258 {
     char pad_0[220];

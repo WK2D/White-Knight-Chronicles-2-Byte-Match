@@ -6,7 +6,12 @@ extern "C" {
 
 void fn_000c38d8(void*);
 void fn_000c39ac(void);
+static void __attribute__((noinline)) stub_004c23a0(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 void fn_00b39828(int);
+
+void fn_004c23ac(int a0) {
+    stub_004c23a0((int)(a0));
+}
 
 int fn_004c24c8(int a0, int a1) {
     fn_00b39828((int)(a1));

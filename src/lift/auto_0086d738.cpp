@@ -6,7 +6,10 @@ extern "C" {
 
 static void* __attribute__((noinline)) stub_0086d7d8(void) { void* r; __asm__ volatile ("" : "=r"(r)); return r; }
 static int __attribute__((noinline)) stub_0086dbd4(void) { int r; __asm__ volatile ("" : "=r"(r)); return r; }
+static void __attribute__((noinline)) stub_0086e920(void) { __asm__ volatile (""); }
 static void* __attribute__((noinline)) stub_0086eb14(void) { void* r; __asm__ volatile ("" : "=r"(r)); return r; }
+static void __attribute__((noinline)) stub_0086fd54(void* p0, void* p1, int p2, int p3, float p4) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4)); }
+static void __attribute__((noinline)) stub_00870954(void* p0, int p1, int p2, int p3, int p4, int p5, void* p6) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4), "r"(p5), "r"(p6)); }
 void fn_0087d8e8(u32);
 void fn_0088fd60(u32);
 void fn_0088ffcc(u32);
@@ -142,6 +145,10 @@ int fn_0086dea8(void) {
     return (int)(v0);
 }
 
+void fn_0086e98c(void) {
+    stub_0086e920();
+}
+
 int fn_0086ec24(int a0, int a1) {
     void* t0;
     int t1;
@@ -219,6 +226,10 @@ void fn_0086fb60(unk_0086fb60_a0* a0) {
     fn_0088fd60((u32)(a0->f_11c));
 }
 
+void fn_0086fe20(void* a0) {
+    stub_0086fd54((void*)(a0), (void*)((char*)a0 + 344), (int)(12), (int)(1168), (float)(1.0f));
+}
+
 struct unk_008702f0_a0 {
     char pad_0[8556];
     u32 f_216c;
@@ -235,6 +246,34 @@ struct unk_00870520_a0 {
 };
 void fn_00870520(unk_00870520_a0* a0) {
     fn_0087d8e8((u32)(a0->f_114));
+}
+
+struct unk_00870a44_a0_138;
+struct unk_00870a44_a0_138 {
+    char pad_0[136];
+    u32 f_88;
+};
+struct unk_00870a44_a0 {
+    char pad_0[312];
+    unk_00870a44_a0_138* f_138;
+};
+void fn_00870a44(unk_00870a44_a0* a0, int a1, int a2, int a3, int a4, int a5) {
+    a0->f_138->f_88 = (u32)(0);
+    stub_00870954((void*)(a0), (int)(9), (int)(0), (int)(4), (int)(a4), (int)(a5), (void*)(a0));
+}
+
+struct unk_00870c0c_a0_118;
+struct unk_00870c0c_a0_118 {
+    char pad_0[312];
+    u32 f_138;
+};
+struct unk_00870c0c_a0 {
+    char pad_0[280];
+    unk_00870c0c_a0_118* f_118;
+};
+void fn_00870c0c(unk_00870c0c_a0* a0, int a1, int a2, int a3, int a4, int a5) {
+    a0->f_118->f_138 = (u32)(0);
+    stub_00870954((void*)(a0), (int)(2), (int)(0), (int)(4), (int)(a4), (int)(a5), (void*)(a0));
 }
 
 }

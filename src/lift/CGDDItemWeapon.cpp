@@ -5,6 +5,39 @@
 extern "C" {
 
 
+struct unk_003d5eb4_a0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual void vf5();
+    virtual void vf6();
+    virtual void vf7();
+    virtual void vf8();
+    virtual void vf9();
+    virtual void vf10();
+    virtual void vf11();
+    virtual void vf12();
+    virtual void vf13();
+    virtual void vf14();
+    virtual void vf15();
+    virtual void vf16();
+    virtual void vf17();
+    virtual void* vf18(void);
+};
+int fn_003d5eb4(unk_003d5eb4_a0* a0) {
+    void* t0;
+    int v0;
+    t0 = a0->vf18();
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)(((u32)((u32)(FIELD(u16, t0, 0) + -1) | (u32)(FIELD(u16, t0, 0))) >> 15) & 0x1);
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
 struct unk_003d5fc8_a0 {
     char pad_0[12];
     u16 f_c;

@@ -5,6 +5,81 @@
 extern "C" {
 
 void* fn_00076a98(void*, int, int, int, int, int);
+static void __attribute__((noinline)) stub_0059bef8(int p0, int p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
+static void __attribute__((noinline)) stub_0059bf54(int p0, int p1, int p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
+static void __attribute__((noinline)) stub_0059bfd4(int p0, int p1, int p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
+
+void fn_0059bf24(int a0) {
+    stub_0059bef8((int)(a0), (int)(5));
+}
+
+void fn_0059bf2c(int a0) {
+    stub_0059bef8((int)(a0), (int)(4));
+}
+
+void fn_0059bf34(int a0) {
+    stub_0059bef8((int)(a0), (int)(3));
+}
+
+void fn_0059bf3c(int a0) {
+    stub_0059bef8((int)(a0), (int)(2));
+}
+
+void fn_0059bf44(int a0) {
+    stub_0059bef8((int)(a0), (int)(1));
+}
+
+void fn_0059bf4c(int a0) {
+    stub_0059bef8((int)(a0), (int)(0));
+}
+
+void fn_0059bf8c(int a0, int a1) {
+    stub_0059bf54((int)(a0), (int)(5), (int)(a1));
+}
+
+void fn_0059bf98(int a0, int a1) {
+    stub_0059bf54((int)(a0), (int)(4), (int)(a1));
+}
+
+void fn_0059bfa4(int a0, int a1) {
+    stub_0059bf54((int)(a0), (int)(3), (int)(a1));
+}
+
+void fn_0059bfb0(int a0, int a1) {
+    stub_0059bf54((int)(a0), (int)(2), (int)(a1));
+}
+
+void fn_0059bfbc(int a0, int a1) {
+    stub_0059bf54((int)(a0), (int)(1), (int)(a1));
+}
+
+void fn_0059bfc8(int a0, int a1) {
+    stub_0059bf54((int)(a0), (int)(0), (int)(a1));
+}
+
+void fn_0059c05c(int a0, int a1) {
+    stub_0059bfd4((int)(a0), (int)(5), (int)(a1));
+}
+
+void fn_0059c068(int a0, int a1) {
+    stub_0059bfd4((int)(a0), (int)(4), (int)(a1));
+}
+
+void fn_0059c074(int a0, int a1) {
+    stub_0059bfd4((int)(a0), (int)(3), (int)(a1));
+}
+
+void fn_0059c080(int a0, int a1) {
+    stub_0059bfd4((int)(a0), (int)(2), (int)(a1));
+}
+
+void fn_0059c08c(int a0, int a1) {
+    stub_0059bfd4((int)(a0), (int)(1), (int)(a1));
+}
+
+void fn_0059c098(int a0, int a1) {
+    stub_0059bfd4((int)(a0), (int)(0), (int)(a1));
+}
 
 struct unk_0059c180_a0_8;
 struct unk_0059c180_a0_8 {

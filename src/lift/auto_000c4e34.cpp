@@ -4,10 +4,24 @@
 
 extern "C" {
 
+static void __attribute__((noinline)) stub_000c4e34(int p0, void* p1, int p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
 static void __attribute__((noinline)) stub_000c5254(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
 static void* __attribute__((noinline)) stub_000c5414(void* p0, void* p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static void* __attribute__((noinline)) stub_000c5560(void* p0, void* p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
+void fn_00b39778(int, u32);
+void fn_00b39788(int, u32);
 void* fn_00b39838(u32, void*);
+
+struct unk_000c50f4_a2 {
+    char pad_0[8];
+    u32 f_8;
+    u32 f_c;
+};
+void fn_000c50f4(int a0, int a1, unk_000c50f4_a2* a2) {
+    fn_00b39778((int)(a1), (u32)(a2->f_8));
+    fn_00b39788((int)(a1), (u32)(a2->f_c));
+    stub_000c4e34((int)(a1), (void*)(a2), (int)(0));
+}
 
 struct unk_000c52dc_a0 {
     char pad_0[4];

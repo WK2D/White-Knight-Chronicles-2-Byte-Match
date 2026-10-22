@@ -4,6 +4,7 @@
 
 extern "C" {
 
+static void __attribute__((noinline)) stub_0098055c(void) { __asm__ volatile (""); }
 
 struct unk_0098050c_gm3fc0;
 struct unk_0098050c_gm3fc0_0;
@@ -44,6 +45,43 @@ void* fn_00980524(int a0) {
         v0 = (int)(0);
     }
     return (void*)(v0);
+}
+
+struct unk_00980698_a0 {
+    u32 f_0;
+};
+struct unk_00980698_a1 {
+    char pad_0[1036];
+    u32 f_40c;
+};
+u32 fn_00980698(unk_00980698_a0* a0, unk_00980698_a1* a1) {
+    if (a0 != 0) {
+        a0->f_0 = (u32)(256);
+        if ((int)(a1) != (int)(0)) {
+            a0->f_0 = (u32)(a1->f_40c);
+            return (u32)((u32)(0) & 0x3);
+        }
+    }
+    return (u32)((u32)(3) & 0x3);
+}
+
+struct unk_0098085c_a0 {
+    char pad_0[1036];
+    u32 f_40c;
+};
+u32 fn_0098085c(unk_0098085c_a0* a0, int a1) {
+    int v0;
+    if (a0 != 0) {
+        a0->f_40c = (u32)(a1);
+        v0 = (int)(0);
+    } else {
+        v0 = (int)(3);
+    }
+    return (u32)((u32)(v0) & 0x3);
+}
+
+void fn_00980b14(void) {
+    stub_0098055c();
 }
 
 }

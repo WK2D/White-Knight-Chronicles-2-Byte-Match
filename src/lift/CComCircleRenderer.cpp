@@ -5,11 +5,20 @@
 extern "C" {
 
 void fn_00045f6c(void*, int);
+static void __attribute__((noinline)) stub_006705cc(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 static void __attribute__((noinline)) stub_00670658(void) { __asm__ volatile (""); }
 
 int fn_006706d8(void) {
     stub_00670658();
     return (int)(0);
+}
+
+void fn_006706fc(int a0) {
+    stub_006705cc((int)(a0));
+}
+
+void fn_00670810(int a0) {
+    stub_006705cc((int)(a0));
 }
 
 struct unk_00670fe0_a0 {

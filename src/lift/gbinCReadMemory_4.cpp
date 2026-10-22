@@ -5,6 +5,20 @@
 extern "C" {
 
 void fn_00b42138(int);
+void fn_00fcab70(void*);
+
+extern char g_00a58370_0[];
+void fn_00a58370(void) {
+    fn_00fcab70((void*)(g_00a58370_0));
+}
+
+struct unk_00a58d94_a0 {
+    char pad_0[26];
+    u16 f_1a;
+};
+u32 fn_00a58d94(unk_00a58d94_a0* a0) {
+    return (u32)(((u32)(a0->f_1a) >> 1) & 0x1);
+}
 
 struct unk_00a58de8_a0 {
     char pad_0[16];

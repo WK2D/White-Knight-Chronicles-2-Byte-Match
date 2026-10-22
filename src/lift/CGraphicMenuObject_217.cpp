@@ -4,6 +4,31 @@
 
 extern "C" {
 
+static void __attribute__((noinline)) stub_008518b4(int p0, int p1, int p2, int p3, int p4) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4)); }
+
+void fn_008518fc(int a0, int a1, int a2, int a3) {
+    stub_008518b4((int)(a0), (int)(a1), (int)(a2), (int)(a3), (int)(0));
+}
+
+void fn_00851904(int a0, int a1, int a2, int a3) {
+    stub_008518b4((int)(a0), (int)(a1), (int)(a2), (int)(a3), (int)(1));
+}
+
+void fn_0085190c(int a0, int a1, int a2) {
+    stub_008518b4((int)(a0), (int)(0), (int)(a1), (int)(a2), (int)(2));
+}
+
+void fn_00851920(int a0, int a1, int a2) {
+    stub_008518b4((int)(a0), (int)(0), (int)(a1), (int)(a2), (int)(3));
+}
+
+void fn_00851934(int a0, int a1, int a2) {
+    stub_008518b4((int)(a0), (int)(0), (int)(a1), (int)(a2), (int)(4));
+}
+
+void fn_00851948(int a0, int a1, int a2) {
+    stub_008518b4((int)(a0), (int)(0), (int)(a1), (int)(a2), (int)(5));
+}
 
 struct unk_00851a64_a0 {
     char pad_0[2448];

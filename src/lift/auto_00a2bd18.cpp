@@ -22,4 +22,12 @@ void fn_00a2bde4(unk_00a2bde4_a0* a0) {
     a0->f_0 = (u32)(1718185811);
 }
 
+struct unk_00a2c120_a1 {
+    char pad_0[84];
+    u16 f_54;
+};
+u32 fn_00a2c120(int a0, unk_00a2c120_a1* a1) {
+    return (u32)(((u32)((u32)(a1->f_54) ^ 0x8) >> 3) & 0x1);
+}
+
 }

@@ -30,6 +30,20 @@ void* fn_000f3934(int a0, unk_000f3934_a1* a1) {
     return (void*)(v0);
 }
 
+struct unk_000f394c_a1 {
+    char pad_0[24];
+    u16 f_18;
+};
+int fn_000f394c(int a0, unk_000f394c_a1* a1) {
+    int v0;
+    if (a1 != 0) {
+        v0 = (int)(((u32)(a1->f_18) >> 5) & 0x1);
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
 void* fn_000f3ca4(int a0) {
     int t0;
     int v0;

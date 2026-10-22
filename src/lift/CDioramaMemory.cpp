@@ -5,6 +5,7 @@
 extern "C" {
 
 void fn_00aa3878(int, void*);
+void fn_00b3d0b8(int, void*, u32, u32);
 void* fn_00b3e498(int);
 int fn_00b40138(void*);
 void fn_00b40148(u32, int);
@@ -69,6 +70,11 @@ void* fn_008a8e54(int a0, int a1, int a2, int a3, unk_008a8e54_a4* a4, int a5) {
     t0 = fn_00b40158((int)(a5), (int)(a2), (int)(a3));
     a4->f_0 = (u32)(0);
     return (void*)(t0);
+}
+
+extern char g_008a8fac_0[];
+void fn_008a8fac(int a0, int a1) {
+    fn_00b3d0b8((int)(a1), (void*)(g_008a8fac_0), (u32)(((u32)(a0) >> 13) & 0x7), (u32)((u32)(a0) & 0x1fff));
 }
 
 }

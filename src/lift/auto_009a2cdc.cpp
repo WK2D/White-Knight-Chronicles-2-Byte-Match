@@ -18,6 +18,24 @@ u32 fn_009a350c(void) {
     return (u32)((&g_009a350c_0)->f_0->f_0);
 }
 
+struct unk_009a3528_a0 {
+    u32 f_0;
+};
+struct unk_009a3528_a1 {
+    char pad_0[1028];
+    u32 f_404;
+};
+u32 fn_009a3528(unk_009a3528_a0* a0, unk_009a3528_a1* a1) {
+    if (a0 != 0) {
+        a0->f_0 = (u32)(256);
+        if ((int)(a1) != (int)(0)) {
+            a0->f_0 = (u32)(a1->f_404);
+            return (u32)((u32)(0) & 0x3);
+        }
+    }
+    return (u32)((u32)(3) & 0x3);
+}
+
 struct unk_009a3560_gm3cb0;
 struct unk_009a3560_gm3cb0_0;
 struct unk_009a3560_gm3cb0 {

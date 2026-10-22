@@ -9,6 +9,14 @@ void fn_00b40288(u32, int);
 void fn_00b40298(u32, int);
 void* fn_00bb8aa8(void*);
 
+struct unk_008addb0_a0 {
+    char pad_0[52];
+    float f_34;
+};
+void fn_008addb0(unk_008addb0_a0* a0) {
+    a0->f_34 = 1.0f;
+}
+
 void* fn_008addc0(void* a0) {
     void* t0;
     t0 = fn_00bb8aa8((void*)((char*)a0 + 24));

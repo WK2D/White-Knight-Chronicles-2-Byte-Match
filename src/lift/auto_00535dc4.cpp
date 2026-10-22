@@ -4,7 +4,20 @@
 
 extern "C" {
 
+static int __attribute__((noinline)) stub_00535f74(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+void* fn_00539dd4(void);
 int fn_0058fbac(void);
+
+int fn_005360f0(void) {
+    void* t0;
+    int t1;
+    t0 = fn_00539dd4();
+    if ((int)(t0) >= (int)(0)) {
+        t1 = stub_00535f74((void*)(t0));
+        return (int)(t1);
+    }
+    return (int)(0);
+}
 
 u8 fn_00536210(void) {
     int t0;

@@ -8,9 +8,11 @@ int fn_0042769c(u16);
 void* fn_005380d8(void);
 void* fn_00538270(void);
 void* fn_00544c20(int);
+void* fn_00545d00(void);
 static void __attribute__((noinline)) stub_0059034c(void* p0, void* p1, void* p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
 static void __attribute__((noinline)) stub_00590650(void* p0, void* p1, void* p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
 static int __attribute__((noinline)) stub_00590dac(void* p0, void* p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
+static void __attribute__((noinline)) stub_00591024(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
 static void* __attribute__((noinline)) stub_00591f00(void) { void* r; __asm__ volatile ("" : "=r"(r)); return r; }
 void fn_00b37fa8(void*, int, int);
 
@@ -40,6 +42,12 @@ void* fn_00590ffc(void) {
     void* t0;
     t0 = fn_00538270();
     return (void*)(t0);
+}
+
+void fn_00591144(void) {
+    void* t0;
+    t0 = fn_00545d00();
+    stub_00591024((void*)(t0));
 }
 
 void* fn_00591ed8(void) {

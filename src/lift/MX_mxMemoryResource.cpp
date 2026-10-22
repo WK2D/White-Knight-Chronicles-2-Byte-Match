@@ -4,11 +4,19 @@
 
 extern "C" {
 
+void fn_00aeb9ec(u32);
+void fn_00aeba40(u32);
 void fn_00afe96c(void*);
 void fn_00aff0c8(void*, int);
 void fn_00b41f98(int);
 void* fn_00b42288(void);
 int fn_00fc8cac(void*);
+void* fn_00fcca90(int);
+void* fn_00fccab0(int, int);
+void* fn_00fccc10(int);
+void fn_00fccd90(void*, int);
+void fn_00fccdb0(void*);
+void fn_00fcd050(void);
 
 struct unk_00aedcc4_a0_5c;
 struct unk_00aedcc4_a0_5c {
@@ -172,6 +180,32 @@ void fn_00aee2b0(int a0, unk_00aee2b0_a1* a1) {
     a1->vf1();
 }
 
+void fn_00aee398(void) {
+    fn_00fcd050();
+}
+
+void fn_00aee3bc(void) {
+    fn_00fcd050();
+}
+
+void* fn_00aee460(int a0, int a1, int a2) {
+    void* t0;
+    t0 = fn_00fccab0((int)(a1), (int)(a2));
+    return (void*)(t0);
+}
+
+void* fn_00aee490(int a0, int a1) {
+    void* t0;
+    t0 = fn_00fcca90((int)(a1));
+    return (void*)(t0);
+}
+
+void* fn_00aee4bc(int a0, int a1) {
+    void* t0;
+    t0 = fn_00fccc10((int)(a1));
+    return (void*)(t0);
+}
+
 void* fn_00aee820(void) {
     void* t0;
     t0 = fn_00b42288();
@@ -184,6 +218,40 @@ void fn_00aee974(int a0) {
     fn_00afe96c((void*)((char*)g_00aee974_0 + 80));
     fn_00aff0c8((void*)((char*)g_00aee974_0 + 372), (int)(a0));
     fn_00afe96c((void*)((char*)g_00aee974_0 + 372));
+}
+
+void fn_00aefae4(void* a0) {
+    fn_00fccdb0((void*)((char*)a0 + 400));
+}
+
+struct unk_00aefb10_a0 {
+    char pad_0[392];
+    u32 f_188;
+};
+struct unk_00aefb10_a1 {
+    u32 f_0;
+};
+void fn_00aefb10(unk_00aefb10_a0* a0, unk_00aefb10_a1* a1) {
+    fn_00fccd90((void*)((char*)a0 + 424), (int)(0));
+    fn_00aeba40((u32)(a0->f_188));
+    a1->f_0 = (u32)(a0->f_188);
+}
+
+struct unk_00aefb6c_a0 {
+    char pad_0[388];
+    u32 f_184;
+};
+struct unk_00aefb6c_a1 {
+    u32 f_0;
+};
+void fn_00aefb6c(unk_00aefb6c_a0* a0, unk_00aefb6c_a1* a1) {
+    fn_00fccd90((void*)((char*)a0 + 400), (int)(0));
+    fn_00aeb9ec((u32)(a0->f_184));
+    a1->f_0 = (u32)(a0->f_184);
+}
+
+void fn_00aefbc8(void* a0) {
+    fn_00fccdb0((void*)((char*)a0 + 424));
 }
 
 }

@@ -8,6 +8,7 @@ void fn_009b6424(int, int);
 void fn_009b66b4(int, void*);
 void fn_009b67e4(int, void*);
 void fn_009b6914(int, void*);
+static void __attribute__((noinline)) stub_009b6b3c(int p0, int p1, int p2, int p3, int p4, int p5) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4), "r"(p5)); }
 
 struct unk_009b6b28_gm3b38;
 struct unk_009b6b28_gm3b38 {
@@ -19,6 +20,14 @@ int fn_009b6b28(int a0, int a1) {
     (&g_009b6b28_0)->f_0 = (u32)(a0);
     (&g_009b6b28_0)->f_4 = (u32)(a1);
     return (int)(0);
+}
+
+void fn_009b6cb4(int a0, int a1, int a2, int a3, int a4) {
+    stub_009b6b3c((int)(a0), (int)(a1), (int)(a2), (int)(a3), (int)(a4), (int)(0));
+}
+
+void fn_009b6df4(int a0, int a1, int a2, int a3) {
+    stub_009b6b3c((int)(a0), (int)(a1), (int)(a2), (int)(2), (int)(0), (int)(a3));
 }
 
 void fn_009b734c(int a0, void* a1) {

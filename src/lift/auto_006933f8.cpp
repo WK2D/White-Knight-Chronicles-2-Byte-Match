@@ -5,12 +5,19 @@
 extern "C" {
 
 int fn_00034a88(void);
+void fn_0004fe38(int, int, int);
+void fn_0004fe84(int, int, int, float);
 void fn_00077de8(void*, void*, int);
 static void __attribute__((noinline)) stub_00692e30(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
 static int __attribute__((noinline)) stub_0069397c(void) { int r; __asm__ volatile ("" : "=r"(r)); return r; }
 void fn_00b37f58(int, void*, u32);
 void fn_00b37fa8(int, int, u32);
 int fn_00b38038(void*, int);
+
+void fn_006933f8(int a0, int a1, int a2, int a3) {
+    fn_0004fe38((int)(a1), (int)(a2), (int)(a3));
+    fn_0004fe84((int)(a1), (int)(a2), (int)(a3), (float)(0.6000000238418579f));
+}
 
 int fn_006936f8(void* a0, int a1) {
     int t0;

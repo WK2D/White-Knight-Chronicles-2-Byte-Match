@@ -4,11 +4,14 @@
 
 extern "C" {
 
+static int __attribute__((noinline)) stub_000434c4(void* p0, int p1, float p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
 static int __attribute__((noinline)) stub_000434f4(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static int __attribute__((noinline)) stub_00043504(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static int __attribute__((noinline)) stub_00043524(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static void* __attribute__((noinline)) stub_00043544(int p0) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static void* __attribute__((noinline)) stub_0004361c(int p0) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+void fn_0004fa80(float, float, float, int, int, int, int, int);
+void fn_0004fb2c(float, float, float, int, int, int, int);
 
 int fn_00043580(int a0) {
     void* t0;
@@ -24,6 +27,17 @@ int fn_00043580(int a0) {
     return (int)(v1);
 }
 
+int fn_000435c0(int a0, int a1, int a2) {
+    void* t0;
+    int t1;
+    t0 = stub_00043544((int)(a0));
+    if ((int)(t0) != (int)(0)) {
+        t1 = stub_000434c4((void*)(t0), (int)(a2), (float)(-1.0f));
+        return (int)(t1);
+    }
+    return (int)(-1);
+}
+
 int fn_00043658(int a0) {
     void* t0;
     int t1;
@@ -36,6 +50,17 @@ int fn_00043658(int a0) {
         v1 = (int)(0);
     }
     return (int)(v1);
+}
+
+int fn_00043698(int a0, int a1, int a2) {
+    void* t0;
+    int t1;
+    t0 = stub_0004361c((int)(a0));
+    if ((int)(t0) != (int)(0)) {
+        t1 = stub_000434c4((void*)(t0), (int)(a2), (float)(-1.0f));
+        return (int)(t1);
+    }
+    return (int)(-1);
 }
 
 int fn_000438a8(int a0) {
@@ -64,6 +89,14 @@ int fn_000438e8(int a0) {
         v1 = (int)(0);
     }
     return (int)(v1);
+}
+
+void fn_00043fd4(int a0, int a1, int a2, int a3, int a4, int a5) {
+    fn_0004fb2c((float)(0.0f), (float)(1.0f), (float)(0.6000000238418579f), (int)(a3), (int)(a4), (int)(a5), (int)(4));
+}
+
+void fn_00044008(int a0, int a1, int a2, int a3, int a4, int a5) {
+    fn_0004fa80((float)(1.0f), (float)(1.5f), (float)(0.10000000149011612f), (int)(a3), (int)(a4), (int)(a5), (int)(1), (int)(4));
 }
 
 }

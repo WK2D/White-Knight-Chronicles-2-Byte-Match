@@ -5,11 +5,25 @@
 extern "C" {
 
 void* fn_009a99e0(void);
+int fn_00b3d0b8(void*, void*, int, int, int);
 
 void* fn_009a1b20(void) {
     void* t0;
     t0 = fn_009a99e0();
     return (void*)(t0);
+}
+
+extern char g_009a2440_0[];
+u32 fn_009a2440(void* a0) {
+    int t0;
+    int v0;
+    if ((int)(a0) != (int)(0)) {
+        t0 = fn_00b3d0b8((void*)(a0), (void*)(g_009a2440_0), (int)(3), (int)(2), (int)(0));
+        v0 = (int)(0);
+    } else {
+        v0 = (int)(3);
+    }
+    return (u32)((u32)(v0) & 0x3);
 }
 
 }

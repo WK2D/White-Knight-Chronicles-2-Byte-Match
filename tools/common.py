@@ -16,12 +16,18 @@ CFLAGS = os.environ.get('WKC2_CFLAGS', '-O2').split()   # override for experimen
 
 
 def load_functions():
-    """{address: size} for every function in the original .text."""
+    """{address: size} for every function in the original .text, without the
+    linker's TOC stubs (config/linker_stubs.txt), which no source produces."""
+    stubs = set()
+    path = ROOT / 'config' / 'linker_stubs.txt'
+    if path.exists():
+        stubs = {int(l.split()[0], 16) for l in path.read_text().splitlines() if l and not l.startswith('#')}
     out = {}
     for line in (ROOT / 'config' / 'functions.txt').read_text().splitlines():
         if line and not line.startswith('#'):
             a, s = line.split()
-            out[int(a, 16)] = int(s, 16)
+            if int(a, 16) not in stubs:
+                out[int(a, 16)] = int(s, 16)
     return out
 
 

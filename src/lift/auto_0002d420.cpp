@@ -4,9 +4,34 @@
 
 extern "C" {
 
+static void __attribute__((noinline)) stub_0002d668(void) { __asm__ volatile (""); }
+static void __attribute__((noinline)) stub_0002d74c(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 static void __attribute__((noinline)) stub_0002db6c(void* p0, int p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
+static void __attribute__((noinline)) stub_0002dc34(void) { __asm__ volatile (""); }
 static void* __attribute__((noinline)) stub_0002df8c(int p0, void* p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static void __attribute__((noinline)) stub_0002e400(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
+static void __attribute__((noinline)) stub_0002e7e8(int p0, int p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
+static void __attribute__((noinline)) stub_0002e8f4(void) { __asm__ volatile (""); }
+
+void fn_0002d744(void) {
+    stub_0002d668();
+}
+
+void fn_0002d748(void) {
+    stub_0002d668();
+}
+
+void fn_0002d7f4(int a0) {
+    stub_0002d74c((int)(a0));
+}
+
+void fn_0002d7f8(int a0) {
+    stub_0002d74c((int)(a0));
+}
+
+void fn_0002de58(void) {
+    stub_0002dc34();
+}
 
 struct unk_0002e1a4_l;
 struct unk_0002e1a4_l {
@@ -31,6 +56,14 @@ void fn_0002e4b8(unk_0002e4b8_a0* a0) {
     stub_0002db6c((void*)(a0), (int)(1));
     stub_0002e400((void*)(a0));
     a0->f_2c = (u32)(0);
+}
+
+void fn_0002e808(int a0, int a1) {
+    stub_0002e7e8((int)(a0), (int)(a1));
+}
+
+void fn_0002e94c(void) {
+    stub_0002e8f4();
 }
 
 }

@@ -11,7 +11,17 @@ void* fn_0027c4f0(void);
 void fn_0027cc1c(void*, void*);
 void fn_00281d00(void*);
 void fn_00283c94(void*);
+static void __attribute__((noinline)) stub_0028cf90(void) { __asm__ volatile (""); }
+static void __attribute__((noinline)) stub_0028d030(int p0, int p1, int p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
 void fn_005312ec(void*);
+
+void fn_0028d0e8(int a0, int a1) {
+    stub_0028d030((int)(a0), (int)(0), (int)(a1));
+}
+
+void fn_0028d1ec(void) {
+    stub_0028cf90();
+}
 
 struct unk_0028d204_a0 {
     char pad_0[4416];

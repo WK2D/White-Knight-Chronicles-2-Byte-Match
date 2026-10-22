@@ -8,6 +8,34 @@ static void* __attribute__((noinline)) stub_005965c0(int p0, u32 p1) { void* r; 
 static void* __attribute__((noinline)) stub_00596638(int p0, void* p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 void fn_00b37fa8(void*, int, u32);
 
+void fn_00ba22dc(void* a0) {
+    int v0;
+    for (v0 = 0; v0 < 27; v0++) {
+        FIELD(float, (char*)a0 + (int)(v0) * 4, 0) = -10000000.0f;
+    }
+}
+
+void fn_00ba2350(void* a0) {
+    int v0;
+    for (v0 = 0; v0 < 19; v0++) {
+        FIELD(float, (char*)a0 + (int)(v0) * 4, 0) = -10000000.0f;
+    }
+}
+
+void fn_00ba23c4(void* a0) {
+    int v0;
+    for (v0 = 0; v0 < 12; v0++) {
+        FIELD(float, (char*)a0 + (int)(v0) * 4, 0) = -10000000.0f;
+    }
+}
+
+struct unk_00ba2434_a0 {
+    float f_0;
+};
+void fn_00ba2434(unk_00ba2434_a0* a0) {
+    a0->f_0 = -10000000.0f;
+}
+
 void* fn_00ba2734(int a0, int a1) {
     void* t0;
     void* t1;

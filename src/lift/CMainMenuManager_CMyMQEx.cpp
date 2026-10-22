@@ -7,8 +7,34 @@ extern "C" {
 void fn_00046118(void*);
 void fn_005d9a98(u32);
 void fn_005dabc0(u32);
+void fn_005db844(u32);
 void fn_005e2734(u32);
+void fn_005e4c44(u32);
 static void __attribute__((noinline)) stub_0063a0b8(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
+
+struct unk_0063b000_a0 {
+    char pad_0[272];
+    u32 f_110;
+    u32 f_114;
+    char pad_118[4];
+    u32 f_11c;
+    char pad_120[4];
+    u32 f_124;
+};
+int fn_0063b000(unk_0063b000_a0* a0) {
+    if ((int)(a0->f_110) != (int)(2)) {
+        return (int)(-1);
+    }
+    if ((int)(a0->f_114) == (int)(3)) {
+        return (int)(-1);
+    }
+    if ((int)(((u32)(a0->f_124) >> 27) & 0x1) != (int)(0)) {
+        return (int)(-1);
+    }
+    fn_005db844((u32)(a0->f_11c));
+    fn_005e4c44((u32)(a0->f_11c));
+    return (int)(0);
+}
 
 struct unk_0063b078_a0 {
     char pad_0[272];

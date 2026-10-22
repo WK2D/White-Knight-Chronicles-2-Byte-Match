@@ -14,4 +14,15 @@ int fn_005b98a0(unk_005b98a0_a0* a0) {
     return (int)(1);
 }
 
+struct unk_005b9aa4_a1 {
+    float f_0;
+};
+struct unk_005b9aa4_a2 {
+    float f_0;
+};
+void fn_005b9aa4(int a0, unk_005b9aa4_a1* a1, unk_005b9aa4_a2* a2) {
+    a1->f_0 = 0.5f;
+    a2->f_0 = 0.5f;
+}
+
 }

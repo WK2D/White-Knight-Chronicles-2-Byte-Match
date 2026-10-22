@@ -4,6 +4,7 @@
 
 extern "C" {
 
+void fn_0004fb2c(int, int, int, float, float, float, int);
 
 struct unk_00691e50_a0 {
     char pad_0[5404];
@@ -423,6 +424,15 @@ struct unk_00692778_a0 {
 };
 void fn_00692778(unk_00692778_a0* a0, int a1) {
     FIELD(u8, (int)(a0->f_290) + 65536, -19662) = (u8)(a1);
+}
+
+struct unk_00692994_g3f8c;
+struct unk_00692994_g3f8c {
+    float f_0;
+};
+extern unk_00692994_g3f8c g_00692994_0;
+void fn_00692994(int a0, int a1, int a2, int a3) {
+    fn_0004fb2c((int)(a1), (int)(a2), (int)(a3), (float)(0.30000001192092896f), (float)(2.0f), (float)((&g_00692994_0)->f_0), (int)(4));
 }
 
 }

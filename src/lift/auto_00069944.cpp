@@ -5,6 +5,31 @@
 extern "C" {
 
 static void __attribute__((noinline)) stub_0006a0a8(int p0, int p1, int p2, int p3, int p4, int p5) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4), "r"(p5)); }
+void fn_00b37f88(void*, int, int);
+void fn_00fcac90(void*);
+int fn_00fcadb0(void);
+
+int fn_00069e6c(void) {
+    int t0;
+    t0 = fn_00fcadb0();
+    return (int)(t0);
+}
+
+struct unk_00069e94_a0 {
+    char pad_0[31];
+    u8 f_1f;
+    char pad_20[1056];
+    u32 f_440;
+};
+int fn_00069e94(unk_00069e94_a0* a0, int a1) {
+    int t2;
+    fn_00b37f88((void*)(a0), (int)(a1), (int)(31));
+    a0->f_1f = (u8)(0);
+    a0->f_440 = (u32)(0);
+    fn_00fcac90((void*)(a0));
+    t2 = fn_00fcadb0();
+    return (int)(t2);
+}
 
 int fn_0006a15c(void) {
     stub_0006a0a8((int)(6), (int)(0), (int)(0), (int)(0), (int)(0), (int)(0));

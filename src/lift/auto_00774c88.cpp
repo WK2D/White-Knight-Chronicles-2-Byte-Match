@@ -30,6 +30,14 @@ void* fn_00774dbc(int a0) {
     return (void*)(v0);
 }
 
+struct unk_00774df0_a0 {
+    char pad_0[4848];
+    u16 f_12f0;
+};
+u32 fn_00774df0(unk_00774df0_a0* a0) {
+    return (u32)(((u32)(a0->f_12f0) >> 1) & 0x7fff);
+}
+
 void* fn_00774e94(int a0) {
     int t0;
     int v0;
@@ -40,6 +48,14 @@ void* fn_00774e94(int a0) {
         v0 = (int)(0);
     }
     return (void*)(v0);
+}
+
+struct unk_00774ec8_a0 {
+    char pad_0[4856];
+    u16 f_12f8;
+};
+u32 fn_00774ec8(unk_00774ec8_a0* a0) {
+    return (u32)(((u32)(a0->f_12f8) >> 1) & 0x7fff);
 }
 
 struct unk_00775364_a0 {

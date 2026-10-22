@@ -10,4 +10,12 @@ u16 fn_00614f4c(int a0, int a1) {
     return (u16)(FIELD(u16, (char*)g_00614f4c_0 + (int)((u32)(a1) << 1), 0));
 }
 
+struct unk_00614f64_a0 {
+    char pad_0[200];
+    u32 f_c8;
+};
+u32 fn_00614f64(unk_00614f64_a0* a0) {
+    return (u32)(((u32)(a0->f_c8) >> 27) & 0x1);
+}
+
 }

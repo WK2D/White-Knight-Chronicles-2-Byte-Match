@@ -4,8 +4,35 @@
 
 extern "C" {
 
+static int __attribute__((noinline)) stub_00416238(void) { int r; __asm__ volatile ("" : "=r"(r)); return r; }
+static void __attribute__((noinline)) stub_00417ec4(int p0, u32 p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 int fn_0041e244(void*, void*, u32, int);
 void* fn_0058ecc0(void);
+
+struct unk_0041726c_l;
+struct unk_0041726c_a0_0;
+struct unk_0041726c_l {
+    u32 f_0;
+};
+struct unk_0041726c_a0_0 {
+    u32 f_0;
+};
+struct unk_0041726c_a0 {
+    unk_0041726c_a0_0* f_0;
+};
+u32 fn_0041726c(unk_0041726c_a0* a0) {
+    void* t0;
+    int t1;
+    unk_0041726c_l l;
+    t0 = fn_0058ecc0();
+    if ((int)(t0) != (int)(0)) {
+        t1 = fn_0041e244((void*)((&l)), (void*)(t0), (u32)(a0->f_0->f_0), (int)(0));
+        if ((int)(l.f_0) != (int)(0)) {
+            return (u32)((u32)((u32)(FIELD(u8, l.f_0, 17)) >> 4) & 0xf);
+        }
+    }
+    return (u32)((u32)(0) & 0xf);
+}
 
 struct unk_004172fc_l;
 struct unk_004172fc_a0_0;
@@ -30,6 +57,46 @@ int fn_004172fc(unk_004172fc_a0* a0) {
         }
     }
     return (int)(0);
+}
+
+struct unk_0041738c_a0_0;
+struct unk_0041738c_a0_0 {
+    char pad_0[16];
+    u32 f_10;
+};
+struct unk_0041738c_a0 {
+    unk_0041738c_a0_0* f_0;
+};
+int fn_0041738c(unk_0041738c_a0* a0) {
+    int t0;
+    int v0;
+    t0 = stub_00416238();
+    if ((int)((u32)(t0) & 0xff) == (int)(6)) {
+        v0 = (int)(((u32)(a0->f_0->f_10) >> 2) & 0x1);
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
+struct unk_004173d8_a0_0;
+struct unk_004173d8_a0_0 {
+    char pad_0[16];
+    u32 f_10;
+};
+struct unk_004173d8_a0 {
+    unk_004173d8_a0_0* f_0;
+};
+int fn_004173d8(unk_004173d8_a0* a0) {
+    int t0;
+    int v0;
+    t0 = stub_00416238();
+    if ((int)((u32)(t0) & 0xff) == (int)(5)) {
+        v0 = (int)(((u32)(a0->f_0->f_10) >> 2) & 0x1);
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
 }
 
 struct unk_00417c70_a0 {
@@ -58,6 +125,13 @@ void* fn_00417c90(unk_00417c90_a0* a0) {
 
 int fn_00417ebc(int a0, int a1, int a2) {
     return (int)(a2);
+}
+
+struct unk_00417efc_a1 {
+    u32 f_0;
+};
+void fn_00417efc(int a0, unk_00417efc_a1* a1) {
+    stub_00417ec4((int)(a0), (u32)(a1->f_0));
 }
 
 struct unk_00417f94_a0 {

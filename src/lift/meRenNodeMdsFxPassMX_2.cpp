@@ -26,4 +26,14 @@ u32 fn_00a5f210(unk_00a5f210_a0* a0, int a1) {
     return (u32)(FIELD(u32, (int)((u32)(a1) << 2) + (int)(a0->f_20), 0));
 }
 
+struct unk_00a61714_a0 {
+    char pad_0[4];
+    float f_4;
+    float f_8;
+    float f_c;
+};
+u32 fn_00a61714(unk_00a61714_a0* a0) {
+    return (u32)((u32)(((a0->f_8 - a0->f_4) / a0->f_c) + 1.0f));
+}
+
 }

@@ -16,4 +16,21 @@ int fn_00c16450(unk_00c16450_a0* a0) {
     return (int)(0);
 }
 
+struct unk_00c16464_a0 {
+    char pad_0[12];
+    u32 f_c;
+    char pad_10[4];
+    u32 f_14;
+};
+u32 fn_00c16464(unk_00c16464_a0* a0) {
+    int v0;
+    if ((int)(a0->f_14) >= (int)(0)) {
+        a0->f_c = (u32)(a0->f_14);
+        v0 = (int)(0);
+    } else {
+        v0 = (int)(1);
+    }
+    return (u32)((u32)(v0) & 0x1);
+}
+
 }

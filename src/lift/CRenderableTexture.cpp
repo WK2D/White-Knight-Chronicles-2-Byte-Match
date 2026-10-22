@@ -5,9 +5,18 @@
 extern "C" {
 
 void fn_000c3a44(void);
+static void __attribute__((noinline)) stub_000dbc44(int p0, int p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 
 void fn_000da974(void) {
     fn_000c3a44();
+}
+
+void fn_000dbcc4(int a0) {
+    stub_000dbc44((int)(a0), (int)(0));
+}
+
+void fn_000dbccc(int a0) {
+    stub_000dbc44((int)(a0), (int)(0));
 }
 
 struct unk_000dbe24_a0 {

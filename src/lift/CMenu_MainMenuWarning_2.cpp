@@ -8,6 +8,21 @@ void fn_00046268(void*);
 void* fn_00048e54(int, int, int);
 void fn_0004db70(int, void*, void*, int, u16, u16);
 void fn_0004dbec(int, void*, void*, int, u16);
+int fn_0004f768(int, int, int, int);
+static void __attribute__((noinline)) stub_0066eb74(void* p0, int p1, int p2, u16 p3) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); }
+static void __attribute__((noinline)) stub_0066ebe4(int p0, int p1, int p2, int p3, int p4, int p5) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4), "r"(p5)); }
+
+void fn_0066ed00(int a0, int a1, int a2) {
+    stub_0066ebe4((int)(a0), (int)(a1), (int)(a2), (int)(640), (int)(360), (int)(1));
+}
+
+void fn_0066ed10(void* a0, int a1, int a2, int a3) {
+    int t0;
+    int t1;
+    t0 = fn_0004f768((int)(a1), (int)(a2), (int)(149), (int)(0));
+    t1 = fn_0004f768((int)(a1), (int)(a2), (int)(149), (int)(8));
+    stub_0066eb74((void*)(a0), (int)(a1), (int)(a2), (u16)((u16)((int)((int)(t0) + (int)(a3)) + (int)(t1))));
+}
 
 void fn_0066edb0(int a0, int a1, void* a2, int a3, int a4) {
     void* t0;

@@ -4,6 +4,19 @@
 
 extern "C" {
 
+static void __attribute__((noinline)) stub_004a94b0(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
+static void __attribute__((noinline)) stub_004a98bc(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
+void fn_0053c77c(float);
+
+struct unk_004a9c44_a0 {
+    char pad_0[12];
+    float f_c;
+};
+void fn_004a9c44(unk_004a9c44_a0* a0) {
+    fn_0053c77c((float)(a0->f_c));
+    stub_004a98bc((void*)(a0));
+    stub_004a94b0((void*)(a0));
+}
 
 struct unk_004b2324_a0 {
     virtual void vf0();

@@ -27,6 +27,14 @@ void* fn_00ad5a68(unk_00ad5a68_a0* a0) {
     return (void*)((char*)((char*)a0 + (int)(a0->f_3c)) + (int)(a0->f_10));
 }
 
+struct unk_00ad5a84_a0 {
+    char pad_0[48];
+    u16 f_30;
+};
+u32 fn_00ad5a84(unk_00ad5a84_a0* a0) {
+    return (u32)((u32)(a0->f_30) & 0x1);
+}
+
 struct unk_00ad5a90_a0 {
     char pad_0[16];
     u32 f_10;

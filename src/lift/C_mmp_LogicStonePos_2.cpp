@@ -13,4 +13,20 @@ u32 fn_00bae350(unk_00bae350_a0* a0) {
     return (u32)((u32)(a0->f_4) & 0x10000);
 }
 
+struct unk_00bae35c_a0 {
+    char pad_0[4];
+    u16 f_4;
+};
+u32 fn_00bae35c(unk_00bae35c_a0* a0) {
+    return (u32)((u32)(a0->f_4) & 0x1);
+}
+
+struct unk_00bae368_a0 {
+    char pad_0[4];
+    u32 f_4;
+};
+u32 fn_00bae368(unk_00bae368_a0* a0) {
+    return (u32)(((u32)(a0->f_4) >> 18) & 0x1);
+}
+
 }

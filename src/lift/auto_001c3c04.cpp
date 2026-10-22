@@ -5,6 +5,8 @@
 extern "C" {
 
 int fn_00041b48(void*);
+static void __attribute__((noinline)) stub_001c3c5c(int p0, int p1, int p2, int p3) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); }
+static void __attribute__((noinline)) stub_001c479c(int p0, int p1, int p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
 
 struct unk_001c3c04_gm4dd4;
 struct unk_001c3c04_gm4dd4 {
@@ -19,6 +21,178 @@ int fn_001c3c04(void* a0, int a1) {
     t0 = fn_00041b48((void*)(a0));
     (&g_001c3c04_0)->f_0 = (u8)(t0);
     return (int)(0);
+}
+
+void fn_001c3e54(int a0, int a1) {
+    stub_001c3c5c((int)(15), (int)(a0), (int)(a1), (int)(256));
+}
+
+void fn_001c3e68(int a0, int a1) {
+    stub_001c3c5c((int)(14), (int)(a0), (int)(a1), (int)(256));
+}
+
+void fn_001c3e7c(int a0, int a1) {
+    stub_001c3c5c((int)(13), (int)(a0), (int)(a1), (int)(256));
+}
+
+void fn_001c3e90(int a0, int a1) {
+    stub_001c3c5c((int)(12), (int)(a0), (int)(a1), (int)(256));
+}
+
+void fn_001c3ea4(int a0, int a1) {
+    stub_001c3c5c((int)(11), (int)(a0), (int)(a1), (int)(256));
+}
+
+void fn_001c3eb8(int a0, int a1) {
+    stub_001c3c5c((int)(18), (int)(a0), (int)(a1), (int)(0));
+}
+
+void fn_001c3ecc(int a0, int a1) {
+    stub_001c3c5c((int)(17), (int)(a0), (int)(a1), (int)(0));
+}
+
+void fn_001c3ee0(int a0, int a1) {
+    stub_001c3c5c((int)(16), (int)(a0), (int)(a1), (int)(0));
+}
+
+void fn_001c3ef4(int a0, int a1) {
+    stub_001c3c5c((int)(15), (int)(a0), (int)(a1), (int)(0));
+}
+
+void fn_001c3f08(int a0, int a1) {
+    stub_001c3c5c((int)(14), (int)(a0), (int)(a1), (int)(0));
+}
+
+void fn_001c3f1c(int a0, int a1) {
+    stub_001c3c5c((int)(13), (int)(a0), (int)(a1), (int)(0));
+}
+
+void fn_001c3f30(int a0, int a1) {
+    stub_001c3c5c((int)(12), (int)(a0), (int)(a1), (int)(0));
+}
+
+void fn_001c3f44(int a0, int a1) {
+    stub_001c3c5c((int)(11), (int)(a0), (int)(a1), (int)(0));
+}
+
+void fn_001c3f58(int a0, int a1) {
+    stub_001c3c5c((int)(9), (int)(a0), (int)(a1), (int)(0));
+}
+
+void fn_001c3f6c(int a0, int a1) {
+    stub_001c3c5c((int)(10), (int)(a0), (int)(a1), (int)(0));
+}
+
+void fn_001c3f80(int a0, int a1) {
+    stub_001c3c5c((int)(8), (int)(a0), (int)(a1), (int)(0));
+}
+
+void fn_001c3f94(int a0, int a1) {
+    stub_001c3c5c((int)(7), (int)(a0), (int)(a1), (int)(0));
+}
+
+void fn_001c3fa8(int a0, int a1) {
+    stub_001c3c5c((int)(6), (int)(a0), (int)(a1), (int)(0));
+}
+
+void fn_001c3fbc(int a0, int a1) {
+    stub_001c3c5c((int)(5), (int)(a0), (int)(a1), (int)(0));
+}
+
+void fn_001c3fd0(int a0, int a1) {
+    stub_001c3c5c((int)(4), (int)(a0), (int)(a1), (int)(0));
+}
+
+void fn_001c3fe4(int a0, int a1) {
+    stub_001c3c5c((int)(3), (int)(a0), (int)(a1), (int)(0));
+}
+
+void fn_001c3ff8(int a0, int a1) {
+    stub_001c3c5c((int)(2), (int)(a0), (int)(a1), (int)(0));
+}
+
+void fn_001c400c(int a0, int a1) {
+    stub_001c3c5c((int)(1), (int)(a0), (int)(a1), (int)(0));
+}
+
+void fn_001c4020(int a0, int a1) {
+    stub_001c3c5c((int)(0), (int)(a0), (int)(a1), (int)(0));
+}
+
+void fn_001c48a4(int a0, int a1) {
+    stub_001c479c((int)(18), (int)(a0), (int)(a1));
+}
+
+void fn_001c48b4(int a0, int a1) {
+    stub_001c479c((int)(17), (int)(a0), (int)(a1));
+}
+
+void fn_001c48c4(int a0, int a1) {
+    stub_001c479c((int)(16), (int)(a0), (int)(a1));
+}
+
+void fn_001c48d4(int a0, int a1) {
+    stub_001c479c((int)(15), (int)(a0), (int)(a1));
+}
+
+void fn_001c48e4(int a0, int a1) {
+    stub_001c479c((int)(14), (int)(a0), (int)(a1));
+}
+
+void fn_001c48f4(int a0, int a1) {
+    stub_001c479c((int)(13), (int)(a0), (int)(a1));
+}
+
+void fn_001c4904(int a0, int a1) {
+    stub_001c479c((int)(12), (int)(a0), (int)(a1));
+}
+
+void fn_001c4914(int a0, int a1) {
+    stub_001c479c((int)(11), (int)(a0), (int)(a1));
+}
+
+void fn_001c4924(int a0, int a1) {
+    stub_001c479c((int)(9), (int)(a0), (int)(a1));
+}
+
+void fn_001c4934(int a0, int a1) {
+    stub_001c479c((int)(10), (int)(a0), (int)(a1));
+}
+
+void fn_001c4944(int a0, int a1) {
+    stub_001c479c((int)(8), (int)(a0), (int)(a1));
+}
+
+void fn_001c4954(int a0, int a1) {
+    stub_001c479c((int)(7), (int)(a0), (int)(a1));
+}
+
+void fn_001c4964(int a0, int a1) {
+    stub_001c479c((int)(6), (int)(a0), (int)(a1));
+}
+
+void fn_001c4974(int a0, int a1) {
+    stub_001c479c((int)(5), (int)(a0), (int)(a1));
+}
+
+void fn_001c4984(int a0, int a1) {
+    stub_001c479c((int)(4), (int)(a0), (int)(a1));
+}
+
+void fn_001c4994(int a0, int a1) {
+    stub_001c479c((int)(3), (int)(a0), (int)(a1));
+}
+
+void fn_001c49a4(int a0, int a1) {
+    stub_001c479c((int)(2), (int)(a0), (int)(a1));
+}
+
+void fn_001c49b4(int a0, int a1) {
+    stub_001c479c((int)(1), (int)(a0), (int)(a1));
+}
+
+void fn_001c49c4(int a0, int a1) {
+    stub_001c479c((int)(0), (int)(a0), (int)(a1));
 }
 
 }

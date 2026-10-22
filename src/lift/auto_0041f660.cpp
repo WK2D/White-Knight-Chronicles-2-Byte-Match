@@ -4,6 +4,31 @@
 
 extern "C" {
 
+void* fn_00076a98(void*, int, int, int, int, int);
+static void __attribute__((noinline)) stub_00417e70(void* p0, void* p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
+static void __attribute__((noinline)) stub_0041e010(void* p0, void* p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
+static void __attribute__((noinline)) stub_0041e150(void* p0, void* p1, u8 p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
+
+extern char g_0041f660_0[];
+void fn_0041f660(void* a0, int a1) {
+    void* t0;
+    t0 = fn_00076a98((void*)(g_0041f660_0), (int)(a1), (int)(0), (int)(-1), (int)(0), (int)(0));
+    stub_00417e70((void*)(a0), (void*)(t0));
+}
+
+extern char g_0041f6ac_0[];
+void fn_0041f6ac(void* a0, int a1) {
+    void* t0;
+    t0 = fn_00076a98((void*)(g_0041f6ac_0), (int)(a1), (int)(0), (int)(-1), (int)(0), (int)(0));
+    stub_0041e010((void*)(a0), (void*)(t0));
+}
+
+extern char g_0041f7e8_0[];
+void fn_0041f7e8(void* a0, int a1, int a2) {
+    void* t0;
+    t0 = fn_00076a98((void*)(g_0041f7e8_0), (int)(a1), (int)(0), (int)(-1), (int)(0), (int)(0));
+    stub_0041e150((void*)(a0), (void*)(t0), (u8)((u8)a2));
+}
 
 struct unk_0041fd6c_a0 {
     char pad_0[16];

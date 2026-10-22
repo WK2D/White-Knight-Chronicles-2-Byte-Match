@@ -54,6 +54,17 @@ void fn_005acc40(unk_005acc40_a0* a0, int a1) {
     a0->f_3 = (u8)((u32)(a1) | (u32)(a0->f_3));
 }
 
+struct unk_005acc58_a0_0;
+struct unk_005acc58_a0_0 {
+    u16 f_0;
+};
+struct unk_005acc58_a0 {
+    unk_005acc58_a0_0* f_0;
+};
+u32 fn_005acc58(unk_005acc58_a0* a0) {
+    return (u32)(((u32)(a0->f_0->f_0) >> 3) & 0x1);
+}
+
 struct unk_005acccc_a0 {
     u32 f_0;
 };

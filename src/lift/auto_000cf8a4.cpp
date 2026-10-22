@@ -4,7 +4,18 @@
 
 extern "C" {
 
+static void __attribute__((noinline)) stub_000cfd30(float p0, float p1, float p2, float p3) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); }
 void fn_000d668c(u32);
+
+struct unk_000cfdf4_a2 {
+    float f_0;
+    float f_4;
+    float f_8;
+    float f_c;
+};
+void fn_000cfdf4(int a0, int a1, unk_000cfdf4_a2* a2) {
+    stub_000cfd30((float)(a2->f_0), (float)(a2->f_4), (float)(a2->f_8), (float)(a2->f_c));
+}
 
 struct unk_000d00a0_a0 {
     char pad_0[56];

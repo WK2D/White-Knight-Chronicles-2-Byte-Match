@@ -79,6 +79,25 @@ void* fn_005d7a1c(unk_005d7a1c_a0* a0) {
     return (void*)(v0);
 }
 
+struct unk_005d7a3c_a0_100c;
+struct unk_005d7a3c_a0_100c {
+    char pad_0[1844];
+    u32 f_734;
+};
+struct unk_005d7a3c_a0 {
+    char pad_0[4108];
+    unk_005d7a3c_a0_100c* f_100c;
+};
+int fn_005d7a3c(unk_005d7a3c_a0* a0) {
+    int v1;
+    if ((int)(a0->f_100c) != (int)(0)) {
+        v1 = (int)(((u32)(a0->f_100c->f_734) >> 29) & 0x1);
+    } else {
+        v1 = (int)(0);
+    }
+    return (int)(v1);
+}
+
 struct unk_005d7cf4_a0_101c;
 struct unk_005d7cf4_a0_101c {
     char pad_0[2204];

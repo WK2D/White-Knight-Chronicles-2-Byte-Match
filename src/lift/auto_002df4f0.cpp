@@ -7,8 +7,13 @@ extern "C" {
 static void* __attribute__((noinline)) stub_002dddac(int p0, int p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static int __attribute__((noinline)) stub_002ddf50(int p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static int __attribute__((noinline)) stub_002de23c(int p0, int p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
+static void __attribute__((noinline)) stub_002e996c(int p0, float p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
+static void __attribute__((noinline)) stub_002e9a64(int p0, float p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
+static void __attribute__((noinline)) stub_002ea384(int p0, int p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 static int __attribute__((noinline)) stub_002ea45c(int p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static void __attribute__((noinline)) stub_002eb058(int p0, void* p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 static int __attribute__((noinline)) stub_002eb0d0(int p0, u8 p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
+static void __attribute__((noinline)) stub_002eb590(int p0, int p1, int p2, int p3, int p4, int p5) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4), "r"(p5)); }
 int fn_00b38eb8(void*, void*, void*, int);
 
 extern char g_002df4f0_0[];
@@ -187,6 +192,10 @@ void* fn_002e1d68(int a0) {
     return (void*)(v0);
 }
 
+void fn_002ea3bc(int a0) {
+    stub_002ea384((int)(a0), (int)(-1));
+}
+
 int fn_002ea500(int a0) {
     int t0;
     int t1;
@@ -201,6 +210,12 @@ int fn_002ea500(int a0) {
     return (int)(v0);
 }
 
+void fn_002eb088(int a0) {
+    stub_002eb058((int)(a0), (void*)(-1));
+    stub_002e9a64((int)(a0), (float)(1.0f));
+    stub_002e996c((int)(a0), (float)(0.0f));
+}
+
 int fn_002eb2cc(int a0, int a1, int a2) {
     int t0;
     int t1;
@@ -213,6 +228,14 @@ int fn_002eb2cc(int a0, int a1, int a2) {
         v0 = (int)(0);
     }
     return (int)(v0);
+}
+
+void fn_002ec008(int a0, int a1, int a2, int a3, int a4) {
+    stub_002eb590((int)(a0), (int)(a1), (int)(a2), (int)(a3), (int)(a4), (int)(0));
+}
+
+void fn_002ec16c(int a0, int a1, int a2, int a3, int a4) {
+    stub_002eb590((int)(a0), (int)(a1), (int)(a2), (int)(a3), (int)(a4), (int)(0));
 }
 
 }

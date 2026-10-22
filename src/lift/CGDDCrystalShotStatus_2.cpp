@@ -128,4 +128,42 @@ int fn_003bdfc8(unk_003bdfc8_a0* a0) {
     return (int)(v0);
 }
 
+struct unk_003be014_a0_8;
+struct unk_003be014_a0_8 {
+    char pad_0[64];
+    u32 f_40;
+};
+struct unk_003be014_a0 {
+    char pad_0[8];
+    unk_003be014_a0_8* f_8;
+};
+int fn_003be014(unk_003be014_a0* a0) {
+    int v1;
+    if ((int)(a0->f_8) != (int)(0)) {
+        v1 = (int)(((u32)(a0->f_8->f_40) >> 30) & 0x1);
+    } else {
+        v1 = (int)(0);
+    }
+    return (int)(v1);
+}
+
+struct unk_003be150_a0_8;
+struct unk_003be150_a0_8 {
+    char pad_0[64];
+    u32 f_40;
+};
+struct unk_003be150_a0 {
+    char pad_0[8];
+    unk_003be150_a0_8* f_8;
+};
+int fn_003be150(unk_003be150_a0* a0) {
+    int v1;
+    if ((int)(a0->f_8) != (int)(0)) {
+        v1 = (int)(((u32)(a0->f_8->f_40) >> 29) & 0x1);
+    } else {
+        v1 = (int)(0);
+    }
+    return (int)(v1);
+}
+
 }

@@ -4,6 +4,11 @@
 
 extern "C" {
 
+static void __attribute__((noinline)) stub_0012d334(void) { __asm__ volatile (""); }
+
+void fn_0012d83c(void) {
+    stub_0012d334();
+}
 
 struct unk_0012d9d8_a0 {
     char pad_0[608];

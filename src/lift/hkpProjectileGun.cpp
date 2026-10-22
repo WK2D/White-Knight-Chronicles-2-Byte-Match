@@ -7,6 +7,30 @@ extern "C" {
 int fn_00d65558(u32, void*);
 void fn_00d7c768(void*, u32, int);
 
+struct unk_00eb1658_a0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual void vf5();
+    virtual void vf6();
+    virtual void vf7();
+    virtual void vf8();
+    virtual void vf9();
+    virtual void vf10(void*, void*);
+    char pad_4[32];
+    float f_24;
+    float f_28;
+};
+void fn_00eb1658(unk_00eb1658_a0* a0, void* a1, void* a2) {
+    if (a0->f_28 > 0.0f) {
+        return;
+    }
+    a0->f_28 = a0->f_24;
+    a0->vf10((void*)(a1), (void*)(a2));
+}
+
 struct unk_00eb19ec_a0 {
     char pad_0[12];
     u8 f_c;

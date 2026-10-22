@@ -11,6 +11,8 @@ void fn_00937800(u32, void*, int);
 void fn_0093ca54(u32, int, int);
 static void __attribute__((noinline)) stub_00975e20(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
 static void __attribute__((noinline)) stub_0097615c(void* p0, u32 p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
+static void __attribute__((noinline)) stub_009766a0(int p0, int p1, int p2, int p3) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); }
+static void __attribute__((noinline)) stub_00976810(int p0, int p1, int p2, int p3) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); }
 
 struct unk_00976430_a0 {
     u32 f_0;
@@ -29,6 +31,14 @@ int fn_00976430(unk_00976430_a0* a0) {
         v1 = (int)(-1);
     }
     return (int)(v1);
+}
+
+void fn_009767a0(int a0, int a1) {
+    stub_009766a0((int)(a0), (int)(a1), (int)(0), (int)(0));
+}
+
+void fn_00976990(int a0, int a1) {
+    stub_00976810((int)(a0), (int)(a1), (int)(0), (int)(0));
 }
 
 struct unk_00976a78_a0 {

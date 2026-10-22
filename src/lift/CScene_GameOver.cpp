@@ -16,4 +16,24 @@ void fn_003213a8(unk_003213a8_a0* a0) {
     a0->vf4();
 }
 
+struct unk_00321408_a0 {
+    char pad_0[12];
+    u32 f_c;
+    float f_10;
+    u32 f_14;
+};
+void fn_00321408(unk_00321408_a0* a0, int a1) {
+    a0->f_c = (u32)(a1);
+    a0->f_14 = (u32)(0);
+    if ((int)(a1) == (int)(0)) {
+        a0->f_10 = 3.5f;
+        return;
+    }
+    if ((int)(a1) != (int)(1)) {
+        a0->f_10 = 0.5f;
+        return;
+    }
+    a0->f_10 = 60.0f;
+}
+
 }

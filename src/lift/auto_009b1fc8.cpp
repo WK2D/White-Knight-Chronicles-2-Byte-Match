@@ -35,4 +35,16 @@ u32 fn_009b2f70(void) {
     return (u32)((u32)(v1) & (u32)(5));
 }
 
+u32 fn_009b3f00(void* a0) {
+    int v0;
+    if ((int)(a0) != (int)(0)) {
+        for (v0 = 0; v0 < 16; v0++) {
+            if ((int)(FIELD(u32, (char*)a0 + (int)(v0) * 4, 0)) != (int)(0)) {
+                return (u32)((u32)(0) & 0x1);
+            }
+        }
+    }
+    return (u32)((u32)(1) & 0x1);
+}
+
 }

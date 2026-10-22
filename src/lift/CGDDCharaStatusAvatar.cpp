@@ -4,6 +4,7 @@
 
 extern "C" {
 
+static void __attribute__((noinline)) stub_0037ebbc(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 
 struct unk_0038ac98_a0 {
     virtual void vf0();
@@ -285,6 +286,10 @@ void fn_0038ac98(unk_0038ac98_a0* a0) {
     }
 }
 
+void fn_0038ae68(int a0) {
+    stub_0037ebbc((int)(a0));
+}
+
 struct unk_0038af18_a0 {
     char pad_0[4866];
     u8 f_1302;
@@ -299,6 +304,14 @@ struct unk_0038af24_a0 {
 };
 int fn_0038af24(unk_0038af24_a0* a0) {
     return (int)((int)(signed char)(a0->f_1301));
+}
+
+struct unk_0038af64_a0 {
+    char pad_0[4960];
+    u32 f_1360;
+};
+u32 fn_0038af64(unk_0038af64_a0* a0) {
+    return (u32)(((u32)(a0->f_1360) >> 23) & 0x1);
 }
 
 struct unk_0038afe4_a0 {
@@ -1010,6 +1023,17 @@ struct unk_0038b054_a0 {
 u16 fn_0038b054(unk_0038b054_a0* a0) {
     a0->vf341();
     return (u16)(a0->f_1036);
+}
+
+struct unk_0038b0fc_a0 {
+    char pad_0[5072];
+    u32 f_13d0;
+};
+void fn_0038b0fc(unk_0038b0fc_a0* a0) {
+    if ((int)(((u32)(a0->f_13d0) >> 30) & 0x1) != (int)(0)) {
+        return;
+    }
+    a0->f_13d0 = (u32)((u32)(a0->f_13d0) | 0x40000000);
 }
 
 struct unk_0038b118_a0 {

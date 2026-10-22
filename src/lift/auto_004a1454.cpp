@@ -7,6 +7,7 @@ extern "C" {
 int fn_00041b48(int);
 void fn_00041bcc(int);
 void fn_003ec650(u32, int);
+static void __attribute__((noinline)) stub_004a159c(void) { __asm__ volatile (""); }
 
 struct unk_004a1454_gm62c;
 struct unk_004a1454_gm62c_0;
@@ -26,6 +27,10 @@ int fn_004a1454(void) {
 int fn_004a1574(int a0) {
     fn_00041bcc((int)(a0));
     return (int)(1);
+}
+
+void fn_004a15e4(void) {
+    stub_004a159c();
 }
 
 struct unk_004a1a9c_gm62c;

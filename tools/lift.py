@@ -24,6 +24,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from common import BUILD, ROOT, Original, load_functions, load_units
+OPD = (0x12d9b90, 0x72388)     # function descriptors: {code, toc}
 
 OUT = ROOT / 'src' / 'lift'
 LOADS = {32: 'u32', 34: 'u8', 40: 'u16', 42: 's16', 48: 'float', 50: 'double'}
@@ -200,6 +201,8 @@ class Lifter:
         self.active_paths = set()         # return paths being lifted (guards against cycles)
         self.made_call = False            # a call has clobbered r3-r12 somewhere before
         self.uses_locals = False          # the frame holds locals: one struct l
+        self.tails = set()                # indexes of tail calls (b to another function)
+        self.budget = 16 * len(words)     # instructions step() may execute in total
         self.slots = {}                   # stack offset -> (kind, value): int/float conversions go through memory         # blocks outside a loop that only lead to a return
         self.polymorphic = set()          # argument registers whose offset-0 word is a vptr
         self.vclasses = {}                # class tag -> {slot: (rtype, [types])}
@@ -313,6 +316,11 @@ class Lifter:
                 return Value(f'l.f_{off:x}', ctype)
             return Value(f'FIELD({ctype}, &l, {off})', ctype)
         if base.ctype == 'toc':
+            if ctype in ('float', 'double') and CONSTANTS is not None:   # a literal kept in the TOC
+                value = CONSTANTS(self.address, d + getattr(base, 'toc_off', 0), ctype)
+                if value is None:
+                    raise Fail('TOC constant')
+                return Value(value, ctype)
             if ctype != 'u32':
                 raise Fail('non-word TOC load')
             return self.address_of_global(d + getattr(base, 'toc_off', 0))
@@ -371,8 +379,12 @@ class Lifter:
                 leaders |= {t, i + 1}
             elif op == 18 and not x & 1:                   # b (not bl)
                 t = i + ((branch_target(0, x)) >> 2)
-                if x & 2 or t > n or t < 0:
-                    raise Fail('outside branch')
+                if x & 2:
+                    raise Fail('absolute branch')
+                if t >= n or t < 0:                        # a tail call: return f(...)
+                    self.tails.add(i)
+                    leaders.add(i + 1)
+                    continue
                 if t <= i:
                     back.append((i, t))
                 leaders |= {t, i + 1}
@@ -401,7 +413,7 @@ class Lifter:
                     t = j + (s16(x & 0xFFFC) >> 2)
                 elif x >> 26 == 18 and not x & 1:
                     t = j + (branch_target(0, x) >> 2)
-                if t is None or h <= t <= l + 1 or t in self.back_returns:
+                if t is None or h <= t <= l + 1 or t in self.back_returns or j in self.tails:
                     continue
                 if t > l + 1 and self.only_returns(t) and not any(
                         h2 <= x_ <= l2 for x_ in self.successors(t) for h2, l2 in self.loops.items()):
@@ -450,7 +462,7 @@ class Lifter:
         out, todo = set(), [b]
         while todo:
             x = todo.pop()
-            if x in out or x >= len(self.words):
+            if x in out or x >= len(self.words) or x < 0:
                 continue
             out.add(x)
             last = self.block_end(x) - 1
@@ -561,6 +573,11 @@ class Lifter:
             return 'ret', None
         if op == 16:
             return 'cond', (last + (s16(t & 0xFFFC) >> 2), last + 1, self.branch_condition(t))
+        if op == 18 and not t & 1 and last in self.tails:
+            # GCC only tail-calls functions that share the TOC, which here
+            # means the same source file: a static callee.
+            self.call(branch_target(self.address + 4 * last, t), local=True)
+            return 'ret', None
         if op == 18 and not t & 1:
             return 'goto', last + (branch_target(0, t) >> 2)
         if op == 19:
@@ -937,6 +954,9 @@ class Lifter:
             b = join
 
     def step(self, w, i):
+        self.budget -= 1
+        if self.budget < 0:                  # inlined shared tails can multiply without end
+            raise Fail('too much duplicated code')
         op = w >> 26
         rt, ra, rb = (w >> 21) & 31, (w >> 16) & 31, (w >> 11) & 31
         d = s16(w & 0xFFFF)
@@ -1184,6 +1204,17 @@ class Lifter:
                 t = 'u16' if mb == 48 else 'u8'
                 self.set(ra, Value(f'({t}){paren(v)}', t))
                 return
+            # Bit fields of a 32-bit value: rotate right by 64 - sh, keep 64 - mb bits.
+            n, width = (64 - sh) % 64, 64 - mb
+            if sh == 1 and mb == 63:                                 # the sign bit (sign-extended value)
+                n, width = 31, 1
+            if mb > 32 and n + width <= 32:
+                x = f'(u32)({v.text})' if n == 0 else f'((u32)({v.text}) >> {n})'
+                text = x if n + width == 32 else f'{x} & {(1 << width) - 1:#x}'
+                self.set(ra, Value(text, 'u32', 1))
+                if w & 1:
+                    self.cr[0] = (self.gpr[ra], '0', 'signed')
+                return
             raise Fail('rldicl')
         if op == 18 and w & 3 == 1:
             following = self.words[i + 1] if i + 1 < len(self.words) else BLR
@@ -1213,6 +1244,8 @@ class Lifter:
                 break       # clobbered or never set: the callee's apparent read is not a real argument
             else:
                 args.append(self.reg(r))
+        if any(a is None for a in args + floats):
+            raise Fail('float argument never set')
         return args + floats
 
     def call(self, target, local=False):
@@ -1540,15 +1573,35 @@ def lift(address, words, arity):
         return None
 
 
+CONSTANTS = None    # (function, TOC offset, 'float'/'double') -> C literal; set by arity_finder
+
+
 def arity_finder(orig, functions):
     """arity(target) for Lifter: (integer, float) argument counts the callee
     reads. A TOC-switching linker stub (std r2,40(r1); addis/addi r2; b f)
     has the arity of the function it jumps to."""
+    global CONSTANTS
+    opd = orig.read(*OPD)
+    toc_of = {}
+    for i in range(0, len(opd) - 7, 8):
+        code, toc = struct.unpack_from('>II', opd, i)
+        toc_of[code] = toc
+    def constant(function, d, ctype):
+        if function not in toc_of:
+            return None
+        size = 4 if ctype == 'float' else 8
+        value = struct.unpack('>f' if size == 4 else '>d', orig.read(toc_of[function] + d, size))[0]
+        if value != value or abs(value) == float('inf'):
+            return None
+        return f'{float(value)!r}f' if size == 4 else repr(float(value))
+    CONSTANTS = constant
     cache = {}
     def arity(target):
         if target not in cache:
             size = functions.get(target)
             words = struct.unpack(f'>{size // 4}I', orig.read(target, size)) if size else ()
+            if not words:                                    # linker stubs are not in the function list
+                words = struct.unpack('>4I', orig.read(target, 16))
             if len(words) == 4 and words[0] == 0xF8410028 and words[1] >> 16 == 0x3C42 \
                     and words[2] >> 16 == 0x3842 and words[3] >> 26 == 18 and not words[3] & 3:
                 real = target + 12 + branch_target(0, words[3])

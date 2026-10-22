@@ -4,7 +4,27 @@
 
 extern "C" {
 
+static void __attribute__((noinline)) stub_00a574fc(void) { __asm__ volatile (""); }
 int fn_00b42128(void*, int);
+int fn_00fcb1b0(void);
+
+void fn_00a5758c(void) {
+    stub_00a574fc();
+}
+
+void fn_00a57590(void) {
+    stub_00a574fc();
+}
+
+extern char g_00a57b08_0[];
+void fn_00a57b08(void) {
+    int t0;
+    int t1;
+    t0 = fn_00fcb1b0();
+    if ((int)(t0) != (int)(0)) {
+        t1 = fn_00b42128((void*)(g_00a57b08_0), (int)(0));
+    }
+}
 
 extern char g_00a57b44_0[];
 u32 fn_00a57b44(int a0) {

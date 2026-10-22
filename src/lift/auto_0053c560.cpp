@@ -215,6 +215,94 @@ u8 fn_005436f4(unk_005436f4_a0* a0) {
     return (u8)((u8)t0);
 }
 
+struct unk_0054372c_a0 {
+    char pad_0[4];
+    u32 f_4;
+    u16 f_8;
+};
+u32 fn_0054372c(unk_0054372c_a0* a0) {
+    int t0;
+    t0 = fn_00562900((u32)(a0->f_4), (void*)((int)(short)(a0->f_8)));
+    return (u32)((u32)(t0) & 0x1);
+}
+
+struct unk_00543764_a0 {
+    char pad_0[4];
+    u32 f_4;
+    u16 f_8;
+};
+u32 fn_00543764(unk_00543764_a0* a0) {
+    int t0;
+    t0 = fn_00562900((u32)(a0->f_4), (void*)((int)(short)(a0->f_8)));
+    return (u32)(((u32)(t0) >> 7) & 0x1);
+}
+
+struct unk_0054379c_a0 {
+    char pad_0[4];
+    u32 f_4;
+    u16 f_8;
+};
+u32 fn_0054379c(unk_0054379c_a0* a0) {
+    int t0;
+    t0 = fn_00562900((u32)(a0->f_4), (void*)((int)(short)(a0->f_8)));
+    return (u32)(((u32)(t0) >> 6) & 0x1);
+}
+
+struct unk_005437d4_a0 {
+    char pad_0[4];
+    u32 f_4;
+    u16 f_8;
+};
+u32 fn_005437d4(unk_005437d4_a0* a0) {
+    int t0;
+    t0 = fn_00562900((u32)(a0->f_4), (void*)((int)(short)(a0->f_8)));
+    return (u32)(((u32)(t0) >> 5) & 0x1);
+}
+
+struct unk_0054380c_a0 {
+    char pad_0[4];
+    u32 f_4;
+    u16 f_8;
+};
+u32 fn_0054380c(unk_0054380c_a0* a0) {
+    int t0;
+    t0 = fn_00562900((u32)(a0->f_4), (void*)((int)(short)(a0->f_8)));
+    return (u32)(((u32)(t0) >> 3) & 0x1);
+}
+
+struct unk_00543844_a0 {
+    char pad_0[4];
+    u32 f_4;
+    u16 f_8;
+};
+u32 fn_00543844(unk_00543844_a0* a0) {
+    int t0;
+    t0 = fn_00562900((u32)(a0->f_4), (void*)((int)(short)(a0->f_8)));
+    return (u32)(((u32)(t0) >> 2) & 0x1);
+}
+
+struct unk_0054387c_a0 {
+    char pad_0[4];
+    u32 f_4;
+    u16 f_8;
+};
+u32 fn_0054387c(unk_0054387c_a0* a0) {
+    int t0;
+    t0 = fn_00562900((u32)(a0->f_4), (void*)((int)(short)(a0->f_8)));
+    return (u32)(((u32)(t0) >> 4) & 0x1);
+}
+
+struct unk_005438b4_a0 {
+    char pad_0[4];
+    u32 f_4;
+    u16 f_8;
+};
+u32 fn_005438b4(unk_005438b4_a0* a0) {
+    int t0;
+    t0 = fn_00562900((u32)(a0->f_4), (void*)((int)(short)(a0->f_8)));
+    return (u32)(((u32)(t0) >> 1) & 0x1);
+}
+
 struct unk_005438ec_a0 {
     char pad_0[4];
     u32 f_4;

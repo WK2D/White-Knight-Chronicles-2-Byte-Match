@@ -7,6 +7,45 @@ extern "C" {
 static void* __attribute__((noinline)) stub_0090b804(void) { void* r; __asm__ volatile ("" : "=r"(r)); return r; }
 void fn_00b41748(void*, int);
 
+int fn_0090ce14(void* a0) {
+    void* t0;
+    int v1;
+    t0 = stub_0090b804();
+    if ((int)(FIELD(u32, (int)(FIELD(u32, t0, 4)) + (int)(FIELD(u32, t0, 24)), 4)) != (int)(0)) {
+        v1 = (int)(((u32)(FIELD(u32, FIELD(u32, (int)(FIELD(u32, t0, 4)) + (int)(FIELD(u32, t0, 24)), 4), 72)) >> 3) & 0x1);
+    } else {
+        v1 = (int)(0);
+    }
+    fn_00b41748((void*)(a0), (int)(v1));
+    return (int)(1);
+}
+
+int fn_0090ceec(void* a0) {
+    void* t0;
+    int v1;
+    t0 = stub_0090b804();
+    if ((int)(FIELD(u32, (int)(FIELD(u32, t0, 4)) + (int)(FIELD(u32, t0, 24)), 4)) != (int)(0)) {
+        v1 = (int)(((u32)(FIELD(u32, FIELD(u32, (int)(FIELD(u32, t0, 4)) + (int)(FIELD(u32, t0, 24)), 4), 72)) >> 2) & 0x1);
+    } else {
+        v1 = (int)(0);
+    }
+    fn_00b41748((void*)(a0), (int)(v1));
+    return (int)(1);
+}
+
+int fn_0090cf5c(void* a0) {
+    void* t0;
+    int v1;
+    t0 = stub_0090b804();
+    if ((int)(FIELD(u32, (int)(FIELD(u32, t0, 4)) + (int)(FIELD(u32, t0, 24)), 4)) != (int)(0)) {
+        v1 = (int)(((u32)(FIELD(u32, FIELD(u32, (int)(FIELD(u32, t0, 4)) + (int)(FIELD(u32, t0, 24)), 4), 72)) >> 1) & 0x1);
+    } else {
+        v1 = (int)(0);
+    }
+    fn_00b41748((void*)(a0), (int)(v1));
+    return (int)(1);
+}
+
 int fn_0090cfcc(void* a0) {
     void* t0;
     int v1;

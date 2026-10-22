@@ -78,4 +78,11 @@ void fn_00ba2218(int a0) {
     fn_00b37fa8((int)(a0), (int)(0), (int)(40));
 }
 
+void fn_00ba2268(void* a0) {
+    int v0;
+    for (v0 = 0; v0 < 37; v0++) {
+        FIELD(float, (char*)a0 + (int)(v0) * 4, 0) = -10000000.0f;
+    }
+}
+
 }

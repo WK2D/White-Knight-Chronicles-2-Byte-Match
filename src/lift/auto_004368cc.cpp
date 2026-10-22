@@ -5,8 +5,13 @@
 extern "C" {
 
 int fn_0036dee0(void*);
+static void __attribute__((noinline)) stub_004368cc(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 int fn_00b96d54(void);
 int fn_00b96ecc(void);
+
+void fn_00436904(int a0) {
+    stub_004368cc((int)(a0));
+}
 
 struct unk_00436a44_gmbcc;
 struct unk_00436a44_gmbcc_0;

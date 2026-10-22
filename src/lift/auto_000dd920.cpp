@@ -4,6 +4,20 @@
 
 extern "C" {
 
+int fn_00fc9870(int);
+int fn_00fc9890(int);
+
+int fn_000ddcb8(void) {
+    int t0;
+    t0 = fn_00fc9870((int)(61));
+    return (int)(t0);
+}
+
+int fn_000ddce4(void) {
+    int t0;
+    t0 = fn_00fc9890((int)(61));
+    return (int)(t0);
+}
 
 struct unk_000dec58_gm6cd8;
 struct unk_000dec58_gm6cd8_0;

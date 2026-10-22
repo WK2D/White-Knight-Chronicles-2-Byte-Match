@@ -15,6 +15,14 @@ void fn_00d5ecac(unk_00d5ecac_a0* a0, int a1) {
     a0->f_13a = (u8)((u32)(1) << (int)(a1));
 }
 
+struct unk_00d5ecbc_a0 {
+    char pad_0[314];
+    u8 f_13a;
+};
+u32 fn_00d5ecbc(unk_00d5ecbc_a0* a0) {
+    return (u32)(((u32)(a0->f_13a) >> 1) & 0x7f);
+}
+
 void fn_00d5edb4(void* a0, int a1) {
     fn_00dc6fe0((void*)((char*)a0 + 16), (int)(304), (int)(a1));
 }

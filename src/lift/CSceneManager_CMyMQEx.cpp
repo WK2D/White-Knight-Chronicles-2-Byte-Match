@@ -5,6 +5,24 @@
 extern "C" {
 
 void fn_000750a4(int, int);
+static void __attribute__((noinline)) stub_002eb4f8(int p0, int p1, int p2, int p3, int p4, int p5, int p6) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4), "r"(p5), "r"(p6)); }
+
+void fn_002ecc9c(int a0, int a1, int a2, int a3, int a4) {
+    stub_002eb4f8((int)(a0), (int)(4106), (int)(4), (int)(a1), (int)(a2), (int)(a3), (int)(a4));
+    stub_002eb4f8((int)(a0), (int)(4115), (int)(5), (int)(a1), (int)(a2), (int)(a3), (int)(a4));
+    stub_002eb4f8((int)(a0), (int)(6220), (int)(17), (int)(a1), (int)(a2), (int)(a3), (int)(a4));
+}
+
+void fn_002ecda8(int a0, int a1, int a2, int a3, int a4) {
+    stub_002eb4f8((int)(a0), (int)(4106), (int)(4), (int)(a1), (int)(a2), (int)(a3), (int)(a4));
+    stub_002eb4f8((int)(a0), (int)(4115), (int)(5), (int)(a1), (int)(a2), (int)(a3), (int)(a4));
+}
+
+void fn_002ece9c(int a0, int a1, int a2, int a3, int a4) {
+    stub_002eb4f8((int)(a0), (int)(4106), (int)(4), (int)(a1), (int)(a2), (int)(a3), (int)(a4));
+    stub_002eb4f8((int)(a0), (int)(4115), (int)(5), (int)(a1), (int)(a2), (int)(a3), (int)(a4));
+    stub_002eb4f8((int)(a0), (int)(6215), (int)(16), (int)(a1), (int)(a2), (int)(a3), (int)(a4));
+}
 
 struct unk_002ed0b8_a1 {
     u32 f_0;

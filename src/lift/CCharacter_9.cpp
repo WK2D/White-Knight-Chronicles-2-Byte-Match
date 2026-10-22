@@ -30,4 +30,25 @@ void* fn_001607fc(int a0, unk_001607fc_a1* a1) {
     return (void*)(v0);
 }
 
+struct unk_0016091c_a1 {
+    u32 f_0;
+    char pad_4[28];
+    u16 f_20;
+};
+int fn_0016091c(int a0, unk_0016091c_a1* a1) {
+    int v1;
+    int v2;
+    if (a1 != 0) {
+        if ((int)(a1->f_0) != (int)(0)) {
+            v1 = (int)((u32)(((u32)(a1->f_20) >> 4) & 0x1) ^ 0x1);
+        } else {
+            v1 = (int)(0);
+        }
+        v2 = (int)(v1);
+    } else {
+        v2 = (int)(0);
+    }
+    return (int)(v2);
+}
+
 }

@@ -5,6 +5,8 @@
 extern "C" {
 
 void* fn_00076a98(void*, int, int, int, int, int);
+static void __attribute__((noinline)) stub_003191bc(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
+static void __attribute__((noinline)) stub_003192b0(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
 
 struct unk_0031de38_a0 {
     virtual void vf0();
@@ -45,6 +47,20 @@ void* fn_0031de38(unk_0031de38_a0* a0, int a1) {
     t0 = fn_00076a98((void*)(g_0031de38_0), (int)(a1), (int)(0), (int)(-1), (int)(0), (int)(0));
     t1 = a0->vf29((void*)(t0));
     return (void*)(t1);
+}
+
+extern char g_0031e03c_0[];
+void fn_0031e03c(int a0) {
+    void* t0;
+    t0 = fn_00076a98((void*)(g_0031e03c_0), (int)(a0), (int)(0), (int)(-1), (int)(0), (int)(0));
+    stub_003191bc((void*)(t0));
+}
+
+extern char g_0031e084_0[];
+void fn_0031e084(int a0) {
+    void* t0;
+    t0 = fn_00076a98((void*)(g_0031e084_0), (int)(a0), (int)(0), (int)(-1), (int)(0), (int)(0));
+    stub_003192b0((void*)(t0));
 }
 
 }

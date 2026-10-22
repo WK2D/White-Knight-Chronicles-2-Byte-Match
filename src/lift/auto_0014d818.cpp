@@ -6,6 +6,18 @@ extern "C" {
 
 static void* __attribute__((noinline)) stub_0014e260(int p0) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 
+int fn_0014e2b8(int a0) {
+    void* t0;
+    t0 = stub_0014e260((int)(a0));
+    if ((int)(t0) != (int)(0)) {
+        if (FIELD(float, t0, 64) > 0.0f) {
+            return (int)(1);
+        }
+        return (int)(0);
+    }
+    return (int)(0);
+}
+
 int fn_0014e308(int a0) {
     void* t0;
     int v0;

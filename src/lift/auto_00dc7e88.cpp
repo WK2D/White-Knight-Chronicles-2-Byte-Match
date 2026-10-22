@@ -13,4 +13,12 @@ void fn_00dc8780(unk_00dc8780_a0* a0, int a1) {
     a0->f_42 = (u8)((u32)(1) << (int)(a1));
 }
 
+struct unk_00dc8790_a0 {
+    char pad_0[66];
+    u8 f_42;
+};
+u32 fn_00dc8790(unk_00dc8790_a0* a0) {
+    return (u32)(((u32)(a0->f_42) >> 1) & 0x7f);
+}
+
 }

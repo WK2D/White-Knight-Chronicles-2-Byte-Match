@@ -4,7 +4,74 @@
 
 extern "C" {
 
+static void __attribute__((noinline)) stub_0091c778(void* p0, void* p1, u8 p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
+static void __attribute__((noinline)) stub_0091cb20(int p0) { __asm__ volatile ("" : : "r"(p0)); }
+static void __attribute__((noinline)) stub_0091cb40(int p0) { __asm__ volatile ("" : : "r"(p0)); }
+static void __attribute__((noinline)) stub_0091cf64(int p0) { __asm__ volatile ("" : : "r"(p0)); }
+static void __attribute__((noinline)) stub_0091cf98(int p0) { __asm__ volatile ("" : : "r"(p0)); }
+static void __attribute__((noinline)) stub_0091cfd0(int p0, u32 p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
+static void __attribute__((noinline)) stub_0091d2a8(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
+static void __attribute__((noinline)) stub_0091d3a4(void) { __asm__ volatile (""); }
 static void* __attribute__((noinline)) stub_0091d458(void) { void* r; __asm__ volatile ("" : "=r"(r)); return r; }
+void* fn_00b3cd18(void*, int, int, int, int, int);
+
+extern char g_0091c910_0[];
+void fn_0091c910(void* a0, int a1, int a2) {
+    void* t0;
+    t0 = fn_00b3cd18((void*)(g_0091c910_0), (int)(a1), (int)(0), (int)(-1), (int)(0), (int)(0));
+    stub_0091c778((void*)(a0), (void*)(t0), (u8)((u8)a2));
+}
+
+void fn_0091cb38(int a0) {
+    stub_0091cb20((int)(a0));
+}
+
+void fn_0091cb3c(int a0) {
+    stub_0091cb20((int)(a0));
+}
+
+void fn_0091cb58(int a0) {
+    stub_0091cb40((int)(a0));
+}
+
+void fn_0091cb5c(int a0) {
+    stub_0091cb40((int)(a0));
+}
+
+void fn_0091cf90(int a0) {
+    stub_0091cf64((int)(a0));
+}
+
+void fn_0091cf94(int a0) {
+    stub_0091cf64((int)(a0));
+}
+
+void fn_0091cfc4(int a0) {
+    stub_0091cf98((int)(a0));
+}
+
+void fn_0091cfc8(int a0) {
+    stub_0091cf98((int)(a0));
+}
+
+struct unk_0091d014_a1 {
+    u32 f_0;
+};
+void fn_0091d014(int a0, unk_0091d014_a1* a1) {
+    stub_0091cfd0((int)(a0), (u32)(a1->f_0));
+}
+
+void fn_0091d2e0(void* a0) {
+    stub_0091d2a8((void*)((char*)a0 + 4));
+}
+
+void fn_0091d2ec(void* a0) {
+    stub_0091d2a8((void*)((char*)a0 + 4));
+}
+
+void fn_0091d454(void) {
+    stub_0091d3a4();
+}
 
 void* fn_0091d49c(void) {
     void* t0;
