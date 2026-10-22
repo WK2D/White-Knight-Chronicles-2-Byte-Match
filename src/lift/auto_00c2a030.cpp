@@ -4,6 +4,8 @@
 
 extern "C" {
 
+void fn_00c2b388(void*, int);
+void fn_00c2b898(void*, int);
 
 int fn_00c2a0f8(int a0, int a1) {
     return (int)(a1);
@@ -49,11 +51,41 @@ void fn_00c2a668(unk_00c2a668_a0* a0) {
             v1 = (void*)((int)((u32)(v2) << 3) + (int)(a0->f_0));
             v2 = (int)(v2 + 1);
         } while (--v3 != 0);
-        v4 = (void*)((int)((u32)(v2) << 3) + (int)(a0->f_0));
+        v4 = (void*)(v1);
     } else {
         v4 = (void*)(a0->f_8);
     }
     a0->f_4 = (u32)((u32)(a0->f_4) & 0x80000000);
+}
+
+void fn_00c2b4e0(void* a0, int a1) {
+    int v0;
+    int v1;
+    if ((int)((int)((u32)(a1) << 1) + (int)(a1)) > (int)(4)) {
+        v0 = (int)(4);
+        do {
+            v0 = (int)((u32)(v0) << 1);
+        } while ((int)((int)((u32)(a1) << 1) + (int)(a1)) > (int)(v0));
+        v1 = (int)(v0);
+    } else {
+        v1 = (int)(4);
+    }
+    fn_00c2b388((void*)(a0), (int)(v1));
+}
+
+void fn_00c2b9f0(void* a0, int a1) {
+    int v0;
+    int v1;
+    if ((int)((int)((u32)(a1) << 1) + (int)(a1)) > (int)(4)) {
+        v0 = (int)(4);
+        do {
+            v0 = (int)((u32)(v0) << 1);
+        } while ((int)((int)((u32)(a1) << 1) + (int)(a1)) > (int)(v0));
+        v1 = (int)(v0);
+    } else {
+        v1 = (int)(4);
+    }
+    fn_00c2b898((void*)(a0), (int)(v1));
 }
 
 }

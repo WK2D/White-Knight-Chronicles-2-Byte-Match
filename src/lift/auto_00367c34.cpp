@@ -4,13 +4,18 @@
 
 extern "C" {
 
+void* fn_00039e20(u32);
 void fn_0003aedc(void*, void*);
-void fn_0003b004(int, int, int, int, int, int, void*, void*);
+void fn_0003b004(void*, int);
+int fn_002f2e54(u32, int, void*, int, int, int, void*);
+void* fn_003fd2c4(u32, int, void*, int, int, int, void*, void*);
+void fn_003fd388(u32, void*, void*);
 void* fn_00404b48(void);
 void* fn_00404bc8(void);
 void* fn_00408460(void);
 void* fn_00408528(void);
 void* fn_00408628(void);
+void fn_0040cbb8(u32, void*, void*, int, int, int, void*, void*);
 
 void fn_0036808c(void* a0) {
     void* t0;
@@ -42,9 +47,155 @@ void fn_0036818c(void* a0) {
     fn_0003aedc((void*)(a0), (void*)(t0));
 }
 
-extern char g_0036bdd8_0[];
-void fn_0036bdd8(int a0, int a1, int a2, int a3, int a4, int a5) {
-    fn_0003b004((int)(a0), (int)((int)FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_0036bdd8_0, 0), 108), 8), 252), 4), 128)), (int)(a2), (int)(a3), (int)(a4), (int)(a5), (void*)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_0036bdd8_0, 0), 108), 8), 252)), (void*)(FIELD(u32, FIELD(u32, FIELD(u32, g_0036bdd8_0, 0), 108), 8)));
+struct unk_0036b4f0_a2 {
+    u32 f_0;
+};
+extern char g_0036b4f0_0[];
+void fn_0036b4f0(void* a0, int a1, unk_0036b4f0_a2* a2, int a3, int a4, int a5) {
+    void* t0;
+    int t1;
+    int v0;
+    if ((int)(a1) > (int)(0)) {
+        t0 = fn_00039e20((u32)(a2->f_0));
+        t1 = fn_002f2e54((u32)(FIELD(u32, FIELD(u32, g_0036b4f0_0, 0), 0)), (int)(7), (void*)(t0), (int)(0), (int)(a4), (int)(a5), (void*)(FIELD(u32, g_0036b4f0_0, 0)));
+        v0 = (int)(t1);
+    } else {
+        v0 = (int)(a0);
+    }
+    fn_0003b004((void*)(a0), (int)(1));
+}
+
+struct unk_0036b55c_a2 {
+    u32 f_0;
+};
+extern char g_0036b55c_0[];
+void fn_0036b55c(void* a0, int a1, unk_0036b55c_a2* a2, int a3, int a4, int a5) {
+    void* t0;
+    int t1;
+    int v0;
+    if ((int)(a1) > (int)(0)) {
+        t0 = fn_00039e20((u32)(a2->f_0));
+        t1 = fn_002f2e54((u32)(FIELD(u32, FIELD(u32, g_0036b55c_0, 0), 0)), (int)(6), (void*)(t0), (int)(0), (int)(a4), (int)(a5), (void*)(FIELD(u32, g_0036b55c_0, 0)));
+        v0 = (int)(t1);
+    } else {
+        v0 = (int)(a0);
+    }
+    fn_0003b004((void*)(a0), (int)(1));
+}
+
+struct unk_0036b5c8_a2 {
+    u32 f_0;
+};
+extern char g_0036b5c8_0[];
+void fn_0036b5c8(void* a0, int a1, unk_0036b5c8_a2* a2, int a3, int a4, int a5) {
+    void* t0;
+    int t1;
+    int v0;
+    if ((int)(a1) > (int)(0)) {
+        t0 = fn_00039e20((u32)(a2->f_0));
+        t1 = fn_002f2e54((u32)(FIELD(u32, FIELD(u32, g_0036b5c8_0, 0), 0)), (int)(4), (void*)(t0), (int)(0), (int)(a4), (int)(a5), (void*)(FIELD(u32, g_0036b5c8_0, 0)));
+        v0 = (int)(t1);
+    } else {
+        v0 = (int)(a0);
+    }
+    fn_0003b004((void*)(a0), (int)(1));
+}
+
+struct unk_0036b634_a2 {
+    u32 f_0;
+};
+extern char g_0036b634_0[];
+void fn_0036b634(void* a0, int a1, unk_0036b634_a2* a2, int a3, int a4, int a5) {
+    void* t0;
+    int t1;
+    int v0;
+    if ((int)(a1) > (int)(0)) {
+        t0 = fn_00039e20((u32)(a2->f_0));
+        t1 = fn_002f2e54((u32)(FIELD(u32, FIELD(u32, g_0036b634_0, 0), 0)), (int)(5), (void*)(t0), (int)(0), (int)(a4), (int)(a5), (void*)(FIELD(u32, g_0036b634_0, 0)));
+        v0 = (int)(t1);
+    } else {
+        v0 = (int)(a0);
+    }
+    fn_0003b004((void*)(a0), (int)(1));
+}
+
+struct unk_0036b6a0_a2 {
+    u32 f_0;
+};
+extern char g_0036b6a0_0[];
+void fn_0036b6a0(void* a0, int a1, unk_0036b6a0_a2* a2, int a3, int a4, int a5) {
+    void* t0;
+    int t1;
+    int v0;
+    if ((int)(a1) > (int)(0)) {
+        t0 = fn_00039e20((u32)(a2->f_0));
+        t1 = fn_002f2e54((u32)(FIELD(u32, FIELD(u32, g_0036b6a0_0, 0), 0)), (int)(3), (void*)(t0), (int)(0), (int)(a4), (int)(a5), (void*)(FIELD(u32, g_0036b6a0_0, 0)));
+        v0 = (int)(t1);
+    } else {
+        v0 = (int)(a0);
+    }
+    fn_0003b004((void*)(a0), (int)(1));
+}
+
+struct unk_0036b70c_a2 {
+    u32 f_0;
+};
+extern char g_0036b70c_0[];
+void fn_0036b70c(void* a0, int a1, unk_0036b70c_a2* a2, int a3, int a4, int a5) {
+    void* t0;
+    int t1;
+    int v0;
+    if ((int)(a1) > (int)(0)) {
+        t0 = fn_00039e20((u32)(a2->f_0));
+        t1 = fn_002f2e54((u32)(FIELD(u32, FIELD(u32, g_0036b70c_0, 0), 0)), (int)(2), (void*)(t0), (int)(0), (int)(a4), (int)(a5), (void*)(FIELD(u32, g_0036b70c_0, 0)));
+        v0 = (int)(t1);
+    } else {
+        v0 = (int)(a0);
+    }
+    fn_0003b004((void*)(a0), (int)(1));
+}
+
+struct unk_0036b778_a2 {
+    u32 f_0;
+};
+extern char g_0036b778_0[];
+void fn_0036b778(void* a0, int a1, unk_0036b778_a2* a2, int a3, int a4, int a5) {
+    void* t0;
+    int t1;
+    int v0;
+    if ((int)(a1) > (int)(0)) {
+        t0 = fn_00039e20((u32)(a2->f_0));
+        t1 = fn_002f2e54((u32)(FIELD(u32, FIELD(u32, g_0036b778_0, 0), 0)), (int)(1), (void*)(t0), (int)(0), (int)(a4), (int)(a5), (void*)(FIELD(u32, g_0036b778_0, 0)));
+        v0 = (int)(t1);
+    } else {
+        v0 = (int)(a0);
+    }
+    fn_0003b004((void*)(a0), (int)(1));
+}
+
+struct unk_0036c608_a2 {
+    u32 f_0;
+    u32 f_4;
+};
+extern char g_0036c608_0[];
+void fn_0036c608(int a0, int a1, unk_0036c608_a2* a2, int a3, int a4, int a5) {
+    void* t0;
+    void* t1;
+    t0 = fn_00039e20((u32)(a2->f_0));
+    t1 = fn_00039e20((u32)(a2->f_4));
+    fn_0040cbb8((u32)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_0036c608_0, 0), 108), 8), 276)), (void*)(t0), (void*)(t1), (int)(a3), (int)(a4), (int)(a5), (void*)(FIELD(u32, g_0036c608_0, 0)), (void*)(FIELD(u32, FIELD(u32, FIELD(u32, g_0036c608_0, 0), 108), 8)));
+}
+
+struct unk_0036cdfc_a2 {
+    u32 f_0;
+};
+extern char g_0036cdfc_0[];
+void fn_0036cdfc(int a0, int a1, unk_0036cdfc_a2* a2, int a3, int a4, int a5) {
+    void* t0;
+    void* t1;
+    t0 = fn_003fd2c4((u32)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_0036cdfc_0, 0), 108), 8), 240)), (int)(a1), (void*)(a2), (int)(a3), (int)(a4), (int)(a5), (void*)(FIELD(u32, g_0036cdfc_0, 0)), (void*)(FIELD(u32, FIELD(u32, FIELD(u32, g_0036cdfc_0, 0), 108), 8)));
+    t1 = fn_00039e20((u32)(a2->f_0));
+    fn_003fd388((u32)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_0036cdfc_0, 0), 108), 8), 240)), (void*)(FIELD(u32, t0, 104)), (void*)(t1));
 }
 
 struct unk_0036df7c_a0 {

@@ -6,6 +6,47 @@ extern "C" {
 
 static void* __attribute__((noinline)) stub_0091d458(void) { void* r; __asm__ volatile ("" : "=r"(r)); return r; }
 
+struct unk_0091d01c_a0 {
+    char pad_0[20480];
+    u32 f_5000;
+};
+int fn_0091d01c(unk_0091d01c_a0* a0, int a1) {
+    void* v0;
+    void* v1;
+    int v2;
+    u32 v3;
+    int v4;
+    void* v5;
+    void* v6;
+    if ((int)(a0->f_5000) != (int)(0)) {
+        v0 = (void*)(a0->f_5000);
+        v1 = (void*)((char*)a0 + 18432);
+        v3 = (u32)(a0->f_5000);
+        for (;;) {
+            if ((int)(FIELD(u32, v1, 0)) != (int)(0)) {
+                if ((int)(FIELD(u32, FIELD(u32, v1, 0), 44)) == (int)(a1)) {
+                    return (int)(0);
+                }
+                v4 = (int)(FIELD(u32, FIELD(u32, v1, 0), 44));
+            } else {
+                v4 = (int)(FIELD(u32, v1, 0));
+            }
+            v0 = (void*)(v4);
+            v1 = (void*)((char*)v1 + 4);
+            v2 = (int)(FIELD(u32, v1, 0));
+            if (--v3 == 0) {
+                break;
+            }
+        }
+        v5 = (void*)(v0);
+        v6 = (void*)(v1);
+    } else {
+        v5 = (void*)(a0->f_5000);
+        v6 = (void*)(a0);
+    }
+    return (int)(1);
+}
+
 void* fn_0091d49c(void) {
     void* t0;
     int v0;

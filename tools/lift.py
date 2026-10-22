@@ -183,8 +183,14 @@ class Lifter:
         self.cr = {}                      # condition field -> (lhs, rhs, 'signed'|'unsigned'|'pointer')
         self.ctr = None                   # value moved to CTR (mtctr)
         self.ffresh = set()               # float argument registers written since the last call
-        self.loops = {}                   # loop header index -> latch index (the backward branch)
+        self.loops = {}                   # loop header index -> latch index (the last back edge)
         self.in_loop = []                 # headers of the loops being lifted
+        self.loop_vars = []               # per loop: register -> its variable
+        self.loop_exits = []              # per loop: how many break/continue/return statements
+        self.latch_cond = None
+        self.loop_broke = False
+        self.while_entry = {}             # test block -> header, for loops entered by a jump to their test
+        self.return_exits = set()         # blocks outside a loop that only lead to a return
         self.polymorphic = set()          # argument registers whose offset-0 word is a vptr
         self.vclasses = {}                # class tag -> {slot: (rtype, [types])}
         self.vars = []                    # merge variables: (type, name)
@@ -287,15 +293,15 @@ class Lifter:
                 t = i + (s16(x & 0xFFFC) >> 2)
                 if x & 3 or t > n or t < 0:
                     raise Fail('absolute, linked or outside conditional branch')
-                if t <= i:                                 # a loop latch: back to the header t
-                    if t in self.loops and self.loops[t] != i:
-                        raise Fail('two latches for one header')
-                    self.loops[t] = i
+                if t <= i:                                 # a back edge to the header t
+                    self.loops[t] = max(self.loops.get(t, i), i)
                 leaders |= {t, i + 1}
             elif op == 18 and not x & 1:                   # b (not bl)
                 t = i + ((branch_target(0, x)) >> 2)
-                if x & 2 or t <= i or t > n:
-                    raise Fail('backward or outside branch')
+                if x & 2 or t > n or t < 0:
+                    raise Fail('outside branch')
+                if t <= i:
+                    self.loops[t] = max(self.loops.get(t, i), i)
                 leaders |= {t, i + 1}
             elif op == 19:
                 xo = (x >> 1) & 0x3FF
@@ -306,22 +312,59 @@ class Lifter:
                 leaders.add(i + 1)
         self.leaders = sorted(l for l in leaders if l < n)
         for h, l in self.loops.items():
-            for j in range(h, l):                          # no other way into or out of the loop body
+            latch_block = self.leaders[bisect.bisect_right(self.leaders, l) - 1]
+            for j in range(h, l + 1):                      # exits: the block after the loop, or a return path
                 x = w[j]
+                t = None
                 if x >> 26 == 16:
                     t = j + (s16(x & 0xFFFC) >> 2)
-                    if not h <= t <= l + 1:
-                        raise Fail('branch out of a loop body')
                 elif x >> 26 == 18 and not x & 1:
                     t = j + (branch_target(0, x) >> 2)
-                    if not h <= t <= l + 1:
-                        raise Fail('jump out of a loop body')
-                elif x >> 26 == 19 and x != 0x4E800421:
-                    raise Fail('return from inside a loop')
+                if t is None or h <= t <= l + 1:
+                    continue
+                if t > l + 1 and self.only_returns(t) and not any(
+                        h2 <= x_ <= l2 for x_ in self.successors(t) for h2, l2 in self.loops.items()):
+                    self.return_exits.add(t)
+                    continue
+                raise Fail('branch out of a loop body')
+            for j in range(0, h):                          # the way in: the header, or a jump to the test
+                x = w[j]
+                t = None
+                if x >> 26 == 16:
+                    t = j + (s16(x & 0xFFFC) >> 2)
+                elif x >> 26 == 18 and not x & 1:
+                    t = j + (branch_target(0, x) >> 2)
+                if t is None or not h < t <= l:
+                    continue
+                if x >> 26 == 18 and j == h - 1 and t == latch_block and w[l] >> 26 == 16:
+                    self.while_entry[t] = h                # while (cond) { body }: enter at the test
+                    continue
+                raise Fail('jump into a loop body')
         self.region(0, None)
         if not self.ended:
             raise Fail('falls off the end')
         return self
+
+    def return_path(self, b):
+        """Lift a path from inside a loop that ends in a return, as plain
+        forward code (outside the loop's context)."""
+        saved = (self.in_loop, self.loop_vars, self.loop_exits)
+        self.in_loop, self.loop_vars, self.loop_exits = [], [], []
+        try:
+            self.region(b, None)
+        finally:
+            self.in_loop, self.loop_vars, self.loop_exits = saved
+        if not self.ended:
+            raise Fail('return path does not return')
+
+    def only_returns(self, b):
+        """Whether every path from block b ends in a return (no loop back)."""
+        for x in self.successors(b):
+            last = self.block_end(x) - 1
+            t = self.words[last]
+            if t >> 26 == 16 and s16(t & 0xFFFC) <= 0:
+                return False
+        return True
 
     def block_end(self, b):
         k = bisect.bisect_right(self.leaders, b)
@@ -342,7 +385,9 @@ class Lifter:
                 target = last + (s16(t & 0xFFFC) >> 2)
                 todo += ([target] if target > last else []) + [last + 1]
             elif op == 18 and not t & 1:
-                todo.append(last + (branch_target(0, t) >> 2))
+                target = last + (branch_target(0, t) >> 2)
+                if target > last:
+                    todo.append(target)
             elif op == 19 and t != 0x4E800421:
                 if (t >> 21) & 0x14 != 0x14:              # conditional return: may fall through
                     todo.append(last + 1)
@@ -463,23 +508,36 @@ class Lifter:
         out.discard(2)
         return out
 
-    def loop(self, header):
-        """Lift the loop at header as do { body } while (cond); return the exit block."""
+    def loop_updates(self):
+        """Assignments that give the loop variables their current values."""
+        out = []
+        for r, var in self.loop_vars[-1].items():
+            now = self.gpr[r]
+            if now is not None and now is not var:
+                out.append(f'{var.text} = ({CTYPES.get(var.ctype, "int")})({now.text});')
+        return out
+
+    def loop(self, header, test=None):
+        """Lift the loop at header; return the block after it. With test, the
+        loop is entered by a jump to its test block: while (cond) { body }."""
         latch = self.loops[header]
-        counted = self.branch_condition(self.words[latch]) == 'BDNZ'
+        exit_ = latch + 1
+        last = self.words[latch]
+        conditional = last >> 26 == 16
+        counted = conditional and self.branch_condition(last) == 'BDNZ'
+        written = self.written_in(header, exit_)
         carried = {}
-        for r in sorted(self.written_in(header, latch + 1)):
+        for r in sorted(written):
             v = self.gpr[r]
-            if v is None:
-                continue
-            ctype = 'int' if v.ctype in ('call',) else v.ctype
+            ctype = 'int' if v is None or v.ctype == 'call' else v.ctype
             name = f'v{len(self.vars)}'
             self.vars.append((CTYPES.get(ctype, 'int'), name))
-            self.stmts.append(f'{name} = ({CTYPES.get(ctype, "int")})({v.text});')
-            if v.call is not None:
-                v.call['used'] = True
+            if v is not None:
+                self.stmts.append(f'{name} = ({CTYPES.get(ctype, "int")})({v.text});')
+                if v.call is not None:
+                    v.call['used'] = True
             carried[r] = Value(name, ctype)
-            self.gpr[r] = carried[r]
+            self.gpr[r] = carried[r] if v is not None else None
         counter = None
         if counted:
             if self.ctr is None:
@@ -489,41 +547,77 @@ class Lifter:
             self.stmts.append(f'{counter} = (u32)({self.ctr.text});')
             self.ctr = None
         outer, body = self.stmts, []
+        if test is not None:
+            if counted:
+                raise Fail('counted while loop')
+            # The test block runs first, with the loop variables.
+            self.stmts = []
+            for i in range(test, latch):
+                self.step(self.words[i], i)
+            if self.stmts:
+                raise Fail('loop test with side effects')
+            cond = self.branch_condition(last)
+            self.stmts = body
+            self.in_loop.append(header)
+            self.loop_vars.append(carried)
+            self.loop_exits.append(0)
+            self.while_test = test
+            self.region(header, test)
+            self.loop_exits.pop()
+            if not self.ended:
+                body += self.loop_updates()
+            self.loop_vars.pop()
+            self.in_loop.pop()
+            self.stmts = outer
+            self.stmts.append(['while', cond, body])
+            for r in written:
+                self.gpr[r] = carried.get(r)
+            self.ended = False
+            self.loop_broke = False
+            return exit_
         self.stmts = body
         self.in_loop.append(header)
-        self.latch_state = None
-        self.region(header, latch + 1)
+        self.loop_vars.append(carried)
+        self.loop_exits.append(0)
+        self.latch_cond = None
+        self.region(header, exit_)
+        jumps = self.loop_exits.pop()           # breaks, continues and returns inside the body
+        reached_latch = self.latch_cond is not None
+        cond = None
+        if reached_latch:
+            updates = {}
+            for r, var in carried.items():
+                now = self.gpr[r]
+                if now is not None and now is not var:
+                    body.append(f'{var.text} = ({CTYPES.get(var.ctype, "int")})({now.text});')
+                    updates[id(now)] = var
+            if counted:
+                cond = f'--{counter} != 0'
+            else:
+                bi = (last >> 16) & 31
+                if (bi >> 2) not in self.cr:
+                    raise Fail('loop condition field never set')
+                a, b_, kind = self.cr[bi >> 2]
+                a = updates.get(id(a), a)
+                b_ = updates.get(id(b_), b_) if isinstance(b_, Value) else b_
+                self.cr[bi >> 2] = (a, b_, kind)
+                cond = self.branch_condition(last)
+        self.loop_vars.pop()
         self.in_loop.pop()
-        if self.latch_state is None:
-            raise Fail('loop body did not reach its latch')
-        # End of an iteration: the carried registers take their new values.
-        updates = {}
-        for r, var in carried.items():
-            now = self.gpr[r]
-            if now is None:
-                raise Fail('carried register clobbered')
-            if now is not var:
-                body.append(f'{var.text} = ({CTYPES.get(var.ctype, "int")})({now.text});')
-                updates[id(now)] = var
-        # The condition, in terms of the updated variables.
-        if counted:
-            cond = f'--{counter} != 0'
-        else:
-            word = self.words[latch]
-            bi = (word >> 16) & 31
-            if (bi >> 2) not in self.cr:
-                raise Fail('loop condition field never set')
-            a, b_, kind = self.cr[bi >> 2]
-            a = updates.get(id(a), a)
-            b_ = updates.get(id(b_), b_) if isinstance(b_, Value) else b_
-            self.cr[bi >> 2] = (a, b_, kind)
-            cond = self.branch_condition(word)
         self.stmts = outer
-        self.stmts.append(['do', body, cond])
-        for r in self.written_in(header, latch + 1):
-            if r not in carried:
-                self.gpr[r] = None
-        return latch + 1
+        if reached_latch and not jumps:
+            self.stmts.append(['do', body, cond])
+        else:
+            if reached_latch:
+                body.append(['if', negate(cond), ['break;'], []])
+            self.stmts.append(['for', body])
+        # After the loop: the loop variables; anything else the body wrote is unknown.
+        for r in written:
+            self.gpr[r] = carried.get(r)
+        exits = reached_latch or self.loop_broke
+        self.ended = not exits
+        self.loop_broke = False
+        return exit_
 
     def region(self, b, stop):
         """Lift blocks from b until stop (or a return), appending to self.stmts."""
@@ -532,8 +626,46 @@ class Lifter:
                 b = self.loop(b)
                 continue
             kind, data = self.run_block(b)
+            if kind == 'goto' and data in self.while_entry and self.while_entry[data] == self.block_end(b) \
+                    and self.while_entry[data] not in self.in_loop:
+                b = self.loop(self.while_entry[data], test=data)
+                continue
+            header = self.in_loop[-1] if self.in_loop else None
+            exit_ = self.loops[header] + 1 if header is not None else None
+            if kind == 'goto' and header is not None and data in self.return_exits:
+                self.loop_exits[-1] += 1
+                self.return_path(data)                 # lifts through to its return
+                return
+            if kind == 'cond' and header is not None and data[0] in self.return_exits:
+                taken, fall, cond = data
+                state = self.snapshot()
+                outer, inner = self.stmts, []
+                self.stmts = inner
+                self.return_path(taken)
+                self.stmts = outer
+                self.restore(state)
+                self.stmts.append(['if', cond, inner, []])
+                self.loop_exits[-1] += 1
+                b = fall
+                continue
             if kind == 'ret':
+                if header is not None:
+                    self.loop_exits[-1] += 1
                 self.emit_return()
+                return
+            if kind == 'goto' and header is not None and data in (header, exit_):
+                block_last = self.block_end(b) - 1
+                if data == header and block_last == self.loops[header]:
+                    self.latch_cond = 'always'         # the unconditional latch: end of the body
+                    self.stmts += self.loop_updates()
+                    self.ended = True
+                    return
+                self.stmts += self.loop_updates()
+                self.stmts.append('continue;' if data == header else 'break;')
+                self.loop_exits[-1] += 1
+                if data == exit_:
+                    self.loop_broke = True
+                self.ended = True
                 return
             if kind in ('goto', 'fall'):
                 b = data
@@ -551,9 +683,20 @@ class Lifter:
                 b = after
                 continue
             taken, fall, cond = data
-            if self.in_loop and taken == self.in_loop[-1]:
-                self.latch_state = True                  # the loop's own backward branch
-                return
+            if header is not None and taken == header:
+                if self.block_end(b) - 1 == self.loops[header]:
+                    self.latch_cond = cond             # the loop's own latch: end of the body
+                    return
+                self.stmts.append(['if', cond, self.loop_updates() + ['continue;'], []])
+                self.loop_exits[-1] += 1
+                b = fall
+                continue
+            if header is not None and taken == exit_:
+                self.stmts.append(['if', cond, self.loop_updates() + ['break;'], []])
+                self.loop_exits[-1] += 1
+                self.loop_broke = True
+                b = fall
+                continue
             if cond == 'BDNZ':
                 raise Fail('bdnz that is not a latch')
             reach_t, reach_f = self.successors(taken), self.successors(fall)
@@ -561,6 +704,8 @@ class Lifter:
             join = common[0] if common else None
             if stop is not None and join is not None and join > stop:
                 join = stop
+            if stop is not None and join is None and self.in_loop:
+                join = None
             start = self.snapshot()
             outer = self.stmts
             then_body = []
@@ -960,6 +1105,14 @@ class Lifter:
                 elif isinstance(st, list) and st[0] == 'return':
                     r = self.returns[st[1]]
                     out.append(pad + (f'return ({ret_type})({r["value"].text});' if valued else 'return;'))
+                elif isinstance(st, list) and st[0] == 'while':
+                    out.append(pad + f'while ({st[1]}) {{')
+                    out += lines(st[2], indent + 1)
+                    out.append(pad + '}')
+                elif isinstance(st, list) and st[0] == 'for':
+                    out.append(pad + 'for (;;) {')
+                    out += lines(st[1], indent + 1)
+                    out.append(pad + '}')
                 elif isinstance(st, list) and st[0] == 'do':
                     out.append(pad + 'do {')
                     out += lines(st[1], indent + 1)

@@ -4,28 +4,26 @@
 
 extern "C" {
 
-void* fn_0003f9e0(int, int, int, int, int, int, void*);
-int fn_0003fab0(void*, int, int, int, int, int, void*, int);
-int fn_00212c98(void*, void*, int);
+void* fn_0003f9e0(int);
+void fn_0003fab0(int, u8, int, int, int, int, void*, void*);
+void fn_0032a834(u32, void*, int, int, int, int, void*);
 static void __attribute__((noinline)) stub_0032daa8(void) { __asm__ volatile (""); }
+void* fn_00457908(void*, u32, int);
+int fn_005133cc(u32, void*, int, int, int, int, void*);
+void* fn_005139e4(u32, void*, int, int, int, void*, void*, void*);
+void fn_0051619c(u32, void*);
+void fn_0051638c(u32, void*, u16, int);
 
 int fn_0032dd54(void) {
     stub_0032daa8();
     return (int)(1);
 }
 
-extern char g_00334414_0[];
-int fn_00334414(int a0, int a1, int a2, int a3, int a4, int a5) {
+extern char g_003343c4_0[];
+int fn_003343c4(int a0, int a1, int a2, int a3, int a4, int a5) {
     void* t0;
-    int t1;
-    int v0;
-    t0 = fn_0003f9e0((int)(a0), (int)(a1), (int)(a2), (int)(a3), (int)(a4), (int)(a5), (void*)(g_00334414_0));
-    if ((int)(FIELD(u32, FIELD(u32, g_00334414_0, 0), 112)) != (int)(0)) {
-        t1 = fn_00212c98((void*)(FIELD(u32, FIELD(u32, g_00334414_0, 0), 112)), (void*)(t0), (int)(0));
-        v0 = (int)(t1);
-    } else {
-        v0 = (int)(FIELD(u32, FIELD(u32, g_00334414_0, 0), 112));
-    }
+    t0 = fn_0003f9e0((int)(a0));
+    fn_0032a834((u32)(FIELD(u32, FIELD(u32, FIELD(u32, g_003343c4_0, 0), 0), 508)), (void*)(t0), (int)(0), (int)(1), (int)(0), (int)(a5), (void*)(FIELD(u32, FIELD(u32, g_003343c4_0, 0), 0)));
     return (int)(1);
 }
 
@@ -35,20 +33,33 @@ int fn_0033500c(void) {
     return (int)(1);
 }
 
-extern char g_00335804_0[];
-int fn_00335804(void* a0, int a1, int a2, int a3, int a4, int a5) {
-    int t0;
-    int v0;
-    int v1;
-    if ((int)(FIELD(u32, FIELD(u32, g_00335804_0, 0), 100)) != (int)(0)) {
-        t0 = fn_0003fab0((void*)(a0), (int)((int)FIELD(u32, FIELD(u32, FIELD(u32, g_00335804_0, 0), 100), 1004)), (int)(a2), (int)(a3), (int)(a4), (int)(a5), (void*)(FIELD(u32, FIELD(u32, g_00335804_0, 0), 100)), (int)(0));
-        v0 = (int)(t0);
-        v1 = (int)(1);
-    } else {
-        v0 = (int)(a0);
-        v1 = (int)(0);
-    }
-    return (int)(v1);
+extern char g_00335028_0[];
+extern char g_00335028_1[];
+int fn_00335028(int a0, int a1, int a2, int a3, int a4) {
+    void* t0;
+    void* t1;
+    void* t2;
+    t0 = fn_0003f9e0((int)(a0));
+    t1 = fn_005139e4((u32)(FIELD(u32, FIELD(u32, g_00335028_1, 0), 132)), (void*)(t0), (int)(a2), (int)(a3), (int)(a4), (void*)(g_00335028_1), (void*)(FIELD(u32, FIELD(u32, FIELD(u32, g_00335028_0, 0), 108), 8)), (void*)(FIELD(u32, FIELD(u32, g_00335028_0, 0), 108)));
+    t2 = fn_00457908((void*)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_00335028_0, 0), 108), 8), 76)), (u32)(FIELD(u32, t1, 52)), (int)(1));
+    fn_0051619c((u32)(FIELD(u32, FIELD(u32, g_00335028_1, 0), 132)), (void*)(t0));
+    fn_0051638c((u32)(FIELD(u32, FIELD(u32, g_00335028_1, 0), 132)), (void*)(t2), (u16)(FIELD(u16, t1, 56)), (int)(0));
+    return (int)(1);
+}
+
+extern char g_003350e8_0[];
+u8 fn_003350e8(int a0, int a1, int a2, int a3, int a4, int a5) {
+    void* t0;
+    int t1;
+    t0 = fn_0003f9e0((int)(a0));
+    t1 = fn_005133cc((u32)(FIELD(u32, FIELD(u32, g_003350e8_0, 0), 132)), (void*)(t0), (int)(a2), (int)(a3), (int)(a4), (int)(a5), (void*)(FIELD(u32, g_003350e8_0, 0)));
+    return (u8)((u8)t1);
+}
+
+extern char g_003355a8_0[];
+int fn_003355a8(int a0, int a1, int a2, int a3, int a4, int a5) {
+    fn_0003fab0((int)(a0), (u8)(FIELD(u8, FIELD(u32, FIELD(u32, g_003355a8_0, 0), 132), 3594)), (int)(a2), (int)(a3), (int)(a4), (int)(a5), (void*)(g_003355a8_0), (void*)(FIELD(u32, FIELD(u32, g_003355a8_0, 0), 132)));
+    return (int)(1);
 }
 
 }

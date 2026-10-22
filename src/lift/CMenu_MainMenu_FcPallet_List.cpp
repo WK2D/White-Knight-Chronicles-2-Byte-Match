@@ -31,18 +31,22 @@ int fn_005fb7c4(unk_005fb7c4_a0* a0, unk_005fb7c4_a1* a1) {
 void fn_005fb7f4(int a0, int a1) {
     int v0;
     int v1;
-    u32 v2;
+    int v2;
+    int v3;
+    u32 v4;
     if ((int)(a1) == (int)(0)) {
         return;
     }
     v0 = (int)(32);
-    v1 = (int)(0);
-    v2 = (u32)(32);
+    v2 = (int)(0);
+    v4 = (u32)(32);
     do {
-        FIELD(u32, (int)(v1) + (int)(a0), 120) = (u32)(FIELD(u32, (int)(v1) + (int)(a1), 0));
-        v0 = (int)(FIELD(u32, (int)(v1) + (int)(a1), 0));
-        v1 = (int)(v1 + 4);
-    } while (--v2 != 0);
+        FIELD(u32, (int)(v2) + (int)(a0), 120) = (u32)(FIELD(u32, (int)(v2) + (int)(a1), 0));
+        v0 = (int)(FIELD(u32, (int)(v2) + (int)(a1), 0));
+        v1 = (int)((int)(v2) + (int)(a1));
+        v2 = (int)(v2 + 4);
+        v3 = (int)((int)(v2) + (int)(a0));
+    } while (--v4 != 0);
 }
 
 }

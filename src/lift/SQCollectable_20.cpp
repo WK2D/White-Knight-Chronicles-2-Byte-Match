@@ -5,6 +5,29 @@
 extern "C" {
 
 
+extern char g_009dabf4_0[];
+void* fn_009dabf4(void) {
+    int v0;
+    int v1;
+    void* v2;
+    u32 v3;
+    v0 = (int)(7);
+    v2 = (void*)(g_009dabf4_0);
+    v3 = (u32)(7);
+    for (;;) {
+        if ((int)(FIELD(u32, v2, 0)) == (int)(0)) {
+            return (void*)(0);
+        }
+        v0 = (int)(FIELD(u32, v2, 0));
+        v1 = (int)(v2);
+        v2 = (void*)((char*)v2 + 4);
+        if (--v3 == 0) {
+            break;
+        }
+    }
+    return (void*)(g_009dabf4_0);
+}
+
 struct unk_009dac30_a0 {
     u32 f_0;
 };

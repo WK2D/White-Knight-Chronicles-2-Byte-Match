@@ -19,6 +19,29 @@ void* fn_009d2eec(void) {
     return (void*)(t0);
 }
 
+extern char g_009d2f14_0[];
+void* fn_009d2f14(void) {
+    int v0;
+    int v1;
+    void* v2;
+    u32 v3;
+    v0 = (int)(6);
+    v2 = (void*)(g_009d2f14_0);
+    v3 = (u32)(6);
+    for (;;) {
+        if ((int)(FIELD(u32, v2, 0)) == (int)(0)) {
+            return (void*)(0);
+        }
+        v0 = (int)(FIELD(u32, v2, 0));
+        v1 = (int)(v2);
+        v2 = (void*)((char*)v2 + 4);
+        if (--v3 == 0) {
+            break;
+        }
+    }
+    return (void*)(g_009d2f14_0);
+}
+
 struct unk_009d2f8c_a0 {
     u16 f_0;
 };

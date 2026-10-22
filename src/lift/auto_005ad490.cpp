@@ -4,6 +4,58 @@
 
 extern "C" {
 
+int fn_00416e4c(int, void*);
+static int __attribute__((noinline)) stub_005acccc(void* p0, u8 p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
+
+struct unk_005ad998_a0 {
+    u32 f_0;
+};
+extern char g_005ad998_0[];
+int fn_005ad998(unk_005ad998_a0* a0, void* a1, int a2) {
+    int t0;
+    int t1;
+    int v0;
+    void* v1;
+    int v2;
+    void* v3;
+    u32 v4;
+    u32 v5;
+    int v6;
+    t0 = fn_00416e4c((int)(a2), (void*)(a1));
+    if ((int)(t0) >= (int)(0)) {
+        t1 = stub_005acccc((void*)(a0), (u8)((u8)t0));
+        if ((int)((u32)(t1) & 0xff) == (int)(0)) {
+            v0 = (int)(5);
+            v1 = (void*)((char*)g_005ad998_0 + 20);
+            v2 = (int)(0);
+            v3 = (void*)(a0->f_0);
+            v4 = (u32)(5);
+            for (;;) {
+                if ((int)((u32)((int)(FIELD(u8, a0->f_0, 2)) >> (int)(v2)) & 0x1) != (int)(0)) {
+                    if ((int)(FIELD(u32, v1, 0)) == (int)(a1)) {
+                        return (int)(1);
+                    }
+                    v5 = (u32)(FIELD(u32, v1, 0));
+                } else {
+                    v5 = (u32)((u32)((int)(FIELD(u8, a0->f_0, 2)) >> (int)(v2)) & 0x1);
+                }
+                v0 = (int)(v5);
+                v1 = (void*)((char*)v1 + 4);
+                v2 = (int)(v2 + 1);
+                v3 = (void*)(v1);
+                if (--v4 == 0) {
+                    break;
+                }
+            }
+        } else {
+            return (int)(1);
+        }
+        v6 = (int)(FIELD(u8, a0->f_0, 2));
+    } else {
+        v6 = (int)(t0);
+    }
+    return (int)(0);
+}
 
 struct unk_005ae0d0_a0 {
     u32 f_0;

@@ -39,7 +39,7 @@ more native with every green square.
   functions byte for byte.
 - **Compiler flags:** `-O2 -fno-ivopts`. A counted loop in `CPostEffectManager`
   matches only with induction-variable optimization off.
-- **Code:** 55,164 functions in 16.5 MB of PowerPC code. **11,956 match**
+- **Code:** 55,164 functions in 16.5 MB of PowerPC code. **11,959 match**
   (1.74% of the code): three by hand, the rest small functions written by
   [`tools/gen_simple.py`](tools/gen_simple.py) from their instruction shape
   (empty bodies, constant returns, field getters and setters, global loads,

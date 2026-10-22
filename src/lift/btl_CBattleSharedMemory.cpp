@@ -10,29 +10,37 @@ void fn_00ba21a0(void*);
 void fn_00580010(int a0, int a1) {
     int v0;
     int v1;
-    u32 v2;
+    int v2;
+    int v3;
+    u32 v4;
     v0 = (int)(104);
-    v1 = (int)(0);
-    v2 = (u32)(104);
+    v2 = (int)(0);
+    v4 = (u32)(104);
     do {
-        FIELD(u8, (int)(v1) + (int)(a0), 0) = (u8)(FIELD(u8, (int)(v1) + (int)(a1), 0));
-        v0 = (int)(FIELD(u8, (int)(v1) + (int)(a1), 0));
-        v1 = (int)(v1 + 1);
-    } while (--v2 != 0);
+        FIELD(u8, (int)(v2) + (int)(a0), 0) = (u8)(FIELD(u8, (int)(v2) + (int)(a1), 0));
+        v0 = (int)(FIELD(u8, (int)(v2) + (int)(a1), 0));
+        v1 = (int)((int)(v2) + (int)(a1));
+        v2 = (int)(v2 + 1);
+        v3 = (int)((int)(v2) + (int)(a0));
+    } while (--v4 != 0);
 }
 
 void fn_005805a0(int a0, int a1) {
     int v0;
     int v1;
-    u32 v2;
+    int v2;
+    int v3;
+    u32 v4;
     v0 = (int)(203);
-    v1 = (int)(0);
-    v2 = (u32)(203);
+    v2 = (int)(0);
+    v4 = (u32)(203);
     do {
-        FIELD(u8, (int)(v1) + (int)(a0), 0) = (u8)(FIELD(u8, (int)(v1) + (int)(a1), 0));
-        v0 = (int)(FIELD(u8, (int)(v1) + (int)(a1), 0));
-        v1 = (int)(v1 + 1);
-    } while (--v2 != 0);
+        FIELD(u8, (int)(v2) + (int)(a0), 0) = (u8)(FIELD(u8, (int)(v2) + (int)(a1), 0));
+        v0 = (int)(FIELD(u8, (int)(v2) + (int)(a1), 0));
+        v1 = (int)((int)(v2) + (int)(a1));
+        v2 = (int)(v2 + 1);
+        v3 = (int)((int)(v2) + (int)(a0));
+    } while (--v4 != 0);
 }
 
 struct unk_0058084c_a0 {
@@ -51,15 +59,44 @@ void fn_0058084c(unk_0058084c_a0* a0, unk_0058084c_a1* a1) {
 void fn_00580eb0(int a0, int a1) {
     int v0;
     int v1;
-    u32 v2;
+    int v2;
+    int v3;
+    u32 v4;
     v0 = (int)(224);
-    v1 = (int)(0);
-    v2 = (u32)(224);
+    v2 = (int)(0);
+    v4 = (u32)(224);
     do {
-        FIELD(u8, (int)(v1) + (int)(a0), 0) = (u8)(FIELD(u8, (int)(v1) + (int)(a1), 0));
-        v0 = (int)(FIELD(u8, (int)(v1) + (int)(a1), 0));
+        FIELD(u8, (int)(v2) + (int)(a0), 0) = (u8)(FIELD(u8, (int)(v2) + (int)(a1), 0));
+        v0 = (int)(FIELD(u8, (int)(v2) + (int)(a1), 0));
+        v1 = (int)((int)(v2) + (int)(a1));
+        v2 = (int)(v2 + 1);
+        v3 = (int)((int)(v2) + (int)(a0));
+    } while (--v4 != 0);
+}
+
+int fn_005818a0(int a0, int a1) {
+    int v0;
+    int v1;
+    int v2;
+    int v3;
+    u32 v4;
+    v0 = (int)(16);
+    v1 = (int)(0);
+    v3 = (int)(0);
+    v4 = (u32)(16);
+    for (;;) {
+        if ((int)(FIELD(u8, (int)(v3) + (int)(a0), 0)) == (int)(a1)) {
+            return (int)(v1);
+        }
+        v0 = (int)(FIELD(u8, (int)(v3) + (int)(a0), 0));
         v1 = (int)(v1 + 1);
-    } while (--v2 != 0);
+        v2 = (int)((int)(v3) + (int)(a0));
+        v3 = (int)(v3 + 2);
+        if (--v4 == 0) {
+            break;
+        }
+    }
+    return (int)(-1);
 }
 
 struct unk_00581ddc_a0 {
