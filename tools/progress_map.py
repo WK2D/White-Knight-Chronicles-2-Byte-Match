@@ -1,6 +1,7 @@
 """Draw progress/map.svg from progress/report.json: one rectangle per unit,
-sized by its code, filling in from the bottom as its functions match
-(green: matched, blue: partly matched, grey: not started).
+sized by its code and laid out in the game's code order, filling in from the
+bottom as its functions match (green: matched, blue: partly matched, grey:
+not started).
 
     python tools/progress_map.py
 """
@@ -52,11 +53,38 @@ def squarify(values, x, y, w, h):
     return out
 
 
+def ordered(values, x, y, w, h):
+    """Ordered treemap: split the list where its total halves, across the
+    longer side, and recurse. Neighbouring units in the code stay together."""
+    out = [None] * len(values)
+    def place(lo, hi, x, y, w, h):
+        if hi - lo == 1:
+            out[lo] = (x, y, w, h)
+            return
+        total = sum(values[lo:hi])
+        acc, cut, best = 0, lo + 1, None
+        for k in range(lo, hi - 1):
+            acc += values[k]
+            gap = abs(2 * acc - total)
+            if best is None or gap < best:
+                best, cut, left = gap, k + 1, acc
+        left = sum(values[lo:cut])
+        f = left / total if total else 0.5
+        if w >= h:
+            place(lo, cut, x, y, w * f, h)
+            place(cut, hi, x + w * f, y, w * (1 - f), h)
+        else:
+            place(lo, cut, x, y, w, h * f)
+            place(cut, hi, x, y + h * f, w, h * (1 - f))
+    place(0, len(values), x, y, w, h)
+    return out
+
+
 def main():
     report = json.loads((ROOT / 'progress' / 'report.json').read_text(encoding='utf-8'))
     units = report['units']
     sizes = [int(u['measures']['totalCode']) for u in units]
-    rects = squarify(sizes, 0, TOP, W, H - TOP)
+    rects = ordered(sizes, 0, TOP, W, H - TOP)
     m = report['measures']
     parts = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" '
              f'font-family="Segoe UI, Helvetica, Arial, sans-serif">',
