@@ -66,7 +66,7 @@ def orders(n):
     return list(dict.fromkeys(out))
 
 
-def variants(code):
+def reorders(code):
     """Other statement orders of a lifted function's code."""
     lines = code.split('\n')
     spans = runs(lines)
@@ -84,6 +84,64 @@ def variants(code):
         if len(out) >= MAX_VARIANTS:
             break
     return out
+
+
+def if_blocks(lines):
+    """[(if line, else line or None, closing line)] for every if statement."""
+    out = []
+    for i, line in enumerate(lines):
+        m = re.match(r'^(\s*)if \((.*)\) \{$', line)
+        if not m:
+            continue
+        pad, other = m.group(1), None
+        for j in range(i + 1, len(lines)):
+            if lines[j] == pad + '} else {':
+                other = j
+            elif lines[j] == pad + '}':
+                out.append((i, other, j))
+                break
+            elif lines[j].startswith(pad + '}'):
+                break                                    # else if: left alone
+    return out
+
+
+def invert(lines, block):
+    """if (c) { A } else { B }  ->  if (!(c)) { B } else { A }."""
+    i, other, end = block
+    m = re.match(r'^(\s*)if \((.*)\) \{$', lines[i])
+    pad, cond = m.group(1), m.group(2)
+    then = lines[i + 1:other if other is not None else end]
+    els = lines[other + 1:end] if other is not None else []
+    new = [f'{pad}if (!({cond})) {{'] + els
+    if then:
+        new += [f'{pad}}} else {{'] + then
+    return lines[:i] + new + [f'{pad}}}'] + lines[end + 1:]
+
+
+def flips(code):
+    """The code with each if/else inverted, one at a time and all together.
+    Which branch GCC lays out first follows the source."""
+    lines = code.split('\n')
+    blocks = if_blocks(lines)
+    out = []
+    for block in blocks:
+        out.append('\n'.join(invert(lines, block)))
+    if len(blocks) > 1:
+        new = lines
+        for k in range(len(blocks)):                     # inverting can add a line: find the k-th if again
+            new = invert(new, if_blocks(new)[k])
+        out.append('\n'.join(new))
+    return out
+
+
+def variants(code):
+    """Other forms of a lifted function: statement orders, inverted ifs, and
+    each inverted form's statement orders."""
+    out = reorders(code)
+    for flipped in flips(code):
+        out.append(flipped)
+        out += reorders(flipped)[:8]
+    return list(dict.fromkeys(out))[:MAX_VARIANTS * 2]
 
 
 def main():
