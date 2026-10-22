@@ -13,6 +13,9 @@ static void* __attribute__((noinline)) stub_002dddac(int p0, int p1) { void* r; 
 static int __attribute__((noinline)) stub_002ddf50(int p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static int __attribute__((noinline)) stub_002ddf70(int p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static int __attribute__((noinline)) stub_002de34c(int p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static void __attribute__((noinline)) stub_002dff10(int p0) { __asm__ volatile ("" : : "r"(p0)); }
+static int __attribute__((noinline)) stub_002e164c(int p0, u32 p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
+static void __attribute__((noinline)) stub_002e3974(int p0, int p1, int p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
 static int __attribute__((noinline)) stub_002ea45c(int p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static int __attribute__((noinline)) stub_002eb0d0(int p0, int p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static void __attribute__((noinline)) stub_002eb590(int p0, int p1, int p2, int p3, int p4, int p5) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4), "r"(p5)); }
@@ -147,6 +150,36 @@ void* fn_002df820(int a0) {
     return (void*)(v0);
 }
 
+void fn_002e0058(int a0, int a1) {
+    stub_002dff10((int)(a1));
+}
+
+void fn_002e0060(int a0) {
+    stub_002dff10((int)(a0));
+}
+
+void fn_002e0064(int a0) {
+    stub_002dff10((int)(a0));
+}
+
+u8 fn_002e1780(int a0) {
+    int t0;
+    t0 = stub_002e164c((int)(a0), (u32)(3358304767));
+    return (u8)((u8)t0);
+}
+
+u8 fn_002e17b0(int a0) {
+    int t0;
+    t0 = stub_002e164c((int)(a0), (u32)(3161748740));
+    return (u8)((u8)t0);
+}
+
+u8 fn_002e17dc(int a0) {
+    int t0;
+    t0 = stub_002e164c((int)(a0), (u32)(207663425));
+    return (u8)((u8)t0);
+}
+
 extern char g_002e18e4_0[];
 extern char g_002e18e4_1[];
 void* fn_002e18e4(int a0) {
@@ -193,6 +226,11 @@ void* fn_002e1d68(int a0) {
         v0 = (int)(0);
     }
     return (void*)(v0);
+}
+
+void fn_002e4360(int a0) {
+    stub_002dff10((int)(a0));
+    stub_002e3974((int)(a0), (int)(0), (int)(0));
 }
 
 struct unk_002e5bc0_gm2404;

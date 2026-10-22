@@ -5,6 +5,7 @@
 extern "C" {
 
 static void __attribute__((noinline)) stub_0098055c(void) { __asm__ volatile (""); }
+static void __attribute__((noinline)) stub_00980600(void) { __asm__ volatile (""); }
 
 struct unk_0098050c_gm3fc0;
 struct unk_0098050c_gm3fc0_0;
@@ -82,6 +83,10 @@ u32 fn_0098085c(unk_0098085c_a0* a0, int a1) {
 
 void fn_00980b14(void) {
     stub_0098055c();
+}
+
+void fn_00980b18(void) {
+    stub_00980600();
 }
 
 }

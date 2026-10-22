@@ -12,6 +12,7 @@ static void __attribute__((noinline)) stub_0091cf98(int p0) { __asm__ volatile (
 static void __attribute__((noinline)) stub_0091cfd0(int p0, u32 p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 static void __attribute__((noinline)) stub_0091d2a8(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
 static void __attribute__((noinline)) stub_0091d3a4(int p0) { __asm__ volatile ("" : : "r"(p0)); }
+static int __attribute__((noinline)) stub_0091d49c(void) { int r; __asm__ volatile ("" : "=r"(r)); return r; }
 void* fn_0091fc5c(void*, u32);
 void* fn_00b3cd18(void*, int, int, int, int, int);
 
@@ -99,6 +100,18 @@ void* fn_0091d458(unk_0091d458_a0* a0) {
     void* t0;
     t0 = fn_0091fc5c((void*)(((int)((&g_0091d458_0)->f_0->f_14) + 65536) + -19584), (u32)(a0->f_30));
     return (void*)(t0);
+}
+
+void* fn_0091d4d0(void) {
+    int t0;
+    int v0;
+    t0 = stub_0091d49c();
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)(t0 + 36);
+    } else {
+        v0 = (int)(0);
+    }
+    return (void*)(v0);
 }
 
 }

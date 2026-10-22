@@ -10,6 +10,7 @@ static void __attribute__((noinline)) stub_0007cac8(int p0) { __asm__ volatile (
 static void __attribute__((noinline)) stub_0007cb44(int p0, int p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 static void __attribute__((noinline)) stub_0007cbf8(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 static void __attribute__((noinline)) stub_0007cc80(int p0, int p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
+static void __attribute__((noinline)) stub_0007cd4c(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 static void __attribute__((noinline)) stub_0007cdec(int p0, int p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 static int __attribute__((noinline)) stub_0007d3e4(int p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static int __attribute__((noinline)) stub_0007d414(u16 p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
@@ -31,6 +32,10 @@ void fn_0007cd44(int a0) {
 
 void fn_0007cd48(int a0, int a1) {
     stub_0007cc80((int)(a0), (int)(a1));
+}
+
+void fn_0007cea4(int a0) {
+    stub_0007cd4c((int)(a0));
 }
 
 void fn_0007cea8(int a0, int a1) {

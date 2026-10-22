@@ -12,6 +12,7 @@ void fn_0004dbec(int, void*, void*, int, u16);
 int fn_0004f768(int, int, int, int);
 static void __attribute__((noinline)) stub_0066eb74(void* p0, int p1, int p2, u16 p3) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); }
 static void __attribute__((noinline)) stub_0066ebe4(int p0, int p1, int p2, int p3, int p4, int p5) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4), "r"(p5)); }
+static void __attribute__((noinline)) stub_0066ef70(void* p0, int p1, int p2, u16 p3) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); }
 
 void fn_0066ed00(int a0, int a1, int a2) {
     stub_0066ebe4((int)(a0), (int)(a1), (int)(a2), (int)(640), (int)(360), (int)(1));
@@ -35,6 +36,15 @@ void fn_0066ef00(int a0, int a1, void* a2, int a3) {
     void* t0;
     t0 = fn_00048e54((int)(a1), (int)(149), (int)(0));
     fn_0004dbec((int)(a1), (void*)(a2), (void*)(t0), (int)(1), (u16)((u16)a3));
+}
+
+struct unk_0066f010_a0 {
+    char pad_0[130];
+    u16 f_82;
+    u16 f_84;
+};
+void fn_0066f010(unk_0066f010_a0* a0, int a1, int a2) {
+    stub_0066ef70((void*)(a0), (int)(a1), (int)(a2), (u16)((u16)((int)(a0->f_82) * (int)(a0->f_84))));
 }
 
 struct unk_0066f028_g3930;

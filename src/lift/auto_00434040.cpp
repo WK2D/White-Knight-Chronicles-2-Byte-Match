@@ -8,6 +8,7 @@ static void __attribute__((noinline)) stub_00433fc4(int p0) { __asm__ volatile (
 static void __attribute__((noinline)) stub_00433fe0(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 static void __attribute__((noinline)) stub_00434008(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 static void __attribute__((noinline)) stub_00434024(int p0) { __asm__ volatile ("" : : "r"(p0)); }
+static void __attribute__((noinline)) stub_0043408c(void) { __asm__ volatile (""); }
 
 struct unk_00434040_gmbe0;
 struct unk_00434040_gmbe0 {
@@ -20,6 +21,14 @@ void fn_00434040(int a0) {
     stub_00433fe0((int)(a0));
     stub_00434008((int)(a0));
     stub_00434024((int)(a0));
+}
+
+void fn_00434090(void) {
+    stub_0043408c();
+}
+
+void fn_00434094(void) {
+    stub_0043408c();
 }
 
 }

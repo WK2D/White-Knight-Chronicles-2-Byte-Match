@@ -6,9 +6,12 @@ extern "C" {
 
 static int __attribute__((noinline)) stub_00081f60(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static int __attribute__((noinline)) stub_00082098(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static void __attribute__((noinline)) stub_00082408(int p0, int p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 static void __attribute__((noinline)) stub_00083070(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 static int __attribute__((noinline)) stub_000840e0(u32 p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static void __attribute__((noinline)) stub_00084b64(int p0) { __asm__ volatile ("" : : "r"(p0)); }
+static void __attribute__((noinline)) stub_00084dfc(int p0, void* p1, void* p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
+static void __attribute__((noinline)) stub_000852c8(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
 static int __attribute__((noinline)) stub_0008539c(void* p0, void* p1, u8 p2, u8 p3, void* p4) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4)); return r; }
 void fn_000886b0(void*);
 int fn_0008893c(void*, void*, void*);
@@ -143,6 +146,33 @@ int fn_000842a4(unk_000842a4_a0* a0) {
 void fn_00084bf8(int a0) {
     stub_00083070((int)(a0));
     stub_00084b64((int)(a0));
+}
+
+void fn_00084f34(int a0, int a1, void* a2, void* a3) {
+    stub_00082408((int)(a0), (int)(a1));
+    stub_00084dfc((int)(a0), (void*)(a2), (void*)(a3));
+}
+
+struct unk_00085330_a0 {
+    char pad_0[4];
+    u32 f_4;
+};
+int fn_00085330(unk_00085330_a0* a0, int a1, int a2) {
+    int v0;
+    int v1;
+    stub_000852c8((void*)(a0));
+    if ((int)(a1) != (int)(0)) {
+        if ((int)(a2) != (int)(0)) {
+            a0->f_4 = (u32)(a1);
+            v0 = (int)(1);
+        } else {
+            v0 = (int)(0);
+        }
+        v1 = (int)(v0);
+    } else {
+        v1 = (int)(0);
+    }
+    return (int)(v1);
 }
 
 int fn_000855b4(void* a0, void* a1, int a2, int a3, void* a4) {

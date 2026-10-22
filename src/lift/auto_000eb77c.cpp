@@ -12,7 +12,10 @@ int fn_000e99b4(void*, int);
 void fn_000e9f64(void*);
 void fn_000ea07c(void*);
 static void __attribute__((noinline)) stub_000ea624(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
+static void __attribute__((noinline)) stub_000ec4ac(void* p0, void* p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 static void __attribute__((noinline)) stub_000ec5f4(void* p0, void* p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
+static void __attribute__((noinline)) stub_000ec77c(void* p0, int p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
+static void __attribute__((noinline)) stub_000ec840(void* p0, int p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 
 struct unk_000ec28c_a0 {
     u32 f_0;
@@ -32,6 +35,34 @@ void fn_000ec2f0(unk_000ec2f0_a0* a0) {
     if ((int)(a0->f_0) != (int)(0)) {
         t0 = fn_000e9940((void*)(a0));
     }
+}
+
+struct unk_000ec550_l;
+struct unk_000ec550_l {
+    u32 f_0;
+};
+struct unk_000ec550_a0 {
+    char pad_0[168];
+    u8 f_a8;
+};
+u32 fn_000ec550(unk_000ec550_a0* a0) {
+    unk_000ec550_l l;
+    stub_000ec4ac((void*)((&a0->f_a8)), (void*)((&l)));
+    return (u32)(l.f_0);
+}
+
+struct unk_000ec580_l;
+struct unk_000ec580_l {
+    u32 f_0;
+};
+struct unk_000ec580_a0 {
+    char pad_0[92];
+    u8 f_5c;
+};
+u32 fn_000ec580(unk_000ec580_a0* a0) {
+    unk_000ec580_l l;
+    stub_000ec4ac((void*)((&a0->f_5c)), (void*)((&l)));
+    return (u32)(l.f_0);
 }
 
 struct unk_000ec71c_l;
@@ -60,6 +91,30 @@ u32 fn_000ec74c(unk_000ec74c_a0* a0) {
     unk_000ec74c_l l;
     stub_000ec5f4((void*)((&a0->f_5c)), (void*)((&l)));
     return (u32)(l.f_0);
+}
+
+struct unk_000ec834_a0 {
+    char pad_0[92];
+    u8 f_5c;
+};
+void fn_000ec834(unk_000ec834_a0* a0, int a1) {
+    stub_000ec77c((void*)((&a0->f_5c)), (int)(a1));
+}
+
+struct unk_000ec8a8_a0 {
+    char pad_0[168];
+    u8 f_a8;
+};
+void fn_000ec8a8(unk_000ec8a8_a0* a0, int a1) {
+    stub_000ec840((void*)((&a0->f_a8)), (int)(a1));
+}
+
+struct unk_000ec8b4_a0 {
+    char pad_0[92];
+    u8 f_5c;
+};
+void fn_000ec8b4(unk_000ec8b4_a0* a0, int a1) {
+    stub_000ec840((void*)((&a0->f_5c)), (int)(a1));
 }
 
 struct unk_000ec8e8_a0 {

@@ -28,6 +28,9 @@ OPD = (0x12d9b90, 0x72388)     # function descriptors: {code, toc}
 
 OUT = ROOT / 'src' / 'lift'
 LOADS = {32: 'u32', 34: 'u8', 40: 'u16', 42: 's16', 48: 'float', 50: 'double'}
+UPDATE = {33, 35, 41, 43, 49, 51, 37, 39, 45, 53, 55}   # lwzu lbzu lhzu lhau lfsu lfdu stwu stbu sthu stfsu stfdu
+# X-form indexed accesses -> the matching D-form opcode
+INDEXED = {23: 32, 87: 34, 279: 40, 343: 42, 535: 48, 599: 50, 151: 36, 215: 38, 407: 44, 663: 52, 727: 54}
 STORES = {36: 'u32', 38: 'u8', 44: 'u16', 52: 'float', 54: 'double'}
 CTYPES = {'ptr': 'void*', 'addr': 'void*', 'gaddr': 'void*', 'u32': 'u32', 'u8': 'u8', 'u16': 'u16',
           's16': 's16', 'u64': 'u64', 'int': 'int', 'float': 'float', 'double': 'double'}
@@ -1110,30 +1113,25 @@ class Lifter:
         if w == 0x4E800421:                                          # bctrl
             self.vcall()
             return
+        if op in UPDATE and ra not in (0, 1) and ra != rt or op in UPDATE and op - 1 in STORES and ra not in (0, 1):
+            # Load or store with update: the access at ra + d, then ra += d.
+            self.step(w - (1 << 26), i)
+            self.step((14 << 26) | (ra << 21) | (ra << 16) | (w & 0xFFFF), i)
+            return
         if op in LOADS:
-            v = self.field(LOADS[op], self.reg(ra), d)
-            if op in (48, 50):
-                self.fpr[rt] = v
-                self.ffresh.add(rt)
-            else:
-                self.set(rt, v)
+            self.load(op, rt, self.reg(ra), d)
             return
         if op == 58 and w & 3 == 0:
             self.set(rt, self.field('u64', self.reg(ra), d))
             return
         if op in STORES:
-            base = self.reg(ra)
-            if base.ctype == 'toc':
-                raise Fail('store into the TOC')
-            value = self.freg(rt) if op in (52, 54) else self.reg(rt)
-            ctype = STORES[op]
-            if ctype == 'u32' and value.ctype in ('ptr', 'addr', 'gaddr'):
-                ctype = 'void*'
-            target = self.field(ctype, base, d)
-            if getattr(target, 'cast', None) is not None:
-                ctype = target.cast
-            text = value.text if ctype in ('float', 'double') else f'({ctype})({value.text})'
-            self.stmts.append(f'{target.text} = {text};')
+            self.store(op, rt, self.reg(ra), d)
+            return
+        if op == 31 and (w >> 1) & 0x3FF in INDEXED and ra != 1:
+            # Indexed load or store: the access at 0(ra + rb).
+            base = self.sum(self.reg(ra), self.reg(rb)) if ra else self.reg(rb)
+            dform = INDEXED[(w >> 1) & 0x3FF]
+            (self.load if dform in LOADS else self.store)(dform, rt, base, 0)
             return
         if op == 31:
             xo = (w >> 1) & 0x3FF
@@ -1186,20 +1184,10 @@ class Lifter:
                 return
             if xo in (266, 40):                                      # add, subf
                 a, b = self.reg(ra), self.reg(rb)
-                if xo == 266 and (getattr(a, 'iv', None) is not None) != (getattr(b, 'iv', None) is not None):
-                    i_, p_ = (a, b) if getattr(a, 'iv', None) is not None else (b, a)
-                    self.pointer(p_)                                 # base + i * stride: an array element
-                    v = Value(f'(char*){paren(p_)} + {i_.text}', 'addr', 1)
-                    v.ivbase = (p_, i_)
-                    self.set(rt, v)
+                if xo == 266:
+                    self.set(rt, self.sum(a, b))
                     return
-                ptr = ('ptr', 'addr', 'gaddr')
-                if xo == 266 and (a.ctype in ptr or b.ctype in ptr):
-                    p_, i_ = (a, b) if a.ctype in ptr else (b, a)
-                    self.set(rt, Value(f'(char*){paren(p_)} + (int)({i_.text})', 'addr', 1))
-                    return
-                text = f'(int)({a.text}) + (int)({b.text})' if xo == 266 else f'(int)({b.text}) - (int)({a.text})'
-                self.set(rt, Value(text, 'int', 1))
+                self.set(rt, Value(f'(int)({b.text}) - (int)({a.text})', 'int', 1))
                 return
             raise Fail(f'op 31/{xo}')
         if op == 30 and (w >> 2) & 7 == 0:                           # rldicl
@@ -1239,6 +1227,41 @@ class Lifter:
             self.call(branch_target(self.address + 4 * i, w), local=following not in (NOP, TOC_RESTORE))
             return
         raise Fail(f'opcode {op}')
+
+    def load(self, op, rt, base, d):
+        v = self.field(LOADS[op], base, d)
+        if op in (48, 50):
+            self.fpr[rt] = v
+            self.ffresh.add(rt)
+        else:
+            self.set(rt, v)
+
+    def store(self, op, rt, base, d):
+        if base.ctype == 'toc':
+            raise Fail('store into the TOC')
+        value = self.freg(rt) if op in (52, 54) else self.reg(rt)
+        ctype = STORES[op]
+        if ctype == 'u32' and value.ctype in ('ptr', 'addr', 'gaddr'):
+            ctype = 'void*'
+        target = self.field(ctype, base, d)
+        if getattr(target, 'cast', None) is not None:
+            ctype = target.cast
+        text = value.text if ctype in ('float', 'double') else f'({ctype})({value.text})'
+        self.stmts.append(f'{target.text} = {text};')
+
+    def sum(self, a, b):
+        """The value of add rD,rA,rB."""
+        if (getattr(a, 'iv', None) is not None) != (getattr(b, 'iv', None) is not None):
+            i_, p_ = (a, b) if getattr(a, 'iv', None) is not None else (b, a)
+            self.pointer(p_)                                         # base + i * stride: an array element
+            v = Value(f'(char*){paren(p_)} + {i_.text}', 'addr', 1)
+            v.ivbase = (p_, i_)
+            return v
+        ptr = ('ptr', 'addr', 'gaddr')
+        if a.ctype in ptr or b.ctype in ptr:
+            p_, i_ = (a, b) if a.ctype in ptr else (b, a)
+            return Value(f'(char*){paren(p_)} + (int)({i_.text})', 'addr', 1)
+        return Value(f'(int)({a.text}) + (int)({b.text})', 'int', 1)
 
     def gather_args(self, first, nint=0):
         """Argument values in parameter order, from GPR first (r3, or r4 after
@@ -1745,15 +1768,25 @@ def main():
     OUT.mkdir(parents=True, exist_ok=True)
     total = 0
     for unit, items in by_unit.items():
-        defined = {a for a, *_ in items}
-        callees, keep = {}, []
-        for address, decls, code, calls in items:
-            if any(t in defined for t in calls):
-                continue                     # calls a function lifted in this file: signatures may differ
+        # A function and one it calls cannot both be kept: the call would need
+        # the callee's real signature, not a placeholder's. Callees win (they
+        # are leaves more often); a caller whose callee was dropped is fine.
+        callers = defaultdict(set)
+        for address, _, _, calls in items:
+            for t in calls:
+                callers[t].add(address)
+        lifted = {a for a, *_ in items}
+        callees, keep, kept = {}, [], set()
+        leaves_first = sorted(items, key=lambda it: (any(t in lifted for t in it[3]), it[0]))
+        for address, decls, code, calls in leaves_first:
+            if any(t in kept for t in calls) or any(c in kept for c in callers[address]):
+                continue
             if any(t in callees and callees[t] != c for t, c in calls.items()):
                 continue
             callees.update(calls)
             keep.append((address, decls, code))
+            kept.add(address)
+        keep.sort(key=lambda k: k[0])                    # address order in the file
         if not keep:
             continue
         text = ['// Generated by tools/lift.py from the original machine code: straight-line',

@@ -15,6 +15,8 @@ void fn_00bbb848(void*);
 void fn_00bbb914(void*);
 void fn_00bbb9e0(void*);
 void fn_00bbbaac(void*);
+int fn_00bbbc04(int);
+int fn_00bbbd98(int);
 
 struct unk_00bbb5b8_a0 {
     char pad_0[224];
@@ -102,6 +104,12 @@ void fn_00bbbb78(unk_00bbbb78_a0* a0) {
     stub_008e06dc((void*)((&a0->f_464)));
 }
 
+int fn_00bbbce4(int a0) {
+    int t0;
+    t0 = fn_00bbbc04((int)(a0));
+    return (int)(t0);
+}
+
 struct unk_00bbbd0c_a0 {
     char pad_0[160];
     u8 f_a0;
@@ -126,6 +134,12 @@ void fn_00bbbd0c(unk_00bbbd0c_a0* a0) {
     fn_00bbb848((void*)((&a0->f_2f0)));
     stub_008e06dc((void*)((&a0->f_384)));
     stub_008e06dc((void*)((&a0->f_424)));
+}
+
+int fn_00bbbe78(int a0) {
+    int t0;
+    t0 = fn_00bbbd98((int)(a0));
+    return (int)(t0);
 }
 
 }
