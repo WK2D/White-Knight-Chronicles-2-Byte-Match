@@ -1,0 +1,6 @@
+# address  compiled function symbol
+# Which function in src/ stands for which function of the original. The
+# symbol is the code entry symbol (".name") of the compiled object.
+004b2364 ._Z11fn_004b2364P16unk_4b2364_ownerP17unk_4b2364_record
+004b239c ._Z11fn_004b239cP16unk_4b2364_ownerP17unk_4b2364_record
+004b32e8 ._Z11fn_004b32e8P16unk_4b32e8_group

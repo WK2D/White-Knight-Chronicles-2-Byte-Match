@@ -1,0 +1,37 @@
+name: Build
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # The PPU compiler, rebuilt from Sony's GPL toolchain sources. About
+      # ten minutes the first time; cached after that.
+      - name: Restore compiler
+        id: compiler
+        uses: actions/cache@v4
+        with:
+          path: tools/ppu-gcc
+          key: ppu-gcc-${{ hashFiles('tools/build_compiler.sh', 'tools/build_ppu_inner.sh') }}
+
+      - name: Build compiler
+        if: steps.compiler.outputs.cache-hit != 'true'
+        run: sh tools/build_compiler.sh
+
+      # GitHub's runners have no game files, so CI checks that every source
+      # compiles and is mapped. Matching is checked against the original
+      # EBOOT by tools/check.py on a machine that has it, which writes
+      # progress/report.json.
+      - name: Compile sources
+        run: python3 tools/check.py --compile-only
+
+      - name: Upload progress report
+        uses: actions/upload-artifact@v4
+        with:
+          name: BLUS30784_report
+          path: progress/report.json

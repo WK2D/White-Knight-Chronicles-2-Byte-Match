@@ -1,0 +1,6 @@
+# The original game files are never committed.
+/orig/*
+!/orig/README.md
+/build/
+/tools/ppu-gcc/
+__pycache__/
