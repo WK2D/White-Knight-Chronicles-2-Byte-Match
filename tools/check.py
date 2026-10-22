@@ -71,19 +71,25 @@ def compile_all(sources):
     BUILD.mkdir(exist_ok=True)
     jobs, results = [], {}
     for src in sources:
-        obj = BUILD / 'obj' / src.relative_to(ROOT).with_suffix('.o')
+        obj = BUILD / 'obj' / (src.relative_to(ROOT).as_posix() + '.o')   # unit.c and unit.cpp differ
         obj.parent.mkdir(parents=True, exist_ok=True)
         jobs.append((src.relative_to(ROOT).as_posix(), obj.relative_to(ROOT).as_posix()))
         results[src] = obj
     if os.name == 'nt':
-        cc = '/c/bin/ppu-lv2-g++ -B/c/libexec/gcc/ppu-lv2/4.1.1/ -B/c/bin/ppu-lv2-'
+        tools = '/c'
     else:
-        cc = f'{COMPILER}/bin/ppu-lv2-g++ -B{COMPILER}/libexec/gcc/ppu-lv2/4.1.1/ -B{COMPILER}/bin/ppu-lv2-'
+        tools = str(COMPILER)
     flags = ' '.join(CFLAGS)
-    # One compiler process per source, as many at once as there are CPUs.
-    (BUILD / 'jobs.txt').write_text(''.join(f'{s} {o}\n' for s, o in jobs), newline='\n')
-    one = f'{cc} {flags} -Iinclude -c "$0" -o "$1" 2> "$1.log" || echo FAILED "$0"'
-    script = ['#!/bin/sh', f"xargs -P \"$(nproc)\" -n 2 sh -c '{one}' < build/jobs.txt"]
+    # One compiler process per source, as many at once as there are CPUs;
+    # .c files go through the C driver, everything else through C++.
+    lines = []
+    for src, obj in jobs:
+        driver = 'gcc' if src.endswith('.c') else 'g++'
+        lines.append(f'{tools}/bin/ppu-lv2-{driver} {src} {obj}' + '\n')
+    (BUILD / 'jobs.txt').write_text(''.join(lines), newline='\n')
+    one = (f'"$0" -B{tools}/libexec/gcc/ppu-lv2/4.1.1/ -B{tools}/bin/ppu-lv2- {flags} -Iinclude '
+           '-c "$1" -o "$2" 2> "$2.log" || echo FAILED "$1"')
+    script = ['#!/bin/sh', f"xargs -P \"$(nproc)\" -n 3 sh -c '{one}' < build/jobs.txt"]
     (BUILD / 'compile.sh').write_text('\n'.join(script) + '\n', newline='\n')
     if os.name == 'nt':
         cmd = ['docker', 'run', '--rm', '-v', f'{COMPILER}:/c:ro', '-v', f'{ROOT}:/w', '-w', '/w',
@@ -95,7 +101,7 @@ def compile_all(sources):
     failed = {line.split(' ', 1)[1] for line in out.stdout.splitlines() if line.startswith('FAILED ')}
     for src in sources:
         if src.relative_to(ROOT).as_posix() in failed:
-            results[src] = (BUILD / 'obj' / src.relative_to(ROOT).with_suffix('.o.log')).read_text()
+            results[src] = (BUILD / 'obj' / (src.relative_to(ROOT).as_posix() + '.o.log')).read_text()
     return results
 
 
@@ -126,6 +132,8 @@ def main():
             continue
         obj = Object(obj_path)
         for name, section, start, size in obj.functions():
+            if name.startswith('.stub_'):
+                continue                      # placeholder callee of a generated thunk
             m = re.fullmatch(r'\.fn_([0-9a-f]{8})', name)   # C-linkage fn_<address> maps itself
             if m:
                 address = int(m.group(1), 16)
