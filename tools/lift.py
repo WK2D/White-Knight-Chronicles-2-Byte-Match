@@ -203,6 +203,7 @@ class Lifter:
         self.uses_locals = False          # the frame holds locals: one struct l
         self.tails = set()                # indexes of tail calls (b to another function)
         self.budget = 16 * len(words)     # instructions step() may execute in total
+        self.noreturn = set()             # callees that never return (the function ends in a call)
         self.slots = {}                   # stack offset -> (kind, value): int/float conversions go through memory         # blocks outside a loop that only lead to a return
         self.polymorphic = set()          # argument registers whose offset-0 word is a vptr
         self.vclasses = {}                # class tag -> {slot: (rtype, [types])}
@@ -1408,11 +1409,21 @@ class Lifter:
                     types = [CTYPES.get(a.ctype, 'int') for a in st['args']]
                     rtype = st['type'] if st['used'] else 'void'
                     key = (rtype, types, st['local'])
-                    if st['target'] in callees and callees[st['target']] != key:
-                        raise Fail('one callee, two signatures')
+                    prev = callees.get(st['target'])
+                    if prev is not None and prev != key:
+                        # One declaration for both calls: the first one's parameter
+                        # types (arguments are cast), and a return type if either uses it.
+                        if len(prev[1]) != len(types) or prev[2] != key[2] \
+                                or 'void' not in (prev[0], rtype) and prev[0] != rtype:
+                            raise Fail('one callee, two signatures')
+                        types = prev[1]
+                        rtype = prev[0] if rtype == 'void' else rtype
+                        key = (rtype, types, st['local'])
                     callees[st['target']] = key
                     prefix = 'stub' if st['local'] else 'fn'
                     call = f'{prefix}_{st["target"]:08x}({", ".join(f"({t})({a.text})" for a, t in zip(st["args"], types))})'
+                    if st['used'] and rtype != st['type']:
+                        call = f'({st["type"]})({call})'
                     out.append(pad + (f'{st["temp"]} = {call};' if st['used'] else f'{call};'))
                 elif isinstance(st, list) and st[0] == 'return':
                     r = self.returns[st[1]]
@@ -1476,6 +1487,10 @@ class Lifter:
             structs.append(class_decl(tag, slots, {}))
         decls = structs + [f'extern {self.tag(("g", d))} {n};' if ('g', d) in self.layouts else f'extern char {n}[];'
                            for d, n in self.globals.items()]
+        for target in self.noreturn:                       # redeclared so GCC knows before the call
+            rtype, types, local = callees[target]
+            name = f'{"stub" if local else "fn"}_{target:08x}'
+            decls.append(f'{"static " if local else ""}{rtype} {name}({", ".join(types) or "void"}) __attribute__((noreturn));')
         if any('/*vtable slot' in l or '/*virtual*/' in l for l in body):
             raise Fail('vtable internals used as an ordinary value')
         sig = f'{ret_type} fn_{self.address:08x}({", ".join(params) if params else "void"})'

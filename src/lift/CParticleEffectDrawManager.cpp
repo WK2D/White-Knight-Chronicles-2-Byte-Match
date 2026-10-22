@@ -5,9 +5,87 @@
 extern "C" {
 
 void fn_008f26d4(void*);
+void fn_00acb958(int, int, int);
+void fn_00acbed8(int);
 
 void fn_008e489c(void* a0) {
     fn_008f26d4((void*)((char*)a0 + 16));
+}
+
+void fn_008e48c8(int a0, int a1) {
+    fn_00acb958((int)(a1), (int)(9), (int)(1));
+    fn_00acb958((int)(a1), (int)(1), (int)(1));
+    fn_00acb958((int)(a1), (int)(23), (int)(516));
+    fn_00acb958((int)(a1), (int)(24), (int)(0));
+    fn_00acb958((int)(a1), (int)(14), (int)(0));
+    fn_00acb958((int)(a1), (int)(2), (int)(1));
+    fn_00acb958((int)(a1), (int)(13), (int)(0));
+    fn_00acb958((int)(a1), (int)(3), (int)(513));
+    fn_00acb958((int)(a1), (int)(12), (int)(65793));
+    fn_00acb958((int)(a1), (int)(25), (int)(770));
+    fn_00acb958((int)(a1), (int)(27), (int)(0));
+    fn_00acb958((int)(a1), (int)(26), (int)(771));
+    fn_00acb958((int)(a1), (int)(28), (int)(0));
+    fn_00acb958((int)(a1), (int)(29), (int)(32774));
+    fn_00acb958((int)(a1), (int)(30), (int)(32774));
+    fn_00acbed8((int)(a1));
+}
+
+void fn_008e4a34(int a0, int a1) {
+    fn_00acb958((int)(a1), (int)(9), (int)(1));
+    fn_00acb958((int)(a1), (int)(1), (int)(1));
+    fn_00acb958((int)(a1), (int)(23), (int)(516));
+    fn_00acb958((int)(a1), (int)(24), (int)(0));
+    fn_00acb958((int)(a1), (int)(14), (int)(0));
+    fn_00acb958((int)(a1), (int)(2), (int)(1));
+    fn_00acb958((int)(a1), (int)(13), (int)(0));
+    fn_00acb958((int)(a1), (int)(3), (int)(513));
+    fn_00acb958((int)(a1), (int)(12), (int)(65793));
+    fn_00acb958((int)(a1), (int)(25), (int)(770));
+    fn_00acb958((int)(a1), (int)(27), (int)(0));
+    fn_00acb958((int)(a1), (int)(26), (int)(1));
+    fn_00acb958((int)(a1), (int)(28), (int)(0));
+    fn_00acb958((int)(a1), (int)(29), (int)(32779));
+    fn_00acb958((int)(a1), (int)(30), (int)(32774));
+    fn_00acbed8((int)(a1));
+}
+
+void fn_008e4ba0(int a0, int a1) {
+    fn_00acb958((int)(a1), (int)(9), (int)(1));
+    fn_00acb958((int)(a1), (int)(1), (int)(1));
+    fn_00acb958((int)(a1), (int)(23), (int)(516));
+    fn_00acb958((int)(a1), (int)(24), (int)(0));
+    fn_00acb958((int)(a1), (int)(14), (int)(0));
+    fn_00acb958((int)(a1), (int)(2), (int)(1));
+    fn_00acb958((int)(a1), (int)(13), (int)(0));
+    fn_00acb958((int)(a1), (int)(3), (int)(513));
+    fn_00acb958((int)(a1), (int)(12), (int)(65793));
+    fn_00acb958((int)(a1), (int)(25), (int)(770));
+    fn_00acb958((int)(a1), (int)(27), (int)(0));
+    fn_00acb958((int)(a1), (int)(26), (int)(1));
+    fn_00acb958((int)(a1), (int)(28), (int)(0));
+    fn_00acb958((int)(a1), (int)(29), (int)(32774));
+    fn_00acb958((int)(a1), (int)(30), (int)(32774));
+    fn_00acbed8((int)(a1));
+}
+
+void fn_008e4d0c(int a0, int a1) {
+    fn_00acb958((int)(a1), (int)(9), (int)(1));
+    fn_00acb958((int)(a1), (int)(1), (int)(1));
+    fn_00acb958((int)(a1), (int)(23), (int)(516));
+    fn_00acb958((int)(a1), (int)(24), (int)(0));
+    fn_00acb958((int)(a1), (int)(14), (int)(0));
+    fn_00acb958((int)(a1), (int)(2), (int)(1));
+    fn_00acb958((int)(a1), (int)(13), (int)(0));
+    fn_00acb958((int)(a1), (int)(3), (int)(513));
+    fn_00acb958((int)(a1), (int)(12), (int)(16843009));
+    fn_00acb958((int)(a1), (int)(25), (int)(770));
+    fn_00acb958((int)(a1), (int)(27), (int)(1));
+    fn_00acb958((int)(a1), (int)(26), (int)(1));
+    fn_00acb958((int)(a1), (int)(28), (int)(0));
+    fn_00acb958((int)(a1), (int)(29), (int)(32774));
+    fn_00acb958((int)(a1), (int)(30), (int)(32774));
+    fn_00acbed8((int)(a1));
 }
 
 }

@@ -87,6 +87,20 @@ int fn_007a62f4(unk_007a62f4_a0* a0) {
     return (int)(0);
 }
 
+struct unk_007a6330_a0 {
+    char pad_0[4352];
+    u32 f_1100;
+};
+int fn_007a6330(unk_007a6330_a0* a0) {
+    int t2;
+    if ((int)(a0->f_1100) != (int)(0)) {
+        fn_007af0c4((void*)(a0->f_1100), (int)(0));
+        fn_007af0c4((void*)(a0->f_1100), (int)(1));
+        t2 = fn_007af0c4((void*)(a0->f_1100), (int)(3));
+    }
+    return (int)(0);
+}
+
 struct unk_007a6398_a0 {
     char pad_0[4352];
     u32 f_1100;
