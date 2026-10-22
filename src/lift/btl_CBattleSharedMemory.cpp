@@ -74,31 +74,6 @@ void fn_00580eb0(int a0, int a1) {
     } while (--v4 != 0);
 }
 
-int fn_005818a0(int a0, int a1) {
-    int v0;
-    int v1;
-    int v2;
-    int v3;
-    u32 v4;
-    v0 = (int)(16);
-    v1 = (int)(0);
-    v3 = (int)(0);
-    v4 = (u32)(16);
-    for (;;) {
-        if ((int)(FIELD(u8, (int)(v3) + (int)(a0), 0)) == (int)(a1)) {
-            return (int)(v1);
-        }
-        v0 = (int)(FIELD(u8, (int)(v3) + (int)(a0), 0));
-        v1 = (int)(v1 + 1);
-        v2 = (int)((int)(v3) + (int)(a0));
-        v3 = (int)(v3 + 2);
-        if (--v4 == 0) {
-            break;
-        }
-    }
-    return (int)(-1);
-}
-
 struct unk_00581ddc_a0 {
     void* f_0;
 };

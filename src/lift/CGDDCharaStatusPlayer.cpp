@@ -11134,4 +11134,18 @@ int fn_00387630(unk_00387630_a0* a0, int a1) {
     return (int)(t1);
 }
 
+void fn_0038aa04(int a0) {
+    int v0;
+    int v1;
+    u32 v2;
+    v0 = (int)(8);
+    v1 = (int)(0);
+    v2 = (u32)(8);
+    do {
+        FIELD(u8, (int)(a0) + (int)(v1), 3786) = (u8)(0);
+        v0 = (int)((int)(a0) + (int)(v1));
+        v1 = (int)(v1 + 1);
+    } while (--v2 != 0);
+}
+
 }

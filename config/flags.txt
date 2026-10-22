@@ -1,0 +1,7 @@
+# Source files built with other compiler flags than the project's (-O2).
+# path-pattern flags...   (fnmatch patterns, relative to the repository root)
+#
+# The game itself is plain -O2: natural C loops match only with it. The file
+# below matched first with -fno-ivopts and has no natural -O2 form yet; treat
+# it as suspect until one is found.
+src/game/CPostEffectManager.cpp -O2 -fno-ivopts

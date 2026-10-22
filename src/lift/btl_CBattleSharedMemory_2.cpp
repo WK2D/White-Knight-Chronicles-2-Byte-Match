@@ -31,6 +31,51 @@ void fn_00582a30(unk_00582a30_a0* a0) {
     fn_00fc88dc((void*)(a0));
 }
 
+int fn_00583414(int a0, int a1, int a2) {
+    int v0;
+    int v1;
+    int v2;
+    int v3;
+    int v4;
+    u32 v5;
+    int v6;
+    int v7;
+    int v8;
+    void* v9;
+    v0 = (int)(40);
+    v1 = (int)(0);
+    v3 = (int)(0);
+    v5 = (u32)(40);
+    for (;;) {
+        if ((int)(FIELD(u8, (int)(v1) + (int)(a0), 292)) == (int)(a2)) {
+            if ((int)(FIELD(u8, (int)(a0) + (int)(v3), 1419)) == (int)(0)) {
+                if ((int)(FIELD(u8, (int)(a1) + (int)(v3), 1419)) == (int)(0)) {
+                    return (int)(v1);
+                }
+                v6 = (int)(FIELD(u8, (int)(a1) + (int)(v3), 1419));
+            } else {
+                v6 = (int)((int)(a1) + (int)(v3));
+            }
+            v7 = (int)(v6);
+            v8 = (int)(FIELD(u8, (int)(a0) + (int)(v3), 1419));
+            v9 = (void*)((int)(a1) + (int)(v3));
+        } else {
+            v7 = (int)(FIELD(u8, (int)(v1) + (int)(a0), 292));
+            v8 = (int)((int)(v1) + (int)(a0));
+            v9 = (void*)((int)(a0) + (int)(v3));
+        }
+        v0 = (int)(v7);
+        v1 = (int)(v1 + 1);
+        v2 = (int)(v8);
+        v3 = (int)(v3 + 44);
+        v4 = (int)(v9);
+        if (--v5 == 0) {
+            break;
+        }
+    }
+    return (int)(-1);
+}
+
 struct unk_0058651c_a0 {
     u32 f_0;
 };

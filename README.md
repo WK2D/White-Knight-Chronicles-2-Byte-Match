@@ -37,10 +37,11 @@ more native with every green square.
   the [SDK 3.1.0 source package](https://github.com/sagemono/ps3gcc)
   (`$Rev: 3364 $`, the same SDK release). Its output already matches real game
   functions byte for byte.
-- **Compiler flags:** `-O2 -fno-ivopts`. A counted loop in `CPostEffectManager`
-  matches only with induction-variable optimization off.
-- **Code:** 55,164 functions in 16.5 MB of PowerPC code. **11,959 match**
-  (1.74% of the code): three by hand, the rest small functions written by
+- **Compiler flags:** `-O2`. Loops written as natural C (array indexing,
+  `for (int i = 0; ...)`) match byte for byte with it. Files that need other
+  flags are listed in [`config/flags.txt`](config/flags.txt).
+- **Code:** 55,164 functions in 16.5 MB of PowerPC code. **11,966 match**
+  (1.74% of the code): six by hand, the rest small functions written by
   [`tools/gen_simple.py`](tools/gen_simple.py) from their instruction shape
   (empty bodies, constant returns, field getters and setters, global loads,
   struct clears, tail calls with constant arguments, empty derived-class

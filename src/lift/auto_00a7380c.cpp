@@ -10,6 +10,24 @@ u32 fn_00a74568(int a0) {
     return (u32)((u32)(((u32)(a0) << 4) + 16) & 0xfffffff0);
 }
 
+struct unk_00a745a4_a0 {
+    char pad_0[132];
+    u32 f_84;
+};
+void fn_00a745a4(unk_00a745a4_a0* a0) {
+    int v0;
+    int v1;
+    u32 v2;
+    a0->f_84 = (u32)(0);
+    v1 = (int)(0);
+    v2 = (u32)(20);
+    do {
+        FIELD(u16, (char*)a0 + (int)(v1), 92) = (u16)(-1);
+        v0 = (int)((char*)a0 + (int)(v1));
+        v1 = (int)(v1 + 2);
+    } while (--v2 != 0);
+}
+
 struct unk_00a74940_a0 {
     char pad_0[8];
     u32 f_8;

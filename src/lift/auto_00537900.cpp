@@ -25,25 +25,6 @@ int fn_005380b4(void) {
     return (int)(v0);
 }
 
-extern char g_005381c4_0[];
-void fn_005381c4(void) {
-    int v0;
-    int v1;
-    int v2;
-    int v3;
-    u32 v4;
-    v0 = (int)(16);
-    v2 = (int)(0);
-    v4 = (u32)(16);
-    do {
-        FIELD(u32, (char*)g_005381c4_0 + (int)(v2), 0) = (u32)(FIELD(u32, (char*)((char*)g_005381c4_0 + -64) + (int)(v2), 0));
-        v0 = (int)(FIELD(u32, (char*)((char*)g_005381c4_0 + -64) + (int)(v2), 0));
-        v1 = (int)((char*)((char*)g_005381c4_0 + -64) + (int)(v2));
-        v2 = (int)(v2 + 4);
-        v3 = (int)((char*)g_005381c4_0 + (int)(v2));
-    } while (--v4 != 0);
-}
-
 extern char g_00538270_0[];
 void* fn_00538270(void) {
     int t0;

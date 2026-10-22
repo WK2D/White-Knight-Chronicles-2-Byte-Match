@@ -10,11 +10,9 @@ ORIG = ROOT / 'orig' / 'EBOOT.elf'
 ORIG_SHA1 = '92198149c562c676815acb560e7b9861b894abd6'   # BLUS30784 v01.00, decrypted
 BUILD = ROOT / 'build'
 COMPILER = ROOT / 'tools' / 'ppu-gcc'                     # built by tools/build_compiler.sh
-# Code generation options. The game was built with induction-variable
-# optimization off: a counted loop at 0x004b32e8 matches only with
-# -fno-ivopts (or the broader -fno-tree-loop-optimize; more loops will tell
-# the two apart).
-CFLAGS = os.environ.get('WKC2_CFLAGS', '-O2 -fno-ivopts').split()   # override for experiments
+# Code generation options: natural C loops match with plain -O2. Files that
+# need other flags are listed in config/flags.txt.
+CFLAGS = os.environ.get('WKC2_CFLAGS', '-O2').split()   # override for experiments; per file: config/flags.txt
 
 
 def load_functions():
@@ -24,6 +22,19 @@ def load_functions():
         if line and not line.startswith('#'):
             a, s = line.split()
             out[int(a, 16)] = int(s, 16)
+    return out
+
+
+def load_flags():
+    """[(source path pattern, flags)] from config/flags.txt: files built with
+    other flags than CFLAGS. The first matching pattern wins."""
+    out = []
+    path = ROOT / 'config' / 'flags.txt'
+    if path.exists():
+        for line in path.read_text().splitlines():
+            words = line.split('#', 1)[0].split()
+            if words:
+                out.append((words[0], words[1:]))
     return out
 
 

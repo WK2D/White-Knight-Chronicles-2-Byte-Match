@@ -11,6 +11,7 @@ functions (REL24/REL14) and 16-bit address/TOC offsets (ADDR16*, TOC16*).
 A call the original makes through a TOC-switching stub keeps its TOC
 restore (ld r2,40(r1)) where the object has the linker's placeholder nop.
 """
+import fnmatch
 import json
 import os
 import re
@@ -20,7 +21,7 @@ from collections import defaultdict
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from common import (BUILD, CFLAGS, COMPILER, ROOT, Object, Original, load_functions,
+from common import (BUILD, CFLAGS, COMPILER, ROOT, Object, Original, load_flags, load_functions,
                     load_symbols, load_units)
 
 REL24 = {10}                                   # R_PPC64_REL24
@@ -79,17 +80,19 @@ def compile_all(sources):
         tools = '/c'
     else:
         tools = str(COMPILER)
-    flags = ' '.join(CFLAGS)
+    overrides = load_flags()
     # One compiler process per source, as many at once as there are CPUs;
-    # .c files go through the C driver, everything else through C++.
+    # .c files go through the C driver, everything else through C++. Flags
+    # travel comma-joined so each job stays four words.
     lines = []
     for src, obj in jobs:
         driver = 'gcc' if src.endswith('.c') else 'g++'
-        lines.append(f'{tools}/bin/ppu-lv2-{driver} {src} {obj}' + '\n')
+        flags = next((f for pattern, f in overrides if fnmatch.fnmatch(src, pattern)), CFLAGS)
+        lines.append(f'{tools}/bin/ppu-lv2-{driver} {src} {obj} {",".join(flags)}' + '\n')
     (BUILD / 'jobs.txt').write_text(''.join(lines), newline='\n')
-    one = (f'"$0" -B{tools}/libexec/gcc/ppu-lv2/4.1.1/ -B{tools}/bin/ppu-lv2- {flags} -Iinclude '
+    one = (f'"$0" -B{tools}/libexec/gcc/ppu-lv2/4.1.1/ -B{tools}/bin/ppu-lv2- $(echo "$3" | tr , " ") -Iinclude '
            '-c "$1" -o "$2" 2> "$2.log" || echo FAILED "$1"')
-    script = ['#!/bin/sh', f"xargs -P \"$(nproc)\" -n 3 sh -c '{one}' < build/jobs.txt"]
+    script = ['#!/bin/sh', f"xargs -P \"$(nproc)\" -n 4 sh -c '{one}' < build/jobs.txt"]
     (BUILD / 'compile.sh').write_text('\n'.join(script) + '\n', newline='\n')
     if os.name == 'nt':
         cmd = ['docker', 'run', '--rm', '-v', f'{COMPILER}:/c:ro', '-v', f'{ROOT}:/w', '-w', '/w',
