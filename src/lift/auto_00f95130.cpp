@@ -9,8 +9,9 @@ void fn_00b0c728(u32);
 int fn_00b0fad8(int);
 
 int fn_00f964b0(void) {
-    int t0 = fn_00b0fad8((int)(0));
-    return t0;
+    int t0;
+    t0 = fn_00b0fad8((int)(0));
+    return (int)(t0);
 }
 
 struct unk_00f967a0_a4 {
@@ -20,9 +21,9 @@ struct unk_00f967a0_a7 {
     u32 f_0;
 };
 int fn_00f967a0(int a0, int a1, int a2, int a3, unk_00f967a0_a4* a4, int a5, int a6, unk_00f967a0_a7* a7) {
-    a4->f_0 = a2;
-    a7->f_0 = a5;
-    return 3;
+    a4->f_0 = (u32)(a2);
+    a7->f_0 = (u32)(a5);
+    return (int)(3);
 }
 
 struct unk_00f967b0_a4 {
@@ -32,17 +33,27 @@ struct unk_00f967b0_a7 {
     u32 f_0;
 };
 int fn_00f967b0(int a0, int a1, int a2, int a3, unk_00f967b0_a4* a4, int a5, int a6, unk_00f967b0_a7* a7) {
-    a4->f_0 = a2;
-    a7->f_0 = a5;
-    return 3;
+    a4->f_0 = (u32)(a2);
+    a7->f_0 = (u32)(a5);
+    return (int)(3);
 }
 
 struct unk_00f967c0_a4 {
     u32 f_0;
 };
 int fn_00f967c0(int a0, int a1, int a2, int a3, unk_00f967c0_a4* a4) {
-    a4->f_0 = a2;
-    return 3;
+    a4->f_0 = (u32)(a2);
+    return (int)(3);
+}
+
+int fn_00f967cc(int a0, int a1, int a2, int a3, int a4) {
+    int v0;
+    if ((u32)((int)(a3) - (int)(a2)) > (u32)(a4)) {
+        v0 = (int)(a4);
+    } else {
+        v0 = (int)((int)(a3) - (int)(a2));
+    }
+    return (int)(v0);
 }
 
 struct unk_00f96858_a0 {

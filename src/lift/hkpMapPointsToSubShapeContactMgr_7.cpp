@@ -9,8 +9,9 @@ void fn_00deeac8(int, int);
 void* fn_00df94a0(void);
 
 void* fn_00deb7fc(void) {
-    void* t0 = fn_00df94a0();
-    return t0;
+    void* t0;
+    t0 = fn_00df94a0();
+    return (void*)(t0);
 }
 
 void fn_00dec360(int a0, int a1, int a2) {

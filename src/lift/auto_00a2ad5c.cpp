@@ -14,8 +14,9 @@ void fn_00a2affc(void) {
 }
 
 void* fn_00a2b020(void) {
-    void* t0 = fn_00b41fb8();
-    return t0;
+    void* t0;
+    t0 = fn_00b41fb8();
+    return (void*)(t0);
 }
 
 void fn_00a2b97c(void) {
@@ -25,7 +26,7 @@ void fn_00a2b97c(void) {
 extern char g_00a2b9a4_0[];
 int fn_00a2b9a4(void) {
     fn_00a21380((void*)(g_00a2b9a4_0));
-    return 1;
+    return (int)(1);
 }
 
 }

@@ -10,27 +10,30 @@ static void __attribute__((noinline)) stub_0048b3c8(u32 p0, u16 p1) { __asm__ vo
 
 extern char g_0048ae14_0[];
 int fn_0048ae14(int a0) {
-    int t0 = fn_00041b48((int)(a0));
-    FIELD(u16, FIELD(u32, FIELD(u32, g_0048ae14_0, 0), 16), 68) = t0;
-    return 1;
+    int t0;
+    t0 = fn_00041b48((int)(a0));
+    FIELD(u16, FIELD(u32, FIELD(u32, g_0048ae14_0, 0), 16), 68) = (u16)(t0);
+    return (int)(1);
 }
 
 extern char g_0048b36c_0[];
 int fn_0048b36c(int a0) {
-    int t0 = fn_00041b48((int)(a0));
+    int t0;
+    t0 = fn_00041b48((int)(a0));
     stub_0048b2b8((u32)(FIELD(u32, g_0048b36c_0, 0)), (u16)((u16)t0));
-    FIELD(u16, FIELD(u32, g_0048b36c_0, 0), 22) = 0;
-    FIELD(u32, FIELD(u32, g_0048b36c_0, 0), 36) = t0;
-    return 1;
+    FIELD(u16, FIELD(u32, g_0048b36c_0, 0), 22) = (u16)(0);
+    FIELD(u32, FIELD(u32, g_0048b36c_0, 0), 36) = (u32)(t0);
+    return (int)(1);
 }
 
 extern char g_0048b47c_0[];
 int fn_0048b47c(int a0) {
-    int t0 = fn_00041b48((int)(a0));
+    int t0;
+    t0 = fn_00041b48((int)(a0));
     stub_0048b3c8((u32)(FIELD(u32, g_0048b47c_0, 0)), (u16)((u16)t0));
-    FIELD(u16, FIELD(u32, g_0048b47c_0, 0), 20) = 0;
-    FIELD(u32, FIELD(u32, g_0048b47c_0, 0), 28) = t0;
-    return 1;
+    FIELD(u16, FIELD(u32, g_0048b47c_0, 0), 20) = (u16)(0);
+    FIELD(u32, FIELD(u32, g_0048b47c_0, 0), 28) = (u32)(t0);
+    return (int)(1);
 }
 
 }

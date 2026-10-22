@@ -16,8 +16,8 @@ struct unk_0014fae4_a2 {
     void* f_0;
 };
 void fn_0014fae4(unk_0014fae4_a0* a0, unk_0014fae4_a1* a1, unk_0014fae4_a2* a2) {
-    a2->f_0 = (char*)a0 + 12;
-    a1->f_0 = a0->f_1c;
+    a2->f_0 = (void*)((char*)a0 + 12);
+    a1->f_0 = (u32)(a0->f_1c);
 }
 
 }

@@ -11,7 +11,7 @@ struct unk_002ed0b8_a1 {
 };
 void fn_002ed0b8(int a0, unk_002ed0b8_a1* a1) {
     fn_000750a4((int)(6199), (int)(3));
-    a1->f_0 = 2;
+    a1->f_0 = (u32)(2);
 }
 
 }

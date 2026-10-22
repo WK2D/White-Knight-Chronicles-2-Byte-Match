@@ -14,11 +14,11 @@ struct unk_0044bfd4_a0 {
 };
 extern char g_0044bfd4_0[];
 void fn_0044bfd4(unk_0044bfd4_a0* a0) {
-    a0->f_c = 0;
-    a0->f_0 = 0;
-    a0->f_4 = 0;
-    FIELD(u32, g_0044bfd4_0, 0) = 0;
-    a0->f_8 = 0;
+    a0->f_c = (u32)(0);
+    a0->f_0 = (u32)(0);
+    a0->f_4 = (u32)(0);
+    FIELD(u32, g_0044bfd4_0, 0) = (u32)(0);
+    a0->f_8 = (u32)(0);
 }
 
 struct unk_0044bff4_a0 {
@@ -29,11 +29,11 @@ struct unk_0044bff4_a0 {
 };
 extern char g_0044bff4_0[];
 void fn_0044bff4(unk_0044bff4_a0* a0) {
-    a0->f_c = 0;
-    a0->f_0 = 0;
-    a0->f_4 = 0;
-    FIELD(u32, g_0044bff4_0, 0) = 0;
-    a0->f_8 = 0;
+    a0->f_c = (u32)(0);
+    a0->f_0 = (u32)(0);
+    a0->f_4 = (u32)(0);
+    FIELD(u32, g_0044bff4_0, 0) = (u32)(0);
+    a0->f_8 = (u32)(0);
 }
 
 struct unk_0044c640_a0 {
@@ -42,8 +42,9 @@ struct unk_0044c640_a0 {
     u8 f_9;
 };
 u8 fn_0044c640(unk_0044c640_a0* a0) {
-    int t0 = stub_0044c60c((u8)(a0->f_8), (u8)(a0->f_9));
-    return (u8)t0;
+    int t0;
+    t0 = stub_0044c60c((u8)(a0->f_8), (u8)(a0->f_9));
+    return (u8)((u8)t0);
 }
 
 }

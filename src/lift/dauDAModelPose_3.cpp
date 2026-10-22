@@ -11,8 +11,8 @@ struct unk_0019ac00_a0 {
 };
 extern char g_0019ac00_0[];
 void fn_0019ac00(unk_0019ac00_a0* a0, int a1) {
-    a0->f_4 = a1;
-    a0->f_0 = g_0019ac00_0;
+    a0->f_4 = (u32)(a1);
+    a0->f_0 = (void*)(g_0019ac00_0);
 }
 
 }

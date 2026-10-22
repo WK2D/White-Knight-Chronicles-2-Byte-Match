@@ -4,6 +4,8 @@
 
 extern "C" {
 
+int fn_00945324(u32);
+int fn_0094765c(u32, int);
 int fn_0094dce8(void*);
 void fn_00bc3210(void);
 
@@ -11,13 +13,31 @@ void fn_00bc328c(void) {
     fn_00bc3210();
 }
 
+struct unk_00bc32b0_a0 {
+    char pad_0[4];
+    u32 f_4;
+};
+void fn_00bc32b0(unk_00bc32b0_a0* a0, int a1) {
+    int t0;
+    int t1;
+    int v0;
+    t0 = fn_00945324((u32)(a0->f_4));
+    if ((int)(t0) != (int)(a1)) {
+        t1 = fn_0094765c((u32)(a0->f_4), (int)(a1));
+        v0 = (int)(t1);
+    } else {
+        v0 = (int)(t0);
+    }
+}
+
 struct unk_00bc3308_a0 {
     u32 f_0;
 };
 int fn_00bc3308(unk_00bc3308_a0* a0) {
-    int t0 = fn_0094dce8((void*)((char*)a0 + 16));
-    a0->f_0 = t0;
-    return t0;
+    int t0;
+    t0 = fn_0094dce8((void*)((char*)a0 + 16));
+    a0->f_0 = (u32)(t0);
+    return (int)(t0);
 }
 
 }

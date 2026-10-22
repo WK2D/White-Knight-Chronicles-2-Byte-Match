@@ -13,7 +13,7 @@ struct unk_00916194_a0 {
 };
 extern char g_00916194_0[];
 void fn_00916194(unk_00916194_a0* a0) {
-    a0->f_0 = g_00916194_0;
+    a0->f_0 = (void*)(g_00916194_0);
     stub_00913ef4((void*)(a0));
     stub_00916184((void*)(a0));
     fn_00b3cd48((void*)(a0));

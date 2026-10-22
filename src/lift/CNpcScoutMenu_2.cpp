@@ -8,7 +8,7 @@ void fn_00b3ccc8(void*);
 
 int fn_0080bf40(void* a0) {
     fn_00b3ccc8((void*)((char*)a0 + 40));
-    return 0;
+    return (int)(0);
 }
 
 }

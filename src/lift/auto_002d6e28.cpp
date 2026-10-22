@@ -5,12 +5,21 @@
 extern "C" {
 
 
+struct unk_002d6ef0_a0 {
+    u32 f_0;
+    char pad_4[4];
+    u32 f_8;
+};
+void* fn_002d6ef0(unk_002d6ef0_a0* a0) {
+    return (void*)((int)(a0->f_8) + (int)(FIELD(u32, FIELD(u32, a0->f_0, 0), 0)));
+}
+
 struct unk_002d6f40_a0 {
     u32 f_0;
     u32 f_4;
 };
 u16 fn_002d6f40(unk_002d6f40_a0* a0) {
-    return FIELD(u16, a0->f_4 + FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 102);
+    return (u16)(FIELD(u16, (int)(a0->f_4) + (int)(FIELD(u32, FIELD(u32, a0->f_0, 0), 0)), 102));
 }
 
 struct unk_002d6f60_a0 {
@@ -18,7 +27,7 @@ struct unk_002d6f60_a0 {
     u32 f_4;
 };
 u16 fn_002d6f60(unk_002d6f60_a0* a0) {
-    return FIELD(u16, a0->f_4 + FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 98);
+    return (u16)(FIELD(u16, (int)(a0->f_4) + (int)(FIELD(u32, FIELD(u32, a0->f_0, 0), 0)), 98));
 }
 
 struct unk_002d6f80_a0 {
@@ -26,7 +35,7 @@ struct unk_002d6f80_a0 {
     u32 f_4;
 };
 u8 fn_002d6f80(unk_002d6f80_a0* a0) {
-    return FIELD(u8, a0->f_4 + FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 96);
+    return (u8)(FIELD(u8, (int)(a0->f_4) + (int)(FIELD(u32, FIELD(u32, a0->f_0, 0), 0)), 96));
 }
 
 struct unk_002d6fa0_a0 {
@@ -34,7 +43,7 @@ struct unk_002d6fa0_a0 {
     u32 f_4;
 };
 u32 fn_002d6fa0(unk_002d6fa0_a0* a0) {
-    return FIELD(u32, a0->f_4 + FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 84);
+    return (u32)(FIELD(u32, (int)(a0->f_4) + (int)(FIELD(u32, FIELD(u32, a0->f_0, 0), 0)), 84));
 }
 
 struct unk_002d7154_a0 {
@@ -55,15 +64,15 @@ struct unk_002d7154_a1 {
     float f_28;
 };
 void fn_002d7154(unk_002d7154_a0* a0, unk_002d7154_a1* a1) {
-    FIELD(float, a0->f_4 + FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 0) = a1->f_0;
-    FIELD(float, a0->f_4 + FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 4) = a1->f_4;
-    FIELD(float, a0->f_4 + FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 8) = a1->f_8;
-    FIELD(float, a0->f_4 + FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 12) = a1->f_10;
-    FIELD(float, a0->f_4 + FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 16) = a1->f_14;
-    FIELD(float, a0->f_4 + FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 20) = a1->f_18;
-    FIELD(float, a0->f_4 + FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 24) = a1->f_20;
-    FIELD(float, a0->f_4 + FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 28) = a1->f_24;
-    FIELD(float, a0->f_4 + FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 32) = a1->f_28;
+    FIELD(float, (int)(a0->f_4) + (int)(FIELD(u32, FIELD(u32, a0->f_0, 0), 0)), 0) = a1->f_0;
+    FIELD(float, (int)(a0->f_4) + (int)(FIELD(u32, FIELD(u32, a0->f_0, 0), 0)), 4) = a1->f_4;
+    FIELD(float, (int)(a0->f_4) + (int)(FIELD(u32, FIELD(u32, a0->f_0, 0), 0)), 8) = a1->f_8;
+    FIELD(float, (int)(a0->f_4) + (int)(FIELD(u32, FIELD(u32, a0->f_0, 0), 0)), 12) = a1->f_10;
+    FIELD(float, (int)(a0->f_4) + (int)(FIELD(u32, FIELD(u32, a0->f_0, 0), 0)), 16) = a1->f_14;
+    FIELD(float, (int)(a0->f_4) + (int)(FIELD(u32, FIELD(u32, a0->f_0, 0), 0)), 20) = a1->f_18;
+    FIELD(float, (int)(a0->f_4) + (int)(FIELD(u32, FIELD(u32, a0->f_0, 0), 0)), 24) = a1->f_20;
+    FIELD(float, (int)(a0->f_4) + (int)(FIELD(u32, FIELD(u32, a0->f_0, 0), 0)), 28) = a1->f_24;
+    FIELD(float, (int)(a0->f_4) + (int)(FIELD(u32, FIELD(u32, a0->f_0, 0), 0)), 32) = a1->f_28;
 }
 
 struct unk_002d7254_a0 {
@@ -72,7 +81,7 @@ struct unk_002d7254_a0 {
     u32 f_8;
 };
 u16 fn_002d7254(unk_002d7254_a0* a0) {
-    return FIELD(u16, a0->f_8 + FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 26);
+    return (u16)(FIELD(u16, (int)(a0->f_8) + (int)(FIELD(u32, FIELD(u32, a0->f_0, 0), 0)), 26));
 }
 
 struct unk_002d7274_a0 {
@@ -81,7 +90,7 @@ struct unk_002d7274_a0 {
     u32 f_8;
 };
 u16 fn_002d7274(unk_002d7274_a0* a0) {
-    return FIELD(u16, a0->f_8 + FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 24);
+    return (u16)(FIELD(u16, (int)(a0->f_8) + (int)(FIELD(u32, FIELD(u32, a0->f_0, 0), 0)), 24));
 }
 
 }

@@ -10,26 +10,28 @@ int fn_009b4294(int);
 
 int fn_00988f44(void) {
     stub_00988e1c();
-    return 0;
+    return (int)(0);
 }
 
 int fn_00988f68(void) {
     stub_00988e1c();
-    return 0;
+    return (int)(0);
 }
 
 void* fn_00989114(void) {
-    void* t0 = fn_0098a35c();
-    return t0;
+    void* t0;
+    t0 = fn_0098a35c();
+    return (void*)(t0);
 }
 
 struct unk_0098a20c_a0 {
     u32 f_0;
 };
 int fn_0098a20c(unk_0098a20c_a0* a0, int a1) {
-    int t0 = fn_009b4294((int)(a1));
-    a0->f_0 = t0;
-    return 0;
+    int t0;
+    t0 = fn_009b4294((int)(a1));
+    a0->f_0 = (u32)(t0);
+    return (int)(0);
 }
 
 }

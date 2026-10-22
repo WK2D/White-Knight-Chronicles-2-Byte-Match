@@ -16,7 +16,7 @@ struct unk_00af9e04_a1 {
     u32 f_0;
 };
 void fn_00af9e04(unk_00af9e04_a0* a0, unk_00af9e04_a1* a1) {
-    a1->f_0 = a0->f_8;
+    a1->f_0 = (u32)(a0->f_8);
 }
 
 void fn_00af9e2c(void) {

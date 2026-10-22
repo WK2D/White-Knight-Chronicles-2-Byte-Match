@@ -21,8 +21,9 @@ struct unk_00d78d38_a0 {
     u32 f_8;
 };
 u8 fn_00d78d38(unk_00d78d38_a0* a0) {
-    int t0 = fn_00d94fc8((u32)(a0->f_8));
-    return (u8)t0;
+    int t0;
+    t0 = fn_00d94fc8((u32)(a0->f_8));
+    return (u8)((u8)t0);
 }
 
 struct unk_00d78d64_a0 {
@@ -30,8 +31,9 @@ struct unk_00d78d64_a0 {
     u32 f_8;
 };
 u8 fn_00d78d64(unk_00d78d64_a0* a0) {
-    int t0 = fn_00d94fa8((u32)(a0->f_8));
-    return (u8)t0;
+    int t0;
+    t0 = fn_00d94fa8((u32)(a0->f_8));
+    return (u8)((u8)t0);
 }
 
 }

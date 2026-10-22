@@ -7,8 +7,9 @@ extern "C" {
 void* fn_00b4f0f8(int, int);
 
 void* fn_00b4f108(int a0, int a1, int a2) {
-    void* t0 = fn_00b4f0f8((int)(a0 + a1), (int)(a2));
-    return t0;
+    void* t0;
+    t0 = fn_00b4f0f8((int)((int)(a0) + (int)(a1)), (int)(a2));
+    return (void*)(t0);
 }
 
 }

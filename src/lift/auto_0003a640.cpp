@@ -8,7 +8,7 @@ static void __attribute__((noinline)) stub_0003a614(int p0, int p1) { __asm__ vo
 
 int fn_0003bb70(int a0, int a1) {
     stub_0003a614((int)(a0), (int)(a1));
-    return a0;
+    return (int)(a0);
 }
 
 }

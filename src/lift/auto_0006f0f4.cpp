@@ -8,16 +8,33 @@ static void* __attribute__((noinline)) stub_0006f220(void) { void* r; __asm__ vo
 static int __attribute__((noinline)) stub_0006f598(void* p0, u16 p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static int __attribute__((noinline)) stub_00070600(void* p0, u8 p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 
+void* fn_0006f114(void) {
+    return (void*)(-1);
+}
+
 u8 fn_0006f758(int a0) {
-    void* t0 = stub_0006f220();
-    int t1 = stub_0006f598((void*)(t0), (u16)((u16)a0));
-    return (u8)t1;
+    void* t0;
+    int t1;
+    t0 = stub_0006f220();
+    t1 = stub_0006f598((void*)(t0), (u16)((u16)a0));
+    return (u8)((u8)t1);
 }
 
 u8 fn_000711b8(int a0) {
-    void* t0 = stub_0006f220();
-    int t1 = stub_00070600((void*)(t0), (u8)((u8)a0));
-    return (u8)t1;
+    void* t0;
+    int t1;
+    t0 = stub_0006f220();
+    t1 = stub_00070600((void*)(t0), (u8)((u8)a0));
+    return (u8)((u8)t1);
+}
+
+extern char g_00072004_0[];
+extern char g_00072004_1[];
+void* fn_00072004(int a0) {
+    if ((int)(a0) != (int)(16384)) {
+        return (void*)(g_00072004_0);
+    }
+    return (void*)(g_00072004_1);
 }
 
 }

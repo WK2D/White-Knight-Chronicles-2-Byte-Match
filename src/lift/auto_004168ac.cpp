@@ -5,8 +5,32 @@
 extern "C" {
 
 
+struct unk_00417c70_a0 {
+    char pad_0[16];
+    u32 f_10;
+};
+void* fn_00417c70(unk_00417c70_a0* a0) {
+    return (void*)(a0->f_10 + 24);
+}
+
+struct unk_00417c80_a0 {
+    char pad_0[16];
+    u32 f_10;
+};
+void* fn_00417c80(unk_00417c80_a0* a0) {
+    return (void*)(a0->f_10 + 48);
+}
+
+struct unk_00417c90_a0 {
+    char pad_0[16];
+    u32 f_10;
+};
+void* fn_00417c90(unk_00417c90_a0* a0) {
+    return (void*)(a0->f_10 + 72);
+}
+
 int fn_00417ebc(int a0, int a1, int a2) {
-    return a2;
+    return (int)(a2);
 }
 
 }

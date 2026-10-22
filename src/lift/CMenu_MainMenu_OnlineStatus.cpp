@@ -6,6 +6,21 @@ extern "C" {
 
 void fn_00b37fa8(void*, int, int);
 
+struct unk_0063ed24_a0 {
+    char pad_0[277];
+    u8 f_115;
+};
+struct unk_0063ed24_a1 {
+    u8 f_0;
+};
+int fn_0063ed24(unk_0063ed24_a0* a0, unk_0063ed24_a1* a1) {
+    if ((int)(a0->f_115) == (int)(0)) {
+        return (int)(1);
+    }
+    a1->f_0 = (u8)(1);
+    return (int)(1);
+}
+
 void fn_0063ef34(void* a0) {
     fn_00b37fa8((void*)((char*)a0 + 180), (int)(0), (int)(128));
 }

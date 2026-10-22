@@ -11,8 +11,8 @@ struct unk_007fe408_a0 {
     u32 f_14c;
 };
 int fn_007fe408(unk_007fe408_a0* a0) {
-    a0->f_14c = 0;
-    return 1;
+    a0->f_14c = (u32)(0);
+    return (int)(1);
 }
 
 struct unk_007fec74_a0 {
@@ -21,7 +21,7 @@ struct unk_007fec74_a0 {
 };
 void fn_007fec74(unk_007fec74_a0* a0) {
     fn_00b3ccc8((void*)((char*)a0 + 40));
-    a0->f_70 = 1;
+    a0->f_70 = (u8)(1);
 }
 
 }

@@ -12,23 +12,27 @@ void* fn_00b41a38(void);
 void* fn_00b42098(void);
 
 int fn_00bf8e44(void) {
-    int t0 = fn_00b3e1d8();
-    return t0;
+    int t0;
+    t0 = fn_00b3e1d8();
+    return (int)(t0);
 }
 
 void* fn_00bf90bc(void) {
-    void* t0 = fn_00b3f818();
-    return t0;
+    void* t0;
+    t0 = fn_00b3f818();
+    return (void*)(t0);
 }
 
 void* fn_00bf90e4(void) {
-    void* t0 = fn_00b42098();
-    return t0;
+    void* t0;
+    t0 = fn_00b42098();
+    return (void*)(t0);
 }
 
 void* fn_00bf9270(void) {
-    void* t0 = fn_00b41a38();
-    return t0;
+    void* t0;
+    t0 = fn_00b41a38();
+    return (void*)(t0);
 }
 
 void fn_00bf9334(void) {
@@ -36,8 +40,9 @@ void fn_00bf9334(void) {
 }
 
 int fn_00bf9384(void) {
-    int t0 = fn_00b3f378();
-    return t0;
+    int t0;
+    t0 = fn_00b3f378();
+    return (int)(t0);
 }
 
 }

@@ -15,11 +15,12 @@ struct unk_008a12f4_a0 {
     u8 f_70;
 };
 int fn_008a12f4(unk_008a12f4_a0* a0) {
+    void* t1;
     fn_00b3ccc8((void*)((char*)a0 + 40));
-    a0->f_70 = 1;
-    void* t1 = fn_0089f02c((u32)(a0->f_24));
+    a0->f_70 = (u8)(1);
+    t1 = fn_0089f02c((u32)(a0->f_24));
     stub_008a0ef8((void*)(a0), (void*)(t1));
-    return 0;
+    return (int)(0);
 }
 
 }

@@ -9,10 +9,11 @@ void fn_00a066ac(void);
 void fn_00a07598(void);
 
 void* fn_009f1048(void* a0) {
+    void* t1;
     fn_00a07598();
-    void* t1 = stub_009f0424((void*)(a0));
+    t1 = stub_009f0424((void*)(a0));
     fn_00a066ac();
-    return t1;
+    return (void*)(t1);
 }
 
 }

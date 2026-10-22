@@ -22,8 +22,9 @@ struct unk_0082b560_a0 {
     u32 f_10fc;
 };
 u16 fn_0082b560(unk_0082b560_a0* a0) {
-    int t0 = fn_00835ab0((u32)(a0->f_10fc));
-    return (u16)t0;
+    int t0;
+    t0 = fn_00835ab0((u32)(a0->f_10fc));
+    return (u16)((u16)t0);
 }
 
 struct unk_0082b58c_a0 {
@@ -31,8 +32,9 @@ struct unk_0082b58c_a0 {
     u32 f_10fc;
 };
 void* fn_0082b58c(unk_0082b58c_a0* a0) {
-    void* t0 = fn_008360c0((u32)(a0->f_10fc));
-    return t0;
+    void* t0;
+    t0 = fn_008360c0((u32)(a0->f_10fc));
+    return (void*)(t0);
 }
 
 struct unk_0082b5b8_a0 {
@@ -40,8 +42,9 @@ struct unk_0082b5b8_a0 {
     u32 f_10fc;
 };
 u8 fn_0082b5b8(unk_0082b5b8_a0* a0, int a1, int a2) {
-    int t0 = fn_00836f38((u32)(a0->f_10fc), (void*)((char*)a0 + 280), (int)(a1), (int)(a2));
-    return (u8)t0;
+    int t0;
+    t0 = fn_00836f38((u32)(a0->f_10fc), (void*)((char*)a0 + 280), (int)(a1), (int)(a2));
+    return (u8)((u8)t0);
 }
 
 }

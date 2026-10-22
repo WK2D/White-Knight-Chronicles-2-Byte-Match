@@ -6,7 +6,7 @@ extern "C" {
 
 
 u16 fn_0050b110(int a0) {
-    return (u16)a0;
+    return (u16)((u16)a0);
 }
 
 }

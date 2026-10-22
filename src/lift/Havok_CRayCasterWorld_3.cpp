@@ -12,8 +12,8 @@ struct unk_00b51cac_a0 {
     u32 f_30;
 };
 int fn_00b51cac(unk_00b51cac_a0* a0) {
-    a0->f_30 = a0->f_4;
-    return 1;
+    a0->f_30 = (u32)(a0->f_4);
+    return (int)(1);
 }
 
 }

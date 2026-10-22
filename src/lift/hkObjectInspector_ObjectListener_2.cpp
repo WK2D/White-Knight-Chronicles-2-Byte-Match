@@ -13,9 +13,9 @@ struct unk_00c4d9d8_a0 {
 extern char g_00c4d9d8_0[];
 extern char g_00c4d9d8_1[];
 void fn_00c4d9d8(unk_00c4d9d8_a0* a0) {
-    a0->f_0 = g_00c4d9d8_0;
+    a0->f_0 = (void*)(g_00c4d9d8_0);
     fn_00c2b1a8((void*)((char*)a0 + 12));
-    a0->f_0 = g_00c4d9d8_1;
+    a0->f_0 = (void*)(g_00c4d9d8_1);
     fn_00b3cd48((void*)(a0));
 }
 
@@ -25,9 +25,9 @@ struct unk_00c4da38_a0 {
 extern char g_00c4da38_0[];
 extern char g_00c4da38_1[];
 void fn_00c4da38(unk_00c4da38_a0* a0) {
-    a0->f_0 = g_00c4da38_0;
+    a0->f_0 = (void*)(g_00c4da38_0);
     fn_00c2b1a8((void*)((char*)a0 + 12));
-    a0->f_0 = g_00c4da38_1;
+    a0->f_0 = (void*)(g_00c4da38_1);
 }
 
 struct unk_00c4da80_a0 {
@@ -36,9 +36,9 @@ struct unk_00c4da80_a0 {
 extern char g_00c4da80_0[];
 extern char g_00c4da80_1[];
 void fn_00c4da80(unk_00c4da80_a0* a0) {
-    a0->f_0 = g_00c4da80_0;
+    a0->f_0 = (void*)(g_00c4da80_0);
     fn_00c2b1a8((void*)((char*)a0 + 12));
-    a0->f_0 = g_00c4da80_1;
+    a0->f_0 = (void*)(g_00c4da80_1);
     fn_00b3cd48((void*)(a0));
 }
 
@@ -48,9 +48,9 @@ struct unk_00c4dae0_a0 {
 extern char g_00c4dae0_0[];
 extern char g_00c4dae0_1[];
 void fn_00c4dae0(unk_00c4dae0_a0* a0) {
-    a0->f_0 = g_00c4dae0_0;
+    a0->f_0 = (void*)(g_00c4dae0_0);
     fn_00c2b1a8((void*)((char*)a0 + 24));
-    a0->f_0 = g_00c4dae0_1;
+    a0->f_0 = (void*)(g_00c4dae0_1);
 }
 
 struct unk_00c4db28_a0 {
@@ -59,9 +59,9 @@ struct unk_00c4db28_a0 {
 extern char g_00c4db28_0[];
 extern char g_00c4db28_1[];
 void fn_00c4db28(unk_00c4db28_a0* a0) {
-    a0->f_0 = g_00c4db28_0;
+    a0->f_0 = (void*)(g_00c4db28_0);
     fn_00c2b1a8((void*)((char*)a0 + 12));
-    a0->f_0 = g_00c4db28_1;
+    a0->f_0 = (void*)(g_00c4db28_1);
 }
 
 }

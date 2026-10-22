@@ -5,6 +5,55 @@
 extern "C" {
 
 void fn_0002b48c(void*, int);
+int fn_001ab5b0(void*);
+int fn_001ab724(void*, int);
+int fn_001ab7ac(void*);
+int fn_001ab8a8(void*);
+
+struct unk_007adee0_a0 {
+    u32 f_0;
+};
+int fn_007adee0(unk_007adee0_a0* a0) {
+    int t0;
+    int v0;
+    if ((int)(a0->f_0) != (int)(0)) {
+        t0 = fn_001ab8a8((void*)(a0->f_0));
+        v0 = (int)(t0);
+    } else {
+        v0 = (int)(a0->f_0);
+    }
+    return (int)(0);
+}
+
+struct unk_007adf18_a0 {
+    u32 f_0;
+};
+int fn_007adf18(unk_007adf18_a0* a0) {
+    int t0;
+    int v0;
+    if ((int)(a0->f_0) != (int)(0)) {
+        t0 = fn_001ab7ac((void*)(a0->f_0));
+        v0 = (int)(t0);
+    } else {
+        v0 = (int)(a0->f_0);
+    }
+    return (int)(0);
+}
+
+struct unk_007adf50_a0 {
+    u32 f_0;
+};
+int fn_007adf50(unk_007adf50_a0* a0) {
+    int t0;
+    int v0;
+    if ((int)(a0->f_0) != (int)(0)) {
+        t0 = fn_001ab5b0((void*)(a0->f_0));
+        v0 = (int)(t0);
+    } else {
+        v0 = (int)(a0->f_0);
+    }
+    return (int)(0);
+}
 
 void fn_007ae008(void* a0) {
     fn_0002b48c((void*)((char*)a0 + 136), (int)(2));
@@ -12,6 +61,21 @@ void fn_007ae008(void* a0) {
 
 void fn_007ae038(void* a0) {
     fn_0002b48c((void*)((char*)a0 + 136), (int)(2));
+}
+
+struct unk_007ae228_a0 {
+    u32 f_0;
+};
+int fn_007ae228(unk_007ae228_a0* a0) {
+    int t0;
+    int v0;
+    if ((int)(a0->f_0) != (int)(0)) {
+        t0 = fn_001ab724((void*)(a0->f_0), (int)(0));
+        v0 = (int)(t0);
+    } else {
+        v0 = (int)(a0->f_0);
+    }
+    return (int)(0);
 }
 
 }

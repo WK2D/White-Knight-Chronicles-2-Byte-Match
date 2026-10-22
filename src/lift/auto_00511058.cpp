@@ -6,11 +6,11 @@ extern "C" {
 
 
 u16 fn_0051132c(int a0) {
-    return (u16)a0;
+    return (u16)((u16)a0);
 }
 
 u16 fn_00511354(int a0) {
-    return (u16)a0;
+    return (u16)((u16)a0);
 }
 
 }

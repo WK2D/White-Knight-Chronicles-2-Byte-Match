@@ -14,8 +14,29 @@ struct unk_00c4aa08_a2 {
     u16 f_12;
 };
 void fn_00c4aa08(unk_00c4aa08_a0* a0, int a1, unk_00c4aa08_a2* a2) {
-    a0->f_4 = a2;
-    a0->f_0 = a2->f_12 + a1;
+    a0->f_4 = (void*)(a2);
+    a0->f_0 = (u32)((int)(a2->f_12) + (int)(a1));
+}
+
+struct unk_00c4aa8c_a0 {
+    u32 f_0;
+};
+void* fn_00c4aa8c(unk_00c4aa8c_a0* a0, int a1) {
+    return (void*)((int)(a1) + (int)(a0->f_0));
+}
+
+struct unk_00c4ab50_a0 {
+    u32 f_0;
+};
+void* fn_00c4ab50(unk_00c4ab50_a0* a0, int a1) {
+    return (void*)((int)(a1) + (int)(a0->f_0));
+}
+
+struct unk_00c4ab60_a0 {
+    u32 f_0;
+};
+void* fn_00c4ab60(unk_00c4ab60_a0* a0, int a1) {
+    return (void*)((int)(a1) + (int)(a0->f_0));
 }
 
 struct unk_00c4ac34_a0 {
@@ -27,8 +48,8 @@ struct unk_00c4ac34_a1 {
     u32 f_4;
 };
 void fn_00c4ac34(unk_00c4ac34_a0* a0, unk_00c4ac34_a1* a1) {
-    a0->f_0 = a1->f_0;
-    a0->f_4 = a1->f_4;
+    a0->f_0 = (u32)(a1->f_0);
+    a0->f_4 = (u32)(a1->f_4);
 }
 
 struct unk_00c4ac48_a0 {
@@ -40,8 +61,8 @@ struct unk_00c4ac48_a1 {
     u32 f_4;
 };
 void fn_00c4ac48(unk_00c4ac48_a0* a0, unk_00c4ac48_a1* a1) {
-    a0->f_0 = a1->f_0;
-    a0->f_4 = a1->f_4;
+    a0->f_0 = (u32)(a1->f_0);
+    a0->f_4 = (u32)(a1->f_4);
 }
 
 struct unk_00c4acc0_a0 {
@@ -53,8 +74,8 @@ struct unk_00c4acc0_a2 {
     u16 f_12;
 };
 void fn_00c4acc0(unk_00c4acc0_a0* a0, int a1, unk_00c4acc0_a2* a2) {
-    a0->f_4 = a2;
-    a0->f_0 = a2->f_12 + a1;
+    a0->f_4 = (void*)(a2);
+    a0->f_0 = (u32)((int)(a2->f_12) + (int)(a1));
 }
 
 struct unk_00c4acd4_a0 {
@@ -66,8 +87,8 @@ struct unk_00c4acd4_a2 {
     u16 f_12;
 };
 void fn_00c4acd4(unk_00c4acd4_a0* a0, int a1, unk_00c4acd4_a2* a2) {
-    a0->f_4 = a2;
-    a0->f_0 = a2->f_12 + a1;
+    a0->f_4 = (void*)(a2);
+    a0->f_0 = (u32)((int)(a2->f_12) + (int)(a1));
 }
 
 }

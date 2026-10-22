@@ -32,8 +32,9 @@ struct unk_00692b78_a0 {
     u32 f_274;
 };
 void* fn_00692b78(unk_00692b78_a0* a0) {
-    void* t0 = fn_006dcf14((u32)(a0->f_274));
-    return t0;
+    void* t0;
+    t0 = fn_006dcf14((u32)(a0->f_274));
+    return (void*)(t0);
 }
 
 struct unk_00692ba4_a0 {

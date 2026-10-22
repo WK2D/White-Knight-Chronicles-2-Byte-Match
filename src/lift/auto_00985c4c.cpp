@@ -11,7 +11,7 @@ struct unk_009875dc_a3 {
 };
 int fn_009875dc(int a0, int a1, int a2, unk_009875dc_a3* a3) {
     fn_0098173c((u16)(a3->f_0));
-    return 2;
+    return (int)(2);
 }
 
 }

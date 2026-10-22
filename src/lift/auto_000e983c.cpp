@@ -16,9 +16,9 @@ struct unk_000e9d34_a1 {
 };
 int fn_000e9d34(unk_000e9d34_a0* a0, unk_000e9d34_a1* a1) {
     stub_000e99b4((void*)((char*)a0 + 20), (int)(0));
-    a1->f_0 = a0->f_4;
+    a1->f_0 = (u32)(a0->f_4);
     stub_000e9940((void*)((char*)a0 + 20));
-    return 0;
+    return (int)(0);
 }
 
 struct unk_000eaa64_a0 {
@@ -35,10 +35,10 @@ struct unk_000eaa64_a1 {
     u32 f_2c;
 };
 int fn_000eaa64(unk_000eaa64_a0* a0, unk_000eaa64_a1* a1) {
-    a0->f_28 = a1->f_2c;
-    a0->f_20 = a1->f_20;
-    a0->f_24 = a1->f_24;
-    return 0;
+    a0->f_28 = (u32)(a1->f_2c);
+    a0->f_20 = (u32)(a1->f_20);
+    a0->f_24 = (u32)(a1->f_24);
+    return (int)(0);
 }
 
 struct unk_000eaab8_a0 {
@@ -46,8 +46,8 @@ struct unk_000eaab8_a0 {
     u32 f_64;
 };
 int fn_000eaab8(unk_000eaab8_a0* a0) {
-    a0->f_64 = 0;
-    return 0;
+    a0->f_64 = (u32)(0);
+    return (int)(0);
 }
 
 }

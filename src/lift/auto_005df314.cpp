@@ -17,11 +17,30 @@ void fn_005df980(void* a0) {
     fn_0004693c((void*)((char*)a0 + 8));
 }
 
+struct unk_005e0f64_a0 {
+    char pad_0[5172];
+    u32 f_1434;
+    char pad_1438[36];
+    u16 f_145c;
+    u16 f_145e;
+};
+void fn_005e0f64(unk_005e0f64_a0* a0) {
+    a0->f_145c = (u16)(0);
+    a0->f_145e = (u16)(10);
+    if ((int)(a0->f_1434) == (int)(0)) {
+        return;
+    }
+    if ((int)(FIELD(u32, a0->f_1434, 0)) == (int)(0)) {
+        return;
+    }
+    FIELD(u32, FIELD(u32, a0->f_1434, 0), 312) = (u32)(0);
+}
+
 int fn_005e7bf0(void* a0) {
     stub_005e75c4((void*)(a0));
     fn_000460bc((void*)((char*)a0 + 8));
     stub_005dabf4((void*)(a0));
-    return 0;
+    return (int)(0);
 }
 
 }

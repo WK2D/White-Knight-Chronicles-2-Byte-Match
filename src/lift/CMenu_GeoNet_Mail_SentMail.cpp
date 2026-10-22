@@ -10,8 +10,8 @@ struct unk_007025f4_a0 {
     u8 f_31ca;
 };
 int fn_007025f4(unk_007025f4_a0* a0) {
-    a0->f_31ca = 0;
-    return 1;
+    a0->f_31ca = (u8)(0);
+    return (int)(1);
 }
 
 }

@@ -8,9 +8,11 @@ static void* __attribute__((noinline)) stub_0048bcd4(int p0, int p1, int p2) { v
 static int __attribute__((noinline)) stub_0048bea8(int p0, void* p1, void* p2, void* p3) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); return r; }
 
 u8 fn_0048bf1c(int a0, int a1, void* a2, void* a3) {
-    void* t0 = stub_0048bcd4((int)(a0), (int)(a1), (int)(0));
-    int t1 = stub_0048bea8((int)(a0), (void*)(t0), (void*)(a2), (void*)(a3));
-    return (u8)t1;
+    void* t0;
+    int t1;
+    t0 = stub_0048bcd4((int)(a0), (int)(a1), (int)(0));
+    t1 = stub_0048bea8((int)(a0), (void*)(t0), (void*)(a2), (void*)(a3));
+    return (u8)((u8)t1);
 }
 
 }

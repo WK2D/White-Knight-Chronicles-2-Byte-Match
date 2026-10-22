@@ -10,7 +10,7 @@ struct unk_0042bb94_a0 {
     u32 f_c;
 };
 void fn_0042bb94(unk_0042bb94_a0* a0) {
-    a0->f_c = a0->f_c + 1;
+    a0->f_c = (u32)(a0->f_c + 1);
 }
 
 }

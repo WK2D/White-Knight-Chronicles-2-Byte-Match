@@ -10,7 +10,7 @@ struct unk_00459dd4_a0 {
     u32 f_c;
 };
 void fn_00459dd4(unk_00459dd4_a0* a0) {
-    a0->f_c = a0->f_c + 1;
+    a0->f_c = (u32)(a0->f_c + 1);
 }
 
 struct unk_00459de4_a0 {
@@ -18,7 +18,7 @@ struct unk_00459de4_a0 {
     u32 f_18;
 };
 void fn_00459de4(unk_00459de4_a0* a0) {
-    a0->f_18 = a0->f_18 + 1;
+    a0->f_18 = (u32)(a0->f_18 + 1);
 }
 
 struct unk_0045aa28_a0 {
@@ -26,7 +26,7 @@ struct unk_0045aa28_a0 {
     u32 f_58;
 };
 void fn_0045aa28(unk_0045aa28_a0* a0) {
-    a0->f_58 = a0->f_58 + 12;
+    a0->f_58 = (u32)(a0->f_58 + 12);
 }
 
 }

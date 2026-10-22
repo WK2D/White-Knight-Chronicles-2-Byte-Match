@@ -12,7 +12,7 @@ struct unk_00d64f14_a0 {
     u32 f_b4;
 };
 int fn_00d64f14(unk_00d64f14_a0* a0) {
-    return a0->f_ac + a0->f_b4;
+    return (int)((int)(a0->f_ac) + (int)(a0->f_b4));
 }
 
 }

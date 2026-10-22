@@ -7,14 +7,42 @@ extern "C" {
 
 extern char g_00774824_0[];
 int fn_00774824(void) {
-    FIELD(u16, g_00774824_0, 0) = 0;
-    return 0;
+    FIELD(u16, g_00774824_0, 0) = (u16)(0);
+    return (int)(0);
 }
 
 extern char g_0077488c_0[];
 int fn_0077488c(void) {
-    FIELD(u16, g_0077488c_0, 144) = 0;
-    return 0;
+    FIELD(u16, g_0077488c_0, 144) = (u16)(0);
+    return (int)(0);
+}
+
+struct unk_00774c28_a0 {
+    char pad_0[4320];
+    u32 f_10e0;
+};
+int fn_00774c28(unk_00774c28_a0* a0) {
+    int v0;
+    if ((int)(a0->f_10e0) != (int)(0)) {
+        v0 = (int)(FIELD(u16, a0->f_10e0, 1636));
+    } else {
+        v0 = (int)(-1);
+    }
+    return (int)(v0);
+}
+
+struct unk_00774c48_a0 {
+    char pad_0[4320];
+    u32 f_10e0;
+};
+int fn_00774c48(unk_00774c48_a0* a0) {
+    int v0;
+    if ((int)(a0->f_10e0) != (int)(0)) {
+        v0 = (int)(FIELD(u16, a0->f_10e0, 1884));
+    } else {
+        v0 = (int)(-1);
+    }
+    return (int)(v0);
 }
 
 }

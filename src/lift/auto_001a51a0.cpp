@@ -10,8 +10,9 @@ struct unk_001a5a88_a0 {
     u32 f_0;
 };
 u8 fn_001a5a88(unk_001a5a88_a0* a0) {
-    int t0 = fn_00b5c034((void*)(a0->f_0 + 8));
-    return (u8)t0;
+    int t0;
+    t0 = fn_00b5c034((void*)(a0->f_0 + 8));
+    return (u8)((u8)t0);
 }
 
 }

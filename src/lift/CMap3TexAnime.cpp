@@ -21,7 +21,7 @@ struct unk_002b9428_a0 {
     u32 f_10;
 };
 void fn_002b9428(unk_002b9428_a0* a0) {
-    a0->f_4 = FIELD(u32, FIELD(u32, a0->f_10, 0), 0);
+    a0->f_4 = (u32)(FIELD(u32, FIELD(u32, a0->f_10, 0), 0));
 }
 
 struct unk_002b9588_a1 {
@@ -29,7 +29,7 @@ struct unk_002b9588_a1 {
     u32 f_138;
 };
 u32 fn_002b9588(int a0, unk_002b9588_a1* a1) {
-    return a1->f_138;
+    return (u32)(a1->f_138);
 }
 
 }

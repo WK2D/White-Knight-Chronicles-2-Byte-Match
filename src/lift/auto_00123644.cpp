@@ -13,8 +13,8 @@ struct unk_00123ba4_a0 {
 extern char g_00123ba4_0[];
 int fn_00123ba4(unk_00123ba4_a0* a0) {
     fn_001251a8((u32)(FIELD(u32, FIELD(u32, g_00123ba4_0, 0), 132)));
-    a0->f_236 = 1;
-    return 1;
+    a0->f_236 = (u16)(1);
+    return (int)(1);
 }
 
 }

@@ -4,25 +4,72 @@
 
 extern "C" {
 
+static int __attribute__((noinline)) stub_001248a4(void) { int r; __asm__ volatile ("" : "=r"(r)); return r; }
 static int __attribute__((noinline)) stub_001248e8(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static int __attribute__((noinline)) stub_00124920(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static int __attribute__((noinline)) stub_00124ccc(int p0, void* p1, void* p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
 static void* __attribute__((noinline)) stub_00124d84(int p0) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 
+extern char g_00124884_0[];
+void* fn_00124884(void) {
+    return (void*)((char*)g_00124884_0 + 1024);
+}
+
+void* fn_00124958(void) {
+    int t0;
+    int v0;
+    t0 = stub_001248a4();
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)(t0 + 9);
+    } else {
+        v0 = (int)(0);
+    }
+    return (void*)(v0);
+}
+
+void* fn_00124c80(int a0, void* a1) {
+    int v0;
+    if (a1 != 0) {
+        v0 = (int)(a1);
+    } else {
+        v0 = (int)(0);
+    }
+    return (void*)(v0);
+}
+
 u8 fn_00124e30(int a0, int a1, void* a2) {
-    void* t0 = stub_00124d84((int)(a0));
-    int t1 = stub_00124ccc((int)(a0), (void*)(t0), (void*)(a2));
-    return (u8)t1;
+    void* t0;
+    int t1;
+    t0 = stub_00124d84((int)(a0));
+    t1 = stub_00124ccc((int)(a0), (void*)(t0), (void*)(a2));
+    return (u8)((u8)t1);
 }
 
 u8 fn_00124fb0(void* a0) {
-    int t0 = stub_00124920((void*)((char*)a0 + 132));
-    return (u8)t0;
+    int t0;
+    t0 = stub_00124920((void*)((char*)a0 + 132));
+    return (u8)((u8)t0);
 }
 
 u8 fn_00124fdc(void* a0) {
-    int t0 = stub_001248e8((void*)((char*)a0 + 132));
-    return (u8)t0;
+    int t0;
+    t0 = stub_001248e8((void*)((char*)a0 + 132));
+    return (u8)((u8)t0);
+}
+
+struct unk_0012516c_a0 {
+    char pad_0[5088];
+    u32 f_13e0;
+    char pad_13e4[52];
+    u16 f_1418;
+};
+int fn_0012516c(unk_0012516c_a0* a0) {
+    if ((int)(a0->f_1418) != (int)(0)) {
+        a0->f_1418 = (u16)(a0->f_1418 + -1);
+        return (int)(0);
+    }
+    a0->f_13e0 = (u32)(2);
+    return (int)(0);
 }
 
 }

@@ -4,6 +4,10 @@
 
 extern "C" {
 
+static int __attribute__((noinline)) stub_0001ab9c(void) { int r; __asm__ volatile ("" : "=r"(r)); return r; }
+static void __attribute__((noinline)) stub_0001ac70(void* p0, void* p1, void* p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
+static void __attribute__((noinline)) stub_0001adf8(void* p0, void* p1, void* p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
+int fn_00035ad0(u32);
 int fn_00b38078(int);
 int fn_00b38088(int);
 int fn_00b38098(void);
@@ -21,80 +25,161 @@ int fn_00b38148(void);
 void fn_00b38158(int);
 void fn_00b38178(void);
 
+struct unk_0001ac28_a0 {
+    char pad_0[20164];
+    u32 f_4ec4;
+    u32 f_4ec8;
+};
+void fn_0001ac28(unk_0001ac28_a0* a0) {
+    int t0;
+    int v0;
+    int v1;
+    if ((int)(a0->f_4ec4) != (int)(0)) {
+        t0 = stub_0001ab9c();
+        a0->f_4ec4 = (u32)(0);
+        v0 = (int)(0);
+        v1 = (int)(t0);
+    } else {
+        v0 = (int)(a0->f_4ec4);
+        v1 = (int)(a0);
+    }
+    a0->f_4ec8 = (u32)(0);
+}
+
+struct unk_0001b474_a3 {
+    char pad_0[8];
+    u32 f_8;
+};
+int fn_0001b474(void* a0, void* a1, void* a2, unk_0001b474_a3* a3) {
+    int t1;
+    int v0;
+    int v1;
+    if ((int)(a1) != (int)(0)) {
+        stub_0001ac70((void*)(a0), (void*)(a1), (void*)(a2));
+        t1 = fn_00035ad0((u32)(a3->f_8));
+        v0 = (int)(1);
+        v1 = (int)(t1);
+    } else {
+        v0 = (int)(0);
+        v1 = (int)(a0);
+    }
+    return (int)(v0);
+}
+
+struct unk_0001b4d0_a3 {
+    char pad_0[8];
+    u32 f_8;
+};
+int fn_0001b4d0(void* a0, void* a1, void* a2, unk_0001b4d0_a3* a3) {
+    int t1;
+    int v0;
+    int v1;
+    if ((int)(a1) != (int)(0)) {
+        stub_0001adf8((void*)(a0), (void*)(a1), (void*)(a2));
+        t1 = fn_00035ad0((u32)(a3->f_8));
+        v0 = (int)(1);
+        v1 = (int)(t1);
+    } else {
+        v0 = (int)(0);
+        v1 = (int)(a0);
+    }
+    return (int)(v0);
+}
+
 int fn_0001b52c(void) {
-    int t0 = fn_00b38078((int)(0));
-    return t0;
+    int t0;
+    t0 = fn_00b38078((int)(0));
+    return (int)(t0);
 }
 
 int fn_0001b558(void) {
-    int t0 = fn_00b38088((int)(0));
-    return t0;
+    int t0;
+    t0 = fn_00b38088((int)(0));
+    return (int)(t0);
 }
 
 int fn_0001b584(void) {
-    int t0 = fn_00b38098();
-    return t0;
+    int t0;
+    t0 = fn_00b38098();
+    return (int)(t0);
 }
 
 int fn_0001b5ac(void) {
-    int t0 = fn_00b38098();
-    int t1 = fn_00b380a8();
-    return t0 - t1;
+    int t0;
+    int t1;
+    t0 = fn_00b38098();
+    t1 = fn_00b380a8();
+    return (int)((int)(t0) - (int)(t1));
 }
 
 int fn_0001b5ec(void) {
-    int t0 = fn_00b380b8();
-    return t0;
+    int t0;
+    t0 = fn_00b380b8();
+    return (int)(t0);
 }
 
 int fn_0001b614(void) {
-    int t0 = fn_00b380b8();
-    int t1 = fn_00b380c8();
-    return t0 - t1;
+    int t0;
+    int t1;
+    t0 = fn_00b380b8();
+    t1 = fn_00b380c8();
+    return (int)((int)(t0) - (int)(t1));
 }
 
 int fn_0001b654(void) {
-    int t0 = fn_00b380d8();
-    return t0;
+    int t0;
+    t0 = fn_00b380d8();
+    return (int)(t0);
 }
 
 int fn_0001b67c(void) {
-    int t0 = fn_00b380d8();
-    int t1 = fn_00b380e8();
-    return t0 - t1;
+    int t0;
+    int t1;
+    t0 = fn_00b380d8();
+    t1 = fn_00b380e8();
+    return (int)((int)(t0) - (int)(t1));
 }
 
 int fn_0001b6bc(void) {
-    int t0 = fn_00b380f8();
-    return t0;
+    int t0;
+    t0 = fn_00b380f8();
+    return (int)(t0);
 }
 
 int fn_0001b6e4(void) {
-    int t0 = fn_00b380f8();
-    int t1 = fn_00b38108();
-    return t0 - t1;
+    int t0;
+    int t1;
+    t0 = fn_00b380f8();
+    t1 = fn_00b38108();
+    return (int)((int)(t0) - (int)(t1));
 }
 
 int fn_0001b724(void) {
-    int t0 = fn_00b38118();
-    return t0;
+    int t0;
+    t0 = fn_00b38118();
+    return (int)(t0);
 }
 
 int fn_0001b74c(void) {
-    int t0 = fn_00b38118();
-    int t1 = fn_00b38128();
-    return t0 - t1;
+    int t0;
+    int t1;
+    t0 = fn_00b38118();
+    t1 = fn_00b38128();
+    return (int)((int)(t0) - (int)(t1));
 }
 
 int fn_0001b78c(void) {
-    int t0 = fn_00b38138();
-    return t0;
+    int t0;
+    t0 = fn_00b38138();
+    return (int)(t0);
 }
 
 int fn_0001b7b4(void) {
-    int t0 = fn_00b38138();
-    int t1 = fn_00b38148();
-    return t0 - t1;
+    int t0;
+    int t1;
+    t0 = fn_00b38138();
+    t1 = fn_00b38148();
+    return (int)((int)(t0) - (int)(t1));
 }
 
 void fn_0001b7f4(int a0, int a1) {
@@ -106,7 +191,7 @@ struct unk_0001bc38_a0 {
     u32 f_63bc;
 };
 void fn_0001bc38(unk_0001bc38_a0* a0) {
-    a0->f_63bc = -1;
+    a0->f_63bc = (u32)(-1);
     fn_00b38178();
 }
 

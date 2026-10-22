@@ -8,13 +8,15 @@ void* fn_00bb72cc(void*);
 int fn_00bb8ad4(void*);
 
 u8 fn_008afa8c(void* a0) {
-    int t0 = fn_00bb8ad4((void*)((char*)a0 + 4));
-    return (u8)t0;
+    int t0;
+    t0 = fn_00bb8ad4((void*)((char*)a0 + 4));
+    return (u8)((u8)t0);
 }
 
 void* fn_008afabc(void* a0) {
-    void* t0 = fn_00bb72cc((void*)((char*)a0 + 4));
-    return t0;
+    void* t0;
+    t0 = fn_00bb72cc((void*)((char*)a0 + 4));
+    return (void*)(t0);
 }
 
 }

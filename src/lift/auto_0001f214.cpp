@@ -16,10 +16,11 @@ extern char g_0001f214_1[];
 extern char g_0001f214_2[];
 extern char g_0001f214_3[];
 void fn_0001f214(void) {
+    void* t3;
     fn_00b382c8((void*)(g_0001f214_0));
     fn_00b382d8((void*)(g_0001f214_1));
     fn_00b382e8((void*)(g_0001f214_2));
-    void* t3 = fn_00b382f8();
+    t3 = fn_00b382f8();
     fn_00b38308((void*)(t3));
     fn_00b38318((void*)(g_0001f214_3));
 }

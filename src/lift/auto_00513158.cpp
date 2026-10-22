@@ -4,11 +4,39 @@
 
 extern "C" {
 
+static void* __attribute__((noinline)) stub_00513398(void) { void* r; __asm__ volatile ("" : "=r"(r)); return r; }
+
+int fn_005133cc(void) {
+    void* t0;
+    int v0;
+    t0 = stub_00513398();
+    if ((int)(t0) != (int)(0)) {
+        FIELD(u8, t0, 22) = (u8)(6);
+        v0 = (int)(1);
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
+struct unk_0051354c_a1 {
+    char pad_0[8];
+    u32 f_8;
+};
+void* fn_0051354c(int a0, unk_0051354c_a1* a1) {
+    int v0;
+    if (a1 != 0) {
+        v0 = (int)(a1->f_8);
+    } else {
+        v0 = (int)(0);
+    }
+    return (void*)(v0);
+}
 
 extern char g_005135a8_0[];
 int fn_005135a8(void) {
-    FIELD(u8, FIELD(u32, g_005135a8_0, 0), 3312) = 1;
-    return 1;
+    FIELD(u8, FIELD(u32, g_005135a8_0, 0), 3312) = (u8)(1);
+    return (int)(1);
 }
 
 }

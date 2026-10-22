@@ -8,13 +8,15 @@ int fn_00b96d54(void);
 int fn_00b96ecc(void);
 
 u8 fn_004371a8(void) {
-    int t0 = fn_00b96d54();
-    return (u8)t0;
+    int t0;
+    t0 = fn_00b96d54();
+    return (u8)((u8)t0);
 }
 
 u8 fn_0043721c(void) {
-    int t0 = fn_00b96ecc();
-    return (u8)t0;
+    int t0;
+    t0 = fn_00b96ecc();
+    return (u8)((u8)t0);
 }
 
 }

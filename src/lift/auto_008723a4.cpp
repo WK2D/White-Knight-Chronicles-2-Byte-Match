@@ -6,11 +6,17 @@ extern "C" {
 
 void* fn_00b3cd18(void*, void*, int, int, int, int);
 
+extern char g_00873114_0[];
+int fn_00873114(void) {
+    return (int)((int)FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_00873114_0, 0), 108), 8), 252), 4), 128));
+}
+
 extern char g_00874e34_0[];
 extern char g_00874e34_1[];
 void* fn_00874e34(void) {
-    void* t0 = fn_00b3cd18((void*)(g_00874e34_1), (void*)(g_00874e34_0), (int)(0), (int)(-1), (int)(0), (int)(0));
-    return t0;
+    void* t0;
+    t0 = fn_00b3cd18((void*)(g_00874e34_1), (void*)(g_00874e34_0), (int)(0), (int)(-1), (int)(0), (int)(0));
+    return (void*)(t0);
 }
 
 }

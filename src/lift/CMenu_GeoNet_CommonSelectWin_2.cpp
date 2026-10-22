@@ -20,8 +20,8 @@ struct unk_00706fa4_a2 {
 int fn_00706fa4(unk_00706fa4_a0* a0, int a1, unk_00706fa4_a2* a2) {
     fn_0004dfb8((void*)(a2), (u32)(a2->f_194), (u32)(a0->f_8bc), (int)(1), (int)(0));
     stub_00705b9c((void*)(a0));
-    a0->f_8b7 = 0;
-    return 1;
+    a0->f_8b7 = (u8)(0);
+    return (int)(1);
 }
 
 }

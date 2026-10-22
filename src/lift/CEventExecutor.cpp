@@ -6,12 +6,44 @@ extern "C" {
 
 int fn_0001cb64(u32);
 void fn_0003fab0(void*, u8);
+void* fn_000e1f24(void);
+void fn_000e2c9c(void*);
+void fn_000e3380(void*);
+int fn_000e37ac(void);
+
+extern char g_004ce76c_0[];
+int fn_004ce76c(void) {
+    void* t0;
+    int t3;
+    int v0;
+    t0 = fn_000e1f24();
+    if ((int)(t0) != (int)(0)) {
+        fn_000e2c9c((void*)(t0));
+        fn_000e3380((void*)(t0));
+        t3 = fn_000e37ac();
+        FIELD(u8, g_004ce76c_0, 16) = (u8)(0);
+        v0 = (int)(t3);
+    } else {
+        v0 = (int)(t0);
+    }
+    return (int)(1);
+}
 
 extern char g_004cfcac_0[];
 int fn_004cfcac(void* a0) {
-    int t0 = fn_0001cb64((u32)(FIELD(u32, FIELD(u32, g_004cfcac_0, 0), 120)));
+    int t0;
+    t0 = fn_0001cb64((u32)(FIELD(u32, FIELD(u32, g_004cfcac_0, 0), 120)));
     fn_0003fab0((void*)(a0), (u8)((u8)t0));
-    return 1;
+    return (int)(1);
+}
+
+extern char g_004d2da0_0[];
+int fn_004d2da0(void) {
+    if ((int)(FIELD(u32, FIELD(u32, g_004d2da0_0, 0), 44)) == (int)(0)) {
+        return (int)(1);
+    }
+    FIELD(u8, FIELD(u32, FIELD(u32, g_004d2da0_0, 0), 44), 1465) = (u8)(1);
+    return (int)(1);
 }
 
 }

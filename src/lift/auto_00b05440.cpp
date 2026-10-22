@@ -10,11 +10,13 @@ void fn_00b0c660(int);
 void fn_00b0c6dc(int);
 
 void* fn_00b05664(void* a0, void* a1) {
+    void* t1;
+    void* t2;
     fn_00b0c6dc((int)(2));
-    void* t1 = fn_00b098e8();
-    void* t2 = fn_00b09a68((void*)(a0), (void*)(a1), (void*)(t1), (int)(-1));
+    t1 = fn_00b098e8();
+    t2 = fn_00b09a68((void*)(a0), (void*)(a1), (void*)(t1), (int)(-1));
     fn_00b0c660((int)(2));
-    return t2;
+    return (void*)(t2);
 }
 
 }

@@ -12,7 +12,7 @@ struct unk_007e068c_a0 {
 };
 void fn_007e068c(unk_007e068c_a0* a0) {
     fn_00046268((void*)((char*)a0 + 40));
-    a0->f_70 = 1;
+    a0->f_70 = (u8)(1);
 }
 
 }

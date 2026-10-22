@@ -9,22 +9,25 @@ void* fn_00b3cd18(void*, void*, int, int, int, int);
 extern char g_00877174_0[];
 extern char g_00877174_1[];
 void* fn_00877174(void) {
-    void* t0 = fn_00b3cd18((void*)(g_00877174_1), (void*)(g_00877174_0), (int)(0), (int)(-1), (int)(0), (int)(0));
-    return t0;
+    void* t0;
+    t0 = fn_00b3cd18((void*)(g_00877174_1), (void*)(g_00877174_0), (int)(0), (int)(-1), (int)(0), (int)(0));
+    return (void*)(t0);
 }
 
 extern char g_00877654_0[];
 extern char g_00877654_1[];
 void* fn_00877654(void) {
-    void* t0 = fn_00b3cd18((void*)(g_00877654_1), (void*)(g_00877654_0), (int)(0), (int)(-1), (int)(0), (int)(0));
-    return t0;
+    void* t0;
+    t0 = fn_00b3cd18((void*)(g_00877654_1), (void*)(g_00877654_0), (int)(0), (int)(-1), (int)(0), (int)(0));
+    return (void*)(t0);
 }
 
 extern char g_00877910_0[];
 extern char g_00877910_1[];
 void* fn_00877910(void) {
-    void* t0 = fn_00b3cd18((void*)(g_00877910_1), (void*)(g_00877910_0), (int)(0), (int)(-1), (int)(0), (int)(0));
-    return t0;
+    void* t0;
+    t0 = fn_00b3cd18((void*)(g_00877910_1), (void*)(g_00877910_0), (int)(0), (int)(-1), (int)(0), (int)(0));
+    return (void*)(t0);
 }
 
 }

@@ -4,466 +4,508 @@
 
 extern "C" {
 
+void fn_000750a4(int, int);
+int fn_000750f8(int);
 void fn_00357a84(int, int);
 
 int fn_0035b668(int a0) {
     fn_00357a84((int)(a0), (int)(7100));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035b694(int a0) {
     fn_00357a84((int)(a0), (int)(7000));
-    return 1;
+    return (int)(1);
 }
 
 int fn_0035b6c0(int a0) {
     fn_00357a84((int)(a0), (int)(7099));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035b6ec(int a0) {
     fn_00357a84((int)(a0), (int)(7004));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035b718(int a0) {
     fn_00357a84((int)(a0), (int)(7003));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035b744(int a0) {
     fn_00357a84((int)(a0), (int)(7002));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035b770(int a0) {
     fn_00357a84((int)(a0), (int)(6900));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035b79c(int a0) {
     fn_00357a84((int)(a0), (int)(6800));
-    return 1;
+    return (int)(1);
 }
 
 int fn_0035b7c8(int a0) {
     fn_00357a84((int)(a0), (int)(6899));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035b7f4(int a0) {
     fn_00357a84((int)(a0), (int)(6813));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035b820(int a0) {
     fn_00357a84((int)(a0), (int)(6806));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035b84c(int a0) {
     fn_00357a84((int)(a0), (int)(6805));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035b878(int a0) {
     fn_00357a84((int)(a0), (int)(6700));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035b8a4(int a0) {
     fn_00357a84((int)(a0), (int)(6600));
-    return 1;
+    return (int)(1);
 }
 
 int fn_0035b8d0(int a0) {
     fn_00357a84((int)(a0), (int)(6699));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035b8fc(int a0) {
     fn_00357a84((int)(a0), (int)(6500));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035b928(int a0) {
     fn_00357a84((int)(a0), (int)(4300));
-    return 1;
+    return (int)(1);
 }
 
 int fn_0035b954(int a0) {
     fn_00357a84((int)(a0), (int)(6499));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035b980(int a0) {
     fn_00357a84((int)(a0), (int)(6300));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035b9ac(int a0) {
     fn_00357a84((int)(a0), (int)(6200));
-    return 1;
+    return (int)(1);
 }
 
 int fn_0035b9d8(int a0) {
     fn_00357a84((int)(a0), (int)(6299));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035ba04(int a0) {
     fn_00357a84((int)(a0), (int)(6100));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035ba30(int a0) {
     fn_00357a84((int)(a0), (int)(6000));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035ba5c(int a0) {
     fn_00357a84((int)(a0), (int)(5515));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035ba88(int a0) {
     fn_00357a84((int)(a0), (int)(5513));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035bab4(int a0) {
     fn_00357a84((int)(a0), (int)(5512));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035bae0(int a0) {
     fn_00357a84((int)(a0), (int)(5506));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035bb0c(int a0) {
     fn_00357a84((int)(a0), (int)(5505));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035bb38(int a0) {
     fn_00357a84((int)(a0), (int)(5400));
-    return 1;
+    return (int)(1);
 }
 
 int fn_0035bb64(int a0) {
     fn_00357a84((int)(a0), (int)(5300));
-    return 1;
+    return (int)(1);
 }
 
 int fn_0035bb90(int a0) {
     fn_00357a84((int)(a0), (int)(5399));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035bbbc(int a0) {
     fn_00357a84((int)(a0), (int)(5200));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035bbe8(int a0) {
     fn_00357a84((int)(a0), (int)(5100));
-    return 1;
+    return (int)(1);
 }
 
 int fn_0035bc14(int a0) {
     fn_00357a84((int)(a0), (int)(5199));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035bc40(int a0) {
     fn_00357a84((int)(a0), (int)(5104));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035bc6c(int a0) {
     fn_00357a84((int)(a0), (int)(5103));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035bc98(int a0) {
     fn_00357a84((int)(a0), (int)(5000));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035bcc4(int a0) {
     fn_00357a84((int)(a0), (int)(4900));
-    return 1;
+    return (int)(1);
 }
 
 int fn_0035bcf0(int a0) {
     fn_00357a84((int)(a0), (int)(4919));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035bd1c(int a0) {
     fn_00357a84((int)(a0), (int)(4913));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035bd48(int a0) {
     fn_00357a84((int)(a0), (int)(4906));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035bd74(int a0) {
     fn_00357a84((int)(a0), (int)(4905));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035bda0(int a0) {
     fn_00357a84((int)(a0), (int)(4800));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035bdcc(int a0) {
     fn_00357a84((int)(a0), (int)(4700));
-    return 1;
+    return (int)(1);
 }
 
 int fn_0035bdf8(int a0) {
     fn_00357a84((int)(a0), (int)(4799));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035be24(int a0) {
     fn_00357a84((int)(a0), (int)(4704));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035be50(int a0) {
     fn_00357a84((int)(a0), (int)(4703));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035be7c(int a0) {
     fn_00357a84((int)(a0), (int)(4600));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035bea8(int a0) {
     fn_00357a84((int)(a0), (int)(4500));
-    return 1;
+    return (int)(1);
 }
 
 int fn_0035bed4(int a0) {
     fn_00357a84((int)(a0), (int)(4599));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035bf00(int a0) {
     fn_00357a84((int)(a0), (int)(4400));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035bf2c(int a0) {
     fn_00357a84((int)(a0), (int)(4300));
-    return 1;
+    return (int)(1);
 }
 
 int fn_0035bf58(int a0) {
     fn_00357a84((int)(a0), (int)(4399));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035bf84(int a0) {
     fn_00357a84((int)(a0), (int)(4200));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035bfb0(int a0) {
     fn_00357a84((int)(a0), (int)(4100));
-    return 1;
+    return (int)(1);
 }
 
 int fn_0035bfdc(int a0) {
     fn_00357a84((int)(a0), (int)(4199));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035c008(int a0) {
     fn_00357a84((int)(a0), (int)(4104));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035c034(int a0) {
     fn_00357a84((int)(a0), (int)(4103));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035c060(int a0) {
     fn_00357a84((int)(a0), (int)(4000));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035c08c(int a0) {
     fn_00357a84((int)(a0), (int)(3900));
-    return 1;
+    return (int)(1);
 }
 
 int fn_0035c0b8(int a0) {
     fn_00357a84((int)(a0), (int)(3999));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035c0e4(int a0) {
     fn_00357a84((int)(a0), (int)(3800));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035c110(int a0) {
     fn_00357a84((int)(a0), (int)(3700));
-    return 1;
+    return (int)(1);
 }
 
 int fn_0035c13c(int a0) {
     fn_00357a84((int)(a0), (int)(3799));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035c168(int a0) {
     fn_00357a84((int)(a0), (int)(3600));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035c194(int a0) {
     fn_00357a84((int)(a0), (int)(3500));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035c1c0(int a0) {
     fn_00357a84((int)(a0), (int)(3401));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035c1ec(int a0) {
     fn_00357a84((int)(a0), (int)(3400));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035c218(int a0) {
     fn_00357a84((int)(a0), (int)(3300));
-    return 1;
+    return (int)(1);
 }
 
 int fn_0035c244(int a0) {
     fn_00357a84((int)(a0), (int)(3399));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035c270(int a0) {
     fn_00357a84((int)(a0), (int)(3250));
-    return 1;
+    return (int)(1);
 }
 
 int fn_0035c29c(int a0) {
     fn_00357a84((int)(a0), (int)(3399));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035c2c8(int a0) {
     fn_00357a84((int)(a0), (int)(3200));
-    return 1;
+    return (int)(1);
 }
 
 int fn_0035c2f4(int a0) {
     fn_00357a84((int)(a0), (int)(3249));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035c320(int a0) {
     fn_00357a84((int)(a0), (int)(3100));
-    return 1;
+    return (int)(1);
 }
 
 int fn_0035c34c(int a0) {
     fn_00357a84((int)(a0), (int)(3199));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035c378(int a0) {
     fn_00357a84((int)(a0), (int)(3107));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035c3a4(int a0) {
     fn_00357a84((int)(a0), (int)(3106));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035c3d0(int a0) {
     fn_00357a84((int)(a0), (int)(3105));
-    return 1;
+    return (int)(1);
 }
 
 int fn_0035c3fc(int a0) {
     fn_00357a84((int)(a0), (int)(2200));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035c428(int a0) {
     fn_00357a84((int)(a0), (int)(2100));
-    return 1;
+    return (int)(1);
 }
 
 int fn_0035c454(int a0) {
     fn_00357a84((int)(a0), (int)(2199));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035c480(int a0) {
     fn_00357a84((int)(a0), (int)(1300));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035c4ac(int a0) {
     fn_00357a84((int)(a0), (int)(1200));
-    return 1;
+    return (int)(1);
 }
 
 int fn_0035c4d8(int a0) {
     fn_00357a84((int)(a0), (int)(1299));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035c504(int a0) {
     fn_00357a84((int)(a0), (int)(1207));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035c530(int a0) {
     fn_00357a84((int)(a0), (int)(1205));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035c55c(int a0) {
     fn_00357a84((int)(a0), (int)(1203));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035c588(int a0) {
     fn_00357a84((int)(a0), (int)(1202));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035c5b4(int a0) {
     fn_00357a84((int)(a0), (int)(1200));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0035c5e0(int a0) {
     fn_00357a84((int)(a0), (int)(1100));
-    return 1;
+    return (int)(1);
 }
 
 int fn_0035c60c(int a0) {
     fn_00357a84((int)(a0), (int)(1199));
-    return 0;
+    return (int)(0);
+}
+
+int fn_0035d8ac(void) {
+    int t0;
+    t0 = fn_000750f8((int)(4107));
+    if ((int)(t0) != (int)(1)) {
+        return (int)(1);
+    }
+    fn_000750a4((int)(4107), (int)(2));
+    return (int)(1);
+}
+
+int fn_0035d904(void) {
+    int t0;
+    t0 = fn_000750f8((int)(4107));
+    if ((int)(t0) != (int)(1)) {
+        return (int)(1);
+    }
+    fn_000750a4((int)(4107), (int)(2));
+    return (int)(1);
+}
+
+int fn_0035d95c(void) {
+    int t0;
+    t0 = fn_000750f8((int)(4107));
+    if ((int)(t0) != (int)(1)) {
+        return (int)(1);
+    }
+    fn_000750a4((int)(4107), (int)(2));
+    return (int)(1);
+}
+
+int fn_0035d9b4(void) {
+    int t0;
+    t0 = fn_000750f8((int)(4107));
+    if ((int)(t0) != (int)(1)) {
+        return (int)(1);
+    }
+    fn_000750a4((int)(4107), (int)(2));
+    return (int)(1);
 }
 
 }

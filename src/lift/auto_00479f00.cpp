@@ -17,60 +17,64 @@ struct unk_00479f00_a0 {
 };
 extern char g_00479f00_0[];
 void fn_00479f00(unk_00479f00_a0* a0) {
-    FIELD(u32, g_00479f00_0, 0) = 0;
+    FIELD(u32, g_00479f00_0, 0) = (u32)(0);
     stub_00479e90((void*)(a0));
     stub_00479eac((void*)(a0));
     stub_00479ec8((void*)(a0));
     stub_00479ee4((void*)(a0));
-    a0->f_44 = 0;
+    a0->f_44 = (u32)(0);
 }
 
 extern char g_0047a130_0[];
 int fn_0047a130(void) {
-    FIELD(u32, FIELD(u32, g_0047a130_0, 0), 68) = 0;
-    return 1;
+    FIELD(u32, FIELD(u32, g_0047a130_0, 0), 68) = (u32)(0);
+    return (int)(1);
 }
 
 extern char g_0047a148_0[];
 int fn_0047a148(void) {
-    FIELD(u32, FIELD(u32, g_0047a148_0, 0), 68) = 0;
-    return 1;
+    FIELD(u32, FIELD(u32, g_0047a148_0, 0), 68) = (u32)(0);
+    return (int)(1);
 }
 
 extern char g_0047a160_0[];
 int fn_0047a160(void) {
-    FIELD(u32, FIELD(u32, g_0047a160_0, 0), 68) = 0;
-    return 1;
+    FIELD(u32, FIELD(u32, g_0047a160_0, 0), 68) = (u32)(0);
+    return (int)(1);
 }
 
 extern char g_0047a178_0[];
 int fn_0047a178(void) {
-    FIELD(u32, FIELD(u32, g_0047a178_0, 0), 68) = 0;
-    return 1;
+    FIELD(u32, FIELD(u32, g_0047a178_0, 0), 68) = (u32)(0);
+    return (int)(1);
 }
 
 int fn_0047ac60(int a0) {
-    void* t0 = fn_00041bcc((int)(a0));
+    void* t0;
+    t0 = fn_00041bcc((int)(a0));
     stub_0047aba0((void*)(t0));
-    return 1;
+    return (int)(1);
 }
 
 int fn_0047ac90(int a0) {
-    void* t0 = fn_00041bcc((int)(a0));
+    void* t0;
+    t0 = fn_00041bcc((int)(a0));
     stub_0047aba0((void*)(t0));
-    return 1;
+    return (int)(1);
 }
 
 int fn_0047acc0(int a0) {
-    void* t0 = fn_00041bcc((int)(a0));
+    void* t0;
+    t0 = fn_00041bcc((int)(a0));
     stub_0047aba0((void*)(t0));
-    return 1;
+    return (int)(1);
 }
 
 int fn_0047acf0(int a0) {
-    void* t0 = fn_00041bcc((int)(a0));
+    void* t0;
+    t0 = fn_00041bcc((int)(a0));
     stub_0047aba0((void*)(t0));
-    return 1;
+    return (int)(1);
 }
 
 }

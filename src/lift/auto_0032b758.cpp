@@ -8,7 +8,7 @@ void fn_0003f9e0(int);
 
 int fn_0032c250(int a0) {
     fn_0003f9e0((int)(a0));
-    return 1;
+    return (int)(1);
 }
 
 }

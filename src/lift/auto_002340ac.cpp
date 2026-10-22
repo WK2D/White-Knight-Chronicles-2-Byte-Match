@@ -12,7 +12,7 @@ struct unk_002347e0_a0 {
 };
 void fn_002347e0(unk_002347e0_a0* a0) {
     fn_00b37fa8((void*)((char*)a0 + 29488), (int)(0), (int)(256));
-    a0->f_7aa0 = 0;
+    a0->f_7aa0 = (u8)(0);
 }
 
 }

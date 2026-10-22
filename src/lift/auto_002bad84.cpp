@@ -11,8 +11,9 @@ void fn_002c808c(void*, void*);
 void fn_002c8550(void*, void*);
 
 void* fn_002bb8b4(void* a0) {
-    void* t0 = fn_002c7f98((void*)((char*)a0 + 11064));
-    return t0;
+    void* t0;
+    t0 = fn_002c7f98((void*)((char*)a0 + 11064));
+    return (void*)(t0);
 }
 
 void fn_002bb8e4(void* a0) {

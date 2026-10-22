@@ -12,7 +12,7 @@ struct unk_00b30bcc_a0 {
 };
 extern char g_00b30bcc_0[];
 void fn_00b30bcc(unk_00b30bcc_a0* a0) {
-    a0->f_0 = g_00b30bcc_0;
+    a0->f_0 = (void*)(g_00b30bcc_0);
     stub_00b30bc0((void*)(a0));
     fn_00b22ae0((void*)(a0));
 }

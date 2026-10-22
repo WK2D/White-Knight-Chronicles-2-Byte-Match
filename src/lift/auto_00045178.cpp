@@ -12,22 +12,23 @@ int fn_00064664(void*);
 void fn_000647d8(void*);
 
 int fn_000452b0(void* a0) {
-    int t0 = fn_00064664((void*)((char*)a0 + 372));
-    return t0;
+    int t0;
+    t0 = fn_00064664((void*)((char*)a0 + 372));
+    return (int)(t0);
 }
 
 int fn_000460bc(void* a0) {
     fn_00053780((void*)(a0));
     fn_000647d8((void*)((char*)a0 + 372));
     stub_0004324c((void*)(a0));
-    return 0;
+    return (int)(0);
 }
 
 int fn_00046118(void* a0) {
     stub_0004324c((void*)(a0));
     fn_0006449c((void*)((char*)a0 + 372));
     fn_00054f34((void*)(a0));
-    return 0;
+    return (int)(0);
 }
 
 }

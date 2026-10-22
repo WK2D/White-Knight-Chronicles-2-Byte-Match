@@ -19,8 +19,8 @@ struct unk_000c0c58_a0 {
 extern char g_000c0c58_0[];
 void fn_000c0c58(unk_000c0c58_a0* a0) {
     fn_000c38d8((void*)(a0));
-    a0->f_0 = g_000c0c58_0;
-    a0->f_8 = 0;
+    a0->f_0 = (void*)(g_000c0c58_0);
+    a0->f_8 = (u32)(0);
 }
 
 struct unk_000c0c98_a0 {
@@ -31,8 +31,8 @@ struct unk_000c0c98_a0 {
 extern char g_000c0c98_0[];
 void fn_000c0c98(unk_000c0c98_a0* a0) {
     fn_000c38d8((void*)(a0));
-    a0->f_0 = g_000c0c98_0;
-    a0->f_8 = 0;
+    a0->f_0 = (void*)(g_000c0c98_0);
+    a0->f_8 = (u32)(0);
 }
 
 }

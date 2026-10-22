@@ -12,8 +12,9 @@ struct unk_000c0950_a0 {
 };
 extern char g_000c0950_0[];
 u8 fn_000c0950(unk_000c0950_a0* a0, int a1, int a2, int a3, int a4, int a5, int a6) {
-    int t0 = stub_000be6ac((u32)(FIELD(u32, FIELD(u32, g_000c0950_0, 0), 72)), (u16)(FIELD(u16, a0->f_4, 32)), (int)(a1), (int)(a2), (int)(a3), (int)(a4), (int)(a5), (int)(a6));
-    return (u8)t0;
+    int t0;
+    t0 = stub_000be6ac((u32)(FIELD(u32, FIELD(u32, g_000c0950_0, 0), 72)), (u16)(FIELD(u16, a0->f_4, 32)), (int)(a1), (int)(a2), (int)(a3), (int)(a4), (int)(a5), (int)(a6));
+    return (u8)((u8)t0);
 }
 
 }

@@ -4,11 +4,27 @@
 
 extern "C" {
 
+int fn_00b3ccd8(void*, void*, int);
+
+int fn_009ae0e0(void* a0, int a1, int a2, void* a3) {
+    int t0;
+    int v0;
+    int v1;
+    if ((int)(a0) != (int)(0)) {
+        t0 = fn_00b3ccd8((void*)((char*)a0 + 1052), (void*)(a3), (int)(16));
+        v0 = (int)(16);
+        v1 = (int)(t0);
+    } else {
+        v0 = (int)(-1);
+        v1 = (int)((char*)a0 + 1052);
+    }
+    return (int)(v0);
+}
 
 extern char g_009ae128_0[];
 int fn_009ae128(void) {
-    FIELD(u32, g_009ae128_0, 88) = 0;
-    return 0;
+    FIELD(u32, g_009ae128_0, 88) = (u32)(0);
+    return (int)(0);
 }
 
 }

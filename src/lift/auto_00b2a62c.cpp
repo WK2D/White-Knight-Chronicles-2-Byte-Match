@@ -45,8 +45,9 @@ struct unk_00b2bbec_a0 {
     void* f_0;
 };
 void fn_00b2bbec(unk_00b2bbec_a0* a0) {
-    void* t0 = fn_00b282ac((int)(40));
-    a0->f_0 = t0;
+    void* t0;
+    t0 = fn_00b282ac((int)(40));
+    a0->f_0 = (void*)(t0);
     fn_00b11568((void*)(t0));
 }
 
@@ -54,8 +55,9 @@ struct unk_00b2bc34_a0 {
     void* f_0;
 };
 void fn_00b2bc34(unk_00b2bc34_a0* a0) {
-    void* t0 = fn_00b282ac((int)(40));
-    a0->f_0 = t0;
+    void* t0;
+    t0 = fn_00b282ac((int)(40));
+    a0->f_0 = (void*)(t0);
     fn_00b11568((void*)(t0));
 }
 

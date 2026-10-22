@@ -8,17 +8,22 @@ static void __attribute__((noinline)) stub_0006a0a8(int p0, int p1, int p2, int 
 
 int fn_0006a15c(void) {
     stub_0006a0a8((int)(6), (int)(0), (int)(0), (int)(0), (int)(0), (int)(0));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0006a198(void) {
     stub_0006a0a8((int)(5), (int)(0), (int)(0), (int)(0), (int)(0), (int)(0));
-    return 0;
+    return (int)(0);
 }
 
 int fn_0006a1d4(void) {
     stub_0006a0a8((int)(2), (int)(0), (int)(0), (int)(1), (int)(0), (int)(0));
-    return 0;
+    return (int)(0);
+}
+
+extern char g_0006a2f8_0[];
+u32 fn_0006a2f8(void) {
+    return (u32)(FIELD(u32, FIELD(u32, g_0006a2f8_0, 8180), 120));
 }
 
 }

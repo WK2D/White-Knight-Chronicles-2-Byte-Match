@@ -14,32 +14,38 @@ void* fn_0040acc0(void);
 int fn_00539d90(void);
 
 void fn_00367a28(void* a0) {
-    int t0 = fn_00539d90();
+    int t0;
+    t0 = fn_00539d90();
     fn_0003b004((void*)(a0), (u8)((u8)t0));
 }
 
 void fn_00367ab4(void* a0) {
-    void* t0 = fn_0040ac20();
+    void* t0;
+    t0 = fn_0040ac20();
     fn_0003aedc((void*)(a0), (void*)(t0));
 }
 
 void fn_00367af4(void* a0) {
-    void* t0 = fn_0040ac70();
+    void* t0;
+    t0 = fn_0040ac70();
     fn_0003aedc((void*)(a0), (void*)(t0));
 }
 
 void fn_00367b34(void* a0) {
-    void* t0 = fn_0040acc0();
+    void* t0;
+    t0 = fn_0040acc0();
     fn_0003aedc((void*)(a0), (void*)(t0));
 }
 
 void fn_00367bb4(void* a0) {
-    void* t0 = fn_00404ac8();
+    void* t0;
+    t0 = fn_00404ac8();
     fn_0003aedc((void*)(a0), (void*)(t0));
 }
 
 void fn_00367bf4(void* a0) {
-    void* t0 = fn_0040499c();
+    void* t0;
+    t0 = fn_0040499c();
     fn_0003aedc((void*)(a0), (void*)(t0));
 }
 

@@ -16,8 +16,8 @@ struct unk_00aa310c_a0 {
 extern char g_00aa310c_0[];
 extern char g_00aa310c_1[];
 void fn_00aa310c(unk_00aa310c_a0* a0) {
-    a0->f_0 = g_00aa310c_1;
-    FIELD(u32, g_00aa310c_0, 0) = FIELD(u32, g_00aa310c_0, 0) + -1;
+    a0->f_0 = (void*)(g_00aa310c_1);
+    FIELD(u32, g_00aa310c_0, 0) = (u32)(FIELD(u32, g_00aa310c_0, 0) + -1);
 }
 
 }

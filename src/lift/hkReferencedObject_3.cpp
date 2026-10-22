@@ -7,7 +7,17 @@ extern "C" {
 
 extern char g_00c03998_0[];
 void fn_00c03998(int a0) {
-    FIELD(u32, FIELD(u32, g_00c03998_0, 0), 8) = a0;
+    FIELD(u32, FIELD(u32, g_00c03998_0, 0), 8) = (u32)(a0);
+}
+
+extern char g_00c039a8_0[];
+void* fn_00c039a8(void) {
+    return (void*)(FIELD(u32, g_00c039a8_0, 0) + 24);
+}
+
+extern char g_00c039bc_0[];
+u32 fn_00c039bc(void) {
+    return (u32)(FIELD(u32, FIELD(u32, g_00c039bc_0, 0), 8));
 }
 
 }

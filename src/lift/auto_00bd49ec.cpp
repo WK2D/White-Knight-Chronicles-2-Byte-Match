@@ -5,17 +5,28 @@
 extern "C" {
 
 void fn_00acad68(int);
+void fn_00b3d438(int, void*, void*);
 
 void fn_00bd4b0c(int a0, int a1, int a2) {
     fn_00acad68((int)(a2));
 }
 
 int fn_00bd5f58(int a0, int a1) {
-    return a1;
+    return (int)(a1);
 }
 
 int fn_00bd5f60(int a0, int a1) {
-    return a1;
+    return (int)(a1);
+}
+
+void* fn_00bd5fec(int a0, void* a1, void* a2, int a3, int a4) {
+    fn_00b3d438((int)(a4), (void*)(a1), (void*)((int)(a2) - (int)(a1)));
+    return (void*)(a2);
+}
+
+void* fn_00bd6030(int a0, void* a1, void* a2, int a3) {
+    fn_00b3d438((int)(a3), (void*)(a1), (void*)((int)(a2) - (int)(a1)));
+    return (void*)(a2);
 }
 
 }

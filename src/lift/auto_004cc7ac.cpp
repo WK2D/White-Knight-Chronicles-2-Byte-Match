@@ -6,34 +6,49 @@ extern "C" {
 
 int fn_0003f9e0(int);
 void fn_0003faa8(int);
+void fn_0003fab0(void*, int);
+int fn_000750f8(int);
 
 extern char g_004cc7ac_0[];
 void fn_004cc7ac(int a0, int a1) {
-    FIELD(u32, g_004cc7ac_0, 0) = a1;
+    FIELD(u32, g_004cc7ac_0, 0) = (u32)(a1);
 }
 
 extern char g_004cc7b8_0[];
 void fn_004cc7b8(int a0, int a1) {
-    FIELD(u32, g_004cc7b8_0, 4) = a1;
+    FIELD(u32, g_004cc7b8_0, 4) = (u32)(a1);
 }
 
 extern char g_004cd110_0[];
 int fn_004cd110(int a0) {
-    int t0 = fn_0003f9e0((int)(a0));
-    FIELD(u32, FIELD(u32, g_004cd110_0, 8), 12) = t0;
-    return 1;
+    int t0;
+    t0 = fn_0003f9e0((int)(a0));
+    FIELD(u32, FIELD(u32, g_004cd110_0, 8), 12) = (u32)(t0);
+    return (int)(1);
 }
 
 extern char g_004cd144_0[];
 int fn_004cd144(int a0) {
-    int t0 = fn_0003f9e0((int)(a0));
-    FIELD(u32, FIELD(u32, g_004cd144_0, 8), 8) = t0;
-    return 1;
+    int t0;
+    t0 = fn_0003f9e0((int)(a0));
+    FIELD(u32, FIELD(u32, g_004cd144_0, 8), 8) = (u32)(t0);
+    return (int)(1);
 }
 
 int fn_004cd424(int a0) {
     fn_0003faa8((int)(a0));
-    return 1;
+    return (int)(1);
+}
+
+int fn_004cd44c(void* a0) {
+    int t0;
+    t0 = fn_000750f8((int)(6146));
+    if ((int)(t0) != (int)(2)) {
+        fn_0003fab0((void*)(a0), (int)(0));
+        return (int)(1);
+    }
+    fn_0003fab0((void*)(a0), (int)(1));
+    return (int)(1);
 }
 
 }

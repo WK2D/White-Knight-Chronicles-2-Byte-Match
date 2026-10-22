@@ -11,8 +11,9 @@ struct unk_0019ad60_a0 {
     u32 f_4;
 };
 u16 fn_0019ad60(unk_0019ad60_a0* a0) {
-    int t0 = fn_001a5bdc((u32)(a0->f_4));
-    return (u16)t0;
+    int t0;
+    t0 = fn_001a5bdc((u32)(a0->f_4));
+    return (u16)((u16)t0);
 }
 
 struct unk_0019b114_a0 {
@@ -21,8 +22,8 @@ struct unk_0019b114_a0 {
 };
 extern char g_0019b114_0[];
 void fn_0019b114(unk_0019b114_a0* a0, int a1) {
-    a0->f_4 = a1;
-    a0->f_0 = g_0019b114_0;
+    a0->f_4 = (u32)(a1);
+    a0->f_0 = (void*)(g_0019b114_0);
 }
 
 }

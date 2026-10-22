@@ -8,9 +8,10 @@ static int __attribute__((noinline)) stub_004164f4(void* p0, int p1) { int r; __
 void fn_00b37fa8(int, int, int);
 
 u8 fn_0041672c(void* a0, int a1) {
+    int t1;
     fn_00b37fa8((int)(a1), (int)(0), (int)(400));
-    int t1 = stub_004164f4((void*)(a0), (int)(a1));
-    return (u8)t1;
+    t1 = stub_004164f4((void*)(a0), (int)(a1));
+    return (u8)((u8)t1);
 }
 
 }

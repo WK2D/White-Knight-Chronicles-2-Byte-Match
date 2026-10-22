@@ -8,9 +8,10 @@ int fn_00041b48(int);
 
 extern char g_0022be90_0[];
 int fn_0022be90(int a0) {
-    int t0 = fn_00041b48((int)(a0));
-    FIELD(u8, FIELD(u32, FIELD(u32, FIELD(u32, g_0022be90_0, 0), 44), 0), 99) = t0;
-    return 0;
+    int t0;
+    t0 = fn_00041b48((int)(a0));
+    FIELD(u8, FIELD(u32, FIELD(u32, FIELD(u32, g_0022be90_0, 0), 44), 0), 99) = (u8)(t0);
+    return (int)(0);
 }
 
 }

@@ -5,11 +5,25 @@
 extern "C" {
 
 
+struct unk_00b00c0c_a0 {
+    char pad_0[12];
+    u32 f_c;
+};
+void* fn_00b00c0c(unk_00b00c0c_a0* a0) {
+    int v0;
+    if (a0 != 0) {
+        v0 = (int)(a0->f_c);
+    } else {
+        v0 = (int)(0);
+    }
+    return (void*)(v0);
+}
+
 struct unk_00b00c50_a1 {
     u32 f_0;
 };
 u32 fn_00b00c50(int a0, unk_00b00c50_a1* a1) {
-    return a1->f_0;
+    return (u32)(a1->f_0);
 }
 
 struct unk_00b00c58_a1 {
@@ -17,7 +31,21 @@ struct unk_00b00c58_a1 {
     u32 f_4;
 };
 u32 fn_00b00c58(int a0, unk_00b00c58_a1* a1) {
-    return a1->f_4;
+    return (u32)(a1->f_4);
+}
+
+struct unk_00b00c60_a1 {
+    char pad_0[16];
+    u32 f_10;
+};
+void* fn_00b00c60(int a0, unk_00b00c60_a1* a1) {
+    int v0;
+    if (a1 != 0) {
+        v0 = (int)((int)(a0) + (int)(a1->f_10));
+    } else {
+        v0 = (int)(0);
+    }
+    return (void*)(v0);
 }
 
 struct unk_00b00c7c_a1 {
@@ -25,7 +53,7 @@ struct unk_00b00c7c_a1 {
     u32 f_8;
 };
 u32 fn_00b00c7c(int a0, unk_00b00c7c_a1* a1) {
-    return a1->f_8;
+    return (u32)(a1->f_8);
 }
 
 struct unk_00b00c84_a1 {
@@ -33,7 +61,7 @@ struct unk_00b00c84_a1 {
     u32 f_c;
 };
 u32 fn_00b00c84(int a0, unk_00b00c84_a1* a1) {
-    return a1->f_c;
+    return (u32)(a1->f_c);
 }
 
 struct unk_00b00cb8_a1 {
@@ -41,7 +69,7 @@ struct unk_00b00cb8_a1 {
     u32 f_24;
 };
 int fn_00b00cb8(int a0, unk_00b00cb8_a1* a1) {
-    return (int)a1->f_24;
+    return (int)((int)a1->f_24);
 }
 
 struct unk_00b00cc4_a1 {
@@ -49,7 +77,15 @@ struct unk_00b00cc4_a1 {
     u32 f_20;
 };
 u32 fn_00b00cc4(int a0, unk_00b00cc4_a1* a1) {
-    return a1->f_20;
+    return (u32)(a1->f_20);
+}
+
+struct unk_00b00ccc_a1 {
+    char pad_0[28];
+    u32 f_1c;
+};
+void* fn_00b00ccc(int a0, unk_00b00ccc_a1* a1) {
+    return (void*)((int)(a0) + (int)(a1->f_1c));
 }
 
 struct unk_00b00ce4_a1 {
@@ -57,7 +93,12 @@ struct unk_00b00ce4_a1 {
     u32 f_28;
 };
 int fn_00b00ce4(int a0, unk_00b00ce4_a1* a1) {
-    return (int)a1->f_28;
+    return (int)((int)a1->f_28);
+}
+
+extern char g_00b01c60_0[];
+u32 fn_00b01c60(void) {
+    return (u32)(FIELD(u32, FIELD(u32, g_00b01c60_0, 0), 8));
 }
 
 }

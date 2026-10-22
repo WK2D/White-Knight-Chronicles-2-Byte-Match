@@ -9,12 +9,14 @@ void* fn_00b21280(void);
 void fn_00b214e8(void*, void*);
 
 void* fn_00b213f8(void) {
-    void* t0 = fn_00b21280();
-    return t0;
+    void* t0;
+    t0 = fn_00b21280();
+    return (void*)(t0);
 }
 
 void fn_00b21514(void* a0) {
-    void* t0 = fn_00b16070((int)(24));
+    void* t0;
+    t0 = fn_00b16070((int)(24));
     fn_00b214e8((void*)(a0), (void*)(t0));
 }
 

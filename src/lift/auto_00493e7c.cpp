@@ -4,15 +4,30 @@
 
 extern "C" {
 
-static int __attribute__((noinline)) stub_00493eec(u8 p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static void* __attribute__((noinline)) stub_00493e7c(void) { void* r; __asm__ volatile ("" : "=r"(r)); return r; }
 
-struct unk_00493f20_a0 {
-    char pad_0[6];
-    u8 f_6;
-};
-u8 fn_00493f20(unk_00493f20_a0* a0) {
-    int t0 = stub_00493eec((u8)(a0->f_6));
-    return (u8)t0;
+int fn_00493eec(void) {
+    void* t0;
+    int v0;
+    t0 = stub_00493e7c();
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)(FIELD(u8, t0, 1));
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
+void* fn_00493f48(void) {
+    void* t0;
+    int v0;
+    t0 = stub_00493e7c();
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)(FIELD(u32, t0, 4));
+    } else {
+        v0 = (int)(0);
+    }
+    return (void*)(v0);
 }
 
 }

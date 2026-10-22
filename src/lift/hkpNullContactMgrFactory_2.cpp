@@ -7,12 +7,23 @@ extern "C" {
 void fn_00c03c0c(void);
 void fn_00daeb88(u32);
 
+struct unk_00d77a20_a0 {
+    char pad_0[88];
+    u32 f_58;
+};
+void fn_00d77a20(unk_00d77a20_a0* a0) {
+    if ((int)(a0->f_58) == (int)(0)) {
+        return;
+    }
+    FIELD(u8, a0->f_58, 24) = (u8)(1);
+}
+
 struct unk_00d78098_a0 {
     char pad_0[184];
     u32 f_b8;
 };
 void fn_00d78098(unk_00d78098_a0* a0) {
-    a0->f_b8 = a0->f_b8 + -1;
+    a0->f_b8 = (u32)(a0->f_b8 + -1);
     fn_00c03c0c();
 }
 

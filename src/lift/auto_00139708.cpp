@@ -15,7 +15,7 @@ struct unk_0013cbe0_a1 {
 };
 void fn_0013cbe0(unk_0013cbe0_a0* a0, unk_0013cbe0_a1* a1) {
     stub_0013caa4((u32)(a0->f_14));
-    a1->f_0 = 1;
+    a1->f_0 = (u8)(1);
 }
 
 struct unk_0013cc9c_a0 {
@@ -27,7 +27,7 @@ struct unk_0013cc9c_a1 {
 };
 void fn_0013cc9c(unk_0013cc9c_a0* a0, unk_0013cc9c_a1* a1) {
     stub_0013caa4((u32)(a0->f_14));
-    a1->f_0 = 1;
+    a1->f_0 = (u8)(1);
 }
 
 }

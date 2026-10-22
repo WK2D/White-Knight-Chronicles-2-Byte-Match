@@ -10,13 +10,13 @@ static void __attribute__((noinline)) stub_004113a0(int p0) { __asm__ volatile (
 
 int fn_00411254(void) {
     stub_004110dc();
-    return 1;
+    return (int)(1);
 }
 
 int fn_0041146c(int a0) {
     stub_00410924((int)(a0));
     stub_004113a0((int)(a0));
-    return 1;
+    return (int)(1);
 }
 
 }

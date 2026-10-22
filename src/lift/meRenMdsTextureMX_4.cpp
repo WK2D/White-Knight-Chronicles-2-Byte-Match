@@ -8,13 +8,15 @@ void* fn_00aee914(void);
 void* fn_00aee944(void);
 
 void* fn_00aca938(void) {
-    void* t0 = fn_00aee914();
-    return t0;
+    void* t0;
+    t0 = fn_00aee914();
+    return (void*)(t0);
 }
 
 void* fn_00aca960(void) {
-    void* t0 = fn_00aee944();
-    return t0;
+    void* t0;
+    t0 = fn_00aee944();
+    return (void*)(t0);
 }
 
 }

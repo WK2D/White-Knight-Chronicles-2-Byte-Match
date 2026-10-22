@@ -7,13 +7,35 @@ extern "C" {
 int fn_00041b48(int);
 static void __attribute__((noinline)) stub_004367bc(u32 p0, u16 p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 
+extern char g_004363ac_0[];
+int fn_004363ac(void) {
+    int v0;
+    int v1;
+    int v2;
+    if ((int)(FIELD(u32, FIELD(u32, g_004363ac_0, 0), 8)) != (int)(0)) {
+        if ((int)(FIELD(u16, FIELD(u32, g_004363ac_0, 0), 12)) != (int)(0)) {
+            FIELD(u32, FIELD(u32, g_004363ac_0, 0), 20) = (u32)(FIELD(u16, FIELD(u32, g_004363ac_0, 0), 12));
+            v0 = (int)(1);
+        } else {
+            v0 = (int)(0);
+        }
+        v1 = (int)(FIELD(u16, FIELD(u32, g_004363ac_0, 0), 12));
+        v2 = (int)(v0);
+    } else {
+        v1 = (int)(FIELD(u32, FIELD(u32, g_004363ac_0, 0), 8));
+        v2 = (int)(0);
+    }
+    return (int)(v2);
+}
+
 extern char g_00436870_0[];
 int fn_00436870(int a0) {
-    int t0 = fn_00041b48((int)(a0));
+    int t0;
+    t0 = fn_00041b48((int)(a0));
     stub_004367bc((u32)(FIELD(u32, g_00436870_0, 0)), (u16)((u16)t0));
-    FIELD(u16, FIELD(u32, g_00436870_0, 0), 12) = 0;
-    FIELD(u32, FIELD(u32, g_00436870_0, 0), 16) = t0;
-    return 1;
+    FIELD(u16, FIELD(u32, g_00436870_0, 0), 12) = (u16)(0);
+    FIELD(u32, FIELD(u32, g_00436870_0, 0), 16) = (u32)(t0);
+    return (int)(1);
 }
 
 }

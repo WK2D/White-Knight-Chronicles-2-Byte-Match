@@ -11,10 +11,11 @@ int fn_00b1b214(void*, void*, void*, void*);
 extern char g_00b0fc84_0[];
 extern char g_00b0fc84_1[];
 int fn_00b0fc84(void* a0, void* a1) {
+    int t1;
     fn_00b0c728((void*)(g_00b0fc84_0));
-    int t1 = fn_00b1b214((void*)(g_00b0fc84_1), (void*)(g_00b0fc84_0), (void*)(a0), (void*)(a1));
+    t1 = fn_00b1b214((void*)(g_00b0fc84_1), (void*)(g_00b0fc84_0), (void*)(a0), (void*)(a1));
     fn_00b0c6ac((void*)(g_00b0fc84_0));
-    return t1;
+    return (int)(t1);
 }
 
 }

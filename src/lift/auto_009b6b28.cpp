@@ -7,9 +7,9 @@ extern "C" {
 
 extern char g_009b6b28_0[];
 int fn_009b6b28(int a0, int a1) {
-    FIELD(u32, g_009b6b28_0, 0) = a0;
-    FIELD(u32, g_009b6b28_0, 4) = a1;
-    return 0;
+    FIELD(u32, g_009b6b28_0, 0) = (u32)(a0);
+    FIELD(u32, g_009b6b28_0, 4) = (u32)(a1);
+    return (int)(0);
 }
 
 }

@@ -6,7 +6,7 @@ extern "C" {
 
 
 int fn_009217e0(int a0, int a1) {
-    return a1;
+    return (int)(a1);
 }
 
 }

@@ -12,14 +12,16 @@ static void __attribute__((noinline)) stub_00692e30(void* p0) { __asm__ volatile
 
 extern char g_00693648_0[];
 u8 fn_00693648(void) {
-    int t0 = fn_003e70dc((u32)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_00693648_0, 0), 108), 8), 264)));
-    return (u8)t0;
+    int t0;
+    t0 = fn_003e70dc((u32)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_00693648_0, 0), 108), 8), 264)));
+    return (u8)((u8)t0);
 }
 
 extern char g_00693684_0[];
 u8 fn_00693684(void) {
-    int t0 = fn_003e70bc((u32)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_00693684_0, 0), 108), 8), 264)));
-    return (u8)t0;
+    int t0;
+    t0 = fn_003e70bc((u32)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_00693684_0, 0), 108), 8), 264)));
+    return (u8)((u8)t0);
 }
 
 extern char g_006936c0_0[];

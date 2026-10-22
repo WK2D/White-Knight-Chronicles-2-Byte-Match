@@ -10,7 +10,7 @@ struct unk_00dfb43c_a0 {
     u32 f_a4;
 };
 int fn_00dfb43c(unk_00dfb43c_a0* a0) {
-    return a0->f_a4 + -1;
+    return (int)(a0->f_a4 + -1);
 }
 
 }

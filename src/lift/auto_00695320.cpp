@@ -35,13 +35,14 @@ struct unk_00696164_a0 {
 int fn_00696164(unk_00696164_a0* a0, int a1, void* a2, void* a3, int a4, int a5) {
     fn_00b38268((void*)(a0->f_264 + 140), (int)(a4));
     stub_006960dc((void*)(a0), (int)(a1), (void*)(a2), (void*)(a3), (int)(0), (int)(0), (u8)((u8)a5));
-    return 1;
+    return (int)(1);
 }
 
 int fn_00696618(void* a0, int a1, void* a2, int a3) {
-    void* t0 = fn_00043544((void*)((char*)a0 + 936));
+    void* t0;
+    t0 = fn_00043544((void*)((char*)a0 + 936));
     stub_00695f10((void*)(a0), (void*)(t0), (void*)(a2), (int)(a3));
-    return 1;
+    return (int)(1);
 }
 
 void fn_0069840c(void) {

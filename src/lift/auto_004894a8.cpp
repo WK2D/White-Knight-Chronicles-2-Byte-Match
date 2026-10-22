@@ -11,7 +11,7 @@ extern char g_0048956c_0[];
 int fn_0048956c(void) {
     stub_004894a8((u32)(FIELD(u32, g_0048956c_0, 0)));
     stub_004894c0((u32)(FIELD(u32, g_0048956c_0, 0)));
-    return 1;
+    return (int)(1);
 }
 
 }

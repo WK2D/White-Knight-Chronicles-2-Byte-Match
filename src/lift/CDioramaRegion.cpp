@@ -11,8 +11,8 @@ struct unk_008afda8_a0 {
 };
 extern char g_008afda8_0[];
 void fn_008afda8(unk_008afda8_a0* a0, int a1) {
-    a0->f_4 = a1;
-    a0->f_0 = g_008afda8_0;
+    a0->f_4 = (u32)(a1);
+    a0->f_0 = (void*)(g_008afda8_0);
 }
 
 struct unk_008afdb8_a0 {
@@ -21,8 +21,8 @@ struct unk_008afdb8_a0 {
 };
 extern char g_008afdb8_0[];
 void fn_008afdb8(unk_008afdb8_a0* a0, int a1) {
-    a0->f_4 = a1;
-    a0->f_0 = g_008afdb8_0;
+    a0->f_4 = (u32)(a1);
+    a0->f_0 = (void*)(g_008afdb8_0);
 }
 
 }

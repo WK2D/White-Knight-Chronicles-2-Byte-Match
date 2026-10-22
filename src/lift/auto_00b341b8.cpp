@@ -11,7 +11,7 @@ extern char g_00b341b8_1[];
 extern char g_00b341b8_2[];
 void* fn_00b341b8(void) {
     fn_00b115bc((void*)(g_00b341b8_0), (void*)(g_00b341b8_1));
-    return g_00b341b8_2;
+    return (void*)(g_00b341b8_2);
 }
 
 }

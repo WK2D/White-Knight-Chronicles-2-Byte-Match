@@ -21,9 +21,9 @@ struct unk_00bec9e0_a3 {
     u32 f_0;
 };
 void fn_00bec9e0(unk_00bec9e0_a0* a0, unk_00bec9e0_a1* a1, unk_00bec9e0_a2* a2, unk_00bec9e0_a3* a3) {
-    a1->f_0 = a0->f_24;
-    a2->f_0 = a0->f_28;
-    a3->f_0 = a0->f_2c;
+    a1->f_0 = (u32)(a0->f_24);
+    a2->f_0 = (u32)(a0->f_28);
+    a3->f_0 = (u32)(a0->f_2c);
 }
 
 }

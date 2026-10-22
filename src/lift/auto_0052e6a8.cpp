@@ -13,8 +13,33 @@ struct unk_00530050_a1 {
     u32 f_0;
 };
 void* fn_00530050(unk_00530050_a0* a0, unk_00530050_a1* a1) {
-    a1->f_0 = a0->f_4;
-    return (char*)a0 + 8;
+    a1->f_0 = (u32)(a0->f_4);
+    return (void*)((char*)a0 + 8);
+}
+
+struct unk_005300b8_a0 {
+    char pad_0[92];
+    float f_5c;
+    float f_60;
+    float f_64;
+    u16 f_68;
+};
+struct unk_005300b8_a1 {
+    float f_0;
+    float f_4;
+    float f_8;
+};
+struct unk_005300b8_a2 {
+    u16 f_0;
+};
+void fn_005300b8(unk_005300b8_a0* a0, unk_005300b8_a1* a1, unk_005300b8_a2* a2) {
+    a1->f_0 = a0->f_5c;
+    a1->f_4 = a0->f_60;
+    a1->f_8 = a0->f_64;
+    if (a2 == 0) {
+        return;
+    }
+    a2->f_0 = (u16)(a0->f_68);
 }
 
 }

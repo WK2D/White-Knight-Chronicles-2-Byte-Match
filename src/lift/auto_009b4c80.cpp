@@ -7,15 +7,15 @@ extern "C" {
 
 extern char g_009b4c80_0[];
 int fn_009b4c80(int a0, int a1) {
-    FIELD(u32, g_009b4c80_0, 0) = a0;
-    FIELD(u32, g_009b4c80_0, 4) = a1;
-    return 0;
+    FIELD(u32, g_009b4c80_0, 0) = (u32)(a0);
+    FIELD(u32, g_009b4c80_0, 4) = (u32)(a1);
+    return (int)(0);
 }
 
 extern char g_009b4c94_0[];
 int fn_009b4c94(int a0) {
-    FIELD(u32, g_009b4c94_0, 8) = a0;
-    return 0;
+    FIELD(u32, g_009b4c94_0, 8) = (u32)(a0);
+    return (int)(0);
 }
 
 }

@@ -10,8 +10,10 @@ void fn_00b388f8(void*, void*, void*, u16, u16);
 
 extern char g_00102154_0[];
 void fn_00102154(int a0, void* a1, void* a2) {
-    int t0 = fn_00b388d8();
-    int t1 = fn_00b388e8();
+    int t0;
+    int t1;
+    t0 = fn_00b388d8();
+    t1 = fn_00b388e8();
     fn_00b388f8((void*)(a1), (void*)(a2), (void*)(g_00102154_0), (u16)((u16)t0), (u16)((u16)t1));
 }
 

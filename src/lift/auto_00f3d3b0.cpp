@@ -7,11 +7,11 @@ extern "C" {
 void fn_00bfbe74(int, int);
 
 int fn_00f3f960(int a0, int a1) {
-    return a1;
+    return (int)(a1);
 }
 
 int fn_00f3f968(int a0, int a1) {
-    return a1;
+    return (int)(a1);
 }
 
 void fn_00f40f90(int a0, int a1) {

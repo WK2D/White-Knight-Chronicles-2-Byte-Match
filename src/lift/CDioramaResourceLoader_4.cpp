@@ -10,8 +10,9 @@ void fn_00b40298(u32);
 void* fn_00bb8aa8(void*);
 
 void* fn_008addc0(void* a0) {
-    void* t0 = fn_00bb8aa8((void*)((char*)a0 + 24));
-    return t0;
+    void* t0;
+    t0 = fn_00bb8aa8((void*)((char*)a0 + 24));
+    return (void*)(t0);
 }
 
 struct unk_008ae0c4_a0 {

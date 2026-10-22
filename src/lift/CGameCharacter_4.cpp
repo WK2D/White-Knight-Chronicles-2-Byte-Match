@@ -4,6 +4,32 @@
 
 extern "C" {
 
+static void* __attribute__((noinline)) stub_001858ac(int p0) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static void* __attribute__((noinline)) stub_00185b24(void) { void* r; __asm__ volatile ("" : "=r"(r)); return r; }
+
+int fn_00185930(int a0) {
+    void* t0;
+    int v0;
+    t0 = stub_001858ac((int)(a0));
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)(FIELD(u16, t0, 4));
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
+void* fn_00185b90(void) {
+    void* t0;
+    int v0;
+    t0 = stub_00185b24();
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)(FIELD(u32, t0, 0));
+    } else {
+        v0 = (int)(0);
+    }
+    return (void*)(v0);
+}
 
 struct unk_00185e50_a0 {
     char pad_0[92];
@@ -13,7 +39,7 @@ struct unk_00185e50_a1 {
     u16 f_0;
 };
 void fn_00185e50(unk_00185e50_a0* a0, unk_00185e50_a1* a1) {
-    a0->f_5c = a1->f_0;
+    a0->f_5c = (u16)(a1->f_0);
 }
 
 }

@@ -6,15 +6,15 @@ extern "C" {
 
 
 int fn_00914134(int a0, int a1) {
-    return a1;
+    return (int)(a1);
 }
 
 int fn_0091417c(int a0, int a1) {
-    return a1;
+    return (int)(a1);
 }
 
 int fn_009141f4(int a0, int a1) {
-    return a1;
+    return (int)(a1);
 }
 
 }

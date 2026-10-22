@@ -11,17 +11,17 @@ void fn_00bba9dc(void);
 
 int fn_00bba920(void) {
     fn_00bba8b4();
-    return 1;
+    return (int)(1);
 }
 
 int fn_00bba9b4(void) {
     fn_00bba948();
-    return 1;
+    return (int)(1);
 }
 
 int fn_00bbaa48(void) {
     fn_00bba9dc();
-    return 1;
+    return (int)(1);
 }
 
 struct unk_00bbb1d4_a0 {

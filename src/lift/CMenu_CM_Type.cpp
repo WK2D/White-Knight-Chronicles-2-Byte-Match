@@ -6,6 +6,21 @@ extern "C" {
 
 void fn_00b37f88(void*, void*, int);
 
+struct unk_0078e844_a0 {
+    char pad_0[204];
+    u8 f_cc;
+};
+struct unk_0078e844_a1 {
+    u8 f_0;
+};
+int fn_0078e844(unk_0078e844_a0* a0, unk_0078e844_a1* a1) {
+    if ((int)(a0->f_cc) == (int)(0)) {
+        return (int)(1);
+    }
+    a1->f_0 = (u8)(1);
+    return (int)(1);
+}
+
 struct unk_0078e978_a0 {
     char pad_0[35];
     u8 f_23;
@@ -13,8 +28,8 @@ struct unk_0078e978_a0 {
 extern char g_0078e978_0[];
 int fn_0078e978(unk_0078e978_a0* a0) {
     fn_00b37f88((void*)((char*)a0 + 4), (void*)(g_0078e978_0), (int)(32));
-    a0->f_23 = 0;
-    return 1;
+    a0->f_23 = (u8)(0);
+    return (int)(1);
 }
 
 }

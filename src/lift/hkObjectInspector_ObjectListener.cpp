@@ -13,9 +13,9 @@ struct unk_00c4cf80_a0 {
 extern char g_00c4cf80_0[];
 extern char g_00c4cf80_1[];
 void fn_00c4cf80(unk_00c4cf80_a0* a0) {
-    a0->f_0 = g_00c4cf80_0;
+    a0->f_0 = (void*)(g_00c4cf80_0);
     fn_00c2b1a8((void*)((char*)a0 + 24));
-    a0->f_0 = g_00c4cf80_1;
+    a0->f_0 = (void*)(g_00c4cf80_1);
     fn_00b3cd48((void*)(a0));
 }
 

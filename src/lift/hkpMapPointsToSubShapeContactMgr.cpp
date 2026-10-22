@@ -15,8 +15,8 @@ struct unk_00d2e440_a0 {
 };
 void fn_00d2e440(unk_00d2e440_a0* a0, int a1) {
     fn_00deeac8((void*)((char*)a0 + 48), (u32)(a0->f_74), (u32)(a0->f_8), (int)(a1));
-    FIELD(u32, (char*)a0 + 48, 0) = 0;
-    a0->f_78 = 1;
+    FIELD(u32, (char*)a0 + 48, 0) = (u32)(0);
+    a0->f_78 = (u8)(1);
 }
 
 }

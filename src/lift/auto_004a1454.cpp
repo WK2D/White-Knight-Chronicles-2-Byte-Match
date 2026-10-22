@@ -8,13 +8,13 @@ void fn_00041bcc(int);
 
 extern char g_004a1454_0[];
 int fn_004a1454(void) {
-    FIELD(u32, FIELD(u32, g_004a1454_0, 0), 16) = 0;
-    return 1;
+    FIELD(u32, FIELD(u32, g_004a1454_0, 0), 16) = (u32)(0);
+    return (int)(1);
 }
 
 int fn_004a1574(int a0) {
     fn_00041bcc((int)(a0));
-    return 1;
+    return (int)(1);
 }
 
 }

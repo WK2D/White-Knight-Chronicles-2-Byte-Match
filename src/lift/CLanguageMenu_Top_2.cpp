@@ -17,12 +17,17 @@ struct unk_0086d1f0_a2 {
     u16 f_0;
 };
 void fn_0086d1f0(unk_0086d1f0_a0* a0, unk_0086d1f0_a1* a1, unk_0086d1f0_a2* a2) {
-    a1->f_0 = a0->f_27d8;
-    a2->f_0 = a0->f_27da;
+    a1->f_0 = (u16)(a0->f_27d8);
+    a2->f_0 = (u16)(a0->f_27da);
 }
 
 int fn_0086d208(int a0, int a1) {
-    return a1 + 15;
+    return (int)(a1 + 15);
+}
+
+extern char g_0086d214_0[];
+u32 fn_0086d214(void) {
+    return (u32)(FIELD(u32, FIELD(u32, FIELD(u32, g_0086d214_0, 0), 164), 208));
 }
 
 }

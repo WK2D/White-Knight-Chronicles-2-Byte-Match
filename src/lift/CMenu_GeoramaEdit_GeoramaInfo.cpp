@@ -4,13 +4,10 @@
 
 extern "C" {
 
-static void* __attribute__((noinline)) stub_00887ad8(void) { void* r; __asm__ volatile ("" : "=r"(r)); return r; }
-int fn_00b3ff08(void*);
 
-int fn_00887c64(void) {
-    void* t0 = stub_00887ad8();
-    int t1 = fn_00b3ff08((void*)(t0));
-    return t1;
+extern char g_00887ad8_0[];
+u32 fn_00887ad8(void) {
+    return (u32)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_00887ad8_0, 0), 108), 8), 200));
 }
 
 }

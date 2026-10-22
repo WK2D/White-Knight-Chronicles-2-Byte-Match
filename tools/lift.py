@@ -31,7 +31,7 @@ STORES = {36: 'u32', 38: 'u8', 44: 'u16', 52: 'float', 54: 'double'}
 CTYPES = {'ptr': 'void*', 'addr': 'void*', 'gaddr': 'void*', 'u32': 'u32', 'u8': 'u8', 'u16': 'u16',
           's16': 's16', 'u64': 'u64', 'int': 'int', 'float': 'float', 'double': 'double'}
 BLR, NOP, TOC_RESTORE = 0x4E800020, 0x60000000, 0xE8410028
-MAX_WORDS = 64
+MAX_WORDS = 128
 
 
 class Fail(Exception):
@@ -76,6 +76,14 @@ def struct_decl(tag, by_offset):
         at = off + SIZES[t]
     out.append('};')
     return '\n'.join(out)
+
+
+def negate(cond):
+    flip = {' < ': ' >= ', ' >= ': ' < ', ' > ': ' <= ', ' <= ': ' > ', ' == ': ' != ', ' != ': ' == '}
+    for a, b in flip.items():
+        if a in cond:
+            return cond.replace(a, b, 1)
+    return f'!({cond})'
 
 
 def reads_before_writes(words):
@@ -142,6 +150,10 @@ class Lifter:
         self.args, self.fargs = {}, {}
         self.stmts, self.calls, self.globals = [], {}, {}
         self.fresh = set()
+        self.cr = {}                      # condition field -> (lhs, rhs, 'signed'|'unsigned'|'pointer')
+        self.vars = []                    # merge variables: (type, name)
+        self.returns = []                 # one dict per return statement
+        self.ended = False                # the current path has returned
 
     def param(self, k):
         for j in range(3, k + 1):
@@ -214,16 +226,232 @@ class Lifter:
         return Value(f'FIELD({ctype}, {base.text}, {d})', ctype)
 
     def run(self):
-        if self.words[-1] != BLR:
-            raise Fail('does not end in blr')
-        for i, w in enumerate(self.words[:-1]):
-            self.step(w, i)
+        """Lift the function's forward-only control flow into nested ifs."""
+        w = self.words
+        n = len(w)
+        leaders = {0}
+        for i, x in enumerate(w):
+            op = x >> 26
+            if op == 16:                                   # bc
+                t = i + (s16(x & 0xFFFC) >> 2)
+                if x & 3 or t <= i or t > n:
+                    raise Fail('backward, absolute or linked conditional branch')
+                leaders |= {t, i + 1}
+            elif op == 18 and not x & 1:                   # b (not bl)
+                t = i + ((branch_target(0, x)) >> 2)
+                if x & 2 or t <= i or t > n:
+                    raise Fail('backward or outside branch')
+                leaders |= {t, i + 1}
+            elif op == 19:
+                xo = (x >> 1) & 0x3FF
+                if xo != 16 or x & 1:
+                    raise Fail('indirect branch')
+                leaders.add(i + 1)
+        self.leaders = sorted(l for l in leaders if l < n)
+        self.region(0, None)
+        if not self.ended:
+            raise Fail('falls off the end')
         return self
+
+    def block_end(self, b):
+        k = bisect.bisect_right(self.leaders, b)
+        return self.leaders[k] if k < len(self.leaders) else len(self.words)
+
+    def successors(self, b):
+        """Blocks reachable from block b (forward only)."""
+        out, todo = set(), [b]
+        while todo:
+            x = todo.pop()
+            if x in out or x >= len(self.words):
+                continue
+            out.add(x)
+            last = self.block_end(x) - 1
+            t = self.words[last]
+            op = t >> 26
+            if op == 16:
+                todo += [last + (s16(t & 0xFFFC) >> 2), last + 1]
+            elif op == 18 and not t & 1:
+                todo.append(last + (branch_target(0, t) >> 2))
+            elif op == 19:
+                if (t >> 21) & 0x14 != 0x14:              # conditional return: may fall through
+                    todo.append(last + 1)
+            else:
+                todo.append(last + 1)
+        return out
+
+    def snapshot(self):
+        return (dict(self.gpr), dict(self.fpr), set(self.fresh), dict(self.cr), self.ended)
+
+    def restore(self, state):
+        self.gpr, self.fpr, self.fresh, self.cr, self.ended = (dict(state[0]), dict(state[1]), set(state[2]),
+                                                               dict(state[3]), state[4])
+
+    def condition(self, crf, bit, true):
+        if crf not in self.cr:
+            raise Fail('condition field never set')
+        a, b, kind = self.cr[crf]
+        ops = {(0, True): '<', (1, True): '>', (2, True): '==', (0, False): '>=', (1, False): '<=', (2, False): '!='}
+        if (bit, true) not in ops:
+            raise Fail('summary-overflow bit')
+        bt = b.text if isinstance(b, Value) else b
+        if kind == 'unsigned':
+            return f'(u32)({a.text}) {ops[bit, true]} (u32)({bt})'
+        if kind == 'pointer':
+            return f'{a.text} {ops[bit, true]} {bt}'
+        return f'(int)({a.text}) {ops[bit, true]} (int)({bt})'
+
+    def branch_condition(self, word):
+        """C condition under which a bc/bclr is taken."""
+        bo, bi = (word >> 21) & 31, (word >> 16) & 31
+        if bo & 0x1E in (12, 14):
+            true = True
+        elif bo & 0x1E in (4, 6):
+            true = False
+        else:
+            raise Fail(f'BO {bo}')
+        return self.condition(bi >> 2, bi & 3, true)
+
+    def emit_return(self):
+        self.returns.append({'value': self.gpr[3], 'fresh': 3 in self.fresh, 'stmt': None})
+        stmt = ['return', len(self.returns) - 1]
+        self.stmts.append(stmt)
+        self.ended = True
+
+    def run_block(self, b):
+        """Execute block b up to its terminator; return (kind, data)."""
+        end = self.block_end(b)
+        for i in range(b, end - 1):
+            self.step(self.words[i], i)
+        last = end - 1
+        t = self.words[last]
+        op = t >> 26
+        if t == BLR:
+            return 'ret', None
+        if op == 16:
+            return 'cond', (last + (s16(t & 0xFFFC) >> 2), last + 1, self.branch_condition(t))
+        if op == 18 and not t & 1:
+            return 'goto', last + (branch_target(0, t) >> 2)
+        if op == 19:
+            return 'condret', (last + 1, self.branch_condition(t))
+        self.step(t, last)
+        return 'fall', end
+
+    def merge(self, states, joins_into):
+        """Registers differing between paths that reach the same block get a variable."""
+        live = [st for st in states if not st[0][4]]
+        if not live:
+            self.ended = True
+            return
+        if len(live) == 1:
+            self.restore(live[0][0])
+            return
+        (a, sa), (b, sb) = live[0], live[1]
+        merged = dict(a[0])
+        fresh = a[2] | b[2]
+        for r in range(32):
+            va, vb = a[0].get(r), b[0].get(r)
+            if va is vb:
+                continue
+            if va is None or vb is None or r in (1, 2):
+                merged[r] = None
+                continue
+            ta, tb = CTYPES.get(va.ctype, 'int'), CTYPES.get(vb.ctype, 'int')
+            ctype = va.ctype if ta == tb else 'int'
+            name = f'v{len(self.vars)}'
+            vtype = CTYPES.get(ctype, 'int')
+            self.vars.append((vtype, name))
+            for v in (va, vb):
+                if v.call is not None:
+                    v.call['used'] = True
+            sa.append(f'{name} = ({vtype})({va.text});')
+            sb.append(f'{name} = ({vtype})({vb.text});')
+            merged[r] = Value(name, ctype)
+        self.gpr, self.fpr, self.fresh, self.cr, self.ended = merged, dict(a[1]), fresh, {}, False
+
+    def region(self, b, stop):
+        """Lift blocks from b until stop (or a return), appending to self.stmts."""
+        while b is not None and b != stop and b < len(self.words):
+            kind, data = self.run_block(b)
+            if kind == 'ret':
+                self.emit_return()
+                return
+            if kind in ('goto', 'fall'):
+                b = data
+                continue
+            if kind == 'condret':
+                after, cond = data
+                outer = self.stmts
+                body = []
+                self.stmts = body
+                state = self.snapshot()
+                self.emit_return()
+                self.restore(state)
+                self.stmts = outer
+                self.stmts.append(['if', cond, body, []])
+                b = after
+                continue
+            taken, fall, cond = data
+            reach_t, reach_f = self.successors(taken), self.successors(fall)
+            common = sorted(reach_t & reach_f)
+            join = common[0] if common else None
+            if stop is not None and join is not None and join > stop:
+                join = stop
+            start = self.snapshot()
+            outer = self.stmts
+            then_body = []
+            self.stmts = then_body
+            self.region(fall, join)
+            after_then = self.snapshot()
+            self.restore(start)
+            else_body = []
+            if join is not None and taken == join:
+                after_else = start
+            elif join is None:
+                after_else = None             # the taken path continues outside the if
+            else:
+                self.stmts = else_body
+                self.region(taken, join)
+                after_else = self.snapshot()
+            self.stmts = outer
+            self.stmts.append(['if', negate(cond), then_body, else_body])
+            if join is None:
+                if not after_then[4]:
+                    raise Fail('if without a join does not return')
+                self.restore(start)
+                b = taken
+                continue
+            self.merge([(after_then, then_body), (after_else, else_body)], join)
+            if self.ended:
+                return
+            b = join
 
     def step(self, w, i):
         op = w >> 26
         rt, ra, rb = (w >> 21) & 31, (w >> 16) & 31, (w >> 11) & 31
         d = s16(w & 0xFFFF)
+        if op in (10, 11):                                           # cmpli / cmpi
+            l64 = (w >> 21) & 1
+            crf = (w >> 23) & 7
+            v = self.reg(ra)
+            if op == 10:
+                self.cr[crf] = (v, str(w & 0xFFFF), 'pointer' if l64 else 'unsigned')
+            else:
+                self.cr[crf] = (v, str(d), 'pointer' if l64 else 'signed')
+            if l64:
+                self.pointer(v)               # a 64-bit compare is a pointer test
+            return
+        if op == 31 and ((w >> 1) & 0x3FF) in (0, 32):               # cmp / cmpl
+            l64 = (w >> 21) & 1
+            crf = (w >> 23) & 7
+            kind = 'pointer' if l64 else ('signed' if ((w >> 1) & 0x3FF) == 0 else 'unsigned')
+            self.cr[crf] = (self.reg(ra), self.reg(rb), kind)
+            return
+        if op == 28:                                                 # andi.
+            v = self.reg(rt)
+            res = Value(f'{paren(v)} & {w & 0xFFFF}', 'int', 1)
+            self.set(ra, res)
+            self.cr[0] = (res, '0', 'signed')
+            return
         if w in (NOP, TOC_RESTORE, 0x7C0802A6, 0x7C0803A6):        # nop, TOC restore, mflr/mtlr r0
             return
         if op == 62 and ra == 1:                                     # stdu r1 / std rX,d(r1)
@@ -272,7 +500,8 @@ class Lifter:
             if ctype == 'u32' and value.ctype in ('ptr', 'addr', 'gaddr'):
                 ctype = 'void*'
             target = self.field(ctype, base, d)
-            self.stmts.append(f'{target.text} = {value.text};')
+            text = value.text if ctype in ('float', 'double') else f'({ctype})({value.text})'
+            self.stmts.append(f'{target.text} = {text};')
             return
         if op == 31:
             xo = (w >> 1) & 0x3FF
@@ -291,7 +520,12 @@ class Lifter:
                 return
             if xo in (266, 40):                                      # add, subf
                 a, b = self.reg(ra), self.reg(rb)
-                text = f'{paren(a)} + {paren(b)}' if xo == 266 else f'{paren(b)} - {paren(a)}'
+                ptr = ('ptr', 'addr', 'gaddr')
+                if xo == 266 and (a.ctype in ptr or b.ctype in ptr):
+                    p_, i_ = (a, b) if a.ctype in ptr else (b, a)
+                    self.set(rt, Value(f'(char*){paren(p_)} + (int)({i_.text})', 'addr', 1))
+                    return
+                text = f'(int)({a.text}) + (int)({b.text})' if xo == 266 else f'(int)({b.text}) - (int)({a.text})'
                 self.set(rt, Value(text, 'int', 1))
                 return
             raise Fail(f'op 31/{xo}')
@@ -341,29 +575,56 @@ class Lifter:
         self.fresh = set()
 
     def render(self):
-        ret = None
-        if 3 in self.fresh and self.gpr[3] is not None:
-            ret = self.gpr[3]
-        elif self.gpr[3] is not None and self.gpr[3].call is not None and self.gpr[3].call['used']:
-            ret = self.gpr[3]
-        ret_type = 'void' if ret is None else CTYPES.get(ret.ctype)
-        if ret_type is None:
-            raise Fail('return type')
-        body, callees = [], {}
-        for s in self.stmts:
-            if isinstance(s, dict):
-                types = [CTYPES.get(a.ctype, 'int') for a in s['args']]
-                rtype = s['type'] if s['used'] else 'void'
-                if s['target'] in callees and callees[s['target']] != (rtype, types):
-                    raise Fail('one callee, two signatures')
-                callees[s['target']] = (rtype, types, s['local'])
-                prefix = 'stub' if s['local'] else 'fn'
-                call = f'{prefix}_{s["target"]:08x}({", ".join(f"({t})({a.text})" for a, t in zip(s["args"], types))})'
-                body.append(f'{rtype} {s["temp"]} = {call};' if s['used'] else f'{call};')
-            else:
-                body.append(s)
-        if ret is not None:
-            body.append(f'return {ret.text};')
+        # A function returns a value if any return path set r3 (or returns a
+        # used call result); then every return returns r3's value.
+        valued = any(r['fresh'] or (r['value'] is not None and r['value'].call is not None and r['value'].call['used'])
+                     for r in self.returns)
+        ret_type = 'void'
+        if valued:
+            types = {CTYPES.get(r['value'].ctype) for r in self.returns if r['value'] is not None}
+            if None in types or len(types) != 1 or any(r['value'] is None for r in self.returns):
+                raise Fail('return type')
+            ret_type = types.pop()
+        if valued:
+            for r in self.returns:
+                if r['value'] is not None and r['value'].call is not None:
+                    r['value'].call['used'] = True
+        callees, top = {}, []
+        for info in self.calls.values():
+            if info['used']:
+                top.append(f'{info["type"]} {info["temp"]};')
+        top += [f'{t} {n};' for t, n in self.vars]
+        def lines(stmts, indent):
+            out = []
+            pad = '    ' * indent
+            for st in stmts:
+                if isinstance(st, dict):
+                    types = [CTYPES.get(a.ctype, 'int') for a in st['args']]
+                    rtype = st['type'] if st['used'] else 'void'
+                    key = (rtype, types, st['local'])
+                    if st['target'] in callees and callees[st['target']] != key:
+                        raise Fail('one callee, two signatures')
+                    callees[st['target']] = key
+                    prefix = 'stub' if st['local'] else 'fn'
+                    call = f'{prefix}_{st["target"]:08x}({", ".join(f"({t})({a.text})" for a, t in zip(st["args"], types))})'
+                    out.append(pad + (f'{st["temp"]} = {call};' if st['used'] else f'{call};'))
+                elif isinstance(st, list) and st[0] == 'return':
+                    r = self.returns[st[1]]
+                    out.append(pad + (f'return ({ret_type})({r["value"].text});' if valued else 'return;'))
+                elif isinstance(st, list) and st[0] == 'if':
+                    out.append(pad + f'if ({st[1]}) {{')
+                    out += lines(st[2], indent + 1)
+                    if st[3]:
+                        out.append(pad + '} else {')
+                        out += lines(st[3], indent + 1)
+                    out.append(pad + '}')
+                else:
+                    out.append(pad + st)
+            return out
+        body = [l.strip('\n') for l in top] + lines(self.stmts, 0)
+        # A trailing "return;" in a void function is implicit.
+        while body and body[-1] == 'return;':
+            body.pop()
         params = []
         structs = []
         for k in sorted(self.args):
@@ -459,8 +720,6 @@ def main():
         if address in elsewhere or address in prune or size // 4 > MAX_WORDS:
             continue
         words = struct.unpack(f'>{size // 4}I', orig.read(address, size))
-        if any((w >> 26) == 16 for w in words) or any((w >> 26) == 19 and w != BLR for w in words):
-            continue
         result = lift(address, words, arity)
         if result is None:
             continue

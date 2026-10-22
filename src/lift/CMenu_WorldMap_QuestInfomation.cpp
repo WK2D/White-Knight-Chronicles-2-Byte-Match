@@ -10,8 +10,23 @@ struct unk_007b462c_a0 {
     u8 f_e5c;
 };
 int fn_007b462c(unk_007b462c_a0* a0) {
-    a0->f_e5c = 0;
-    return 1;
+    a0->f_e5c = (u8)(0);
+    return (int)(1);
+}
+
+struct unk_007b4670_a0 {
+    char pad_0[44];
+    u32 f_2c;
+};
+struct unk_007b4670_a1 {
+    u8 f_0;
+};
+int fn_007b4670(unk_007b4670_a0* a0, unk_007b4670_a1* a1) {
+    if ((int)(FIELD(u8, a0->f_2c, 4653)) == (int)(0)) {
+        return (int)(1);
+    }
+    a1->f_0 = (u8)(1);
+    return (int)(1);
 }
 
 }

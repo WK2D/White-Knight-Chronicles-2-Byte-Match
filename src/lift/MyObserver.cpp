@@ -12,7 +12,7 @@ struct unk_00bd22f4_a0 {
     u32 f_4;
 };
 void fn_00bd22f4(unk_00bd22f4_a0* a0) {
-    FIELD(u8, a0->f_4, 44) = 1;
+    FIELD(u8, a0->f_4, 44) = (u8)(1);
 }
 
 struct unk_00bd2304_a0 {
@@ -20,7 +20,7 @@ struct unk_00bd2304_a0 {
 };
 extern char g_00bd2304_0[];
 void fn_00bd2304(unk_00bd2304_a0* a0) {
-    a0->f_0 = g_00bd2304_0;
+    a0->f_0 = (void*)(g_00bd2304_0);
     fn_00aa3128((void*)(a0));
     fn_00aa3054((void*)(a0), (int)(240));
 }
@@ -30,7 +30,7 @@ struct unk_00bd234c_a0 {
 };
 extern char g_00bd234c_0[];
 void fn_00bd234c(unk_00bd234c_a0* a0) {
-    a0->f_0 = g_00bd234c_0;
+    a0->f_0 = (void*)(g_00bd234c_0);
     fn_00aa3128((void*)(a0));
 }
 

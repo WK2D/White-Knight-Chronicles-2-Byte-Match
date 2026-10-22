@@ -22,7 +22,7 @@ struct unk_00cf8a6c_a0 {
     u16 f_26;
 };
 int fn_00cf8a6c(unk_00cf8a6c_a0* a0) {
-    return a0->f_1c - a0->f_26;
+    return (int)((int)(a0->f_1c) - (int)(a0->f_26));
 }
 
 }

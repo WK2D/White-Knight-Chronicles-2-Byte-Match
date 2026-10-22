@@ -10,7 +10,7 @@ struct unk_002ddd48_a0 {
     u32 f_2b4;
 };
 void fn_002ddd48(unk_002ddd48_a0* a0) {
-    a0->f_2b4 = a0->f_2b4 + -1;
+    a0->f_2b4 = (u32)(a0->f_2b4 + -1);
 }
 
 struct unk_002ddf44_a0 {
@@ -18,8 +18,23 @@ struct unk_002ddf44_a0 {
     u32 f_178;
 };
 int fn_002ddf44(unk_002ddf44_a0* a0, int a1) {
-    a0->f_178 = a1;
-    return 1;
+    a0->f_178 = (u32)(a1);
+    return (int)(1);
+}
+
+struct unk_002ddf50_a0 {
+    char pad_0[376];
+    u32 f_178;
+    char pad_17c[56];
+    u32 f_1b4;
+};
+int fn_002ddf50(unk_002ddf50_a0* a0, int a1) {
+    a0->f_1b4 = (u32)(a0->f_178);
+    if ((int)(a0->f_178) >= (int)(0)) {
+        return (int)(1);
+    }
+    a0->f_1b4 = (u32)(a1);
+    return (int)(1);
 }
 
 }

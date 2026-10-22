@@ -10,8 +10,8 @@ struct unk_0038b178_a0 {
     u32 f_12f8;
 };
 int fn_0038b178(unk_0038b178_a0* a0) {
-    a0->f_12f8 = 0;
-    return 1;
+    a0->f_12f8 = (u32)(0);
+    return (int)(1);
 }
 
 }

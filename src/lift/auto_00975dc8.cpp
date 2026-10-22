@@ -4,9 +4,23 @@
 
 extern "C" {
 
+void fn_009355b8(u32, void*);
+void fn_00b3cd48(void*);
 
 void* fn_00975df0(int a0, void* a1) {
-    return (char*)a1 + 2;
+    return (void*)((char*)a1 + 2);
+}
+
+struct unk_00975ea4_a0 {
+    u32 f_0;
+};
+struct unk_00975ea4_a1 {
+    u32 f_0;
+};
+void fn_00975ea4(unk_00975ea4_a0* a0, unk_00975ea4_a1* a1) {
+    fn_009355b8((u32)(a1->f_0), (void*)((char*)a1 + 28));
+    fn_009355b8((u32)(a0->f_0), (void*)((char*)a1 + 20));
+    fn_00b3cd48((void*)(a1));
 }
 
 }

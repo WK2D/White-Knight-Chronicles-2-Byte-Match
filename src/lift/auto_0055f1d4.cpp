@@ -31,135 +31,186 @@ static int __attribute__((noinline)) stub_00564020(void* p0, void* p1) { int r; 
 void fn_00b37fa8(void*, int, int);
 
 u8 fn_0055f458(void* a0, int a1) {
-    void* t0 = fn_0054af54((int)(a1));
-    int t1 = stub_0055dea0((void*)(a0), (void*)(t0));
-    return (u8)t1;
+    void* t0;
+    int t1;
+    t0 = fn_0054af54((int)(a1));
+    t1 = stub_0055dea0((void*)(a0), (void*)(t0));
+    return (u8)((u8)t1);
 }
 
 u8 fn_0055f840(void* a0, int a1) {
-    void* t0 = fn_0054af54((int)(a1));
-    int t1 = stub_0055d760((void*)(a0), (void*)(t0));
-    return (u8)t1;
+    void* t0;
+    int t1;
+    t0 = fn_0054af54((int)(a1));
+    t1 = stub_0055d760((void*)(a0), (void*)(t0));
+    return (u8)((u8)t1);
 }
 
 u8 fn_0055f948(void* a0, int a1) {
-    void* t0 = fn_0054af54((int)(a1));
-    int t1 = stub_0055d6e8((void*)(a0), (void*)(t0));
-    return (u8)t1;
+    void* t0;
+    int t1;
+    t0 = fn_0054af54((int)(a1));
+    t1 = stub_0055d6e8((void*)(a0), (void*)(t0));
+    return (u8)((u8)t1);
 }
 
 u8 fn_0055f9d8(void* a0, int a1) {
-    void* t0 = fn_0054af54((int)(a1));
-    int t1 = stub_0055d6b0((void*)(a0), (void*)(t0));
-    return (u8)t1;
+    void* t0;
+    int t1;
+    t0 = fn_0054af54((int)(a1));
+    t1 = stub_0055d6b0((void*)(a0), (void*)(t0));
+    return (u8)((u8)t1);
 }
 
 u8 fn_0055fa1c(void* a0, int a1) {
-    void* t0 = fn_0054af54((int)(a1));
-    int t1 = stub_0055d68c((void*)(a0), (void*)(t0));
-    return (u8)t1;
+    void* t0;
+    int t1;
+    t0 = fn_0054af54((int)(a1));
+    t1 = stub_0055d68c((void*)(a0), (void*)(t0));
+    return (u8)((u8)t1);
 }
 
 u16 fn_0055fedc(void* a0, int a1, void* a2) {
-    void* t0 = fn_0054af54((int)(a1));
-    int t1 = stub_0055d3f4((void*)(a0), (void*)(t0), (void*)(a2));
-    return (u16)t1;
+    void* t0;
+    int t1;
+    t0 = fn_0054af54((int)(a1));
+    t1 = stub_0055d3f4((void*)(a0), (void*)(t0), (void*)(a2));
+    return (u16)((u16)t1);
 }
 
 u8 fn_0056002c(void* a0, int a1) {
-    void* t0 = fn_0054af54((int)(a1));
-    int t1 = stub_0055d378((void*)(a0), (void*)(t0));
-    return (u8)t1;
+    void* t0;
+    int t1;
+    t0 = fn_0054af54((int)(a1));
+    t1 = stub_0055d378((void*)(a0), (void*)(t0));
+    return (u8)((u8)t1);
 }
 
 u8 fn_005600bc(void* a0, int a1) {
-    void* t0 = fn_0054af54((int)(a1));
-    int t1 = stub_0055d340((void*)(a0), (void*)(t0));
-    return (u8)t1;
+    void* t0;
+    int t1;
+    t0 = fn_0054af54((int)(a1));
+    t1 = stub_0055d340((void*)(a0), (void*)(t0));
+    return (u8)((u8)t1);
 }
 
 u8 fn_0056014c(void* a0, int a1) {
-    void* t0 = fn_0054af54((int)(a1));
-    int t1 = stub_0055d308((void*)(a0), (void*)(t0));
-    return (u8)t1;
+    void* t0;
+    int t1;
+    t0 = fn_0054af54((int)(a1));
+    t1 = stub_0055d308((void*)(a0), (void*)(t0));
+    return (u8)((u8)t1);
 }
 
 u8 fn_00560538(void* a0, int a1) {
-    void* t0 = fn_0054af54((int)(a1));
-    int t1 = stub_0055cf9c((void*)(a0), (void*)(t0));
-    return (u8)t1;
+    void* t0;
+    int t1;
+    t0 = fn_0054af54((int)(a1));
+    t1 = stub_0055cf9c((void*)(a0), (void*)(t0));
+    return (u8)((u8)t1);
 }
 
 u8 fn_00560604(void* a0, int a1) {
-    void* t0 = fn_0054af54((int)(a1));
-    int t1 = stub_0055cf34((void*)(a0), (void*)(t0));
-    return (u8)t1;
+    void* t0;
+    int t1;
+    t0 = fn_0054af54((int)(a1));
+    t1 = stub_0055cf34((void*)(a0), (void*)(t0));
+    return (u8)((u8)t1);
 }
 
 u8 fn_00560694(void* a0, int a1) {
-    void* t0 = fn_0054af54((int)(a1));
-    int t1 = stub_0055cefc((void*)(a0), (void*)(t0));
-    return (u8)t1;
+    void* t0;
+    int t1;
+    t0 = fn_0054af54((int)(a1));
+    t1 = stub_0055cefc((void*)(a0), (void*)(t0));
+    return (u8)((u8)t1);
 }
 
 u8 fn_00560724(void* a0, int a1) {
-    void* t0 = fn_0054af54((int)(a1));
-    int t1 = stub_0055cec4((void*)(a0), (void*)(t0));
-    return (u8)t1;
+    void* t0;
+    int t1;
+    t0 = fn_0054af54((int)(a1));
+    t1 = stub_0055cec4((void*)(a0), (void*)(t0));
+    return (u8)((u8)t1);
 }
 
 u8 fn_005607b4(void* a0, int a1) {
-    void* t0 = fn_0054af54((int)(a1));
-    int t1 = stub_0055ce8c((void*)(a0), (void*)(t0));
-    return (u8)t1;
+    void* t0;
+    int t1;
+    t0 = fn_0054af54((int)(a1));
+    t1 = stub_0055ce8c((void*)(a0), (void*)(t0));
+    return (u8)((u8)t1);
 }
 
 u16 fn_005608d4(void* a0, int a1) {
-    void* t0 = fn_0054af54((int)(a1));
-    int t1 = stub_0055ce18((void*)(a0), (void*)(t0));
-    return (u16)t1;
+    void* t0;
+    int t1;
+    t0 = fn_0054af54((int)(a1));
+    t1 = stub_0055ce18((void*)(a0), (void*)(t0));
+    return (u16)((u16)t1);
 }
 
 u8 fn_00560b84(void* a0, int a1) {
-    void* t0 = fn_0054af54((int)(a1));
-    int t1 = stub_0055ccf0((void*)(a0), (void*)(t0));
-    return (u8)t1;
+    void* t0;
+    int t1;
+    t0 = fn_0054af54((int)(a1));
+    t1 = stub_0055ccf0((void*)(a0), (void*)(t0));
+    return (u8)((u8)t1);
 }
 
 u8 fn_00560c84(void* a0, int a1) {
-    void* t0 = fn_0054af54((int)(a1));
-    int t1 = stub_0055cc8c((void*)(a0), (void*)(t0));
-    return (u8)t1;
+    void* t0;
+    int t1;
+    t0 = fn_0054af54((int)(a1));
+    t1 = stub_0055cc8c((void*)(a0), (void*)(t0));
+    return (u8)((u8)t1);
 }
 
 u8 fn_00561060(void* a0, int a1) {
-    void* t0 = fn_0054af54((int)(a1));
-    int t1 = stub_0055ca90((void*)(a0), (void*)(t0));
-    return (u8)t1;
+    void* t0;
+    int t1;
+    t0 = fn_0054af54((int)(a1));
+    t1 = stub_0055ca90((void*)(a0), (void*)(t0));
+    return (u8)((u8)t1);
 }
 
 u8 fn_0056113c(void* a0, int a1) {
-    void* t0 = fn_0054af54((int)(a1));
-    int t1 = stub_0055c514((void*)(a0), (void*)(t0));
-    return (u8)t1;
+    void* t0;
+    int t1;
+    t0 = fn_0054af54((int)(a1));
+    t1 = stub_0055c514((void*)(a0), (void*)(t0));
+    return (u8)((u8)t1);
 }
 
 u8 fn_00561180(void* a0, int a1) {
-    void* t0 = fn_0054af54((int)(a1));
-    int t1 = stub_0055c4dc((void*)(a0), (void*)(t0));
-    return (u8)t1;
+    void* t0;
+    int t1;
+    t0 = fn_0054af54((int)(a1));
+    t1 = stub_0055c4dc((void*)(a0), (void*)(t0));
+    return (u8)((u8)t1);
 }
 
 u8 fn_00561684(void* a0, int a1) {
-    void* t0 = fn_0054af54((int)(a1));
-    int t1 = stub_00561608((void*)(a0), (void*)(t0));
-    return (u8)t1;
+    void* t0;
+    int t1;
+    t0 = fn_0054af54((int)(a1));
+    t1 = stub_00561608((void*)(a0), (void*)(t0));
+    return (u8)((u8)t1);
 }
 
 u8 fn_005617bc(void* a0, int a1) {
-    void* t0 = fn_0054af54((int)(a1));
-    int t1 = stub_005616c8((void*)(a0), (void*)(t0));
-    return (u8)t1;
+    void* t0;
+    int t1;
+    t0 = fn_0054af54((int)(a1));
+    t1 = stub_005616c8((void*)(a0), (void*)(t0));
+    return (u8)((u8)t1);
+}
+
+struct unk_00561b58_a0 {
+    u32 f_0;
+};
+void* fn_00561b58(unk_00561b58_a0* a0) {
+    return (void*)(a0->f_0 + 26616);
 }
 
 struct unk_00561f6c_a0 {
@@ -173,7 +224,28 @@ struct unk_00561fc8_a0 {
     u32 f_0;
 };
 void fn_00561fc8(unk_00561fc8_a0* a0) {
-    FIELD(u32, a0->f_0, 20932) = 0;
+    FIELD(u32, a0->f_0, 20932) = (u32)(0);
+}
+
+struct unk_00561fd8_a0 {
+    u32 f_0;
+};
+void* fn_00561fd8(unk_00561fd8_a0* a0) {
+    return (void*)(a0->f_0 + 20852);
+}
+
+struct unk_0056200c_a0 {
+    u32 f_0;
+};
+void* fn_0056200c(unk_0056200c_a0* a0) {
+    return (void*)(a0->f_0 + 20212);
+}
+
+struct unk_0056203c_a0 {
+    u32 f_0;
+};
+void* fn_0056203c(unk_0056203c_a0* a0) {
+    return (void*)(a0->f_0 + 17972);
 }
 
 struct unk_0056291c_a0 {
@@ -182,13 +254,15 @@ struct unk_0056291c_a0 {
 };
 void fn_0056291c(unk_0056291c_a0* a0) {
     fn_00b37fa8((void*)(a0->f_4 + 11520), (int)(0), (int)(260));
-    FIELD(u32, a0->f_4, 11776) = 0;
+    FIELD(u32, a0->f_4, 11776) = (u32)(0);
 }
 
 u8 fn_005640f4(void* a0, int a1) {
-    void* t0 = fn_0054af54((int)(a1));
-    int t1 = stub_00564020((void*)(a0), (void*)(t0));
-    return (u8)t1;
+    void* t0;
+    int t1;
+    t0 = fn_0054af54((int)(a1));
+    t1 = stub_00564020((void*)(a0), (void*)(t0));
+    return (u8)((u8)t1);
 }
 
 }

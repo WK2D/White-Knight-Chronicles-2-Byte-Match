@@ -10,8 +10,8 @@ struct unk_006ea078_a0 {
     u8 f_15ba;
 };
 int fn_006ea078(unk_006ea078_a0* a0) {
-    a0->f_15ba = 0;
-    return 1;
+    a0->f_15ba = (u8)(0);
+    return (int)(1);
 }
 
 }

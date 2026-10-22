@@ -28,7 +28,7 @@ int fn_0066d7d8(unk_0066d7d8_a0* a0, int a1, unk_0066d7d8_a2* a2, unk_0066d7d8_a
     stub_0066c42c((void*)(a0), (void*)(a2));
     fn_005dddfc((u32)(a0->f_24));
     fn_005de550((u32)(a0->f_24));
-    return 1;
+    return (int)(1);
 }
 
 }

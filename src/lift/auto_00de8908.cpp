@@ -6,11 +6,11 @@ extern "C" {
 
 
 void* fn_00deb3dc(int a0, void* a1) {
-    return (char*)a1 + 16;
+    return (void*)((char*)a1 + 16);
 }
 
 void* fn_00deb4fc(int a0, void* a1) {
-    return (char*)a1 + 16;
+    return (void*)((char*)a1 + 16);
 }
 
 }

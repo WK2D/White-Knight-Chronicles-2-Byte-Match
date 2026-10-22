@@ -12,17 +12,17 @@ void fn_00b3d088(void*, int, int);
 
 int fn_008dd308(void) {
     stub_008dd260();
-    return 1;
+    return (int)(1);
 }
 
 int fn_008dd410(void) {
     stub_008dd32c();
-    return 1;
+    return (int)(1);
 }
 
 int fn_008dd63c(void) {
     stub_008dd5a8();
-    return 1;
+    return (int)(1);
 }
 
 struct unk_008df76c_a0 {
@@ -37,14 +37,14 @@ struct unk_008df76c_a0 {
 };
 void fn_008df76c(unk_008df76c_a0* a0) {
     fn_00b3d088((void*)(a0), (int)(0), (int)(80));
-    a0->f_84 = 0;
-    a0->f_88 = 0;
-    a0->f_98 = 0;
-    a0->f_9c = 0;
-    a0->f_90 = 0;
-    a0->f_94 = 0;
+    a0->f_84 = (u32)(0);
+    a0->f_88 = (u32)(0);
+    a0->f_98 = (u32)(0);
+    a0->f_9c = (u32)(0);
+    a0->f_90 = (u32)(0);
+    a0->f_94 = (u32)(0);
     stub_008df730((void*)((char*)a0 + 80));
-    a0->f_8c = 0;
+    a0->f_8c = (u32)(0);
 }
 
 }

@@ -9,8 +9,8 @@ struct unk_00adf9c0_a2 {
     u32 f_0;
 };
 int fn_00adf9c0(int a0, int a1, unk_00adf9c0_a2* a2) {
-    a2->f_0 = 1;
-    return 0;
+    a2->f_0 = (u32)(1);
+    return (int)(0);
 }
 
 }

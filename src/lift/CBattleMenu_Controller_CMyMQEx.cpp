@@ -9,12 +9,12 @@ void fn_000436f4(void*);
 
 int fn_0067109c(void* a0) {
     fn_00043698((void*)((char*)a0 + 272));
-    return 1;
+    return (int)(1);
 }
 
 int fn_006711c0(void* a0) {
     fn_000436f4((void*)((char*)a0 + 272));
-    return 1;
+    return (int)(1);
 }
 
 }

@@ -7,33 +7,39 @@ extern "C" {
 static int __attribute__((noinline)) stub_001de950(int p0, int p1, int p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
 
 u8 fn_001deb6c(int a0, int a1) {
-    int t0 = stub_001de950((int)(6), (int)(a0), (int)(a1));
-    return (u8)t0;
+    int t0;
+    t0 = stub_001de950((int)(6), (int)(a0), (int)(a1));
+    return (u8)((u8)t0);
 }
 
 u8 fn_001deb9c(int a0, int a1) {
-    int t0 = stub_001de950((int)(3), (int)(a0), (int)(a1));
-    return (u8)t0;
+    int t0;
+    t0 = stub_001de950((int)(3), (int)(a0), (int)(a1));
+    return (u8)((u8)t0);
 }
 
 u8 fn_001debcc(int a0, int a1) {
-    int t0 = stub_001de950((int)(2), (int)(a0), (int)(a1));
-    return (u8)t0;
+    int t0;
+    t0 = stub_001de950((int)(2), (int)(a0), (int)(a1));
+    return (u8)((u8)t0);
 }
 
 u8 fn_001debfc(int a0, int a1) {
-    int t0 = stub_001de950((int)(5), (int)(a0), (int)(a1));
-    return (u8)t0;
+    int t0;
+    t0 = stub_001de950((int)(5), (int)(a0), (int)(a1));
+    return (u8)((u8)t0);
 }
 
 u8 fn_001dec2c(int a0, int a1) {
-    int t0 = stub_001de950((int)(4), (int)(a0), (int)(a1));
-    return (u8)t0;
+    int t0;
+    t0 = stub_001de950((int)(4), (int)(a0), (int)(a1));
+    return (u8)((u8)t0);
 }
 
 u8 fn_001dec5c(int a0, int a1) {
-    int t0 = stub_001de950((int)(1), (int)(a0), (int)(a1));
-    return (u8)t0;
+    int t0;
+    t0 = stub_001de950((int)(1), (int)(a0), (int)(a1));
+    return (u8)((u8)t0);
 }
 
 }

@@ -23,9 +23,9 @@ struct unk_006dcf20_a4 {
     u16 f_0;
 };
 void fn_006dcf20(unk_006dcf20_a0* a0, unk_006dcf20_a1* a1, int a2, unk_006dcf20_a3* a3, unk_006dcf20_a4* a4) {
-    fn_0004e850((void*)(a1), (u32)(a1->f_194), (void*)(a2 + a0->f_a20));
-    a3->f_0 = a3->f_0 + -40;
-    a4->f_0 = a4->f_0 + -40;
+    fn_0004e850((void*)(a1), (u32)(a1->f_194), (void*)((int)(a2) + (int)(a0->f_a20)));
+    a3->f_0 = (u16)(a3->f_0 + -40);
+    a4->f_0 = (u16)(a4->f_0 + -40);
 }
 
 void fn_006dd010(void* a0) {

@@ -12,7 +12,7 @@ struct unk_002baa18_a0 {
 };
 void fn_002baa18(unk_002baa18_a0* a0) {
     fn_00035cbc((u32)(a0->f_2b30));
-    a0->f_2b30 = -1;
+    a0->f_2b30 = (u32)(-1);
 }
 
 }

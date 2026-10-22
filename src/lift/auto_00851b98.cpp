@@ -13,7 +13,7 @@ struct unk_00852530_a0 {
 };
 void fn_00852530(unk_00852530_a0* a0) {
     fn_00b3d2f8((void*)((char*)a0 + 576));
-    a0->f_2b0 = (char*)a0 + 576;
+    a0->f_2b0 = (void*)((char*)a0 + 576);
 }
 
 void fn_0085265c(void* a0, int a1, void* a2) {

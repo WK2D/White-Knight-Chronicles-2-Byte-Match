@@ -9,14 +9,14 @@ struct unk_002d4bf4_a0 {
     u32 f_0;
 };
 u16 fn_002d4bf4(unk_002d4bf4_a0* a0) {
-    return FIELD(u16, FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 22);
+    return (u16)(FIELD(u16, FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 22));
 }
 
 struct unk_002d4c08_a0 {
     u32 f_0;
 };
 u32 fn_002d4c08(unk_002d4c08_a0* a0) {
-    return FIELD(u32, FIELD(u32, FIELD(u32, a0->f_0, 0), 0) + FIELD(u32, FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 28), 0);
+    return (u32)(FIELD(u32, (char*)FIELD(u32, FIELD(u32, a0->f_0, 0), 0) + (int)(FIELD(u32, FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 28)), 0));
 }
 
 }

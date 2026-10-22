@@ -9,15 +9,19 @@ void* fn_00b38548(void);
 void* fn_00b38558(void);
 
 int fn_000350a8(void) {
-    void* t0 = fn_00b38548();
-    int t1 = fn_00b38028((void*)(t0), (int)(0));
-    return t1;
+    void* t0;
+    int t1;
+    t0 = fn_00b38548();
+    t1 = fn_00b38028((void*)(t0), (int)(0));
+    return (int)(t1);
 }
 
 int fn_000350e0(void) {
-    void* t0 = fn_00b38558();
-    int t1 = fn_00b38028((void*)(t0), (int)(0));
-    return t1;
+    void* t0;
+    int t1;
+    t0 = fn_00b38558();
+    t1 = fn_00b38028((void*)(t0), (int)(0));
+    return (int)(t1);
 }
 
 }

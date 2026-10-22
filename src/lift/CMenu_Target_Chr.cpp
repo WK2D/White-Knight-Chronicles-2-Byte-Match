@@ -15,9 +15,9 @@ struct unk_0080f430_a0 {
     u16 f_6fe;
 };
 int fn_0080f430(unk_0080f430_a0* a0) {
-    a0->f_62 = a0->f_6fc;
-    a0->f_60 = a0->f_6fe;
-    return 1;
+    a0->f_62 = (u16)(a0->f_6fc);
+    a0->f_60 = (u16)(a0->f_6fe);
+    return (int)(1);
 }
 
 struct unk_0080f4b4_a0 {
@@ -31,14 +31,14 @@ struct unk_0080f4b4_a0 {
     u16 f_6fc;
 };
 int fn_0080f4b4(unk_0080f4b4_a0* a0) {
-    a0->f_62 = a0->f_6f8;
-    a0->f_5e = a0->f_6fc;
-    return 1;
+    a0->f_62 = (u16)(a0->f_6f8);
+    a0->f_5e = (u16)(a0->f_6fc);
+    return (int)(1);
 }
 
 int fn_0080f530(int a0) {
     stub_0080f4f0((int)(a0));
-    return 1;
+    return (int)(1);
 }
 
 }

@@ -11,7 +11,7 @@ extern char g_005b0c9c_0[];
 void* fn_005b0c9c(void* a0, void* a1) {
     fn_00b37fa8((void*)((char*)g_005b0c9c_0 + 136), (int)(0), (int)(256));
     stub_005b08a0((void*)(a0), (void*)((char*)g_005b0c9c_0 + 136), (void*)(a1));
-    return (char*)g_005b0c9c_0 + 136;
+    return (void*)((char*)g_005b0c9c_0 + 136);
 }
 
 struct unk_005b152c_a0 {
@@ -27,10 +27,10 @@ struct unk_005b152c_a1 {
     u32 f_c;
 };
 void fn_005b152c(unk_005b152c_a0* a0, unk_005b152c_a1* a1) {
-    a0->f_0 = a1->f_0;
-    a0->f_4 = a1->f_4;
-    a0->f_8 = a1->f_8;
-    a0->f_c = a1->f_c;
+    a0->f_0 = (u32)(a1->f_0);
+    a0->f_4 = (u32)(a1->f_4);
+    a0->f_8 = (u32)(a1->f_8);
+    a0->f_c = (u32)(a1->f_c);
 }
 
 struct unk_005b1550_a0 {
@@ -46,10 +46,10 @@ struct unk_005b1550_a1 {
     u32 f_c;
 };
 void fn_005b1550(unk_005b1550_a0* a0, unk_005b1550_a1* a1) {
-    a0->f_0 = a1->f_0;
-    a0->f_4 = a1->f_4;
-    a0->f_8 = a1->f_8;
-    a0->f_c = a1->f_c;
+    a0->f_0 = (u32)(a1->f_0);
+    a0->f_4 = (u32)(a1->f_4);
+    a0->f_8 = (u32)(a1->f_8);
+    a0->f_c = (u32)(a1->f_c);
 }
 
 }

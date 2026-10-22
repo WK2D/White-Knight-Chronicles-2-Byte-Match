@@ -13,8 +13,8 @@ struct unk_0076df28_a0 {
 extern char g_0076df28_0[];
 int fn_0076df28(unk_0076df28_a0* a0) {
     fn_00b37f88((void*)((char*)a0 + 4), (void*)(g_0076df28_0), (int)(32));
-    a0->f_23 = 0;
-    return 1;
+    a0->f_23 = (u8)(0);
+    return (int)(1);
 }
 
 }

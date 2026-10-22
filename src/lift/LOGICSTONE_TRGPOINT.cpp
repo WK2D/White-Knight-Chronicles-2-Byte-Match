@@ -4,6 +4,7 @@
 
 extern "C" {
 
+int fn_00034810(void*, int, void*, int);
 void fn_000c0398(void);
 void fn_00308994(void*);
 void fn_003089cc(void*);
@@ -15,11 +16,31 @@ struct unk_005b5d50_a0 {
 };
 void fn_005b5d50(unk_005b5d50_a0* a0) {
     fn_00308994((void*)((char*)a0 + 4));
-    a0->f_24 = 0;
+    a0->f_24 = (u32)(0);
 }
 
 void fn_005b5d90(void) {
     fn_000c0398();
+}
+
+struct unk_005b5db4_a0 {
+    char pad_0[36];
+    u32 f_24;
+};
+extern char g_005b5db4_0[];
+void* fn_005b5db4(unk_005b5db4_a0* a0) {
+    int t0;
+    int v0;
+    int v1;
+    if ((int)(a0->f_24) != (int)(0)) {
+        t0 = fn_00034810((void*)(a0->f_24), (int)(0), (void*)(g_005b5db4_0), (int)(0));
+        v0 = (int)(t0);
+        v1 = (int)(t0);
+    } else {
+        v0 = (int)(0);
+        v1 = (int)(a0->f_24);
+    }
+    return (void*)(v0);
 }
 
 void fn_005b5e00(void* a0) {
@@ -28,7 +49,7 @@ void fn_005b5e00(void* a0) {
 
 int fn_005b67b0(void* a0) {
     stub_005b6714((void*)((char*)a0 + 1168));
-    return 1;
+    return (int)(1);
 }
 
 }

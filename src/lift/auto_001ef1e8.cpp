@@ -23,72 +23,82 @@ void fn_00b6f23c(void*);
 
 extern char g_001ef1e8_0[];
 void* fn_001ef1e8(void* a0, void* a1, int a2) {
-    void* t0 = fn_00076a98((void*)(g_001ef1e8_0), (int)(a2), (int)(0), (int)(-1), (int)(0), (int)(0));
+    void* t0;
+    t0 = fn_00076a98((void*)(g_001ef1e8_0), (int)(a2), (int)(0), (int)(-1), (int)(0), (int)(0));
     stub_001ee014((void*)(a0), (void*)(a1), (void*)(t0));
-    return a0;
+    return (void*)(a0);
 }
 
 extern char g_001ef254_0[];
 void* fn_001ef254(void* a0, void* a1, int a2) {
-    void* t0 = fn_00076a98((void*)(g_001ef254_0), (int)(a2), (int)(0), (int)(-1), (int)(0), (int)(0));
+    void* t0;
+    t0 = fn_00076a98((void*)(g_001ef254_0), (int)(a2), (int)(0), (int)(-1), (int)(0), (int)(0));
     stub_001ee444((void*)(a0), (void*)(a1), (void*)(t0));
-    return a0;
+    return (void*)(a0);
 }
 
 extern char g_001ef2c0_0[];
 void* fn_001ef2c0(void* a0, void* a1, int a2) {
-    void* t0 = fn_00076a98((void*)(g_001ef2c0_0), (int)(a2), (int)(0), (int)(-1), (int)(0), (int)(0));
+    void* t0;
+    t0 = fn_00076a98((void*)(g_001ef2c0_0), (int)(a2), (int)(0), (int)(-1), (int)(0), (int)(0));
     stub_001eea8c((void*)(a0), (void*)(a1), (void*)(t0));
-    return a0;
+    return (void*)(a0);
 }
 
 extern char g_001ef32c_0[];
 void* fn_001ef32c(void* a0, void* a1, int a2) {
-    void* t0 = fn_00076a98((void*)(g_001ef32c_0), (int)(a2), (int)(0), (int)(-1), (int)(0), (int)(0));
+    void* t0;
+    t0 = fn_00076a98((void*)(g_001ef32c_0), (int)(a2), (int)(0), (int)(-1), (int)(0), (int)(0));
     stub_001edd48((void*)(a0), (void*)(a1), (void*)(t0));
-    return a0;
+    return (void*)(a0);
 }
 
 extern char g_001ef398_0[];
 void* fn_001ef398(void* a0, void* a1, int a2) {
-    void* t0 = fn_00076a98((void*)(g_001ef398_0), (int)(a2), (int)(0), (int)(-1), (int)(0), (int)(0));
+    void* t0;
+    t0 = fn_00076a98((void*)(g_001ef398_0), (int)(a2), (int)(0), (int)(-1), (int)(0), (int)(0));
     stub_001edb44((void*)(a0), (void*)(a1), (void*)(t0));
-    return a0;
+    return (void*)(a0);
 }
 
 extern char g_001ef404_0[];
 void* fn_001ef404(void* a0, void* a1, int a2) {
-    void* t0 = fn_00076a98((void*)(g_001ef404_0), (int)(a2), (int)(0), (int)(-1), (int)(0), (int)(0));
+    void* t0;
+    t0 = fn_00076a98((void*)(g_001ef404_0), (int)(a2), (int)(0), (int)(-1), (int)(0), (int)(0));
     stub_001ed940((void*)(a0), (void*)(a1), (void*)(t0));
-    return a0;
+    return (void*)(a0);
 }
 
 extern char g_001ef470_0[];
 void* fn_001ef470(void* a0, void* a1, int a2) {
-    void* t0 = fn_00076a98((void*)(g_001ef470_0), (int)(a2), (int)(0), (int)(-1), (int)(0), (int)(0));
+    void* t0;
+    t0 = fn_00076a98((void*)(g_001ef470_0), (int)(a2), (int)(0), (int)(-1), (int)(0), (int)(0));
     stub_001ed73c((void*)(a0), (void*)(a1), (void*)(t0));
-    return a0;
+    return (void*)(a0);
 }
 
 extern char g_001ef718_0[];
 void* fn_001ef718(void* a0, void* a1, int a2) {
-    void* t0 = fn_00076a98((void*)(g_001ef718_0), (int)(a2), (int)(0), (int)(-1), (int)(0), (int)(0));
+    void* t0;
+    t0 = fn_00076a98((void*)(g_001ef718_0), (int)(a2), (int)(0), (int)(-1), (int)(0), (int)(0));
     stub_001ee65c((void*)(a0), (void*)(a1), (void*)(t0));
-    return a0;
+    return (void*)(a0);
 }
 
 extern char g_001ef784_0[];
 void* fn_001ef784(void* a0, void* a1, int a2) {
-    void* t0 = fn_00076a98((void*)(g_001ef784_0), (int)(a2), (int)(0), (int)(-1), (int)(0), (int)(0));
+    void* t0;
+    t0 = fn_00076a98((void*)(g_001ef784_0), (int)(a2), (int)(0), (int)(-1), (int)(0), (int)(0));
     stub_001ee874((void*)(a0), (void*)(a1), (void*)(t0));
-    return a0;
+    return (void*)(a0);
 }
 
 extern char g_001ef980_0[];
 void* fn_001ef980(void* a0, void* a1, int a2) {
-    void* t0 = fn_00076a98((void*)(g_001ef980_0), (int)(a2), (int)(0), (int)(-1), (int)(0), (int)(0));
+    void* t0;
+    t0 = fn_00076a98((void*)(g_001ef980_0), (int)(a2), (int)(0), (int)(-1), (int)(0), (int)(0));
     stub_001ee22c((void*)(a0), (void*)(a1), (void*)(t0));
-    return a0;
+    return (void*)(a0);
 }
 
 void fn_001efd04(void* a0) {

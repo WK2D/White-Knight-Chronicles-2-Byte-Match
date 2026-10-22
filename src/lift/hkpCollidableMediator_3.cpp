@@ -10,7 +10,7 @@ struct unk_00f56efc_a0 {
     u32 f_8;
 };
 int fn_00f56efc(unk_00f56efc_a0* a0) {
-    return (int)FIELD(u32, a0->f_8, 4);
+    return (int)((int)FIELD(u32, a0->f_8, 4));
 }
 
 }

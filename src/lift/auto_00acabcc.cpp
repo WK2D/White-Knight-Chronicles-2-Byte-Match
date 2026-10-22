@@ -9,6 +9,8 @@ void fn_00aee71c(u32);
 void fn_00aeefd4(u32);
 void fn_00aef65c(u32);
 void fn_00af0638(u32);
+int fn_00af297c(u32);
+int fn_00af41d4(u32);
 
 struct unk_00acad18_a0 {
     char pad_0[4];
@@ -40,6 +42,23 @@ struct unk_00acad90_a0 {
 };
 void fn_00acad90(unk_00acad90_a0* a0) {
     fn_00af0638((u32)(a0->f_4));
+}
+
+struct unk_00acadb8_a0 {
+    char pad_0[4];
+    u32 f_4;
+};
+void fn_00acadb8(unk_00acadb8_a0* a0, int a1) {
+    int t0;
+    int t1;
+    int v0;
+    t0 = fn_00af297c((u32)(a0->f_4));
+    if ((int)(a1) != (int)(0)) {
+        t1 = fn_00af41d4((u32)(a0->f_4));
+        v0 = (int)(t1);
+    } else {
+        v0 = (int)(t0);
+    }
 }
 
 struct unk_00acae0c_a0 {

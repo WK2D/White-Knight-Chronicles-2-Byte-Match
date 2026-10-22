@@ -11,14 +11,14 @@ struct unk_0007e888_a0 {
 };
 void fn_0007e888(unk_0007e888_a0* a0) {
     fn_0007d628((void*)((char*)a0 + 32));
-    a0->f_0 = 0;
+    a0->f_0 = (u8)(0);
 }
 
 struct unk_0007e988_a0 {
     u8 f_0;
 };
 void fn_0007e988(unk_0007e988_a0* a0) {
-    a0->f_0 = 0;
+    a0->f_0 = (u8)(0);
     fn_0007d628((void*)((char*)a0 + 32));
 }
 

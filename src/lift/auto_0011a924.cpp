@@ -12,8 +12,29 @@ struct unk_0011aa84_a0 {
     u32 f_230;
 };
 void fn_0011aa84(unk_0011aa84_a0* a0, int a1) {
-    a0->f_230 = a1;
-    a0->f_22c = 1;
+    a0->f_230 = (u32)(a1);
+    a0->f_22c = (u8)(1);
+}
+
+struct unk_0011aa94_a0 {
+    char pad_0[21148];
+    u32 f_529c;
+    char pad_52a0[28];
+    u32 f_52bc;
+    u32 f_52c0;
+    char pad_52c4[4];
+    u32 f_52c8;
+    char pad_52cc[12];
+    void* f_52d8;
+};
+void fn_0011aa94(unk_0011aa94_a0* a0) {
+    if ((int)(a0->f_529c) == (int)(0)) {
+        return;
+    }
+    a0->f_52d8 = (void*)(a0);
+    a0->f_52c8 = (u32)(30000);
+    a0->f_52bc = (u32)(FIELD(u32, a0->f_529c, 0));
+    a0->f_52c0 = (u32)(FIELD(u32, a0->f_529c, 4));
 }
 
 }

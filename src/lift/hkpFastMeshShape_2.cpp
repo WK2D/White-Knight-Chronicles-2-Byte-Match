@@ -14,8 +14,8 @@ struct unk_00d4eb54_a0 {
 extern char g_00d4eb54_0[];
 void fn_00d4eb54(unk_00d4eb54_a0* a0) {
     fn_00d087c4();
-    a0->f_0 = g_00d4eb54_0;
-    a0->f_10 = (char*)g_00d4eb54_0 + 80;
+    a0->f_0 = (void*)(g_00d4eb54_0);
+    a0->f_10 = (void*)((char*)g_00d4eb54_0 + 80);
 }
 
 struct unk_00d4eb94_a0 {
@@ -26,8 +26,8 @@ struct unk_00d4eb94_a0 {
 extern char g_00d4eb94_0[];
 void fn_00d4eb94(unk_00d4eb94_a0* a0) {
     fn_00d087c4();
-    a0->f_0 = g_00d4eb94_0;
-    a0->f_10 = (char*)g_00d4eb94_0 + 80;
+    a0->f_0 = (void*)(g_00d4eb94_0);
+    a0->f_10 = (void*)((char*)g_00d4eb94_0 + 80);
 }
 
 }

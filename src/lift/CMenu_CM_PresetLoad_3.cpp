@@ -13,9 +13,9 @@ struct unk_007895c4_a0 {
 extern char g_007895c4_0[];
 extern char g_007895c4_1[];
 void fn_007895c4(unk_007895c4_a0* a0) {
-    a0->f_0 = g_007895c4_0;
+    a0->f_0 = (void*)(g_007895c4_0);
     stub_00787594((void*)((char*)a0 + 184));
-    a0->f_0 = g_007895c4_1;
+    a0->f_0 = (void*)(g_007895c4_1);
     fn_00fc88dc((void*)(a0));
 }
 

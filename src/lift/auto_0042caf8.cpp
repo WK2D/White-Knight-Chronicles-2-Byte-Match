@@ -9,7 +9,7 @@ static void __attribute__((noinline)) stub_0042c804(u32 p0) { __asm__ volatile (
 extern char g_0042caf8_0[];
 int fn_0042caf8(void) {
     stub_0042c804((u32)(FIELD(u32, g_0042caf8_0, 0)));
-    return 1;
+    return (int)(1);
 }
 
 }

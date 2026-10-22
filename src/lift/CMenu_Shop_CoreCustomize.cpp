@@ -9,7 +9,7 @@ static void __attribute__((noinline)) stub_007d5000(int p0) { __asm__ volatile (
 
 int fn_007d5098(int a0) {
     stub_007d5000((int)(a0));
-    return 1;
+    return (int)(1);
 }
 
 struct unk_007d50bc_a0 {

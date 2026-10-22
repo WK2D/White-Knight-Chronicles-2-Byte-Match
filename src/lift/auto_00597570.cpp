@@ -10,12 +10,16 @@ static int __attribute__((noinline)) stub_00597248(u32 p0, void* p1) { int r; __
 void* fn_0059cc34(void*);
 
 int fn_00599534(void* a0, int a1, int a2) {
-    void* t0 = stub_00596680((int)(a2));
-    void* t1 = stub_00596638((u32)(FIELD(u32, t0, 0)), (u32)(FIELD(u32, t0, 4)));
-    void* t2 = fn_0059cc34((void*)(a0));
-    int t3 = stub_00597248((u32)(FIELD(u32, t0, 0)), (void*)(t2));
-    FIELD(u32, t1, 0) = t3;
-    return 1;
+    void* t0;
+    void* t1;
+    void* t2;
+    int t3;
+    t0 = stub_00596680((int)(a2));
+    t1 = stub_00596638((u32)(FIELD(u32, t0, 0)), (u32)(FIELD(u32, t0, 4)));
+    t2 = fn_0059cc34((void*)(a0));
+    t3 = stub_00597248((u32)(FIELD(u32, t0, 0)), (void*)(t2));
+    FIELD(u32, t1, 0) = (u32)(t3);
+    return (int)(1);
 }
 
 }

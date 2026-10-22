@@ -14,7 +14,7 @@ struct unk_00de72b0_a0 {
 extern char g_00de72b0_0[];
 void fn_00de72b0(unk_00de72b0_a0* a0) {
     fn_00dec2d8((void*)(a0));
-    a0->f_2c = g_00de72b0_0;
+    a0->f_2c = (void*)(g_00de72b0_0);
 }
 
 void fn_00de7758(int a0, int a1, int a2) {

@@ -12,22 +12,28 @@ void* fn_00b3cd18(void*, int, int, int, int, int);
 
 extern char g_008fdc00_0[];
 u8 fn_008fdc00(void* a0, void* a1, int a2, int a3) {
-    void* t0 = fn_00b3cd18((void*)(g_008fdc00_0), (int)(a2), (int)(0), (int)(-1), (int)(0), (int)(0));
-    int t1 = stub_008fdba4((void*)(a0), (void*)(a1), (void*)(t0), (u8)((u8)a3));
-    return (u8)t1;
+    void* t0;
+    int t1;
+    t0 = fn_00b3cd18((void*)(g_008fdc00_0), (int)(a2), (int)(0), (int)(-1), (int)(0), (int)(0));
+    t1 = stub_008fdba4((void*)(a0), (void*)(a1), (void*)(t0), (u8)((u8)a3));
+    return (u8)((u8)t1);
 }
 
 extern char g_008fdf1c_0[];
 u8 fn_008fdf1c(void* a0, void* a1, int a2, int a3) {
-    void* t0 = fn_00b3cd18((void*)(g_008fdf1c_0), (int)(a2), (int)(0), (int)(-1), (int)(0), (int)(0));
-    int t1 = stub_008fdef4((void*)(a0), (void*)(a1), (void*)(t0), (u8)((u8)a3));
-    return (u8)t1;
+    void* t0;
+    int t1;
+    t0 = fn_00b3cd18((void*)(g_008fdf1c_0), (int)(a2), (int)(0), (int)(-1), (int)(0), (int)(0));
+    t1 = stub_008fdef4((void*)(a0), (void*)(a1), (void*)(t0), (u8)((u8)a3));
+    return (u8)((u8)t1);
 }
 
 u8 fn_008fe354(int a0, int a1, int a2) {
-    void* t0 = stub_008f867c((int)(a0), (int)(a1));
-    int t1 = stub_008fe0a8((int)(a0), (void*)(t0), (u8)((u8)a2));
-    return (u8)t1;
+    void* t0;
+    int t1;
+    t0 = stub_008f867c((int)(a0), (int)(a1));
+    t1 = stub_008fe0a8((int)(a0), (void*)(t0), (u8)((u8)a2));
+    return (u8)((u8)t1);
 }
 
 }

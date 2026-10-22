@@ -9,14 +9,17 @@ static int __attribute__((noinline)) stub_0081eac0(int p0, void* p1, int p2) { i
 int fn_00b3e238(int, int, int, int);
 
 u8 fn_0081f318(int a0) {
-    void* t0 = stub_0081dce0((int)(a0));
-    int t1 = stub_0081eac0((int)(a0), (void*)(t0), (int)(1));
-    return (u8)t1;
+    void* t0;
+    int t1;
+    t0 = stub_0081dce0((int)(a0));
+    t1 = stub_0081eac0((int)(a0), (void*)(t0), (int)(1));
+    return (u8)((u8)t1);
 }
 
 u8 fn_0081fb84(int a0, int a1, int a2, int a3, int a4) {
-    int t0 = fn_00b3e238((int)(a1), (int)(a2), (int)(a3), (int)(a4));
-    return (u8)t0;
+    int t0;
+    t0 = fn_00b3e238((int)(a1), (int)(a2), (int)(a3), (int)(a4));
+    return (u8)((u8)t0);
 }
 
 }

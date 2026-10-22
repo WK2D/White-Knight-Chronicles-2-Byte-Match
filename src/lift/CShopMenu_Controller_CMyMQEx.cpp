@@ -4,7 +4,24 @@
 
 extern "C" {
 
+static void __attribute__((noinline)) stub_007cb75c(u32 p0) { __asm__ volatile ("" : : "r"(p0)); }
 void fn_00b3cb68(u32);
+
+struct unk_007cb824_a0 {
+    char pad_0[268];
+    u32 f_10c;
+};
+struct unk_007cb824_a1 {
+    char pad_0[4];
+    u32 f_4;
+};
+int fn_007cb824(unk_007cb824_a0* a0, unk_007cb824_a1* a1) {
+    if ((int)(a1->f_4) != (int)(761)) {
+        return (int)(0);
+    }
+    stub_007cb75c((u32)(a0->f_10c));
+    return (int)(0);
+}
 
 struct unk_007cbd10_a0 {
     char pad_0[4404];

@@ -8,7 +8,7 @@ void fn_00f93550(void*);
 
 void* fn_00f863a4(int a0, int a1, void* a2) {
     fn_00f93550((void*)(a2));
-    return (char*)a2 + 64;
+    return (void*)((char*)a2 + 64);
 }
 
 }

@@ -14,24 +14,27 @@ struct unk_001a5b84_a0 {
     u32 f_0;
 };
 void* fn_001a5b84(unk_001a5b84_a0* a0) {
-    void* t0 = fn_001a7554((u32)(a0->f_0));
-    return t0;
+    void* t0;
+    t0 = fn_001a7554((u32)(a0->f_0));
+    return (void*)(t0);
 }
 
 struct unk_001a5bb0_a0 {
     u32 f_0;
 };
 u16 fn_001a5bb0(unk_001a5bb0_a0* a0) {
-    int t0 = fn_001a72e8((u32)(a0->f_0));
-    return (u16)t0;
+    int t0;
+    t0 = fn_001a72e8((u32)(a0->f_0));
+    return (u16)((u16)t0);
 }
 
 struct unk_001a5bdc_a0 {
     u32 f_0;
 };
 u16 fn_001a5bdc(unk_001a5bdc_a0* a0) {
-    int t0 = fn_001a89b0((u32)(a0->f_0));
-    return (u16)t0;
+    int t0;
+    t0 = fn_001a89b0((u32)(a0->f_0));
+    return (u16)((u16)t0);
 }
 
 struct unk_001a5c08_a0 {

@@ -10,7 +10,7 @@ void fn_00b39828(int);
 
 int fn_004c24c8(int a0, int a1) {
     fn_00b39828((int)(a1));
-    return 1;
+    return (int)(1);
 }
 
 struct unk_004c298c_a0 {
@@ -19,7 +19,7 @@ struct unk_004c298c_a0 {
 };
 void fn_004c298c(unk_004c298c_a0* a0) {
     fn_000c39ac();
-    a0->f_2c = 0;
+    a0->f_2c = (u32)(0);
 }
 
 struct unk_004c2b70_a0 {
@@ -28,7 +28,7 @@ struct unk_004c2b70_a0 {
 extern char g_004c2b70_0[];
 void fn_004c2b70(unk_004c2b70_a0* a0) {
     fn_000c38d8((void*)(a0));
-    a0->f_0 = g_004c2b70_0;
+    a0->f_0 = (void*)(g_004c2b70_0);
 }
 
 struct unk_004c2ba8_a0 {
@@ -37,7 +37,7 @@ struct unk_004c2ba8_a0 {
 extern char g_004c2ba8_0[];
 void fn_004c2ba8(unk_004c2ba8_a0* a0) {
     fn_000c38d8((void*)(a0));
-    a0->f_0 = g_004c2ba8_0;
+    a0->f_0 = (void*)(g_004c2ba8_0);
 }
 
 }

@@ -7,23 +7,27 @@ extern "C" {
 static int __attribute__((noinline)) stub_0039a6f0(void) { int r; __asm__ volatile ("" : "=r"(r)); return r; }
 
 u8 fn_0039a98c(void) {
-    int t0 = stub_0039a6f0();
-    return (u8)t0;
+    int t0;
+    t0 = stub_0039a6f0();
+    return (u8)((u8)t0);
 }
 
 u8 fn_0039a9b0(void) {
-    int t0 = stub_0039a6f0();
-    return (u8)t0;
+    int t0;
+    t0 = stub_0039a6f0();
+    return (u8)((u8)t0);
 }
 
 u8 fn_0039a9d4(void) {
-    int t0 = stub_0039a6f0();
-    return (u8)t0;
+    int t0;
+    t0 = stub_0039a6f0();
+    return (u8)((u8)t0);
 }
 
 u8 fn_0039a9f8(void) {
-    int t0 = stub_0039a6f0();
-    return (u8)t0;
+    int t0;
+    t0 = stub_0039a6f0();
+    return (u8)((u8)t0);
 }
 
 }

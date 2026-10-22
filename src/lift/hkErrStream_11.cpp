@@ -13,10 +13,10 @@ struct unk_00c8f648_a0 {
 };
 extern char g_00c8f648_0[];
 void fn_00c8f648(unk_00c8f648_a0* a0) {
-    a0->f_0 = FIELD(u8, g_00c8f648_0, 0);
-    a0->f_1 = FIELD(u8, g_00c8f648_0, 1);
-    a0->f_2 = FIELD(u8, g_00c8f648_0, 2);
-    a0->f_3 = FIELD(u8, g_00c8f648_0, 3);
+    a0->f_0 = (u8)(FIELD(u8, g_00c8f648_0, 0));
+    a0->f_1 = (u8)(FIELD(u8, g_00c8f648_0, 1));
+    a0->f_2 = (u8)(FIELD(u8, g_00c8f648_0, 2));
+    a0->f_3 = (u8)(FIELD(u8, g_00c8f648_0, 3));
 }
 
 struct unk_00c8f670_a0 {
@@ -27,10 +27,10 @@ struct unk_00c8f670_a0 {
 };
 extern char g_00c8f670_0[];
 void fn_00c8f670(unk_00c8f670_a0* a0) {
-    a0->f_0 = FIELD(u8, g_00c8f670_0, 0);
-    a0->f_1 = FIELD(u8, g_00c8f670_0, 1);
-    a0->f_2 = FIELD(u8, g_00c8f670_0, 2);
-    a0->f_3 = FIELD(u8, g_00c8f670_0, 3);
+    a0->f_0 = (u8)(FIELD(u8, g_00c8f670_0, 0));
+    a0->f_1 = (u8)(FIELD(u8, g_00c8f670_0, 1));
+    a0->f_2 = (u8)(FIELD(u8, g_00c8f670_0, 2));
+    a0->f_3 = (u8)(FIELD(u8, g_00c8f670_0, 3));
 }
 
 struct unk_00c8f698_a0 {
@@ -46,10 +46,10 @@ struct unk_00c8f698_a1 {
     u8 f_3;
 };
 void fn_00c8f698(unk_00c8f698_a0* a0, unk_00c8f698_a1* a1) {
-    a0->f_0 = a1->f_0;
-    a0->f_1 = a1->f_1;
-    a0->f_2 = a1->f_2;
-    a0->f_3 = a1->f_3;
+    a0->f_0 = (u8)(a1->f_0);
+    a0->f_1 = (u8)(a1->f_1);
+    a0->f_2 = (u8)(a1->f_2);
+    a0->f_3 = (u8)(a1->f_3);
 }
 
 struct unk_00c8f6bc_a0 {
@@ -65,10 +65,10 @@ struct unk_00c8f6bc_a1 {
     u8 f_3;
 };
 void fn_00c8f6bc(unk_00c8f6bc_a0* a0, unk_00c8f6bc_a1* a1) {
-    a0->f_0 = a1->f_0;
-    a0->f_1 = a1->f_1;
-    a0->f_2 = a1->f_2;
-    a0->f_3 = a1->f_3;
+    a0->f_0 = (u8)(a1->f_0);
+    a0->f_1 = (u8)(a1->f_1);
+    a0->f_2 = (u8)(a1->f_2);
+    a0->f_3 = (u8)(a1->f_3);
 }
 
 }

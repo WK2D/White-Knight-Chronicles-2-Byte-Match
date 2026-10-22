@@ -12,7 +12,7 @@ struct unk_00632fa4_a2 {
 };
 int fn_00632fa4(int a0, int a1, unk_00632fa4_a2* a2) {
     fn_0004dfb8((void*)(a2), (u32)(a2->f_194), (int)(646), (int)(1), (int)(0));
-    return 5;
+    return (int)(5);
 }
 
 }

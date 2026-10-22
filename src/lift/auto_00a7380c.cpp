@@ -10,8 +10,9 @@ struct unk_00a74ad0_a0 {
     u32 f_0;
 };
 void* fn_00a74ad0(unk_00a74ad0_a0* a0, int a1) {
-    void* t0 = fn_00aa76cc((u32)(a0->f_0), (int)(a1));
-    return t0;
+    void* t0;
+    t0 = fn_00aa76cc((u32)(a0->f_0), (int)(a1));
+    return (void*)(t0);
 }
 
 }

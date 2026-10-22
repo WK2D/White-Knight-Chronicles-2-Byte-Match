@@ -11,22 +11,23 @@ void fn_009645d8(void*, void*);
 
 int fn_00977fec(void* a0) {
     fn_009645d8((void*)(a0), (void*)((char*)a0 + 56));
-    return 1;
+    return (int)(1);
 }
 
 int fn_009788d8(void) {
-    int t0 = fn_0093556c();
-    return t0;
+    int t0;
+    t0 = fn_0093556c();
+    return (int)(t0);
 }
 
 int fn_00978bd4(void) {
     fn_0093925c();
-    return 0;
+    return (int)(0);
 }
 
 int fn_00978bfc(void) {
     fn_00939384();
-    return 0;
+    return (int)(0);
 }
 
 }

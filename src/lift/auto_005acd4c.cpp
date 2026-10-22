@@ -11,16 +11,18 @@ struct unk_005aceac_a0 {
     u32 f_0;
 };
 u8 fn_005aceac(unk_005aceac_a0* a0) {
-    int t0 = stub_005ace94((u32)(a0->f_0));
-    return (u8)t0;
+    int t0;
+    t0 = stub_005ace94((u32)(a0->f_0));
+    return (u8)((u8)t0);
 }
 
 struct unk_005acef4_a0 {
     u32 f_0;
 };
 u8 fn_005acef4(unk_005acef4_a0* a0) {
-    int t0 = stub_005acee8((u32)(a0->f_0));
-    return (u8)t0;
+    int t0;
+    t0 = stub_005acee8((u32)(a0->f_0));
+    return (u8)((u8)t0);
 }
 
 }

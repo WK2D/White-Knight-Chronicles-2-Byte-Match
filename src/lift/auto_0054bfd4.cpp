@@ -13,14 +13,35 @@ void fn_00588010(u32);
 void fn_00588018(u32);
 void fn_00588020(u32);
 int fn_00588080(u32);
+int fn_0059c578(void*, void*);
+
+struct unk_0054c048_a1 {
+    char pad_0[4];
+    u32 f_4;
+};
+void* fn_0054c048(int a0, unk_0054c048_a1* a1, void* a2) {
+    int t0;
+    int v0;
+    int v1;
+    if ((int)(a1->f_4) != (int)(0)) {
+        t0 = fn_0059c578((void*)(a1->f_4), (void*)(a2));
+        v0 = (int)(t0);
+        v1 = (int)(t0);
+    } else {
+        v0 = (int)(0);
+        v1 = (int)(a1->f_4);
+    }
+    return (void*)(v0);
+}
 
 struct unk_0054c214_a0 {
     char pad_0[8];
     u32 f_8;
 };
 u8 fn_0054c214(unk_0054c214_a0* a0) {
-    int t0 = fn_00588080((u32)(a0->f_8));
-    return (u8)t0;
+    int t0;
+    t0 = fn_00588080((u32)(a0->f_8));
+    return (u8)((u8)t0);
 }
 
 struct unk_0054c240_a0 {

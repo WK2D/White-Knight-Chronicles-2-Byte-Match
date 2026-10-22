@@ -10,7 +10,35 @@ struct unk_00792354_a0 {
     u32 f_10f0;
 };
 void fn_00792354(unk_00792354_a0* a0) {
-    FIELD(u16, a0->f_10f0, 12246) = 0;
+    FIELD(u16, a0->f_10f0, 12246) = (u16)(0);
+}
+
+struct unk_00792390_a0 {
+    char pad_0[4340];
+    u32 f_10f4;
+};
+void* fn_00792390(unk_00792390_a0* a0) {
+    int v0;
+    if ((int)(a0->f_10f4) != (int)(0)) {
+        v0 = (int)(a0->f_10f4 + 896);
+    } else {
+        v0 = (int)(0);
+    }
+    return (void*)(v0);
+}
+
+struct unk_007923ac_a0 {
+    char pad_0[4340];
+    u32 f_10f4;
+};
+int fn_007923ac(unk_007923ac_a0* a0) {
+    int v0;
+    if ((int)(a0->f_10f4) != (int)(0)) {
+        v0 = (int)(FIELD(u16, a0->f_10f4, 6388));
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
 }
 
 }

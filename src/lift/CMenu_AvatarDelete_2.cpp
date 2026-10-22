@@ -12,8 +12,8 @@ struct unk_007614f0_a0 {
 };
 int fn_007614f0(unk_007614f0_a0* a0) {
     fn_00046268((void*)((char*)a0 + 116));
-    a0->f_bc = 1;
-    return 1;
+    a0->f_bc = (u8)(1);
+    return (int)(1);
 }
 
 }

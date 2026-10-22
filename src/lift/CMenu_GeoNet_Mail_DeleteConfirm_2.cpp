@@ -18,7 +18,7 @@ struct unk_006edc3c_a2 {
 int fn_006edc3c(unk_006edc3c_a0* a0, int a1, unk_006edc3c_a2* a2) {
     fn_0004dfb8((void*)(a2), (u32)(a2->f_194), (int)(1108), (int)(1), (int)(0));
     fn_006a07c8((u32)(a0->f_24));
-    return 5;
+    return (int)(5);
 }
 
 }

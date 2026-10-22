@@ -4,42 +4,65 @@
 
 extern "C" {
 
+int fn_0042769c(u16);
 void* fn_005380d8(void);
 void* fn_00538270(void);
 void* fn_00544c20(int);
 static void __attribute__((noinline)) stub_0059034c(void* p0, void* p1, void* p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
 static void __attribute__((noinline)) stub_00590650(void* p0, void* p1, void* p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
 static int __attribute__((noinline)) stub_00590dac(void* p0, void* p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
+static void* __attribute__((noinline)) stub_00591f00(void) { void* r; __asm__ volatile ("" : "=r"(r)); return r; }
 void fn_00b37fa8(void*, int, int);
 
 extern char g_00590560_0[];
 void* fn_00590560(void* a0, void* a1) {
     fn_00b37fa8((void*)((char*)g_00590560_0 + 648), (int)(0), (int)(256));
     stub_0059034c((void*)(a0), (void*)((char*)g_00590560_0 + 648), (void*)(a1));
-    return (char*)g_00590560_0 + 648;
+    return (void*)((char*)g_00590560_0 + 648);
 }
 
 extern char g_00590b54_0[];
 void* fn_00590b54(void* a0, void* a1) {
     fn_00b37fa8((void*)((char*)g_00590b54_0 + 904), (int)(0), (int)(256));
     stub_00590650((void*)(a0), (void*)((char*)g_00590b54_0 + 904), (void*)(a1));
-    return (char*)g_00590b54_0 + 904;
+    return (void*)((char*)g_00590b54_0 + 904);
 }
 
 u16 fn_00590ed0(void* a0, int a1) {
-    void* t0 = fn_00544c20((int)(a1));
-    int t1 = stub_00590dac((void*)(a0), (void*)(t0));
-    return (u16)t1;
+    void* t0;
+    int t1;
+    t0 = fn_00544c20((int)(a1));
+    t1 = stub_00590dac((void*)(a0), (void*)(t0));
+    return (u16)((u16)t1);
 }
 
 void* fn_00590ffc(void) {
-    void* t0 = fn_00538270();
-    return t0;
+    void* t0;
+    t0 = fn_00538270();
+    return (void*)(t0);
 }
 
 void* fn_00591ed8(void) {
-    void* t0 = fn_005380d8();
-    return t0;
+    void* t0;
+    t0 = fn_005380d8();
+    return (void*)(t0);
+}
+
+void* fn_00592144(void) {
+    void* t0;
+    int t1;
+    int v0;
+    int v1;
+    t0 = stub_00591f00();
+    if ((int)(t0) != (int)(0)) {
+        t1 = fn_0042769c((u16)(FIELD(u16, t0, 14)));
+        v0 = (int)(t1);
+        v1 = (int)(t1);
+    } else {
+        v0 = (int)(50);
+        v1 = (int)(t0);
+    }
+    return (void*)(v0);
 }
 
 }

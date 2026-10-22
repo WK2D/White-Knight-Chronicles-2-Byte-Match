@@ -10,8 +10,8 @@ struct unk_005b98a0_a0 {
     u8 f_211;
 };
 int fn_005b98a0(unk_005b98a0_a0* a0) {
-    a0->f_211 = 0;
-    return 1;
+    a0->f_211 = (u8)(0);
+    return (int)(1);
 }
 
 }

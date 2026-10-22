@@ -10,7 +10,17 @@ struct unk_00ae069c_a0 {
     u32 f_8;
 };
 void fn_00ae069c(unk_00ae069c_a0* a0, int a1) {
-    a0->f_8 = a0->f_8 + a1;
+    a0->f_8 = (u32)((int)(a0->f_8) + (int)(a1));
+}
+
+struct unk_00ae06ac_a0 {
+    char pad_0[8];
+    u32 f_8;
+    u32 f_c;
+};
+void* fn_00ae06ac(unk_00ae06ac_a0* a0) {
+    FIELD(void*, a0->f_c, 16) = (void*)(a0->f_8);
+    return (void*)(a0->f_8);
 }
 
 struct unk_00ae06dc_a0 {
@@ -18,7 +28,7 @@ struct unk_00ae06dc_a0 {
     u32 f_14;
 };
 void fn_00ae06dc(unk_00ae06dc_a0* a0) {
-    a0->f_14 = a0->f_14 + -1;
+    a0->f_14 = (u32)(a0->f_14 + -1);
 }
 
 }

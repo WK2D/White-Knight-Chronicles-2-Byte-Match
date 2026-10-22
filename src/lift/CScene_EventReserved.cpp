@@ -13,7 +13,7 @@ extern char g_00316400_0[];
 extern char g_00316400_1[];
 void fn_00316400(unk_00316400_a0* a0, int a1) {
     fn_0030d7d8((void*)(a0), (int)(a1), (void*)(g_00316400_0));
-    a0->f_0 = g_00316400_1;
+    a0->f_0 = (void*)(g_00316400_1);
 }
 
 struct unk_0031643c_a0 {
@@ -23,7 +23,7 @@ extern char g_0031643c_0[];
 extern char g_0031643c_1[];
 void fn_0031643c(unk_0031643c_a0* a0, int a1) {
     fn_0030d7d8((void*)(a0), (int)(a1), (void*)(g_0031643c_0));
-    a0->f_0 = g_0031643c_1;
+    a0->f_0 = (void*)(g_0031643c_1);
 }
 
 }

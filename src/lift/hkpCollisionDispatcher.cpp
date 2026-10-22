@@ -4,17 +4,33 @@
 
 extern "C" {
 
+void fn_00ce9ddc(int, int);
+void fn_00d173f8(int);
+void fn_00d2065c(int);
+void fn_00d21b28(int);
+void fn_00d2405c(int);
+void fn_00de650c(int);
+
+void fn_00ce9bb8(int a0) {
+    fn_00ce9ddc((int)(a0), (int)(0));
+    fn_00d173f8((int)(a0));
+    fn_00d2065c((int)(a0));
+    fn_00d21b28((int)(a0));
+    fn_00d2405c((int)(a0));
+    fn_00de650c((int)(a0));
+    fn_00ce9ddc((int)(a0), (int)(1));
+}
 
 struct unk_00ce9dc0_a1 {
     u8 f_0;
 };
 int fn_00ce9dc0(int a0, unk_00ce9dc0_a1* a1, int a2) {
-    a1->f_0 = 0;
-    return a2;
+    a1->f_0 = (u8)(0);
+    return (int)(a2);
 }
 
 int fn_00ce9dd4(int a0, int a1, int a2) {
-    return a2;
+    return (int)(a2);
 }
 
 }

@@ -12,9 +12,10 @@ struct unk_004c1a80_a0 {
     u32 f_230;
 };
 int fn_004c1a80(unk_004c1a80_a0* a0, int a1) {
-    int t0 = fn_00036140((int)(a1), (void*)(-1));
-    a0->f_230 = t0;
-    return t0;
+    int t0;
+    t0 = fn_00036140((int)(a1), (void*)(-1));
+    a0->f_230 = (u32)(t0);
+    return (int)(t0);
 }
 
 void fn_004c1ac0(void) {

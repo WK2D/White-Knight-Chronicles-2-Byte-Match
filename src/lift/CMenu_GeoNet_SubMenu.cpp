@@ -11,8 +11,9 @@ struct unk_006d4834_a0 {
     u32 f_24;
 };
 u8 fn_006d4834(unk_006d4834_a0* a0) {
-    int t0 = fn_00693788((u32)(a0->f_24));
-    return (u8)t0;
+    int t0;
+    t0 = fn_00693788((u32)(a0->f_24));
+    return (u8)((u8)t0);
 }
 
 }

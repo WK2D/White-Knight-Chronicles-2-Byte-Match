@@ -11,8 +11,8 @@ struct unk_00772000_a0 {
     u32 f_1c;
 };
 int fn_00772000(unk_00772000_a0* a0) {
-    a0->f_18 = a0->f_1c;
-    return 0;
+    a0->f_18 = (u32)(a0->f_1c);
+    return (int)(0);
 }
 
 struct unk_0077206c_a0 {
@@ -20,8 +20,8 @@ struct unk_0077206c_a0 {
     u32 f_18;
 };
 int fn_0077206c(unk_0077206c_a0* a0, int a1) {
-    a0->f_18 = a1;
-    return 0;
+    a0->f_18 = (u32)(a1);
+    return (int)(0);
 }
 
 }

@@ -10,4 +10,16 @@ void fn_00c03424(void) {
     fn_00c36430();
 }
 
+struct unk_00c03868_a0 {
+    char pad_0[4];
+    u16 f_4;
+    u16 f_6;
+};
+void fn_00c03868(unk_00c03868_a0* a0) {
+    if ((int)(a0->f_4) == (int)(0)) {
+        return;
+    }
+    a0->f_6 = (u16)(a0->f_6 + 1);
+}
+
 }

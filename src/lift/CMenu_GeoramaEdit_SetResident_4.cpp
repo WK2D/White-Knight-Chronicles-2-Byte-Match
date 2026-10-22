@@ -12,7 +12,7 @@ struct unk_00890e14_a2 {
 };
 int fn_00890e14(int a0, int a1, unk_00890e14_a2* a2) {
     fn_00b3cd58((void*)(a2), (u32)(a2->f_194), (int)(227), (int)(1), (int)(0));
-    return 1;
+    return (int)(1);
 }
 
 }

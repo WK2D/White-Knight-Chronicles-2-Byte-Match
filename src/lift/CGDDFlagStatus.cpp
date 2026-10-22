@@ -41,7 +41,7 @@ int fn_003ca3e4(int a0) {
     stub_003ca34c((int)(a0));
     stub_003ca300((int)(a0));
     stub_003ca2b4((int)(a0));
-    return 1;
+    return (int)(1);
 }
 
 int fn_003ca780(int a0) {
@@ -57,7 +57,7 @@ int fn_003ca780(int a0) {
     stub_003ca4a0((int)(a0));
     stub_003ca434((int)(a0));
     stub_003c8f88((int)(a0), (int)(0));
-    return 1;
+    return (int)(1);
 }
 
 int fn_003ca93c(int a0) {
@@ -66,7 +66,7 @@ int fn_003ca93c(int a0) {
     stub_003ca8a4((int)(a0));
     stub_003ca858((int)(a0));
     stub_003ca80c((int)(a0));
-    return 1;
+    return (int)(1);
 }
 
 int fn_003cab54(int a0) {
@@ -78,7 +78,7 @@ int fn_003cab54(int a0) {
     stub_003c84bc((int)(a0));
     stub_003c8f08((int)(a0));
     stub_003c8f48((int)(a0));
-    return 1;
+    return (int)(1);
 }
 
 }

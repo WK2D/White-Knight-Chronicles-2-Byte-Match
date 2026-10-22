@@ -14,8 +14,8 @@ struct unk_000e7208_a0 {
 };
 int fn_000e7208(unk_000e7208_a0* a0) {
     fn_000ea29c((u32)(a0->f_10), (u32)(a0->f_4), (int)(0));
-    a0->f_10 = 0;
-    return 0;
+    a0->f_10 = (u32)(0);
+    return (int)(0);
 }
 
 }

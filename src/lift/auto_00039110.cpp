@@ -5,14 +5,28 @@
 extern "C" {
 
 
+struct unk_00039ae4_a0 {
+    char pad_0[4];
+    u32 f_4;
+};
+int fn_00039ae4(unk_00039ae4_a0* a0) {
+    int v0;
+    if (a0 != 0) {
+        v0 = (int)(a0->f_4);
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
 struct unk_00039fb4_a0 {
     u8 f_0;
     char pad_1[3];
     u8 f_4;
 };
 void fn_00039fb4(unk_00039fb4_a0* a0, int a1) {
-    a0->f_4 = a1;
-    a0->f_0 = 0;
+    a0->f_4 = (u8)(a1);
+    a0->f_0 = (u8)(0);
 }
 
 struct unk_0003a00c_a0 {
@@ -21,8 +35,8 @@ struct unk_0003a00c_a0 {
     u8 f_4;
 };
 void fn_0003a00c(unk_0003a00c_a0* a0, int a1) {
-    a0->f_4 = a1;
-    a0->f_0 = 1;
+    a0->f_4 = (u8)(a1);
+    a0->f_0 = (u8)(1);
 }
 
 struct unk_0003a060_a0 {
@@ -31,8 +45,8 @@ struct unk_0003a060_a0 {
     u16 f_4;
 };
 void fn_0003a060(unk_0003a060_a0* a0, int a1) {
-    a0->f_4 = a1;
-    a0->f_0 = 2;
+    a0->f_4 = (u16)(a1);
+    a0->f_0 = (u8)(2);
 }
 
 struct unk_0003a0b0_a0 {
@@ -41,8 +55,8 @@ struct unk_0003a0b0_a0 {
     u16 f_4;
 };
 void fn_0003a0b0(unk_0003a0b0_a0* a0, int a1) {
-    a0->f_4 = a1;
-    a0->f_0 = 3;
+    a0->f_4 = (u16)(a1);
+    a0->f_0 = (u8)(3);
 }
 
 struct unk_0003a100_a0 {
@@ -51,8 +65,8 @@ struct unk_0003a100_a0 {
     u32 f_4;
 };
 void fn_0003a100(unk_0003a100_a0* a0, int a1) {
-    a0->f_4 = a1;
-    a0->f_0 = 4;
+    a0->f_4 = (u32)(a1);
+    a0->f_0 = (u8)(4);
 }
 
 struct unk_0003a148_a0 {
@@ -61,8 +75,8 @@ struct unk_0003a148_a0 {
     u32 f_4;
 };
 void fn_0003a148(unk_0003a148_a0* a0, int a1) {
-    a0->f_4 = a1;
-    a0->f_0 = 5;
+    a0->f_4 = (u32)(a1);
+    a0->f_0 = (u8)(5);
 }
 
 }

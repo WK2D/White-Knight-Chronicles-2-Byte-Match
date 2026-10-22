@@ -11,6 +11,25 @@ void fn_000e96b8(int, int, int, int, int, int);
 void fn_000e96ec(int, int, int, int, int, int);
 void fn_000ed584(void*);
 
+extern char g_000e1f08_0[];
+void fn_000e1f08(void) {
+    if ((int)(FIELD(u32, g_000e1f08_0, 0)) == (int)(0)) {
+        return;
+    }
+    FIELD(u8, g_000e1f08_0, 4) = (u8)(1);
+}
+
+extern char g_000e1f24_0[];
+void* fn_000e1f24(void) {
+    int v0;
+    if ((int)(FIELD(u32, g_000e1f24_0, 0)) != (int)(0)) {
+        v0 = (int)(FIELD(u32, FIELD(u32, g_000e1f24_0, 0), 0));
+    } else {
+        v0 = (int)(0);
+    }
+    return (void*)(v0);
+}
+
 void fn_000e2028(int a0, int a1, int a2, int a3, int a4, int a5) {
     fn_000e96ec((int)(a0), (int)(a1), (int)(a2), (int)(a3), (int)(a4), (int)(a5));
 }

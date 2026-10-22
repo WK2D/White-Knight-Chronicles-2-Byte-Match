@@ -17,9 +17,9 @@ int fn_000e8a90(unk_000e8a90_a0* a0) {
     fn_00017f2c();
     stub_000e8a54((int)((int)a0->f_11c));
     fn_00017f68();
-    a0->f_11c = -1;
+    a0->f_11c = (u32)(-1);
     fn_000e95fc((void*)(a0));
-    return 0;
+    return (int)(0);
 }
 
 }

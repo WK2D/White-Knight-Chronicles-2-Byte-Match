@@ -15,8 +15,9 @@ void fn_0054e4c4(void* a0) {
 }
 
 void* fn_0054e52c(void* a0) {
-    void* t0 = fn_005ad484((void*)((char*)a0 + 16908));
-    return t0;
+    void* t0;
+    t0 = fn_005ad484((void*)((char*)a0 + 16908));
+    return (void*)(t0);
 }
 
 struct unk_0054ef50_a0 {
@@ -24,8 +25,25 @@ struct unk_0054ef50_a0 {
     u32 f_18;
 };
 void* fn_0054ef50(unk_0054ef50_a0* a0) {
-    void* t0 = fn_005644cc((u32)(a0->f_18));
-    return t0;
+    void* t0;
+    t0 = fn_005644cc((u32)(a0->f_18));
+    return (void*)(t0);
+}
+
+struct unk_0054ef7c_a0 {
+    char pad_0[24];
+    u32 f_18;
+};
+int fn_0054ef7c(unk_0054ef7c_a0* a0) {
+    void* t0;
+    int v0;
+    t0 = fn_005644cc((u32)(a0->f_18));
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)(FIELD(u8, t0, 12));
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
 }
 
 struct unk_0054f360_a0 {
@@ -35,9 +53,10 @@ struct unk_0054f360_a0 {
     u32 f_42c;
 };
 int fn_0054f360(unk_0054f360_a0* a0) {
-    int t0 = fn_0055c414((u32)(a0->f_18));
-    a0->f_42c = t0;
-    return t0;
+    int t0;
+    t0 = fn_0055c414((u32)(a0->f_18));
+    a0->f_42c = (u32)(t0);
+    return (int)(t0);
 }
 
 struct unk_0054f398_a0 {
@@ -45,8 +64,9 @@ struct unk_0054f398_a0 {
     u32 f_18;
 };
 u8 fn_0054f398(unk_0054f398_a0* a0) {
-    int t0 = fn_00562798((u32)(a0->f_18));
-    return (u8)t0;
+    int t0;
+    t0 = fn_00562798((u32)(a0->f_18));
+    return (u8)((u8)t0);
 }
 
 }

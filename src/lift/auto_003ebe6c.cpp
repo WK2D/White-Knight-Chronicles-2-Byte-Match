@@ -9,16 +9,21 @@ static int __attribute__((noinline)) stub_003ebf74(int p0) { int r; __asm__ vola
 static int __attribute__((noinline)) stub_003ec004(int p0, u8 p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 
 u16 fn_003ebfbc(int a0) {
-    int t0 = stub_003ebf24((int)(a0));
-    int t1 = stub_003ebf74((int)(a0));
-    return (u16)(t1 + t0);
+    int t0;
+    int t1;
+    t0 = stub_003ebf24((int)(a0));
+    t1 = stub_003ebf74((int)(a0));
+    return (u16)((u16)((int)(t1) + (int)(t0)));
 }
 
 u16 fn_003ec0b4(int a0, int a1) {
-    int t0 = stub_003ebf24((int)(a0));
-    int t1 = stub_003ebf74((int)(a0));
-    int t2 = stub_003ec004((int)(a0), (u8)((u8)a1));
-    return (u16)((t0 + t1) + t2);
+    int t0;
+    int t1;
+    int t2;
+    t0 = stub_003ebf24((int)(a0));
+    t1 = stub_003ebf74((int)(a0));
+    t2 = stub_003ec004((int)(a0), (u8)((u8)a1));
+    return (u16)((u16)((int)((int)(t0) + (int)(t1)) + (int)(t2)));
 }
 
 }

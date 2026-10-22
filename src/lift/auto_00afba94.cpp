@@ -10,7 +10,8 @@ void fn_00bddb10(void*);
 extern char g_00afc6f8_0[];
 extern char g_00afc6f8_1[];
 void fn_00afc6f8(void) {
-    void* t0 = fn_00bd3aa8((void*)(g_00afc6f8_1), (void*)(g_00afc6f8_0));
+    void* t0;
+    t0 = fn_00bd3aa8((void*)(g_00afc6f8_1), (void*)(g_00afc6f8_0));
     fn_00bddb10((void*)(t0));
 }
 

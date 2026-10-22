@@ -13,7 +13,7 @@ struct unk_00af6390_a1 {
     u32 f_0;
 };
 void fn_00af6390(unk_00af6390_a0* a0, unk_00af6390_a1* a1) {
-    a1->f_0 = FIELD(u32, a0->f_4, 0);
+    a1->f_0 = (u32)(FIELD(u32, a0->f_4, 0));
 }
 
 }

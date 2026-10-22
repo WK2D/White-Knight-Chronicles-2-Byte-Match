@@ -4,7 +4,174 @@
 
 extern "C" {
 
+void fn_000bf55c(void*, int);
 void fn_00222434(u32, int);
+static void __attribute__((noinline)) stub_002deca0(u32 p0, int p1, int p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
+
+struct unk_002edd08_a1 {
+    char pad_0[4];
+    u32 f_4;
+};
+int fn_002edd08(void* a0, unk_002edd08_a1* a1) {
+    if ((int)(a1->f_4) != (int)(104)) {
+        return (int)(0);
+    }
+    fn_000bf55c((void*)(a0), (int)(104));
+    return (int)(0);
+}
+
+struct unk_002eec94_a0 {
+    char pad_0[268];
+    u32 f_10c;
+};
+struct unk_002eec94_a1 {
+    char pad_0[4];
+    u32 f_4;
+};
+int fn_002eec94(unk_002eec94_a0* a0, unk_002eec94_a1* a1) {
+    if ((int)(a1->f_4) != (int)(2001)) {
+        return (int)(0);
+    }
+    stub_002deca0((u32)(a0->f_10c), (int)(332), (int)(0));
+    FIELD(u16, a0->f_10c, 330) = (u16)(6101);
+    return (int)(0);
+}
+
+struct unk_002ef0c0_a0 {
+    char pad_0[268];
+    u32 f_10c;
+};
+struct unk_002ef0c0_a1 {
+    char pad_0[4];
+    u32 f_4;
+};
+int fn_002ef0c0(unk_002ef0c0_a0* a0, unk_002ef0c0_a1* a1) {
+    if ((int)(a1->f_4) != (int)(2001)) {
+        return (int)(0);
+    }
+    stub_002deca0((u32)(a0->f_10c), (int)(332), (int)(0));
+    FIELD(u16, a0->f_10c, 330) = (u16)(6101);
+    return (int)(0);
+}
+
+struct unk_002ef1c8_a0 {
+    char pad_0[268];
+    u32 f_10c;
+};
+struct unk_002ef1c8_a1 {
+    char pad_0[4];
+    u32 f_4;
+};
+int fn_002ef1c8(unk_002ef1c8_a0* a0, unk_002ef1c8_a1* a1) {
+    if ((int)(a1->f_4) != (int)(2001)) {
+        return (int)(0);
+    }
+    stub_002deca0((u32)(a0->f_10c), (int)(332), (int)(0));
+    FIELD(u16, a0->f_10c, 330) = (u16)(6101);
+    return (int)(0);
+}
+
+struct unk_002ef2d0_a0 {
+    char pad_0[268];
+    u32 f_10c;
+};
+struct unk_002ef2d0_a1 {
+    char pad_0[4];
+    u32 f_4;
+};
+int fn_002ef2d0(unk_002ef2d0_a0* a0, unk_002ef2d0_a1* a1) {
+    if ((int)(a1->f_4) != (int)(2001)) {
+        return (int)(0);
+    }
+    stub_002deca0((u32)(a0->f_10c), (int)(332), (int)(0));
+    FIELD(u16, a0->f_10c, 330) = (u16)(6101);
+    return (int)(0);
+}
+
+struct unk_002ef33c_a0 {
+    char pad_0[268];
+    u32 f_10c;
+};
+struct unk_002ef33c_a1 {
+    char pad_0[4];
+    u32 f_4;
+};
+int fn_002ef33c(unk_002ef33c_a0* a0, unk_002ef33c_a1* a1) {
+    if ((int)(a1->f_4) != (int)(2001)) {
+        return (int)(0);
+    }
+    stub_002deca0((u32)(a0->f_10c), (int)(332), (int)(0));
+    FIELD(u16, a0->f_10c, 330) = (u16)(6101);
+    return (int)(0);
+}
+
+struct unk_002ef444_a0 {
+    char pad_0[268];
+    u32 f_10c;
+};
+struct unk_002ef444_a1 {
+    char pad_0[4];
+    u32 f_4;
+};
+int fn_002ef444(unk_002ef444_a0* a0, unk_002ef444_a1* a1) {
+    if ((int)(a1->f_4) != (int)(2001)) {
+        return (int)(0);
+    }
+    stub_002deca0((u32)(a0->f_10c), (int)(332), (int)(0));
+    FIELD(u16, a0->f_10c, 330) = (u16)(6101);
+    return (int)(0);
+}
+
+struct unk_002ef4b0_a0 {
+    char pad_0[268];
+    u32 f_10c;
+};
+struct unk_002ef4b0_a1 {
+    char pad_0[4];
+    u32 f_4;
+};
+int fn_002ef4b0(unk_002ef4b0_a0* a0, unk_002ef4b0_a1* a1) {
+    if ((int)(a1->f_4) != (int)(2001)) {
+        return (int)(0);
+    }
+    stub_002deca0((u32)(a0->f_10c), (int)(332), (int)(0));
+    FIELD(u16, a0->f_10c, 330) = (u16)(6101);
+    return (int)(0);
+}
+
+struct unk_002ef85c_a0 {
+    char pad_0[268];
+    u32 f_10c;
+};
+struct unk_002ef85c_a1 {
+    char pad_0[4];
+    u32 f_4;
+};
+int fn_002ef85c(unk_002ef85c_a0* a0, unk_002ef85c_a1* a1) {
+    if ((int)(a1->f_4) != (int)(2001)) {
+        return (int)(0);
+    }
+    stub_002deca0((u32)(a0->f_10c), (int)(332), (int)(0));
+    FIELD(u16, a0->f_10c, 330) = (u16)(6101);
+    return (int)(0);
+}
+
+struct unk_002ef8c8_a0 {
+    char pad_0[268];
+    u32 f_10c;
+};
+struct unk_002ef8c8_a1 {
+    char pad_0[4];
+    u32 f_4;
+};
+int fn_002ef8c8(unk_002ef8c8_a0* a0, unk_002ef8c8_a1* a1) {
+    if ((int)(a1->f_4) != (int)(2001)) {
+        return (int)(0);
+    }
+    stub_002deca0((u32)(a0->f_10c), (int)(332), (int)(0));
+    FIELD(u16, a0->f_10c, 330) = (u16)(6101);
+    return (int)(0);
+}
 
 extern char g_002f059c_0[];
 void fn_002f059c(void) {

@@ -8,7 +8,7 @@ void fn_00b37fa8(void*, int, int);
 
 int fn_000bf7c8(void* a0) {
     fn_00b37fa8((void*)((char*)a0 + 12), (int)(0), (int)(256));
-    return 1;
+    return (int)(1);
 }
 
 }

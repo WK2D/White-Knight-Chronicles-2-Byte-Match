@@ -8,8 +8,9 @@ int fn_003c8568(u32);
 
 extern char g_00409c14_0[];
 u8 fn_00409c14(void) {
-    int t0 = fn_003c8568((u32)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_00409c14_0, 0), 108), 8), 244)));
-    return (u8)t0;
+    int t0;
+    t0 = fn_003c8568((u32)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_00409c14_0, 0), 108), 8), 244)));
+    return (u8)((u8)t0);
 }
 
 }

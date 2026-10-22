@@ -12,7 +12,7 @@ struct unk_003fe298_a0 {
 };
 int fn_003fe298(unk_003fe298_a0* a0) {
     fn_00b37fa8((void*)(a0->f_4 + 6780), (int)(0), (int)(1024));
-    return 1;
+    return (int)(1);
 }
 
 }

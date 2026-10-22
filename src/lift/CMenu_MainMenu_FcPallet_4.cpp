@@ -13,9 +13,9 @@ struct unk_005ff1cc_a0 {
 extern char g_005ff1cc_0[];
 extern char g_005ff1cc_1[];
 void fn_005ff1cc(unk_005ff1cc_a0* a0) {
-    a0->f_0 = g_005ff1cc_0;
+    a0->f_0 = (void*)(g_005ff1cc_0);
     stub_005ff1b0((void*)((char*)a0 + 40));
-    a0->f_0 = g_005ff1cc_1;
+    a0->f_0 = (void*)(g_005ff1cc_1);
     fn_00fc88dc((void*)(a0));
 }
 
@@ -25,9 +25,9 @@ struct unk_005ff228_a0 {
 extern char g_005ff228_0[];
 extern char g_005ff228_1[];
 void fn_005ff228(unk_005ff228_a0* a0) {
-    a0->f_0 = g_005ff228_0;
+    a0->f_0 = (void*)(g_005ff228_0);
     stub_005ff1b0((void*)((char*)a0 + 40));
-    a0->f_0 = g_005ff228_1;
+    a0->f_0 = (void*)(g_005ff228_1);
 }
 
 struct unk_005ff26c_a0 {
@@ -36,9 +36,9 @@ struct unk_005ff26c_a0 {
 extern char g_005ff26c_0[];
 extern char g_005ff26c_1[];
 void fn_005ff26c(unk_005ff26c_a0* a0) {
-    a0->f_0 = g_005ff26c_0;
+    a0->f_0 = (void*)(g_005ff26c_0);
     stub_005ff1b0((void*)((char*)a0 + 40));
-    a0->f_0 = g_005ff26c_1;
+    a0->f_0 = (void*)(g_005ff26c_1);
 }
 
 }

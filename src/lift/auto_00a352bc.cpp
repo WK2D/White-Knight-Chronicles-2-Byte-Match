@@ -9,10 +9,11 @@ void fn_00a54e00(void*);
 void fn_00a54eb8(void*);
 
 void* fn_00a35fdc(void* a0, int a1, void* a2, void* a3, void* a4, void* a5) {
+    void* t1;
     fn_00a54eb8((void*)((char*)a0 + 328));
-    void* t1 = stub_00a3473c((void*)(a0), (u8)((u8)a1), (void*)(a2), (void*)(a3), (void*)(a4), (void*)(a5));
+    t1 = stub_00a3473c((void*)(a0), (u8)((u8)a1), (void*)(a2), (void*)(a3), (void*)(a4), (void*)(a5));
     fn_00a54e00((void*)((char*)a0 + 328));
-    return t1;
+    return (void*)(t1);
 }
 
 }

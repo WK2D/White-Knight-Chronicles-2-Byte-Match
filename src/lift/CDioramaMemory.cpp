@@ -18,9 +18,10 @@ struct unk_008a8e54_a4 {
     u32 f_0;
 };
 void* fn_008a8e54(int a0, int a1, int a2, int a3, unk_008a8e54_a4* a4, int a5) {
-    void* t0 = fn_00b40158((int)(a5), (int)(a2), (int)(a3));
-    a4->f_0 = 0;
-    return t0;
+    void* t0;
+    t0 = fn_00b40158((int)(a5), (int)(a2), (int)(a3));
+    a4->f_0 = (u32)(0);
+    return (void*)(t0);
 }
 
 }

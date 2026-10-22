@@ -10,8 +10,8 @@ struct unk_00611c54_a0 {
     u32 f_74;
 };
 int fn_00611c54(unk_00611c54_a0* a0) {
-    a0->f_74 = 0;
-    return 1;
+    a0->f_74 = (u32)(0);
+    return (int)(1);
 }
 
 }

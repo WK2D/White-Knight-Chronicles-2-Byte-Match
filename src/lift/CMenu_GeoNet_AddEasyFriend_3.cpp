@@ -16,7 +16,7 @@ struct unk_00733284_a2 {
 };
 int fn_00733284(unk_00733284_a0* a0, int a1, unk_00733284_a2* a2) {
     fn_0004dfb8((void*)(a2), (u32)(a2->f_194), (u32)(a0->f_198), (int)(1), (int)(0));
-    return 1;
+    return (int)(1);
 }
 
 }

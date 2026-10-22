@@ -8,8 +8,9 @@ void* fn_00a20c44(int);
 void fn_00a21528(int, int);
 
 void* fn_00a217b8(void) {
-    void* t0 = fn_00a20c44((int)(1));
-    return t0;
+    void* t0;
+    t0 = fn_00a20c44((int)(1));
+    return (void*)(t0);
 }
 
 void fn_00a217e4(int a0) {

@@ -10,7 +10,7 @@ static void __attribute__((noinline)) stub_0006a0a8(int p0, int p1, int p2, int 
 int fn_0006d28c(void) {
     stub_0006a058();
     stub_0006a0a8((int)(2), (int)(0), (int)(1), (int)(1), (int)(0), (int)(0));
-    return 0;
+    return (int)(0);
 }
 
 }

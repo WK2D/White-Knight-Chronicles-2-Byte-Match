@@ -12,8 +12,8 @@ struct unk_00dc753c_a0 {
 };
 extern char g_00dc753c_0[];
 void fn_00dc753c(unk_00dc753c_a0* a0, int a1) {
-    a0->f_8 = a1;
-    a0->f_4 = g_00dc753c_0;
+    a0->f_8 = (u32)(a1);
+    a0->f_4 = (void*)(g_00dc753c_0);
 }
 
 }

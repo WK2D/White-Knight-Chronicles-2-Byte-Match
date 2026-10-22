@@ -12,7 +12,7 @@ struct unk_0091b8d4_a0 {
 };
 void fn_0091b8d4(unk_0091b8d4_a0* a0, int a1) {
     stub_0091b810((void*)(a0), (int)(a1));
-    a0->f_c = 1;
+    a0->f_c = (u8)(1);
 }
 
 }

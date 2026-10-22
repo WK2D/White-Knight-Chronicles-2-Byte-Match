@@ -9,45 +9,57 @@ void* fn_0059cc34(void*);
 void fn_00bacb50(void*, void*);
 
 int fn_0059b284(void* a0, int a1, int a2) {
-    void* t0 = stub_00596680((int)(a2));
-    void* t1 = fn_0059cc34((void*)(a0));
+    void* t0;
+    void* t1;
+    t0 = stub_00596680((int)(a2));
+    t1 = fn_0059cc34((void*)(a0));
     fn_00bacb50((void*)(t0), (void*)(t1));
-    return 1;
+    return (int)(1);
 }
 
 int fn_0059b2e0(void* a0, int a1, int a2) {
-    void* t0 = stub_00596680((int)(a2));
-    void* t1 = fn_0059cc34((void*)(a0));
+    void* t0;
+    void* t1;
+    t0 = stub_00596680((int)(a2));
+    t1 = fn_0059cc34((void*)(a0));
     fn_00bacb50((void*)(t0), (void*)(t1));
-    return 1;
+    return (int)(1);
 }
 
 int fn_0059b33c(void* a0, int a1, int a2) {
-    void* t0 = stub_00596680((int)(a2));
-    void* t1 = fn_0059cc34((void*)(a0));
+    void* t0;
+    void* t1;
+    t0 = stub_00596680((int)(a2));
+    t1 = fn_0059cc34((void*)(a0));
     fn_00bacb50((void*)(t0), (void*)(t1));
-    return 1;
+    return (int)(1);
 }
 
 int fn_0059b398(void* a0, int a1, int a2) {
-    void* t0 = stub_00596680((int)(a2));
-    void* t1 = fn_0059cc34((void*)(a0));
+    void* t0;
+    void* t1;
+    t0 = stub_00596680((int)(a2));
+    t1 = fn_0059cc34((void*)(a0));
     fn_00bacb50((void*)(t0), (void*)(t1));
-    return 1;
+    return (int)(1);
 }
 
 int fn_0059b3f4(void* a0, int a1, int a2) {
-    void* t0 = stub_00596680((int)(a2));
-    void* t1 = fn_0059cc34((void*)(a0));
+    void* t0;
+    void* t1;
+    t0 = stub_00596680((int)(a2));
+    t1 = fn_0059cc34((void*)(a0));
     fn_00bacb50((void*)(t0), (void*)(t1));
-    return 1;
+    return (int)(1);
 }
 
 int fn_0059b450(void* a0, int a1, int a2) {
-    void* t0 = stub_00596680((int)(a2));
-    void* t1 = fn_0059cc34((void*)(a0));
+    void* t0;
+    void* t1;
+    t0 = stub_00596680((int)(a2));
+    t1 = fn_0059cc34((void*)(a0));
     fn_00bacb50((void*)(t0), (void*)(t1));
-    return 1;
+    return (int)(1);
 }
 
 }

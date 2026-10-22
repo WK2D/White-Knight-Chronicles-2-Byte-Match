@@ -12,7 +12,7 @@ struct unk_00e9937c_a0 {
 };
 void fn_00e9937c(unk_00e9937c_a0* a0) {
     fn_00fc929c();
-    a0->f_18 = 0;
+    a0->f_18 = (u32)(0);
 }
 
 }

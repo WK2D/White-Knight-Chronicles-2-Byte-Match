@@ -6,7 +6,7 @@ extern "C" {
 
 
 int fn_0070bd88(int a0, int a1) {
-    return a1 + 15;
+    return (int)(a1 + 15);
 }
 
 }

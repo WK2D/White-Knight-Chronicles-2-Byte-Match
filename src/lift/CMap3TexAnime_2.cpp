@@ -9,6 +9,15 @@ void fn_00b8bf0c(void);
 void fn_00b8bf9c(void);
 void fn_00b8c008(void);
 
+struct unk_00b8b1e8_a0 {
+    char pad_0[8];
+    u32 f_8;
+    u32 f_c;
+};
+void* fn_00b8b1e8(unk_00b8b1e8_a0* a0) {
+    return (void*)((int)(a0->f_8) - (int)(a0->f_c));
+}
+
 void fn_00b8bee8(void) {
     fn_00b8bea0();
 }

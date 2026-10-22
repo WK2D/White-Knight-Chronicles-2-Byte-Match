@@ -10,7 +10,7 @@ struct unk_00bd24bc_a0 {
     u32 f_4;
 };
 void fn_00bd24bc(unk_00bd24bc_a0* a0) {
-    FIELD(u8, a0->f_4, 44) = 1;
+    FIELD(u8, a0->f_4, 44) = (u8)(1);
 }
 
 struct unk_00bd24cc_a0 {
@@ -18,7 +18,7 @@ struct unk_00bd24cc_a0 {
     u32 f_4;
 };
 void fn_00bd24cc(unk_00bd24cc_a0* a0) {
-    FIELD(u8, a0->f_4, 44) = 1;
+    FIELD(u8, a0->f_4, 44) = (u8)(1);
 }
 
 }

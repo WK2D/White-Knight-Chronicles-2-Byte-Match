@@ -9,18 +9,21 @@ int fn_00b473f8(void);
 int fn_00b479ac(void);
 
 u8 fn_00b46668(void) {
-    int t0 = fn_00b46120();
-    return (u8)t0;
+    int t0;
+    t0 = fn_00b46120();
+    return (u8)((u8)t0);
 }
 
 u8 fn_00b47984(void) {
-    int t0 = fn_00b473f8();
-    return (u8)t0;
+    int t0;
+    t0 = fn_00b473f8();
+    return (u8)((u8)t0);
 }
 
 u8 fn_00b47f24(void) {
-    int t0 = fn_00b479ac();
-    return (u8)t0;
+    int t0;
+    t0 = fn_00b479ac();
+    return (u8)((u8)t0);
 }
 
 }

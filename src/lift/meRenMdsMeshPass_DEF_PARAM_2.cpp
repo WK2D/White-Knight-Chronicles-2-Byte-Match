@@ -12,7 +12,7 @@ struct unk_00bd3694_a0 {
 };
 extern char g_00bd3694_0[];
 void fn_00bd3694(unk_00bd3694_a0* a0) {
-    a0->f_0 = g_00bd3694_0;
+    a0->f_0 = (void*)(g_00bd3694_0);
     fn_00aa3128((void*)(a0));
     fn_00aa3054((void*)(a0), (int)(128));
 }
@@ -22,7 +22,7 @@ struct unk_00bd36dc_a0 {
 };
 extern char g_00bd36dc_0[];
 void fn_00bd36dc(unk_00bd36dc_a0* a0) {
-    a0->f_0 = g_00bd36dc_0;
+    a0->f_0 = (void*)(g_00bd36dc_0);
     fn_00aa3128((void*)(a0));
 }
 

@@ -30,8 +30,9 @@ struct unk_00bef1c8_a0 {
     u32 f_10;
 };
 void* fn_00bef1c8(unk_00bef1c8_a0* a0) {
-    void* t0 = fn_00af9e18((u32)(a0->f_10));
-    return t0;
+    void* t0;
+    t0 = fn_00af9e18((u32)(a0->f_10));
+    return (void*)(t0);
 }
 
 struct unk_00bef1f4_a0 {
@@ -39,8 +40,9 @@ struct unk_00bef1f4_a0 {
     u32 f_10;
 };
 void* fn_00bef1f4(unk_00bef1f4_a0* a0) {
-    void* t0 = fn_00af9e10((u32)(a0->f_10));
-    return t0;
+    void* t0;
+    t0 = fn_00af9e10((u32)(a0->f_10));
+    return (void*)(t0);
 }
 
 }

@@ -10,9 +10,11 @@ int fn_00b3d9c8(int);
 void fn_00b3e2e8(void);
 
 u8 fn_008cdf40(void* a0, int a1) {
-    int t0 = fn_00b3d9c8((int)(a1));
-    int t1 = stub_008cddbc((void*)(a0), (u16)((u16)t0));
-    return (u8)t1;
+    int t0;
+    int t1;
+    t0 = fn_00b3d9c8((int)(a1));
+    t1 = stub_008cddbc((void*)(a0), (u16)((u16)t0));
+    return (u8)((u8)t1);
 }
 
 void fn_008cdf84(void* a0) {

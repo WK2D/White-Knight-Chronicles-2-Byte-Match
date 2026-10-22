@@ -5,13 +5,27 @@
 extern "C" {
 
 
+struct unk_00b91738_a0 {
+    char pad_0[248];
+    u32 f_f8;
+};
+void* fn_00b91738(unk_00b91738_a0* a0, int a1) {
+    int v0;
+    if ((int)(a1) == (int)(0)) {
+        v0 = (int)(a0->f_f8);
+    } else {
+        v0 = (int)(0);
+    }
+    return (void*)(v0);
+}
+
 struct unk_00b91788_a0 {
     char pad_0[1028];
     u32 f_404;
 };
 int fn_00b91788(unk_00b91788_a0* a0, int a1) {
-    a0->f_404 = a1;
-    return a1;
+    a0->f_404 = (u32)(a1);
+    return (int)(a1);
 }
 
 }

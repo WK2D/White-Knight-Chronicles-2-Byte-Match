@@ -28,8 +28,8 @@ struct unk_002d6670_a0 {
     u32 f_4;
 };
 void fn_002d6670(unk_002d6670_a0* a0, int a1, int a2) {
-    a0->f_4 = a2;
-    a0->f_0 = a1;
+    a0->f_4 = (u32)(a2);
+    a0->f_0 = (u32)(a1);
     fn_002d2864((int)(a1));
 }
 
@@ -38,8 +38,8 @@ struct unk_002d66a4_a0 {
     u32 f_4;
 };
 void fn_002d66a4(unk_002d66a4_a0* a0, int a1, int a2) {
-    a0->f_4 = a2;
-    a0->f_0 = a1;
+    a0->f_4 = (u32)(a2);
+    a0->f_0 = (u32)(a1);
     fn_002d2864((int)(a1));
 }
 
@@ -48,13 +48,28 @@ struct unk_002d66d8_a0 {
     u32 f_4;
 };
 u32 fn_002d66d8(unk_002d66d8_a0* a0) {
-    return FIELD(u32, a0->f_4 + FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 8);
+    return (u32)(FIELD(u32, (int)(a0->f_4) + (int)(FIELD(u32, FIELD(u32, a0->f_0, 0), 0)), 8));
+}
+
+struct unk_002d6778_a0 {
+    u32 f_0;
+    u32 f_4;
+};
+void* fn_002d6778(unk_002d6778_a0* a0) {
+    int v0;
+    if ((u32)(FIELD(u32, (int)(a0->f_4) + (int)(FIELD(u32, FIELD(u32, a0->f_0, 0), 0)), 8)) > (u32)(3)) {
+        v0 = (int)(FIELD(u32, (int)(a0->f_4) + (int)(FIELD(u32, FIELD(u32, a0->f_0, 0), 0)), 28));
+    } else {
+        v0 = (int)(0);
+    }
+    return (void*)(v0);
 }
 
 extern char g_002d6cac_0[];
 void* fn_002d6cac(int a0) {
-    void* t0 = fn_00076a98((void*)(g_002d6cac_0), (int)(a0), (int)(0), (int)(-1), (int)(0), (int)(0));
-    return t0;
+    void* t0;
+    t0 = fn_00076a98((void*)(g_002d6cac_0), (int)(a0), (int)(0), (int)(-1), (int)(0), (int)(0));
+    return (void*)(t0);
 }
 
 struct unk_002d6d44_a0 {
@@ -64,8 +79,8 @@ struct unk_002d6d44_a0 {
 };
 void fn_002d6d44(unk_002d6d44_a0* a0, int a1, int a2) {
     stub_002d6cec((void*)(a0), (int)(a1), (int)(a2));
-    a0->f_10 = 1;
-    a0->f_11 = 0;
+    a0->f_10 = (u8)(1);
+    a0->f_11 = (u8)(0);
 }
 
 struct unk_002d6d80_a0 {
@@ -75,8 +90,8 @@ struct unk_002d6d80_a0 {
 };
 void fn_002d6d80(unk_002d6d80_a0* a0, int a1, int a2) {
     stub_002d6cec((void*)(a0), (int)(a1), (int)(a2));
-    a0->f_10 = 1;
-    a0->f_11 = 0;
+    a0->f_10 = (u8)(1);
+    a0->f_11 = (u8)(0);
 }
 
 struct unk_002d6dc4_a0 {
@@ -85,7 +100,7 @@ struct unk_002d6dc4_a0 {
     u32 f_8;
 };
 u8 fn_002d6dc4(unk_002d6dc4_a0* a0) {
-    return FIELD(u8, a0->f_8 + FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 28);
+    return (u8)(FIELD(u8, (int)(a0->f_8) + (int)(FIELD(u32, FIELD(u32, a0->f_0, 0), 0)), 28));
 }
 
 }

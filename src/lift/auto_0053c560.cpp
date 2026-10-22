@@ -10,9 +10,10 @@ void fn_005520c4(u32, void*, int, int);
 void fn_005534c4(u32, void*, int);
 
 void* fn_0053ed74(void* a0, int a1) {
-    int t0 = stub_00539c40((int)(a1));
+    int t0;
+    t0 = stub_00539c40((int)(a1));
     stub_0053ea64((void*)(a0), (u8)((u8)t0));
-    return a0;
+    return (void*)(a0);
 }
 
 struct unk_00543d38_a0 {

@@ -7,8 +7,9 @@ extern "C" {
 int fn_00089864(void*);
 
 int fn_00088db4(void* a0) {
-    int t0 = fn_00089864((void*)((char*)a0 + 32));
-    return t0;
+    int t0;
+    t0 = fn_00089864((void*)((char*)a0 + 32));
+    return (int)(t0);
 }
 
 }

@@ -31,12 +31,12 @@ struct unk_005dab8c_a0 {
 };
 int fn_005dab8c(unk_005dab8c_a0* a0) {
     fn_005fe2fc((u32)(a0->f_100c), (void*)((char*)a0 + 8));
-    return 1;
+    return (int)(1);
 }
 
 int fn_005dabc0(void* a0) {
     fn_000340b0((void*)((char*)a0 + 4016), (int)(1));
-    return 0;
+    return (int)(0);
 }
 
 }

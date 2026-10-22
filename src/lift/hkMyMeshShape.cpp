@@ -4,10 +4,18 @@
 
 extern "C" {
 
+void fn_00b396b8(int, int, int);
+void fn_00b39818(int);
 void fn_00b39828(int);
 
 void fn_002cd078(int a0, int a1, int a2) {
     fn_00b39828((int)(a2));
+}
+
+void fn_002cd0a0(int a0, int a1, int a2) {
+    fn_00b39818((int)(a2));
+    fn_00b396b8((int)(a2), (int)(18), (int)(6913));
+    fn_00b396b8((int)(a2), (int)(19), (int)(6913));
 }
 
 }

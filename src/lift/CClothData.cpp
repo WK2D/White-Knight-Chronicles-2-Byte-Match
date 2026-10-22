@@ -7,8 +7,9 @@ extern "C" {
 static int __attribute__((noinline)) stub_00186c28(void) { int r; __asm__ volatile ("" : "=r"(r)); return r; }
 
 u8 fn_00186cfc(void) {
-    int t0 = stub_00186c28();
-    return (u8)t0;
+    int t0;
+    t0 = stub_00186c28();
+    return (u8)((u8)t0);
 }
 
 }

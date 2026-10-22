@@ -11,9 +11,10 @@ struct unk_00954308_a0 {
     u32 f_14;
 };
 void* fn_00954308(unk_00954308_a0* a0) {
-    void* t0 = fn_009588a4((u32)(a0->f_14));
-    FIELD(void*, t0, 12) = a0;
-    return t0;
+    void* t0;
+    t0 = fn_009588a4((u32)(a0->f_14));
+    FIELD(void*, t0, 12) = (void*)(a0);
+    return (void*)(t0);
 }
 
 }

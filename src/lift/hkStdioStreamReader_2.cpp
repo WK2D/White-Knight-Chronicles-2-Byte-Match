@@ -11,8 +11,9 @@ struct unk_00c16bb0_a0 {
     u32 f_c;
 };
 int fn_00c16bb0(unk_00c16bb0_a0* a0) {
-    int t0 = fn_00fc8d2c((u32)(a0->f_c));
-    return t0;
+    int t0;
+    t0 = fn_00fc8d2c((u32)(a0->f_c));
+    return (int)(t0);
 }
 
 }

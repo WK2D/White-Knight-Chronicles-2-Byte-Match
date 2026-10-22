@@ -4,6 +4,7 @@
 
 extern "C" {
 
+static void* __attribute__((noinline)) stub_003bdddc(int p0) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 void fn_00b38268(void*);
 
 struct unk_003bb2e8_a0 {
@@ -12,6 +13,99 @@ struct unk_003bb2e8_a0 {
 };
 void fn_003bb2e8(unk_003bb2e8_a0* a0) {
     fn_00b38268((void*)(a0->f_8 + 10));
+}
+
+struct unk_003bde20_a0 {
+    char pad_0[4];
+    u32 f_4;
+};
+int fn_003bde20(unk_003bde20_a0* a0) {
+    int v0;
+    if ((int)(a0->f_4) != (int)(0)) {
+        v0 = (int)(FIELD(u16, a0->f_4, 8960));
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
+int fn_003bde40(int a0) {
+    void* t0;
+    int v0;
+    t0 = stub_003bdddc((int)(a0));
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)(FIELD(u16, t0, 2));
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
+struct unk_003bdec0_a0 {
+    char pad_0[4];
+    u32 f_4;
+};
+int fn_003bdec0(unk_003bdec0_a0* a0) {
+    int v0;
+    if ((int)(a0->f_4) != (int)(0)) {
+        v0 = (int)(FIELD(u16, a0->f_4, 8962));
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
+struct unk_003bdf34_a0 {
+    char pad_0[4];
+    u32 f_4;
+};
+void* fn_003bdf34(unk_003bdf34_a0* a0) {
+    int v0;
+    if ((int)(a0->f_4) != (int)(0)) {
+        v0 = (int)(a0->f_4 + 8964);
+    } else {
+        v0 = (int)(0);
+    }
+    return (void*)(v0);
+}
+
+struct unk_003bdf58_a0 {
+    char pad_0[4];
+    u32 f_4;
+};
+void* fn_003bdf58(unk_003bdf58_a0* a0) {
+    int v0;
+    if ((int)(a0->f_4) != (int)(0)) {
+        v0 = (int)(a0->f_4 + 9156);
+    } else {
+        v0 = (int)(0);
+    }
+    return (void*)(v0);
+}
+
+struct unk_003bdfb0_a0 {
+    char pad_0[4];
+    u32 f_4;
+};
+void fn_003bdfb0(unk_003bdfb0_a0* a0, int a1) {
+    if ((int)(a0->f_4) == (int)(0)) {
+        return;
+    }
+    FIELD(u16, a0->f_4, 9192) = (u16)(a1);
+}
+
+struct unk_003bdfc8_a0 {
+    char pad_0[4];
+    u32 f_4;
+};
+int fn_003bdfc8(unk_003bdfc8_a0* a0) {
+    int v0;
+    if ((int)(a0->f_4) != (int)(0)) {
+        v0 = (int)(FIELD(u16, a0->f_4, 9192));
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
 }
 
 }

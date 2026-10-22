@@ -9,14 +9,16 @@ int fn_003e7144(u32);
 
 extern char g_005d8548_0[];
 void* fn_005d8548(void) {
-    void* t0 = fn_003e7128((u32)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_005d8548_0, 0), 108), 8), 264)));
-    return t0;
+    void* t0;
+    t0 = fn_003e7128((u32)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_005d8548_0, 0), 108), 8), 264)));
+    return (void*)(t0);
 }
 
 extern char g_005d85f0_0[];
 u8 fn_005d85f0(void) {
-    int t0 = fn_003e7144((u32)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_005d85f0_0, 0), 108), 8), 264)));
-    return (u8)t0;
+    int t0;
+    t0 = fn_003e7144((u32)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_005d85f0_0, 0), 108), 8), 264)));
+    return (u8)((u8)t0);
 }
 
 }

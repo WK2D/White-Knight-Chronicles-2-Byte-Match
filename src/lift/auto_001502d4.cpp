@@ -5,10 +5,32 @@
 extern "C" {
 
 static int __attribute__((noinline)) stub_001503f0(void) { int r; __asm__ volatile ("" : "=r"(r)); return r; }
+void fn_00b37fa8(void*, int, int);
 
 u8 fn_001504d4(void) {
-    int t0 = stub_001503f0();
-    return (u8)t0;
+    int t0;
+    t0 = stub_001503f0();
+    return (u8)((u8)t0);
+}
+
+struct unk_00150648_a0 {
+    char pad_0[768];
+    u32 f_300;
+};
+void fn_00150648(unk_00150648_a0* a0) {
+    fn_00b37fa8((void*)(a0), (int)(0), (int)(512));
+    fn_00b37fa8((void*)((char*)a0 + 512), (int)(0), (int)(256));
+    a0->f_300 = (u32)(0);
+}
+
+struct unk_001506ac_a0 {
+    char pad_0[768];
+    u32 f_300;
+};
+void fn_001506ac(unk_001506ac_a0* a0) {
+    fn_00b37fa8((void*)(a0), (int)(0), (int)(512));
+    fn_00b37fa8((void*)((char*)a0 + 512), (int)(0), (int)(256));
+    a0->f_300 = (u32)(0);
 }
 
 }

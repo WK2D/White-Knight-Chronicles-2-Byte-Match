@@ -10,7 +10,7 @@ struct unk_00c4ccf4_a0 {
     u32 f_1c;
 };
 int fn_00c4ccf4(unk_00c4ccf4_a0* a0) {
-    return (int)FIELD(u32, a0->f_1c, 20);
+    return (int)((int)FIELD(u32, a0->f_1c, 20));
 }
 
 }

@@ -15,8 +15,8 @@ struct unk_008f6f7c_a0 {
 };
 void fn_008f6f7c(unk_008f6f7c_a0* a0) {
     stub_008f6ee0((void*)(a0));
-    a0->f_18 = -1;
-    a0->f_1c = 0;
+    a0->f_18 = (u32)(-1);
+    a0->f_1c = (u32)(0);
 }
 
 struct unk_008f7118_a0 {
@@ -25,7 +25,7 @@ struct unk_008f7118_a0 {
 };
 void fn_008f7118(unk_008f7118_a0* a0) {
     stub_008f70c8((void*)(a0));
-    a0->f_24 = 0;
+    a0->f_24 = (u32)(0);
 }
 
 struct unk_008f714c_a0 {
@@ -34,7 +34,7 @@ struct unk_008f714c_a0 {
 };
 void fn_008f714c(unk_008f714c_a0* a0) {
     stub_008f70f0((void*)(a0));
-    a0->f_24 = 0;
+    a0->f_24 = (u32)(0);
 }
 
 }

@@ -12,7 +12,7 @@ struct unk_002d2c14_a0 {
 };
 void fn_002d2c14(unk_002d2c14_a0* a0, int a1, int a2) {
     fn_002d3820((int)(a1), (int)(a2), (void*)(a0));
-    a0->f_4 = a2;
+    a0->f_4 = (u32)(a2);
 }
 
 struct unk_002d2c60_a0 {
@@ -21,7 +21,7 @@ struct unk_002d2c60_a0 {
 };
 void fn_002d2c60(unk_002d2c60_a0* a0, int a1, int a2) {
     fn_002d3820((int)(a1), (int)(a2), (void*)(a0));
-    a0->f_4 = a2;
+    a0->f_4 = (u32)(a2);
 }
 
 }

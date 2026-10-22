@@ -7,53 +7,53 @@ extern "C" {
 
 extern char g_00421448_0[];
 int fn_00421448(void) {
-    FIELD(u32, FIELD(u32, g_00421448_0, 0), 4) = 0;
-    return 1;
+    FIELD(u32, FIELD(u32, g_00421448_0, 0), 4) = (u32)(0);
+    return (int)(1);
 }
 
 extern char g_00421460_0[];
 int fn_00421460(void) {
-    FIELD(u32, FIELD(u32, g_00421460_0, 0), 4) = 0;
-    return 1;
+    FIELD(u32, FIELD(u32, g_00421460_0, 0), 4) = (u32)(0);
+    return (int)(1);
 }
 
 extern char g_00421478_0[];
 int fn_00421478(void) {
-    FIELD(u32, FIELD(u32, g_00421478_0, 0), 4) = 0;
-    return 1;
+    FIELD(u32, FIELD(u32, g_00421478_0, 0), 4) = (u32)(0);
+    return (int)(1);
 }
 
 extern char g_00421490_0[];
 int fn_00421490(void) {
-    FIELD(u32, FIELD(u32, g_00421490_0, 0), 4) = 0;
-    return 1;
+    FIELD(u32, FIELD(u32, g_00421490_0, 0), 4) = (u32)(0);
+    return (int)(1);
 }
 
 extern char g_004214a8_0[];
 int fn_004214a8(void) {
-    FIELD(u32, FIELD(u32, g_004214a8_0, 0), 4) = 0;
-    return 1;
+    FIELD(u32, FIELD(u32, g_004214a8_0, 0), 4) = (u32)(0);
+    return (int)(1);
 }
 
 struct unk_00422700_a0 {
     u32 f_0;
 };
 u32 fn_00422700(unk_00422700_a0* a0) {
-    return FIELD(u32, FIELD(u32, a0->f_0, 0), 0);
+    return (u32)(FIELD(u32, FIELD(u32, a0->f_0, 0), 0));
 }
 
 struct unk_00422b54_a0 {
     u32 f_0;
 };
 u32 fn_00422b54(unk_00422b54_a0* a0) {
-    return FIELD(u32, FIELD(u32, a0->f_0, 0), 4);
+    return (u32)(FIELD(u32, FIELD(u32, a0->f_0, 0), 4));
 }
 
 struct unk_00422b64_a0 {
     u32 f_0;
 };
 u8 fn_00422b64(unk_00422b64_a0* a0) {
-    return FIELD(u8, FIELD(u32, a0->f_0, 0), 14);
+    return (u8)(FIELD(u8, FIELD(u32, a0->f_0, 0), 14));
 }
 
 }

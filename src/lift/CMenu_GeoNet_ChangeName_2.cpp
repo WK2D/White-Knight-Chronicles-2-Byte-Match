@@ -14,7 +14,7 @@ struct unk_00690490_a2 {
 int fn_00690490(void* a0, int a1, unk_00690490_a2* a2) {
     fn_0004dfb8((void*)(a2), (u32)(a2->f_194), (int)(1019), (int)(1), (int)(0));
     stub_0068f550((void*)(a0), (void*)(a2));
-    return 1;
+    return (int)(1);
 }
 
 }

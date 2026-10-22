@@ -7,8 +7,8 @@ extern "C" {
 
 extern char g_0098050c_0[];
 int fn_0098050c(void) {
-    FIELD(u32, FIELD(u32, g_0098050c_0, 0), 292) = 0;
-    return 0;
+    FIELD(u32, FIELD(u32, g_0098050c_0, 0), 292) = (u32)(0);
+    return (int)(0);
 }
 
 }

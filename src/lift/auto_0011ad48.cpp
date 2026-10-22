@@ -12,8 +12,8 @@ struct unk_0011b058_a0 {
 };
 int fn_0011b058(unk_0011b058_a0* a0) {
     stub_0011aa84((void*)(a0), (int)(1));
-    a0->f_3ffe = 3;
-    return 1;
+    a0->f_3ffe = (u16)(3);
+    return (int)(1);
 }
 
 }

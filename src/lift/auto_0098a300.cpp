@@ -19,73 +19,87 @@ void* fn_0098c56c(void);
 void* fn_0098c5bc(void);
 
 void* fn_0098a30c(void) {
-    void* t0 = fn_0098b7c8();
-    return t0;
+    void* t0;
+    t0 = fn_0098b7c8();
+    return (void*)(t0);
 }
 
 void* fn_0098a334(void) {
-    void* t0 = fn_0098bbc0();
-    return t0;
+    void* t0;
+    t0 = fn_0098bbc0();
+    return (void*)(t0);
 }
 
 void* fn_0098a35c(void) {
-    void* t0 = fn_0098bd5c();
-    return t0;
+    void* t0;
+    t0 = fn_0098bd5c();
+    return (void*)(t0);
 }
 
 void* fn_0098a384(void) {
-    void* t0 = fn_0098bf0c();
-    return t0;
+    void* t0;
+    t0 = fn_0098bf0c();
+    return (void*)(t0);
 }
 
 void* fn_0098af50(void) {
-    void* t0 = fn_0098c56c();
-    return t0;
+    void* t0;
+    t0 = fn_0098c56c();
+    return (void*)(t0);
 }
 
 void* fn_0098b010(void) {
-    void* t0 = fn_0098c104();
-    return t0;
+    void* t0;
+    t0 = fn_0098c104();
+    return (void*)(t0);
 }
 
 void* fn_0098b038(void) {
-    void* t0 = fn_0098c234();
-    return t0;
+    void* t0;
+    t0 = fn_0098c234();
+    return (void*)(t0);
 }
 
 void* fn_0098b060(void) {
-    void* t0 = fn_0098c458();
-    return t0;
+    void* t0;
+    t0 = fn_0098c458();
+    return (void*)(t0);
 }
 
 void* fn_0098b088(void) {
-    void* t0 = fn_0098c458();
-    return t0;
+    void* t0;
+    t0 = fn_0098c458();
+    return (void*)(t0);
 }
 
 void* fn_0098b670(int a0, int a1) {
-    void* t0 = fn_0098b7b8((int)(a0), (int)(a1));
-    return t0;
+    void* t0;
+    t0 = fn_0098b7b8((int)(a0), (int)(a1));
+    return (void*)(t0);
 }
 
 void* fn_0098b698(void) {
-    void* t0 = fn_0098c51c();
-    return t0;
+    void* t0;
+    t0 = fn_0098c51c();
+    return (void*)(t0);
 }
 
 void* fn_0098b6c0(void) {
-    void* t0 = fn_0098c5bc();
-    return t0;
+    void* t0;
+    t0 = fn_0098c5bc();
+    return (void*)(t0);
 }
 
 void* fn_0098b728(void) {
-    void* t0 = fn_0098b7b0();
-    return t0;
+    void* t0;
+    t0 = fn_0098b7b0();
+    return (void*)(t0);
 }
 
 void* fn_0098b750(void) {
-    void* t0 = fn_0098b7a8();
-    return t0;
+    void* t0;
+    t0 = fn_0098b7a8();
+    return (void*)(t0);
 }
 
 }

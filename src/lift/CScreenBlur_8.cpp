@@ -10,7 +10,15 @@ struct unk_004bf9fc_a0 {
     u32 f_30;
 };
 void fn_004bf9fc(unk_004bf9fc_a0* a0) {
-    FIELD(u8, a0->f_30, 88) = 1;
+    FIELD(u8, a0->f_30, 88) = (u8)(1);
+}
+
+struct unk_004bfa34_a0 {
+    char pad_0[48];
+    u32 f_30;
+};
+void* fn_004bfa34(unk_004bfa34_a0* a0) {
+    return (void*)(a0->f_30 + 60);
 }
 
 }

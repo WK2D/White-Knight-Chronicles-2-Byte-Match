@@ -8,8 +8,9 @@ static int __attribute__((noinline)) stub_0051ad64(void* p0) { int r; __asm__ vo
 
 extern char g_0051afa4_0[];
 u8 fn_0051afa4(void) {
-    int t0 = stub_0051ad64((void*)(g_0051afa4_0));
-    return (u8)t0;
+    int t0;
+    t0 = stub_0051ad64((void*)(g_0051afa4_0));
+    return (u8)((u8)t0);
 }
 
 }

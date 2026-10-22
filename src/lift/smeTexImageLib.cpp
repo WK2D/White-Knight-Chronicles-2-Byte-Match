@@ -8,9 +8,11 @@ static int __attribute__((noinline)) stub_00064cb8(void* p0, void* p1, void* p2,
 void* fn_00b38808(int);
 
 u8 fn_00064f80(void* a0, int a1, void* a2, void* a3) {
-    void* t0 = fn_00b38808((int)(a1));
-    int t1 = stub_00064cb8((void*)(a0), (void*)(t0), (void*)(a2), (void*)(a3));
-    return (u8)t1;
+    void* t0;
+    int t1;
+    t0 = fn_00b38808((int)(a1));
+    t1 = stub_00064cb8((void*)(a0), (void*)(t0), (void*)(a2), (void*)(a3));
+    return (u8)((u8)t1);
 }
 
 }

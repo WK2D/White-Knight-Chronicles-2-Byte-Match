@@ -11,8 +11,9 @@ struct unk_00531cf4_a0 {
     u32 f_5c;
 };
 int fn_00531cf4(unk_00531cf4_a0* a0) {
-    int t0 = fn_000a5f6c((void*)(a0));
-    return t0 + a0->f_5c;
+    int t0;
+    t0 = fn_000a5f6c((void*)(a0));
+    return (int)((int)(t0) + (int)(a0->f_5c));
 }
 
 }

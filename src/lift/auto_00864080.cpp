@@ -5,10 +5,28 @@
 extern "C" {
 
 void fn_00863d34(void*);
+static int __attribute__((noinline)) stub_00865ebc(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+
+struct unk_00865ec4_a0 {
+    char pad_0[4824];
+    u16 f_12d8;
+};
+int fn_00865ec4(unk_00865ec4_a0* a0) {
+    int t0;
+    int v0;
+    t0 = stub_00865ebc((void*)(a0));
+    if ((int)(a0->f_12d8) != (int)(t0)) {
+        a0->f_12d8 = (u16)(t0);
+        v0 = (int)(1);
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
 
 int fn_00865fe4(void* a0) {
     fn_00863d34((void*)((char*)a0 + 544));
-    return 1;
+    return (int)(1);
 }
 
 }

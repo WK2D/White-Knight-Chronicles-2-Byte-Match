@@ -12,8 +12,9 @@ void fn_00032814(void) {
 }
 
 void* fn_0003297c(int a0, int a1) {
-    void* t0 = fn_00b38518((int)(a1), (int)(a0));
-    return t0;
+    void* t0;
+    t0 = fn_00b38518((int)(a1), (int)(a0));
+    return (void*)(t0);
 }
 
 }

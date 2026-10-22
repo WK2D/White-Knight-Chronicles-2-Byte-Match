@@ -6,6 +6,7 @@ extern "C" {
 
 void fn_000c39ac(void);
 void fn_000c3a44(void);
+void fn_00b39e48(int, int, void*, int);
 
 void fn_004c54bc(void) {
     fn_000c3a44();
@@ -13,6 +14,11 @@ void fn_004c54bc(void) {
 
 void fn_004c54e0(void) {
     fn_000c39ac();
+}
+
+void fn_004c60c8(void* a0, int a1) {
+    fn_00b39e48((int)(a1), (int)(35), (void*)((char*)a0 + 4180), (int)(4));
+    fn_00b39e48((int)(a1), (int)(36), (void*)((char*)a0 + 4196), (int)(4));
 }
 
 }

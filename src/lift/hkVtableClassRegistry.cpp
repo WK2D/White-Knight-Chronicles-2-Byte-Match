@@ -11,8 +11,9 @@ struct unk_00f45f80_a1 {
     u32 f_0;
 };
 void* fn_00f45f80(void* a0, unk_00f45f80_a1* a1) {
-    void* t0 = fn_00fc931c((void*)((char*)a0 + 8), (u32)(a1->f_0), (int)(0));
-    return t0;
+    void* t0;
+    t0 = fn_00fc931c((void*)((char*)a0 + 8), (u32)(a1->f_0), (int)(0));
+    return (void*)(t0);
 }
 
 void fn_00f45fb8(void* a0) {

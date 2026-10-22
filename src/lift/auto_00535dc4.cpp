@@ -7,8 +7,9 @@ extern "C" {
 int fn_0058fbac(void);
 
 u8 fn_00536210(void) {
-    int t0 = fn_0058fbac();
-    return (u8)t0;
+    int t0;
+    t0 = fn_0058fbac();
+    return (u8)((u8)t0);
 }
 
 }

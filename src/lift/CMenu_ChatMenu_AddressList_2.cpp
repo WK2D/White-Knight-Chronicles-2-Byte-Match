@@ -8,7 +8,7 @@ static void __attribute__((noinline)) stub_00795430(void) { __asm__ volatile (""
 
 int fn_007954b0(void) {
     stub_00795430();
-    return 1;
+    return (int)(1);
 }
 
 }

@@ -6,6 +6,48 @@ extern "C" {
 
 void fn_009b4ca4(void);
 
+struct unk_009d66c0_a0 {
+    char pad_0[4];
+    u32 f_4;
+};
+void* fn_009d66c0(unk_009d66c0_a0* a0) {
+    int v0;
+    if (a0 != 0) {
+        v0 = (int)(a0->f_4);
+    } else {
+        v0 = (int)(0);
+    }
+    return (void*)(v0);
+}
+
+struct unk_009d66d8_a0 {
+    char pad_0[8];
+    u32 f_8;
+};
+void* fn_009d66d8(unk_009d66d8_a0* a0) {
+    int v0;
+    if (a0 != 0) {
+        v0 = (int)(a0->f_8);
+    } else {
+        v0 = (int)(0);
+    }
+    return (void*)(v0);
+}
+
+struct unk_009d66f0_a0 {
+    char pad_0[12];
+    u32 f_c;
+};
+void* fn_009d66f0(unk_009d66f0_a0* a0) {
+    int v0;
+    if (a0 != 0) {
+        v0 = (int)(a0->f_c);
+    } else {
+        v0 = (int)(0);
+    }
+    return (void*)(v0);
+}
+
 void fn_009d68f4(void) {
     fn_009b4ca4();
 }

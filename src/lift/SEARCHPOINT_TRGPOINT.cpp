@@ -7,6 +7,8 @@ extern "C" {
 void* fn_00034810(u32, int, void*, int);
 void fn_00308994(void*);
 void fn_003089cc(void*);
+static int __attribute__((noinline)) stub_0048f5b8(void* p0, void* p1, void* p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
+static int __attribute__((noinline)) stub_0048f8a4(void* p0, void* p1, void* p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
 
 struct unk_0048ffac_a0 {
     char pad_0[40];
@@ -14,8 +16,9 @@ struct unk_0048ffac_a0 {
 };
 extern char g_0048ffac_0[];
 void* fn_0048ffac(unk_0048ffac_a0* a0) {
-    void* t0 = fn_00034810((u32)(a0->f_28), (int)(0), (void*)(g_0048ffac_0), (int)(0));
-    return t0;
+    void* t0;
+    t0 = fn_00034810((u32)(a0->f_28), (int)(0), (void*)(g_0048ffac_0), (int)(0));
+    return (void*)(t0);
 }
 
 struct unk_0048ffe4_a0 {
@@ -24,7 +27,7 @@ struct unk_0048ffe4_a0 {
 };
 void fn_0048ffe4(unk_0048ffe4_a0* a0) {
     fn_003089cc((void*)((char*)a0 + 4));
-    a0->f_24 = 0;
+    a0->f_24 = (u32)(0);
 }
 
 struct unk_00490024_a0 {
@@ -33,7 +36,45 @@ struct unk_00490024_a0 {
 };
 void fn_00490024(unk_00490024_a0* a0) {
     fn_00308994((void*)((char*)a0 + 4));
-    a0->f_24 = 0;
+    a0->f_24 = (u32)(0);
+}
+
+struct unk_004907b0_a0 {
+    char pad_0[424];
+    u32 f_1a8;
+};
+int fn_004907b0(unk_004907b0_a0* a0) {
+    int t0;
+    int v0;
+    int v1;
+    if ((int)(a0->f_1a8) != (int)(0)) {
+        t0 = stub_0048f8a4((void*)(a0), (void*)((char*)a0 + 428), (void*)(a0->f_1a8));
+        v0 = (int)(1);
+        v1 = (int)(t0);
+    } else {
+        v0 = (int)(0);
+        v1 = (int)(a0);
+    }
+    return (int)(v0);
+}
+
+struct unk_004907f8_a0 {
+    char pad_0[1580];
+    u32 f_62c;
+};
+int fn_004907f8(unk_004907f8_a0* a0) {
+    int t0;
+    int v0;
+    int v1;
+    if ((int)(a0->f_62c) != (int)(0)) {
+        t0 = stub_0048f5b8((void*)(a0), (void*)((char*)a0 + 1584), (void*)(a0->f_62c));
+        v0 = (int)(1);
+        v1 = (int)(t0);
+    } else {
+        v0 = (int)(0);
+        v1 = (int)(a0);
+    }
+    return (int)(v0);
 }
 
 }

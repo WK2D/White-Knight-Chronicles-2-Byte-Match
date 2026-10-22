@@ -8,8 +8,9 @@ void fn_0066793c(u32, void*, int);
 int fn_007b83a8(int, int, int, int);
 
 u8 fn_005d9f0c(int a0, int a1, int a2, int a3, int a4) {
-    int t0 = fn_007b83a8((int)(a1), (int)(a2), (int)(a3), (int)(a4));
-    return (u8)t0;
+    int t0;
+    t0 = fn_007b83a8((int)(a1), (int)(a2), (int)(a3), (int)(a4));
+    return (u8)((u8)t0);
 }
 
 struct unk_005da168_a0 {

@@ -4,13 +4,23 @@
 
 extern "C" {
 
+void fn_00a19868(u32);
+void fn_00b3d088(void*, int, int);
+
+extern char g_00a0b8a4_0[];
+void fn_00a0b8a4(void) {
+    if ((int)(FIELD(u32, g_00a0b8a4_0, 0)) != (int)(0)) {
+        fn_00a19868((u32)(FIELD(u32, g_00a0b8a4_0, 4)));
+        fn_00b3d088((void*)(g_00a0b8a4_0), (int)(0), (int)(76));
+    }
+}
 
 struct unk_00a0cd04_a0 {
     char pad_0[72];
     u32 f_48;
 };
 u8 fn_00a0cd04(unk_00a0cd04_a0* a0, int a1) {
-    return FIELD(u8, a1 + a0->f_48, 0);
+    return (u8)(FIELD(u8, (int)(a1) + (int)(a0->f_48), 0));
 }
 
 struct unk_00a0cd38_a0 {
@@ -20,7 +30,14 @@ struct unk_00a0cd38_a0 {
     u32 f_48;
 };
 int fn_00a0cd38(unk_00a0cd38_a0* a0) {
-    return a0->f_44 - (a0->f_48 - a0->f_40);
+    return (int)((int)(a0->f_44) - (int)((int)(a0->f_48) - (int)(a0->f_40)));
+}
+
+int fn_00a0ce8c(int a0, int a1) {
+    if ((int)(a0) != (int)(0)) {
+        return (int)(a0);
+    }
+    return (int)(a1);
 }
 
 }

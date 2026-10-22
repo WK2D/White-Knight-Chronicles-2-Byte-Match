@@ -8,9 +8,10 @@ void* fn_00b41fe8(int);
 
 extern char g_00abcd38_0[];
 void* fn_00abcd38(void) {
-    void* t0 = fn_00b41fe8((int)(4));
-    FIELD(void*, t0, 0) = g_00abcd38_0;
-    return t0;
+    void* t0;
+    t0 = fn_00b41fe8((int)(4));
+    FIELD(void*, t0, 0) = (void*)(g_00abcd38_0);
+    return (void*)(t0);
 }
 
 }

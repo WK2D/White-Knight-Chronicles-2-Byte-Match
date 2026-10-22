@@ -5,9 +5,14 @@
 extern "C" {
 
 
+extern char g_009a350c_0[];
+u32 fn_009a350c(void) {
+    return (u32)(FIELD(u32, FIELD(u32, g_009a350c_0, 0), 0));
+}
+
 extern char g_009a3560_0[];
 void fn_009a3560(int a0) {
-    FIELD(u32, FIELD(u32, g_009a3560_0, 0), 4) = a0;
+    FIELD(u32, FIELD(u32, g_009a3560_0, 0), 4) = (u32)(a0);
 }
 
 }

@@ -8,9 +8,10 @@ void fn_0003fab0(void*, u8);
 int fn_00539d90(void);
 
 int fn_0032c5a4(void* a0) {
-    int t0 = fn_00539d90();
+    int t0;
+    t0 = fn_00539d90();
     fn_0003fab0((void*)(a0), (u8)((u8)t0));
-    return 1;
+    return (int)(1);
 }
 
 }

@@ -5,12 +5,23 @@
 extern "C" {
 
 
+struct unk_0027bdc4_a0 {
+    char pad_0[4204];
+    u32 f_106c;
+};
+void fn_0027bdc4(unk_0027bdc4_a0* a0, int a1) {
+    if ((int)(a0->f_106c) == (int)(0)) {
+        return;
+    }
+    FIELD(u32, a0->f_106c, 4) = (u32)(a1);
+}
+
 struct unk_0027bddc_a0 {
     char pad_0[4204];
     u32 f_106c;
 };
 void fn_0027bddc(unk_0027bddc_a0* a0) {
-    FIELD(u8, a0->f_106c, 864) = 1;
+    FIELD(u8, a0->f_106c, 864) = (u8)(1);
 }
 
 }

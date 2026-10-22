@@ -7,8 +7,24 @@ extern "C" {
 void* fn_00048e54(int, int, int);
 void fn_0004dc54(int, void*, void*, int, u16);
 
+struct unk_0066ea90_a1 {
+    u8 f_0;
+};
+struct unk_0066ea90_a4 {
+    char pad_0[8];
+    u32 f_8;
+};
+int fn_0066ea90(int a0, unk_0066ea90_a1* a1, int a2, int a3, unk_0066ea90_a4* a4) {
+    if ((int)(a4->f_8) == (int)(3)) {
+        return (int)(1);
+    }
+    a1->f_0 = (u8)(1);
+    return (int)(1);
+}
+
 void fn_0066eb74(int a0, int a1, void* a2, int a3) {
-    void* t0 = fn_00048e54((int)(a1), (int)(149), (int)(0));
+    void* t0;
+    t0 = fn_00048e54((int)(a1), (int)(149), (int)(0));
     fn_0004dc54((int)(a1), (void*)(a2), (void*)(t0), (int)(1), (u16)((u16)a3));
 }
 

@@ -9,7 +9,7 @@ static void __attribute__((noinline)) stub_0042bb94(u32 p0) { __asm__ volatile (
 extern char g_0042bd50_0[];
 int fn_0042bd50(void) {
     stub_0042bb94((u32)(FIELD(u32, g_0042bd50_0, 0)));
-    return 1;
+    return (int)(1);
 }
 
 struct unk_0042c804_a0 {
@@ -17,7 +17,7 @@ struct unk_0042c804_a0 {
     u32 f_c;
 };
 void fn_0042c804(unk_0042c804_a0* a0) {
-    a0->f_c = a0->f_c + 1;
+    a0->f_c = (u32)(a0->f_c + 1);
 }
 
 struct unk_0042c814_a0 {
@@ -25,7 +25,7 @@ struct unk_0042c814_a0 {
     u32 f_38;
 };
 void fn_0042c814(unk_0042c814_a0* a0) {
-    a0->f_38 = a0->f_38 + 1;
+    a0->f_38 = (u32)(a0->f_38 + 1);
 }
 
 }

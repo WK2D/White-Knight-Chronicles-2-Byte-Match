@@ -13,9 +13,9 @@ struct unk_005f6b30_a0 {
 extern char g_005f6b30_0[];
 extern char g_005f6b30_1[];
 void fn_005f6b30(unk_005f6b30_a0* a0) {
-    a0->f_0 = g_005f6b30_0;
+    a0->f_0 = (void*)(g_005f6b30_0);
     stub_005f54b0((void*)((char*)a0 + 40));
-    a0->f_0 = g_005f6b30_1;
+    a0->f_0 = (void*)(g_005f6b30_1);
     fn_00fc88dc((void*)(a0));
 }
 

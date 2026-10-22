@@ -11,9 +11,9 @@ struct unk_0037dca0_a0 {
     u32 f_8;
 };
 int fn_0037dca0(unk_0037dca0_a0* a0) {
-    FIELD(u8, a0->f_4, 0) = 0;
-    FIELD(u8, a0->f_8, 0) = 0;
-    return 1;
+    FIELD(u8, a0->f_4, 0) = (u8)(0);
+    FIELD(u8, a0->f_8, 0) = (u8)(0);
+    return (int)(1);
 }
 
 }

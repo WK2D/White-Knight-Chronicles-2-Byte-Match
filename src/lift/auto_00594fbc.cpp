@@ -20,8 +20,9 @@ void fn_0059598c(void) {
 }
 
 u8 fn_005959f8(void) {
-    int t0 = fn_00ba2290();
-    return (u8)t0;
+    int t0;
+    t0 = fn_00ba2290();
+    return (u8)((u8)t0);
 }
 
 void fn_00595a4c(void) {
@@ -29,8 +30,9 @@ void fn_00595a4c(void) {
 }
 
 u8 fn_00595a70(void) {
-    int t0 = fn_00ba2304();
-    return (u8)t0;
+    int t0;
+    t0 = fn_00ba2304();
+    return (u8)((u8)t0);
 }
 
 void fn_00595ac0(void) {
@@ -38,8 +40,9 @@ void fn_00595ac0(void) {
 }
 
 u8 fn_00595ae4(void) {
-    int t0 = fn_00ba2378();
-    return (u8)t0;
+    int t0;
+    t0 = fn_00ba2378();
+    return (u8)((u8)t0);
 }
 
 void fn_00595b34(void) {
@@ -47,8 +50,9 @@ void fn_00595b34(void) {
 }
 
 u8 fn_00595b58(void) {
-    int t0 = fn_00ba23ec();
-    return (u8)t0;
+    int t0;
+    t0 = fn_00ba23ec();
+    return (u8)((u8)t0);
 }
 
 void fn_00595ba8(int a0) {
@@ -56,8 +60,9 @@ void fn_00595ba8(int a0) {
 }
 
 u8 fn_00595bcc(int a0) {
-    int t0 = fn_00ba2440((int)(a0));
-    return (u8)t0;
+    int t0;
+    t0 = fn_00ba2440((int)(a0));
+    return (u8)((u8)t0);
 }
 
 }

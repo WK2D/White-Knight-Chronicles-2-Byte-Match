@@ -9,18 +9,21 @@ void* fn_009b9664(void);
 void* fn_009b96fc(void);
 
 void* fn_009b8d1c(void) {
-    void* t0 = fn_009b95cc();
-    return t0;
+    void* t0;
+    t0 = fn_009b95cc();
+    return (void*)(t0);
 }
 
 void* fn_009b8d44(void) {
-    void* t0 = fn_009b9664();
-    return t0;
+    void* t0;
+    t0 = fn_009b9664();
+    return (void*)(t0);
 }
 
 void* fn_009b8d6c(void) {
-    void* t0 = fn_009b96fc();
-    return t0;
+    void* t0;
+    t0 = fn_009b96fc();
+    return (void*)(t0);
 }
 
 }

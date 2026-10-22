@@ -17,9 +17,9 @@ struct unk_000dd024_a2 {
     u32 f_0;
 };
 int fn_000dd024(unk_000dd024_a0* a0, unk_000dd024_a1* a1, unk_000dd024_a2* a2) {
-    a1->f_0 = a0->f_8;
-    a2->f_0 = a0->f_c;
-    return 0;
+    a1->f_0 = (u32)(a0->f_8);
+    a2->f_0 = (u32)(a0->f_c);
+    return (int)(0);
 }
 
 }

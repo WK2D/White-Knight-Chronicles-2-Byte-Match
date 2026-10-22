@@ -8,7 +8,19 @@ static void __attribute__((noinline)) stub_007c505c(int p0) { __asm__ volatile (
 
 int fn_007c508c(int a0) {
     stub_007c505c((int)(a0));
-    return 1;
+    return (int)(1);
+}
+
+struct unk_007c50b0_a0 {
+    char pad_0[36];
+    u32 f_24;
+};
+int fn_007c50b0(unk_007c50b0_a0* a0) {
+    if ((int)(FIELD(u32, a0->f_24, 4312)) != (int)(1)) {
+        return (int)(1);
+    }
+    FIELD(u32, a0->f_24, 4284) = (u32)(0);
+    return (int)(1);
 }
 
 }

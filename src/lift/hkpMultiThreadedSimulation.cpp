@@ -13,7 +13,7 @@ struct unk_00d9d260_a1 {
     u32 f_0;
 };
 void fn_00d9d260(unk_00d9d260_a0* a0, unk_00d9d260_a1* a1) {
-    a1->f_0 = a0->f_f8;
+    a1->f_0 = (u32)(a0->f_f8);
 }
 
 struct unk_00d9d26c_a0 {
@@ -24,7 +24,7 @@ struct unk_00d9d26c_a1 {
     u32 f_0;
 };
 void fn_00d9d26c(unk_00d9d26c_a0* a0, unk_00d9d26c_a1* a1) {
-    a0->f_f8 = a1->f_0;
+    a0->f_f8 = (u32)(a1->f_0);
 }
 
 }

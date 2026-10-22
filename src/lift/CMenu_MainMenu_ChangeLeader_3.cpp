@@ -9,7 +9,7 @@ void fn_00b37f88(void*, void*, int);
 
 int fn_0065d610(void) {
     stub_0065d5c0();
-    return 1;
+    return (int)(1);
 }
 
 struct unk_0065d634_a0 {
@@ -19,8 +19,8 @@ struct unk_0065d634_a0 {
 extern char g_0065d634_0[];
 int fn_0065d634(unk_0065d634_a0* a0) {
     fn_00b37f88((void*)((char*)a0 + 4), (void*)(g_0065d634_0), (int)(32));
-    a0->f_23 = 0;
-    return 1;
+    a0->f_23 = (u8)(0);
+    return (int)(1);
 }
 
 }

@@ -10,8 +10,9 @@ int fn_003e70fc(u32);
 
 extern char g_006a1228_0[];
 u8 fn_006a1228(void) {
-    int t0 = fn_003e70fc((u32)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_006a1228_0, 0), 108), 8), 264)));
-    return (u8)t0;
+    int t0;
+    t0 = fn_003e70fc((u32)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_006a1228_0, 0), 108), 8), 264)));
+    return (u8)((u8)t0);
 }
 
 extern char g_006a1264_0[];
@@ -29,7 +30,7 @@ struct unk_006a3124_a0 {
     u32 f_258;
 };
 int fn_006a3124(unk_006a3124_a0* a0) {
-    return (int)FIELD(u32, a0->f_258, 220);
+    return (int)((int)FIELD(u32, a0->f_258, 220));
 }
 
 }

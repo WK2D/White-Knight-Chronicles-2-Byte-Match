@@ -8,9 +8,11 @@ static int __attribute__((noinline)) stub_00545ecc(void) { int r; __asm__ volati
 void* fn_0054af54(u16);
 
 void* fn_005477a0(void) {
-    int t0 = stub_00545ecc();
-    void* t1 = fn_0054af54((u16)((u16)t0));
-    return t1;
+    int t0;
+    void* t1;
+    t0 = stub_00545ecc();
+    t1 = fn_0054af54((u16)((u16)t0));
+    return (void*)(t1);
 }
 
 }

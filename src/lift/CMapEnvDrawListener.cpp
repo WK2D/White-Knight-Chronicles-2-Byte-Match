@@ -11,8 +11,8 @@ struct unk_002db304_a1 {
 };
 extern char g_002db304_0[];
 void fn_002db304(int a0, unk_002db304_a1* a1) {
-    FIELD(u32, g_002db304_0, 0) = 0;
-    a1->f_4 = 0;
+    FIELD(u32, g_002db304_0, 0) = (u32)(0);
+    a1->f_4 = (u32)(0);
 }
 
 struct unk_002db318_a1 {
@@ -21,8 +21,8 @@ struct unk_002db318_a1 {
 };
 extern char g_002db318_0[];
 void fn_002db318(int a0, unk_002db318_a1* a1) {
-    FIELD(u32, g_002db318_0, 0) = 0;
-    a1->f_4 = 0;
+    FIELD(u32, g_002db318_0, 0) = (u32)(0);
+    a1->f_4 = (u32)(0);
 }
 
 }

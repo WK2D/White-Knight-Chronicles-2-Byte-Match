@@ -8,7 +8,7 @@ extern "C" {
 extern char g_00f578c0_0[];
 extern char g_00f578c0_1[];
 void fn_00f578c0(void) {
-    FIELD(void*, g_00f578c0_0, 0) = g_00f578c0_1;
+    FIELD(void*, g_00f578c0_0, 0) = (void*)(g_00f578c0_1);
 }
 
 }

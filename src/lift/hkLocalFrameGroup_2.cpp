@@ -6,11 +6,11 @@ extern "C" {
 
 
 int fn_00c29f90(int a0, int a1) {
-    return a1;
+    return (int)(a1);
 }
 
 int fn_00c29f98(int a0, int a1) {
-    return a1;
+    return (int)(a1);
 }
 
 }

@@ -6,7 +6,7 @@ extern "C" {
 
 
 u8 fn_0054aabc(int a0, int a1) {
-    return (u8)(a1 + 1);
+    return (u8)((u8)(a1 + 1));
 }
 
 }

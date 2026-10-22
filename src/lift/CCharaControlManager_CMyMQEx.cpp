@@ -12,13 +12,15 @@ void fn_00283c94(void*);
 void fn_005312ec(void*);
 
 void* fn_0028dbbc(void) {
-    void* t0 = fn_0027c47c();
-    return t0;
+    void* t0;
+    t0 = fn_0027c47c();
+    return (void*)(t0);
 }
 
 void* fn_0028dbe4(void) {
-    void* t0 = fn_0027c4f0();
-    return t0;
+    void* t0;
+    t0 = fn_0027c4f0();
+    return (void*)(t0);
 }
 
 void fn_0028dd74(void* a0) {

@@ -13,10 +13,11 @@ struct unk_008a4c98_a0 {
     u32 f_24;
 };
 int fn_008a4c98(unk_008a4c98_a0* a0) {
+    void* t1;
     fn_00b3ccc8((void*)((char*)a0 + 40));
-    void* t1 = fn_008a3414((u32)(a0->f_24));
+    t1 = fn_008a3414((u32)(a0->f_24));
     stub_008a4a60((void*)(a0), (void*)(t1));
-    return 0;
+    return (int)(0);
 }
 
 }
