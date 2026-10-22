@@ -9,4 +9,8 @@ u32 fn_00aec740(int a0) {
     return (u32)((u32)(a0 + 63) & 0xffffffc0);
 }
 
+int fn_00aec778(int a0) {
+    return (int)(2 - (int)((u32)(-(int)(a0)) >> 31));
+}
+
 }

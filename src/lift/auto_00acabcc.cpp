@@ -68,6 +68,29 @@ void fn_00acae0c(unk_00acae0c_a0* a0) {
     fn_00aeefd4((u32)(a0->f_4));
 }
 
+struct unk_00acae34_a0_4;
+struct unk_00acae34_a0_4_68;
+struct unk_00acae34_a0_4 {
+    char pad_0[104];
+    unk_00acae34_a0_4_68* f_68;
+    char pad_6c[4];
+    u64 f_70;
+};
+struct unk_00acae34_a0_4_68 {
+    char pad_0[24];
+    u64 f_18;
+};
+struct unk_00acae34_a0 {
+    char pad_0[4];
+    unk_00acae34_a0_4* f_4;
+};
+void fn_00acae34(unk_00acae34_a0* a0) {
+    if ((int)(a0->f_4->f_68) != (int)(0)) {
+        a0->f_4->f_68->f_18 = (u64)(0);
+    }
+    a0->f_4->f_70 = (u64)(0);
+}
+
 struct unk_00acb290_a0_4;
 struct unk_00acb290_a0_4 {
     char pad_0[96];

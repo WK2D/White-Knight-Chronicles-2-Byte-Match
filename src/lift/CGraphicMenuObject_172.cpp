@@ -5,6 +5,14 @@
 extern "C" {
 
 
+struct unk_007b5a2c_a0 {
+    char pad_0[9];
+    u8 f_9;
+};
+int fn_007b5a2c(unk_007b5a2c_a0* a0) {
+    return (int)(110 - (int)((u32)(-(int)((u32)(a0->f_9) ^ 0x3)) >> 31));
+}
+
 void* fn_007b5d84(int a0) {
     return (void*)((u32)(a0) & (u32)((int)(~((u32)(a0) | (u32)(a0))) >> 31));
 }

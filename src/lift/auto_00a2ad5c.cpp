@@ -69,6 +69,25 @@ void fn_00a2b800(int a0, int a1) {
     stub_00a2b6f4((void*)(g_00a2b800_0), (int)(a0), (int)(a1));
 }
 
+struct unk_00a2b95c_a2_4;
+struct unk_00a2b95c_a2_8;
+struct unk_00a2b95c_a2_4 {
+    u64 f_0;
+};
+struct unk_00a2b95c_a2_8 {
+    u64 f_0;
+};
+struct unk_00a2b95c_a2 {
+    char pad_0[4];
+    unk_00a2b95c_a2_4* f_4;
+    unk_00a2b95c_a2_8* f_8;
+};
+int fn_00a2b95c(int a0, int a1, unk_00a2b95c_a2* a2) {
+    a2->f_4->f_0 = (u64)(-1);
+    a2->f_8->f_0 = (u64)(0);
+    return (int)(0);
+}
+
 void fn_00a2b97c(void) {
     fn_00a2123c((int)(3));
 }

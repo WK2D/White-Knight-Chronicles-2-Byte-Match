@@ -35,6 +35,14 @@ int fn_00069e94(unk_00069e94_a0* a0, int a1) {
     return (int)(t2);
 }
 
+struct unk_00069ef8_a0 {
+    u64 f_0;
+};
+int fn_00069ef8(unk_00069ef8_a0* a0) {
+    a0->f_0 = (u64)(0);
+    return (int)(0);
+}
+
 int fn_0006a15c(void) {
     stub_0006a0a8((int)(6), (int)(0), (int)(0), (int)(0), (int)(0), (int)(0));
     return (int)(0);

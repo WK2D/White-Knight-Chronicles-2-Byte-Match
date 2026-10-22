@@ -31,7 +31,7 @@ LOADS = {32: 'u32', 34: 'u8', 40: 'u16', 42: 's16', 48: 'float', 50: 'double'}
 UPDATE = {33, 35, 41, 43, 49, 51, 37, 39, 45, 53, 55}   # lwzu lbzu lhzu lhau lfsu lfdu stwu stbu sthu stfsu stfdu
 # X-form indexed accesses -> the matching D-form opcode
 INDEXED = {23: 32, 87: 34, 279: 40, 343: 42, 535: 48, 599: 50, 151: 36, 215: 38, 407: 44, 663: 52, 727: 54}
-STORES = {36: 'u32', 38: 'u8', 44: 'u16', 52: 'float', 54: 'double'}
+STORES = {36: 'u32', 38: 'u8', 44: 'u16', 52: 'float', 54: 'double', 62: 'u64'}
 CTYPES = {'ptr': 'void*', 'addr': 'void*', 'gaddr': 'void*', 'u32': 'u32', 'u8': 'u8', 'u16': 'u16',
           's16': 's16', 'u64': 'u64', 'int': 'int', 'float': 'float', 'double': 'double'}
 BLR, NOP, TOC_RESTORE = 0x4E800020, 0x60000000, 0xE8410028
@@ -266,7 +266,7 @@ class Lifter:
         self.active_paths = set()         # return paths being lifted (guards against cycles)
         self.made_call = False            # a call has clobbered r3-r12 somewhere before
         self.bfresh = set()               # argument registers written since the last loop boundary
-        self.uses_locals = False          # the frame holds locals: one struct l
+        self.local_refs = 0               # uses of the frame's locals (one struct l)
         self.tails = set()                # indexes of tail calls (b to another function)
         self.budget = 16 * len(words)     # instructions step() may execute in total
         self.noreturn = set()             # callees that never return (the function ends in a call)
@@ -363,22 +363,24 @@ class Lifter:
         """&l (off 0), &l.f_off, or a byte address inside the locals."""
         if off < 0:
             raise Fail('address in the linkage area')
-        self.uses_locals = True
+        self.local_refs += 1
         layout = self.layouts.get(('l',), {})
         if off == 0:
             v = Value('(&l)', 'gaddr')
             v.path = ('l',)
-            return v
-        if off in layout:
-            return Value(f'(&l.f_{off:x})', 'gaddr')
-        return Value(f'((char*)&l + {off})', 'gaddr')
+        elif off in layout:
+            v = Value(f'(&l.f_{off:x})', 'gaddr')
+        else:
+            v = Value(f'((char*)&l + {off})', 'gaddr')
+        v.local_off = off
+        return v
 
     def field(self, ctype, base, d):
         if base.ctype == 'frame':                                    # a local variable
             off = d - LOCALS
             if off < 0:
                 raise Fail('frame access in the linkage area')
-            self.uses_locals = True
+            self.local_refs += 1
             self.access[('l',)].add((off, ctype))
             if self.layouts.get(('l',), {}).get(off) == ctype:
                 return Value(f'l.f_{off:x}', ctype)
@@ -1066,6 +1068,9 @@ class Lifter:
                 return
             self.set(ra, Value(f'(u32)({v.text}) {sym} {imm:#x}', 'u32', 1))
             return
+        if op == 8:                                                  # subfic: imm - x
+            self.set(rt, Value(f'{d} - (int)({self.reg(ra).text})', 'int', 1))
+            return
         if op == 7:                                                  # mulli
             self.set(rt, Value(f'(int)({self.reg(ra).text}) * {d}', 'int', 1))
             return
@@ -1106,17 +1111,27 @@ class Lifter:
                 return
             raise Fail('stack load')
         if op == 54 and ra == 1:                                     # stfd fX,d(r1)
+            if rt >= 14 and self.fpr.get(rt) is None:
+                return                                               # saving a callee-saved register
             v = self.freg(rt)
             if getattr(v, 'f2i', None) is None:
                 raise Fail('float spill')
             self.slots[d] = v.f2i
             return
         if op == 50 and ra == 1:                                     # lfd fX,d(r1)
+            if rt >= 14 and self.slots.get(d, (None,))[0] != 'int64':
+                self.fpr[rt] = None                                  # restoring a callee-saved register
+                return
             if self.slots.get(d, (None,))[0] != 'int64':
                 raise Fail('float stack load')
             v = Value(self.slots[d][1].text, 'bits')
             v.i2f = self.slots[d][1]
             self.fpr[rt] = v
+            return
+        if op == 32 and ra == 1 and self.slots.get(d, (None,))[0] == 'fctiw':       # lwz after fctiwz/stfiwx
+            v = Value(f'(int)({self.slots[d][1].text})', 'int')
+            v.conv = True
+            self.set(rt, v)
             return
         if op == 32 and ra == 1 and self.slots.get(d - 4, (None,))[0] == 'fctiw':   # lwz after fctiwz/stfd
             v = Value(f'(int)({self.slots[d - 4][1].text})', 'int')
@@ -1180,7 +1195,7 @@ class Lifter:
         if op == 58 and w & 3 == 0:
             self.set(rt, self.field('u64', self.reg(ra), d))
             return
-        if op in STORES:
+        if op in STORES and (op != 62 or w & 3 == 0):
             self.store(op, rt, self.reg(ra), d)
             return
         if op == 31 and (w >> 1) & 0x3FF in INDEXED and ra != 1:
@@ -1216,6 +1231,26 @@ class Lifter:
                 self.set(ra, Value(text, 'u32', 1))
                 if w & 1:
                     self.cr[0] = (self.gpr[ra], '0', 'signed')
+                return
+            if xo == 983:                                            # stfiwx: a float converted to int, stored
+                f = getattr(self.freg(rt), 'f2i', None)
+                if f is None or f[0] != 'fctiw':
+                    raise Fail('stfiwx of a non-conversion')
+                base = self.sum(self.reg(ra), self.reg(rb)) if ra else self.reg(rb)
+                if getattr(base, 'local_off', None) is not None:
+                    self.local_refs -= 1                             # only the conversion's slot
+                    self.slots[LOCALS + base.local_off] = f
+                    return
+                target = self.field('u32', base, 0)
+                self.stmts.append(f'{target.text} = (u32)((int)({f[1].text}));')
+                return
+            if xo == 26:                                             # cntlzw
+                v = Value(f'__builtin_clz({self.reg(rt).text})', 'u32')
+                v.clz_of = self.reg(rt)
+                self.set(ra, v)
+                return
+            if w == 0x7FE00008:                                      # trap
+                self.stmts.append('__builtin_trap();')
                 return
             if xo == 104:                                            # neg
                 self.set(rt, Value(f'-(int)({self.reg(ra).text})', 'int', 1))
@@ -1376,6 +1411,12 @@ class Lifter:
         sh, mb, me = (w >> 11) & 31, (w >> 6) & 31, (w >> 1) & 31
         if mb > me:
             raise Fail('wrapping rlwinm mask')
+        clz = getattr(self.reg(rs), 'clz_of', None)
+        if clz is not None and sh == 27 and mb == 5 and me == 31:    # cntlzw; srwi 5: x == 0
+            self.set(ra, Value(f'({clz.text} == 0)', 'int', 1))
+            if w & 1:
+                self.cr[0] = (self.gpr[ra], '0', 'signed')
+            return
         x = f'(u32)({self.reg(rs).text})'
         mask = ((1 << (32 - mb)) - 1) & ~((1 << (31 - me)) - 1) & 0xFFFFFFFF
         if sh == 0:
@@ -1482,7 +1523,7 @@ class Lifter:
         for info in self.calls.values():
             if info['used']:
                 top.append(f'{info["type"]} {info["temp"]};')
-        if self.uses_locals:
+        if self.local_refs > 0:
             if ('l',) not in self.layouts:
                 raise Fail('locals without a layout')
             top.append(f'{self.tag(("l",))} l;')

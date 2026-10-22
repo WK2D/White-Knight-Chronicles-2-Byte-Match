@@ -101,4 +101,20 @@ void fn_004100d8(unk_004100d8_a0* a0, int a1) {
     a0->f_4->f_46 = (u8)(a1);
 }
 
+struct unk_004100f0_a0_4;
+struct unk_004100f0_a0_4 {
+    char pad_0[71];
+    u8 f_47;
+};
+struct unk_004100f0_a0 {
+    char pad_0[4];
+    unk_004100f0_a0_4* f_4;
+};
+void fn_004100f0(unk_004100f0_a0* a0, int a1) {
+    if ((int)(a0->f_4) == (int)(0)) {
+        return;
+    }
+    a0->f_4->f_47 = (u8)((u32)(10 - (int)(a1)) & (u32)((int)(~((u32)((int)(signed char)(10 - (int)(a1))) | (u32)((int)(signed char)(10 - (int)(a1))))) >> 31));
+}
+
 }

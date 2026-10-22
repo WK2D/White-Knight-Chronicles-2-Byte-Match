@@ -4,6 +4,15 @@
 
 extern "C" {
 
+static void __attribute__((noinline)) stub_0008a358(int p0, int p1, int p2, int p3, int p4) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4)); }
+static void __attribute__((noinline)) stub_0008a36c(int p0, float p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
+static void __attribute__((noinline)) stub_0008a374(int p0, float p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
+
+void fn_0008a37c(int a0) {
+    stub_0008a358((int)(a0), (int)(0), (int)(0), (int)(0), (int)(0));
+    stub_0008a36c((int)(a0), (float)(0.0f));
+    stub_0008a374((int)(a0), (float)(0.0f));
+}
 
 struct unk_0008a5ec_a0 {
     char pad_0[304];

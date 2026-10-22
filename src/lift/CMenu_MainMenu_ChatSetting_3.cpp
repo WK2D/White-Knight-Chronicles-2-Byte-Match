@@ -4,6 +4,7 @@
 
 extern "C" {
 
+void fn_00044040(int, int, int, float);
 int fn_003d2364(void*, void*);
 int fn_00614f64(void*);
 int fn_0064dfa8(void*);
@@ -509,6 +510,11 @@ int fn_005d8174(unk_005d8174_a0* a0) {
         v1 = (int)(0);
     }
     return (int)(v1);
+}
+
+void fn_005d8220(int a0, int a1, int a2) {
+    fn_00044040((int)(a1), (int)(a2), (int)(200), (float)(1.0f));
+    fn_00044040((int)(a1), (int)(a2), (int)(1245), (float)(1.0f));
 }
 
 }
