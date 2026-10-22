@@ -4,6 +4,7 @@
 
 extern "C" {
 
+void fn_00b3f898(void*, int, int);
 
 extern char g_0086d2fc_0[];
 u32 fn_0086d2fc(void) {
@@ -13,6 +14,10 @@ u32 fn_0086d2fc(void) {
 extern char g_0086d31c_0[];
 void* fn_0086d31c(void) {
     return (void*)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_0086d31c_0, 0), 108), 8), 252), 8) + 108);
+}
+
+void fn_0086d4f4(void* a0, int a1) {
+    fn_00b3f898((void*)((char*)a0 + 10300), (int)(a1), (int)(512));
 }
 
 }

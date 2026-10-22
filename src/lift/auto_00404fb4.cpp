@@ -4,8 +4,6 @@
 
 extern "C" {
 
-void* fn_003c9084(u32);
-void* fn_003c90a0(u32);
 void fn_00b37fa8(u32, int, int);
 
 struct unk_00405390_a0 {
@@ -15,20 +13,6 @@ struct unk_00405390_a0 {
 int fn_00405390(unk_00405390_a0* a0) {
     fn_00b37fa8((u32)(a0->f_8), (int)(0), (int)(804));
     return (int)(1);
-}
-
-extern char g_00406620_0[];
-void* fn_00406620(void) {
-    void* t0;
-    t0 = fn_003c90a0((u32)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_00406620_0, 0), 108), 8), 244)));
-    return (void*)(t0);
-}
-
-extern char g_0040665c_0[];
-void* fn_0040665c(void) {
-    void* t0;
-    t0 = fn_003c9084((u32)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_0040665c_0, 0), 108), 8), 244)));
-    return (void*)(t0);
 }
 
 }

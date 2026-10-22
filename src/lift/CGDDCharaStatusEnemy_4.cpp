@@ -4,30 +4,44 @@
 
 extern "C" {
 
-static int __attribute__((noinline)) stub_0039a6f0(void) { int r; __asm__ volatile ("" : "=r"(r)); return r; }
+static void* __attribute__((noinline)) stub_003945fc(void* p0, void* p1, int p2) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
+static int __attribute__((noinline)) stub_0039a5f0(void* p0, void* p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 
-u8 fn_0039a98c(void) {
-    int t0;
-    t0 = stub_0039a6f0();
-    return (u8)((u8)t0);
-}
-
-u8 fn_0039a9b0(void) {
-    int t0;
-    t0 = stub_0039a6f0();
-    return (u8)((u8)t0);
-}
-
-u8 fn_0039a9d4(void) {
-    int t0;
-    t0 = stub_0039a6f0();
-    return (u8)((u8)t0);
-}
-
-u8 fn_0039a9f8(void) {
-    int t0;
-    t0 = stub_0039a6f0();
-    return (u8)((u8)t0);
+struct unk_0039a6f0_a1 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual int vf4(int);
+    virtual void vf5();
+    virtual void vf6();
+    virtual void* vf7(int);
+};
+int fn_0039a6f0(void* a0, unk_0039a6f0_a1* a1) {
+    void* t0;
+    void* t1;
+    int t2;
+    int t3;
+    int v0;
+    int v1;
+    int v2;
+    if ((int)(a1) != (int)(0)) {
+        t0 = a1->vf7((int)(0));
+        t1 = stub_003945fc((void*)(a0), (void*)(t0), (int)(62));
+        if ((int)(t1) != (int)(0)) {
+            t2 = stub_0039a5f0((void*)(a0), (void*)(t1));
+            v0 = (int)(t2);
+        } else {
+            v0 = (int)(a0);
+        }
+        t3 = a1->vf4((int)(1));
+        v1 = (int)(1);
+        v2 = (int)(t3);
+    } else {
+        v1 = (int)(0);
+        v2 = (int)(a1);
+    }
+    return (int)(v1);
 }
 
 }

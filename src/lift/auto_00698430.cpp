@@ -4,26 +4,6 @@
 
 extern "C" {
 
-void fn_003e70cc(u32, int);
-void fn_003e70ec(u32, int);
-int fn_003e70fc(u32);
-
-extern char g_006a1228_0[];
-u8 fn_006a1228(void) {
-    int t0;
-    t0 = fn_003e70fc((u32)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_006a1228_0, 0), 108), 8), 264)));
-    return (u8)((u8)t0);
-}
-
-extern char g_006a1264_0[];
-void fn_006a1264(int a0, int a1) {
-    fn_003e70ec((u32)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_006a1264_0, 0), 108), 8), 264)), (int)(a1));
-}
-
-extern char g_006a129c_0[];
-void fn_006a129c(int a0, int a1) {
-    fn_003e70cc((u32)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_006a129c_0, 0), 108), 8), 264)), (int)(a1));
-}
 
 struct unk_006a3124_a0 {
     char pad_0[600];

@@ -7,6 +7,7 @@ extern "C" {
 void fn_00b3d2f8(void);
 int fn_00b3e1d8(void);
 int fn_00b3f378(void);
+int fn_00b3f6c8(int, int, int);
 void* fn_00b3f818(void);
 void* fn_00b41a38(void);
 void* fn_00b42098(void);
@@ -33,6 +34,12 @@ void* fn_00bf9270(void) {
     void* t0;
     t0 = fn_00b41a38();
     return (void*)(t0);
+}
+
+int fn_00bf92c8(int a0, int a1) {
+    int t0;
+    t0 = fn_00b3f6c8((int)(a0), (int)(0), (int)(a1));
+    return (int)(t0);
 }
 
 void fn_00bf9334(void) {

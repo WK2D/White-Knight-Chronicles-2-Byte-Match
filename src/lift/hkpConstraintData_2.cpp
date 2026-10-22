@@ -5,6 +5,26 @@
 extern "C" {
 
 
+struct unk_00dc74fc_a0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual void vf5();
+    virtual void vf6();
+    virtual void vf7();
+    virtual void vf8();
+    virtual void vf9();
+    virtual void vf10();
+    virtual void vf11();
+    virtual void vf12();
+    virtual void vf13(void);
+};
+void fn_00dc74fc(unk_00dc74fc_a0* a0) {
+    a0->vf13();
+}
+
 struct unk_00dc753c_a0 {
     char pad_0[4];
     void* f_4;

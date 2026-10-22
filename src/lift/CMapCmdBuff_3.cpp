@@ -6,6 +6,7 @@ extern "C" {
 
 void fn_002ca860(void*, void*, int);
 void fn_00b569f4(void);
+void fn_00b8c7dc(int, int);
 
 struct unk_00b8c770_a0 {
     void* f_0;
@@ -18,6 +19,10 @@ void fn_00b8c770(unk_00b8c770_a0* a0) {
 
 void fn_00b8c7b8(void) {
     fn_00b569f4();
+}
+
+void fn_00b8c8f8(int a0) {
+    fn_00b8c7dc((int)(a0), (int)(0));
 }
 
 }

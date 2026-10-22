@@ -4,8 +4,6 @@
 
 extern "C" {
 
-int fn_0001cb64(u32);
-void fn_0003fab0(void*, u8);
 void* fn_000e1f24(void);
 void fn_000e2c9c(void*);
 void fn_000e3380(void*);
@@ -26,14 +24,6 @@ int fn_004ce76c(void) {
     } else {
         v0 = (int)(t0);
     }
-    return (int)(1);
-}
-
-extern char g_004cfcac_0[];
-int fn_004cfcac(void* a0) {
-    int t0;
-    t0 = fn_0001cb64((u32)(FIELD(u32, FIELD(u32, g_004cfcac_0, 0), 120)));
-    fn_0003fab0((void*)(a0), (u8)((u8)t0));
     return (int)(1);
 }
 

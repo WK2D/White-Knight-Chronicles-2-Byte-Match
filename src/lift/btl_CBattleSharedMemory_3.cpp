@@ -4,10 +4,78 @@
 
 extern "C" {
 
-void fn_00b37fa8(void*, int, int);
+void fn_00b37fa8(int, int, int);
 
-void fn_00ba18c4(void* a0) {
-    fn_00b37fa8((void*)((char*)a0 + 4), (int)(0), (int)(2400));
+void fn_00ba1878(int a0) {
+    fn_00b37fa8((int)(a0), (int)(0), (int)(112));
+}
+
+void fn_00ba1be8(int a0) {
+    fn_00b37fa8((int)(a0), (int)(0), (int)(328));
+}
+
+void fn_00ba1c14(int a0) {
+    fn_00b37fa8((int)(a0), (int)(0), (int)(252));
+}
+
+void fn_00ba1cdc(int a0) {
+    fn_00b37fa8((int)(a0), (int)(0), (int)(203));
+}
+
+void fn_00ba1d08(int a0) {
+    fn_00b37fa8((int)(a0), (int)(0), (int)(196));
+}
+
+void fn_00ba1d50(int a0) {
+    fn_00b37fa8((int)(a0), (int)(0), (int)(120));
+}
+
+void fn_00ba1d7c(int a0) {
+    fn_00b37fa8((int)(a0), (int)(0), (int)(3844));
+}
+
+void fn_00ba1da8(int a0) {
+    fn_00b37fa8((int)(a0), (int)(0), (int)(224));
+}
+
+void fn_00ba1dd4(int a0) {
+    fn_00b37fa8((int)(a0), (int)(0), (int)(11780));
+}
+
+void fn_00ba1e80(int a0) {
+    fn_00b37fa8((int)(a0), (int)(0), (int)(640));
+}
+
+void fn_00ba1eac(int a0) {
+    fn_00b37fa8((int)(a0), (int)(0), (int)(1536));
+}
+
+void fn_00ba1ed8(int a0) {
+    fn_00b37fa8((int)(a0), (int)(0), (int)(464));
+}
+
+void fn_00ba1f04(int a0) {
+    fn_00b37fa8((int)(a0), (int)(0), (int)(512));
+}
+
+void fn_00ba1f30(int a0) {
+    fn_00b37fa8((int)(a0), (int)(0), (int)(1032));
+}
+
+void fn_00ba1f5c(int a0) {
+    fn_00b37fa8((int)(a0), (int)(0), (int)(1128));
+}
+
+void fn_00ba1f88(int a0) {
+    fn_00b37fa8((int)(a0), (int)(0), (int)(264));
+}
+
+void fn_00ba1fdc(int a0) {
+    fn_00b37fa8((int)(a0), (int)(0), (int)(112));
+}
+
+void fn_00ba2218(int a0) {
+    fn_00b37fa8((int)(a0), (int)(0), (int)(40));
 }
 
 }

@@ -4,6 +4,24 @@
 
 extern "C" {
 
+void fn_00dc3e50(void*, u32);
+void fn_00dc4440(void*, u32);
+
+struct unk_00d5bee4_a0 {
+    char pad_0[8];
+    u32 f_8;
+};
+void fn_00d5bee4(unk_00d5bee4_a0* a0) {
+    fn_00dc4440((void*)(a0), (u32)(a0->f_8));
+}
+
+struct unk_00d5bf0c_a0 {
+    char pad_0[8];
+    u32 f_8;
+};
+void fn_00d5bf0c(unk_00d5bf0c_a0* a0) {
+    fn_00dc3e50((void*)(a0), (u32)(a0->f_8));
+}
 
 struct unk_00d5c594_a0 {
     char pad_0[20];

@@ -4,11 +4,22 @@
 
 extern "C" {
 
-void fn_0030947c(u32);
 
-extern char g_004abafc_0[];
-void fn_004abafc(void) {
-    fn_0030947c((u32)(FIELD(u32, FIELD(u32, g_004abafc_0, 0), 100)));
+struct unk_004b2324_a0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual void vf5();
+    virtual void vf6();
+    virtual void vf7();
+    virtual void vf8();
+    virtual void vf9();
+    virtual void vf10(void);
+};
+void fn_004b2324(unk_004b2324_a0* a0) {
+    a0->vf10();
 }
 
 }

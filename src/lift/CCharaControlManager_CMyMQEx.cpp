@@ -5,11 +5,37 @@
 extern "C" {
 
 void fn_0027bddc(void*);
+void fn_0027bef0(void*);
 void* fn_0027c47c(void);
 void* fn_0027c4f0(void);
+void fn_0027cc1c(void*, void*);
 void fn_00281d00(void*);
 void fn_00283c94(void*);
 void fn_005312ec(void*);
+
+struct unk_0028d204_a0 {
+    char pad_0[4416];
+    u32 f_1140;
+};
+struct unk_0028d204_vc0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual int vf5(void*);
+};
+void fn_0028d204(unk_0028d204_a0* a0, void* a1) {
+    int t0;
+    int v0;
+    if ((int)(a0->f_1140) != (int)(0)) {
+        t0 = ((unk_0028d204_vc0*)(a0->f_1140))->vf5((void*)((char*)a1 + 596));
+        v0 = (int)(t0);
+    } else {
+        v0 = (int)(a0->f_1140);
+    }
+    fn_0027cc1c((void*)((char*)a0 + 128), (void*)(a1));
+}
 
 void* fn_0028dbbc(void) {
     void* t0;
@@ -21,6 +47,10 @@ void* fn_0028dbe4(void) {
     void* t0;
     t0 = fn_0027c4f0();
     return (void*)(t0);
+}
+
+void fn_0028dd48(void* a0) {
+    fn_0027bef0((void*)((char*)a0 + 128));
 }
 
 void fn_0028dd74(void* a0) {

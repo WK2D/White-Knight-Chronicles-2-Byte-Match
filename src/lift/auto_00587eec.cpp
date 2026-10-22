@@ -4,6 +4,11 @@
 
 extern "C" {
 
+void fn_00b37fa8(int, int, int);
+
+void fn_005882e0(int a0) {
+    fn_00b37fa8((int)(a0), (int)(0), (int)(1216));
+}
 
 struct unk_0058bec8_a0 {
     u32 f_0;

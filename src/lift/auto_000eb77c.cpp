@@ -6,9 +6,16 @@ extern "C" {
 
 void fn_000e93a0(void*);
 void fn_000e983c(void);
+void fn_000e98b4(int, int);
 void fn_000e9940(void);
+void fn_000e99b4(int, int);
 void fn_000ea07c(void);
 static void __attribute__((noinline)) stub_000ea624(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
+
+int fn_000ec2c4(int a0) {
+    fn_000e99b4((int)(a0), (int)(0));
+    return (int)(0);
+}
 
 int fn_000ec8c0(void) {
     fn_000e9940();
@@ -26,6 +33,10 @@ void fn_000ec918(unk_000ec918_a0* a0) {
 
 void fn_000ec950(void) {
     fn_000e983c();
+}
+
+void fn_000ecad4(int a0) {
+    fn_000e98b4((int)(a0), (int)(0));
 }
 
 struct unk_000ed4c8_a0 {

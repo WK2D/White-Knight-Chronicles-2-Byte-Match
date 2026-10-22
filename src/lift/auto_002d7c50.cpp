@@ -4,7 +4,6 @@
 
 extern "C" {
 
-void fn_002d2864(int);
 void fn_002d2b5c(u32);
 
 struct unk_002d7d18_a0 {
@@ -19,26 +18,6 @@ struct unk_002d7d40_a0 {
 };
 void fn_002d7d40(unk_002d7d40_a0* a0) {
     fn_002d2b5c((u32)(a0->f_0));
-}
-
-struct unk_002d7d68_a0 {
-    u32 f_0;
-    u32 f_4;
-};
-void fn_002d7d68(unk_002d7d68_a0* a0, int a1, int a2) {
-    a0->f_4 = (u32)(a2);
-    a0->f_0 = (u32)(a1);
-    fn_002d2864((int)(a1));
-}
-
-struct unk_002d7d9c_a0 {
-    u32 f_0;
-    u32 f_4;
-};
-void fn_002d7d9c(unk_002d7d9c_a0* a0, int a1, int a2) {
-    a0->f_4 = (u32)(a2);
-    a0->f_0 = (u32)(a1);
-    fn_002d2864((int)(a1));
 }
 
 struct unk_002d7e9c_a0 {

@@ -6,11 +6,20 @@ extern "C" {
 
 void* fn_009a3770(void*);
 void* fn_009b6df4(int, int, int, int);
+void* fn_009b6e04(int, int, int, int);
 
 void* fn_009af4fc(int a0, int a1, int a2) {
     void* t0;
     void* t1;
     t0 = fn_009b6df4((int)(a0), (int)(2), (int)(a1), (int)(a2));
+    t1 = fn_009a3770((void*)(t0));
+    return (void*)(t1);
+}
+
+void* fn_009af53c(int a0, int a1, int a2) {
+    void* t0;
+    void* t1;
+    t0 = fn_009b6e04((int)(a0), (int)(2), (int)(a1), (int)(a2));
     t1 = fn_009a3770((void*)(t0));
     return (void*)(t1);
 }

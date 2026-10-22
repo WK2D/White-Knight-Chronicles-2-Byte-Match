@@ -4,24 +4,7 @@
 
 extern "C" {
 
-void fn_00a7c2bc(u32);
 void fn_00b41d68(void);
-
-struct unk_00931f98_a0 {
-    char pad_0[56];
-    u16 f_38;
-    u16 f_3a;
-    u16 f_3c;
-};
-extern char g_00931f98_0[];
-void fn_00931f98(unk_00931f98_a0* a0) {
-    if ((int)(a0->f_38) == (int)(0)) {
-        a0->f_3c = (u16)(a0->f_38);
-        a0->f_3a = (u16)(1);
-        return;
-    }
-    fn_00a7c2bc((u32)(FIELD(u32, g_00931f98_0, 0)));
-}
 
 void fn_009324fc(void) {
     fn_00b41d68();

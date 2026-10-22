@@ -17,6 +17,7 @@ void* fn_0098c458(void);
 void* fn_0098c51c(void);
 void* fn_0098c56c(void);
 void* fn_0098c5bc(void);
+void fn_00b3ccd8(int, void*, int);
 
 void* fn_0098a30c(void) {
     void* t0;
@@ -100,6 +101,12 @@ void* fn_0098b750(void) {
     void* t0;
     t0 = fn_0098b7a8();
     return (void*)(t0);
+}
+
+extern char g_0098b778_0[];
+int fn_0098b778(int a0, int a1) {
+    fn_00b3ccd8((int)(a0), (void*)(g_0098b778_0), (int)(a1));
+    return (int)(0);
 }
 
 }

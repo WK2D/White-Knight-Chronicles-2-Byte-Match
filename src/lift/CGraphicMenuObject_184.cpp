@@ -5,6 +5,7 @@
 extern "C" {
 
 void fn_00046268(void*);
+void fn_007bb690(void*, u32, int, int, int, int);
 
 struct unk_007e068c_a0 {
     char pad_0[112];
@@ -13,6 +14,14 @@ struct unk_007e068c_a0 {
 void fn_007e068c(unk_007e068c_a0* a0) {
     fn_00046268((void*)((char*)a0 + 40));
     a0->f_70 = (u8)(1);
+}
+
+struct unk_007e083c_a0 {
+    char pad_0[404];
+    u32 f_194;
+};
+void fn_007e083c(unk_007e083c_a0* a0, int a1) {
+    fn_007bb690((void*)(a0), (u32)(a0->f_194), (int)(a1), (int)(51), (int)(52), (int)(53));
 }
 
 }

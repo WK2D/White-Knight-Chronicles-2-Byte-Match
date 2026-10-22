@@ -25,13 +25,4 @@ void fn_00bd2304(unk_00bd2304_a0* a0) {
     fn_00aa3054((void*)(a0), (int)(240));
 }
 
-struct unk_00bd234c_a0 {
-    void* f_0;
-};
-extern char g_00bd234c_0[];
-void fn_00bd234c(unk_00bd234c_a0* a0) {
-    a0->f_0 = (void*)(g_00bd234c_0);
-    fn_00aa3128((void*)(a0));
-}
-
 }

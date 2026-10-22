@@ -5,8 +5,22 @@
 extern "C" {
 
 static void* __attribute__((noinline)) stub_009f0424(void* p0) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static void* __attribute__((noinline)) stub_009f07f4(int p0, void* p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 void fn_00a066ac(void);
 void fn_00a07598(void);
+
+extern char g_009f09c8_0[];
+void* fn_009f09c8(int a0) {
+    void* t0;
+    int v0;
+    t0 = stub_009f07f4((int)(a0), (void*)(g_009f09c8_0));
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)(FIELD(u32, t0, 24));
+    } else {
+        v0 = (int)(0);
+    }
+    return (void*)(v0);
+}
 
 void* fn_009f1048(void* a0) {
     void* t1;

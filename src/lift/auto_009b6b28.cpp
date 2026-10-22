@@ -4,12 +4,28 @@
 
 extern "C" {
 
+void fn_009b6424(int, int);
+void fn_009b66b4(int, void*);
+void fn_009b67e4(int, void*);
+void fn_009b6914(int, void*);
 
 extern char g_009b6b28_0[];
 int fn_009b6b28(int a0, int a1) {
     FIELD(u32, g_009b6b28_0, 0) = (u32)(a0);
     FIELD(u32, g_009b6b28_0, 4) = (u32)(a1);
     return (int)(0);
+}
+
+void fn_009b734c(int a0, void* a1) {
+    fn_009b6914((int)(a0), (void*)(a1));
+    fn_009b6914((int)(a0), (void*)((char*)a1 + 1));
+    fn_009b67e4((int)(a0), (void*)((char*)a1 + 2));
+    fn_009b67e4((int)(a0), (void*)((char*)a1 + 4));
+    fn_009b67e4((int)(a0), (void*)((char*)a1 + 6));
+    fn_009b6914((int)(a0), (void*)((char*)a1 + 8));
+    fn_009b6424((int)(a0), (int)(3));
+    fn_009b66b4((int)(a0), (void*)((char*)a1 + 12));
+    fn_009b66b4((int)(a0), (void*)((char*)a1 + 16));
 }
 
 }

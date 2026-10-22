@@ -5,29 +5,7 @@
 extern "C" {
 
 void fn_00077de8(void*, void*, int);
-void fn_003e70ac(u32, int);
-int fn_003e70bc(u32);
-int fn_003e70dc(u32);
 static void __attribute__((noinline)) stub_00692e30(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
-
-extern char g_00693648_0[];
-u8 fn_00693648(void) {
-    int t0;
-    t0 = fn_003e70dc((u32)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_00693648_0, 0), 108), 8), 264)));
-    return (u8)((u8)t0);
-}
-
-extern char g_00693684_0[];
-u8 fn_00693684(void) {
-    int t0;
-    t0 = fn_003e70bc((u32)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_00693684_0, 0), 108), 8), 264)));
-    return (u8)((u8)t0);
-}
-
-extern char g_006936c0_0[];
-void fn_006936c0(int a0, int a1) {
-    fn_003e70ac((u32)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_006936c0_0, 0), 108), 8), 264)), (int)(a1));
-}
 
 void fn_00693928(void* a0, void* a1) {
     stub_00692e30((void*)(a0));

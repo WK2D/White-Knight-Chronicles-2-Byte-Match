@@ -5,7 +5,6 @@
 extern "C" {
 
 void fn_000bf55c(void*, int);
-void fn_00222434(u32, int);
 static void __attribute__((noinline)) stub_002deca0(u32 p0, int p1, int p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
 
 struct unk_002edd08_a1 {
@@ -171,11 +170,6 @@ int fn_002ef8c8(unk_002ef8c8_a0* a0, unk_002ef8c8_a1* a1) {
     stub_002deca0((u32)(a0->f_10c), (int)(332), (int)(0));
     FIELD(u16, a0->f_10c, 330) = (u16)(6101);
     return (int)(0);
-}
-
-extern char g_002f059c_0[];
-void fn_002f059c(void) {
-    fn_00222434((u32)(FIELD(u32, g_002f059c_0, 0)), (int)(0));
 }
 
 }

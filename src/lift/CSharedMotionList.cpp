@@ -5,6 +5,17 @@
 extern "C" {
 
 void* fn_00032cbc(int, int);
+void* fn_00076a98(void*, int, int, int, int, int);
+static int __attribute__((noinline)) stub_001fb73c(void* p0, void* p1, int p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
+
+extern char g_001fb8fc_0[];
+u8 fn_001fb8fc(void* a0, int a1) {
+    void* t0;
+    int t1;
+    t0 = fn_00076a98((void*)(g_001fb8fc_0), (int)(a1), (int)(0), (int)(-1), (int)(0), (int)(0));
+    t1 = stub_001fb73c((void*)(a0), (void*)(t0), (int)(0));
+    return (u8)((u8)t1);
+}
 
 void* fn_001fb954(int a0, int a1) {
     void* t0;

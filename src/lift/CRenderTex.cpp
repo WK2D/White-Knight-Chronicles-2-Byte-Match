@@ -7,6 +7,20 @@ extern "C" {
 void fn_00b39828(int);
 void fn_00b399b8(int);
 
+struct unk_000d8b30_a0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual void vf5(int, int);
+    virtual void vf6(int);
+};
+void fn_000d8b30(unk_000d8b30_a0* a0, int a1) {
+    a0->vf5((int)(a1), (int)(1));
+    a0->vf6((int)(a1));
+}
+
 void fn_000d8c78(int a0, int a1) {
     fn_00b39828((int)(a1));
     fn_00b399b8((int)(a1));

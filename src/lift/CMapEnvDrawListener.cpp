@@ -25,4 +25,20 @@ void fn_002db318(int a0, unk_002db318_a1* a1) {
     a1->f_4 = (u32)(0);
 }
 
+struct unk_002db32c_a1 {
+    virtual void vf0(int, int, void*, int);
+};
+extern char g_002db32c_0[];
+void fn_002db32c(int a0, unk_002db32c_a1* a1) {
+    a1->vf0((int)(0), (int)(a0), (void*)(g_002db32c_0), (int)(0));
+}
+
+struct unk_002db380_a1 {
+    virtual void vf0(int, int, void*, void*);
+};
+extern char g_002db380_0[];
+void fn_002db380(int a0, unk_002db380_a1* a1) {
+    a1->vf0((int)(0), (int)(a0), (void*)(g_002db380_0), (void*)(-1));
+}
+
 }

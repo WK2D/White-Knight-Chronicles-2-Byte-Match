@@ -4,15 +4,46 @@
 
 extern "C" {
 
-void fn_00b773a4(void*);
-void fn_00b782b0(void*);
+void* fn_00076a98(void*, int, int, int, int, int);
+void fn_00b73e00(void*, void*, void*);
+void fn_00b74ca0(void*, void*, void*);
+void fn_00b762e4(void*, void*, void*);
+void fn_00b773a4(void*, void*, void*);
+void fn_00b782b0(void*, void*, void*);
 
-void fn_001f74c0(void* a0) {
-    fn_00b773a4((void*)((char*)a0 + 36));
+extern char g_001f479c_0[];
+void fn_001f479c(void* a0, int a1, void* a2) {
+    void* t0;
+    t0 = fn_00076a98((void*)(g_001f479c_0), (int)(a1), (int)(0), (int)(-1), (int)(0), (int)(0));
+    fn_00b73e00((void*)((char*)a0 + 92), (void*)(t0), (void*)(a2));
 }
 
-void fn_001f7f70(void* a0) {
-    fn_00b782b0((void*)((char*)a0 + 64));
+extern char g_001f4804_0[];
+void fn_001f4804(void* a0, int a1, void* a2) {
+    void* t0;
+    t0 = fn_00076a98((void*)(g_001f4804_0), (int)(a1), (int)(0), (int)(-1), (int)(0), (int)(0));
+    fn_00b74ca0((void*)((char*)a0 + 120), (void*)(t0), (void*)(a2));
+}
+
+extern char g_001f73f0_0[];
+void fn_001f73f0(void* a0, int a1, void* a2) {
+    void* t0;
+    t0 = fn_00076a98((void*)(g_001f73f0_0), (int)(a1), (int)(0), (int)(-1), (int)(0), (int)(0));
+    fn_00b762e4((void*)((char*)a0 + 4), (void*)(t0), (void*)(a2));
+}
+
+extern char g_001f7458_0[];
+void fn_001f7458(void* a0, int a1, void* a2) {
+    void* t0;
+    t0 = fn_00076a98((void*)(g_001f7458_0), (int)(a1), (int)(0), (int)(-1), (int)(0), (int)(0));
+    fn_00b773a4((void*)((char*)a0 + 36), (void*)(t0), (void*)(a2));
+}
+
+extern char g_001f7f08_0[];
+void fn_001f7f08(void* a0, int a1, void* a2) {
+    void* t0;
+    t0 = fn_00076a98((void*)(g_001f7f08_0), (int)(a1), (int)(0), (int)(-1), (int)(0), (int)(0));
+    fn_00b782b0((void*)((char*)a0 + 64), (void*)(t0), (void*)(a2));
 }
 
 }

@@ -5,13 +5,66 @@
 extern "C" {
 
 int fn_0093556c(void);
+void fn_00936ff8(int, int);
 void fn_0093925c(void);
 void fn_00939384(void);
+int fn_0093a500(int, int);
+int fn_0093ad4c(int, int);
+void fn_0093afec(int, int);
+int fn_0093bba8(int, int);
+int fn_0093c484(int, int);
+void fn_0093d5a0(int, int);
+int fn_0093f298(int, int);
 void fn_009645d8(void*, void*);
 
 int fn_00977fec(void* a0) {
     fn_009645d8((void*)(a0), (void*)((char*)a0 + 56));
     return (int)(1);
+}
+
+int fn_0097825c(int a0) {
+    int t0;
+    t0 = fn_0093a500((int)(a0), (int)(-1));
+    return (int)(t0);
+}
+
+int fn_009782c0(int a0) {
+    int t0;
+    t0 = fn_0093ad4c((int)(a0), (int)(-2));
+    return (int)(t0);
+}
+
+int fn_009782ec(int a0) {
+    int t0;
+    t0 = fn_0093f298((int)(a0), (int)(-1));
+    return (int)(t0);
+}
+
+int fn_00978318(int a0) {
+    fn_0093d5a0((int)(a0), (int)(1));
+    return (int)(1);
+}
+
+int fn_009783c8(int a0) {
+    fn_0093afec((int)(a0), (int)(1));
+    return (int)(1);
+}
+
+int fn_00978428(int a0) {
+    int t0;
+    t0 = fn_0093bba8((int)(a0), (int)(-2));
+    if ((int)(t0) >= (int)(0)) {
+        fn_00936ff8((int)(a0), (int)(1));
+        return (int)(1);
+    }
+    fn_00936ff8((int)(a0), (int)(0));
+    return (int)(1);
+}
+
+int fn_009784d8(int a0) {
+    int t0;
+    t0 = fn_0093c484((int)(a0), (int)(-3));
+    return (int)(t0);
 }
 
 int fn_009788d8(void) {

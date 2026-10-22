@@ -5,10 +5,15 @@
 extern "C" {
 
 void fn_00b37f88(void*, int, void*);
+void fn_00b38268(int, int);
 
 void fn_00032538(void* a0, int a1, int a2, void* a3) {
     fn_00b37f88((void*)(a0), (int)(a2), (void*)(a3));
     FIELD(u8, (char*)a0 + (int)(a3), 0) = (u8)(0);
+}
+
+void fn_00032590(int a0, int a1, int a2) {
+    fn_00b38268((int)(a0), (int)(a2));
 }
 
 }

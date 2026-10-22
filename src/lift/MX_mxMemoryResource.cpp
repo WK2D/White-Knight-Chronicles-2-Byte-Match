@@ -8,6 +8,7 @@ void fn_00afe96c(void*);
 void fn_00aff0c8(void*, int);
 void fn_00b41f98(void);
 void* fn_00b42288(void);
+int fn_00fc8cac(void*);
 
 struct unk_00aede64_a0 {
     char pad_0[92];
@@ -94,6 +95,41 @@ void* fn_00aee1c4(unk_00aee1c4_a0* a0) {
 
 void fn_00aee21c(void) {
     fn_00b41f98();
+}
+
+struct unk_00aee240_a1 {
+    virtual void vf0();
+    virtual void vf1(void);
+    char pad_4[8];
+    u32 f_c;
+};
+void fn_00aee240(int a0, unk_00aee240_a1* a1) {
+    int t0;
+    int v0;
+    if ((int)(a1->f_c) != (int)(0)) {
+        t0 = fn_00fc8cac((void*)(a1->f_c));
+        v0 = (int)(t0);
+    } else {
+        v0 = (int)(a1->f_c);
+    }
+    a1->vf1();
+}
+
+struct unk_00aee2b0_a1 {
+    virtual void vf0();
+    virtual void vf1(void);
+    u32 f_4;
+};
+void fn_00aee2b0(int a0, unk_00aee2b0_a1* a1) {
+    int t0;
+    int v0;
+    if ((int)(a1->f_4) != (int)(0)) {
+        t0 = fn_00fc8cac((void*)(a1->f_4));
+        v0 = (int)(t0);
+    } else {
+        v0 = (int)(a1->f_4);
+    }
+    a1->vf1();
 }
 
 void* fn_00aee820(void) {

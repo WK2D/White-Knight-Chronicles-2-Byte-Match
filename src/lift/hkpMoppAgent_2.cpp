@@ -5,6 +5,11 @@
 extern "C" {
 
 void fn_00d17210(void*);
+void fn_00d17550(int, int, int);
+
+void fn_00d205bc(int a0, int a1, int a2) {
+    fn_00d17550((int)(a0), (int)(a2), (int)(a1));
+}
 
 struct unk_00d205ec_a0 {
     void* f_0;

@@ -17,22 +17,4 @@ void fn_004b7e4c(unk_004b7e4c_a0* a0) {
     fn_00fc88dc((void*)(a0));
 }
 
-struct unk_004b7e90_a0 {
-    void* f_0;
-};
-extern char g_004b7e90_0[];
-void fn_004b7e90(unk_004b7e90_a0* a0) {
-    a0->f_0 = (void*)(g_004b7e90_0);
-    fn_004b29f0((void*)(a0));
-}
-
-struct unk_004b7ec0_a0 {
-    void* f_0;
-};
-extern char g_004b7ec0_0[];
-void fn_004b7ec0(unk_004b7ec0_a0* a0) {
-    a0->f_0 = (void*)(g_004b7ec0_0);
-    fn_004b29f0((void*)(a0));
-}
-
 }

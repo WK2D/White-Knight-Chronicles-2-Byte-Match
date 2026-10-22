@@ -5,8 +5,25 @@
 extern "C" {
 
 int fn_00b38028(void*, int);
+void* fn_00b38538(int, int, int, int, int);
 void* fn_00b38548(void);
 void* fn_00b38558(void);
+
+int fn_00034e70(int a0, int a1, int a2, int a3) {
+    void* t0;
+    int t1;
+    t0 = fn_00b38538((int)(a0), (int)(a1), (int)(a2), (int)(a3), (int)(4));
+    t1 = fn_00b38028((void*)(t0), (int)(0));
+    return (int)(t1);
+}
+
+int fn_00034f90(int a0, int a1, int a2, int a3) {
+    void* t0;
+    int t1;
+    t0 = fn_00b38538((int)(a0), (int)(a1), (int)(a2), (int)(a3), (int)(3));
+    t1 = fn_00b38028((void*)(t0), (int)(0));
+    return (int)(t1);
+}
 
 int fn_000350a8(void) {
     void* t0;

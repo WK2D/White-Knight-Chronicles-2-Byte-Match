@@ -4,7 +4,6 @@
 
 extern "C" {
 
-int fn_00041b48(void*);
 
 struct unk_004823b4_a0 {
     char pad_0[12];
@@ -137,29 +136,6 @@ extern char g_004826e8_0[];
 int fn_004826e8(void) {
     FIELD(u8, FIELD(u32, g_004826e8_0, 0), 8) = (u8)(0);
     return (int)(1);
-}
-
-extern char g_004830b0_0[];
-int fn_004830b0(void* a0) {
-    int t0;
-    int t1;
-    int v0;
-    void* v1;
-    int v2;
-    if ((int)(FIELD(u32, FIELD(u32, g_004830b0_0, 0), 28)) != (int)(0)) {
-        t0 = fn_00041b48((void*)(a0));
-        t1 = fn_00041b48((void*)((char*)a0 + 8));
-        FIELD(u16, FIELD(u32, g_004830b0_0, 0), 44) = (u16)(t0);
-        FIELD(u16, FIELD(u32, g_004830b0_0, 0), 46) = (u16)(t1);
-        v0 = (int)(t1);
-        v1 = (void*)(FIELD(u32, g_004830b0_0, 0));
-        v2 = (int)(1);
-    } else {
-        v0 = (int)(a0);
-        v1 = (void*)(FIELD(u32, g_004830b0_0, 0));
-        v2 = (int)(0);
-    }
-    return (int)(v2);
 }
 
 }

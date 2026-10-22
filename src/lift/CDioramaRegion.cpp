@@ -25,4 +25,15 @@ void fn_008afdb8(unk_008afdb8_a0* a0, int a1) {
     a0->f_0 = (void*)(g_008afdb8_0);
 }
 
+struct unk_008afdc8_a0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual int vf2(void);
+};
+u8 fn_008afdc8(unk_008afdc8_a0* a0) {
+    int t0;
+    t0 = a0->vf2();
+    return (u8)((u8)t0);
+}
+
 }

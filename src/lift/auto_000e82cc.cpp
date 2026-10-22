@@ -8,6 +8,7 @@ void fn_00017f2c(void);
 void fn_00017f68(void);
 static void __attribute__((noinline)) stub_000e8a54(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 void fn_000e95fc(void*);
+int fn_000e98b4(void*, u32);
 
 struct unk_000e8a90_a0 {
     char pad_0[284];
@@ -20,6 +21,16 @@ int fn_000e8a90(unk_000e8a90_a0* a0) {
     a0->f_11c = (u32)(-1);
     fn_000e95fc((void*)(a0));
     return (int)(0);
+}
+
+struct unk_000e9568_a0 {
+    char pad_0[4];
+    u32 f_4;
+};
+int fn_000e9568(unk_000e9568_a0* a0) {
+    int t0;
+    t0 = fn_000e98b4((void*)(a0), (u32)(a0->f_4));
+    return (int)(t0);
 }
 
 }

@@ -6,9 +6,76 @@ extern "C" {
 
 void fn_00a7e504(int, int, int, void*);
 
+struct unk_00a6a6f0_a0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual void vf5();
+    virtual void vf6();
+    virtual void vf7();
+    virtual void vf8();
+    virtual void vf9(void);
+};
+void fn_00a6a6f0(unk_00a6a6f0_a0* a0) {
+    a0->vf9();
+}
+
+struct unk_00a6a730_a0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual void vf5();
+    virtual void vf6();
+    virtual void vf7();
+    virtual void vf8();
+    virtual void vf9(int);
+};
+void fn_00a6a730(unk_00a6a730_a0* a0, int a1, int a2) {
+    a0->vf9((int)(a2));
+}
+
+struct unk_00a6a774_a0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual void vf5();
+    virtual void vf6();
+    virtual void vf7();
+    virtual void vf8();
+    virtual void vf9(void);
+};
+void fn_00a6a774(unk_00a6a774_a0* a0) {
+    a0->vf9();
+}
+
 extern char g_00a6a7bc_0[];
 void fn_00a6a7bc(int a0, int a1) {
     fn_00a7e504((int)(a1), (int)(a0), (int)(0), (void*)(g_00a6a7bc_0));
+}
+
+struct unk_00a6a7f8_a0 {
+    char pad_0[40];
+    u32 f_28;
+};
+struct unk_00a6a7f8_a1 {
+    char pad_0[4];
+    u32 f_4;
+};
+struct unk_00a6a7f8_vc0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void* vf2(u32);
+};
+void* fn_00a6a7f8(unk_00a6a7f8_a0* a0, unk_00a6a7f8_a1* a1) {
+    void* t0;
+    t0 = ((unk_00a6a7f8_vc0*)(a0->f_28))->vf2((u32)(a1->f_4));
+    return (void*)(t0);
 }
 
 }

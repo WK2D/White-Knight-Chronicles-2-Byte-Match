@@ -6,7 +6,17 @@ extern "C" {
 
 void* fn_00076a98(void*, int, int, int, int, int);
 static int __attribute__((noinline)) stub_002def7c(void* p0, u16 p1, void* p2, void* p3, void* p4) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4)); return r; }
+static int __attribute__((noinline)) stub_002e9660(void* p0, void* p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static void __attribute__((noinline)) stub_002fc47c(void) { __asm__ volatile (""); }
+
+extern char g_002f63dc_0[];
+u8 fn_002f63dc(void* a0, int a1) {
+    void* t0;
+    int t1;
+    t0 = fn_00076a98((void*)(g_002f63dc_0), (int)(a1), (int)(0), (int)(-1), (int)(0), (int)(0));
+    t1 = stub_002e9660((void*)(a0), (void*)(t0));
+    return (u8)((u8)t1);
+}
 
 extern char g_002f6b6c_0[];
 u8 fn_002f6b6c(void* a0, int a1, int a2, void* a3, void* a4) {

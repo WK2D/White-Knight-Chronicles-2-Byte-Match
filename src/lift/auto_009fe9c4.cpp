@@ -4,106 +4,13 @@
 
 extern "C" {
 
-static int __attribute__((noinline)) stub_009fe9c4(void* p0, void* p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
+int fn_009f4ca4(int, void*, int, int);
 
-extern char g_009fe9f8_0[];
-extern char g_009fe9f8_1[];
-extern char g_009fe9f8_2[];
-extern char g_009fe9f8_3[];
-extern char g_009fe9f8_4[];
-extern char g_009fe9f8_5[];
-extern char g_009fe9f8_6[];
-extern char g_009fe9f8_7[];
-extern char g_009fe9f8_8[];
-extern char g_009fe9f8_9[];
-extern char g_009fe9f8_10[];
-extern char g_009fe9f8_11[];
-extern char g_009fe9f8_12[];
-extern char g_009fe9f8_13[];
-extern char g_009fe9f8_14[];
-extern char g_009fe9f8_15[];
-extern char g_009fe9f8_16[];
-extern char g_009fe9f8_17[];
-extern char g_009fe9f8_18[];
-extern char g_009fe9f8_19[];
-extern char g_009fe9f8_20[];
-int fn_009fe9f8(void) {
+extern char g_009fe9c4_0[];
+int fn_009fe9c4(int a0, int a1) {
     int t0;
-    int t1;
-    int t2;
-    int t3;
-    int t4;
-    int t5;
-    int t6;
-    int t7;
-    int t8;
-    int t9;
-    int v0;
-    int v1;
-    int v2;
-    int v3;
-    int v4;
-    int v5;
-    int v6;
-    int v7;
-    int v8;
-    t0 = stub_009fe9c4((void*)(g_009fe9f8_0), (void*)(g_009fe9f8_1));
-    FIELD(u32, g_009fe9f8_2, 124) = (u32)(t0);
-    if ((int)(t0) >= (int)(0)) {
-        t1 = stub_009fe9c4((void*)(g_009fe9f8_3), (void*)(g_009fe9f8_4));
-        if ((int)(t1) >= (int)(0)) {
-            t2 = stub_009fe9c4((void*)(g_009fe9f8_5), (void*)(g_009fe9f8_6));
-            if ((int)(t2) >= (int)(0)) {
-                t3 = stub_009fe9c4((void*)(g_009fe9f8_7), (void*)(g_009fe9f8_8));
-                if ((int)(t3) >= (int)(0)) {
-                    t4 = stub_009fe9c4((void*)(g_009fe9f8_9), (void*)(g_009fe9f8_10));
-                    if ((int)(t4) >= (int)(0)) {
-                        t5 = stub_009fe9c4((void*)(g_009fe9f8_11), (void*)(g_009fe9f8_12));
-                        if ((int)(t5) >= (int)(0)) {
-                            t6 = stub_009fe9c4((void*)(g_009fe9f8_13), (void*)(g_009fe9f8_14));
-                            if ((int)(t6) >= (int)(0)) {
-                                t7 = stub_009fe9c4((void*)(g_009fe9f8_15), (void*)(g_009fe9f8_16));
-                                if ((int)(t7) >= (int)(0)) {
-                                    t8 = stub_009fe9c4((void*)(g_009fe9f8_17), (void*)(g_009fe9f8_18));
-                                    if ((int)(t8) >= (int)(0)) {
-                                        t9 = stub_009fe9c4((void*)(g_009fe9f8_20), (void*)(g_009fe9f8_19));
-                                        v0 = (int)(t9);
-                                    } else {
-                                        v0 = (int)(t8);
-                                    }
-                                    v1 = (int)(v0);
-                                } else {
-                                    v1 = (int)(t7);
-                                }
-                                v2 = (int)(v1);
-                            } else {
-                                v2 = (int)(t6);
-                            }
-                            v3 = (int)(v2);
-                        } else {
-                            v3 = (int)(t5);
-                        }
-                        v4 = (int)(v3);
-                    } else {
-                        v4 = (int)(t4);
-                    }
-                    v5 = (int)(v4);
-                } else {
-                    v5 = (int)(t3);
-                }
-                v6 = (int)(v5);
-            } else {
-                v6 = (int)(t2);
-            }
-            v7 = (int)(v6);
-        } else {
-            v7 = (int)(t1);
-        }
-        v8 = (int)(v7);
-    } else {
-        v8 = (int)(t0);
-    }
-    return (int)(1);
+    t0 = fn_009f4ca4((int)(a0), (void*)(g_009fe9c4_0), (int)(a1), (int)(12));
+    return (int)(t0);
 }
 
 }

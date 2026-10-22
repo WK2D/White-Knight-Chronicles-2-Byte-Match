@@ -5,6 +5,7 @@
 extern "C" {
 
 int fn_00a3c6e8(void*, void*);
+void fn_00a3cac8(void*, int, int);
 void* fn_00b3e1d8(void*);
 
 void* fn_00a43f58(void* a0) {
@@ -22,6 +23,10 @@ void* fn_00a43f58(void* a0) {
         v1 = (int)(a0);
     }
     return (void*)(v0);
+}
+
+void fn_00a44108(void* a0, int a1) {
+    fn_00a3cac8((void*)((char*)a0 + 4), (int)(a1), (int)(256));
 }
 
 }

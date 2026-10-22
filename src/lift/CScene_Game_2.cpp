@@ -4,11 +4,47 @@
 
 extern "C" {
 
-void fn_003fd418(u32);
+void* fn_00076a98(void*, int, int, int, int, int);
 
-extern char g_0031a340_0[];
-void fn_0031a340(void) {
-    fn_003fd418((u32)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_0031a340_0, 0), 108), 8), 240)));
+struct unk_0031de38_a0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual void vf5();
+    virtual void vf6();
+    virtual void vf7();
+    virtual void vf8();
+    virtual void vf9();
+    virtual void vf10();
+    virtual void vf11();
+    virtual void vf12();
+    virtual void vf13();
+    virtual void vf14();
+    virtual void vf15();
+    virtual void vf16();
+    virtual void vf17();
+    virtual void vf18();
+    virtual void vf19();
+    virtual void vf20();
+    virtual void vf21();
+    virtual void vf22();
+    virtual void vf23();
+    virtual void vf24();
+    virtual void vf25();
+    virtual void vf26();
+    virtual void vf27();
+    virtual void vf28();
+    virtual void* vf29(void*);
+};
+extern char g_0031de38_0[];
+void* fn_0031de38(unk_0031de38_a0* a0, int a1) {
+    void* t0;
+    void* t1;
+    t0 = fn_00076a98((void*)(g_0031de38_0), (int)(a1), (int)(0), (int)(-1), (int)(0), (int)(0));
+    t1 = a0->vf29((void*)(t0));
+    return (void*)(t1);
 }
 
 }

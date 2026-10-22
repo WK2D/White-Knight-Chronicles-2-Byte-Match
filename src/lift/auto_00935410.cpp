@@ -9,7 +9,13 @@ int fn_00958670(u32, void*);
 int fn_009640bc(int);
 void fn_0096440c(void);
 void fn_00964510(void);
+void fn_009645d8(int, void*);
 void fn_0096469c(void);
+
+extern char g_00935410_0[];
+void fn_00935410(int a0) {
+    fn_009645d8((int)(a0), (void*)(g_00935410_0));
+}
 
 void fn_00935438(void) {
     fn_00964510();

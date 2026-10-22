@@ -5,6 +5,25 @@
 extern "C" {
 
 
+struct unk_0083e9e4_a1 {
+    virtual void vf0();
+    virtual int vf1(void);
+};
+int fn_0083e9e4(int a0, unk_0083e9e4_a1* a1) {
+    int t0;
+    int v0;
+    int v1;
+    if ((int)(a1) != (int)(0)) {
+        t0 = a1->vf1();
+        v0 = (int)(t0);
+        v1 = (int)(1);
+    } else {
+        v0 = (int)(a1);
+        v1 = (int)(0);
+    }
+    return (int)(v1);
+}
+
 struct unk_0083ea5c_a0 {
     char pad_0[4816];
     u32 f_12d0;

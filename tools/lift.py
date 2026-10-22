@@ -50,9 +50,12 @@ def branch_target(address, word):
 
 
 class Value:
-    def __init__(self, text, ctype='int', prec=0, call=None, origin=None):
+    def __init__(self, text, ctype='int', prec=0, call=None, origin=None, vt=None):
         self.text, self.ctype, self.prec, self.call = text, ctype, prec, call
         self.origin = origin       # for 'x + n': x, which is a pointer if the sum is used as one
+        # Virtual dispatch: ('vptr', obj) the word at offset 0 of obj, ('slot', obj, k)
+        # vtable entry k (a function descriptor), ('code', obj, k) its code address.
+        self.vt = vt
 
 
 def paren(v):
@@ -68,6 +71,29 @@ def struct_decl(tag, by_offset):
     out, at = [f'struct {tag} {{'], 0
     for off in sorted(by_offset):
         t = by_offset[off]
+        if off < at or off % SIZES[t]:
+            return None
+        if off > at:
+            out.append(f'    char pad_{at:x}[{off - at}];')
+        out.append(f'    {t} f_{off:x};')
+        at = off + SIZES[t]
+    out.append('};')
+    return '\n'.join(out)
+
+
+def class_decl(tag, slots, fields):
+    """A class with virtual functions vf0..vfN (the used slots with their
+    signatures, the rest as fillers) and its fields after the vtable pointer."""
+    out = [f'struct {tag} {{']
+    for k in range(max(slots) + 1):
+        if k in slots:
+            rtype, types = slots[k]
+            out.append(f'    virtual {rtype} vf{k}({", ".join(types) if types else "void"});')
+        else:
+            out.append(f'    virtual void vf{k}();')
+    at = 4
+    for off in sorted(fields):
+        t = fields[off]
         if off < at or off % SIZES[t]:
             return None
         if off > at:
@@ -139,10 +165,14 @@ def reads_before_writes(words):
 
 
 class Lifter:
-    def __init__(self, address, words, arity, preset=None, layouts=None):
+    def __init__(self, address, words, arity, preset=None, layouts=None, poly=None):
         self.address, self.words, self.arity = address, words, arity
         self.preset = preset or {}
         self.layouts = layouts or {}      # argument register -> {offset: type} (second pass)
+        self.poly = poly or set()         # argument registers known (earlier pass) to be polymorphic
+        # Offset-0 words are read as vtable pointers only where the function
+        # makes an indirect call; elsewhere they are ordinary fields.
+        self.virtual = 0x4E800421 in words
         self.access = defaultdict(set)    # argument register -> {(offset, type)} (first pass)
         self.static = {}                  # callees called without a TOC slot: static in this file
         self.gpr = {r: None for r in range(32)}
@@ -151,6 +181,10 @@ class Lifter:
         self.stmts, self.calls, self.globals = [], {}, {}
         self.fresh = set()
         self.cr = {}                      # condition field -> (lhs, rhs, 'signed'|'unsigned'|'pointer')
+        self.ctr = None                   # value moved to CTR (mtctr)
+        self.ffresh = set()               # float argument registers written since the last call
+        self.polymorphic = set()          # argument registers whose offset-0 word is a vptr
+        self.vclasses = {}                # class tag -> {slot: (rtype, [types])}
         self.vars = []                    # merge variables: (type, name)
         self.returns = []                 # one dict per return statement
         self.ended = False                # the current path has returned
@@ -217,12 +251,25 @@ class Lifter:
             if ctype != 'u32':
                 raise Fail('non-word TOC load')
             return self.address_of_global(d)
+        if self.virtual and base.vt is not None and base.vt[0] == 'vptr' and ctype == 'u32' and d % 4 == 0 and d >= 0:
+            obj = base.vt[1]
+            for k, arg in self.args.items():
+                if obj is arg:
+                    self.polymorphic.add(k)
+                    self.access[k].discard((0, 'u32'))
+            return Value(f'/*vtable slot {d // 4}*/', 'u32', vt=('slot', obj, d // 4))
+        if base.vt is not None and base.vt[0] == 'slot' and ctype == 'u32' and d in (0, 4):
+            return Value('/*virtual*/', 'u32', vt=('code' if d == 0 else 'toc',) + base.vt[1:])
         self.pointer(base)
         for k, arg in self.args.items():
             if base is arg:
+                if d == 0 and ctype == 'u32' and k in self.poly:
+                    return Value(f'FIELD(u32, {base.text}, 0)', 'u32', vt=('vptr', base))
                 self.access[k].add((d, ctype))
                 if k in self.layouts and self.layouts[k].get(d) == ctype:
                     return Value(f'{base.text}->f_{d:x}' if d >= 0 else f'{base.text}->f_m{-d:x}', ctype)
+        if self.virtual and d == 0 and ctype == 'u32':
+            return Value(f'FIELD({ctype}, {base.text}, {d})', ctype, vt=('vptr', base))
         return Value(f'FIELD({ctype}, {base.text}, {d})', ctype)
 
     def run(self):
@@ -244,6 +291,8 @@ class Lifter:
                 leaders |= {t, i + 1}
             elif op == 19:
                 xo = (x >> 1) & 0x3FF
+                if x == 0x4E800421:                       # bctrl: a call, handled by step()
+                    continue
                 if xo != 16 or x & 1:
                     raise Fail('indirect branch')
                 leaders.add(i + 1)
@@ -272,7 +321,7 @@ class Lifter:
                 todo += [last + (s16(t & 0xFFFC) >> 2), last + 1]
             elif op == 18 and not t & 1:
                 todo.append(last + (branch_target(0, t) >> 2))
-            elif op == 19:
+            elif op == 19 and t != 0x4E800421:
                 if (t >> 21) & 0x14 != 0x14:              # conditional return: may fall through
                     todo.append(last + 1)
             else:
@@ -280,11 +329,12 @@ class Lifter:
         return out
 
     def snapshot(self):
-        return (dict(self.gpr), dict(self.fpr), set(self.fresh), dict(self.cr), self.ended)
+        return (dict(self.gpr), dict(self.fpr), set(self.fresh), dict(self.cr), self.ended, set(self.ffresh))
 
     def restore(self, state):
         self.gpr, self.fpr, self.fresh, self.cr, self.ended = (dict(state[0]), dict(state[1]), set(state[2]),
                                                                dict(state[3]), state[4])
+        self.ffresh = set(state[5])
 
     def condition(self, crf, bit, true):
         if crf not in self.cr:
@@ -457,7 +507,7 @@ class Lifter:
         if op == 62 and ra == 1:                                     # stdu r1 / std rX,d(r1)
             if w & 3 == 1 and rt == 1:
                 return
-            if w & 3 == 0 and (rt == 0 or rt >= 14):
+            if w & 3 == 0 and (rt == 0 or rt == 2 or rt >= 14):  # r2: TOC saved around an indirect call
                 return
             raise Fail('spill')
         if op == 58 and w & 3 == 0 and ra == 1:                      # ld rX,d(r1)
@@ -481,10 +531,22 @@ class Lifter:
         if op == 15 and ra == 0:
             self.set(rt, Value(str(d << 16), 'int'))
             return
+        if op == 32 and rt == 2:                                     # lwz r2,4(descriptor): callee's TOC
+            v = self.field('u32', self.reg(ra), d)
+            if v.vt is None or v.vt[0] != 'toc':
+                raise Fail('r2 loaded from something other than a descriptor')
+            return
+        if w & 0xFC1FFFFF == 0x7C0903A6:                              # mtctr rS
+            self.ctr = self.reg(rt)
+            return
+        if w == 0x4E800421:                                          # bctrl
+            self.vcall()
+            return
         if op in LOADS:
             v = self.field(LOADS[op], self.reg(ra), d)
             if op in (48, 50):
                 self.fpr[rt] = v
+                self.ffresh.add(rt)
             else:
                 self.set(rt, v)
             return
@@ -553,15 +615,31 @@ class Lifter:
             return
         raise Fail(f'opcode {op}')
 
+    def gather_args(self, first, nint=0):
+        """Argument values in parameter order, from GPR first (r3, or r4 after
+        'this'). Floats go in f1, f2, ... and each also takes a GPR position:
+        GPR positions the caller left unwritten hold the floats, in order;
+        floats beyond the last GPR follow. nint: arguments the callee reads."""
+        gfresh = {r for r in self.fresh if 3 <= r <= 10 and self.gpr[r] is not None and self.gpr[r].vt is None}
+        floats = []
+        k = 1
+        while k in self.ffresh:
+            floats.append(self.fpr[k])
+            k += 1
+        last = max(gfresh | {first - 1, 2 + nint})
+        args = []
+        for r in range(first, last + 1):
+            if r in gfresh:
+                args.append(self.reg(r))
+            elif floats:
+                args.append(floats.pop(0))
+            else:
+                args.append(self.reg(r))
+        return args + floats
+
     def call(self, target, local=False):
         nargs, nfargs = self.arity(target)
-        if nfargs:
-            raise Fail('float arguments')
-        # The caller's own setup also shows arguments: registers it filled.
-        fresh = sorted(r for r in self.fresh if 3 <= r <= 10)
-        while fresh and fresh == list(range(3, 3 + len(fresh))) and len(fresh) > nargs:
-            nargs = len(fresh)
-        args = [self.reg(r) for r in range(3, 3 + nargs)]
+        args = self.gather_args(3, nargs)
         info = {'used': False, 'type': 'int', 'target': target, 'args': args, 'temp': f't{len(self.calls)}',
                 'local': local}
         self.calls[len(self.calls)] = info
@@ -573,6 +651,30 @@ class Lifter:
             self.fpr[r] = None
         self.gpr[3] = Value(info['temp'], 'int', 0, info)
         self.fresh = set()
+        self.ffresh = set()
+
+    def vcall(self):
+        c = self.ctr
+        if c is None or c.vt is None or c.vt[0] != 'code':
+            raise Fail('indirect call that is not a virtual call')
+        obj, slot = c.vt[1], c.vt[2]
+        this = self.reg(3)
+        if this is not obj and this.text != obj.text:
+            raise Fail('this is not the object whose vtable was read')
+        args = [this] + self.gather_args(4)
+        info = {'used': False, 'type': 'int', 'target': None, 'args': args, 'temp': f't{len(self.calls)}',
+                'local': False, 'virtual': (obj, slot)}
+        self.calls[len(self.calls)] = info
+        self.stmts.append(info)
+        for r in range(0, 13):
+            if r != 2:
+                self.gpr[r] = None
+        for r in range(0, 14):
+            self.fpr[r] = None
+        self.gpr[3] = Value(info['temp'], 'int', 0, info)
+        self.fresh = set()
+        self.ffresh = set()
+        self.ctr = None
 
     def render(self):
         # A function returns a value if any return path set r3 (or returns a
@@ -598,6 +700,25 @@ class Lifter:
             out = []
             pad = '    ' * indent
             for st in stmts:
+                if isinstance(st, dict) and st.get('virtual'):
+                    obj, slot = st['virtual']
+                    types = [CTYPES.get(a.ctype, 'int') for a in st['args'][1:]]
+                    rtype = st['type'] if st['used'] else 'void'
+                    tag = None
+                    for k, arg in self.args.items():
+                        if obj is arg:
+                            tag = f'unk_{self.address:08x}_{arg.text}'
+                            target = arg.text
+                    if tag is None:
+                        tag = f'unk_{self.address:08x}_vc{len(self.vclasses)}'
+                        target = f'(({tag}*)({obj.text}))'
+                    slots = self.vclasses.setdefault(tag, {})
+                    if slots.get(slot, (rtype, types)) != (rtype, types):
+                        raise Fail('one slot, two signatures')
+                    slots[slot] = (rtype, types)
+                    call = f'{target}->vf{slot}({", ".join(f"({t})({a.text})" for a, t in zip(st["args"][1:], types))})'
+                    out.append(pad + (f'{st["temp"]} = {call};' if st['used'] else f'{call};'))
+                    continue
                 if isinstance(st, dict):
                     types = [CTYPES.get(a.ctype, 'int') for a in st['args']]
                     rtype = st['type'] if st['used'] else 'void'
@@ -628,8 +749,14 @@ class Lifter:
         params = []
         structs = []
         for k in sorted(self.args):
-            if k in self.layouts:
-                tag = f'unk_{self.address:08x}_{self.args[k].text}'
+            tag = f'unk_{self.address:08x}_{self.args[k].text}'
+            if tag in self.vclasses:
+                decl = class_decl(tag, self.vclasses.pop(tag), self.layouts.get(k, {}))
+                if decl is None:
+                    raise Fail('class layout')
+                structs.append(decl)
+                params.append(f'{tag}* {self.args[k].text}')
+            elif k in self.layouts:
                 structs.append(struct_decl(tag, self.layouts[k]))
                 params.append(f'{tag}* {self.args[k].text}')
             else:
@@ -638,7 +765,11 @@ class Lifter:
             if self.args:
                 raise Fail('mixed arguments')
             params = [f'float {self.fargs[k].text}' for k in sorted(self.fargs)]
+        for tag, slots in self.vclasses.items():           # objects that are not arguments
+            structs.append(class_decl(tag, slots, {}))
         decls = structs + [f'extern char {n}[];' for n in self.globals.values()]
+        if any('/*vtable slot' in l or '/*virtual*/' in l for l in body):
+            raise Fail('vtable internals used as an ordinary value')
         sig = f'{ret_type} fn_{self.address:08x}({", ".join(params) if params else "void"})'
         return decls, sig + ' {\n    ' + '\n    '.join(body) + '\n}', callees
 
@@ -647,7 +778,7 @@ def lift(address, words, arity):
     try:
         first = Lifter(address, words, arity).run()
         preset = {k: v.ctype for k, v in first.args.items()}
-        typed = Lifter(address, words, arity, preset).run()
+        typed = Lifter(address, words, arity, preset, poly=first.polymorphic).run()
         layouts = {}
         for k, fields in typed.access.items():
             by_offset = {}
@@ -658,7 +789,7 @@ def lift(address, words, arity):
             else:
                 if struct_decl('x', by_offset) is not None:
                     layouts[k] = by_offset
-        second = Lifter(address, words, arity, preset, layouts).run()
+        second = Lifter(address, words, arity, preset, layouts, poly=first.polymorphic).run()
         if not second.stmts and not second.args:
             return None
         return second.render()

@@ -4,12 +4,19 @@
 
 extern "C" {
 
+void fn_009b66b4(int, void*);
 void* fn_009b9330(void);
 
 void* fn_009b9a90(void) {
     void* t0;
     t0 = fn_009b9330();
     return (void*)(t0);
+}
+
+int fn_009bb37c(int a0, void* a1) {
+    fn_009b66b4((int)(a0), (void*)(a1));
+    fn_009b66b4((int)(a0), (void*)((char*)a1 + 4));
+    return (int)(0);
 }
 
 }

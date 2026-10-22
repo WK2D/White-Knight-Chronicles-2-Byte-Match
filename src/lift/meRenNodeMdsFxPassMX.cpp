@@ -45,4 +45,17 @@ int fn_00a5ebbc(int a0, int a1, unk_00a5ebbc_a2* a2) {
     return (int)(0);
 }
 
+struct unk_00a5ebcc_a0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual void vf5();
+    virtual void vf6(void);
+};
+void fn_00a5ebcc(unk_00a5ebcc_a0* a0) {
+    a0->vf6();
+}
+
 }

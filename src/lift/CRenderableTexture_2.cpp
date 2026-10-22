@@ -6,6 +6,37 @@ extern "C" {
 
 int fn_00b387f8(void*);
 
+struct unk_00b54568_a0 {
+    char pad_0[12];
+    u32 f_c;
+};
+struct unk_00b54568_vc0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void* vf2(void);
+};
+void* fn_00b54568(unk_00b54568_a0* a0) {
+    void* t0;
+    t0 = ((unk_00b54568_vc0*)(a0->f_c))->vf2();
+    return (void*)(t0);
+}
+
+struct unk_00b545b0_a0 {
+    char pad_0[12];
+    u32 f_c;
+};
+struct unk_00b545b0_vc0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void* vf3(void);
+};
+void* fn_00b545b0(unk_00b545b0_a0* a0) {
+    void* t0;
+    t0 = ((unk_00b545b0_vc0*)(a0->f_c))->vf3();
+    return (void*)(t0);
+}
+
 struct unk_00b545f8_a0 {
     void* f_0;
 };

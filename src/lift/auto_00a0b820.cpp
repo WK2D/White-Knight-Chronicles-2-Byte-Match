@@ -4,6 +4,7 @@
 
 extern "C" {
 
+static void* __attribute__((noinline)) stub_00a0d374(int p0, int p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 void fn_00a19868(u32);
 void fn_00b3d088(void*, int, int);
 
@@ -38,6 +39,18 @@ int fn_00a0ce8c(int a0, int a1) {
         return (int)(a0);
     }
     return (int)(a1);
+}
+
+int fn_00a0d4c4(int a0) {
+    void* t0;
+    int v0;
+    t0 = stub_00a0d374((int)(a0), (int)(0));
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)(FIELD(u32, t0, 12));
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
 }
 
 }

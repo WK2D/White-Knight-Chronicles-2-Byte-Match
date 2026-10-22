@@ -4,6 +4,12 @@
 
 extern "C" {
 
+void fn_00b38198(int, void*, int, void*, void*);
+
+extern char g_00779464_0[];
+void fn_00779464(int a0, void* a1, int a2, void* a3) {
+    fn_00b38198((int)(a0), (void*)(g_00779464_0), (int)(a2), (void*)((char*)a1 + 1), (void*)((char*)a3 + 1));
+}
 
 struct unk_0077aadc_a0 {
     char pad_0[4320];

@@ -6,7 +6,8 @@ extern "C" {
 
 static void* __attribute__((noinline)) stub_008f867c(int p0, int p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static int __attribute__((noinline)) stub_008fdba4(void* p0, void* p1, void* p2, u8 p3) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); return r; }
-static int __attribute__((noinline)) stub_008fdef4(void* p0, void* p1, void* p2, u8 p3) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); return r; }
+static int __attribute__((noinline)) stub_008fde98(int p0, u32 p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
+static int __attribute__((noinline)) stub_008fdf94(int p0, u32 p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static int __attribute__((noinline)) stub_008fe0a8(int p0, void* p1, u8 p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
 void* fn_00b3cd18(void*, int, int, int, int, int);
 
@@ -19,13 +20,13 @@ u8 fn_008fdc00(void* a0, void* a1, int a2, int a3) {
     return (u8)((u8)t1);
 }
 
-extern char g_008fdf1c_0[];
-u8 fn_008fdf1c(void* a0, void* a1, int a2, int a3) {
-    void* t0;
-    int t1;
-    t0 = fn_00b3cd18((void*)(g_008fdf1c_0), (int)(a2), (int)(0), (int)(-1), (int)(0), (int)(0));
-    t1 = stub_008fdef4((void*)(a0), (void*)(a1), (void*)(t0), (u8)((u8)a3));
-    return (u8)((u8)t1);
+struct unk_008fdef4_a1 {
+    u32 f_0;
+};
+u8 fn_008fdef4(int a0, unk_008fdef4_a1* a1) {
+    int t0;
+    t0 = stub_008fde98((int)(a0), (u32)(a1->f_0));
+    return (u8)((u8)t0);
 }
 
 u8 fn_008fe354(int a0, int a1, int a2) {
@@ -34,6 +35,15 @@ u8 fn_008fe354(int a0, int a1, int a2) {
     t0 = stub_008f867c((int)(a0), (int)(a1));
     t1 = stub_008fe0a8((int)(a0), (void*)(t0), (u8)((u8)a2));
     return (u8)((u8)t1);
+}
+
+struct unk_008fe494_a1 {
+    u32 f_0;
+};
+u8 fn_008fe494(int a0, unk_008fe494_a1* a1) {
+    int t0;
+    t0 = stub_008fdf94((int)(a0), (u32)(a1->f_0));
+    return (u8)((u8)t0);
 }
 
 }

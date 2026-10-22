@@ -4,6 +4,17 @@
 
 extern "C" {
 
+static int __attribute__((noinline)) stub_007cdd74(void* p0, int p1, int p2, int p3, int p4, int p5, void* p6) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4), "r"(p5), "r"(p6)); return r; }
+
+struct unk_007ce07c_a0 {
+    char pad_0[4312];
+    u32 f_10d8;
+};
+u8 fn_007ce07c(unk_007ce07c_a0* a0, int a1, int a2, int a3, int a4, int a5) {
+    int t0;
+    t0 = stub_007cdd74((void*)(a0), (int)((int)a0->f_10d8), (int)(a1), (int)(a2), (int)(a4), (int)(a5), (void*)(a0));
+    return (u8)((u8)t0);
+}
 
 extern char g_007cf094_0[];
 void* fn_007cf094(void) {

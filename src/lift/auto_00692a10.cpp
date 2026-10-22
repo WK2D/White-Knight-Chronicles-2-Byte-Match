@@ -17,6 +17,7 @@ void fn_006f2780(u32);
 void fn_006f27b8(u32);
 void fn_006f2be4(u32);
 void fn_006f2c44(u32);
+void fn_006f2fb0(u32, int, int, int, int, int);
 void fn_006f3100(u32);
 void fn_00713bf0(u32);
 void fn_00713c20(u32);
@@ -83,6 +84,14 @@ struct unk_00692c6c_a0 {
 };
 void fn_00692c6c(unk_00692c6c_a0* a0) {
     fn_00713c20((u32)(a0->f_2b8));
+}
+
+struct unk_00692c94_a0 {
+    char pad_0[656];
+    u32 f_290;
+};
+void fn_00692c94(unk_00692c94_a0* a0, int a1, int a2, int a3, int a4) {
+    fn_006f2fb0((u32)(a0->f_290), (int)(a1), (int)(a2), (int)(a3), (int)(a4), (int)(0));
 }
 
 struct unk_00692cc0_a0 {

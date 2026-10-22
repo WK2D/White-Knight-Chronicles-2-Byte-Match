@@ -14,6 +14,24 @@ void fn_00125814(void* a0) {
     fn_00b37fa8((void*)((char*)a0 + 5374), (int)(0), (int)(128));
 }
 
+struct unk_00125848_a0 {
+    char pad_0[2560];
+    u32 f_a00;
+};
+void fn_00125848(unk_00125848_a0* a0) {
+    fn_00b37fa8((void*)(a0), (int)(0), (int)(2560));
+    a0->f_a00 = (u32)(0);
+}
+
+struct unk_00125888_a0 {
+    char pad_0[2560];
+    u32 f_a00;
+};
+void fn_00125888(unk_00125888_a0* a0) {
+    fn_00b37fa8((void*)(a0), (int)(0), (int)(2560));
+    a0->f_a00 = (u32)(0);
+}
+
 extern char g_00125c5c_0[];
 void fn_00125c5c(void) {
     fn_00b37fa8((void*)(g_00125c5c_0), (int)(0), (int)(1024));

@@ -7,6 +7,7 @@ extern "C" {
 void fn_00d17c38(int, int, int, int, int);
 void fn_00d18070(int, int, int, int);
 void fn_00d18420(int, int, int, int);
+void fn_00d26e08(int, int, int);
 void fn_00ded250(void*);
 void fn_00ded418(void*);
 
@@ -28,6 +29,10 @@ void fn_00d217f8(int a0, int a1, int a2, int a3, int a4) {
 
 void fn_00d2182c(int a0, int a1, int a2, int a3, int a4) {
     fn_00d18070((int)(a1), (int)(a2), (int)(a3), (int)(a4));
+}
+
+void fn_00d21860(int a0, int a1, int a2) {
+    fn_00d26e08((int)(a0), (int)(a2), (int)(a1));
 }
 
 }

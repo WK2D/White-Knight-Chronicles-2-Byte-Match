@@ -4,7 +4,12 @@
 
 extern "C" {
 
+void fn_00b3d088(int, int, int);
 void fn_00b41f98(u32);
+
+void fn_00aa5a3c(int a0) {
+    fn_00b3d088((int)(a0), (int)(0), (int)(256));
+}
 
 struct unk_00aa5ad0_a0 {
     char pad_0[8];

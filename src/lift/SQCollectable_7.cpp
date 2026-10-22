@@ -4,6 +4,7 @@
 
 extern "C" {
 
+static void __attribute__((noinline)) stub_00958410(void* p0, int p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 
 struct unk_00957ed4_a1 {
     char pad_0[12];
@@ -17,6 +18,24 @@ void fn_00957ed4(void* a0, unk_00957ed4_a1* a1) {
         FIELD(void*, FIELD(u32, a0, 0), 16) = (void*)(a1);
     }
     FIELD(void*, a0, 0) = (void*)(a1);
+}
+
+struct unk_0095852c_a0 {
+    char pad_0[8];
+    u32 f_8;
+};
+void fn_0095852c(unk_0095852c_a0* a0) {
+    stub_00958410((void*)(a0), (int)(4));
+    a0->f_8 = (u32)(0);
+}
+
+struct unk_00958564_a0 {
+    char pad_0[8];
+    u32 f_8;
+};
+void fn_00958564(unk_00958564_a0* a0) {
+    stub_00958410((void*)(a0), (int)(4));
+    a0->f_8 = (u32)(0);
 }
 
 }

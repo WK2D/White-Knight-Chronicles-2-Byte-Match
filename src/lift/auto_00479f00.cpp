@@ -5,25 +5,7 @@
 extern "C" {
 
 void* fn_00041bcc(int);
-static void __attribute__((noinline)) stub_00479e90(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
-static void __attribute__((noinline)) stub_00479eac(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
-static void __attribute__((noinline)) stub_00479ec8(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
-static void __attribute__((noinline)) stub_00479ee4(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
 static void __attribute__((noinline)) stub_0047aba0(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
-
-struct unk_00479f00_a0 {
-    char pad_0[68];
-    u32 f_44;
-};
-extern char g_00479f00_0[];
-void fn_00479f00(unk_00479f00_a0* a0) {
-    FIELD(u32, g_00479f00_0, 0) = (u32)(0);
-    stub_00479e90((void*)(a0));
-    stub_00479eac((void*)(a0));
-    stub_00479ec8((void*)(a0));
-    stub_00479ee4((void*)(a0));
-    a0->f_44 = (u32)(0);
-}
 
 extern char g_0047a130_0[];
 int fn_0047a130(void) {

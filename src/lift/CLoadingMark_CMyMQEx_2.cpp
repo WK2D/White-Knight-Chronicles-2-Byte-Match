@@ -9,6 +9,7 @@ void fn_000e9664(int);
 void fn_000e9684(int);
 void fn_000e96b8(int, int, int, int, int, int);
 void fn_000e96ec(int, int, int, int, int, int);
+void fn_000eaad0(void*);
 void fn_000ed584(void*);
 
 extern char g_000e1f08_0[];
@@ -48,6 +49,10 @@ void fn_000e2094(int a0) {
 
 void fn_000e2148(void* a0) {
     fn_000e3ffc((void*)((char*)a0 + 1408));
+}
+
+void fn_000e2174(void* a0) {
+    fn_000eaad0((void*)((char*)a0 + 1032));
 }
 
 void fn_000e22b4(void* a0) {

@@ -6,6 +6,31 @@ extern "C" {
 
 void fn_0030d7d8(void*, int, void*);
 
+struct unk_003162a4_a0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4(void);
+};
+void fn_003162a4(unk_003162a4_a0* a0) {
+    a0->vf4();
+}
+
+struct unk_003162ec_a0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual void vf5();
+    virtual void vf6();
+    virtual void vf7(void);
+};
+void fn_003162ec(unk_003162ec_a0* a0) {
+    a0->vf7();
+}
+
 struct unk_00316400_a0 {
     void* f_0;
 };

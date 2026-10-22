@@ -4,8 +4,70 @@
 
 extern "C" {
 
-void fn_00c03c0c(void);
 void fn_00daeb88(u32);
+
+struct unk_00d778e4_a0 {
+    char pad_0[8];
+    u32 f_8;
+};
+struct unk_00d778e4_vc0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual void vf5();
+    virtual void vf6();
+    virtual void vf7();
+    virtual void vf8();
+    virtual void vf9();
+    virtual void vf10();
+    virtual void vf11();
+    virtual void vf12();
+    virtual void vf13();
+    virtual void vf14();
+    virtual void vf15();
+    virtual void vf16();
+    virtual void vf17();
+    virtual void vf18();
+    virtual void vf19();
+    virtual void vf20(void);
+};
+void fn_00d778e4(unk_00d778e4_a0* a0) {
+    ((unk_00d778e4_vc0*)(a0->f_8))->vf20();
+}
+
+struct unk_00d77928_a0 {
+    char pad_0[8];
+    u32 f_8;
+};
+struct unk_00d77928_vc0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual void vf5();
+    virtual void vf6();
+    virtual void vf7();
+    virtual void vf8();
+    virtual void vf9();
+    virtual void vf10();
+    virtual void vf11();
+    virtual void vf12();
+    virtual void vf13();
+    virtual void vf14();
+    virtual void vf15();
+    virtual void vf16();
+    virtual void vf17();
+    virtual void vf18();
+    virtual void vf19();
+    virtual void vf20();
+    virtual void vf21(void);
+};
+void fn_00d77928(unk_00d77928_a0* a0) {
+    ((unk_00d77928_vc0*)(a0->f_8))->vf21();
+}
 
 struct unk_00d77a20_a0 {
     char pad_0[88];
@@ -18,13 +80,24 @@ void fn_00d77a20(unk_00d77a20_a0* a0) {
     FIELD(u8, a0->f_58, 24) = (u8)(1);
 }
 
-struct unk_00d78098_a0 {
-    char pad_0[184];
-    u32 f_b8;
+struct unk_00d77a3c_a0 {
+    char pad_0[88];
+    u32 f_58;
 };
-void fn_00d78098(unk_00d78098_a0* a0) {
-    a0->f_b8 = (u32)(a0->f_b8 + -1);
-    fn_00c03c0c();
+struct unk_00d77a3c_vc0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual void vf5();
+    virtual void vf6();
+    virtual void vf7();
+    virtual void vf8();
+    virtual void vf9(void);
+};
+void fn_00d77a3c(unk_00d77a3c_a0* a0) {
+    ((unk_00d77a3c_vc0*)(a0->f_58))->vf9();
 }
 
 struct unk_00d78130_a0 {

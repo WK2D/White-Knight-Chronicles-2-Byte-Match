@@ -7,6 +7,7 @@ extern "C" {
 void* fn_0003faa8(void*);
 void fn_0003fab0(void*, int);
 int fn_00076a98(void*, void*, int, int, int, int);
+void fn_00b37fa8(int, int, int);
 
 extern char g_00349994_0[];
 int fn_00349994(void* a0, int a1) {
@@ -19,6 +20,10 @@ int fn_00349994(void* a0, int a1) {
     t1 = fn_00076a98((void*)(g_00349994_0), (void*)(t0), (int)(0), (int)(-1), (int)(0), (int)(0));
     fn_0003fab0((void*)((char*)a0 + 8), (int)(t1));
     return (int)(1);
+}
+
+void fn_003573c0(int a0) {
+    fn_00b37fa8((int)(a0), (int)(0), (int)(320));
 }
 
 }

@@ -4,10 +4,7 @@
 
 extern "C" {
 
-void* fn_003fd2c4(u32);
-void fn_003ff850(void*, u32, u32);
 void fn_007a4064(u32, void*);
-static void* __attribute__((noinline)) stub_007a5dac(void) { void* r; __asm__ volatile ("" : "=r"(r)); return r; }
 int fn_007af0c4(void*, int);
 int fn_007b01bc(void*, void*, void*);
 int fn_007b0360(void*, void*, void*, void*);
@@ -107,22 +104,6 @@ int fn_007a6398(unk_007a6398_a0* a0) {
         v0 = (int)(a0->f_1100);
     }
     return (int)(0);
-}
-
-extern char g_007a694c_0[];
-int fn_007a694c(void) {
-    void* t0;
-    void* t1;
-    int v0;
-    t0 = stub_007a5dac();
-    if ((int)(t0) != (int)(0)) {
-        t1 = fn_003fd2c4((u32)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_007a694c_0, 0), 108), 8), 240)));
-        fn_003ff850((void*)(t1), (u32)(FIELD(u32, t0, 16)), (u32)(FIELD(u32, t0, 4)));
-        v0 = (int)(1);
-    } else {
-        v0 = (int)(0);
-    }
-    return (int)(v0);
 }
 
 }

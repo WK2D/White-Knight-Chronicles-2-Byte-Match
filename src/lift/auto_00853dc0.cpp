@@ -4,26 +4,21 @@
 
 extern "C" {
 
-int fn_00852300(void*);
-void fn_00852440(void*, void*, int);
 
-struct unk_00853dc0_a0 {
-    char pad_0[2500];
-    u32 f_9c4;
+struct unk_00854528_a1 {
+    virtual void vf0();
+    virtual int vf1(void);
 };
-extern char g_00853dc0_0[];
-int fn_00853dc0(unk_00853dc0_a0* a0) {
-    int t1;
+int fn_00854528(int a0, unk_00854528_a1* a1) {
+    int t0;
     int v0;
     int v1;
-    if ((int)(a0->f_9c4) == (int)(0)) {
-        a0->f_9c4 = (u32)(3);
-        fn_00852440((void*)((char*)a0 + 16), (void*)(g_00853dc0_0), (int)(1001));
-        t1 = fn_00852300((void*)((char*)a0 + 16));
-        v0 = (int)(t1);
+    if ((int)(a1) != (int)(0)) {
+        t0 = a1->vf1();
+        v0 = (int)(t0);
         v1 = (int)(1);
     } else {
-        v0 = (int)((char*)a0 + 16);
+        v0 = (int)(a1);
         v1 = (int)(0);
     }
     return (int)(v1);

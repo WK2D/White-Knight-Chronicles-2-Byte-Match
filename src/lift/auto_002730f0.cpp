@@ -4,7 +4,36 @@
 
 extern "C" {
 
+void fn_00b3b128(u32, void*, int);
+void fn_00b3b208(u32, float);
+void fn_00b3b218(u32, int, int);
+void fn_00b3b228(u32, int);
 void fn_00b3b268(u32, int);
+
+struct unk_002730f0_a0 {
+    float f_0;
+    float f_4;
+    float f_8;
+};
+struct unk_002730f0_a1 {
+    u32 f_0;
+};
+extern char g_002730f0_0[];
+extern char g_002730f0_1[];
+extern char g_002730f0_2[];
+int fn_002730f0(unk_002730f0_a0* a0, unk_002730f0_a1* a1) {
+    fn_00b3b228((u32)(a1->f_0), (int)(0));
+    fn_00b3b128((u32)(a1->f_0), (void*)(g_002730f0_0), (int)(1));
+    fn_00b3b208((u32)(a1->f_0), (float)(a0->f_0));
+    fn_00b3b218((u32)(a1->f_0), (int)(-3), (int)(0));
+    fn_00b3b128((u32)(a1->f_0), (void*)(g_002730f0_1), (int)(1));
+    fn_00b3b208((u32)(a1->f_0), (float)(a0->f_4));
+    fn_00b3b218((u32)(a1->f_0), (int)(-3), (int)(0));
+    fn_00b3b128((u32)(a1->f_0), (void*)(g_002730f0_2), (int)(1));
+    fn_00b3b208((u32)(a1->f_0), (float)(a0->f_8));
+    fn_00b3b218((u32)(a1->f_0), (int)(-3), (int)(0));
+    return (int)(1);
+}
 
 struct unk_00273780_a0 {
     u32 f_0;

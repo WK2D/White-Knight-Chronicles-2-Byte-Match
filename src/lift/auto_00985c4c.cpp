@@ -5,6 +5,12 @@
 extern "C" {
 
 void fn_0098173c(u16);
+void fn_00983dc0(int, int);
+
+int fn_00985ef8(int a0, int a1, int a2) {
+    fn_00983dc0((int)(a0), (int)(a2));
+    return (int)(1);
+}
 
 struct unk_009875dc_a3 {
     u16 f_0;
