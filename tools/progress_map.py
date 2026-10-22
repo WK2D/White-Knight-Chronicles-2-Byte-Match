@@ -53,7 +53,7 @@ def squarify(values, x, y, w, h):
 
 
 def main():
-    report = json.loads((ROOT / 'progress' / 'report.json').read_text())
+    report = json.loads((ROOT / 'progress' / 'report.json').read_text(encoding='utf-8'))
     units = report['units']
     sizes = [int(u['measures']['totalCode']) for u in units]
     rects = squarify(sizes, 0, TOP, W, H - TOP)
@@ -83,7 +83,7 @@ def main():
                          f'fill="{GREEN}" stroke="{EDGE}" stroke-width="1"/>')
         parts.append('</g>')
     parts.append('</svg>')
-    (ROOT / 'progress' / 'map.svg').write_text('\n'.join(parts) + '\n', newline='\n')
+    (ROOT / 'progress' / 'map.svg').write_text('\n'.join(parts) + '\n', encoding='utf-8', newline='\n')
     print('wrote progress/map.svg')
 
 

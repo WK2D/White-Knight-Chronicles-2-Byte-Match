@@ -183,7 +183,7 @@ def main():
     }
     out = ROOT / 'progress' / 'report.json'
     out.parent.mkdir(exist_ok=True)
-    out.write_text(json.dumps(report, separators=(',', ':')) + '\n', newline='\n')
+    out.write_text(json.dumps(report, separators=(',', ':')) + '\n', encoding='utf-8', newline='\n')
     m = report['measures']
     print(f"{m['matchedFunctions']}/{m['totalFunctions']} functions match "
           f"({m['matchedCodePercent']:.4f}% of code, fuzzy {m['fuzzyMatchPercent']:.4f}%)")
