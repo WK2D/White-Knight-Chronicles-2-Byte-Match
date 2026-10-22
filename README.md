@@ -37,12 +37,19 @@ more native with every green square.
   the [SDK 3.1.0 source package](https://github.com/sagemono/ps3gcc)
   (`$Rev: 3364 $`, the same SDK release). Its output already matches real game
   functions byte for byte.
-- **Code:** 56,123 functions in 16.5 MB of PowerPC code, first ones matched.
-- **Units:** provisional 64 KB slices (`auto_*`) for now. The executable keeps
-  assert strings with the original file paths, such as
-  `src/system/movie/Movie.cpp` from the game and `mx_renderengine.cpp` from
-  Level-5's engine library, and C++ class names. Units are renamed to their real
-  source files as their extents are found.
+- **Compiler flags:** `-O2 -fno-ivopts`. A counted loop in `CPostEffectManager`
+  matches only with induction-variable optimization off.
+- **Code:** 56,123 functions in 16.5 MB of PowerPC code. The first three match,
+  in `CPostEffect` and `CPostEffectManager`.
+- **Units:** about 4,600, inferred from the stripped executable by
+  [`tools/make_units.py`](tools/make_units.py). C++ RTTI names 1,032 classes,
+  and their vtables, constructors and destructors label the code around them.
+  Where no class is known, a new unit starts where the functions' TOC entries
+  (each source file's table of global addresses) move past the previous
+  file's. These are estimates: units are renamed to their real source files as
+  those are identified. The executable keeps assert strings with the original
+  paths, such as `src/system/movie/Movie.cpp` from the game and
+  `mx_renderengine.cpp` from Level-5's engine library.
 
 ## Getting started
 
@@ -54,6 +61,8 @@ You need Docker, Python 3 and your own copy of the game.
 3. Check everything: `python tools/check.py -v`. This compiles `src/`, compares
    each mapped function with the original, and writes `progress/report.json`.
 4. Redraw the map: `python tools/progress_map.py`.
+
+To re-infer units: `python tools/classes.py`, then `python tools/make_units.py`.
 
 ## Matching a function
 
@@ -75,10 +84,10 @@ register and every instruction, has to be identical.
 | `src/` | Decompiled source, one file per unit |
 | `include/` | Shared headers |
 | `config/functions.txt` | Every function's address and size in the original `.text` |
-| `config/units.txt` | Unit boundaries |
+| `config/units.txt` | Unit boundaries (inferred; edit freely) |
 | `config/symbols.txt` | Which compiled function stands for which original address |
 | `progress/` | The objdiff-format progress report and the map drawn from it |
-| `tools/` | Compiler build, checker, unit and map scripts |
+| `tools/` | Compiler build, checker, class and unit inference, map scripts |
 | `orig/` | Your own game files (never committed) |
 
 ## Legal

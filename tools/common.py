@@ -10,8 +10,11 @@ ORIG = ROOT / 'orig' / 'EBOOT.elf'
 ORIG_SHA1 = '92198149c562c676815acb560e7b9861b894abd6'   # BLUS30784 v01.00, decrypted
 BUILD = ROOT / 'build'
 COMPILER = ROOT / 'tools' / 'ppu-gcc'                     # built by tools/build_compiler.sh
-# Code generation options. Units can override them in config/units.txt.
-CFLAGS = ['-O2']
+# Code generation options. The game was built with induction-variable
+# optimization off: a counted loop at 0x004b32e8 matches only with
+# -fno-ivopts (or the broader -fno-tree-loop-optimize; more loops will tell
+# the two apart).
+CFLAGS = ['-O2', '-fno-ivopts']
 
 
 def load_functions():
