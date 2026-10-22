@@ -6,4 +6,8 @@ extern "C" {
 
 void fn_00af63a0(void) {}
 
+u32 fn_00af63a4(void* self) { return FIELD(u32, FIELD(void*, self, 4), 4); }
+
+u32 fn_00af63b0(void* self) { return FIELD(u32, FIELD(void*, self, 4), 16); }
+
 }

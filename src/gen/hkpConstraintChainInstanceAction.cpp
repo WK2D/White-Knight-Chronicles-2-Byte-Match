@@ -2,6 +2,10 @@
 // shape, from unit hkpConstraintChainInstanceAction. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_00d608b8 { virtual ~gen_base_00d608b8() {} };
+struct gen_00d608b8 : gen_base_00d608b8 { virtual ~gen_00d608b8(); };
+gen_00d608b8::~gen_00d608b8() {}
+
 extern "C" {
 
 extern char g_00d60908[];

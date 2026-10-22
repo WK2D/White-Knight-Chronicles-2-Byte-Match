@@ -2,6 +2,10 @@
 // shape, from unit hkpDefaultConvexListFilter. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_00cef860 { virtual ~gen_base_00cef860() {} };
+struct gen_00cef860 : gen_base_00cef860 { virtual ~gen_00cef860(); };
+gen_00cef860::~gen_00cef860() {}
+
 extern "C" {
 
 extern char g_00cef8b0[];

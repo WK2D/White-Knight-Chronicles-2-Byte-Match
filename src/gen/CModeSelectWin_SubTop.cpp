@@ -2,6 +2,10 @@
 // shape, from unit CModeSelectWin_SubTop. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_008a4c8c { virtual ~gen_base_008a4c8c() {} };
+struct gen_008a4c8c : gen_base_008a4c8c { virtual ~gen_008a4c8c(); };
+gen_008a4c8c::~gen_008a4c8c() {}
+
 extern "C" {
 
 int fn_008a4a6c(void) { return 1; }

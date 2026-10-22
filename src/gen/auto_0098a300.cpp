@@ -11,6 +11,8 @@ int fn_0098b7a8(void) { return 0; }
 
 int fn_0098b7b0(void) { return 0; }
 
+int fn_0098b7b8(void* self, void* other) { FIELD(u32, other, 0) = 0; return 4; }
+
 int fn_0098b7c8(void) { return 4; }
 
 }

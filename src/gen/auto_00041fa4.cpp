@@ -6,6 +6,9 @@ extern "C" {
 
 void fn_00043194(void) {}
 
+extern char g_00043198[];
+void fn_00043198(void) { FIELD(u32, g_00043198, 0) = 0; }
+
 void fn_00043248(void) {}
 
 int fn_000432ec(void) { return 0; }

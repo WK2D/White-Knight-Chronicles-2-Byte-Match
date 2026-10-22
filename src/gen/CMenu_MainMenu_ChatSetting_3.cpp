@@ -11,6 +11,8 @@ struct unk_005d7948 {
 };
 void fn_005d7948(unk_005d7948* self) { self->f_0 = 0; self->f_2 = 0; self->f_4 = 0; }
 
+void fn_005d79b0(void* self, u32 value) { FIELD(u32, FIELD(void*, self, 4112), 116) = value; }
+
 void fn_005d7b88(void) {}
 
 int fn_005d7c2c(void) { return 60; }

@@ -2,6 +2,10 @@
 // shape, from unit CScene_WorldMap. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_00326bb0 { virtual ~gen_base_00326bb0() {} };
+struct gen_00326bb0 : gen_base_00326bb0 { virtual ~gen_00326bb0(); };
+gen_00326bb0::~gen_00326bb0() {}
+
 extern "C" {
 
 int fn_0032623c(void) { return 1; }

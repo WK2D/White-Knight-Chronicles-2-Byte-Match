@@ -2,6 +2,10 @@
 // shape, from unit auto_00d5d15c. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_00d5e174 { virtual ~gen_base_00d5e174() {} };
+struct gen_00d5e174 : gen_base_00d5e174 { virtual ~gen_00d5e174(); };
+gen_00d5e174::~gen_00d5e174() {}
+
 extern "C" {
 
 extern char g_00d5d15c[];

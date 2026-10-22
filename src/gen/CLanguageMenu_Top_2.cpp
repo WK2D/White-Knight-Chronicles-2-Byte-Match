@@ -10,6 +10,10 @@ struct unk_0086cfe8 {
 };
 void fn_0086cfe8(unk_0086cfe8* self) { self->f_20a8 = 2048; }
 
+u8 fn_0086d1b0(void* self) { return FIELD(u8, FIELD(void*, self, 300), 140); }
+
+u8 fn_0086d1bc(void* self) { return FIELD(u8, FIELD(void*, self, 328), 1772); }
+
 void fn_0086d204(void) {}
 
 void fn_0086d244(void) {}

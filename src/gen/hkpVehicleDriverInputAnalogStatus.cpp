@@ -2,6 +2,10 @@
 // shape, from unit hkpVehicleDriverInputAnalogStatus. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_00eb74ec { virtual ~gen_base_00eb74ec() {} };
+struct gen_00eb74ec : gen_base_00eb74ec { virtual ~gen_00eb74ec(); };
+gen_00eb74ec::~gen_00eb74ec() {}
+
 extern "C" {
 
 extern char g_00eb753c[];

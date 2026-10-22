@@ -16,6 +16,10 @@ struct unk_00d778c0 {
 };
 void fn_00d778c0(unk_00d778c0* self) { self->f_0 = 4; }
 
+float fn_00d778cc(void* self) { return FIELD(float, FIELD(void*, self, 8), 20); }
+
+float fn_00d778d8(void* self) { return FIELD(float, FIELD(void*, self, 8), 24); }
+
 void fn_00d7796c(void) {}
 
 void fn_00d77970(void) {}

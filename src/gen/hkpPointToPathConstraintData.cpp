@@ -2,6 +2,10 @@
 // shape, from unit hkpPointToPathConstraintData. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_00d5eab4 { virtual ~gen_base_00d5eab4() {} };
+struct gen_00d5eab4 : gen_base_00d5eab4 { virtual ~gen_00d5eab4(); };
+gen_00d5eab4::~gen_00d5eab4() {}
+
 extern "C" {
 
 extern char g_00d5e794[];

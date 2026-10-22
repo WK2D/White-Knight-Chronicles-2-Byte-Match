@@ -2,6 +2,10 @@
 // shape, from unit CCommonWindow_Top. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_008a1b80 { virtual ~gen_base_008a1b80() {} };
+struct gen_008a1b80 : gen_base_008a1b80 { virtual ~gen_008a1b80(); };
+gen_008a1b80::~gen_008a1b80() {}
+
 extern "C" {
 
 int fn_008a0f04(void) { return 1; }

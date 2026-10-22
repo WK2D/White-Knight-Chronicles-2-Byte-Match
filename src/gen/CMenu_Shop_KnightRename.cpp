@@ -2,6 +2,10 @@
 // shape, from unit CMenu_Shop_KnightRename. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_007f538c { virtual ~gen_base_007f538c() {} };
+struct gen_007f538c : gen_base_007f538c { virtual ~gen_007f538c(); };
+gen_007f538c::~gen_007f538c() {}
+
 extern "C" {
 
 int fn_007f4cbc(void) { return 1; }

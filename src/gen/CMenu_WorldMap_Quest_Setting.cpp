@@ -2,6 +2,10 @@
 // shape, from unit CMenu_WorldMap_Quest_Setting. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_007b1f94 { virtual ~gen_base_007b1f94() {} };
+struct gen_007b1f94 : gen_base_007b1f94 { virtual ~gen_007b1f94(); };
+gen_007b1f94::~gen_007b1f94() {}
+
 extern "C" {
 
 extern char g_007b1e0c[];

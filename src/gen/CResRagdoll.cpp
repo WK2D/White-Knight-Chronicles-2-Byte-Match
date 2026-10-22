@@ -6,4 +6,7 @@ extern "C" {
 
 void fn_00222434(void* self, u8 value) { FIELD(u8, self, 48) = value; }
 
+extern char g_0022243c[];
+void fn_0022243c(void) { FIELD(u32, g_0022243c, 0) = 0; }
+
 }

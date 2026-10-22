@@ -4,6 +4,9 @@
 
 extern "C" {
 
+extern char g_00aa3148[];
+void fn_00aa3148(u8 value) { FIELD(u8, g_00aa3148, 0) = value; }
+
 void fn_00aa31a4(void) {}
 
 void fn_00aa31a8(void) {}
@@ -33,6 +36,8 @@ struct unk_00aa36d0 {
     u32 f_0;
 };
 void fn_00aa36d0(unk_00aa36d0* self) { self->f_0 = 0; }
+
+u32 fn_00aa36dc(void* self) { return FIELD(u32, FIELD(void*, self, 0), 12); }
 
 struct unk_00aa3768 {
     u32 f_0;

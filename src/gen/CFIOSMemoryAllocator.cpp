@@ -7,8 +7,14 @@ extern "C" {
 extern char g_00036974[];
 u8 fn_00036974(void) { return FIELD(u8, g_00036974, 0); }
 
+extern char g_00036980[];
+void fn_00036980(u8 value) { FIELD(u8, g_00036980, 1) = value; }
+
 extern char g_0003698c[];
 u8 fn_0003698c(void) { return FIELD(u8, g_0003698c, 1); }
+
+extern char g_00036998[];
+void fn_00036998(u8 value) { FIELD(u8, g_00036998, 2) = value; }
 
 extern char g_000369a4[];
 u8 fn_000369a4(void) { return FIELD(u8, g_000369a4, 2); }

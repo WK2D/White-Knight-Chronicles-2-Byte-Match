@@ -2,6 +2,10 @@
 // shape, from unit CMenu_GeoNet_SettingRoom. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_0071c568 { virtual ~gen_base_0071c568() {} };
+struct gen_0071c568 : gen_base_0071c568 { virtual ~gen_0071c568(); };
+gen_0071c568::~gen_0071c568() {}
+
 extern "C" {
 
 int fn_0071c188(void) { return 1; }

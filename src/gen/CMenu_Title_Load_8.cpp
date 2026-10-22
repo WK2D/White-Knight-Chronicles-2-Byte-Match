@@ -2,6 +2,10 @@
 // shape, from unit CMenu_Title_Load_8. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_0068baa0 { virtual ~gen_base_0068baa0() {} };
+struct gen_0068baa0 : gen_base_0068baa0 { virtual ~gen_0068baa0(); };
+gen_0068baa0::~gen_0068baa0() {}
+
 extern "C" {
 
 extern char g_0068bb48[];

@@ -2,6 +2,10 @@
 // shape, from unit CMenu_GeoNet_Mail_RegistFriend. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_00700b5c { virtual ~gen_base_00700b5c() {} };
+struct gen_00700b5c : gen_base_00700b5c { virtual ~gen_00700b5c(); };
+gen_00700b5c::~gen_00700b5c() {}
+
 extern "C" {
 
 int fn_00700a68(void) { return 2; }

@@ -17,4 +17,6 @@ int fn_00402438(void) { return 1; }
 
 void fn_00402440(void) {}
 
+u8 fn_00402464(void* self) { return FIELD(u8, FIELD(void*, self, 8), 0); }
+
 }

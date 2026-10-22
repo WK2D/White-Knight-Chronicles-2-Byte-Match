@@ -2,6 +2,10 @@
 // shape, from unit CMenu_MenuBG_Top_2. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_007c55a8 { virtual ~gen_base_007c55a8() {} };
+struct gen_007c55a8 : gen_base_007c55a8 { virtual ~gen_007c55a8(); };
+gen_007c55a8::~gen_007c55a8() {}
+
 extern "C" {
 
 void fn_007c5644(void) {}

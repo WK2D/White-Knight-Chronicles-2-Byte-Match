@@ -2,6 +2,10 @@
 // shape, from unit CLanguageMenu_Top. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_0086c320 { virtual ~gen_base_0086c320() {} };
+struct gen_0086c320 : gen_base_0086c320 { virtual ~gen_0086c320(); };
+gen_0086c320::~gen_0086c320() {}
+
 extern "C" {
 
 int fn_0086bffc(void) { return 1; }

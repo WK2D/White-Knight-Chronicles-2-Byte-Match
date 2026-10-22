@@ -2,6 +2,10 @@
 // shape, from unit hkpVehicleDefaultBrake. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_00eb71e0 { virtual ~gen_base_00eb71e0() {} };
+struct gen_00eb71e0 : gen_base_00eb71e0 { virtual ~gen_00eb71e0(); };
+gen_00eb71e0::~gen_00eb71e0() {}
+
 extern "C" {
 
 extern char g_00eb71d8[];

@@ -2,6 +2,10 @@
 // shape, from unit CMenu_CM_Warning_4. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_007914e0 { virtual ~gen_base_007914e0() {} };
+struct gen_007914e0 : gen_base_007914e0 { virtual ~gen_007914e0(); };
+gen_007914e0::~gen_007914e0() {}
+
 extern "C" {
 
 int fn_007922f4(void) { return 0; }

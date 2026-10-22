@@ -6,10 +6,14 @@ extern "C" {
 
 int fn_00684f68(void) { return 1; }
 
+int fn_00684f70(void* self, void* other) { FIELD(u8, other, 0) = 0; return 1; }
+
 void* fn_00684f80(void* self) { return (char*)self + 40; }
 
 int fn_00684f8c(void) { return 1; }
 
 int fn_00684f94(void) { return 1; }
+
+int fn_00684f9c(void* self, void* other) { FIELD(u8, other, 0) = 1; return 1; }
 
 }

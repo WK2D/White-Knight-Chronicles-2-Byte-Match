@@ -2,6 +2,10 @@
 // shape, from unit hkpPulleyConstraintData. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_00d62468 { virtual ~gen_base_00d62468() {} };
+struct gen_00d62468 : gen_base_00d62468 { virtual ~gen_00d62468(); };
+gen_00d62468::~gen_00d62468() {}
+
 extern "C" {
 
 extern char g_00d622f4[];

@@ -10,6 +10,9 @@ u32 fn_00c4aa48(void* self) { return FIELD(u32, self, 0); }
 
 u32 fn_00c4ac14(void* self) { return FIELD(u32, self, 4); }
 
+extern char g_00c4af58[];
+void fn_00c4af58(u32 value) { FIELD(u32, g_00c4af58, 0) = value; }
+
 extern char g_00c4af64[];
 u32 fn_00c4af64(void) { return FIELD(u32, g_00c4af64, 0); }
 

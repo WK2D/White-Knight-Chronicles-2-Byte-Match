@@ -14,6 +14,9 @@ void fn_000e1f00(void) {}
 
 void fn_000e1f04(void) {}
 
+extern char g_000e1f48[];
+void fn_000e1f48(float value) { FIELD(float, g_000e1f48, 0) = value; }
+
 extern char g_000e1f54[];
 float fn_000e1f54(void) { return FIELD(float, g_000e1f54, 0); }
 

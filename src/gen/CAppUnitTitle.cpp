@@ -36,4 +36,10 @@ void fn_009351b4(void* self, u32 value) { FIELD(u32, self, 136) = value; }
 
 u32 fn_009351bc(void* self) { return FIELD(u32, self, 136); }
 
+void fn_00935278(void* self, u32 value) { FIELD(u32, FIELD(void*, self, 140), 160) = value; }
+
+void fn_009352bc(void* self, u32 value) { FIELD(u32, FIELD(void*, self, 140), 164) = value; }
+
+u32 fn_009352c8(void* self) { return FIELD(u32, FIELD(void*, self, 140), 164); }
+
 }

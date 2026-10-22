@@ -6,10 +6,16 @@ extern "C" {
 
 void* fn_00ca3b68(void* self) { return (char*)self + 12; }
 
+u32 fn_00ca3b74(void* self) { return FIELD(u32, FIELD(void*, self, 8), 400); }
+
 void* fn_00ca3b80(void* self) { return (char*)self + 16; }
 
 void* fn_00ca3b8c(void* self) { return (char*)self + 16; }
 
 u32 fn_00ca3b98(void* self) { return FIELD(u32, self, 8); }
+
+u32 fn_00ca3bf8(void* self) { return FIELD(u32, FIELD(void*, self, 8), 20); }
+
+u32 fn_00ca3c28(void* self) { return FIELD(u32, FIELD(void*, self, 8), 32); }
 
 }

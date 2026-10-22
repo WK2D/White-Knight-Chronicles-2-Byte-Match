@@ -44,6 +44,74 @@ void fn_00691f38(void* self, u8 value) { FIELD(u8, self, 559) = value; }
 
 u8 fn_00691f54(void* self) { return FIELD(u8, self, 13794); }
 
+void fn_00691f68(void* self, u8 value) { FIELD(u8, FIELD(void*, self, 568), 756) = value; }
+
+void fn_00692234(void* self, u8 value) { FIELD(u8, FIELD(void*, self, 636), 1059) = value; }
+
+void fn_00692350(void* self, u8 value) { FIELD(u8, FIELD(void*, self, 628), 1557) = value; }
+
+void fn_0069235c(void* self, u8 value) { FIELD(u8, FIELD(void*, self, 628), 1558) = value; }
+
+void fn_00692368(void* self, u8 value) { FIELD(u8, FIELD(void*, self, 628), 1559) = value; }
+
+void fn_00692374(void* self, u8 value) { FIELD(u8, FIELD(void*, self, 628), 1560) = value; }
+
+void fn_00692380(void* self, u16 value) { FIELD(u16, FIELD(void*, self, 628), 1562) = value; }
+
+void fn_0069239c(void* self, u16 value) { FIELD(u16, FIELD(void*, self, 628), 1564) = value; }
+
+u8 fn_006923b8(void* self) { return FIELD(u8, FIELD(void*, self, 628), 1566); }
+
+void fn_006923c4(void* self, u8 value) { FIELD(u8, FIELD(void*, self, 688), 160) = value; }
+
+void fn_006923d0(void* self, u8 value) { FIELD(u8, FIELD(void*, self, 688), 161) = value; }
+
+void fn_006923dc(void* self, u8 value) { FIELD(u8, FIELD(void*, self, 688), 164) = value; }
+
+void fn_006923e8(void* self, u8 value) { FIELD(u8, FIELD(void*, self, 688), 165) = value; }
+
+void fn_006923f4(void* self, u8 value) { FIELD(u8, FIELD(void*, self, 688), 166) = value; }
+
+void fn_00692400(void* self, u8 value) { FIELD(u8, FIELD(void*, self, 688), 167) = value; }
+
+void fn_0069240c(void* self, u8 value) { FIELD(u8, FIELD(void*, self, 684), 143) = value; }
+
+void fn_00692418(void* self, u8 value) { FIELD(u8, FIELD(void*, self, 684), 144) = value; }
+
+u8 fn_00692424(void* self) { return FIELD(u8, FIELD(void*, self, 692), 792); }
+
+u8 fn_00692444(void* self) { return FIELD(u8, FIELD(void*, self, 624), 154); }
+
+void fn_0069270c(void* self, u8 value) { FIELD(u8, FIELD(void*, self, 656), 233) = value; }
+
+void fn_00692850(void* self, u8 value) { FIELD(u8, FIELD(void*, self, 696), 234) = value; }
+
+void fn_0069285c(void* self, u8 value) { FIELD(u8, FIELD(void*, self, 696), 235) = value; }
+
+void fn_00692868(void* self, u32 value) { FIELD(u32, FIELD(void*, self, 696), 236) = value; }
+
+void fn_00692874(void* self, u8 value) { FIELD(u8, FIELD(void*, self, 696), 345) = value; }
+
+void fn_00692880(void* self, u8 value) { FIELD(u8, FIELD(void*, self, 696), 347) = value; }
+
+void fn_0069288c(void* self, u8 value) { FIELD(u8, FIELD(void*, self, 704), 2909) = value; }
+
+void fn_00692898(void* self, u8 value) { FIELD(u8, FIELD(void*, self, 704), 2910) = value; }
+
+void fn_006928a4(void* self, u32 value) { FIELD(u32, FIELD(void*, self, 704), 2912) = value; }
+
+void fn_006928b0(void* self, u8 value) { FIELD(u8, FIELD(void*, self, 588), 2041) = value; }
+
+void fn_006928bc(void* self, u8 value) { FIELD(u8, FIELD(void*, self, 588), 1621) = value; }
+
+void fn_006928c8(void* self, u32 value) { FIELD(u32, FIELD(void*, self, 588), 2056) = value; }
+
+void fn_006928d4(void* self, u8 value) { FIELD(u8, FIELD(void*, self, 588), 2054) = value; }
+
+void fn_006928e0(void* self, u8 value) { FIELD(u8, FIELD(void*, self, 588), 2055) = value; }
+
+void fn_006928ec(void* self, u8 value) { FIELD(u8, FIELD(void*, self, 588), 2060) = value; }
+
 int fn_00692928(void) { return 0; }
 
 int fn_00692930(void) { return 0; }

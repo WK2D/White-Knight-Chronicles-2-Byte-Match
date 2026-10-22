@@ -2,6 +2,10 @@
 // shape, from unit CMenu_WKB_Gauge_2. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_00676548 { virtual ~gen_base_00676548() {} };
+struct gen_00676548 : gen_base_00676548 { virtual ~gen_00676548(); };
+gen_00676548::~gen_00676548() {}
+
 extern "C" {
 
 int fn_006765d8(void) { return 5; }

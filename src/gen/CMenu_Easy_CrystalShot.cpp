@@ -2,9 +2,15 @@
 // shape, from unit CMenu_Easy_CrystalShot. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_00831830 { virtual ~gen_base_00831830() {} };
+struct gen_00831830 : gen_base_00831830 { virtual ~gen_00831830(); };
+gen_00831830::~gen_00831830() {}
+
 extern "C" {
 
 int fn_008314d4(void) { return 1; }
+
+int fn_008314dc(void* self, void* other) { FIELD(u8, other, 0) = 0; return 1; }
 
 int fn_00831508(void) { return 1; }
 

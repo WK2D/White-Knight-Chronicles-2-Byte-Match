@@ -4,6 +4,10 @@
 
 extern "C" {
 
+u32 fn_0055c414(void* self) { return FIELD(u32, FIELD(void*, self, 0), 4); }
+
+void fn_0055c420(void* self, u32 value) { FIELD(u32, FIELD(void*, self, 0), 4) = value; }
+
 int fn_0055c440(void) { return 104; }
 
 }

@@ -2,6 +2,10 @@
 // shape, from unit CGDDSystemStatus_2. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_00b96634 { virtual ~gen_base_00b96634() {} };
+struct gen_00b96634 : gen_base_00b96634 { virtual ~gen_00b96634(); };
+gen_00b96634::~gen_00b96634() {}
+
 extern "C" {
 
 struct unk_00b96ce4 {

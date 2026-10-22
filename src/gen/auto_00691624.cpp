@@ -12,6 +12,12 @@ void fn_00691908(void* self, u16 value) { FIELD(u16, self, 564) = value; }
 
 u8 fn_00691920(void* self) { return FIELD(u8, self, 13574); }
 
+void fn_00691950(void* self, u8 value) { FIELD(u8, FIELD(void*, self, 608), 2231) = value; }
+
+void fn_0069195c(void* self, u8 value) { FIELD(u8, FIELD(void*, self, 604), 1078) = value; }
+
+u8 fn_006919cc(void* self) { return FIELD(u8, FIELD(void*, self, 604), 1056); }
+
 int fn_006919f8(void) { return 0; }
 
 void fn_00691b30(void) {}
@@ -22,6 +28,20 @@ struct unk_00691b94 {
 };
 void fn_00691b94(unk_00691b94* self) { self->f_35e0 = 0; }
 
+void fn_00691ba0(void* self, u32 value) { FIELD(u32, FIELD(void*, self, 628), 36) = value; }
+
+void fn_00691bec(void* self, u32 value) { FIELD(u32, FIELD(void*, self, 568), 772) = value; }
+
 void fn_00691c38(void) {}
+
+void fn_00691c3c(void* self, u32 value) { FIELD(u32, FIELD(void*, self, 572), 4080) = value; }
+
+void fn_00691c78(void* self, u16 value) { FIELD(u16, FIELD(void*, self, 588), 2038) = value; }
+
+void fn_00691ce4(void* self, u16 value) { FIELD(u16, FIELD(void*, self, 672), 1344) = value; }
+
+u16 fn_00691d20(void* self) { return FIELD(u16, FIELD(void*, self, 616), 30552); }
+
+void fn_00691d2c(void* self, u16 value) { FIELD(u16, FIELD(void*, self, 616), 30552) = value; }
 
 }

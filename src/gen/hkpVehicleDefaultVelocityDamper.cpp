@@ -2,6 +2,10 @@
 // shape, from unit hkpVehicleDefaultVelocityDamper. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_00eb8d48 { virtual ~gen_base_00eb8d48() {} };
+struct gen_00eb8d48 : gen_base_00eb8d48 { virtual ~gen_00eb8d48(); };
+gen_00eb8d48::~gen_00eb8d48() {}
+
 extern "C" {
 
 extern char g_00eb8d98[];

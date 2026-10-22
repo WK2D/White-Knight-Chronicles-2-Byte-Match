@@ -4,6 +4,27 @@
 
 extern "C" {
 
+extern char g_00a265d8[];
+void fn_00a265d8(u32 value) { FIELD(u32, g_00a265d8, 32) = value; }
+
+extern char g_00a265e4[];
+int fn_00a265e4(void) { return FIELD(int, g_00a265e4, 32); }
+
+extern char g_00a265f4[];
+void fn_00a265f4(u32 value) { FIELD(u32, g_00a265f4, 36) = value; }
+
+extern char g_00a26600[];
+int fn_00a26600(void) { return FIELD(int, g_00a26600, 36); }
+
+extern char g_00a26924[];
+int fn_00a26924(void) { return FIELD(int, g_00a26924, 12); }
+
+extern char g_00a26934[];
+int fn_00a26934(void) { return FIELD(int, g_00a26934, 20); }
+
+extern char g_00a26944[];
+int fn_00a26944(void) { return FIELD(int, g_00a26944, 24); }
+
 int fn_00a26954(void) { return 0; }
 
 }

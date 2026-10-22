@@ -2,6 +2,10 @@
 // shape, from unit CScene_GeoNet. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_00323ce8 { virtual ~gen_base_00323ce8() {} };
+struct gen_00323ce8 : gen_base_00323ce8 { virtual ~gen_00323ce8(); };
+gen_00323ce8::~gen_00323ce8() {}
+
 extern "C" {
 
 void fn_00323a94(void) {}

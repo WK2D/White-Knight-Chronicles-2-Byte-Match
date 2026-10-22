@@ -2,6 +2,10 @@
 // shape, from unit CGDDTargetMonsterStatus_2. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_00411938 { virtual ~gen_base_00411938() {} };
+struct gen_00411938 : gen_base_00411938 { virtual ~gen_00411938(); };
+gen_00411938::~gen_00411938() {}
+
 extern "C" {
 
 extern char g_004118fc[];

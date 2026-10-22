@@ -16,6 +16,12 @@ void* fn_00069d98(void* self) { return (char*)self + 32; }
 
 int fn_00069ef0(void) { return 0; }
 
+extern char g_0006a2a0[];
+void fn_0006a2a0(void) { FIELD(u32, g_0006a2a0, 104) = 0; }
+
+extern char g_0006a2b0[];
+void fn_0006a2b0(void) { FIELD(u32, g_0006a2b0, 104) = 0; }
+
 extern char g_0006a2e8[];
 void* fn_0006a2e8(void) { return g_0006a2e8; }
 

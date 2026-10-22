@@ -10,4 +10,7 @@ u32 fn_009be2b8(void) { return FIELD(u32, g_009be2b8, 0); }
 extern char g_009be2c4[];
 void* fn_009be2c4(void) { return g_009be2c4; }
 
+extern char g_009be6cc[];
+int fn_009be6cc(void) { return FIELD(int, g_009be6cc, 144); }
+
 }

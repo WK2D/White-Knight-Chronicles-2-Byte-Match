@@ -2,6 +2,10 @@
 // shape, from unit CMenu_GeoNet_Mail_Approval. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_006ea368 { virtual ~gen_base_006ea368() {} };
+struct gen_006ea368 : gen_base_006ea368 { virtual ~gen_006ea368(); };
+gen_006ea368::~gen_006ea368() {}
+
 extern "C" {
 
 void fn_006ea0a4(void) {}

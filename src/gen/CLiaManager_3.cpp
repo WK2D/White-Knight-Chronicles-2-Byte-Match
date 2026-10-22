@@ -12,4 +12,10 @@ void fn_0005e220(void) {}
 
 void fn_0005e224(void) {}
 
+extern char g_0005ecf4[];
+void fn_0005ecf4(u32 value) { FIELD(u32, g_0005ecf4, 0) = value; }
+
+extern char g_0005ed00[];
+void fn_0005ed00(u32 value) { FIELD(u32, g_0005ed00, 4) = value; }
+
 }

@@ -2,6 +2,10 @@
 // shape, from unit CGeoramaMenuQuestList. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_0085f874 { virtual ~gen_base_0085f874() {} };
+struct gen_0085f874 : gen_base_0085f874 { virtual ~gen_0085f874(); };
+gen_0085f874::~gen_0085f874() {}
+
 extern "C" {
 
 int fn_0085f128(void) { return 1; }

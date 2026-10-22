@@ -42,4 +42,8 @@ void fn_00357a60(unk_00357a60* self) { self->f_10 = 0; self->f_11 = 0; self->f_1
 
 void fn_00357a74(void) {}
 
+u32 fn_00357a78(void* self) { return FIELD(u32, FIELD(void*, self, 4), 4); }
+
+void fn_00357a84(void* self, u32 value) { FIELD(u32, FIELD(void*, self, 4), 4) = value; }
+
 }

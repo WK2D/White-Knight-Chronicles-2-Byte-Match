@@ -2,6 +2,10 @@
 // shape, from unit hkpClosestRayHitCollector_2. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_00cf2520 { virtual ~gen_base_00cf2520() {} };
+struct gen_00cf2520 : gen_base_00cf2520 { virtual ~gen_00cf2520(); };
+gen_00cf2520::~gen_00cf2520() {}
+
 extern "C" {
 
 void fn_00cf2638(void) {}

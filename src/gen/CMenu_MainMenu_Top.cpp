@@ -6,6 +6,8 @@ extern "C" {
 
 int fn_00666f5c(void) { return 1; }
 
+int fn_00666f64(void* self, void* other) { FIELD(u8, other, 0) = 0; return 1; }
+
 int fn_00666f90(void) { return 1; }
 
 int fn_00666f98(void) { return 1; }

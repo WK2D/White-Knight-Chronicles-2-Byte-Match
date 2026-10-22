@@ -2,6 +2,10 @@
 // shape, from unit CScene_Game_2. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_0031cbd4 { virtual ~gen_base_0031cbd4() {} };
+struct gen_0031cbd4 : gen_base_0031cbd4 { virtual ~gen_0031cbd4(); };
+gen_0031cbd4::~gen_0031cbd4() {}
+
 extern "C" {
 
 float fn_0031c82c(void* self) { return FIELD(float, self, 308); }

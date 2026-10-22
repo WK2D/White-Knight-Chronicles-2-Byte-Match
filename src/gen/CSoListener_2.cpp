@@ -2,6 +2,10 @@
 // shape, from unit CSoListener_2. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_00b8a3cc { virtual ~gen_base_00b8a3cc() {} };
+struct gen_00b8a3cc : gen_base_00b8a3cc { virtual ~gen_00b8a3cc(); };
+gen_00b8a3cc::~gen_00b8a3cc() {}
+
 extern "C" {
 
 void fn_00b8a384(void) {}

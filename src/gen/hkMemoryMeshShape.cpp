@@ -2,6 +2,10 @@
 // shape, from unit hkMemoryMeshShape. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_00ce6dfc { virtual ~gen_base_00ce6dfc() {} };
+struct gen_00ce6dfc : gen_base_00ce6dfc { virtual ~gen_00ce6dfc(); };
+gen_00ce6dfc::~gen_00ce6dfc() {}
+
 extern "C" {
 
 extern char g_00ce6e4c[];

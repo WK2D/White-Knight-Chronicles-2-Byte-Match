@@ -2,6 +2,10 @@
 // shape, from unit hkpVehicleDefaultSuspension. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_00eb83f0 { virtual ~gen_base_00eb83f0() {} };
+struct gen_00eb83f0 : gen_base_00eb83f0 { virtual ~gen_00eb83f0(); };
+gen_00eb83f0::~gen_00eb83f0() {}
+
 extern "C" {
 
 extern char g_00eb83e8[];

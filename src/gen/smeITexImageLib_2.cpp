@@ -2,6 +2,10 @@
 // shape, from unit smeITexImageLib_2. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_00b4b49c { virtual ~gen_base_00b4b49c() {} };
+struct gen_00b4b49c : gen_base_00b4b49c { virtual ~gen_00b4b49c(); };
+gen_00b4b49c::~gen_00b4b49c() {}
+
 extern "C" {
 
 extern char g_00b4b454[];

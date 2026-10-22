@@ -4,13 +4,25 @@
 
 extern "C" {
 
+extern char g_000f9244[];
+int fn_000f9244(void) { return FIELD(int, g_000f9244, 0); }
+
 extern char g_000f9344[];
 u8 fn_000f9344(void) { return FIELD(u8, g_000f9344, 8); }
+
+extern char g_000f9350[];
+void fn_000f9350(void) { FIELD(u8, g_000f9350, 8) = 1; }
 
 extern char g_000f9384[];
 u32 fn_000f9384(void) { return FIELD(u32, g_000f9384, 12); }
 
+extern char g_000f9390[];
+void fn_000f9390(u32 value) { FIELD(u32, g_000f9390, 12) = value; }
+
 extern char g_000f939c[];
 u8 fn_000f939c(void) { return FIELD(u8, g_000f939c, 16); }
+
+extern char g_000f93a8[];
+void fn_000f93a8(void) { FIELD(u8, g_000f93a8, 16) = 1; }
 
 }

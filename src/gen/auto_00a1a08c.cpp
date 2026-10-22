@@ -4,7 +4,16 @@
 
 extern "C" {
 
+extern char g_00a1a260[];
+int fn_00a1a260(void) { return FIELD(int, g_00a1a260, 32); }
+
+extern char g_00a1a29c[];
+void fn_00a1a29c(u32 value) { FIELD(u32, g_00a1a29c, 4) = value; }
+
 extern char g_00a1a2a8[];
 u32 fn_00a1a2a8(void) { return FIELD(u32, g_00a1a2a8, 4); }
+
+extern char g_00a1a2b4[];
+int fn_00a1a2b4(void) { return FIELD(int, g_00a1a2b4, 4); }
 
 }

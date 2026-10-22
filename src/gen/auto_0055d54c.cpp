@@ -8,6 +8,8 @@ void fn_0055d5c0(void) {}
 
 int fn_0055d7e0(void) { return 80; }
 
+u32 fn_0055ec1c(void* self) { return FIELD(u32, FIELD(void*, self, 4), 11776); }
+
 int fn_0055ef1c(void) { return 128; }
 
 }

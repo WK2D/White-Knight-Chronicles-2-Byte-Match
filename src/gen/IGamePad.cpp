@@ -2,6 +2,10 @@
 // shape, from unit IGamePad. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_00bd1a60 { virtual ~gen_base_00bd1a60() {} };
+struct gen_00bd1a60 : gen_base_00bd1a60 { virtual ~gen_00bd1a60(); };
+gen_00bd1a60::~gen_00bd1a60() {}
+
 extern "C" {
 
 int fn_00bd1a38(void) { return 1; }

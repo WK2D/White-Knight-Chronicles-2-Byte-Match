@@ -2,6 +2,10 @@
 // shape, from unit MscWorkBase. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_002dbc5c { virtual ~gen_base_002dbc5c() {} };
+struct gen_002dbc5c : gen_base_002dbc5c { virtual ~gen_002dbc5c(); };
+gen_002dbc5c::~gen_002dbc5c() {}
+
 extern "C" {
 
 int fn_002dbc68(void) { return 0; }

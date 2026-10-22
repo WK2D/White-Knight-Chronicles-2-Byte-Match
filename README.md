@@ -39,11 +39,12 @@ more native with every green square.
   functions byte for byte.
 - **Compiler flags:** `-O2 -fno-ivopts`. A counted loop in `CPostEffectManager`
   matches only with induction-variable optimization off.
-- **Code:** 55,164 functions in 16.5 MB of PowerPC code. **7,490 match**
-  (0.48% of the code): three by hand, the rest small functions written by
+- **Code:** 55,164 functions in 16.5 MB of PowerPC code. **8,218 match**
+  (0.53% of the code): three by hand, the rest small functions written by
   [`tools/gen_simple.py`](tools/gen_simple.py) from their instruction shape
   (empty bodies, constant returns, field getters and setters, global loads,
-  struct clears, tail calls with constant arguments). Every one is verified byte for byte like any other.
+  struct clears, tail calls with constant arguments, empty derived-class
+  destructors). Every one is verified byte for byte like any other.
 - **Units:** about 4,600, inferred from the stripped executable by
   [`tools/make_units.py`](tools/make_units.py). C++ RTTI names 1,032 classes,
   and their vtables, constructors and destructors label the code around them.

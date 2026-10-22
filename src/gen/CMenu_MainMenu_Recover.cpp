@@ -4,6 +4,8 @@
 
 extern "C" {
 
+int fn_0065c38c(void* self, void* other) { FIELD(u8, other, 0) = 0; return 1; }
+
 void* fn_0065c39c(void* self) { return (char*)self + 40; }
 
 }

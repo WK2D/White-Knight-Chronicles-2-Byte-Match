@@ -7,4 +7,7 @@ extern "C" {
 extern char g_00535c70[];
 u8 fn_00535c70(void) { return FIELD(u8, g_00535c70, 512); }
 
+extern char g_00535c7c[];
+void fn_00535c7c(u8 value) { FIELD(u8, g_00535c7c, 512) = value; }
+
 }

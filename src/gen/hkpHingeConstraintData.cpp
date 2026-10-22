@@ -2,6 +2,18 @@
 // shape, from unit hkpHingeConstraintData. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_00d5e348 { virtual ~gen_base_00d5e348() {} };
+struct gen_00d5e348 : gen_base_00d5e348 { virtual ~gen_00d5e348(); };
+gen_00d5e348::~gen_00d5e348() {}
+
+struct gen_base_00d5e3b0 { virtual ~gen_base_00d5e3b0() {} };
+struct gen_00d5e3b0 : gen_base_00d5e3b0 { virtual ~gen_00d5e3b0(); };
+gen_00d5e3b0::~gen_00d5e3b0() {}
+
+struct gen_base_00d5e528 { virtual ~gen_base_00d5e528() {} };
+struct gen_00d5e528 : gen_base_00d5e528 { virtual ~gen_00d5e528(); };
+gen_00d5e528::~gen_00d5e528() {}
+
 extern "C" {
 
 extern char g_00d5e1d4[];

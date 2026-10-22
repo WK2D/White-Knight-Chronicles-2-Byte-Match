@@ -8,4 +8,7 @@ int fn_00064c6c(void) { return 0; }
 
 int fn_00064c74(void) { return 0; }
 
+extern char g_00064e44[];
+void fn_00064e44(void) { FIELD(u8, g_00064e44, 0) = 0; }
+
 }

@@ -7,6 +7,15 @@ extern "C" {
 extern char g_00537fb8[];
 u32 fn_00537fb8(void) { return FIELD(u32, g_00537fb8, 0); }
 
+extern char g_00537fc4[];
+void fn_00537fc4(u32 value) { FIELD(u32, g_00537fc4, 0) = value; }
+
+extern char g_00537ff4[];
+void fn_00537ff4(void) { FIELD(u32, g_00537ff4, 0) = 8; }
+
+extern char g_00538020[];
+void fn_00538020(void) { FIELD(u32, g_00538020, 0) = 18; }
+
 extern char g_005380d8[];
 u32 fn_005380d8(void) { return FIELD(u32, g_005380d8, 2412); }
 
@@ -24,12 +33,24 @@ u32 fn_00538150(void) { return FIELD(u32, g_00538150, 2424); }
 
 int fn_00538268(void) { return 0; }
 
+extern char g_005382ac[];
+void fn_005382ac(u8 value) { FIELD(u8, g_005382ac, 2652) = value; }
+
 int fn_005382b8(void) { return 0; }
+
+extern char g_005382c0[];
+void fn_005382c0(u8 value) { FIELD(u8, g_005382c0, 2653) = value; }
 
 int fn_005382cc(void) { return 0; }
 
+extern char g_005383ac[];
+void fn_005383ac(u8 value) { FIELD(u8, g_005383ac, 15520) = value; }
+
 extern char g_005383b8[];
 u8 fn_005383b8(void) { return FIELD(u8, g_005383b8, 15520); }
+
+extern char g_005383ec[];
+void fn_005383ec(void) { FIELD(u32, g_005383ec, 15524) = 0; }
 
 int fn_00538434(void) { return 48; }
 

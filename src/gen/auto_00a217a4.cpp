@@ -4,6 +4,9 @@
 
 extern "C" {
 
+extern char g_00a217a4[];
+void fn_00a217a4(u32 value) { FIELD(u32, g_00a217a4, 56) = value; }
+
 int fn_00a217b0(void) { return 0; }
 
 }

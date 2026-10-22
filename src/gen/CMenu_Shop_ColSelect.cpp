@@ -2,6 +2,10 @@
 // shape, from unit CMenu_Shop_ColSelect. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_007c97a4 { virtual ~gen_base_007c97a4() {} };
+struct gen_007c97a4 : gen_base_007c97a4 { virtual ~gen_007c97a4(); };
+gen_007c97a4::~gen_007c97a4() {}
+
 extern "C" {
 
 int fn_007c94c4(void) { return 1; }

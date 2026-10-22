@@ -140,8 +140,9 @@ def main():
             elif name in symbols:
                 address = symbols[name]
             else:
-                problems.append(f'{src.relative_to(ROOT)}: {name} is not in config/symbols.txt')
-                continue
+                if 'src/gen/' not in src.relative_to(ROOT).as_posix():   # generated files carry extra
+                    problems.append(f'{src.relative_to(ROOT)}: {name} is not in config/symbols.txt')
+                continue                  # compiler-made variants (D0/D2 destructors)
             if address not in functions:
                 problems.append(f'{name}: {address:#x} is not a known function start')
                 continue

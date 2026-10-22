@@ -4,6 +4,9 @@
 
 extern "C" {
 
+extern char g_004959c8[];
+void fn_004959c8(void) { FIELD(u32, g_004959c8, 0) = 0; }
+
 u32 fn_00495aa4(void* self) { return FIELD(u32, self, 12); }
 
 int fn_00495ba0(void) { return 1; }

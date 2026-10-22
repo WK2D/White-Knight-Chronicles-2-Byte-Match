@@ -4,7 +4,19 @@
 
 extern "C" {
 
+extern char g_009f6564[];
+void fn_009f6564(float value) { FIELD(float, g_009f6564, 0) = value; }
+
 extern char g_009f6570[];
 float fn_009f6570(void) { return FIELD(float, g_009f6570, 0); }
+
+extern char g_009f8774[];
+int fn_009f8774(void) { return FIELD(int, g_009f8774, 40); }
+
+extern char g_009f8784[];
+int fn_009f8784(void) { return FIELD(int, g_009f8784, 64); }
+
+extern char g_009f8794[];
+int fn_009f8794(void) { return FIELD(int, g_009f8794, 88); }
 
 }

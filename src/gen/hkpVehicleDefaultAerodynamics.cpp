@@ -2,6 +2,10 @@
 // shape, from unit hkpVehicleDefaultAerodynamics. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_00eb6fac { virtual ~gen_base_00eb6fac() {} };
+struct gen_00eb6fac : gen_base_00eb6fac { virtual ~gen_00eb6fac(); };
+gen_00eb6fac::~gen_00eb6fac() {}
+
 extern "C" {
 
 extern char g_00eb6ffc[];

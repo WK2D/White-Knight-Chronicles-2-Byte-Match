@@ -24,6 +24,8 @@ int fn_00bd18a8(void) { return 255; }
 
 void fn_00bd18b0(void) {}
 
+int fn_00bd18b4(void* self, void* other) { FIELD(u32, other, 0) = 0; return 0; }
+
 void fn_00bd18c4(void) {}
 
 void fn_00bd18c8(void) {}

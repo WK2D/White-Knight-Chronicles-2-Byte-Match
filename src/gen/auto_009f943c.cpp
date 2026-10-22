@@ -4,6 +4,9 @@
 
 extern "C" {
 
+extern char g_009fd124[];
+int fn_009fd124(void) { return FIELD(int, g_009fd124, 48); }
+
 int fn_009fd134(void) { return 8192; }
 
 int fn_009fd13c(void) { return 256; }

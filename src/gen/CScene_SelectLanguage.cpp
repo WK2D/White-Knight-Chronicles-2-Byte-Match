@@ -2,6 +2,10 @@
 // shape, from unit CScene_SelectLanguage. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_0032512c { virtual ~gen_base_0032512c() {} };
+struct gen_0032512c : gen_base_0032512c { virtual ~gen_0032512c(); };
+gen_0032512c::~gen_0032512c() {}
+
 extern "C" {
 
 void fn_00325010(void) {}

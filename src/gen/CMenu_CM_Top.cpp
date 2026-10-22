@@ -8,6 +8,8 @@ u8 fn_0078a65c(void* self) { return FIELD(u8, self, 285); }
 
 int fn_0078a664(void) { return 1; }
 
+int fn_0078a66c(void* self, void* other) { FIELD(u8, other, 0) = 0; return 1; }
+
 void* fn_0078a67c(void* self) { return (char*)self + 420; }
 
 int fn_0078a688(void) { return 1; }

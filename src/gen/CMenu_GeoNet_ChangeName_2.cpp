@@ -2,6 +2,10 @@
 // shape, from unit CMenu_GeoNet_ChangeName_2. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_0068faec { virtual ~gen_base_0068faec() {} };
+struct gen_0068faec : gen_base_0068faec { virtual ~gen_0068faec(); };
+gen_0068faec::~gen_0068faec() {}
+
 extern "C" {
 
 struct unk_0069117c {

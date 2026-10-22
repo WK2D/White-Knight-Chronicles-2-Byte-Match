@@ -2,6 +2,10 @@
 // shape, from unit hkpVehicleDefaultTransmission. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_00eb875c { virtual ~gen_base_00eb875c() {} };
+struct gen_00eb875c : gen_base_00eb875c { virtual ~gen_00eb875c(); };
+gen_00eb875c::~gen_00eb875c() {}
+
 extern "C" {
 
 extern char g_00eb87ac[];

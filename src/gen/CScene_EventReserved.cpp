@@ -2,6 +2,10 @@
 // shape, from unit CScene_EventReserved. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_003163f4 { virtual ~gen_base_003163f4() {} };
+struct gen_003163f4 : gen_base_003163f4 { virtual ~gen_003163f4(); };
+gen_003163f4::~gen_003163f4() {}
+
 extern "C" {
 
 void fn_003162e4(void) {}

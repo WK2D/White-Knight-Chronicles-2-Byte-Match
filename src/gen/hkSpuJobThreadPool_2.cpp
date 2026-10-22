@@ -8,4 +8,6 @@ int fn_00c1c980(void) { return 0; }
 
 int fn_00c1c988(void) { return 1; }
 
+u32 fn_00c1ca68(void* self) { return FIELD(u32, FIELD(void*, self, 56), 40); }
+
 }

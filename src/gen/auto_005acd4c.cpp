@@ -6,6 +6,10 @@ extern "C" {
 
 void fn_005acde4(void* self, u32 value) { FIELD(u32, self, 0) = value; }
 
+u8 fn_005ace74(void* self) { return FIELD(u8, FIELD(void*, self, 0), 0); }
+
+u8 fn_005ace80(void* self) { return FIELD(u8, FIELD(void*, self, 0), 1); }
+
 u32 fn_005ace8c(void* self) { return FIELD(u32, self, 324); }
 
 void fn_005ad454(void* self, u8 value) { FIELD(u8, self, 25) = value; }

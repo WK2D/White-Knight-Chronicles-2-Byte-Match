@@ -2,6 +2,10 @@
 // shape, from unit CMenu_GeoramaEdit_SetResident_4. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_00890870 { virtual ~gen_base_00890870() {} };
+struct gen_00890870 : gen_base_00890870 { virtual ~gen_00890870(); };
+gen_00890870::~gen_00890870() {}
+
 extern "C" {
 
 struct unk_0089133c {

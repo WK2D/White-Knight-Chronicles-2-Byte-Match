@@ -12,6 +12,8 @@ void fn_0027be5c(unk_0027be5c* self) { self->f_fd0 = 0; }
 
 void fn_0027be68(void* self, u8 value) { FIELD(u8, self, 4048) = value; }
 
+void fn_0027bef0(void* self, float value) { FIELD(float, FIELD(void*, self, 4204), 12) = value; }
+
 void fn_0027c014(void) {}
 
 }

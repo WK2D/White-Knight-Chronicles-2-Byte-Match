@@ -2,6 +2,10 @@
 // shape, from unit auto_00fb50f0. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_00fb5260 { virtual ~gen_base_00fb5260() {} };
+struct gen_00fb5260 : gen_base_00fb5260 { virtual ~gen_00fb5260(); };
+gen_00fb5260::~gen_00fb5260() {}
+
 extern "C" {
 
 u32 fn_00fbb934(void* self) { return FIELD(u32, self, 16); }

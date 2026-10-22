@@ -6,4 +6,7 @@ extern "C" {
 
 int fn_00aed6f0(void) { return 0; }
 
+extern char g_00aed7a4[];
+void fn_00aed7a4(void) { FIELD(u8, g_00aed7a4, 0) = 0; }
+
 }

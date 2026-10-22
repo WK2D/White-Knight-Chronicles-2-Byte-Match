@@ -2,6 +2,10 @@
 // shape, from unit hkpFlagCdBodyPairCollector_2. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_00d46e78 { virtual ~gen_base_00d46e78() {} };
+struct gen_00d46e78 : gen_base_00d46e78 { virtual ~gen_00d46e78(); };
+gen_00d46e78::~gen_00d46e78() {}
+
 extern "C" {
 
 struct unk_00d46ddc {

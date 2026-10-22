@@ -10,6 +10,8 @@ u16 fn_009d322c(void* self) { return FIELD(u16, self, 8); }
 
 u16 fn_009d3234(void* self) { return FIELD(u16, self, 10); }
 
+u32 fn_009d3298(void* self) { return FIELD(u32, FIELD(void*, self, 0), 12); }
+
 int fn_009d32a4(void) { return -20; }
 
 int fn_009d32ac(void) { return -20; }

@@ -2,6 +2,10 @@
 // shape, from unit hkaInterleavedUncompressedAnimation. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_00ece4fc { virtual ~gen_base_00ece4fc() {} };
+struct gen_00ece4fc : gen_base_00ece4fc { virtual ~gen_00ece4fc(); };
+gen_00ece4fc::~gen_00ece4fc() {}
+
 extern "C" {
 
 extern char g_00ece54c[];

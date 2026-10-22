@@ -2,6 +2,10 @@
 // shape, from unit hkpWheelConstraintData. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_00d6055c { virtual ~gen_base_00d6055c() {} };
+struct gen_00d6055c : gen_base_00d6055c { virtual ~gen_00d6055c(); };
+gen_00d6055c::~gen_00d6055c() {}
+
 extern "C" {
 
 extern char g_00d60554[];

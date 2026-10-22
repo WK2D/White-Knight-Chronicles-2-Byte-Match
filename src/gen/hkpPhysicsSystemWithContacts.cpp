@@ -2,6 +2,10 @@
 // shape, from unit hkpPhysicsSystemWithContacts. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_00e954bc { virtual ~gen_base_00e954bc() {} };
+struct gen_00e954bc : gen_base_00e954bc { virtual ~gen_00e954bc(); };
+gen_00e954bc::~gen_00e954bc() {}
+
 extern "C" {
 
 extern char g_00e953e8[];

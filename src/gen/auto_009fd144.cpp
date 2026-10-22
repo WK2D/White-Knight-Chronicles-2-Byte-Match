@@ -9,4 +9,25 @@ u32 fn_009fd580(void) { return FIELD(u32, g_009fd580, 8700); }
 
 void fn_009fd5e8(void) {}
 
+extern char g_009fd5ec[];
+int fn_009fd5ec(void) { return FIELD(int, g_009fd5ec, 12); }
+
+extern char g_009fd5fc[];
+int fn_009fd5fc(void) { return FIELD(int, g_009fd5fc, 340); }
+
+extern char g_009fd60c[];
+int fn_009fd60c(void) { return FIELD(int, g_009fd60c, 376); }
+
+extern char g_009fd61c[];
+int fn_009fd61c(void) { return FIELD(int, g_009fd61c, 384); }
+
+extern char g_009fd62c[];
+int fn_009fd62c(void) { return FIELD(int, g_009fd62c, 420); }
+
+extern char g_009fd680[];
+int fn_009fd680(void) { return FIELD(int, g_009fd680, 52); }
+
+extern char g_009fd6ac[];
+int fn_009fd6ac(void) { return FIELD(int, g_009fd6ac, 36); }
+
 }

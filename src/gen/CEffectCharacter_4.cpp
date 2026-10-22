@@ -4,6 +4,9 @@
 
 extern "C" {
 
+extern char g_0017721c[];
+void fn_0017721c(void) { FIELD(u32, g_0017721c, 0) = 0; }
+
 struct unk_0017771c {
     char pad_0[1250];
     u8 f_4e2;

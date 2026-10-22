@@ -4,6 +4,9 @@
 
 extern "C" {
 
+extern char g_00010264[];
+int fn_00010264(void) { return FIELD(int, g_00010264, 0); }
+
 extern char g_00010274[];
 u32 fn_00010274(void) { return FIELD(u32, g_00010274, 4); }
 

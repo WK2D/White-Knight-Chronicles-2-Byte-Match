@@ -38,13 +38,18 @@ def load_units():
 
 
 def load_symbols():
-    """{object symbol: address}: which compiled function stands for which original."""
+    """{object symbol: address}: which compiled function stands for which
+    original. config/symbols.txt is written by hand, symbols_gen.txt by
+    tools/gen_simple.py."""
     out = {}
-    for line in (ROOT / 'config' / 'symbols.txt').read_text().splitlines():
-        line = line.split('#', 1)[0].strip()
-        if line:
-            a, name = line.split()
-            out[name] = int(a, 16)
+    for path in (ROOT / 'config' / 'symbols.txt', ROOT / 'config' / 'symbols_gen.txt'):
+        if not path.exists():
+            continue
+        for line in path.read_text().splitlines():
+            line = line.split('#', 1)[0].strip()
+            if line:
+                a, name = line.split()
+                out[name] = int(a, 16)
     return out
 
 

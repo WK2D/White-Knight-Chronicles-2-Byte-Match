@@ -2,6 +2,10 @@
 // shape, from unit hkpRagdollConstraintData. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_00d5eb1c { virtual ~gen_base_00d5eb1c() {} };
+struct gen_00d5eb1c : gen_base_00d5eb1c { virtual ~gen_00d5eb1c(); };
+gen_00d5eb1c::~gen_00d5eb1c() {}
+
 extern "C" {
 
 void fn_00d5ec94(void) {}

@@ -18,4 +18,6 @@ int fn_007a4310(void) { return 1; }
 
 int fn_007a4318(void) { return 1; }
 
+int fn_007a4320(void* self, void* other) { FIELD(u8, other, 0) = 1; return 1; }
+
 }

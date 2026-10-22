@@ -4,6 +4,18 @@
 
 extern "C" {
 
+extern char g_00185858[];
+void fn_00185858(u32 value) { FIELD(u32, g_00185858, 0) = value; }
+
+extern char g_00185864[];
+void fn_00185864(u32 value) { FIELD(u32, g_00185864, 0) = value; }
+
+extern char g_00185870[];
+void fn_00185870(void) { FIELD(u32, g_00185870, 0) = 0; }
+
+extern char g_00185880[];
+void fn_00185880(void) { FIELD(u32, g_00185880, 0) = 0; }
+
 void fn_00185890(void) {}
 
 struct unk_00185cf4 {

@@ -4,6 +4,9 @@
 
 extern "C" {
 
+extern char g_00036950[];
+void fn_00036950(u8 value) { FIELD(u8, g_00036950, 0) = value; }
+
 extern char g_0003695c[];
 u8 fn_0003695c(void) { return FIELD(u8, g_0003695c, 0); }
 

@@ -4,6 +4,8 @@
 
 extern "C" {
 
+void fn_0059fc60(void* self, u8 value) { FIELD(u8, FIELD(void*, self, 0), 16) = value; }
+
 void fn_0059fc6c(void) {}
 
 void fn_0059fc70(void) {}

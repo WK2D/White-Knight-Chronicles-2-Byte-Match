@@ -4,6 +4,12 @@
 
 extern "C" {
 
+extern char g_002d35cc[];
+void fn_002d35cc(u32 value) { FIELD(u32, g_002d35cc, 0) = value; }
+
+extern char g_002d35d8[];
+void fn_002d35d8(void) { FIELD(u32, g_002d35d8, 0) = 0; }
+
 extern char g_002d35e8[];
 u32 fn_002d35e8(void) { return FIELD(u32, g_002d35e8, 4); }
 

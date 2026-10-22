@@ -10,4 +10,7 @@ void* fn_00b35120(void) { return g_00b35120; }
 extern char g_00b35128[];
 u32 fn_00b35128(void) { return FIELD(u32, g_00b35128, 0); }
 
+extern char g_00b35134[];
+void fn_00b35134(u32 value) { FIELD(u32, g_00b35134, 0) = value; }
+
 }

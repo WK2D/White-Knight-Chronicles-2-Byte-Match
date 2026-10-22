@@ -2,6 +2,10 @@
 // shape, from unit CMapBuffContainerAllocator. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_00b89ce8 { virtual ~gen_base_00b89ce8() {} };
+struct gen_00b89ce8 : gen_base_00b89ce8 { virtual ~gen_00b89ce8(); };
+gen_00b89ce8::~gen_00b89ce8() {}
+
 extern "C" {
 
 extern char g_00b89cdc[];

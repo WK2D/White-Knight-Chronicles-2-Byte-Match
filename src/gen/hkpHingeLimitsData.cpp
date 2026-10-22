@@ -2,6 +2,10 @@
 // shape, from unit hkpHingeLimitsData. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_00d60f78 { virtual ~gen_base_00d60f78() {} };
+struct gen_00d60f78 : gen_base_00d60f78 { virtual ~gen_00d60f78(); };
+gen_00d60f78::~gen_00d60f78() {}
+
 extern "C" {
 
 extern char g_00d60e04[];

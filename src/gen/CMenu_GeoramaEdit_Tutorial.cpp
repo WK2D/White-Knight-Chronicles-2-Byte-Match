@@ -2,6 +2,10 @@
 // shape, from unit CMenu_GeoramaEdit_Tutorial. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_0089c83c { virtual ~gen_base_0089c83c() {} };
+struct gen_0089c83c : gen_base_0089c83c { virtual ~gen_0089c83c(); };
+gen_0089c83c::~gen_0089c83c() {}
+
 extern "C" {
 
 int fn_0089c6d0(void) { return 1; }
@@ -9,6 +13,8 @@ int fn_0089c6d0(void) { return 1; }
 int fn_0089c6f4(void) { return 3; }
 
 int fn_0089c6fc(void) { return 5; }
+
+int fn_0089c720(void* self, void* other) { FIELD(u8, other, 0) = 1; return 1; }
 
 int fn_0089c730(void) { return 1; }
 

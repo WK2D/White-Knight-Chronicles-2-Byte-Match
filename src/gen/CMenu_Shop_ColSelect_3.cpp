@@ -15,6 +15,12 @@ struct unk_007cb2e8 {
 };
 void fn_007cb2e8(unk_007cb2e8* self) { self->f_128c = 0; self->f_1290 = 0; self->f_1294 = 0; self->f_1298 = 0; self->f_129c = 0; self->f_12a0 = 0; }
 
+u32 fn_007cb4c8(void* self) { return FIELD(u32, FIELD(void*, self, 4396), 164); }
+
+void fn_007cb4d4(void* self, u32 value) { FIELD(u32, FIELD(void*, self, 4396), 164) = value; }
+
+u16 fn_007cb4e0(void* self) { return FIELD(u16, FIELD(void*, self, 4404), 272); }
+
 void fn_007cb548(void) {}
 
 }

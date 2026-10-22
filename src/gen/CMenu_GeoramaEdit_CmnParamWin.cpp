@@ -2,6 +2,10 @@
 // shape, from unit CMenu_GeoramaEdit_CmnParamWin. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_00885778 { virtual ~gen_base_00885778() {} };
+struct gen_00885778 : gen_base_00885778 { virtual ~gen_00885778(); };
+gen_00885778::~gen_00885778() {}
+
 extern "C" {
 
 int fn_0088546c(void) { return 1; }

@@ -2,6 +2,10 @@
 // shape, from unit CMenu_GeoramaEdit_PartsRemove. Each one compiles to the original bytes.
 #include "wkc2.h"
 
+struct gen_base_00883148 { virtual ~gen_base_00883148() {} };
+struct gen_00883148 : gen_base_00883148 { virtual ~gen_00883148(); };
+gen_00883148::~gen_00883148() {}
+
 extern "C" {
 
 int fn_00882fb0(void) { return 1; }
