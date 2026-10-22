@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" font-family="Segoe UI, Helvetica, Arial, sans-serif">
 <rect width="960" height="540" fill="#0d1117"/>
 <text x="12" y="28" fill="#e6edf3" font-size="20" font-weight="600">White Knight Chronicles II: 3.031% of code matched</text>
-<text x="12" y="50" fill="#8b949e" font-size="13">15,658 of 52,279 functions compile to identical bytes · 4672 units · each square fills in as its functions match</text>
+<text x="12" y="50" fill="#8b949e" font-size="13">15,659 of 52,279 functions compile to identical bytes · 4672 units · each square fills in as its functions match</text>
 <g><title>auto_00010240: 12.06% matched, 12.06% fuzzy, 1,028 bytes</title>
 <rect x="0.00" y="64.00" width="7.21" height="3.97" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
 <rect x="0.00" y="67.49" width="7.21" height="0.48" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
@@ -10645,10 +10645,9 @@
 <g><title>auto_00ad8b00: 0.00% matched, 0.00% fuzzy, 2,924 bytes</title>
 <rect x="605.35" y="309.94" width="10.00" height="8.13" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
 </g>
-<g><title>meScnCamera: 2.37% matched, 2.37% fuzzy, 3,208 bytes</title>
+<g><title>meScnCamera: 5.11% matched, 5.11% fuzzy, 3,208 bytes</title>
 <rect x="600.24" y="318.07" width="6.65" height="13.42" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
-<rect x="600.24" y="331.17" width="6.65" height="0.00" fill="#3b82f6" stroke="#0d1117" stroke-width="1"/>
-<rect x="600.24" y="331.17" width="6.65" height="0.32" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
+<rect x="600.24" y="330.80" width="6.65" height="0.69" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
 </g>
 <g><title>meScnMaterialLib: 0.00% matched, 0.00% fuzzy, 932 bytes</title>
 <rect x="606.88" y="318.07" width="3.57" height="7.25" fill="#30363d" stroke="#0d1117" stroke-width="1"/>

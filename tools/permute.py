@@ -134,14 +134,55 @@ def flips(code):
     return out
 
 
+SWAP = {' == ': ' == ', ' != ': ' != ', ' < ': ' > ', ' > ': ' < ', ' <= ': ' >= ', ' >= ': ' <= '}
+
+
+def split_comparison(cond):
+    """(left, operator, right) of a comparison at parenthesis depth 0, or None."""
+    depth = 0
+    for i, ch in enumerate(cond):
+        if ch == '(':
+            depth += 1
+        elif ch == ')':
+            depth -= 1
+        elif depth == 0:
+            for op in SWAP:
+                if cond.startswith(op, i):
+                    return cond[:i], op, cond[i + len(op):]
+    return None
+
+
+def swaps(code):
+    """The code with each if's comparison written the other way round
+    (a < b as b > a), one at a time and all together: GCC keeps the
+    operand order in the compare instruction."""
+    lines = code.split('\n')
+    spots = []
+    for i, line in enumerate(lines):
+        m = re.match(r'^(\s*)if \((.*)\) \{$', line)
+        if m and split_comparison(m.group(2)):
+            spots.append(i)
+    def swapped(ls, i):
+        m = re.match(r'^(\s*)if \((.*)\) \{$', ls[i])
+        left, op, right = split_comparison(m.group(2))
+        return ls[:i] + [f'{m.group(1)}if ({right}{SWAP[op]}{left}) {{'] + ls[i + 1:]
+    out = ['\n'.join(swapped(lines, i)) for i in spots]
+    if len(spots) > 1:
+        new = lines
+        for i in spots:
+            new = swapped(new, i)
+        out.append('\n'.join(new))
+    return out
+
+
 def variants(code):
-    """Other forms of a lifted function: statement orders, inverted ifs, and
-    each inverted form's statement orders."""
+    """Other forms of a lifted function: statement orders, inverted ifs,
+    swapped comparisons, and a few statement orders of each."""
     out = reorders(code)
-    for flipped in flips(code):
-        out.append(flipped)
-        out += reorders(flipped)[:8]
-    return list(dict.fromkeys(out))[:MAX_VARIANTS * 2]
+    for other in flips(code) + swaps(code):
+        out.append(other)
+        out += reorders(other)[:8]
+    return list(dict.fromkeys(out))[:MAX_VARIANTS * 3]
 
 
 def main():
