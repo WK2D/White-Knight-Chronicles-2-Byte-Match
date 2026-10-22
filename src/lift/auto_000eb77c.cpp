@@ -11,10 +11,31 @@ void fn_000e9940(void);
 void fn_000e99b4(int, int);
 void fn_000ea07c(void);
 static void __attribute__((noinline)) stub_000ea624(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
+static void __attribute__((noinline)) stub_000ec5f4(void* p0, void* p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 
 int fn_000ec2c4(int a0) {
     fn_000e99b4((int)(a0), (int)(0));
     return (int)(0);
+}
+
+struct unk_000ec71c_l;
+struct unk_000ec71c_l {
+    u32 f_0;
+};
+u32 fn_000ec71c(void* a0) {
+    unk_000ec71c_l l;
+    stub_000ec5f4((void*)((char*)a0 + 168), (void*)((&l)));
+    return (u32)(l.f_0);
+}
+
+struct unk_000ec74c_l;
+struct unk_000ec74c_l {
+    u32 f_0;
+};
+u32 fn_000ec74c(void* a0) {
+    unk_000ec74c_l l;
+    stub_000ec5f4((void*)((char*)a0 + 92), (void*)((&l)));
+    return (u32)(l.f_0);
 }
 
 int fn_000ec8c0(void) {

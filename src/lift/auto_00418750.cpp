@@ -5,6 +5,7 @@
 extern "C" {
 
 int fn_00041b48(int);
+static int __attribute__((noinline)) stub_00417fd0(int p0, void* p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 
 struct unk_00418750_gmd34;
 struct unk_00418750_gmd34_0;
@@ -211,6 +212,18 @@ int fn_00418e68(int a0) {
     t0 = fn_00041b48((int)(a0));
     FIELD(u32, (int)((u32)((&g_00418e68_0)->f_0->f_b82) << 4) + (int)((&g_00418e68_0)->f_0->f_b7c), 0) = (u32)(t0);
     return (int)(1);
+}
+
+struct unk_0041ef08_l;
+struct unk_0041ef08_l {
+    u32 f_0;
+};
+int fn_0041ef08(int a0, int a1) {
+    int t0;
+    unk_0041ef08_l l;
+    l.f_0 = (u32)(a1);
+    t0 = stub_00417fd0((int)(a0), (void*)((&l)));
+    return (int)(t0);
 }
 
 }

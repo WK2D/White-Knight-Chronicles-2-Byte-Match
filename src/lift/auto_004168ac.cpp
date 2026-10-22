@@ -4,6 +4,33 @@
 
 extern "C" {
 
+int fn_0041e244(void*, void*, u32, int);
+void* fn_0058ecc0(void);
+
+struct unk_004172fc_l;
+struct unk_004172fc_a0_0;
+struct unk_004172fc_l {
+    u32 f_0;
+};
+struct unk_004172fc_a0_0 {
+    u32 f_0;
+};
+struct unk_004172fc_a0 {
+    unk_004172fc_a0_0* f_0;
+};
+int fn_004172fc(unk_004172fc_a0* a0) {
+    void* t0;
+    int t1;
+    unk_004172fc_l l;
+    t0 = fn_0058ecc0();
+    if ((int)(t0) != (int)(0)) {
+        t1 = fn_0041e244((void*)((&l)), (void*)(t0), (u32)(a0->f_0->f_0), (int)(0));
+        if ((int)(l.f_0) != (int)(0)) {
+            return (int)((int)((u32)(FIELD(u8, l.f_0, 17)) & 0xf));
+        }
+    }
+    return (int)(0);
+}
 
 struct unk_00417c70_a0 {
     char pad_0[16];

@@ -4,6 +4,33 @@
 
 extern "C" {
 
+void fn_0007a3bc(int, int, void*, int, int, int, int, int);
+
+struct unk_0064fd68_l;
+struct unk_0064fd68_l {
+    void* f_0;
+    u32 f_4;
+    u32 f_8;
+    u32 f_c;
+    void* f_10;
+    u32 f_14;
+    u32 f_18;
+    u32 f_1c;
+};
+extern char g_0064fd68_0[];
+extern char g_0064fd68_1[];
+void fn_0064fd68(int a0, int a1, int a2, int a3) {
+    unk_0064fd68_l l;
+    l.f_0 = (void*)(g_0064fd68_0);
+    l.f_c = (u32)(a2);
+    l.f_1c = (u32)(a3);
+    l.f_4 = (u32)(8);
+    l.f_8 = (u32)(4);
+    l.f_10 = (void*)(g_0064fd68_1);
+    l.f_14 = (u32)(5);
+    l.f_18 = (u32)(2);
+    fn_0007a3bc((int)(a0), (int)(a1), (void*)((&l)), (int)(0), (int)(0), (int)(123), (int)(125), (int)(58));
+}
 
 struct unk_006509e4_a0 {
     char pad_0[268];

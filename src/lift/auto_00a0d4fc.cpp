@@ -6,6 +6,7 @@ extern "C" {
 
 int fn_009eecb8(int);
 int fn_009eeed8(int);
+void fn_009ef7bc(int, void*, int);
 void fn_00a19868(u32);
 void fn_00b3d088(void*, int, int);
 
@@ -27,6 +28,21 @@ u8 fn_00a0f0e8(unk_00a0f0e8_a0* a0, int a1) {
     int t0;
     t0 = fn_009eeed8((int)((int)(short)(a0->f_1c)));
     return (u8)(FIELD(u8, (int)(t0) + (int)(a1), 0));
+}
+
+struct unk_00a0f160_l;
+struct unk_00a0f160_l {
+    u8 f_0;
+};
+struct unk_00a0f160_a0 {
+    char pad_0[28];
+    u16 f_1c;
+};
+u8 fn_00a0f160(unk_00a0f160_a0* a0) {
+    unk_00a0f160_l l;
+    l.f_0 = (u8)(0);
+    fn_009ef7bc((int)((int)(short)(a0->f_1c)), (void*)((&l)), (int)(1));
+    return (u8)(l.f_0);
 }
 
 struct unk_00a10770_gm27d8;

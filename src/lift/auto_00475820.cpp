@@ -4,7 +4,105 @@
 
 extern "C" {
 
+static void __attribute__((noinline)) stub_00475820(int p0, void* p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 void fn_00b37fa8(void*, int, int);
+
+struct unk_00475bfc_l;
+struct unk_00475bfc_l {
+    u32 f_0;
+};
+u32 fn_00475bfc(int a0) {
+    unk_00475bfc_l l;
+    stub_00475820((int)(a0), (void*)((&l)));
+    return (u32)(l.f_0);
+}
+
+struct unk_00475c24_l;
+struct unk_00475c24_l {
+    u32 f_0;
+};
+u32 fn_00475c24(int a0) {
+    unk_00475c24_l l;
+    stub_00475820((int)(a0), (void*)((&l)));
+    return (u32)(l.f_0);
+}
+
+struct unk_00475c4c_l;
+struct unk_00475c4c_l {
+    u32 f_0;
+};
+u32 fn_00475c4c(int a0) {
+    unk_00475c4c_l l;
+    stub_00475820((int)(a0), (void*)((&l)));
+    return (u32)(l.f_0);
+}
+
+struct unk_00475c74_l;
+struct unk_00475c74_l {
+    u32 f_0;
+};
+u32 fn_00475c74(int a0) {
+    unk_00475c74_l l;
+    stub_00475820((int)(a0), (void*)((&l)));
+    return (u32)(l.f_0);
+}
+
+struct unk_00475c9c_l;
+struct unk_00475c9c_l {
+    u32 f_0;
+};
+u32 fn_00475c9c(int a0) {
+    unk_00475c9c_l l;
+    stub_00475820((int)(a0), (void*)((&l)));
+    return (u32)(l.f_0);
+}
+
+struct unk_00475cc4_l;
+struct unk_00475cc4_l {
+    char pad_0[4];
+    u32 f_4;
+};
+void* fn_00475cc4(int a0) {
+    unk_00475cc4_l l;
+    int v0;
+    stub_00475820((int)(a0), (void*)((&l)));
+    if ((int)(l.f_4) != (int)(0)) {
+        v0 = (int)(FIELD(u32, l.f_4, 0));
+    } else {
+        v0 = (int)(0);
+    }
+    return (void*)(v0);
+}
+
+struct unk_00475d04_l;
+struct unk_00475d04_l {
+    char pad_0[8];
+    u32 f_8;
+};
+void* fn_00475d04(int a0) {
+    unk_00475d04_l l;
+    int v0;
+    stub_00475820((int)(a0), (void*)((&l)));
+    if ((int)(l.f_8) != (int)(0)) {
+        v0 = (int)(FIELD(u32, l.f_8, 0));
+    } else {
+        v0 = (int)(0);
+    }
+    return (void*)(v0);
+}
+
+struct unk_00475d44_l;
+struct unk_00475d44_l {
+    char pad_0[8];
+    u32 f_8;
+};
+void fn_00475d44(int a0) {
+    unk_00475d44_l l;
+    stub_00475820((int)(a0), (void*)((&l)));
+    if ((int)(l.f_8) != (int)(0)) {
+        FIELD(u32, l.f_8, 0) = (u32)(FIELD(u32, l.f_8, 0) + 1);
+    }
+}
 
 void fn_0047641c(void* a0) {
     fn_00b37fa8((void*)((char*)a0 + 236), (int)(0), (int)(216));

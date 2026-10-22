@@ -5,6 +5,8 @@
 extern "C" {
 
 void fn_00b401f8(u32, u16);
+void fn_00b40208(u32, u16, void*);
+void* fn_00b40218(u32, u16);
 
 struct unk_008ad0ec_a0 {
     virtual void vf0();
@@ -24,6 +26,32 @@ void fn_008ad0ec(unk_008ad0ec_a0* a0) {
     fn_00b401f8((u32)(a0->f_c), (u16)(a0->f_8));
     a0->f_4 = (u32)(0);
     a0->f_8 = (u16)(-1);
+}
+
+struct unk_008ad184_l;
+struct unk_008ad184_l {
+    u32 f_0;
+};
+struct unk_008ad184_a0 {
+    virtual void vf0(void*);
+    u32 f_4;
+    u16 f_8;
+    char pad_a[2];
+    u32 f_c;
+};
+void fn_008ad184(unk_008ad184_a0* a0) {
+    void* t1;
+    unk_008ad184_l l;
+    if ((int)(a0->f_4) != (int)(1)) {
+        return;
+    }
+    fn_00b40208((u32)(a0->f_c), (u16)(a0->f_8), (void*)((&l)));
+    if ((int)(l.f_0) != (int)(0)) {
+        return;
+    }
+    t1 = fn_00b40218((u32)(a0->f_c), (u16)(a0->f_8));
+    a0->vf0((void*)(t1));
+    a0->f_4 = (u32)(2);
 }
 
 }

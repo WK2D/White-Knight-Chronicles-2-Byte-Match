@@ -62,6 +62,8 @@ def paren(v):
     return v.text if v.prec == 0 else f'({v.text})'
 
 
+LOCALS = 112        # locals start after the linkage area (48) and the parameter save area (64)
+
 SIZES = {'u8': 1, 'u16': 2, 's16': 2, 'u32': 4, 'float': 4, 'void*': 4, 'double': 8, 'u64': 8}
 
 
@@ -197,6 +199,7 @@ class Lifter:
         self.back_returns = set()         # targets of backward branches that are not loops
         self.active_paths = set()         # return paths being lifted (guards against cycles)
         self.made_call = False            # a call has clobbered r3-r12 somewhere before
+        self.uses_locals = False          # the frame holds locals: one struct l
         self.slots = {}                   # stack offset -> (kind, value): int/float conversions go through memory         # blocks outside a loop that only lead to a return
         self.polymorphic = set()          # argument registers whose offset-0 word is a vptr
         self.vclasses = {}                # class tag -> {slot: (rtype, [types])}
@@ -206,8 +209,13 @@ class Lifter:
 
     def tag(self, path):
         """Struct name for an access path."""
-        parts = [f'a{path[0] - 3}' if path[0] != 'g' else (f'g{path[1]:x}' if path[1] >= 0 else f'gm{-path[1]:x}')]
-        parts += [f'{d:x}' if d >= 0 else f'm{-d:x}' for d in path[1 if path[0] != 'g' else 2:]]
+        if path[0] == 'l':
+            parts = ['l']
+        elif path[0] == 'g':
+            parts = [f'g{path[1]:x}' if path[1] >= 0 else f'gm{-path[1]:x}']
+        else:
+            parts = [f'a{path[0] - 3}']
+        parts += [f'{d:x}' if d >= 0 else f'm{-d:x}' for d in path[2 if path[0] == 'g' else 1:]]
         return f'unk_{self.address:08x}_' + '_'.join(parts)
 
     def pointer_fields(self, path):
@@ -234,6 +242,8 @@ class Lifter:
                 v = Value('TOC', 'toc')
                 v.toc_off = 0
                 return v
+            if r == 1:
+                return Value('/*frame*/', 'frame')
             raise Fail(f'r{r} read before it is set')
         if v.call is not None:
             v.call['used'] = True
@@ -278,7 +288,30 @@ class Lifter:
         v.path = ('g', d)
         return v
 
+    def local_address(self, off):
+        """&l (off 0), &l.f_off, or a byte address inside the locals."""
+        if off < 0:
+            raise Fail('address in the linkage area')
+        self.uses_locals = True
+        layout = self.layouts.get(('l',), {})
+        if off == 0:
+            v = Value('(&l)', 'gaddr')
+            v.path = ('l',)
+            return v
+        if off in layout:
+            return Value(f'(&l.f_{off:x})', 'gaddr')
+        return Value(f'((char*)&l + {off})', 'gaddr')
+
     def field(self, ctype, base, d):
+        if base.ctype == 'frame':                                    # a local variable
+            off = d - LOCALS
+            if off < 0:
+                raise Fail('frame access in the linkage area')
+            self.uses_locals = True
+            self.access[('l',)].add((off, ctype))
+            if self.layouts.get(('l',), {}).get(off) == ctype:
+                return Value(f'l.f_{off:x}', ctype)
+            return Value(f'FIELD({ctype}, &l, {off})', ctype)
         if base.ctype == 'toc':
             if ctype != 'u32':
                 raise Fail('non-word TOC load')
@@ -1001,6 +1034,9 @@ class Lifter:
             return
         if op == 14 and rt == 1 and ra == 1:                         # frame pop
             return
+        if op == 14 and ra == 1:
+            self.set(rt, self.local_address(d - LOCALS))
+            return
         if op == 14:
             if ra == 0:
                 self.set(rt, Value(str(d), 'int'))
@@ -1307,6 +1343,10 @@ class Lifter:
         for info in self.calls.values():
             if info['used']:
                 top.append(f'{info["type"]} {info["temp"]};')
+        if self.uses_locals:
+            if ('l',) not in self.layouts:
+                raise Fail('locals without a layout')
+            top.append(f'{self.tag(("l",))} l;')
         top += [f'{t} {n};' for t, n in self.vars]
         def lines(stmts, indent):
             out = []
@@ -1378,7 +1418,7 @@ class Lifter:
             body.pop()
         params = []
         structs = []
-        nested = [path for path in self.layouts if path[0] == 'g' or len(path) > 1]
+        nested = [path for path in self.layouts if path[0] in ('g', 'l') or len(path) > 1]
         structs += [f'struct {self.tag(path)};' for path in nested]   # forward declarations
         for path in nested:
             structs.append(struct_decl(self.tag(path), self.layouts[path], self.pointer_fields(path)))

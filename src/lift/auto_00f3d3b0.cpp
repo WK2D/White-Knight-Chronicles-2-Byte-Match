@@ -5,6 +5,7 @@
 extern "C" {
 
 void fn_00bfbe74(int, int);
+void fn_00f40160(int, int, void*);
 
 int fn_00f3f960(int a0, int a1) {
     return (int)(a1);
@@ -39,6 +40,17 @@ struct unk_00f3fa1c_a0 {
 };
 void fn_00f3fa1c(unk_00f3fa1c_a0* a0, int a1, int a2) {
     FIELD(u32, (int)((u32)((int)((u32)(a0->f_8) << 1) + (int)(a1)) << 2) + (int)(a0->f_0), 8) = (u32)(a2);
+}
+
+struct unk_00f401e8_l;
+struct unk_00f401e8_l {
+    u32 f_0;
+};
+u32 fn_00f401e8(int a0, int a1, int a2) {
+    unk_00f401e8_l l;
+    l.f_0 = (u32)(a2);
+    fn_00f40160((int)(a0), (int)(a1), (void*)((&l)));
+    return (u32)(l.f_0);
 }
 
 void fn_00f40f90(int a0, int a1) {

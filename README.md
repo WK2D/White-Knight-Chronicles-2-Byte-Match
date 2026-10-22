@@ -40,8 +40,8 @@ more native with every green square.
 - **Compiler flags:** `-O2`. Loops written as natural C (array indexing,
   `for (int i = 0; ...)`) match byte for byte with it. Files that need other
   flags are listed in [`config/flags.txt`](config/flags.txt).
-- **Code:** 55,164 functions in 16.5 MB of PowerPC code. **12,286 match**
-  (1.91% of the code): six by hand, the rest small functions written by
+- **Code:** 55,164 functions in 16.5 MB of PowerPC code. **12,357 match**
+  (1.95% of the code): six by hand, the rest small functions written by
   [`tools/gen_simple.py`](tools/gen_simple.py) from their instruction shape
   (empty bodies, constant returns, field getters and setters, global loads,
   struct clears, tail calls with constant arguments, empty derived-class

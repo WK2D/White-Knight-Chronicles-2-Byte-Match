@@ -4,6 +4,7 @@
 
 extern "C" {
 
+static void __attribute__((noinline)) stub_00440ad8(int p0, int p1, int p2, int p3, void* p4) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4)); }
 
 struct unk_004403ec_gmb8c;
 struct unk_004403ec_gmb8c {
@@ -16,6 +17,36 @@ extern unk_004403ec_gmb8c g_004403ec_0;
 void fn_004403ec(unk_004403ec_a0* a0) {
     a0->f_0 = (u32)(0);
     (&g_004403ec_0)->f_0 = (u32)(0);
+}
+
+struct unk_0044107c_l;
+struct unk_0044107c_l {
+    u32 f_0;
+};
+void* fn_0044107c(int a0) {
+    unk_0044107c_l l;
+    int v0;
+    l.f_0 = (u32)(0);
+    stub_00440ad8((int)(a0), (int)(0), (int)(0), (int)(0), (void*)((&l)));
+    if ((int)(l.f_0) != (int)(0)) {
+        v0 = (int)(FIELD(u32, l.f_0, 0));
+    } else {
+        v0 = (int)(0);
+    }
+    return (void*)(v0);
+}
+
+struct unk_004410d0_l;
+struct unk_004410d0_l {
+    u32 f_0;
+};
+void fn_004410d0(int a0) {
+    unk_004410d0_l l;
+    l.f_0 = (u32)(0);
+    stub_00440ad8((int)(a0), (int)(0), (int)(0), (int)(0), (void*)((&l)));
+    if ((int)(l.f_0) != (int)(0)) {
+        FIELD(u32, l.f_0, 0) = (u32)(FIELD(u32, l.f_0, 0) + 1);
+    }
 }
 
 struct unk_00441330_a0 {

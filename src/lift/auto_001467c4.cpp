@@ -4,6 +4,25 @@
 
 extern "C" {
 
+int fn_00b38a58(int, void*, int);
+
+struct unk_00146a74_l;
+struct unk_00146a74_l {
+    u32 f_0;
+};
+int fn_00146a74(int a0, int a1) {
+    int t0;
+    unk_00146a74_l l;
+    l.f_0 = (u32)(0);
+    t0 = fn_00b38a58((int)(a0), (void*)((&l)), (int)(10));
+    if ((int)(l.f_0) != (int)(0)) {
+        if ((int)(FIELD(u8, l.f_0, 0)) != (int)(0)) {
+            return (int)(a1);
+        }
+        return (int)(t0);
+    }
+    return (int)(a1);
+}
 
 int fn_00146d7c(void) {
     return (int)(1310720);

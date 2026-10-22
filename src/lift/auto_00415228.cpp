@@ -4,128 +4,57 @@
 
 extern "C" {
 
-static int __attribute__((noinline)) stub_004153d4(int p0, u32 p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
+static void __attribute__((noinline)) stub_00414b14(void* p0, int p1, int p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
+static int __attribute__((noinline)) stub_00414bcc(void* p0, u32 p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static int __attribute__((noinline)) stub_004164f4(void* p0, int p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
+void fn_0041de8c(void*, void*, u32, int);
+int fn_004224b0(void*);
+void* fn_0058ecc0(void);
 void fn_00b37fa8(int, int, int);
 
-u8 fn_00415418(int a0) {
-    int t0;
-    t0 = stub_004153d4((int)(a0), (u32)(527086760));
-    return (u8)((u8)t0);
+struct unk_0041535c_l;
+struct unk_0041535c_a0_0;
+struct unk_0041535c_l {
+    u32 f_0;
+    char pad_4[12];
+    u32 f_10;
+};
+struct unk_0041535c_a0_0 {
+    u32 f_0;
+};
+struct unk_0041535c_a0 {
+    unk_0041535c_a0_0* f_0;
+};
+int fn_0041535c(unk_0041535c_a0* a0) {
+    void* t0;
+    int t2;
+    unk_0041535c_l l;
+    int v1;
+    t0 = fn_0058ecc0();
+    fn_0041de8c((void*)((&l.f_10)), (void*)(t0), (u32)(521872670), (int)(0));
+    if ((int)(l.f_10) != (int)(0)) {
+        l.f_0 = (u32)(l.f_10);
+        t2 = stub_00414bcc((void*)((&l)), (u32)(a0->f_0->f_0));
+        v1 = (int)((u32)(t2) & 0xff);
+    } else {
+        v1 = (int)(0);
+    }
+    return (int)(v1);
 }
 
-u8 fn_00415444(int a0) {
-    int t0;
-    t0 = stub_004153d4((int)(a0), (u32)(1595207737));
-    return (u8)((u8)t0);
-}
-
-u8 fn_00415470(int a0) {
-    int t0;
-    t0 = stub_004153d4((int)(a0), (u32)(672383151));
-    return (u8)((u8)t0);
-}
-
-u8 fn_0041549c(int a0) {
-    int t0;
-    t0 = stub_004153d4((int)(a0), (u32)(528768369));
-    return (u8)((u8)t0);
-}
-
-u8 fn_004154c8(int a0) {
-    int t0;
-    t0 = stub_004153d4((int)(a0), (u32)(527086760));
-    return (u8)((u8)t0);
-}
-
-u8 fn_004154f4(int a0) {
-    int t0;
-    t0 = stub_004153d4((int)(a0), (u32)(3062951201));
-    return (u8)((u8)t0);
-}
-
-u8 fn_00415524(int a0) {
-    int t0;
-    t0 = stub_004153d4((int)(a0), (u32)(438673965));
-    return (u8)((u8)t0);
-}
-
-u8 fn_00415550(int a0) {
-    int t0;
-    t0 = stub_004153d4((int)(a0), (u32)(430011971));
-    return (u8)((u8)t0);
-}
-
-u8 fn_0041557c(int a0) {
-    int t0;
-    t0 = stub_004153d4((int)(a0), (u32)(1830982331));
-    return (u8)((u8)t0);
-}
-
-u8 fn_004155a8(int a0) {
-    int t0;
-    t0 = stub_004153d4((int)(a0), (u32)(430011971));
-    return (u8)((u8)t0);
-}
-
-u8 fn_004155d4(int a0) {
-    int t0;
-    t0 = stub_004153d4((int)(a0), (u32)(1432630506));
-    return (u8)((u8)t0);
-}
-
-u8 fn_0041565c(int a0) {
-    int t0;
-    t0 = stub_004153d4((int)(a0), (u32)(822669806));
-    return (u8)((u8)t0);
-}
-
-u8 fn_00415688(int a0) {
-    int t0;
-    t0 = stub_004153d4((int)(a0), (u32)(4096508673));
-    return (u8)((u8)t0);
-}
-
-u8 fn_00415788(int a0) {
-    int t0;
-    t0 = stub_004153d4((int)(a0), (u32)(274032382));
-    return (u8)((u8)t0);
-}
-
-u8 fn_004157b4(int a0) {
-    int t0;
-    t0 = stub_004153d4((int)(a0), (u32)(3091948819));
-    return (u8)((u8)t0);
-}
-
-u8 fn_004157e0(int a0) {
-    int t0;
-    t0 = stub_004153d4((int)(a0), (u32)(3761107594));
-    return (u8)((u8)t0);
-}
-
-u8 fn_00415810(int a0) {
-    int t0;
-    t0 = stub_004153d4((int)(a0), (u32)(2536161820));
-    return (u8)((u8)t0);
-}
-
-u8 fn_00415840(int a0) {
-    int t0;
-    t0 = stub_004153d4((int)(a0), (u32)(237212582));
-    return (u8)((u8)t0);
-}
-
-u8 fn_0041586c(int a0) {
-    int t0;
-    t0 = stub_004153d4((int)(a0), (u32)(3633114358));
-    return (u8)((u8)t0);
-}
-
-u8 fn_0041589c(int a0) {
-    int t0;
-    t0 = stub_004153d4((int)(a0), (u32)(2945178720));
-    return (u8)((u8)t0);
+struct unk_004153d4_l;
+struct unk_004153d4_l {
+    u32 f_0;
+    char pad_4[12];
+    u32 f_10;
+};
+u8 fn_004153d4(int a0, int a1) {
+    int t1;
+    unk_004153d4_l l;
+    stub_00414b14((void*)((&l.f_10)), (int)(a0), (int)(a1));
+    l.f_0 = (u32)(l.f_10);
+    t1 = fn_004224b0((void*)((&l)));
+    return (u8)((u8)t1);
 }
 
 u8 fn_0041672c(void* a0, int a1) {

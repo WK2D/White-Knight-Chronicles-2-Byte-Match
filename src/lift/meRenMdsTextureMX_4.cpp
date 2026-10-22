@@ -4,6 +4,7 @@
 
 extern "C" {
 
+void fn_00aede64(u32, void*, void*, void*, void*);
 void* fn_00aee914(void);
 void* fn_00aee944(void);
 
@@ -17,6 +18,38 @@ void* fn_00aca960(void) {
     void* t0;
     t0 = fn_00aee944();
     return (void*)(t0);
+}
+
+struct unk_00acaa24_l;
+struct unk_00acaa24_l {
+    u16 f_0;
+    u16 f_2;
+    u16 f_4;
+    u16 f_6;
+};
+struct unk_00acaa24_a0 {
+    char pad_0[4];
+    u32 f_4;
+};
+struct unk_00acaa24_a1 {
+    u32 f_0;
+};
+struct unk_00acaa24_a2 {
+    u32 f_0;
+};
+struct unk_00acaa24_a3 {
+    u32 f_0;
+};
+struct unk_00acaa24_a4 {
+    u32 f_0;
+};
+void fn_00acaa24(unk_00acaa24_a0* a0, unk_00acaa24_a1* a1, unk_00acaa24_a2* a2, unk_00acaa24_a3* a3, unk_00acaa24_a4* a4) {
+    unk_00acaa24_l l;
+    fn_00aede64((u32)(a0->f_4), (void*)((&l)), (void*)((&l.f_2)), (void*)((&l.f_4)), (void*)((&l.f_6)));
+    a1->f_0 = (u32)(l.f_0);
+    a2->f_0 = (u32)(l.f_2);
+    a3->f_0 = (u32)(l.f_4);
+    a4->f_0 = (u32)(l.f_6);
 }
 
 }
