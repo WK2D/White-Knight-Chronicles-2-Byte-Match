@@ -13,6 +13,7 @@ restore (ld r2,40(r1)) where the object has the linker's placeholder nop.
 """
 import json
 import os
+import re
 import subprocess
 import sys
 from collections import defaultdict
@@ -79,9 +80,10 @@ def compile_all(sources):
     else:
         cc = f'{COMPILER}/bin/ppu-lv2-g++ -B{COMPILER}/libexec/gcc/ppu-lv2/4.1.1/ -B{COMPILER}/bin/ppu-lv2-'
     flags = ' '.join(CFLAGS)
-    script = ['#!/bin/sh']
-    for src, obj in jobs:
-        script.append(f'{cc} {flags} -Iinclude -c {src} -o {obj} 2> {obj}.log || echo FAILED {src}')
+    # One compiler process per source, as many at once as there are CPUs.
+    (BUILD / 'jobs.txt').write_text(''.join(f'{s} {o}\n' for s, o in jobs), newline='\n')
+    one = f'{cc} {flags} -Iinclude -c "$0" -o "$1" 2> "$1.log" || echo FAILED "$0"'
+    script = ['#!/bin/sh', f"xargs -P \"$(nproc)\" -n 2 sh -c '{one}' < build/jobs.txt"]
     (BUILD / 'compile.sh').write_text('\n'.join(script) + '\n', newline='\n')
     if os.name == 'nt':
         cmd = ['docker', 'run', '--rm', '-v', f'{COMPILER}:/c:ro', '-v', f'{ROOT}:/w', '-w', '/w',
@@ -124,10 +126,14 @@ def main():
             continue
         obj = Object(obj_path)
         for name, section, start, size in obj.functions():
-            if name not in symbols:
+            m = re.fullmatch(r'\.fn_([0-9a-f]{8})', name)   # C-linkage fn_<address> maps itself
+            if m:
+                address = int(m.group(1), 16)
+            elif name in symbols:
+                address = symbols[name]
+            else:
                 problems.append(f'{src.relative_to(ROOT)}: {name} is not in config/symbols.txt')
                 continue
-            address = symbols[name]
             if address not in functions:
                 problems.append(f'{name}: {address:#x} is not a known function start')
                 continue
