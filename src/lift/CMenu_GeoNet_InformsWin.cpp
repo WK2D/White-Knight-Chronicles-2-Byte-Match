@@ -25,12 +25,8 @@ struct unk_006bf3e8_a1 {
 };
 int fn_006bf3e8(unk_006bf3e8_a0* a0, unk_006bf3e8_a1* a1) {
     int t0;
-    int v0;
     if ((int)(a0->f_264) != (int)(0)) {
         a1->f_0 = (u8)(1);
-        v0 = (int)(1);
-    } else {
-        v0 = (int)(a0->f_264);
     }
     t0 = fn_00691ed8((u32)(a0->f_24));
     if ((int)((u32)(t0) & 0xff) != (int)(0)) {

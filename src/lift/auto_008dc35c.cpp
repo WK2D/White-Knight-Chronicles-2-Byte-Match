@@ -14,8 +14,6 @@ struct unk_008dc918_a0 {
 };
 int fn_008dc918(unk_008dc918_a0* a0, void* a1) {
     int t0;
-    int v0;
-    int v1;
     if ((int)(a0->f_c) != (int)(0)) {
         if ((int)(a1) > (int)(0)) {
             t0 = fn_00b41108((void*)(a0->f_c), (void*)(a1), (int)(1));
@@ -24,13 +22,7 @@ int fn_008dc918(unk_008dc918_a0* a0, void* a1) {
                 a0->f_0 = (void*)(a1);
                 return (int)(1);
             }
-            v0 = (int)(t0);
-        } else {
-            v0 = (int)(a0->f_c);
         }
-        v1 = (int)(v0);
-    } else {
-        v1 = (int)(a0->f_c);
     }
     return (int)(0);
 }

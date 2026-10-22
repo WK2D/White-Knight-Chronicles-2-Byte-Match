@@ -17,17 +17,10 @@ struct unk_00099870_a0 {
 void fn_00099870(unk_00099870_a0* a0) {
     void* t0;
     int t1;
-    int v0;
-    int v1;
     if ((int)(a0->f_24) == (int)(0)) {
         t0 = fn_00096c04();
         t1 = fn_00b38ce8((void*)(t0), (u32)(a0->f_c));
         a0->f_24 = (u8)(1);
-        v0 = (int)(1);
-        v1 = (int)(t1);
-    } else {
-        v0 = (int)(a0->f_24);
-        v1 = (int)(a0);
     }
 }
 
@@ -40,17 +33,10 @@ struct unk_0009993c_a0 {
 void fn_0009993c(unk_0009993c_a0* a0) {
     void* t0;
     int t1;
-    int v0;
-    int v1;
     if ((int)(a0->f_24) != (int)(0)) {
         t0 = fn_00096c04();
         t1 = fn_00b38cc8((void*)(t0), (u32)(a0->f_c));
         a0->f_24 = (u8)(0);
-        v0 = (int)(0);
-        v1 = (int)(t1);
-    } else {
-        v0 = (int)(a0->f_24);
-        v1 = (int)(a0);
     }
 }
 

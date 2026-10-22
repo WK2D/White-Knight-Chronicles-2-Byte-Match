@@ -19,15 +19,12 @@ struct unk_00ad1b5c_a0 {
     u32 f_30;
 };
 void fn_00ad1b5c(unk_00ad1b5c_a0* a0) {
-    u32 v0;
     int v1;
     a0->f_10 = (u32)(0);
     if ((u32)(a0->f_2c) > (u32)(a0->f_30)) {
         a0->f_30 = (u32)(a0->f_30);
-        v0 = (u32)(a0->f_28);
         v1 = (int)((int)(a0->f_30) + (int)(a0->f_28));
     } else {
-        v0 = (u32)(a0->f_2c);
         v1 = (int)(0);
     }
     a0->f_18 = (u32)(v1);
@@ -57,15 +54,12 @@ struct unk_00ad1ba0_a0 {
     u32 f_30;
 };
 void fn_00ad1ba0(unk_00ad1ba0_a0* a0) {
-    u32 v0;
     int v1;
     a0->f_14 = (u32)(0);
     if ((u32)(a0->f_2c) > (u32)(a0->f_30)) {
         a0->f_30 = (u32)(a0->f_30);
-        v0 = (u32)(a0->f_28);
         v1 = (int)((int)(a0->f_30) + (int)(a0->f_28));
     } else {
-        v0 = (u32)(a0->f_2c);
         v1 = (int)(0);
     }
     a0->f_1c = (u32)(v1);

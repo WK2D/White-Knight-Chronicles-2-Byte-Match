@@ -9146,14 +9146,11 @@ struct unk_00382be4_a0 {
 u16 fn_00382be4(unk_00382be4_a0* a0, void* a1, void* a2, int a3) {
     int t0;
     int t1;
-    int v0;
     int v1;
     if ((int)(a3) != (int)(0)) {
         t0 = a0->vf289();
-        v0 = (int)(t0);
         v1 = (int)(t0);
     } else {
-        v0 = (int)(a0);
         v1 = (int)(0);
     }
     t1 = a0->vf167((int)(2), (void*)(a1), (void*)(a2));
@@ -11134,18 +11131,11 @@ int fn_00387630(unk_00387630_a0* a0, int a1) {
     return (int)(t1);
 }
 
-void fn_0038aa04(int a0) {
+void fn_0038aa04(void* a0) {
     int v0;
-    int v1;
-    u32 v2;
-    v0 = (int)(8);
-    v1 = (int)(0);
-    v2 = (u32)(8);
-    do {
-        FIELD(u8, (int)(a0) + (int)(v1), 3786) = (u8)(0);
-        v0 = (int)((int)(a0) + (int)(v1));
-        v1 = (int)(v1 + 1);
-    } while (--v2 != 0);
+    for (v0 = 0; v0 < 8; v0++) {
+        FIELD(u8, (char*)a0 + (int)(v0) * 1, 3786) = (u8)(0);
+    }
 }
 
 }

@@ -11,14 +11,11 @@ struct unk_009cda60_a0 {
 };
 extern char g_009cda60_0[];
 int fn_009cda60(unk_009cda60_a0* a0) {
-    int v0;
     int v1;
     if ((int)(FIELD(u32, g_009cda60_0, 4)) != (int)(0)) {
         a0->f_0 = (u32)(0);
-        v0 = (int)(0);
         v1 = (int)(0);
     } else {
-        v0 = (int)(FIELD(u32, g_009cda60_0, 4));
         v1 = (int)(-15);
     }
     return (int)(v1);
@@ -27,14 +24,11 @@ int fn_009cda60(unk_009cda60_a0* a0) {
 void* fn_009ce338(void* a0) {
     int t0;
     int v0;
-    int v1;
     if ((int)(a0) != (int)(0)) {
         t0 = fn_00b42008((void*)(a0), (int)(0), (int)(10));
         v0 = (int)(t0);
-        v1 = (int)(t0);
     } else {
         v0 = (int)(0);
-        v1 = (int)(a0);
     }
     return (void*)(v0);
 }

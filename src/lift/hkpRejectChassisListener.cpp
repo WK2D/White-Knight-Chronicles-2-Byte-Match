@@ -15,14 +15,10 @@ struct unk_00eb93d4_a1 {
     u32 f_8;
 };
 void fn_00eb93d4(unk_00eb93d4_a0* a0, unk_00eb93d4_a1* a1) {
-    int v0;
     if ((int)(a0->f_c) != (int)(a1->f_4)) {
         if ((int)(FIELD(u8, a1->f_4, 24)) == (int)(1)) {
             return;
         }
-        v0 = (int)(FIELD(u8, a1->f_4, 24));
-    } else {
-        v0 = (int)(a1->f_4);
     }
     a1->f_8 = (u32)(1);
 }

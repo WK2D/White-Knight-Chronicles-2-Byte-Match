@@ -11,26 +11,15 @@ struct unk_00f3ed78_a0 {
     void* f_4;
 };
 void fn_00f3ed78(unk_00f3ed78_a0* a0, int a1, void* a2) {
-    void* v0;
-    int v1;
-    int v2;
-    int v3;
-    u32 v4;
+    int v0;
     a0->f_0 = (u32)(a1);
     a0->f_4 = (void*)(a2);
     if ((int)(a2) <= (int)(0)) {
         return;
     }
-    v0 = (void*)(a2);
-    v2 = (int)(0);
-    v4 = (u32)(a2);
-    do {
-        FIELD(u32, (int)((u32)(v2) << 2) + (int)(FIELD(u32, a0->f_0, 0)), 0) = (u32)(-1);
-        v0 = (void*)(FIELD(u32, a0->f_0, 0));
-        v1 = (int)(a0->f_0);
-        v2 = (int)(v2 + 1);
-        v3 = (int)((int)((u32)(v2) << 2) + (int)(FIELD(u32, a0->f_0, 0)));
-    } while (--v4 != 0);
+    for (v0 = 0; v0 < (int)(a2); v0++) {
+        FIELD(u32, (int)((u32)((int)(v0) * 1) << 2) + (int)(FIELD(u32, a0->f_0, 0)), 0) = (u32)(-1);
+    }
 }
 
 int fn_00f3f960(int a0, int a1) {

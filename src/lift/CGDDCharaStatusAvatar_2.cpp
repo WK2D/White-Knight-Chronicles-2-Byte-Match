@@ -13,15 +13,12 @@ void* fn_00395d54(int a0, int a1) {
     void* t0;
     int t1;
     int v0;
-    int v1;
     t0 = stub_003945fc((int)(a0), (int)(a1), (int)(16));
     if ((int)(t0) != (int)(0)) {
         t1 = fn_00b38eb8((void*)(t0), (void*)(g_00395d54_1), (void*)(g_00395d54_0), (int)(0));
         v0 = (int)(t1);
-        v1 = (int)(t1);
     } else {
         v0 = (int)(0);
-        v1 = (int)(t0);
     }
     return (void*)(v0);
 }
@@ -32,15 +29,12 @@ void* fn_00395da4(int a0, int a1) {
     void* t0;
     int t1;
     int v0;
-    int v1;
     t0 = stub_003945fc((int)(a0), (int)(a1), (int)(8));
     if ((int)(t0) != (int)(0)) {
         t1 = fn_00b38eb8((void*)(t0), (void*)(g_00395da4_1), (void*)(g_00395da4_0), (int)(0));
         v0 = (int)(t1);
-        v1 = (int)(t1);
     } else {
         v0 = (int)(0);
-        v1 = (int)(t0);
     }
     return (void*)(v0);
 }
@@ -51,15 +45,12 @@ void* fn_00395ef8(int a0, int a1) {
     void* t0;
     int t1;
     int v0;
-    int v1;
     t0 = stub_003945fc((int)(a0), (int)(a1), (int)(62));
     if ((int)(t0) != (int)(0)) {
         t1 = fn_00b38eb8((void*)(t0), (void*)(g_00395ef8_1), (void*)(g_00395ef8_0), (int)(0));
         v0 = (int)(t1);
-        v1 = (int)(t1);
     } else {
         v0 = (int)(0);
-        v1 = (int)(t0);
     }
     return (void*)(v0);
 }
@@ -114,15 +105,12 @@ void* fn_0039604c(unk_0039604c_a0* a0, int a1, int a2) {
     void* t0;
     int t1;
     int v0;
-    int v1;
     t0 = a0->vf41((int)(a1), (int)(1), (int)(a2));
     if ((int)(t0) != (int)(0)) {
         t1 = fn_00b38eb8((void*)(t0), (void*)(g_0039604c_1), (void*)(g_0039604c_0), (int)(0));
         v0 = (int)(t1);
-        v1 = (int)(t1);
     } else {
         v0 = (int)(0);
-        v1 = (int)(t0);
     }
     return (void*)(v0);
 }
@@ -177,15 +165,12 @@ void* fn_003960c0(unk_003960c0_a0* a0, int a1, int a2) {
     void* t0;
     int t1;
     int v0;
-    int v1;
     t0 = a0->vf41((int)(a1), (int)(0), (int)(a2));
     if ((int)(t0) != (int)(0)) {
         t1 = fn_00b38eb8((void*)(t0), (void*)(g_003960c0_1), (void*)(g_003960c0_0), (int)(0));
         v0 = (int)(t1);
-        v1 = (int)(t1);
     } else {
         v0 = (int)(0);
-        v1 = (int)(t0);
     }
     return (void*)(v0);
 }

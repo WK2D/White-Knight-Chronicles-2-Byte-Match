@@ -22,22 +22,13 @@ void* fn_009d2eec(void) {
 extern char g_009d2f14_0[];
 void* fn_009d2f14(void) {
     int v0;
-    int v1;
-    void* v2;
-    u32 v3;
-    v0 = (int)(6);
-    v2 = (void*)(g_009d2f14_0);
-    v3 = (u32)(6);
-    for (;;) {
-        if ((int)(FIELD(u32, v2, 0)) == (int)(0)) {
+    void* v3;
+    v3 = (void*)(g_009d2f14_0);
+    for (v0 = 0; v0 < 6; v0++) {
+        if ((int)(FIELD(u32, v3, 0)) == (int)(0)) {
             return (void*)(0);
         }
-        v0 = (int)(FIELD(u32, v2, 0));
-        v1 = (int)(v2);
-        v2 = (void*)((char*)v2 + 4);
-        if (--v3 == 0) {
-            break;
-        }
+        v3 = (void*)((char*)v3 + 4);
     }
     return (void*)(g_009d2f14_0);
 }

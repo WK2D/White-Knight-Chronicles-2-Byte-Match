@@ -12,16 +12,13 @@ int fn_0013e440(int a0, void* a1, int a2) {
     int t0;
     int t2;
     int v0;
-    int v1;
     t0 = stub_0013e408((int)(a0), (int)(a2));
     if ((int)((u32)(t0) & 0xff) != (int)(0)) {
         fn_0002f4a8((int)(a0), (void*)(a1), (int)(0));
         t2 = stub_0013e3dc((int)(a0));
         v0 = (int)(1);
-        v1 = (int)(t2);
     } else {
         v0 = (int)(0);
-        v1 = (int)(a0);
     }
     return (int)(v0);
 }

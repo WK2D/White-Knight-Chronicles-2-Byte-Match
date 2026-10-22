@@ -6405,7 +6405,6 @@ struct unk_003947f4_a1 {
 };
 int fn_003947f4(int a0, unk_003947f4_a1* a1) {
     int t5;
-    int v0;
     int v1;
     if ((int)(a1) != (int)(0)) {
         a1->vf6((int)(0), (int)(1));
@@ -6414,10 +6413,8 @@ int fn_003947f4(int a0, unk_003947f4_a1* a1) {
         a1->vf282((int)(0), (int)(1));
         a1->vf137((int)(0), (int)(0), (int)(1));
         t5 = a1->vf267((int)(1));
-        v0 = (int)(t5);
         v1 = (int)(1);
     } else {
-        v0 = (int)(a1);
         v1 = (int)(0);
     }
     return (int)(v1);

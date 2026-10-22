@@ -8,12 +8,8 @@ extern "C" {
 extern char g_007cf7ec_0[];
 int fn_007cf7ec(void) {
     int v0;
-    void* v1;
     int v2;
-    void* v3;
-    void* v4;
     int v5;
-    void* v6;
     if ((int)(FIELD(u32, FIELD(u32, g_007cf7ec_0, 0), 108)) != (int)(0)) {
         if ((int)(FIELD(u32, FIELD(u32, FIELD(u32, g_007cf7ec_0, 0), 108), 8)) != (int)(0)) {
             if ((int)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_007cf7ec_0, 0), 108), 8), 116)) != (int)(0)) {
@@ -21,21 +17,13 @@ int fn_007cf7ec(void) {
             } else {
                 v0 = (int)(0);
             }
-            v1 = (void*)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_007cf7ec_0, 0), 108), 8), 116));
             v2 = (int)(v0);
-            v3 = (void*)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_007cf7ec_0, 0), 108), 8), 116));
         } else {
-            v1 = (void*)(FIELD(u32, FIELD(u32, FIELD(u32, g_007cf7ec_0, 0), 108), 8));
             v2 = (int)(0);
-            v3 = (void*)(FIELD(u32, FIELD(u32, FIELD(u32, g_007cf7ec_0, 0), 108), 8));
         }
-        v4 = (void*)(v1);
         v5 = (int)(v2);
-        v6 = (void*)(v3);
     } else {
-        v4 = (void*)(FIELD(u32, FIELD(u32, g_007cf7ec_0, 0), 108));
         v5 = (int)(0);
-        v6 = (void*)(FIELD(u32, FIELD(u32, g_007cf7ec_0, 0), 108));
     }
     return (int)(v5);
 }

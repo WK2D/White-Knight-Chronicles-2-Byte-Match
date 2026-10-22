@@ -13,16 +13,12 @@ extern char g_004ce76c_0[];
 int fn_004ce76c(void) {
     void* t0;
     int t3;
-    int v0;
     t0 = fn_000e1f24();
     if ((int)(t0) != (int)(0)) {
         fn_000e2c9c((void*)(t0));
         fn_000e3380((void*)(t0));
         t3 = fn_000e37ac();
         FIELD(u8, g_004ce76c_0, 16) = (u8)(0);
-        v0 = (int)(t3);
-    } else {
-        v0 = (int)(t0);
     }
     return (int)(1);
 }

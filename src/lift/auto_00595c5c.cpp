@@ -31,13 +31,10 @@ struct unk_00596638_a0 {
     u32 f_8;
 };
 void* fn_00596638(unk_00596638_a0* a0, int a1) {
-    u32 v0;
     int v1;
     if ((u32)(a0->f_8) > (u32)(a1)) {
-        v0 = (u32)(a0->f_0);
         v1 = (int)((int)(a1) + (int)(a0->f_0));
     } else {
-        v0 = (u32)(a0->f_8);
         v1 = (int)(0);
     }
     return (void*)(v1);
@@ -49,13 +46,10 @@ struct unk_00596658_a0 {
     u32 f_8;
 };
 void* fn_00596658(unk_00596658_a0* a0, int a1) {
-    u32 v0;
     int v1;
     if ((u32)(a0->f_8) > (u32)(a1)) {
-        v0 = (u32)(a0->f_0);
         v1 = (int)((int)(a1) + (int)(a0->f_0));
     } else {
-        v0 = (u32)(a0->f_8);
         v1 = (int)(0);
     }
     return (void*)(v1);

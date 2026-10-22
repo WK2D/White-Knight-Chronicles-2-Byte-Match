@@ -17,7 +17,6 @@ u8 fn_0014a174(int a0, int a1, int a2, int a3, int a4) {
 
 int fn_0014a734(void* a0, void* a1, void* a2, void* a3) {
     int t0;
-    void* v0;
     if ((int)(a1) != (int)(0)) {
         if ((int)(a2) != (int)(0)) {
             t0 = stub_0014a5d4((void*)(a0), (void*)(a1), (void*)(a3));
@@ -27,9 +26,6 @@ int fn_0014a734(void* a0, void* a1, void* a2, void* a3) {
             fn_00b38278((void*)(a1), (void*)(a2));
             return (int)(1);
         }
-        v0 = (void*)(a3);
-    } else {
-        v0 = (void*)(a2);
     }
     return (int)(0);
 }
@@ -38,14 +34,11 @@ extern char g_0014a7cc_0[];
 int fn_0014a7cc(int a0, void* a1, void* a2) {
     int t0;
     int v0;
-    int v1;
     if ((int)(a1) != (int)(0)) {
         t0 = fn_00b38198((void*)(a1), (void*)(g_0014a7cc_0), (void*)(a2));
         v0 = (int)(1);
-        v1 = (int)(t0);
     } else {
         v0 = (int)(0);
-        v1 = (int)(a1);
     }
     return (int)(v0);
 }

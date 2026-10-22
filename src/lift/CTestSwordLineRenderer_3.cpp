@@ -42,13 +42,9 @@ struct unk_002aaeb0_a1 {
 };
 void* fn_002aaeb0(unk_002aaeb0_a0* a0, unk_002aaeb0_a1* a1) {
     int t0;
-    int v0;
     a0->f_0 = (void*)(a1->f_34);
     if ((int)(a1->f_34) != (int)(0)) {
         t0 = fn_00b387f8((void*)(a1->f_34));
-        v0 = (int)(t0);
-    } else {
-        v0 = (int)(a1->f_34);
     }
     return (void*)(a0);
 }

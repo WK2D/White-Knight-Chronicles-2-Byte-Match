@@ -8,25 +8,16 @@ extern "C" {
 extern char g_00410938_0[];
 void* fn_00410938(void) {
     int v0;
-    void* v1;
-    void* v2;
     int v3;
-    void* v4;
     if ((int)(FIELD(u32, FIELD(u32, g_00410938_0, 0), 108)) != (int)(0)) {
         if ((int)(FIELD(u32, FIELD(u32, FIELD(u32, g_00410938_0, 0), 108), 8)) != (int)(0)) {
             v0 = (int)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_00410938_0, 0), 108), 8), 220), 20));
-            v1 = (void*)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_00410938_0, 0), 108), 8), 220));
         } else {
             v0 = (int)(0);
-            v1 = (void*)(FIELD(u32, FIELD(u32, FIELD(u32, g_00410938_0, 0), 108), 8));
         }
-        v2 = (void*)(FIELD(u32, FIELD(u32, FIELD(u32, g_00410938_0, 0), 108), 8));
         v3 = (int)(v0);
-        v4 = (void*)(v1);
     } else {
-        v2 = (void*)(FIELD(u32, FIELD(u32, g_00410938_0, 0), 108));
         v3 = (int)(0);
-        v4 = (void*)(FIELD(u32, FIELD(u32, g_00410938_0, 0), 108));
     }
     return (void*)(v3);
 }

@@ -10,25 +10,6 @@ static int __attribute__((noinline)) stub_0007d444(u16 p0) { int r; __asm__ vola
 static int __attribute__((noinline)) stub_0007d4f8(int p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 void* fn_00b38198(int, void*, u32);
 
-void fn_0007c174(void* a0, void* a1) {
-    int v0;
-    int v1;
-    u32 v2;
-    if (a0 == 0) {
-        return;
-    }
-    if ((int)(a1) == (int)(0)) {
-        return;
-    }
-    v1 = (int)(0);
-    v2 = (u32)(a1);
-    do {
-        FIELD(u8, (char*)a0 + (int)(v1), 0) = (u8)(0);
-        v0 = (int)((char*)a0 + (int)(v1));
-        v1 = (int)(v1 + 1);
-    } while (--v2 != 0);
-}
-
 u16 fn_0007d5bc(int a0) {
     int t0;
     int t1;

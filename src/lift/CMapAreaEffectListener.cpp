@@ -21,29 +21,17 @@ struct unk_002d9d80_a5 {
     u16 f_0;
 };
 void fn_002d9d80(void* a0, unk_002d9d80_a1* a1, unk_002d9d80_a2* a2, unk_002d9d80_a3* a3, unk_002d9d80_a4* a4, unk_002d9d80_a5* a5) {
-    int v0;
-    int v1;
-    int v2;
     if (a1 != 0) {
         a1->f_0 = FIELD(float, a0, 0);
     }
     if ((int)(a2) != (int)(0)) {
         a2->f_0 = (u32)(FIELD(u32, a0, 4));
-        v0 = (int)(FIELD(u32, a0, 4));
-    } else {
-        v0 = (int)(a2);
     }
     if ((int)(a3) != (int)(0)) {
         a3->f_0 = (u16)(FIELD(u16, a0, 8));
-        v1 = (int)(FIELD(u16, a0, 8));
-    } else {
-        v1 = (int)(v0);
     }
     if ((int)(a4) != (int)(0)) {
         a4->f_0 = (u16)(FIELD(u32, a0, 8));
-        v2 = (int)(FIELD(u32, a0, 8));
-    } else {
-        v2 = (int)(v1);
     }
     if ((int)(a5) == (int)(0)) {
         return;

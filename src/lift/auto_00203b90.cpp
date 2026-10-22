@@ -27,14 +27,11 @@ struct unk_00203c80_a0 {
 };
 int fn_00203c80(unk_00203c80_a0* a0) {
     int t0;
-    int v0;
     int v1;
     if ((int)(a0->f_80) != (int)(0)) {
         t0 = stub_00203abc((void*)((char*)a0 + 20), (void*)((char*)a0 + 8));
-        v0 = (int)(t0);
         v1 = (int)((u32)(t0) & 0xff);
     } else {
-        v0 = (int)((char*)a0 + 20);
         v1 = (int)(0);
     }
     return (int)(v1);

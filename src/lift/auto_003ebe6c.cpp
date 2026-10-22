@@ -26,4 +26,20 @@ u16 fn_003ec0b4(int a0, int a1) {
     return (u16)((u16)((int)((int)(t0) + (int)(t1)) + (int)(t2)));
 }
 
+struct unk_003ec4f8_a0 {
+    char pad_0[4];
+    u32 f_4;
+};
+int fn_003ec4f8(unk_003ec4f8_a0* a0, int a1) {
+    int v0;
+    if ((int)(a1) != (int)(0)) {
+        for (v0 = 0; v0 < 16; v0++) {
+            if ((int)(FIELD(u32, (char*)a0->f_4 + (int)(v0) * 4, 13552)) == (int)(a1)) {
+                return (int)(1);
+            }
+        }
+    }
+    return (int)(0);
+}
+
 }

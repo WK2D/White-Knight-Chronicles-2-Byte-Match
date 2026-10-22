@@ -17,14 +17,11 @@ struct unk_005da7f0_a0 {
 int fn_005da7f0(unk_005da7f0_a0* a0, void* a1, int a2) {
     int t0;
     int v0;
-    int v1;
     if ((int)(a0->f_100c) != (int)(0)) {
         t0 = fn_005fc69c((void*)(a0->f_100c), (void*)(a1), (u8)((u8)a2), (int)(0));
         v0 = (int)((int)(short)(t0));
-        v1 = (int)(t0);
     } else {
         v0 = (int)(-1);
-        v1 = (int)(a0->f_100c);
     }
     return (int)(v0);
 }

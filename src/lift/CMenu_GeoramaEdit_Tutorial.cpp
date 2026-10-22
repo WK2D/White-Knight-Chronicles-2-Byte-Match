@@ -14,12 +14,8 @@ struct unk_0089c6ac_a0 {
 };
 extern char g_0089c6ac_0[];
 void fn_0089c6ac(unk_0089c6ac_a0* a0) {
-    int v0;
     if ((int)(a0->f_78) == (int)(0)) {
         a0->f_78 = (u8)(1);
-        v0 = (int)(1);
-    } else {
-        v0 = (int)(a0->f_78);
     }
     FIELD(u32, g_0089c6ac_0, 0) = (u32)(a0->f_24);
 }
@@ -37,14 +33,10 @@ struct unk_0089c738_a0 {
     u8 f_78;
 };
 int fn_0089c738(unk_0089c738_a0* a0, int a1) {
-    int v0;
     int v1;
     if ((int)(a1) != (int)(0)) {
         if ((int)(a0->f_78) != (int)(0)) {
             a0->f_78 = (u8)(0);
-            v0 = (int)(0);
-        } else {
-            v0 = (int)(a0->f_78);
         }
         v1 = (int)(1);
     } else {

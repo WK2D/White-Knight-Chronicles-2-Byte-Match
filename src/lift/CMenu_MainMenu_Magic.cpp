@@ -37,14 +37,11 @@ struct unk_006344f0_vc0 {
 };
 void* fn_006344f0(unk_006344f0_a0* a0) {
     int t0;
-    int v0;
     int v1;
     if ((int)(a0->f_1f0) != (int)(0)) {
         t0 = ((unk_006344f0_vc0*)(a0->f_1f0))->vf6();
-        v0 = (int)(t0);
         v1 = (int)(t0);
     } else {
-        v0 = (int)(a0->f_1f0);
         v1 = (int)(0);
     }
     return (void*)(v1);

@@ -14,16 +14,9 @@ struct unk_008a783c_a0 {
 };
 int fn_008a783c(unk_008a783c_a0* a0) {
     int t0;
-    int v0;
-    int v1;
     if ((int)(a0->f_118) != (int)(-1)) {
         t0 = fn_00b3e338((void*)(a0->f_118));
         a0->f_118 = (u32)(-1);
-        v0 = (int)(-1);
-        v1 = (int)(t0);
-    } else {
-        v0 = (int)(a0->f_118);
-        v1 = (int)(a0->f_118);
     }
     a0->f_110 = (u32)(0);
     return (int)(0);

@@ -27,12 +27,8 @@ struct unk_0028d204_vc0 {
 };
 void fn_0028d204(unk_0028d204_a0* a0, void* a1) {
     int t0;
-    int v0;
     if ((int)(a0->f_1140) != (int)(0)) {
         t0 = ((unk_0028d204_vc0*)(a0->f_1140))->vf5((void*)((char*)a1 + 596));
-        v0 = (int)(t0);
-    } else {
-        v0 = (int)(a0->f_1140);
     }
     fn_0027cc1c((void*)((char*)a0 + 128), (void*)(a1));
 }

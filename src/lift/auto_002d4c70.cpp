@@ -118,14 +118,11 @@ struct unk_002d5d34_a0 {
 };
 void* fn_002d5d34(unk_002d5d34_a0* a0) {
     int t0;
-    u32 v0;
     int v1;
     t0 = stub_002d4d38();
     if ((int)((u32)(t0) & 0xffff) != (int)(65535)) {
-        v0 = (u32)(FIELD(u32, (int)((u32)((u32)(t0) & 0xffff) << 2) + (int)(FIELD(u32, FIELD(u32, a0->f_8, 0), 0)), 0));
         v1 = (int)((int)(FIELD(u32, FIELD(u32, a0->f_4, 0), 0)) + (int)(FIELD(u32, (int)((u32)((u32)(t0) & 0xffff) << 2) + (int)(FIELD(u32, FIELD(u32, a0->f_8, 0), 0)), 0)));
     } else {
-        v0 = (u32)(65535);
         v1 = (int)(0);
     }
     return (void*)(v1);

@@ -22,16 +22,12 @@ void fn_000accdc(unk_000accdc_a0* a0) {
     void* t0;
     void* t3;
     int t4;
-    int v0;
     if ((int)(a0->f_5c) != (int)(0)) {
         t0 = fn_00096c04();
         fn_00b38a78((void*)(t0));
         fn_00b39368((u32)(a0->f_5c));
         t3 = fn_00096c04();
         t4 = fn_00b38a98((void*)(t3));
-        v0 = (int)(t4);
-    } else {
-        v0 = (int)(a0);
     }
 }
 

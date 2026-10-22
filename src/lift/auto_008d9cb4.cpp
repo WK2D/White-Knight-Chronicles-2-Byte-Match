@@ -17,7 +17,6 @@ struct unk_008da260_a0 {
 };
 int fn_008da260(unk_008da260_a0* a0) {
     int t0;
-    int v0;
     a0->f_0 = (u32)(0);
     a0->f_c = (u32)(0);
     a0->f_10 = (u32)(0);
@@ -25,9 +24,6 @@ int fn_008da260(unk_008da260_a0* a0) {
     a0->f_8 = (u32)(0);
     if ((int)(a0->f_20) != (int)(0)) {
         t0 = fn_00b41118((void*)(a0->f_20), (int)(1));
-        v0 = (int)(t0);
-    } else {
-        v0 = (int)(a0->f_20);
     }
     a0->f_20 = (u32)(0);
     return (int)(1);

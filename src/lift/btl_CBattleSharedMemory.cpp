@@ -7,40 +7,18 @@ extern "C" {
 static void __attribute__((noinline)) stub_00580754(void* p0, void* p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 void fn_00ba21a0(void*);
 
-void fn_00580010(int a0, int a1) {
+void fn_00580010(void* a0, void* a1) {
     int v0;
-    int v1;
-    int v2;
-    int v3;
-    u32 v4;
-    v0 = (int)(104);
-    v2 = (int)(0);
-    v4 = (u32)(104);
-    do {
-        FIELD(u8, (int)(v2) + (int)(a0), 0) = (u8)(FIELD(u8, (int)(v2) + (int)(a1), 0));
-        v0 = (int)(FIELD(u8, (int)(v2) + (int)(a1), 0));
-        v1 = (int)((int)(v2) + (int)(a1));
-        v2 = (int)(v2 + 1);
-        v3 = (int)((int)(v2) + (int)(a0));
-    } while (--v4 != 0);
+    for (v0 = 0; v0 < 104; v0++) {
+        FIELD(u8, (char*)a0 + (int)(v0) * 1, 0) = (u8)(FIELD(u8, (char*)a1 + (int)(v0) * 1, 0));
+    }
 }
 
-void fn_005805a0(int a0, int a1) {
+void fn_005805a0(void* a0, void* a1) {
     int v0;
-    int v1;
-    int v2;
-    int v3;
-    u32 v4;
-    v0 = (int)(203);
-    v2 = (int)(0);
-    v4 = (u32)(203);
-    do {
-        FIELD(u8, (int)(v2) + (int)(a0), 0) = (u8)(FIELD(u8, (int)(v2) + (int)(a1), 0));
-        v0 = (int)(FIELD(u8, (int)(v2) + (int)(a1), 0));
-        v1 = (int)((int)(v2) + (int)(a1));
-        v2 = (int)(v2 + 1);
-        v3 = (int)((int)(v2) + (int)(a0));
-    } while (--v4 != 0);
+    for (v0 = 0; v0 < 203; v0++) {
+        FIELD(u8, (char*)a0 + (int)(v0) * 1, 0) = (u8)(FIELD(u8, (char*)a1 + (int)(v0) * 1, 0));
+    }
 }
 
 struct unk_0058084c_a0 {
@@ -56,22 +34,11 @@ void fn_0058084c(unk_0058084c_a0* a0, unk_0058084c_a1* a1) {
     a0->f_18 = (u8)(a1->f_18);
 }
 
-void fn_00580eb0(int a0, int a1) {
+void fn_00580eb0(void* a0, void* a1) {
     int v0;
-    int v1;
-    int v2;
-    int v3;
-    u32 v4;
-    v0 = (int)(224);
-    v2 = (int)(0);
-    v4 = (u32)(224);
-    do {
-        FIELD(u8, (int)(v2) + (int)(a0), 0) = (u8)(FIELD(u8, (int)(v2) + (int)(a1), 0));
-        v0 = (int)(FIELD(u8, (int)(v2) + (int)(a1), 0));
-        v1 = (int)((int)(v2) + (int)(a1));
-        v2 = (int)(v2 + 1);
-        v3 = (int)((int)(v2) + (int)(a0));
-    } while (--v4 != 0);
+    for (v0 = 0; v0 < 224; v0++) {
+        FIELD(u8, (char*)a0 + (int)(v0) * 1, 0) = (u8)(FIELD(u8, (char*)a1 + (int)(v0) * 1, 0));
+    }
 }
 
 struct unk_00581ddc_a0 {

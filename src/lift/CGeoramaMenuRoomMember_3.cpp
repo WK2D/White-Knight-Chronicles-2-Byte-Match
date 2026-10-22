@@ -15,14 +15,11 @@ int fn_00861dd8(int a0, int a1, int a2) {
 int fn_00861f58(void* a0, int a1, void* a2) {
     int t0;
     int v0;
-    int v1;
     if ((int)(a2) != (int)(0)) {
         t0 = stub_00861e00((void*)(a0), (void*)(a2));
         v0 = (int)(5);
-        v1 = (int)(t0);
     } else {
         v0 = (int)(1);
-        v1 = (int)(a0);
     }
     return (int)(v0);
 }

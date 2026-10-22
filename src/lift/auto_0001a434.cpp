@@ -32,16 +32,9 @@ struct unk_0001ac28_a0 {
 };
 void fn_0001ac28(unk_0001ac28_a0* a0) {
     int t0;
-    int v0;
-    int v1;
     if ((int)(a0->f_4ec4) != (int)(0)) {
         t0 = stub_0001ab9c();
         a0->f_4ec4 = (u32)(0);
-        v0 = (int)(0);
-        v1 = (int)(t0);
-    } else {
-        v0 = (int)(a0->f_4ec4);
-        v1 = (int)(a0);
     }
     a0->f_4ec8 = (u32)(0);
 }
@@ -53,15 +46,12 @@ struct unk_0001b474_a3 {
 int fn_0001b474(void* a0, void* a1, void* a2, unk_0001b474_a3* a3) {
     int t1;
     int v0;
-    int v1;
     if ((int)(a1) != (int)(0)) {
         stub_0001ac70((void*)(a0), (void*)(a1), (void*)(a2));
         t1 = fn_00035ad0((u32)(a3->f_8));
         v0 = (int)(1);
-        v1 = (int)(t1);
     } else {
         v0 = (int)(0);
-        v1 = (int)(a0);
     }
     return (int)(v0);
 }
@@ -73,15 +63,12 @@ struct unk_0001b4d0_a3 {
 int fn_0001b4d0(void* a0, void* a1, void* a2, unk_0001b4d0_a3* a3) {
     int t1;
     int v0;
-    int v1;
     if ((int)(a1) != (int)(0)) {
         stub_0001adf8((void*)(a0), (void*)(a1), (void*)(a2));
         t1 = fn_00035ad0((u32)(a3->f_8));
         v0 = (int)(1);
-        v1 = (int)(t1);
     } else {
         v0 = (int)(0);
-        v1 = (int)(a0);
     }
     return (int)(v0);
 }

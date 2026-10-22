@@ -15,15 +15,11 @@ void* fn_00597248(void* a0, int a1) {
     void* t1;
     void* t2;
     int t3;
-    int v0;
     t0 = fn_00b37f78((int)(a1));
     t1 = stub_005965c0((void*)(a0), (u32)((u32)(t0 + 4) & 0xfffffffc), (int)(4));
     t2 = stub_00596638((void*)(a0), (void*)(t1));
     if ((int)(t2) != (int)(0)) {
         t3 = fn_00b38268((void*)(t2), (int)(a1));
-        v0 = (int)(t3);
-    } else {
-        v0 = (int)(t2);
     }
     return (void*)(t1);
 }

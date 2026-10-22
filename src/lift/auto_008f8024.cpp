@@ -9,14 +9,11 @@ int fn_00b41228(void*);
 void* fn_008f8814(int a0, void* a1) {
     int t0;
     int v0;
-    int v1;
     if ((int)(a1) != (int)(0)) {
         t0 = fn_00b41228((void*)(a1));
         v0 = (int)(t0);
-        v1 = (int)(t0);
     } else {
         v0 = (int)(0);
-        v1 = (int)(a1);
     }
     return (void*)(v0);
 }

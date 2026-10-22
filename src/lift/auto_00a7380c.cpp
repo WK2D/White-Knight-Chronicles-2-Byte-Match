@@ -16,16 +16,10 @@ struct unk_00a745a4_a0 {
 };
 void fn_00a745a4(unk_00a745a4_a0* a0) {
     int v0;
-    int v1;
-    u32 v2;
     a0->f_84 = (u32)(0);
-    v1 = (int)(0);
-    v2 = (u32)(20);
-    do {
-        FIELD(u16, (char*)a0 + (int)(v1), 92) = (u16)(-1);
-        v0 = (int)((char*)a0 + (int)(v1));
-        v1 = (int)(v1 + 2);
-    } while (--v2 != 0);
+    for (v0 = 0; v0 < 20; v0++) {
+        FIELD(u16, (char*)a0 + (int)(v0) * 2, 92) = (u16)(-1);
+    }
 }
 
 struct unk_00a74940_a0 {

@@ -15,18 +15,12 @@ struct unk_001722d4_vc0 {
 };
 int fn_001722d4(unk_001722d4_a0* a0) {
     int t0;
-    int v0;
-    int v1;
     int v2;
     if ((int)(a0->f_51c) != (int)(0)) {
         t0 = ((unk_001722d4_vc0*)(a0->f_51c))->vf1();
         a0->f_51c = (u32)(0);
-        v0 = (int)(0);
-        v1 = (int)(t0);
         v2 = (int)(1);
     } else {
-        v0 = (int)(a0->f_51c);
-        v1 = (int)(a0->f_51c);
         v2 = (int)(0);
     }
     return (int)(v2);

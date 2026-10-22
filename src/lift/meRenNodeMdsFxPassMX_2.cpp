@@ -20,12 +20,8 @@ struct unk_00a5f210_vc0 {
 };
 u32 fn_00a5f210(unk_00a5f210_a0* a0, int a1) {
     int t0;
-    int v0;
     if ((int)(a0->f_8) != (int)(0)) {
         t0 = ((unk_00a5f210_vc0*)(a0->f_8))->vf4((void*)(a0));
-        v0 = (int)(t0);
-    } else {
-        v0 = (int)(a0->f_8);
     }
     return (u32)(FIELD(u32, (int)((u32)(a1) << 2) + (int)(a0->f_20), 0));
 }

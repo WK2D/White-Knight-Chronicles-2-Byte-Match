@@ -12,14 +12,11 @@ struct unk_005d795c_a1 {
 };
 int fn_005d795c(int a0, unk_005d795c_a1* a1) {
     int t0;
-    int v0;
     int v1;
     if ((int)(a1) != (int)(0)) {
         t0 = a1->vf1();
-        v0 = (int)(t0);
         v1 = (int)(1);
     } else {
-        v0 = (int)(a1);
         v1 = (int)(0);
     }
     return (int)(v1);
@@ -70,13 +67,10 @@ struct unk_005d7cf4_a0 {
     u32 f_101c;
 };
 int fn_005d7cf4(unk_005d7cf4_a0* a0) {
-    int v0;
     int v1;
     if ((int)(a0->f_101c) != (int)(0)) {
-        v0 = (int)(FIELD(u16, a0->f_101c, 2204));
         v1 = (int)((int)(short)(FIELD(u16, a0->f_101c, 2204)));
     } else {
-        v0 = (int)(a0->f_101c);
         v1 = (int)(0);
     }
     return (int)(v1);
@@ -171,13 +165,10 @@ struct unk_005d7dd8_a0 {
     u32 f_1044;
 };
 int fn_005d7dd8(unk_005d7dd8_a0* a0) {
-    int v0;
     int v1;
     if ((int)(a0->f_1044) != (int)(0)) {
-        v0 = (int)(FIELD(u16, a0->f_1044, 160));
         v1 = (int)((int)(short)(FIELD(u16, a0->f_1044, 160)));
     } else {
-        v0 = (int)(a0->f_1044);
         v1 = (int)(0);
     }
     return (int)(v1);
@@ -188,13 +179,10 @@ struct unk_005d7dfc_a0 {
     u32 f_1048;
 };
 int fn_005d7dfc(unk_005d7dfc_a0* a0) {
-    int v0;
     int v1;
     if ((int)(a0->f_1048) != (int)(0)) {
-        v0 = (int)(FIELD(u16, a0->f_1048, 146));
         v1 = (int)((int)(short)(FIELD(u16, a0->f_1048, 146)));
     } else {
-        v0 = (int)(a0->f_1048);
         v1 = (int)(0);
     }
     return (int)(v1);
@@ -359,14 +347,11 @@ struct unk_005d8080_a1 {
 };
 int fn_005d8080(int a0, unk_005d8080_a1* a1) {
     int t0;
-    int v0;
     int v1;
     if ((int)(a1) != (int)(0)) {
         t0 = a1->vf126((int)(3));
-        v0 = (int)(-(int)((u32)(t0) & (u32)(108)));
         v1 = (int)((u32)(-(int)((u32)(t0) & (u32)(108))) >> 31);
     } else {
-        v0 = (int)(a1);
         v1 = (int)(1);
     }
     return (int)(v1);
@@ -378,12 +363,8 @@ struct unk_005d813c_a0 {
 };
 int fn_005d813c(unk_005d813c_a0* a0) {
     int t0;
-    int v0;
     if ((int)(a0->f_1054) != (int)(0)) {
         t0 = fn_0064dfa8((void*)(a0->f_1054));
-        v0 = (int)(t0);
-    } else {
-        v0 = (int)(a0->f_1054);
     }
     return (int)(1);
 }

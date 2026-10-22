@@ -10,7 +10,6 @@ static void __attribute__((noinline)) stub_0042e89c(u32 p0, u16 p1) { __asm__ vo
 extern char g_0042e498_0[];
 int fn_0042e498(void) {
     int v0;
-    int v1;
     int v2;
     if ((int)(FIELD(u32, FIELD(u32, g_0042e498_0, 0), 8)) != (int)(0)) {
         if ((int)(FIELD(u16, FIELD(u32, g_0042e498_0, 0), 12)) != (int)(0)) {
@@ -19,10 +18,8 @@ int fn_0042e498(void) {
         } else {
             v0 = (int)(0);
         }
-        v1 = (int)(FIELD(u16, FIELD(u32, g_0042e498_0, 0), 12));
         v2 = (int)(v0);
     } else {
-        v1 = (int)(FIELD(u32, FIELD(u32, g_0042e498_0, 0), 8));
         v2 = (int)(0);
     }
     return (int)(v2);

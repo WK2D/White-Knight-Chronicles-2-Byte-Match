@@ -145,15 +145,12 @@ int fn_0086ec24(int a0, int a1) {
     void* t0;
     int t1;
     int v0;
-    int v1;
     t0 = stub_0086eb14();
     if ((int)(t0) != (int)(0)) {
         t1 = fn_00b3fa68((void*)(t0), (u8)((u8)a1));
         v0 = (int)((u32)((int)(signed char)(t1)) & 0xffff);
-        v1 = (int)((int)(signed char)(t1));
     } else {
         v0 = (int)(0);
-        v1 = (int)(t0);
     }
     return (int)(v0);
 }

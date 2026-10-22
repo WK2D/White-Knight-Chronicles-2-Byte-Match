@@ -42,26 +42,14 @@ struct unk_0002f0e0_a0 {
     u32 f_5c;
 };
 int fn_0002f0e0(unk_0002f0e0_a0* a0) {
-    int v0;
-    int v1;
-    int v2;
     if ((int)(a0->f_50) != (int)(0)) {
         a0->f_50 = (u32)(0);
-        v0 = (int)(0);
-    } else {
-        v0 = (int)(a0->f_50);
     }
     if ((int)(a0->f_54) != (int)(0)) {
         a0->f_54 = (u32)(0);
-        v1 = (int)(0);
-    } else {
-        v1 = (int)(a0->f_54);
     }
     if ((int)(a0->f_58) != (int)(0)) {
         a0->f_58 = (u32)(0);
-        v2 = (int)(0);
-    } else {
-        v2 = (int)(a0->f_58);
     }
     if ((int)(a0->f_5c) == (int)(0)) {
         return (int)(1);

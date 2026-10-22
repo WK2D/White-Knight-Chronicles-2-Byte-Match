@@ -279,13 +279,9 @@ struct unk_0038ac98_a0 {
 };
 void fn_0038ac98(unk_0038ac98_a0* a0) {
     int t1;
-    int v0;
     if ((int)(a0->f_ff4) != (int)(0)) {
         a0->vf39((void*)(a0->f_ff4), (int)(0), (int)(3), (int)(1));
         t1 = a0->vf267((int)(3));
-        v0 = (int)(t1);
-    } else {
-        v0 = (int)(a0);
     }
 }
 

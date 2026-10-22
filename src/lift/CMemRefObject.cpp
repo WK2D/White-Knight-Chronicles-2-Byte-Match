@@ -12,23 +12,17 @@ struct unk_000330cc_a0 {
     u8 f_18;
 };
 int fn_000330cc(unk_000330cc_a0* a0) {
-    int v0;
     int v1;
-    int v2;
     int v3;
     if ((int)(a0->f_4) != (int)(0)) {
         if ((int)(a0->f_18) == (int)(0)) {
             a0->f_18 = (u8)(1);
-            v0 = (int)(1);
             v1 = (int)(1);
         } else {
-            v0 = (int)(a0->f_18);
             v1 = (int)(0);
         }
-        v2 = (int)(v0);
         v3 = (int)(v1);
     } else {
-        v2 = (int)(a0->f_4);
         v3 = (int)(0);
     }
     return (int)(v3);

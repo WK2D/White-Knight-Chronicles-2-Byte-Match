@@ -16,9 +16,7 @@ struct unk_004823b4_a0 {
 };
 void* fn_004823b4(unk_004823b4_a0* a0) {
     int v0;
-    u32 v1;
     int v2;
-    int v3;
     int v4;
     if ((int)(a0->f_60) != (int)(0)) {
         if ((int)(a0->f_c) != (int)(0)) {
@@ -27,16 +25,12 @@ void* fn_004823b4(unk_004823b4_a0* a0) {
             } else {
                 v0 = (int)(0);
             }
-            v1 = (u32)(a0->f_10);
             v2 = (int)(v0);
         } else {
-            v1 = (u32)(a0->f_c);
             v2 = (int)(0);
         }
-        v3 = (int)(v1);
         v4 = (int)(v2);
     } else {
-        v3 = (int)(a0->f_60);
         v4 = (int)(0);
     }
     return (void*)(v4);

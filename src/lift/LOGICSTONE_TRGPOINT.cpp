@@ -31,14 +31,11 @@ extern char g_005b5db4_0[];
 void* fn_005b5db4(unk_005b5db4_a0* a0) {
     int t0;
     int v0;
-    int v1;
     if ((int)(a0->f_24) != (int)(0)) {
         t0 = fn_00034810((void*)(a0->f_24), (int)(0), (void*)(g_005b5db4_0), (int)(0));
         v0 = (int)(t0);
-        v1 = (int)(t0);
     } else {
         v0 = (int)(0);
-        v1 = (int)(a0->f_24);
     }
     return (void*)(v0);
 }

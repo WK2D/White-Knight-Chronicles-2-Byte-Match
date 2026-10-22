@@ -271,6 +271,11 @@ class Lifter:
         if base.vt is not None and base.vt[0] == 'slot' and ctype == 'u32' and d in (0, 4):
             return Value('/*virtual*/', 'u32', vt=('code' if d == 0 else 'toc',) + base.vt[1:])
         self.pointer(base)
+        if getattr(base, 'ivbase', None) is not None:                # element of an array: base, offset + i * stride
+            p_, i_ = base.ivbase
+            return Value(f'FIELD({ctype}, (char*){paren(p_)}, {d} + {i_.text})', ctype)
+        if getattr(base, 'iv', None) is not None:
+            raise Fail('induction variable as an address')
         for k, arg in self.args.items():
             if base is arg:
                 if d == 0 and ctype == 'u32' and k in self.poly:
@@ -492,8 +497,11 @@ class Lifter:
 
     def written_in(self, start, end):
         """Registers the instructions in [start, end) write (a call writes r0, r3-r12)."""
+        return self.written_in_words(self.words[start:end])
+
+    def written_in_words(self, words):
         out = set()
-        for x in self.words[start:end]:
+        for x in words:
             op = x >> 26
             rt, ra = (x >> 21) & 31, (x >> 16) & 31
             if op in (14, 15, 7, 32, 34, 40, 42, 58) or (op == 31 and (x >> 1) & 0x3FF in (266, 40, 235, 491, 459, 104)):
@@ -517,6 +525,23 @@ class Lifter:
                 out.append(f'{var.text} = ({CTYPES.get(var.ctype, "int")})({now.text});')
         return out
 
+    def induction_registers(self, start, end):
+        """{register: stride} for registers that [start, end) writes only
+        with one addi r,r,stride."""
+        writes = defaultdict(list)
+        for x in self.words[start:end]:
+            for r in self.written_in_word(x):
+                writes[r].append(x)
+        out = {}
+        for r, xs in writes.items():
+            x = xs[0]
+            if len(xs) == 1 and x >> 26 == 14 and (x >> 21) & 31 == r and (x >> 16) & 31 == r and s16(x & 0xFFFF):
+                out[r] = s16(x & 0xFFFF)
+        return out
+
+    def written_in_word(self, x):
+        return self.written_in_words([x])
+
     def loop(self, header, test=None):
         """Lift the loop at header; return the block after it. With test, the
         loop is entered by a jump to its test block: while (cond) { body }."""
@@ -526,6 +551,59 @@ class Lifter:
         conditional = last >> 26 == 16
         counted = conditional and self.branch_condition(last) == 'BDNZ'
         written = self.written_in(header, exit_)
+        # Counted loops become for (i = 0; i < n; i++). Registers that start
+        # at 0 and only step by a constant are byte offsets i * stride:
+        # written that way, GCC picks the original's induction variables.
+        ivs = self.induction_registers(header, exit_) if counted and test is None and self.ctr is not None else {}
+        ivs = {r: s for r, s in ivs.items() if self.gpr[r] is not None and self.gpr[r].text == '0'}
+        if counted and test is None and self.ctr is not None:
+            index = f'v{len(self.vars)}'
+            self.vars.append(('int', index))
+            trips = self.ctr.text
+            self.ctr = None
+            carried = {}
+            for r in sorted(written):
+                if r in ivs:
+                    carried[r] = Value(f'(int)({index}) * {ivs[r]}', 'int', 1)
+                    carried[r].iv = (index, ivs[r], 0)
+                    self.gpr[r] = carried[r]
+                    continue
+                v = self.gpr[r]
+                ctype = 'int' if v is None or v.ctype == 'call' else v.ctype
+                name = f'v{len(self.vars)}'
+                self.vars.append((CTYPES.get(ctype, 'int'), name))
+                if v is not None:
+                    self.stmts.append(f'{name} = ({CTYPES.get(ctype, "int")})({v.text});')
+                    if v.call is not None:
+                        v.call['used'] = True
+                carried[r] = Value(name, ctype)
+                self.gpr[r] = carried[r] if v is not None else None
+            outer, body = self.stmts, []
+            self.stmts = body
+            self.in_loop.append(header)
+            self.loop_vars.append({r: v for r, v in carried.items() if r not in ivs})
+            self.loop_exits.append(0)
+            self.latch_cond = None
+            self.region(header, exit_)
+            self.loop_exits.pop()
+            if self.latch_cond is None:
+                raise Fail('counted loop body never reaches its latch')
+            for r, var in carried.items():
+                now = self.gpr[r]
+                if r in ivs:
+                    if getattr(now, 'iv', None) != (index, ivs[r], 1):
+                        raise Fail('induction variable not stepped once')
+                elif now is not None and now is not var:
+                    body.append(f'{var.text} = ({CTYPES.get(var.ctype, "int")})({now.text});')
+            self.loop_vars.pop()
+            self.in_loop.pop()
+            self.stmts = outer
+            self.stmts.append(['cfor', index, trips, body])
+            for r in written:
+                self.gpr[r] = carried.get(r)
+            self.ended = False
+            self.loop_broke = False
+            return exit_
         carried = {}
         for r in sorted(written):
             v = self.gpr[r]
@@ -810,6 +888,15 @@ class Lifter:
             base = self.reg(ra)
             if base.ctype == 'toc':
                 raise Fail('address inside the TOC')
+            iv = getattr(base, 'iv', None)
+            if iv is not None:                                       # the induction step
+                index, stride, k = iv
+                if d != stride:
+                    raise Fail('offset from an induction variable')
+                v = Value(f'(int)({index} + {k + 1}) * {stride}', 'int', 1)
+                v.iv = (index, stride, k + 1)
+                self.set(rt, v)
+                return
             if base.ctype in ('ptr', 'addr', 'gaddr'):
                 self.set(rt, Value(f'(char*){paren(base)} + {d}', 'addr', 1))
             else:
@@ -903,6 +990,13 @@ class Lifter:
                 return
             if xo in (266, 40):                                      # add, subf
                 a, b = self.reg(ra), self.reg(rb)
+                if xo == 266 and (getattr(a, 'iv', None) is not None) != (getattr(b, 'iv', None) is not None):
+                    i_, p_ = (a, b) if getattr(a, 'iv', None) is not None else (b, a)
+                    self.pointer(p_)                                 # base + i * stride: an array element
+                    v = Value(f'(char*){paren(p_)} + {i_.text}', 'addr', 1)
+                    v.ivbase = (p_, i_)
+                    self.set(rt, v)
+                    return
                 ptr = ('ptr', 'addr', 'gaddr')
                 if xo == 266 and (a.ctype in ptr or b.ctype in ptr):
                     p_, i_ = (a, b) if a.ctype in ptr else (b, a)
@@ -1109,6 +1203,11 @@ class Lifter:
                     out.append(pad + f'while ({st[1]}) {{')
                     out += lines(st[2], indent + 1)
                     out.append(pad + '}')
+                elif isinstance(st, list) and st[0] == 'cfor':
+                    n = st[2] if re.fullmatch(r'\d+', st[2]) else f'(int)({st[2]})'
+                    out.append(pad + f'for ({st[1]} = 0; {st[1]} < {n}; {st[1]}++) {{')
+                    out += lines(st[3], indent + 1)
+                    out.append(pad + '}')
                 elif isinstance(st, list) and st[0] == 'for':
                     out.append(pad + 'for (;;) {')
                     out += lines(st[1], indent + 1)
@@ -1127,7 +1226,8 @@ class Lifter:
                 else:
                     out.append(pad + st)
             return out
-        body = [l.strip('\n') for l in top] + lines(self.stmts, 0)
+        body = [l.strip('\n') for l in top] + lines(drop_loop_guards(self.stmts), 0)
+        body = drop_dead_vars(body, {n for _, n in self.vars})
         # A trailing "return;" in a void function is implicit.
         while body and body[-1] == 'return;':
             body.pop()
@@ -1160,6 +1260,63 @@ class Lifter:
 
 
 WHY = None   # set to a Counter by --why: failure reasons
+
+
+def drop_loop_guards(stmts):
+    """GCC tests a for loop's count before entering it. Lifted, that test is
+    an if around the loop; the source had none, so remove it. Statements in
+    the guard's else branch may only set merge variables (dead without it)."""
+    out = []
+    for st in stmts:
+        if isinstance(st, list) and st[0] == 'if':
+            st = ['if', st[1], drop_loop_guards(st[2]), drop_loop_guards(st[3])]
+            then, other = st[2], st[3]
+            loops = [s for s in then if isinstance(s, list)]
+            merges = lambda xs: all(isinstance(s, str) and re.match(r'v\d+ = ', s) for s in xs)
+            if (len(loops) == 1 and loops[0][0] == 'cfor' and not re.fullmatch(r'\d+', loops[0][2])
+                    and loops[0][2] in st[1] and re.search(r'(>|!=) \(\w+\)\(0\)$', st[1])
+                    and merges(other) and merges(s for s in then if s is not loops[0])):
+                out += then
+                continue
+        elif isinstance(st, list) and st[0] == 'cfor':
+            st = ['cfor', st[1], st[2], drop_loop_guards(st[3])]
+        elif isinstance(st, list) and st[0] in ('for', 'do'):
+            st = [st[0], drop_loop_guards(st[1])] + st[2:]
+        elif isinstance(st, list) and st[0] == 'while':
+            st = ['while', st[1], drop_loop_guards(st[2])]
+        out.append(st)
+    return out
+
+
+def drop_dead_vars(body, names):
+    """Remove merge variables nobody reads: their declarations and every
+    assignment to them. GCC deletes such stores too, but late: left in, they
+    change which induction variables it picks for a loop."""
+    while True:
+        dead = set()
+        for name in names:
+            assign = re.compile(rf'^\s*{name} = .*;$')
+            decl = re.compile(rf'\w[\w ]*\*? {name};')
+            if not any(re.search(rf'\b{name}\b', l) for l in body
+                       if not assign.match(l) and not decl.fullmatch(l.strip())):
+                dead.add(name)
+        if not dead:
+            break
+        names = names - dead
+        body = [l for l in body
+                if not any(re.match(rf'^\s*{n} = .*;$', l) or re.fullmatch(rf'\w[\w ]*\*? {n};', l.strip())
+                           for n in dead)]
+    # Branches left empty: "} else {" straight before "}", and "if (c) {}".
+    out = []
+    for l in body:
+        if l.strip() == '}' and out and out[-1].strip() == '} else {':
+            out[-1] = l
+            continue
+        if l.strip() == '}' and out and re.fullmatch(r'if \(.*\) \{', out[-1].strip()):
+            out.pop()
+            continue
+        out.append(l)
+    return out
 
 
 def lift(address, words, arity):

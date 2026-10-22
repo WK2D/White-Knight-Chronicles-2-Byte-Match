@@ -52,15 +52,12 @@ void* fn_00592144(void) {
     void* t0;
     int t1;
     int v0;
-    int v1;
     t0 = stub_00591f00();
     if ((int)(t0) != (int)(0)) {
         t1 = fn_0042769c((u16)(FIELD(u16, t0, 14)));
         v0 = (int)(t1);
-        v1 = (int)(t1);
     } else {
         v0 = (int)(50);
-        v1 = (int)(t0);
     }
     return (void*)(v0);
 }

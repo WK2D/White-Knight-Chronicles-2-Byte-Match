@@ -12,20 +12,4 @@ int fn_00088db4(void* a0) {
     return (int)(t0);
 }
 
-void fn_00089350(int a0, int a1, void* a2) {
-    int v0;
-    int v1;
-    u32 v2;
-    if ((int)(a2) == (int)(0)) {
-        return;
-    }
-    v1 = (int)(0);
-    v2 = (u32)(a2);
-    do {
-        FIELD(u8, (int)(v1) + (int)(a0), 0) = (u8)(0);
-        v0 = (int)((int)(v1) + (int)(a0));
-        v1 = (int)(v1 + 1);
-    } while (--v2 != 0);
-}
-
 }

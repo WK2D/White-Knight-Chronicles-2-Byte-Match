@@ -13,16 +13,9 @@ struct unk_008dbc60_a0 {
 };
 int fn_008dbc60(unk_008dbc60_a0* a0) {
     int t0;
-    int v0;
-    int v1;
     if ((int)(a0->f_8) != (int)(0)) {
         t0 = fn_008e2ab4((void*)(a0->f_8));
         a0->f_4 = (u32)(0);
-        v0 = (int)(0);
-        v1 = (int)(t0);
-    } else {
-        v0 = (int)(a0->f_8);
-        v1 = (int)(a0->f_8);
     }
     a0->f_0 = (u32)(0);
     return (int)(1);

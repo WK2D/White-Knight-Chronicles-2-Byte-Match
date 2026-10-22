@@ -22,14 +22,11 @@ struct unk_0054c048_a1 {
 void* fn_0054c048(int a0, unk_0054c048_a1* a1, void* a2) {
     int t0;
     int v0;
-    int v1;
     if ((int)(a1->f_4) != (int)(0)) {
         t0 = fn_0059c578((void*)(a1->f_4), (void*)(a2));
         v0 = (int)(t0);
-        v1 = (int)(t0);
     } else {
         v0 = (int)(0);
-        v1 = (int)(a1->f_4);
     }
     return (void*)(v0);
 }

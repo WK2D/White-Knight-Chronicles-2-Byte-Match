@@ -12,12 +12,8 @@ struct unk_007ae49c_a0 {
 };
 int fn_007ae49c(unk_007ae49c_a0* a0) {
     int t0;
-    int v0;
     if ((int)(a0->f_4) != (int)(0)) {
         t0 = fn_0020ac58((void*)(a0->f_4));
-        v0 = (int)(t0);
-    } else {
-        v0 = (int)(a0->f_4);
     }
     return (int)(1);
 }

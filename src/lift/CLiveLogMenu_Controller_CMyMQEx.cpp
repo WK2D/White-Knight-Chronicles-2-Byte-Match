@@ -10,13 +10,10 @@ struct unk_0079d6f8_a0 {
     u32 f_1168;
 };
 int fn_0079d6f8(unk_0079d6f8_a0* a0) {
-    int v0;
     int v1;
     if ((int)(a0->f_1168) != (int)(0)) {
-        v0 = (int)(FIELD(u8, a0->f_1168, 6438));
         v1 = (int)((int)(signed char)(FIELD(u8, a0->f_1168, 6438)));
     } else {
-        v0 = (int)(a0->f_1168);
         v1 = (int)(0);
     }
     return (int)(v1);

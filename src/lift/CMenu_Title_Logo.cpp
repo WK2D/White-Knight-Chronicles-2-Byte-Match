@@ -15,14 +15,10 @@ struct unk_00684e80_a1 {
     u8 f_0;
 };
 int fn_00684e80(unk_00684e80_a0* a0, unk_00684e80_a1* a1) {
-    int v0;
     if ((int)(a0->f_c4) == (int)(0)) {
         if ((int)(a0->f_bc) == (int)(2)) {
             return (int)(1);
         }
-        v0 = (int)(a0->f_bc);
-    } else {
-        v0 = (int)(a0->f_c4);
     }
     a1->f_0 = (u8)(1);
     return (int)(1);

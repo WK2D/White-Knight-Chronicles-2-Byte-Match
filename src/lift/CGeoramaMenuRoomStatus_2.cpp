@@ -10,14 +10,11 @@ void fn_00b3ccc8(void*);
 int fn_00862800(void* a0, int a1, void* a2) {
     int t0;
     int v0;
-    int v1;
     if ((int)(a2) != (int)(0)) {
         t0 = stub_00862708((void*)(a0), (void*)(a2));
         v0 = (int)(5);
-        v1 = (int)(t0);
     } else {
         v0 = (int)(1);
-        v1 = (int)(a0);
     }
     return (int)(v0);
 }

@@ -20,13 +20,9 @@ struct unk_00bc32b0_a0 {
 void fn_00bc32b0(unk_00bc32b0_a0* a0, int a1) {
     int t0;
     int t1;
-    int v0;
     t0 = fn_00945324((u32)(a0->f_4));
     if ((int)(t0) != (int)(a1)) {
         t1 = fn_0094765c((u32)(a0->f_4), (int)(a1));
-        v0 = (int)(t1);
-    } else {
-        v0 = (int)(t0);
     }
 }
 

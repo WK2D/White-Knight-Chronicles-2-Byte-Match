@@ -15,14 +15,11 @@ struct unk_000dbe24_a0 {
     u32 f_8;
 };
 int fn_000dbe24(unk_000dbe24_a0* a0) {
-    int v0;
     int v1;
     if ((int)(a0->f_8) == (int)(1)) {
         a0->f_8 = (u32)(2);
-        v0 = (int)(2);
         v1 = (int)(1);
     } else {
-        v0 = (int)(a0->f_8);
         v1 = (int)(0);
     }
     return (int)(v1);

@@ -21,18 +21,11 @@ void* fn_00147edc(unk_00147edc_a0* a0) {
     return (void*)(v0);
 }
 
-void fn_00147f40(int a0) {
+void fn_00147f40(void* a0) {
     int v0;
-    int v1;
-    u32 v2;
-    v0 = (int)(512);
-    v1 = (int)(0);
-    v2 = (u32)(512);
-    do {
-        FIELD(u32, (int)(a0) + (int)(v1), 320) = (u32)(0);
-        v0 = (int)((int)(a0) + (int)(v1));
-        v1 = (int)(v1 + 8);
-    } while (--v2 != 0);
+    for (v0 = 0; v0 < 512; v0++) {
+        FIELD(u32, (char*)a0 + (int)(v0) * 8, 320) = (u32)(0);
+    }
 }
 
 }

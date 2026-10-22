@@ -11,15 +11,14 @@ struct unk_002deb18_a0 {
     u32 f_288;
 };
 int fn_002deb18(unk_002deb18_a0* a0) {
-    void* v0;
-    u32 v1;
+    int v0;
+    void* v1;
     a0->f_288 = (u32)(0);
-    v0 = (void*)((char*)a0 + 652);
-    v1 = (u32)(8);
-    do {
-        FIELD(u32, v0, 0) = (u32)(0);
-        v0 = (void*)((char*)v0 + 4);
-    } while (--v1 != 0);
+    v1 = (void*)((char*)a0 + 652);
+    for (v0 = 0; v0 < 8; v0++) {
+        FIELD(u32, v1, 0) = (u32)(0);
+        v1 = (void*)((char*)v1 + 4);
+    }
     return (int)(1);
 }
 
@@ -38,14 +37,11 @@ struct unk_002deb84_vc0 {
 };
 int fn_002deb84(unk_002deb84_a0* a0) {
     int t0;
-    int v0;
     int v1;
     if ((int)(a0->f_170) != (int)(0)) {
         t0 = ((unk_002deb84_vc0*)(a0->f_170))->vf6();
-        v0 = (int)(t0);
         v1 = (int)((u32)(t0) & 0xffff);
     } else {
-        v0 = (int)(a0->f_170);
         v1 = (int)(0);
     }
     return (int)(v1);

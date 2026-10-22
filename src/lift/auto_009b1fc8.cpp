@@ -8,15 +8,12 @@ static void __attribute__((noinline)) stub_009b2ee0(u32 p0) { __asm__ volatile (
 
 extern char g_009b2f70_0[];
 u32 fn_009b2f70(void) {
-    int v0;
     int v1;
     if ((int)(FIELD(u32, g_009b2f70_0, 0)) != (int)(0)) {
         stub_009b2ee0((u32)(FIELD(u32, g_009b2f70_0, 4)));
         FIELD(u32, g_009b2f70_0, 0) = (u32)(0);
-        v0 = (int)(0);
         v1 = (int)(0);
     } else {
-        v0 = (int)(FIELD(u32, g_009b2f70_0, 0));
         v1 = (int)(5);
     }
     return (u32)((u32)(v1) & (u32)(5));

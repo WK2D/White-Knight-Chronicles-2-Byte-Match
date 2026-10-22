@@ -16,15 +16,12 @@ void* fn_00420dd0(unk_00420dd0_a0* a0, int a1, int a2) {
     void* t0;
     int t1;
     int v0;
-    int v1;
     t0 = fn_000331d8((u32)(a0->f_44), (int)(a1), (int)(1));
     if ((int)(t0) != (int)(0)) {
         t1 = fn_00034810((void*)(t0), (u8)((u8)a2), (void*)(g_00420dd0_0), (int)(0));
         v0 = (int)(t1);
-        v1 = (int)(t1);
     } else {
         v0 = (int)(0);
-        v1 = (int)(t0);
     }
     return (void*)(v0);
 }

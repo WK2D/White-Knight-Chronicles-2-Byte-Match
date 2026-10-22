@@ -55,8 +55,6 @@ int fn_0058fbac(void* a0) {
     void* t0;
     void* t1;
     int t2;
-    void* v0;
-    int v1;
     t0 = fn_005355ec();
     if ((int)(t0) != (int)(0)) {
         t1 = fn_00395ef8((void*)(t0), (void*)(a0));
@@ -64,11 +62,6 @@ int fn_0058fbac(void* a0) {
             t2 = ((unk_0058fbac_vc0*)(t1))->vf25((int)(3));
             return (int)((int)((u32)(t2) & 0xff));
         }
-        v0 = (void*)(t1);
-        v1 = (int)(3);
-    } else {
-        v0 = (void*)(t0);
-        v1 = (int)(a0);
     }
     return (int)(0);
 }

@@ -28,14 +28,11 @@ struct unk_00bd0ce0_vc0 {
 void* fn_00bd0ce0(unk_00bd0ce0_a0* a0, void* a1) {
     int t0;
     int v0;
-    int v1;
     if ((int)(a0->f_40) != (int)(0)) {
         t0 = ((unk_00bd0ce0_vc0*)(a0->f_40))->vf3((void*)(a1));
         v0 = (int)(t0);
-        v1 = (int)(t0);
     } else {
         v0 = (int)(0);
-        v1 = (int)(a0->f_40);
     }
     return (void*)(v0);
 }
@@ -55,12 +52,8 @@ struct unk_00bd0df8_vc0 {
 };
 void fn_00bd0df8(unk_00bd0df8_a0* a0) {
     int t0;
-    int v0;
     if ((int)(a0->f_40) != (int)(0)) {
         t0 = ((unk_00bd0df8_vc0*)(a0->f_40))->vf6();
-        v0 = (int)(t0);
-    } else {
-        v0 = (int)(a0->f_40);
     }
     fn_00a3e490((void*)(a0));
 }

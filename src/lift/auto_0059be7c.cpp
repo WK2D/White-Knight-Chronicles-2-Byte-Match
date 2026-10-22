@@ -82,6 +82,21 @@ void* fn_0059c3f0(int a0, unk_0059c3f0_a1* a1) {
     return (void*)(v0);
 }
 
+struct unk_0059c40c_a0 {
+    u32 f_0;
+    char pad_4[4];
+    u32 f_8;
+};
+void* fn_0059c40c(unk_0059c40c_a0* a0) {
+    int v1;
+    if ((int)(a0->f_8) != (int)(0)) {
+        v1 = (int)((int)(a0->f_0) + (int)(FIELD(u32, a0->f_8, 0)));
+    } else {
+        v1 = (int)(0);
+    }
+    return (void*)(v1);
+}
+
 struct unk_0059c518_a0 {
     u32 f_0;
     char pad_4[4];
@@ -169,6 +184,59 @@ struct unk_0059c5cc_a1 {
 };
 void* fn_0059c5cc(unk_0059c5cc_a0* a0, unk_0059c5cc_a1* a1) {
     return (void*)((int)(a0->f_0) + (int)(a1->f_c));
+}
+
+struct unk_0059c6d8_a0 {
+    u32 f_0;
+};
+struct unk_0059c6d8_a1 {
+    char pad_0[14];
+    u8 f_e;
+    char pad_f[1];
+    u32 f_10;
+};
+void* fn_0059c6d8(unk_0059c6d8_a0* a0, unk_0059c6d8_a1* a1) {
+    int v1;
+    if ((int)(a1->f_e) != (int)(0)) {
+        v1 = (int)((int)(a0->f_0) + (int)(a1->f_10));
+    } else {
+        v1 = (int)(0);
+    }
+    return (void*)(v1);
+}
+
+struct unk_0059c6fc_a0 {
+    u32 f_0;
+    char pad_4[4];
+    u32 f_8;
+};
+void* fn_0059c6fc(unk_0059c6fc_a0* a0) {
+    int v1;
+    if ((int)(a0->f_8) != (int)(0)) {
+        v1 = (int)((int)(a0->f_0) + (int)(FIELD(u32, a0->f_8, 104)));
+    } else {
+        v1 = (int)(0);
+    }
+    return (void*)(v1);
+}
+
+struct unk_0059c808_a0 {
+    u32 f_0;
+};
+struct unk_0059c808_a1 {
+    char pad_0[6];
+    u8 f_6;
+    char pad_7[1];
+    u32 f_8;
+};
+void* fn_0059c808(unk_0059c808_a0* a0, unk_0059c808_a1* a1) {
+    int v1;
+    if ((int)(a1->f_6) != (int)(0)) {
+        v1 = (int)((int)(a0->f_0) + (int)(a1->f_8));
+    } else {
+        v1 = (int)(0);
+    }
+    return (void*)(v1);
 }
 
 extern char g_0059c8f4_0[];

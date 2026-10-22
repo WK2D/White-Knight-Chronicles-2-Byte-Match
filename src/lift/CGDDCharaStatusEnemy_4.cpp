@@ -22,24 +22,17 @@ int fn_0039a6f0(void* a0, unk_0039a6f0_a1* a1) {
     void* t1;
     int t2;
     int t3;
-    int v0;
     int v1;
-    int v2;
     if ((int)(a1) != (int)(0)) {
         t0 = a1->vf7((int)(0));
         t1 = stub_003945fc((void*)(a0), (void*)(t0), (int)(62));
         if ((int)(t1) != (int)(0)) {
             t2 = stub_0039a5f0((void*)(a0), (void*)(t1));
-            v0 = (int)(t2);
-        } else {
-            v0 = (int)(a0);
         }
         t3 = a1->vf4((int)(1));
         v1 = (int)(1);
-        v2 = (int)(t3);
     } else {
         v1 = (int)(0);
-        v2 = (int)(a1);
     }
     return (int)(v1);
 }

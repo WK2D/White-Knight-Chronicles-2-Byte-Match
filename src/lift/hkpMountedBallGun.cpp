@@ -13,14 +13,10 @@ struct unk_00eb0c20_a0 {
 };
 extern char g_00eb0c20_0[];
 void fn_00eb0c20(unk_00eb0c20_a0* a0, int a1) {
-    int v0;
     fn_00ead480();
     a0->f_0 = (void*)(g_00eb0c20_0);
     if ((int)(a1) != (int)(0)) {
         a0->f_8 = (u8)(4);
-        v0 = (int)(4);
-    } else {
-        v0 = (int)(g_00eb0c20_0);
     }
 }
 
@@ -31,14 +27,10 @@ struct unk_00eb0d54_a0 {
 };
 extern char g_00eb0d54_0[];
 void fn_00eb0d54(unk_00eb0d54_a0* a0, int a1) {
-    int v0;
     fn_00ead480();
     a0->f_0 = (void*)(g_00eb0d54_0);
     if ((int)(a1) != (int)(0)) {
         a0->f_8 = (u8)(4);
-        v0 = (int)(4);
-    } else {
-        v0 = (int)(g_00eb0d54_0);
     }
 }
 

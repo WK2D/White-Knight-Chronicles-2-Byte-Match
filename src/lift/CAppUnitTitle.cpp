@@ -69,13 +69,10 @@ struct unk_009350d4_a0 {
     u32 f_4;
 };
 void* fn_009350d4(unk_009350d4_a0* a0) {
-    u32 v0;
     int v1;
     if ((int)(a0->f_0) == (int)(134217744)) {
-        v0 = (u32)(a0->f_4);
         v1 = (int)(a0->f_4 + 28);
     } else {
-        v0 = (u32)(a0->f_0);
         v1 = (int)(0);
     }
     return (void*)(v1);

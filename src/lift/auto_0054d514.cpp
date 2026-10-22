@@ -122,13 +122,9 @@ u8 fn_0054f398(unk_0054f398_a0* a0) {
 void fn_0054f464(int a0, int a1) {
     void* t0;
     int t1;
-    int v0;
     t0 = stub_0054f404((int)(a0), (int)(1));
     if ((int)(t0) != (int)(0)) {
         t1 = fn_00588020((u32)(FIELD(u32, t0, 8)), (u16)((u16)a1));
-        v0 = (int)(t1);
-    } else {
-        v0 = (int)(t0);
     }
 }
 

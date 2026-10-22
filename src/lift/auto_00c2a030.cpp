@@ -29,33 +29,40 @@ u64 fn_00c2a128(unk_00c2a128_a0* a0, int a1) {
     return (u64)(FIELD(u64, (int)((u32)(a1) << 4) + (int)(a0->f_0), 8));
 }
 
-struct unk_00c2a668_a0 {
+struct unk_00c2a208_a0 {
     u32 f_0;
     u32 f_4;
     u32 f_8;
 };
-void fn_00c2a668(unk_00c2a668_a0* a0) {
-    void* v0;
-    void* v1;
-    int v2;
-    u32 v3;
-    void* v4;
-    if ((int)(a0->f_8) > (int)(-1)) {
-        v0 = (void*)(a0->f_8 + 1);
-        v1 = (void*)(a0->f_8);
-        v2 = (int)(0);
-        v3 = (u32)(a0->f_8 + 1);
-        do {
-            FIELD(u32, (int)((u32)(v2) << 3) + (int)(a0->f_0), 0) = (u32)(-1);
-            v0 = (void*)(a0->f_0);
-            v1 = (void*)((int)((u32)(v2) << 3) + (int)(a0->f_0));
-            v2 = (int)(v2 + 1);
-        } while (--v3 != 0);
-        v4 = (void*)(v1);
-    } else {
-        v4 = (void*)(a0->f_8);
+void fn_00c2a208(unk_00c2a208_a0* a0, int a1, int a2) {
+    int v0;
+    a0->f_0 = (u32)(a1);
+    a0->f_4 = (u32)(-2147483648);
+    a0->f_8 = (u32)(((u32)(a2) >> 3) + -1);
+    if ((int)((u32)(a2) >> 3) <= (int)(0)) {
+        return;
     }
-    a0->f_4 = (u32)((u32)(a0->f_4) & 0x80000000);
+    for (v0 = 0; v0 < (int)((u32)(a2) >> 3); v0++) {
+        FIELD(u32, (int)((u32)((int)(v0) * 1) << 3) + (int)(a0->f_0), 0) = (u32)(-1);
+    }
+}
+
+struct unk_00c2a728_a0 {
+    u32 f_0;
+    u32 f_4;
+    u32 f_8;
+};
+void fn_00c2a728(unk_00c2a728_a0* a0, int a1, int a2) {
+    int v0;
+    a0->f_0 = (u32)(a1);
+    a0->f_4 = (u32)(-2147483648);
+    a0->f_8 = (u32)(((u32)(a2) >> 3) + -1);
+    if ((int)((u32)(a2) >> 3) <= (int)(0)) {
+        return;
+    }
+    for (v0 = 0; v0 < (int)((u32)(a2) >> 3); v0++) {
+        FIELD(u32, (int)((u32)((int)(v0) * 1) << 3) + (int)(a0->f_0), 0) = (u32)(-1);
+    }
 }
 
 void fn_00c2b4e0(void* a0, int a1) {

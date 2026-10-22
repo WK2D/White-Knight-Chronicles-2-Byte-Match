@@ -12,8 +12,6 @@ struct unk_00404b18_a0 {
 extern char g_00404b18_0[];
 void* fn_00404b18(unk_00404b18_a0* a0) {
     int v0;
-    int v1;
-    void* v2;
     int v3;
     if ((int)(FIELD(u8, g_00404b18_0, 0)) != (int)(0)) {
         if ((int)(a0->f_4) != (int)(0)) {
@@ -21,12 +19,8 @@ void* fn_00404b18(unk_00404b18_a0* a0) {
         } else {
             v0 = (int)(0);
         }
-        v1 = (int)(a0->f_4);
-        v2 = (void*)(a0->f_4);
         v3 = (int)(v0);
     } else {
-        v1 = (int)(FIELD(u8, g_00404b18_0, 0));
-        v2 = (void*)(g_00404b18_0);
         v3 = (int)(0);
     }
     return (void*)(v3);

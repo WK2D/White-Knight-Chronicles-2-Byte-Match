@@ -210,13 +210,10 @@ struct unk_0011bb1c_a0 {
     u8 f_4dd0;
 };
 int fn_0011bb1c(unk_0011bb1c_a0* a0) {
-    u8 v0;
     int v1;
     if ((int)(FIELD(u8, (int)(a0) + 65536, -22176)) == (int)(1)) {
-        v0 = (u8)(a0->f_4dd0);
         v1 = (int)((int)(signed char)(a0->f_4dd0));
     } else {
-        v0 = (u8)(FIELD(u8, (int)(a0) + 65536, -22176));
         v1 = (int)(0);
     }
     return (int)(v1);

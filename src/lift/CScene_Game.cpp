@@ -42,7 +42,6 @@ struct unk_00318240_a0 {
     u32 f_b4;
 };
 int fn_00318240(unk_00318240_a0* a0, int a1) {
-    int v0;
     int v1;
     int v2;
     if ((int)(a1) != (int)(0)) {
@@ -50,10 +49,8 @@ int fn_00318240(unk_00318240_a0* a0, int a1) {
             a0->f_b4 = (u32)(0);
             a0->f_ac = (u32)(a1);
             a0->f_a0 = (u32)(a0->f_a4);
-            v0 = (int)(0);
             v1 = (int)(1);
         } else {
-            v0 = (int)(a0->f_a8);
             v1 = (int)(0);
         }
         v2 = (int)(v1);

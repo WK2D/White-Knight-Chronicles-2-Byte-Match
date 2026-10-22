@@ -15,12 +15,8 @@ struct unk_00eb19ec_a0 {
 };
 void fn_00eb19ec(unk_00eb19ec_a0* a0, void* a1) {
     int t0;
-    int v0;
     if ((int)((u32)(a0->f_c) & 0x4) != (int)(0)) {
         t0 = fn_00d65558((u32)(a0->f_10), (void*)((char*)a0 + 8));
-        v0 = (int)(t0);
-    } else {
-        v0 = (int)(a0);
     }
     fn_00d7c768((void*)(a1), (u32)(a0->f_10), (int)(1));
 }

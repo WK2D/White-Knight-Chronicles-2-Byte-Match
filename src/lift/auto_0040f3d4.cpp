@@ -24,13 +24,10 @@ struct unk_0040f580_a0 {
     u32 f_4;
 };
 int fn_0040f580(unk_0040f580_a0* a0) {
-    int v0;
     int v1;
     if ((int)(a0->f_4) != (int)(0)) {
-        v0 = (int)(FIELD(u8, a0->f_4, 1));
         v1 = (int)((u32)(FIELD(u8, a0->f_4, 1)) & 0x1);
     } else {
-        v0 = (int)(a0->f_4);
         v1 = (int)(0);
     }
     return (int)(v1);
@@ -41,13 +38,10 @@ struct unk_0040f5a4_a0 {
     u32 f_4;
 };
 int fn_0040f5a4(unk_0040f5a4_a0* a0) {
-    int v0;
     int v1;
     if ((int)(a0->f_4) != (int)(0)) {
-        v0 = (int)(FIELD(u8, a0->f_4, 2));
         v1 = (int)((u32)(FIELD(u8, a0->f_4, 2)) >> 7);
     } else {
-        v0 = (int)(a0->f_4);
         v1 = (int)(0);
     }
     return (int)(v1);

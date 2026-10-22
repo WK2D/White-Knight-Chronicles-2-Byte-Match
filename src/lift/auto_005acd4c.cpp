@@ -71,15 +71,12 @@ int fn_005ad288(int a0, void* a1, void* a2) {
     void* t0;
     int t1;
     int v0;
-    int v1;
     t0 = stub_005ad060((int)(a0), (int)(0));
     if ((int)(t0) != (int)(0)) {
         t1 = stub_005acf3c((void*)(t0), (void*)(a1), (void*)(a2));
         v0 = (int)((u32)(t1) & 0xff);
-        v1 = (int)(t1);
     } else {
         v0 = (int)(0);
-        v1 = (int)(t0);
     }
     return (int)(v0);
 }

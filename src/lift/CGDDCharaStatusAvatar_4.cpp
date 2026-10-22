@@ -9,14 +9,11 @@ static int __attribute__((noinline)) stub_0039a420(void* p0, void* p1) { int r; 
 int fn_0039a5b0(void* a0, void* a1) {
     int t0;
     int v0;
-    int v1;
     if ((int)(a1) != (int)(0)) {
         t0 = stub_0039a420((void*)(a0), (void*)(a1));
         v0 = (int)((u32)(t0) & 0xff);
-        v1 = (int)(t0);
     } else {
         v0 = (int)(0);
-        v1 = (int)(a0);
     }
     return (int)(v0);
 }

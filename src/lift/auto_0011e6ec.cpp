@@ -16,15 +16,11 @@ struct unk_0011f9d8_a0 {
 int fn_0011f9d8(unk_0011f9d8_a0* a0) {
     int t0;
     int t1;
-    int v0;
     t0 = fn_000f5c90((void*)((char*)a0 + 21216));
     if ((int)(t0) != (int)(2)) {
         if ((int)(t0) != (int)(1)) {
             a0->f_435c = (u8)(0);
             t1 = fn_000f5788((void*)((char*)a0 + 21216), (int)(1));
-            v0 = (int)(t1);
-        } else {
-            v0 = (int)((char*)a0 + 21216);
         }
         return (int)(1);
     }

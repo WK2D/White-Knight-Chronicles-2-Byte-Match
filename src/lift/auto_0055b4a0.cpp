@@ -30,12 +30,8 @@ struct unk_0055b938_a0 {
 int fn_0055b938(unk_0055b938_a0* a0, void* a1, void* a2, void* a3) {
     int t0;
     int t1;
-    int v0;
     if ((int)(a0->f_20) != (int)(0)) {
         t0 = fn_0054ae78((u32)(a0->f_0), (void*)(a0->f_20));
-        v0 = (int)(t0);
-    } else {
-        v0 = (int)(a0);
     }
     t1 = fn_0054ac14((u32)(a0->f_0), (void*)(a1), (void*)(a2), (void*)(a3));
     a0->f_20 = (u32)(t1);

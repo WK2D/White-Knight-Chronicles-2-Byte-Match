@@ -19,16 +19,10 @@ u8 fn_007ce07c(unk_007ce07c_a0* a0, int a1, int a2, int a3, int a4, int a5) {
 extern char g_007cf094_0[];
 void* fn_007cf094(void) {
     int v0;
-    void* v1;
-    void* v2;
     if ((int)(FIELD(u32, FIELD(u32, g_007cf094_0, 0), 108)) != (int)(0)) {
         v0 = (int)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_007cf094_0, 0), 108), 8), 252), 4), 128));
-        v1 = (void*)(FIELD(u32, FIELD(u32, FIELD(u32, g_007cf094_0, 0), 108), 8));
-        v2 = (void*)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_007cf094_0, 0), 108), 8), 252));
     } else {
         v0 = (int)(0);
-        v1 = (void*)(FIELD(u32, FIELD(u32, g_007cf094_0, 0), 108));
-        v2 = (void*)(g_007cf094_0);
     }
     return (void*)(v0);
 }

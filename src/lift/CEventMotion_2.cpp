@@ -18,13 +18,9 @@ struct unk_00504d58_a0 {
 };
 void fn_00504d58(unk_00504d58_a0* a0) {
     int t0;
-    int v0;
     if ((int)(a0->f_1c) != (int)(0)) {
         t0 = a0->vf5();
         a0->f_18 = (u32)(a0->f_18 + 1);
-        v0 = (int)(t0);
-    } else {
-        v0 = (int)(a0);
     }
 }
 
@@ -42,13 +38,9 @@ struct unk_00504db8_a0 {
 };
 void fn_00504db8(unk_00504db8_a0* a0) {
     int t0;
-    int v0;
     if ((int)(a0->f_1c) != (int)(0)) {
         t0 = a0->vf6();
         a0->f_18 = (u32)(a0->f_18 + 1);
-        v0 = (int)(t0);
-    } else {
-        v0 = (int)(a0);
     }
 }
 
@@ -67,13 +59,9 @@ struct unk_00504e18_a0 {
 };
 void fn_00504e18(unk_00504e18_a0* a0) {
     int t0;
-    int v0;
     if ((int)(a0->f_1c) != (int)(0)) {
         t0 = a0->vf7();
         a0->f_18 = (u32)(a0->f_18 + 1);
-        v0 = (int)(t0);
-    } else {
-        v0 = (int)(a0);
     }
 }
 
@@ -93,13 +81,9 @@ struct unk_00504e78_a0 {
 };
 void fn_00504e78(unk_00504e78_a0* a0) {
     int t0;
-    int v0;
     if ((int)(a0->f_1c) != (int)(0)) {
         t0 = a0->vf8();
         a0->f_18 = (u32)(a0->f_18 + 1);
-        v0 = (int)(t0);
-    } else {
-        v0 = (int)(a0);
     }
 }
 
@@ -120,13 +104,9 @@ struct unk_00504ed8_a0 {
 };
 void fn_00504ed8(unk_00504ed8_a0* a0) {
     int t0;
-    int v0;
     if ((int)(a0->f_1c) != (int)(0)) {
         t0 = a0->vf9();
         a0->f_18 = (u32)(a0->f_18 + 1);
-        v0 = (int)(t0);
-    } else {
-        v0 = (int)(a0);
     }
 }
 
@@ -147,12 +127,8 @@ struct unk_00504f38_a0 {
 };
 void fn_00504f38(unk_00504f38_a0* a0) {
     int t0;
-    int v0;
     if ((int)(a0->f_1d) != (int)(0)) {
         t0 = a0->vf10();
-        v0 = (int)(t0);
-    } else {
-        v0 = (int)(a0);
     }
 }
 
@@ -176,12 +152,8 @@ struct unk_00504f84_a0 {
 };
 void fn_00504f84(unk_00504f84_a0* a0) {
     int t0;
-    int v0;
     if ((int)(a0->f_1d) != (int)(0)) {
         t0 = a0->vf13();
-        v0 = (int)(t0);
-    } else {
-        v0 = (int)(a0);
     }
 }
 

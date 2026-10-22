@@ -19,13 +19,9 @@ struct unk_008b68ec_a1 {
 };
 void fn_008b68ec(unk_008b68ec_a0* a0, unk_008b68ec_a1* a1, int a2) {
     int t0;
-    int v0;
     if ((int)(a0->f_ca0) != (int)((u32)(a2) & 0xff)) {
         t0 = stub_008b65e8((void*)(a0), (void*)(a1), (u8)((u8)a2));
         a0->f_ca0 = (u32)((u32)(a2) & 0xff);
-        v0 = (int)(t0);
-    } else {
-        v0 = (int)(a0);
     }
     a1->vf4();
 }

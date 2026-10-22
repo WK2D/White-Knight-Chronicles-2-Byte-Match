@@ -51,13 +51,9 @@ struct unk_00acadb8_a0 {
 void fn_00acadb8(unk_00acadb8_a0* a0, int a1) {
     int t0;
     int t1;
-    int v0;
     t0 = fn_00af297c((u32)(a0->f_4));
     if ((int)(a1) != (int)(0)) {
         t1 = fn_00af41d4((u32)(a0->f_4));
-        v0 = (int)(t1);
-    } else {
-        v0 = (int)(t0);
     }
 }
 

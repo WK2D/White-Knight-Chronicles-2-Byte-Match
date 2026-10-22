@@ -24,14 +24,10 @@ struct unk_00621d4c_a1 {
     u8 f_0;
 };
 int fn_00621d4c(unk_00621d4c_a0* a0, unk_00621d4c_a1* a1) {
-    u8 v0;
     if ((int)(a0->f_da) == (int)(0)) {
         if ((int)(a0->f_dc) == (int)(0)) {
             return (int)(1);
         }
-        v0 = (u8)(a0->f_dc);
-    } else {
-        v0 = (u8)(a0->f_da);
     }
     a1->f_0 = (u8)(1);
     return (int)(1);

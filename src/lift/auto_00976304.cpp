@@ -20,15 +20,12 @@ struct unk_00976430_a0 {
     u32 f_10;
 };
 int fn_00976430(unk_00976430_a0* a0) {
-    int v0;
     int v1;
     if ((int)(a0->f_c) != (int)(0)) {
         fn_00935480((u32)(a0->f_0), (int)((int)a0->f_10));
         a0->f_c = (u8)(0);
-        v0 = (int)(0);
         v1 = (int)(0);
     } else {
-        v0 = (int)(a0->f_c);
         v1 = (int)(-1);
     }
     return (int)(v1);

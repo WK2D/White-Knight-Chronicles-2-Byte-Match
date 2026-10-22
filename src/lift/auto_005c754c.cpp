@@ -13,14 +13,11 @@ struct unk_005c79c8_a0 {
 void* fn_005c79c8(unk_005c79c8_a0* a0) {
     int t0;
     int v0;
-    int v1;
     if ((int)(a0->f_1ec) != (int)(0)) {
         t0 = fn_005ce090((void*)(a0->f_1ec));
         v0 = (int)(t0);
-        v1 = (int)(t0);
     } else {
         v0 = (int)(0);
-        v1 = (int)(a0->f_1ec);
     }
     return (void*)(v0);
 }

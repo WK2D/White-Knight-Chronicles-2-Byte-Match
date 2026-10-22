@@ -12,15 +12,12 @@ int fn_004d5de8(void* a0, int a1) {
     void* t0;
     int t1;
     int v0;
-    int v1;
     if ((int)(a1) > (int)(0)) {
         t0 = fn_0003faa8((void*)(a0));
         t1 = stub_004d5cd8((void*)(g_004d5de8_0), (void*)(t0), (int)(2));
         v0 = (int)(1);
-        v1 = (int)(t1);
     } else {
         v0 = (int)(0);
-        v1 = (int)(a0);
     }
     return (int)(v0);
 }

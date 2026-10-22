@@ -53,20 +53,14 @@ int fn_004980c0(void* a0) {
     int t1;
     void* t2;
     int v0;
-    void* v1;
-    int v2;
     t0 = stub_00497618((u32)(FIELD(u32, g_004980c0_0, 0)));
     if ((int)((u32)(t0) & 0xff) != (int)(0)) {
         t1 = fn_00041b48((void*)(a0));
         t2 = stub_00497830((u32)(FIELD(u32, g_004980c0_0, 0)));
         FIELD(u32, t2, 4) = (u32)(t1);
         v0 = (int)(1);
-        v1 = (void*)(t2);
-        v2 = (int)(t1);
     } else {
         v0 = (int)(0);
-        v1 = (void*)(a0);
-        v2 = (int)(a0);
     }
     return (int)(v0);
 }

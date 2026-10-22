@@ -8,12 +8,8 @@ static int __attribute__((noinline)) stub_00622a3c(void* p0, void* p1) { int r; 
 
 int fn_00622c74(void* a0, int a1, void* a2) {
     int t0;
-    int v0;
     if ((int)(a2) != (int)(0)) {
         t0 = stub_00622a3c((void*)(a0), (void*)(a2));
-        v0 = (int)(t0);
-    } else {
-        v0 = (int)(a0);
     }
     return (int)(1);
 }

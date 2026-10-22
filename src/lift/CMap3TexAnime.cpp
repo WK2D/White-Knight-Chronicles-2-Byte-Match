@@ -38,13 +38,10 @@ struct unk_002b9590_a0 {
 };
 void* fn_002b9590(unk_002b9590_a0* a0, int a1) {
     int v0;
-    void* v1;
     if ((int)(a0->f_2fbc) != (int)(0)) {
         v0 = (int)(FIELD(u32, FIELD(u32, a0->f_2fbc, 0), 0));
-        v1 = (void*)(FIELD(u32, a0->f_2fbc, 0));
     } else {
         v0 = (int)(0);
-        v1 = (void*)(a0->f_2fbc);
     }
     return (void*)((int)(v0) + (int)((u32)(a1) & 0xffff));
 }

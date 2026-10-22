@@ -15,17 +15,23 @@ struct unk_005fb7c4_a1 {
     u8 f_0;
 };
 int fn_005fb7c4(unk_005fb7c4_a0* a0, unk_005fb7c4_a1* a1) {
-    u32 v0;
     if ((int)(a0->f_104) == (int)(0)) {
         if ((int)((u32)(a0->f_1b8) & 0x1) == (int)(0)) {
             return (int)(1);
         }
-        v0 = (u32)((u32)(a0->f_1b8) & 0x1);
-    } else {
-        v0 = (u32)(a0->f_104);
     }
     a1->f_0 = (u8)(1);
     return (int)(1);
+}
+
+void fn_005fb7f4(void* a0, void* a1) {
+    int v0;
+    if ((int)(a1) == (int)(0)) {
+        return;
+    }
+    for (v0 = 0; v0 < 32; v0++) {
+        FIELD(u32, (char*)a0 + (int)(v0) * 4, 120) = (u32)(FIELD(u32, (char*)a1 + (int)(v0) * 4, 0));
+    }
 }
 
 }

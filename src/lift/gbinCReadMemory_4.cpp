@@ -4,6 +4,7 @@
 
 extern "C" {
 
+void fn_00b42138(int);
 
 struct unk_00a58de8_a0 {
     char pad_0[16];
@@ -35,6 +36,17 @@ void* fn_00a58e08(unk_00a58e08_a0* a0) {
         v0 = (int)(0);
     }
     return (void*)(v0);
+}
+
+void fn_00a5909c(int a0) {
+    int v11;
+    if ((int)(a0) > (int)(0)) {
+        v11 = (int)(0);
+        do {
+            fn_00b42138((int)(32));
+            v11 = (int)(v11 + 1);
+        } while ((int)(a0) != (int)(v11));
+    }
 }
 
 }

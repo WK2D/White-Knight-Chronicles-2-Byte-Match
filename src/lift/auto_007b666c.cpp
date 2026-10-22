@@ -11,15 +11,12 @@ int fn_007b720c(int a0, int a1, int a2) {
     void* t0;
     int t1;
     int v0;
-    int v1;
     t0 = stub_007b717c((int)(a0), (int)(0));
     if ((int)(t0) != (int)(0)) {
         t1 = stub_007b6b94((void*)(t0), (u8)((u8)a1), (u8)((u8)a2), (int)(0));
         v0 = (int)((u32)(t1) & 0xff);
-        v1 = (int)(t1);
     } else {
         v0 = (int)(0);
-        v1 = (int)(t0);
     }
     return (int)(v0);
 }

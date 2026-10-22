@@ -26,14 +26,10 @@ struct unk_00881908_a0 {
     u8 f_78;
 };
 int fn_00881908(unk_00881908_a0* a0, int a1) {
-    int v0;
     int v1;
     if ((int)(a1) != (int)(0)) {
         if ((int)(a0->f_78) != (int)(0)) {
             a0->f_78 = (u8)(0);
-            v0 = (int)(0);
-        } else {
-            v0 = (int)(a0->f_78);
         }
         v1 = (int)(1);
     } else {

@@ -17,15 +17,12 @@ int fn_00128848(unk_00128848_a0* a0, void* a1) {
     int t0;
     int t1;
     int v0;
-    int v1;
     t0 = stub_00124f78((void*)(a0));
     if ((int)(t0) == (int)(0)) {
         t1 = stub_001285c0((void*)((char*)a0 + 1092), (u32)(a0->f_13d8), (void*)(a1));
         v0 = (int)((u32)(t1) & 0xff);
-        v1 = (int)(t1);
     } else {
         v0 = (int)(0);
-        v1 = (int)((char*)a0 + 1092);
     }
     return (int)(v0);
 }

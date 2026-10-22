@@ -24,14 +24,11 @@ struct unk_00776ea0_a0 {
 void* fn_00776ea0(unk_00776ea0_a0* a0) {
     int t0;
     int v0;
-    int v1;
     if ((int)(a0->f_10e0) != (int)(0)) {
         t0 = fn_001cd714((void*)(a0->f_10e0));
         v0 = (int)(t0);
-        v1 = (int)(t0);
     } else {
         v0 = (int)(1023);
-        v1 = (int)(a0->f_10e0);
     }
     return (void*)(v0);
 }

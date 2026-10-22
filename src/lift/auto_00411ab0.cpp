@@ -26,15 +26,12 @@ int fn_00412964(void) {
     int t0;
     int t1;
     int v0;
-    int v1;
     t0 = stub_00411944((u32)(FIELD(u32, g_00412964_0, 0)), (int)(1));
     if ((int)((u32)(t0) & 0xff) != (int)(0)) {
         t1 = stub_00412610((void*)(FIELD(u32, g_00412964_0, 0)), (u32)(FIELD(u32, FIELD(u32, g_00412964_0, 0), 12)), (u32)(FIELD(u32, FIELD(u32, g_00412964_0, 0), 20)));
         v0 = (int)(1);
-        v1 = (int)(t1);
     } else {
         v0 = (int)(0);
-        v1 = (int)((u32)(t0) & 0xff);
     }
     return (int)(v0);
 }

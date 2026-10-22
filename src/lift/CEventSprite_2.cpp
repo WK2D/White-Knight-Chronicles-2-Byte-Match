@@ -15,7 +15,6 @@ struct unk_0050892c_a0 {
 };
 int fn_0050892c(unk_0050892c_a0* a0) {
     int v0;
-    u32 v1;
     int v2;
     if ((int)(a0->f_110) != (int)(0)) {
         if ((int)(a0->f_118) != (int)(0)) {
@@ -23,10 +22,8 @@ int fn_0050892c(unk_0050892c_a0* a0) {
         } else {
             v0 = (int)(1);
         }
-        v1 = (u32)(a0->f_118);
         v2 = (int)(v0);
     } else {
-        v1 = (u32)(a0->f_110);
         v2 = (int)(1);
     }
     return (int)(v2);

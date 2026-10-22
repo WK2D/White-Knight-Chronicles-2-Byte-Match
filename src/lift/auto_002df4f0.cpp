@@ -18,15 +18,12 @@ void* fn_002df4f0(int a0) {
     void* t0;
     int t1;
     int v0;
-    int v1;
     t0 = stub_002dddac((int)(a0), (int)(90));
     if ((int)(t0) != (int)(0)) {
         t1 = fn_00b38eb8((void*)(t0), (void*)(g_002df4f0_1), (void*)(g_002df4f0_0), (int)(0));
         v0 = (int)(t1);
-        v1 = (int)(t1);
     } else {
         v0 = (int)(0);
-        v1 = (int)(t0);
     }
     return (void*)(v0);
 }
@@ -37,15 +34,12 @@ void* fn_002df540(int a0) {
     void* t0;
     int t1;
     int v0;
-    int v1;
     t0 = stub_002dddac((int)(a0), (int)(70));
     if ((int)(t0) != (int)(0)) {
         t1 = fn_00b38eb8((void*)(t0), (void*)(g_002df540_1), (void*)(g_002df540_0), (int)(0));
         v0 = (int)(t1);
-        v1 = (int)(t1);
     } else {
         v0 = (int)(0);
-        v1 = (int)(t0);
     }
     return (void*)(v0);
 }
@@ -56,15 +50,12 @@ void* fn_002df590(int a0) {
     void* t0;
     int t1;
     int v0;
-    int v1;
     t0 = stub_002dddac((int)(a0), (int)(60));
     if ((int)(t0) != (int)(0)) {
         t1 = fn_00b38eb8((void*)(t0), (void*)(g_002df590_1), (void*)(g_002df590_0), (int)(0));
         v0 = (int)(t1);
-        v1 = (int)(t1);
     } else {
         v0 = (int)(0);
-        v1 = (int)(t0);
     }
     return (void*)(v0);
 }
@@ -75,15 +66,12 @@ void* fn_002df5e0(int a0) {
     void* t0;
     int t1;
     int v0;
-    int v1;
     t0 = stub_002dddac((int)(a0), (int)(42));
     if ((int)(t0) != (int)(0)) {
         t1 = fn_00b38eb8((void*)(t0), (void*)(g_002df5e0_1), (void*)(g_002df5e0_0), (int)(0));
         v0 = (int)(t1);
-        v1 = (int)(t1);
     } else {
         v0 = (int)(0);
-        v1 = (int)(t0);
     }
     return (void*)(v0);
 }
@@ -94,15 +82,12 @@ void* fn_002df630(int a0) {
     void* t0;
     int t1;
     int v0;
-    int v1;
     t0 = stub_002dddac((int)(a0), (int)(41));
     if ((int)(t0) != (int)(0)) {
         t1 = fn_00b38eb8((void*)(t0), (void*)(g_002df630_1), (void*)(g_002df630_0), (int)(0));
         v0 = (int)(t1);
-        v1 = (int)(t1);
     } else {
         v0 = (int)(0);
-        v1 = (int)(t0);
     }
     return (void*)(v0);
 }
@@ -113,15 +98,12 @@ void* fn_002df680(int a0) {
     void* t0;
     int t1;
     int v0;
-    int v1;
     t0 = stub_002dddac((int)(a0), (int)(40));
     if ((int)(t0) != (int)(0)) {
         t1 = fn_00b38eb8((void*)(t0), (void*)(g_002df680_1), (void*)(g_002df680_0), (int)(0));
         v0 = (int)(t1);
-        v1 = (int)(t1);
     } else {
         v0 = (int)(0);
-        v1 = (int)(t0);
     }
     return (void*)(v0);
 }
@@ -132,15 +114,12 @@ void* fn_002df7d0(int a0) {
     void* t0;
     int t1;
     int v0;
-    int v1;
     t0 = stub_002dddac((int)(a0), (int)(50));
     if ((int)(t0) != (int)(0)) {
         t1 = fn_00b38eb8((void*)(t0), (void*)(g_002df7d0_1), (void*)(g_002df7d0_0), (int)(0));
         v0 = (int)(t1);
-        v1 = (int)(t1);
     } else {
         v0 = (int)(0);
-        v1 = (int)(t0);
     }
     return (void*)(v0);
 }
@@ -151,15 +130,12 @@ void* fn_002df820(int a0) {
     void* t0;
     int t1;
     int v0;
-    int v1;
     t0 = stub_002dddac((int)(a0), (int)(30));
     if ((int)(t0) != (int)(0)) {
         t1 = fn_00b38eb8((void*)(t0), (void*)(g_002df820_1), (void*)(g_002df820_0), (int)(0));
         v0 = (int)(t1);
-        v1 = (int)(t1);
     } else {
         v0 = (int)(0);
-        v1 = (int)(t0);
     }
     return (void*)(v0);
 }
@@ -188,15 +164,12 @@ void* fn_002e18e4(int a0) {
     void* t0;
     int t1;
     int v0;
-    int v1;
     t0 = stub_002dddac((int)(a0), (int)(20));
     if ((int)(t0) != (int)(0)) {
         t1 = fn_00b38eb8((void*)(t0), (void*)(g_002e18e4_1), (void*)(g_002e18e4_0), (int)(0));
         v0 = (int)(t1);
-        v1 = (int)(t1);
     } else {
         v0 = (int)(0);
-        v1 = (int)(t0);
     }
     return (void*)(v0);
 }
@@ -207,15 +180,12 @@ void* fn_002e1cd4(int a0) {
     void* t0;
     int t1;
     int v0;
-    int v1;
     t0 = stub_002dddac((int)(a0), (int)(15));
     if ((int)(t0) != (int)(0)) {
         t1 = fn_00b38eb8((void*)(t0), (void*)(g_002e1cd4_1), (void*)(g_002e1cd4_0), (int)(0));
         v0 = (int)(t1);
-        v1 = (int)(t1);
     } else {
         v0 = (int)(0);
-        v1 = (int)(t0);
     }
     return (void*)(v0);
 }
@@ -226,15 +196,12 @@ void* fn_002e1d68(int a0) {
     void* t0;
     int t1;
     int v0;
-    int v1;
     t0 = stub_002dddac((int)(a0), (int)(10));
     if ((int)(t0) != (int)(0)) {
         t1 = fn_00b38eb8((void*)(t0), (void*)(g_002e1d68_1), (void*)(g_002e1d68_0), (int)(0));
         v0 = (int)(t1);
-        v1 = (int)(t1);
     } else {
         v0 = (int)(0);
-        v1 = (int)(t0);
     }
     return (void*)(v0);
 }
@@ -243,15 +210,12 @@ int fn_002ea500(int a0) {
     int t0;
     int t1;
     int v0;
-    int v1;
     t0 = stub_002ddf50((int)(a0));
     if ((int)((u32)(t0) & 0xff) != (int)(0)) {
         t1 = stub_002ea45c((int)(a0));
         v0 = (int)((u32)(t1) & 0xff);
-        v1 = (int)(t1);
     } else {
         v0 = (int)(0);
-        v1 = (int)(a0);
     }
     return (int)(v0);
 }
@@ -260,15 +224,12 @@ int fn_002eb2cc(int a0, int a1, int a2) {
     int t0;
     int t1;
     int v0;
-    int v1;
     t0 = stub_002de23c((int)(a0), (int)(a2));
     if ((int)((u32)(t0) & 0xff) != (int)(0)) {
         t1 = stub_002eb0d0((int)(a0), (u8)((u8)a1));
         v0 = (int)((u32)(t1) & 0xff);
-        v1 = (int)(t1);
     } else {
         v0 = (int)(0);
-        v1 = (int)(a0);
     }
     return (int)(v0);
 }

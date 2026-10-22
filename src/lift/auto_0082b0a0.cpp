@@ -19,14 +19,11 @@ struct unk_0082b4e0_a0 {
 int fn_0082b4e0(unk_0082b4e0_a0* a0, int a1) {
     int t0;
     int v0;
-    int v1;
     if ((int)(a0->f_1120) != (int)(2)) {
         t0 = fn_00836da8((u32)(a0->f_10fc), (void*)((char*)a0 + 280), (u8)((u8)a1));
         v0 = (int)((u32)(t0) & 0xff);
-        v1 = (int)(t0);
     } else {
         v0 = (int)(0);
-        v1 = (int)(a0);
     }
     return (int)(v0);
 }

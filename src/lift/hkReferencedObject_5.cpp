@@ -10,13 +10,10 @@ struct unk_00c04ff0_a0 {
     u32 f_20;
 };
 int fn_00c04ff0(unk_00c04ff0_a0* a0, int a1) {
-    u32 v0;
     int v1;
     if ((int)(a0->f_20) != (int)(0)) {
-        v0 = (u32)(~((u32)(FIELD(u32, (int)((u32)(a1) << 2) + (int)(a0->f_20), 0)) | (u32)(FIELD(u32, (int)((u32)(a1) << 2) + (int)(a0->f_20), 0))));
         v1 = (int)((u32)(~((u32)(FIELD(u32, (int)((u32)(a1) << 2) + (int)(a0->f_20), 0)) | (u32)(FIELD(u32, (int)((u32)(a1) << 2) + (int)(a0->f_20), 0)))) >> 31);
     } else {
-        v0 = (u32)(a0->f_20);
         v1 = (int)(0);
     }
     return (int)(v1);

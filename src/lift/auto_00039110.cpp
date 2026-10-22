@@ -16,24 +16,11 @@ struct unk_00039a04_a0 {
 };
 int fn_00039a04(unk_00039a04_a0* a0) {
     int t0;
-    int v0;
     void* v1;
-    int v2;
-    int v3;
-    int v4;
-    int v5;
-    int v6;
-    int v7;
-    int v8;
-    int v9;
-    int v10;
-    u32 v11;
-    u32 v12;
     if ((int)(a0->f_0) > (int)(0)) {
         if ((int)(a0->f_408) != (int)(0)) {
             if ((int)(a0->f_40c) > (int)(0)) {
                 a0->f_424 = (u32)(0);
-                v0 = (int)(0);
                 v1 = (void*)(a0);
                 do {
                     t0 = stub_00039598((void*)(a0), (int)(1));
@@ -41,13 +28,7 @@ int fn_00039a04(unk_00039a04_a0* a0) {
                 } while ((int)(v1) != (int)(0));
                 return (int)(1);
             }
-            v11 = (u32)(a0->f_40c);
-        } else {
-            v11 = (u32)(a0->f_408);
         }
-        v12 = (u32)(v11);
-    } else {
-        v12 = (u32)(a0->f_0);
     }
     return (int)(0);
 }

@@ -13,12 +13,8 @@ struct unk_00b0c6ac_a0 {
 };
 void fn_00b0c6ac(unk_00b0c6ac_a0* a0) {
     int t0;
-    int v0;
     if (a0 != 0) {
         t0 = fn_00b11428((u32)(a0->f_44));
-        v0 = (int)(t0);
-    } else {
-        v0 = (int)(a0);
     }
 }
 
@@ -28,12 +24,8 @@ struct unk_00b0c728_a0 {
 };
 void fn_00b0c728(unk_00b0c728_a0* a0) {
     int t0;
-    int v0;
     if (a0 != 0) {
         t0 = fn_00b1146c((u32)(a0->f_44));
-        v0 = (int)(t0);
-    } else {
-        v0 = (int)(a0);
     }
 }
 

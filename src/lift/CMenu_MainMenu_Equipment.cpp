@@ -15,12 +15,8 @@ struct unk_005f4bd4_a1 {
     u8 f_0;
 };
 u32 fn_005f4bd4(unk_005f4bd4_a0* a0, unk_005f4bd4_a1* a1) {
-    int v0;
     if ((int)(a0->f_968) != (int)(0)) {
         a1->f_0 = (u8)(1);
-        v0 = (int)(1);
-    } else {
-        v0 = (int)(a0->f_968);
     }
     return (u32)((u32)(a0->f_964) ^ 0x1);
 }

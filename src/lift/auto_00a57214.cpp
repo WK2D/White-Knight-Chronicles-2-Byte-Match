@@ -9,12 +9,8 @@ int fn_00b42128(void*, int);
 extern char g_00a57b44_0[];
 u32 fn_00a57b44(int a0) {
     int t0;
-    int v0;
     if ((int)(a0) == (int)(0)) {
         t0 = fn_00b42128((void*)(g_00a57b44_0), (int)(0));
-        v0 = (int)(t0);
-    } else {
-        v0 = (int)(a0);
     }
     return (u32)((u32)(((u32)(a0) << 5) + 128) & 0xffffffe0);
 }

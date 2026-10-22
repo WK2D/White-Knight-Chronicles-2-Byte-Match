@@ -186,22 +186,16 @@ void fn_00073828(int a0) {
 extern char g_00073838_0[];
 void* fn_00073838(void) {
     int v0;
-    void* v1;
     int v2;
-    void* v3;
     if ((int)(FIELD(u32, g_00073838_0, 0)) != (int)(0)) {
         if ((int)(FIELD(u32, FIELD(u32, g_00073838_0, 0), 76)) != (int)(0)) {
             v0 = (int)(FIELD(u32, FIELD(u32, FIELD(u32, g_00073838_0, 0), 76), 20));
         } else {
             v0 = (int)(0);
         }
-        v1 = (void*)(FIELD(u32, FIELD(u32, g_00073838_0, 0), 76));
         v2 = (int)(v0);
-        v3 = (void*)(FIELD(u32, FIELD(u32, g_00073838_0, 0), 76));
     } else {
-        v1 = (void*)(FIELD(u32, g_00073838_0, 0));
         v2 = (int)(0);
-        v3 = (void*)(FIELD(u32, g_00073838_0, 0));
     }
     return (void*)(v2);
 }
@@ -209,22 +203,16 @@ void* fn_00073838(void) {
 extern char g_0007386c_0[];
 void* fn_0007386c(void) {
     int v0;
-    void* v1;
     int v2;
-    void* v3;
     if ((int)(FIELD(u32, g_0007386c_0, 0)) != (int)(0)) {
         if ((int)(FIELD(u32, FIELD(u32, g_0007386c_0, 0), 76)) != (int)(0)) {
             v0 = (int)(FIELD(u32, FIELD(u32, FIELD(u32, g_0007386c_0, 0), 76), 24));
         } else {
             v0 = (int)(0);
         }
-        v1 = (void*)(FIELD(u32, FIELD(u32, g_0007386c_0, 0), 76));
         v2 = (int)(v0);
-        v3 = (void*)(FIELD(u32, FIELD(u32, g_0007386c_0, 0), 76));
     } else {
-        v1 = (void*)(FIELD(u32, g_0007386c_0, 0));
         v2 = (int)(0);
-        v3 = (void*)(FIELD(u32, g_0007386c_0, 0));
     }
     return (void*)(v2);
 }

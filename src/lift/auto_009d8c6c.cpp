@@ -8,22 +8,13 @@ extern "C" {
 extern char g_009d9d34_0[];
 void* fn_009d9d34(void) {
     int v0;
-    int v1;
-    void* v2;
-    u32 v3;
-    v0 = (int)(14);
-    v2 = (void*)(g_009d9d34_0);
-    v3 = (u32)(14);
-    for (;;) {
-        if ((int)(FIELD(u32, v2, 0)) == (int)(0)) {
+    void* v3;
+    v3 = (void*)(g_009d9d34_0);
+    for (v0 = 0; v0 < 14; v0++) {
+        if ((int)(FIELD(u32, v3, 0)) == (int)(0)) {
             return (void*)(0);
         }
-        v0 = (int)(FIELD(u32, v2, 0));
-        v1 = (int)(v2);
-        v2 = (void*)((char*)v2 + 4);
-        if (--v3 == 0) {
-            break;
-        }
+        v3 = (void*)((char*)v3 + 4);
     }
     return (void*)(g_009d9d34_0);
 }

@@ -86,15 +86,12 @@ void* fn_003a0070(unk_003a0070_a0* a0) {
     void* t0;
     int t1;
     int v0;
-    int v1;
     t0 = a0->vf45();
     if ((int)(t0) != (int)(0)) {
         t1 = fn_003dccd8((void*)(t0));
         v0 = (int)(t1);
-        v1 = (int)(t1);
     } else {
         v0 = (int)(0);
-        v1 = (int)(t0);
     }
     return (void*)(v0);
 }
@@ -150,15 +147,12 @@ void* fn_003a00d0(unk_003a00d0_a0* a0) {
     void* t0;
     int t1;
     int v0;
-    int v1;
     t0 = a0->vf44();
     if ((int)(t0) != (int)(0)) {
         t1 = fn_003dccd8((void*)(t0));
         v0 = (int)(t1);
-        v1 = (int)(t1);
     } else {
         v0 = (int)(0);
-        v1 = (int)(t0);
     }
     return (void*)(v0);
 }
@@ -213,15 +207,12 @@ void* fn_003a0130(unk_003a0130_a0* a0) {
     void* t0;
     int t1;
     int v0;
-    int v1;
     t0 = a0->vf43();
     if ((int)(t0) != (int)(0)) {
         t1 = fn_003dccd8((void*)(t0));
         v0 = (int)(t1);
-        v1 = (int)(t1);
     } else {
         v0 = (int)(0);
-        v1 = (int)(t0);
     }
     return (void*)(v0);
 }
@@ -275,15 +266,12 @@ void* fn_003a0190(unk_003a0190_a0* a0) {
     void* t0;
     int t1;
     int v0;
-    int v1;
     t0 = a0->vf42();
     if ((int)(t0) != (int)(0)) {
         t1 = fn_003dccd8((void*)(t0));
         v0 = (int)(t1);
-        v1 = (int)(t1);
     } else {
         v0 = (int)(0);
-        v1 = (int)(t0);
     }
     return (void*)(v0);
 }

@@ -16,14 +16,11 @@ void fn_0020ecf8(int a0) {
 void* fn_0020ed30(int a0, void* a1) {
     int t0;
     int v0;
-    int v1;
     if ((int)(a1) != (int)(0)) {
         t0 = fn_000343dc((void*)(((int)(a0) + 131072) + -6508), (void*)(a1), (int)(0), (int)(0), (int)(0));
         v0 = (int)(t0);
-        v1 = (int)(t0);
     } else {
         v0 = (int)(0);
-        v1 = (int)((int)(a0) + 131072);
     }
     return (void*)(v0);
 }

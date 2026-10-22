@@ -4,7 +4,24 @@
 
 extern "C" {
 
+int fn_00048e54(void*, int, int);
 void fn_00b37fa8(void*, int, u32);
+
+struct unk_006f2568_a0 {
+    char pad_0[44];
+    u32 f_2c;
+};
+int fn_006f2568(unk_006f2568_a0* a0, int a1, int a2) {
+    int t0;
+    int v0;
+    t0 = fn_00048e54((void*)(a0->f_2c + 936), (int)(1072), (int)(320));
+    for (v0 = 0; v0 < 5; v0++) {
+        if ((int)((int)(a2) - (int)(t0)) == (int)((int)(v0) * 1)) {
+            return (int)(1);
+        }
+    }
+    return (int)(0);
+}
 
 void fn_006f2780(void* a0) {
     fn_00b37fa8((void*)((char*)a0 + 2224), (int)(0), (u32)(36864));

@@ -8,37 +8,22 @@ extern "C" {
 extern char g_007cb318_0[];
 int fn_007cb318(void) {
     int v0;
-    void* v1;
-    void* v2;
     int v3;
-    void* v4;
-    void* v5;
     int v6;
-    void* v7;
     if ((int)(FIELD(u32, FIELD(u32, g_007cb318_0, 0), 108)) != (int)(0)) {
         if ((int)(FIELD(u32, FIELD(u32, FIELD(u32, g_007cb318_0, 0), 108), 8)) != (int)(0)) {
             if ((int)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_007cb318_0, 0), 108), 8), 252)) != (int)(0)) {
                 v0 = (int)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_007cb318_0, 0), 108), 8), 252), 4), 128));
-                v1 = (void*)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_007cb318_0, 0), 108), 8), 252), 4));
             } else {
                 v0 = (int)(0);
-                v1 = (void*)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_007cb318_0, 0), 108), 8), 252));
             }
-            v2 = (void*)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_007cb318_0, 0), 108), 8), 252));
             v3 = (int)(v0);
-            v4 = (void*)(v1);
         } else {
-            v2 = (void*)(FIELD(u32, FIELD(u32, FIELD(u32, g_007cb318_0, 0), 108), 8));
             v3 = (int)(0);
-            v4 = (void*)(FIELD(u32, FIELD(u32, FIELD(u32, g_007cb318_0, 0), 108), 8));
         }
-        v5 = (void*)(v2);
         v6 = (int)(v3);
-        v7 = (void*)(v4);
     } else {
-        v5 = (void*)(FIELD(u32, FIELD(u32, g_007cb318_0, 0), 108));
         v6 = (int)(0);
-        v7 = (void*)(FIELD(u32, FIELD(u32, g_007cb318_0, 0), 108));
     }
     return (int)(v6);
 }
@@ -46,13 +31,10 @@ int fn_007cb318(void) {
 extern char g_007cb410_0[];
 void* fn_007cb410(void) {
     int v0;
-    void* v1;
     if ((int)(FIELD(u32, FIELD(u32, g_007cb410_0, 0), 108)) != (int)(0)) {
         v0 = (int)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_007cb410_0, 0), 108), 8), 252));
-        v1 = (void*)(FIELD(u32, FIELD(u32, FIELD(u32, g_007cb410_0, 0), 108), 8));
     } else {
         v0 = (int)(0);
-        v1 = (void*)(FIELD(u32, FIELD(u32, g_007cb410_0, 0), 108));
     }
     return (void*)(v0);
 }

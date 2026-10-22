@@ -13,15 +13,12 @@ int fn_0059e590(int a0, void* a1) {
     void* t0;
     int t1;
     int v0;
-    int v1;
     t0 = stub_0059e1cc();
     if ((int)(t0) != (int)(0)) {
         t1 = fn_00421238((void*)(t0), (void*)(a1));
         v0 = (int)((u32)(t1) & 0xff);
-        v1 = (int)(t1);
     } else {
         v0 = (int)(0);
-        v1 = (int)(t0);
     }
     return (int)(v0);
 }
@@ -30,15 +27,12 @@ void* fn_0059e5e4(int a0, void* a1) {
     void* t0;
     int t1;
     int v0;
-    int v1;
     t0 = stub_0059e1cc();
     if ((int)(t0) != (int)(0)) {
         t1 = fn_00420f2c((void*)(t0), (void*)(a1));
         v0 = (int)(t1);
-        v1 = (int)(t1);
     } else {
         v0 = (int)(0);
-        v1 = (int)(t0);
     }
     return (void*)(v0);
 }
@@ -47,15 +41,12 @@ void* fn_0059e634(int a0, void* a1) {
     void* t0;
     int t1;
     int v0;
-    int v1;
     t0 = stub_0059e1cc();
     if ((int)(t0) != (int)(0)) {
         t1 = fn_0041fc9c((void*)(t0), (void*)(a1));
         v0 = (int)(t1);
-        v1 = (int)(t1);
     } else {
         v0 = (int)(0);
-        v1 = (int)(t0);
     }
     return (void*)(v0);
 }

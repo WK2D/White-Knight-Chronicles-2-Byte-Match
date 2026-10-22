@@ -92,12 +92,8 @@ struct unk_00aa7c9c_a0 {
 };
 void fn_00aa7c9c(unk_00aa7c9c_a0* a0) {
     int t0;
-    int v0;
     if ((int)(a0->f_10) != (int)(0)) {
         t0 = fn_00aa33f8((u32)(a0->f_4), (u32)(a0->f_14));
-        v0 = (int)(t0);
-    } else {
-        v0 = (int)(a0);
     }
 }
 
@@ -111,12 +107,8 @@ struct unk_00aa7cd4_a0 {
 };
 void fn_00aa7cd4(unk_00aa7cd4_a0* a0) {
     int t0;
-    int v0;
     if ((int)(a0->f_10) != (int)(0)) {
         t0 = fn_00aa33f8((u32)(a0->f_4), (u32)(a0->f_14));
-        v0 = (int)(t0);
-    } else {
-        v0 = (int)(a0);
     }
 }
 

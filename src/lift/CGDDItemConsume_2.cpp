@@ -12,8 +12,6 @@ extern char g_003de508_0[];
 int fn_003de508(void* a0, void* a1) {
     void* t0;
     void* t1;
-    void* v0;
-    int v1;
     if ((int)(a1) != (int)(0)) {
         t0 = stub_003dccd8((void*)(a0));
         if ((int)(t0) != (int)(0)) {
@@ -21,11 +19,6 @@ int fn_003de508(void* a0, void* a1) {
             fn_00b38268((void*)(a1), (void*)(t1));
             return (int)(1);
         }
-        v0 = (void*)(t0);
-        v1 = (int)(0);
-    } else {
-        v0 = (void*)(a0);
-        v1 = (int)(a1);
     }
     return (int)(0);
 }

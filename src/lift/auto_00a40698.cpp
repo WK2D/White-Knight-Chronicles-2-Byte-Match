@@ -12,15 +12,12 @@ void* fn_00a43f58(void* a0) {
     void* t0;
     int t1;
     int v0;
-    int v1;
     if ((int)(a0) != (int)(0)) {
         t0 = fn_00b3e1d8((void*)(a0));
         t1 = fn_00a3c6e8((void*)(a0), (void*)(t0));
         v0 = (int)(t1);
-        v1 = (int)(t1);
     } else {
         v0 = (int)(0);
-        v1 = (int)(a0);
     }
     return (void*)(v0);
 }

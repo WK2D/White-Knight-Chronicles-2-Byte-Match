@@ -19,14 +19,11 @@ struct unk_007c2a10_a1 {
 };
 int fn_007c2a10(int a0, unk_007c2a10_a1* a1) {
     int t0;
-    int v0;
     int v1;
     if ((int)(a1) != (int)(0)) {
         t0 = a1->vf1();
-        v0 = (int)(t0);
         v1 = (int)(1);
     } else {
-        v0 = (int)(a1);
         v1 = (int)(0);
     }
     return (int)(v1);

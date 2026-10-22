@@ -36,13 +36,9 @@ struct unk_002fc80c_a2 {
     u16 f_6;
 };
 void fn_002fc80c(unk_002fc80c_a0* a0, int a1, unk_002fc80c_a2* a2) {
-    int v0;
     stub_002fc47c();
     if ((int)(a0->f_114) == (int)(305)) {
         a2->f_6 = (u16)(3310);
-        v0 = (int)(3310);
-    } else {
-        v0 = (int)(a0->f_114);
     }
 }
 

@@ -23,14 +23,11 @@ struct unk_00989030_a0 {
 };
 extern char g_00989030_0[];
 u32 fn_00989030(unk_00989030_a0* a0) {
-    int v0;
     int v1;
     if ((int)(FIELD(u32, g_00989030_0, 3180)) == (int)(1)) {
         a0->f_0 = (u32)(-1);
-        v0 = (int)(-1);
         v1 = (int)(0);
     } else {
-        v0 = (int)(FIELD(u32, g_00989030_0, 3180));
         v1 = (int)(5);
     }
     return (u32)((u32)(v1) & (u32)(5));
@@ -62,8 +59,6 @@ struct unk_0098a2b4_a2 {
     u8 f_0;
 };
 u32 fn_0098a2b4(unk_0098a2b4_a0* a0, unk_0098a2b4_a1* a1, unk_0098a2b4_a2* a2) {
-    int v0;
-    int v1;
     if (a0 != 0) {
         if ((int)(a1) != (int)(0)) {
             if ((int)(a2) != (int)(0)) {
@@ -72,13 +67,7 @@ u32 fn_0098a2b4(unk_0098a2b4_a0* a0, unk_0098a2b4_a1* a1, unk_0098a2b4_a2* a2) {
                 a2->f_0 = (u8)(0);
                 return (u32)((u32)(0) & 0x2);
             }
-            v0 = (int)(0);
-        } else {
-            v0 = (int)(a0);
         }
-        v1 = (int)(v0);
-    } else {
-        v1 = (int)(a0);
     }
     return (u32)((u32)(2) & 0x2);
 }

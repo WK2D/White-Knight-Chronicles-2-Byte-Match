@@ -12,13 +12,10 @@ struct unk_005c6ffc_a0 {
 };
 void* fn_005c6ffc(unk_005c6ffc_a0* a0, int a1) {
     int v0;
-    void* v1;
     if ((int)(a0->f_1ec) != (int)(0)) {
         v0 = (int)(FIELD(u32, (int)((u32)((int)(short)(a1)) << 2) + (int)(FIELD(u32, a0->f_1ec, 36)), 0));
-        v1 = (void*)((int)((u32)((int)(short)(a1)) << 2) + (int)(FIELD(u32, a0->f_1ec, 36)));
     } else {
         v0 = (int)(0);
-        v1 = (void*)(a0->f_1ec);
     }
     return (void*)(v0);
 }

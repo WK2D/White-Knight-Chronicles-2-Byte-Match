@@ -11,9 +11,6 @@ struct unk_009a48dc_a2 {
 };
 u32 fn_009a48dc(void* a0, int a1, unk_009a48dc_a2* a2) {
     void* t0;
-    void* v0;
-    void* v1;
-    void* v2;
     if ((int)(a0) != (int)(0)) {
         if ((u32)(a1) <= (u32)(255)) {
             if ((int)(a2) != (int)(0)) {
@@ -27,17 +24,8 @@ u32 fn_009a48dc(void* a0, int a1, unk_009a48dc_a2* a2) {
                     a2->f_0 = (u32)(FIELD(u32, t0, 32));
                     return (u32)((u32)(25) & (u32)(27));
                 }
-                v0 = (void*)(t0);
-            } else {
-                v0 = (void*)(a0);
             }
-            v1 = (void*)(v0);
-        } else {
-            v1 = (void*)(a0);
         }
-        v2 = (void*)(v1);
-    } else {
-        v2 = (void*)(a0);
     }
     return (u32)((u32)(3) & (u32)(27));
 }

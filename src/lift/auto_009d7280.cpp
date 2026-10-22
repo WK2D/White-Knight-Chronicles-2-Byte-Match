@@ -9,14 +9,11 @@ int fn_00b3d088(void*, int, int);
 int fn_009d73a8(void* a0) {
     int t0;
     int v0;
-    int v1;
     if ((int)(a0) != (int)(0)) {
         t0 = fn_00b3d088((void*)(a0), (int)(0), (int)(92));
         v0 = (int)(0);
-        v1 = (int)(t0);
     } else {
         v0 = (int)(-21);
-        v1 = (int)(a0);
     }
     return (int)(v0);
 }
@@ -24,14 +21,11 @@ int fn_009d73a8(void* a0) {
 int fn_009d7440(void* a0) {
     int t0;
     int v0;
-    int v1;
     if ((int)(a0) != (int)(0)) {
         t0 = fn_00b3d088((void*)(a0), (int)(0), (int)(88));
         v0 = (int)(0);
-        v1 = (int)(t0);
     } else {
         v0 = (int)(-21);
-        v1 = (int)(a0);
     }
     return (int)(v0);
 }
@@ -39,14 +33,11 @@ int fn_009d7440(void* a0) {
 int fn_009d7484(void* a0) {
     int t0;
     int v0;
-    int v1;
     if ((int)(a0) != (int)(0)) {
         t0 = fn_00b3d088((void*)(a0), (int)(0), (int)(84));
         v0 = (int)(0);
-        v1 = (int)(t0);
     } else {
         v0 = (int)(-21);
-        v1 = (int)(a0);
     }
     return (int)(v0);
 }

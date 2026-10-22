@@ -25,17 +25,10 @@ struct unk_007a1dfc_a1 {
     u8 f_0;
 };
 int fn_007a1dfc(unk_007a1dfc_a0* a0, unk_007a1dfc_a1* a1) {
-    u8 v0;
-    void* v1;
     if ((int)(a0->f_45e) == (int)(0)) {
         if ((int)(FIELD(u8, a0->f_2c, 4653)) == (int)(0)) {
             return (int)(1);
         }
-        v0 = (u8)(FIELD(u8, a0->f_2c, 4653));
-        v1 = (void*)(a0->f_2c);
-    } else {
-        v0 = (u8)(a0->f_45e);
-        v1 = (void*)(a0);
     }
     a1->f_0 = (u8)(1);
     return (int)(1);

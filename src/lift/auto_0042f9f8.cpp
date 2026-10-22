@@ -13,14 +13,11 @@ struct unk_0042fa8c_a1 {
 int fn_0042fa8c(void* a0, unk_0042fa8c_a1* a1) {
     int t0;
     int v0;
-    int v1;
     if (a1 != 0) {
         t0 = stub_0042f9f8((void*)(a0), (u32)(a1->f_4));
         v0 = (int)((u32)(t0) & 0xff);
-        v1 = (int)(t0);
     } else {
         v0 = (int)(0);
-        v1 = (int)(a0);
     }
     return (int)(v0);
 }

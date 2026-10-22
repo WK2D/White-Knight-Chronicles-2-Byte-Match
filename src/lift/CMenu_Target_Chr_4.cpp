@@ -9,14 +9,11 @@ static int __attribute__((noinline)) stub_0081a600(void* p0, void* p1) { int r; 
 int fn_0081ab68(void* a0, int a1, void* a2) {
     int t0;
     int v0;
-    int v1;
     if ((int)(a2) != (int)(0)) {
         t0 = stub_0081a600((void*)(a0), (void*)(a2));
         v0 = (int)(3);
-        v1 = (int)(t0);
     } else {
         v0 = (int)(1);
-        v1 = (int)(a0);
     }
     return (int)(v0);
 }
@@ -27,14 +24,11 @@ struct unk_0081dc18_a1 {
 };
 int fn_0081dc18(int a0, unk_0081dc18_a1* a1) {
     int t0;
-    int v0;
     int v1;
     if ((int)(a1) != (int)(0)) {
         t0 = a1->vf1();
-        v0 = (int)(t0);
         v1 = (int)(1);
     } else {
-        v0 = (int)(a1);
         v1 = (int)(0);
     }
     return (int)(v1);
@@ -62,7 +56,6 @@ struct unk_0081de64_a0 {
 };
 void* fn_0081de64(unk_0081de64_a0* a0) {
     int v0;
-    int v1;
     int v2;
     if ((int)(a0->f_2b08) != (int)(0)) {
         if ((int)(FIELD(u8, a0->f_2b08, 2208)) != (int)(0)) {
@@ -70,10 +63,8 @@ void* fn_0081de64(unk_0081de64_a0* a0) {
         } else {
             v0 = (int)(0);
         }
-        v1 = (int)(FIELD(u8, a0->f_2b08, 2208));
         v2 = (int)(v0);
     } else {
-        v1 = (int)(a0->f_2b08);
         v2 = (int)(0);
     }
     return (void*)(v2);

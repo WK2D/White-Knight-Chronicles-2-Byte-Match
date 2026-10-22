@@ -14,17 +14,10 @@ struct unk_00523c3c_a0 {
 };
 void fn_00523c3c(unk_00523c3c_a0* a0) {
     int t0;
-    int v0;
-    int v1;
     if ((int)(a0->f_8) != (int)(0)) {
         t0 = stub_00523b60((void*)(a0), (u32)(a0->f_54), (int)(1));
         a0->f_8 = (u32)(0);
         a0->f_54 = (u32)(16);
-        v0 = (int)(0);
-        v1 = (int)(t0);
-    } else {
-        v0 = (int)(a0->f_8);
-        v1 = (int)(a0);
     }
 }
 

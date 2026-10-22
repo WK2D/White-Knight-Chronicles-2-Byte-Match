@@ -51,8 +51,6 @@ extern char g_004b58d4_1[];
 int fn_004b58d4(unk_004b58d4_a0* a0, void* a1) {
     int t0;
     void* t1;
-    void* v0;
-    int v1;
     t0 = fn_004b239c((void*)(a0), (void*)(a1));
     if ((int)((u32)(t0) & 0xff) != (int)(0)) {
         if ((int)(a1) != (int)(0)) {
@@ -62,13 +60,7 @@ int fn_004b58d4(unk_004b58d4_a0* a0, void* a1) {
                 a0->f_28 = FIELD(float, t1, 16);
                 return (int)(1);
             }
-            v0 = (void*)(t1);
-        } else {
-            v0 = (void*)(a1);
         }
-        v1 = (int)(v0);
-    } else {
-        v1 = (int)((u32)(t0) & 0xff);
     }
     return (int)(0);
 }
@@ -83,8 +75,6 @@ extern char g_004b5990_1[];
 int fn_004b5990(unk_004b5990_a0* a0, void* a1) {
     int t0;
     void* t1;
-    void* v0;
-    int v1;
     t0 = fn_004b2364((void*)(a0), (void*)(a1));
     if ((int)((u32)(t0) & 0xff) != (int)(0)) {
         if ((int)(a1) != (int)(0)) {
@@ -94,13 +84,7 @@ int fn_004b5990(unk_004b5990_a0* a0, void* a1) {
                 a0->f_28 = FIELD(float, t1, 16);
                 return (int)(1);
             }
-            v0 = (void*)(t1);
-        } else {
-            v0 = (void*)(a1);
         }
-        v1 = (int)(v0);
-    } else {
-        v1 = (int)((u32)(t0) & 0xff);
     }
     return (int)(0);
 }
