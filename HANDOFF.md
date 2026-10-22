@@ -264,6 +264,14 @@ Rename units to their real source files as they are identified, and edit
   address is taken (`addressed`) get a byte member when nothing overlaps.
 - Open near-misses that need real C++ classes: derived destructors that set
   the vtable pointer and call the base destructor (`fn_00bd5fbc`), and
+  `fn_00bd5fbc` loads the vtable address into r11 before the prologue;
+  `struct D : B { virtual ~D(); }; D::~D() {}` gives the same instructions
+  but loads into r0 after it, with every -O level and scheduling flag tried.
+- Open: about 400 near-misses start with `clrldi rX,r3,32` on an incoming
+  argument used as a pointer (e.g. `fn_00017acc`). A `u32` parameter cast
+  to a pointer gives no clrldi; an `int` one does, but the rest differs
+  (the original reloads a field after a compare, which suggests a
+  `min()`-style helper taking references). Not solved yet.
   (Non-virtual thunks, `addi r3,r3,-N; b f`, are done: gen_simple writes a
   class whose second base sits at offset N, with the override in its own
   section so the thunk's branch keeps a relocation. All 204 match.)
