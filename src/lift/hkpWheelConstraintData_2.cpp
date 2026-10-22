@@ -5,9 +5,14 @@
 extern "C" {
 
 void fn_00dc6fe0(void*, int, int);
+void fn_00fc902c(int, int, int, int);
 
-void fn_00dce0c0(int a0, int a1) {
-    fn_00dc6fe0((void*)(a0 + 16), (int)(292), (int)(a1));
+void fn_00dce0c0(void* a0, int a1) {
+    fn_00dc6fe0((void*)((char*)a0 + 16), (int)(292), (int)(a1));
+}
+
+void fn_00dcf0a4(int a0, int a1, int a2) {
+    fn_00fc902c((int)(a1), (int)(a2), (int)(0), (int)(8));
 }
 
 }

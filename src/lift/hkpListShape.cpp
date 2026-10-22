@@ -15,8 +15,14 @@ void fn_00cf891c(int a0) {
     fn_00cf4c80((int)(a0));
 }
 
-int fn_00cf8a6c(void* a0) {
-    return FIELD(u32, a0, 28) - FIELD(u16, a0, 38);
+struct unk_00cf8a6c_a0 {
+    char pad_0[28];
+    u32 f_1c;
+    char pad_20[6];
+    u16 f_26;
+};
+int fn_00cf8a6c(unk_00cf8a6c_a0* a0) {
+    return a0->f_1c - a0->f_26;
 }
 
 }

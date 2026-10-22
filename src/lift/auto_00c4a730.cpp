@@ -5,29 +5,69 @@
 extern "C" {
 
 
-void fn_00c4aa08(void* a0, int a1, void* a2) {
-    FIELD(void*, a0, 4) = a2;
-    FIELD(u32, a0, 0) = FIELD(u16, a2, 18) + a1;
+struct unk_00c4aa08_a0 {
+    u32 f_0;
+    void* f_4;
+};
+struct unk_00c4aa08_a2 {
+    char pad_0[18];
+    u16 f_12;
+};
+void fn_00c4aa08(unk_00c4aa08_a0* a0, int a1, unk_00c4aa08_a2* a2) {
+    a0->f_4 = a2;
+    a0->f_0 = a2->f_12 + a1;
 }
 
-void fn_00c4ac34(void* a0, void* a1) {
-    FIELD(u32, a0, 0) = FIELD(u32, a1, 0);
-    FIELD(u32, a0, 4) = FIELD(u32, a1, 4);
+struct unk_00c4ac34_a0 {
+    u32 f_0;
+    u32 f_4;
+};
+struct unk_00c4ac34_a1 {
+    u32 f_0;
+    u32 f_4;
+};
+void fn_00c4ac34(unk_00c4ac34_a0* a0, unk_00c4ac34_a1* a1) {
+    a0->f_0 = a1->f_0;
+    a0->f_4 = a1->f_4;
 }
 
-void fn_00c4ac48(void* a0, void* a1) {
-    FIELD(u32, a0, 0) = FIELD(u32, a1, 0);
-    FIELD(u32, a0, 4) = FIELD(u32, a1, 4);
+struct unk_00c4ac48_a0 {
+    u32 f_0;
+    u32 f_4;
+};
+struct unk_00c4ac48_a1 {
+    u32 f_0;
+    u32 f_4;
+};
+void fn_00c4ac48(unk_00c4ac48_a0* a0, unk_00c4ac48_a1* a1) {
+    a0->f_0 = a1->f_0;
+    a0->f_4 = a1->f_4;
 }
 
-void fn_00c4acc0(void* a0, int a1, void* a2) {
-    FIELD(void*, a0, 4) = a2;
-    FIELD(u32, a0, 0) = FIELD(u16, a2, 18) + a1;
+struct unk_00c4acc0_a0 {
+    u32 f_0;
+    void* f_4;
+};
+struct unk_00c4acc0_a2 {
+    char pad_0[18];
+    u16 f_12;
+};
+void fn_00c4acc0(unk_00c4acc0_a0* a0, int a1, unk_00c4acc0_a2* a2) {
+    a0->f_4 = a2;
+    a0->f_0 = a2->f_12 + a1;
 }
 
-void fn_00c4acd4(void* a0, int a1, void* a2) {
-    FIELD(void*, a0, 4) = a2;
-    FIELD(u32, a0, 0) = FIELD(u16, a2, 18) + a1;
+struct unk_00c4acd4_a0 {
+    u32 f_0;
+    void* f_4;
+};
+struct unk_00c4acd4_a2 {
+    char pad_0[18];
+    u16 f_12;
+};
+void fn_00c4acd4(unk_00c4acd4_a0* a0, int a1, unk_00c4acd4_a2* a2) {
+    a0->f_4 = a2;
+    a0->f_0 = a2->f_12 + a1;
 }
 
 }

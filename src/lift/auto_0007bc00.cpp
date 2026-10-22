@@ -4,13 +4,41 @@
 
 extern "C" {
 
+static int __attribute__((noinline)) stub_0007d3e4(int p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static int __attribute__((noinline)) stub_0007d414(u16 p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static int __attribute__((noinline)) stub_0007d444(u16 p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static int __attribute__((noinline)) stub_0007d4f8(int p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 
-int fn_0007d6d4(void* a0, void* a1) {
-    return FIELD(u32, a0, 0) - FIELD(u32, a1, 0);
+u16 fn_0007d5bc(int a0) {
+    int t0 = stub_0007d3e4((int)(a0));
+    int t1 = stub_0007d444((u16)((u16)t0));
+    return (u16)t1;
 }
 
-int fn_0007d6e8(void* a0, void* a1) {
-    return FIELD(u32, a0, 0) - FIELD(u32, a1, 0);
+u16 fn_0007d5e8(int a0) {
+    int t0 = stub_0007d4f8((int)(a0));
+    int t1 = stub_0007d414((u16)((u16)t0));
+    return (u16)t1;
+}
+
+struct unk_0007d6d4_a0 {
+    u32 f_0;
+};
+struct unk_0007d6d4_a1 {
+    u32 f_0;
+};
+int fn_0007d6d4(unk_0007d6d4_a0* a0, unk_0007d6d4_a1* a1) {
+    return a0->f_0 - a1->f_0;
+}
+
+struct unk_0007d6e8_a0 {
+    u32 f_0;
+};
+struct unk_0007d6e8_a1 {
+    u32 f_0;
+};
+int fn_0007d6e8(unk_0007d6e8_a0* a0, unk_0007d6e8_a1* a1) {
+    return a0->f_0 - a1->f_0;
 }
 
 }

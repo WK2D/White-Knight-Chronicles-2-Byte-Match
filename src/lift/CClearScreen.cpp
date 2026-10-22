@@ -11,18 +11,28 @@ void fn_000c0c34(void) {
     fn_000c39ac();
 }
 
+struct unk_000c0c58_a0 {
+    void* f_0;
+    char pad_4[4];
+    u32 f_8;
+};
 extern char g_000c0c58_0[];
-void fn_000c0c58(void* a0) {
+void fn_000c0c58(unk_000c0c58_a0* a0) {
     fn_000c38d8((void*)(a0));
-    FIELD(void*, a0, 0) = g_000c0c58_0;
-    FIELD(u32, a0, 8) = 0;
+    a0->f_0 = g_000c0c58_0;
+    a0->f_8 = 0;
 }
 
+struct unk_000c0c98_a0 {
+    void* f_0;
+    char pad_4[4];
+    u32 f_8;
+};
 extern char g_000c0c98_0[];
-void fn_000c0c98(void* a0) {
+void fn_000c0c98(unk_000c0c98_a0* a0) {
     fn_000c38d8((void*)(a0));
-    FIELD(void*, a0, 0) = g_000c0c98_0;
-    FIELD(u32, a0, 8) = 0;
+    a0->f_0 = g_000c0c98_0;
+    a0->f_8 = 0;
 }
 
 }

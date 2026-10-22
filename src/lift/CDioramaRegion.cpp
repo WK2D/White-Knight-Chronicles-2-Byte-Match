@@ -5,16 +5,24 @@
 extern "C" {
 
 
+struct unk_008afda8_a0 {
+    void* f_0;
+    u32 f_4;
+};
 extern char g_008afda8_0[];
-void fn_008afda8(void* a0, int a1) {
-    FIELD(u32, a0, 4) = a1;
-    FIELD(void*, a0, 0) = g_008afda8_0;
+void fn_008afda8(unk_008afda8_a0* a0, int a1) {
+    a0->f_4 = a1;
+    a0->f_0 = g_008afda8_0;
 }
 
+struct unk_008afdb8_a0 {
+    void* f_0;
+    u32 f_4;
+};
 extern char g_008afdb8_0[];
-void fn_008afdb8(void* a0, int a1) {
-    FIELD(u32, a0, 4) = a1;
-    FIELD(void*, a0, 0) = g_008afdb8_0;
+void fn_008afdb8(unk_008afdb8_a0* a0, int a1) {
+    a0->f_4 = a1;
+    a0->f_0 = g_008afdb8_0;
 }
 
 }

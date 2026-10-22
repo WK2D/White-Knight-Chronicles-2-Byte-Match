@@ -4,11 +4,38 @@
 
 extern "C" {
 
+void fn_00b40278(u32);
+void fn_00b40288(u32);
+void fn_00b40298(u32);
 void* fn_00bb8aa8(void*);
 
-void* fn_008addc0(int a0) {
-    void* t0 = fn_00bb8aa8((void*)(a0 + 24));
+void* fn_008addc0(void* a0) {
+    void* t0 = fn_00bb8aa8((void*)((char*)a0 + 24));
     return t0;
+}
+
+struct unk_008ae0c4_a0 {
+    char pad_0[16];
+    u32 f_10;
+};
+void fn_008ae0c4(unk_008ae0c4_a0* a0) {
+    fn_00b40278((u32)(a0->f_10));
+}
+
+struct unk_008ae0ec_a0 {
+    char pad_0[16];
+    u32 f_10;
+};
+void fn_008ae0ec(unk_008ae0ec_a0* a0) {
+    fn_00b40288((u32)(a0->f_10));
+}
+
+struct unk_008ae114_a0 {
+    char pad_0[16];
+    u32 f_10;
+};
+void fn_008ae114(unk_008ae114_a0* a0) {
+    fn_00b40298((u32)(a0->f_10));
 }
 
 }

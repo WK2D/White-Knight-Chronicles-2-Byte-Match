@@ -5,9 +5,19 @@
 extern "C" {
 
 
-void fn_0014fae4(void* a0, void* a1, void* a2) {
-    FIELD(void*, a2, 0) = (char*)a0 + 12;
-    FIELD(u32, a1, 0) = FIELD(u32, a0, 28);
+struct unk_0014fae4_a0 {
+    char pad_0[28];
+    u32 f_1c;
+};
+struct unk_0014fae4_a1 {
+    u32 f_0;
+};
+struct unk_0014fae4_a2 {
+    void* f_0;
+};
+void fn_0014fae4(unk_0014fae4_a0* a0, unk_0014fae4_a1* a1, unk_0014fae4_a2* a2) {
+    a2->f_0 = (char*)a0 + 12;
+    a1->f_0 = a0->f_1c;
 }
 
 }

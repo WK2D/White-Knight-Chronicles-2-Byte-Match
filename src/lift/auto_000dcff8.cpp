@@ -5,9 +5,20 @@
 extern "C" {
 
 
-int fn_000dd024(void* a0, void* a1, void* a2) {
-    FIELD(u32, a1, 0) = FIELD(u32, a0, 8);
-    FIELD(u32, a2, 0) = FIELD(u32, a0, 12);
+struct unk_000dd024_a0 {
+    char pad_0[8];
+    u32 f_8;
+    u32 f_c;
+};
+struct unk_000dd024_a1 {
+    u32 f_0;
+};
+struct unk_000dd024_a2 {
+    u32 f_0;
+};
+int fn_000dd024(unk_000dd024_a0* a0, unk_000dd024_a1* a1, unk_000dd024_a2* a2) {
+    a1->f_0 = a0->f_8;
+    a2->f_0 = a0->f_c;
     return 0;
 }
 

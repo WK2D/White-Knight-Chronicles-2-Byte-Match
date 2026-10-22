@@ -7,12 +7,12 @@ extern "C" {
 void fn_00c32e1c(void*, int, void*);
 void fn_00dc6fe0(void*, int, int);
 
-void fn_00d5edb4(int a0, int a1) {
-    fn_00dc6fe0((void*)(a0 + 16), (int)(304), (int)(a1));
+void fn_00d5edb4(void* a0, int a1) {
+    fn_00dc6fe0((void*)((char*)a0 + 16), (int)(304), (int)(a1));
 }
 
-void fn_00d5ee24(int a0, int a1) {
-    fn_00c32e1c((void*)(a0 + 176), (int)(a1), (void*)(a0 + 32));
+void fn_00d5ee24(void* a0, int a1) {
+    fn_00c32e1c((void*)((char*)a0 + 176), (int)(a1), (void*)((char*)a0 + 32));
 }
 
 }

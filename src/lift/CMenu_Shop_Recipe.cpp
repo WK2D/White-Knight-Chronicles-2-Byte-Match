@@ -4,10 +4,24 @@
 
 extern "C" {
 
+void fn_00b3ccc8(void*);
 
-int fn_007fe408(void* a0) {
-    FIELD(u32, a0, 332) = 0;
+struct unk_007fe408_a0 {
+    char pad_0[332];
+    u32 f_14c;
+};
+int fn_007fe408(unk_007fe408_a0* a0) {
+    a0->f_14c = 0;
     return 1;
+}
+
+struct unk_007fec74_a0 {
+    char pad_0[112];
+    u8 f_70;
+};
+void fn_007fec74(unk_007fec74_a0* a0) {
+    fn_00b3ccc8((void*)((char*)a0 + 40));
+    a0->f_70 = 1;
 }
 
 }

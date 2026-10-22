@@ -6,14 +6,31 @@ extern "C" {
 
 int fn_00d94fa8(u32);
 int fn_00d94fc8(u32);
+void fn_00d9ec30(u32);
 
-u8 fn_00d78d38(void* a0) {
-    int t0 = fn_00d94fc8((u32)(FIELD(u32, a0, 8)));
+struct unk_00d78bb4_a0 {
+    char pad_0[8];
+    u32 f_8;
+};
+void fn_00d78bb4(unk_00d78bb4_a0* a0) {
+    fn_00d9ec30((u32)(a0->f_8));
+}
+
+struct unk_00d78d38_a0 {
+    char pad_0[8];
+    u32 f_8;
+};
+u8 fn_00d78d38(unk_00d78d38_a0* a0) {
+    int t0 = fn_00d94fc8((u32)(a0->f_8));
     return (u8)t0;
 }
 
-u8 fn_00d78d64(void* a0) {
-    int t0 = fn_00d94fa8((u32)(FIELD(u32, a0, 8)));
+struct unk_00d78d64_a0 {
+    char pad_0[8];
+    u32 f_8;
+};
+u8 fn_00d78d64(unk_00d78d64_a0* a0) {
+    int t0 = fn_00d94fa8((u32)(a0->f_8));
     return (u8)t0;
 }
 

@@ -6,8 +6,11 @@ extern "C" {
 
 int fn_00b5c034(void*);
 
-u8 fn_001a5a88(void* a0) {
-    int t0 = fn_00b5c034((void*)(FIELD(u32, a0, 0) + 8));
+struct unk_001a5a88_a0 {
+    u32 f_0;
+};
+u8 fn_001a5a88(unk_001a5a88_a0* a0) {
+    int t0 = fn_00b5c034((void*)(a0->f_0 + 8));
     return (u8)t0;
 }
 

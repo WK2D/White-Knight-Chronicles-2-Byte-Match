@@ -5,6 +5,7 @@
 extern "C" {
 
 int fn_0055c6d8(u32);
+void fn_0055c714(u32);
 int fn_0055c880(u32, int);
 void fn_0055c900(u32, int, int);
 int fn_00562724(u32, int);
@@ -15,23 +16,47 @@ u8 fn_0054fd78(void) {
     return (u8)t0;
 }
 
-int fn_0054fdc8(void* a0) {
-    int t0 = fn_0055c6d8((u32)(FIELD(u32, a0, 24)));
+struct unk_0054fda0_a0 {
+    char pad_0[24];
+    u32 f_18;
+};
+void fn_0054fda0(unk_0054fda0_a0* a0) {
+    fn_0055c714((u32)(a0->f_18));
+}
+
+struct unk_0054fdc8_a0 {
+    char pad_0[24];
+    u32 f_18;
+};
+int fn_0054fdc8(unk_0054fdc8_a0* a0) {
+    int t0 = fn_0055c6d8((u32)(a0->f_18));
     return t0;
 }
 
-u8 fn_0054fdfc(void* a0, int a1) {
-    int t0 = fn_00562724((u32)(FIELD(u32, a0, 24)), (int)(a1));
+struct unk_0054fdfc_a0 {
+    char pad_0[24];
+    u32 f_18;
+};
+u8 fn_0054fdfc(unk_0054fdfc_a0* a0, int a1) {
+    int t0 = fn_00562724((u32)(a0->f_18), (int)(a1));
     return (u8)t0;
 }
 
-u8 fn_0054fed0(void* a0, int a1) {
-    int t0 = fn_0055c880((u32)(FIELD(u32, a0, 24)), (int)(a1));
+struct unk_0054fed0_a0 {
+    char pad_0[24];
+    u32 f_18;
+};
+u8 fn_0054fed0(unk_0054fed0_a0* a0, int a1) {
+    int t0 = fn_0055c880((u32)(a0->f_18), (int)(a1));
     return (u8)t0;
 }
 
-void fn_0054fefc(void* a0, int a1, int a2) {
-    fn_0055c900((u32)(FIELD(u32, a0, 24)), (int)(a1), (int)(a2));
+struct unk_0054fefc_a0 {
+    char pad_0[24];
+    u32 f_18;
+};
+void fn_0054fefc(unk_0054fefc_a0* a0, int a1, int a2) {
+    fn_0055c900((u32)(a0->f_18), (int)(a1), (int)(a2));
 }
 
 }

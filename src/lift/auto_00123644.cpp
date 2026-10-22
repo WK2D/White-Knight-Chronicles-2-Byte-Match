@@ -6,10 +6,14 @@ extern "C" {
 
 void fn_001251a8(u32);
 
+struct unk_00123ba4_a0 {
+    char pad_0[566];
+    u16 f_236;
+};
 extern char g_00123ba4_0[];
-int fn_00123ba4(void* a0) {
+int fn_00123ba4(unk_00123ba4_a0* a0) {
     fn_001251a8((u32)(FIELD(u32, FIELD(u32, g_00123ba4_0, 0), 132)));
-    FIELD(u16, a0, 566) = 1;
+    a0->f_236 = 1;
     return 1;
 }
 

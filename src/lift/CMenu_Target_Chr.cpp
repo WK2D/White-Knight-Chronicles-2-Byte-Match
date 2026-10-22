@@ -4,16 +4,40 @@
 
 extern "C" {
 
+static void __attribute__((noinline)) stub_0080f4f0(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 
-int fn_0080f430(void* a0) {
-    FIELD(u16, a0, 98) = FIELD(u16, a0, 1788);
-    FIELD(u16, a0, 96) = FIELD(u16, a0, 1790);
+struct unk_0080f430_a0 {
+    char pad_0[96];
+    u16 f_60;
+    u16 f_62;
+    char pad_64[1688];
+    u16 f_6fc;
+    u16 f_6fe;
+};
+int fn_0080f430(unk_0080f430_a0* a0) {
+    a0->f_62 = a0->f_6fc;
+    a0->f_60 = a0->f_6fe;
     return 1;
 }
 
-int fn_0080f4b4(void* a0) {
-    FIELD(u16, a0, 98) = FIELD(u16, a0, 1784);
-    FIELD(u16, a0, 94) = FIELD(u16, a0, 1788);
+struct unk_0080f4b4_a0 {
+    char pad_0[94];
+    u16 f_5e;
+    char pad_60[2];
+    u16 f_62;
+    char pad_64[1684];
+    u16 f_6f8;
+    char pad_6fa[2];
+    u16 f_6fc;
+};
+int fn_0080f4b4(unk_0080f4b4_a0* a0) {
+    a0->f_62 = a0->f_6f8;
+    a0->f_5e = a0->f_6fc;
+    return 1;
+}
+
+int fn_0080f530(int a0) {
+    stub_0080f4f0((int)(a0));
     return 1;
 }
 

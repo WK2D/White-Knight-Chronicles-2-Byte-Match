@@ -5,10 +5,18 @@
 extern "C" {
 
 int fn_005380fc(void);
+void* fn_00545d00(void);
+static int __attribute__((noinline)) stub_0058fc50(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 
 u8 fn_0058f9e0(void) {
     int t0 = fn_005380fc();
     return (u8)t0;
+}
+
+u8 fn_0058fcdc(void) {
+    void* t0 = fn_00545d00();
+    int t1 = stub_0058fc50((void*)(t0));
+    return (u8)t1;
 }
 
 }

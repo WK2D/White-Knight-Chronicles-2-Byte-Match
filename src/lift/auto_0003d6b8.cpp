@@ -5,8 +5,11 @@
 extern "C" {
 
 
-u8 fn_0003de18(int a0, void* a1) {
-    return FIELD(u8, a1, 0);
+struct unk_0003de18_a1 {
+    u8 f_0;
+};
+u8 fn_0003de18(int a0, unk_0003de18_a1* a1) {
+    return a1->f_0;
 }
 
 }

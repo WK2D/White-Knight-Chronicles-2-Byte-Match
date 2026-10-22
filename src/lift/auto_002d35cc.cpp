@@ -5,12 +5,18 @@
 extern "C" {
 
 
-u32 fn_002d3abc(void* a0) {
-    return FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, a0, 0), 0), 0), 8);
+struct unk_002d3abc_a0 {
+    u32 f_0;
+};
+u32 fn_002d3abc(unk_002d3abc_a0* a0) {
+    return FIELD(u32, FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 8);
 }
 
-u16 fn_002d3ad0(void* a0) {
-    return FIELD(u16, FIELD(u32, FIELD(u32, FIELD(u32, a0, 0), 0), 0), 28);
+struct unk_002d3ad0_a0 {
+    u32 f_0;
+};
+u16 fn_002d3ad0(unk_002d3ad0_a0* a0) {
+    return FIELD(u16, FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 28);
 }
 
 }

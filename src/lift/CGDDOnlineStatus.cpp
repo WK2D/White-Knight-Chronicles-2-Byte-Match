@@ -4,9 +4,23 @@
 
 extern "C" {
 
+static void __attribute__((noinline)) stub_003e7630(void) { __asm__ volatile (""); }
 
-void fn_003e6d5c(void* a0) {
-    FIELD(u16, FIELD(u32, a0, 8), 8656) = 0;
+struct unk_003e6d5c_a0 {
+    char pad_0[8];
+    u32 f_8;
+};
+void fn_003e6d5c(unk_003e6d5c_a0* a0) {
+    FIELD(u16, a0->f_8, 8656) = 0;
+}
+
+struct unk_003e7828_a0 {
+    char pad_0[8];
+    u32 f_8;
+};
+u32 fn_003e7828(unk_003e7828_a0* a0) {
+    stub_003e7630();
+    return a0->f_8;
 }
 
 }

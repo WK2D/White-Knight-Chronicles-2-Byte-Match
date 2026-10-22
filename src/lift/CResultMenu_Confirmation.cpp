@@ -5,13 +5,21 @@
 extern "C" {
 
 
-int fn_008509f8(void* a0) {
-    FIELD(u8, a0, 320) = 0;
+struct unk_008509f8_a0 {
+    char pad_0[320];
+    u8 f_140;
+};
+int fn_008509f8(unk_008509f8_a0* a0) {
+    a0->f_140 = 0;
     return 5;
 }
 
-int fn_00850a44(void* a0) {
-    FIELD(u8, a0, 185) = 1;
+struct unk_00850a44_a0 {
+    char pad_0[185];
+    u8 f_b9;
+};
+int fn_00850a44(unk_00850a44_a0* a0) {
+    a0->f_b9 = 1;
     return 1;
 }
 

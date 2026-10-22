@@ -5,15 +5,41 @@
 extern "C" {
 
 
-void fn_0008a5ec(void* a0, void* a1, void* a2) {
-    FIELD(float, a1, 0) = FIELD(float, a0, 304);
-    FIELD(float, a2, 0) = FIELD(float, a0, 308);
+struct unk_0008a5ec_a0 {
+    char pad_0[304];
+    float f_130;
+    float f_134;
+};
+struct unk_0008a5ec_a1 {
+    float f_0;
+};
+struct unk_0008a5ec_a2 {
+    float f_0;
+};
+void fn_0008a5ec(unk_0008a5ec_a0* a0, unk_0008a5ec_a1* a1, unk_0008a5ec_a2* a2) {
+    a1->f_0 = a0->f_130;
+    a2->f_0 = a0->f_134;
 }
 
-void fn_0008a600(void* a0, void* a1, void* a2, void* a3) {
-    FIELD(float, a1, 0) = FIELD(float, a0, 304);
-    FIELD(float, a2, 0) = FIELD(float, a0, 308);
-    FIELD(float, a3, 0) = FIELD(float, a0, 312);
+struct unk_0008a600_a0 {
+    char pad_0[304];
+    float f_130;
+    float f_134;
+    float f_138;
+};
+struct unk_0008a600_a1 {
+    float f_0;
+};
+struct unk_0008a600_a2 {
+    float f_0;
+};
+struct unk_0008a600_a3 {
+    float f_0;
+};
+void fn_0008a600(unk_0008a600_a0* a0, unk_0008a600_a1* a1, unk_0008a600_a2* a2, unk_0008a600_a3* a3) {
+    a1->f_0 = a0->f_130;
+    a2->f_0 = a0->f_134;
+    a3->f_0 = a0->f_138;
 }
 
 }

@@ -6,16 +6,22 @@ extern "C" {
 
 void fn_00d17210(void*);
 
+struct unk_00d205ec_a0 {
+    void* f_0;
+};
 extern char g_00d205ec_0[];
-void fn_00d205ec(void* a0) {
+void fn_00d205ec(unk_00d205ec_a0* a0) {
     fn_00d17210((void*)(a0));
-    FIELD(void*, a0, 0) = g_00d205ec_0;
+    a0->f_0 = g_00d205ec_0;
 }
 
+struct unk_00d20624_a0 {
+    void* f_0;
+};
 extern char g_00d20624_0[];
-void fn_00d20624(void* a0) {
+void fn_00d20624(unk_00d20624_a0* a0) {
     fn_00d17210((void*)(a0));
-    FIELD(void*, a0, 0) = g_00d20624_0;
+    a0->f_0 = g_00d20624_0;
 }
 
 }

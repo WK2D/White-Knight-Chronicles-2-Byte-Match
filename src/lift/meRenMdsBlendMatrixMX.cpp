@@ -4,18 +4,35 @@
 
 extern "C" {
 
+void fn_00acb828(int, int, u32);
+void fn_00ace304(int);
 void fn_00ae0094(void);
 
+struct unk_00abd95c_a0 {
+    void* f_0;
+};
 extern char g_00abd95c_0[];
-void fn_00abd95c(void* a0) {
+void fn_00abd95c(unk_00abd95c_a0* a0) {
     fn_00ae0094();
-    FIELD(void*, a0, 0) = g_00abd95c_0;
+    a0->f_0 = g_00abd95c_0;
 }
 
+struct unk_00abd994_a0 {
+    void* f_0;
+};
 extern char g_00abd994_0[];
-void fn_00abd994(void* a0) {
+void fn_00abd994(unk_00abd994_a0* a0) {
     fn_00ae0094();
-    FIELD(void*, a0, 0) = g_00abd994_0;
+    a0->f_0 = g_00abd994_0;
+}
+
+struct unk_00abd9cc_a0 {
+    char pad_0[8];
+    u32 f_8;
+};
+void fn_00abd9cc(unk_00abd9cc_a0* a0, int a1) {
+    fn_00acb828((int)(a1), (int)(3), (u32)(a0->f_8));
+    fn_00ace304((int)(a1));
 }
 
 }

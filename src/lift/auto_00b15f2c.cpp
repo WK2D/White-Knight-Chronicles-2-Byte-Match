@@ -4,8 +4,26 @@
 
 extern "C" {
 
+int fn_00b125a0(void*, int);
+void fn_00b12b3c(void*, int);
+void* fn_00b13960(void*, int);
+void* fn_00b157ac(void*, int, int);
 void* fn_00b15b24(void*, int, int);
+void* fn_00b15b50(void*, int, int);
 void fn_00b15c1c(void);
+void fn_00b15dbc(void*);
+
+extern char g_00b15f6c_0[];
+int fn_00b15f6c(int a0) {
+    int t0 = fn_00b125a0((void*)(g_00b15f6c_0), (int)(a0));
+    return t0;
+}
+
+extern char g_00b15f9c_0[];
+void* fn_00b15f9c(int a0, int a1) {
+    void* t0 = fn_00b157ac((void*)(g_00b15f9c_0), (int)(a0), (int)(a1));
+    return t0;
+}
 
 extern char g_00b15fd4_0[];
 void* fn_00b15fd4(int a0, int a1) {
@@ -13,8 +31,30 @@ void* fn_00b15fd4(int a0, int a1) {
     return t0;
 }
 
+extern char g_00b1600c_0[];
+void* fn_00b1600c(int a0, int a1) {
+    void* t0 = fn_00b15b50((void*)(g_00b1600c_0), (int)(a0), (int)(a1));
+    return t0;
+}
+
+extern char g_00b16044_0[];
+void fn_00b16044(int a0) {
+    fn_00b12b3c((void*)(g_00b16044_0), (int)(a0));
+}
+
+extern char g_00b16070_0[];
+void* fn_00b16070(int a0) {
+    void* t0 = fn_00b13960((void*)(g_00b16070_0), (int)(a0));
+    return t0;
+}
+
 void fn_00b160a0(void) {
     fn_00b15c1c();
+}
+
+extern char g_00b160c4_0[];
+void fn_00b160c4(void) {
+    fn_00b15dbc((void*)(g_00b160c4_0));
 }
 
 }

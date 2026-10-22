@@ -5,12 +5,20 @@
 extern "C" {
 
 
-void fn_00bd24bc(void* a0) {
-    FIELD(u8, FIELD(u32, a0, 4), 44) = 1;
+struct unk_00bd24bc_a0 {
+    char pad_0[4];
+    u32 f_4;
+};
+void fn_00bd24bc(unk_00bd24bc_a0* a0) {
+    FIELD(u8, a0->f_4, 44) = 1;
 }
 
-void fn_00bd24cc(void* a0) {
-    FIELD(u8, FIELD(u32, a0, 4), 44) = 1;
+struct unk_00bd24cc_a0 {
+    char pad_0[4];
+    u32 f_4;
+};
+void fn_00bd24cc(unk_00bd24cc_a0* a0) {
+    FIELD(u8, a0->f_4, 44) = 1;
 }
 
 }

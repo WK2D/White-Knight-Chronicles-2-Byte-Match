@@ -5,9 +5,15 @@
 extern "C" {
 
 void fn_00b38438(void);
+void* fn_00b38518(int, int);
 
 void fn_00032814(void) {
     fn_00b38438();
+}
+
+void* fn_0003297c(int a0, int a1) {
+    void* t0 = fn_00b38518((int)(a1), (int)(a0));
+    return t0;
 }
 
 }

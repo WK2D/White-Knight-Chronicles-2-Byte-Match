@@ -4,10 +4,20 @@
 
 extern "C" {
 
+int fn_0094dce8(void*);
 void fn_00bc3210(void);
 
 void fn_00bc328c(void) {
     fn_00bc3210();
+}
+
+struct unk_00bc3308_a0 {
+    u32 f_0;
+};
+int fn_00bc3308(unk_00bc3308_a0* a0) {
+    int t0 = fn_0094dce8((void*)((char*)a0 + 16));
+    a0->f_0 = t0;
+    return t0;
 }
 
 }

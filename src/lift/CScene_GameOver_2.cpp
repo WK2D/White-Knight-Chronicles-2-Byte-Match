@@ -6,18 +6,24 @@ extern "C" {
 
 void fn_0030d7d8(void*, int, void*);
 
+struct unk_003239a0_a0 {
+    void* f_0;
+};
 extern char g_003239a0_0[];
 extern char g_003239a0_1[];
-void fn_003239a0(void* a0, int a1) {
+void fn_003239a0(unk_003239a0_a0* a0, int a1) {
     fn_0030d7d8((void*)(a0), (int)(a1), (void*)(g_003239a0_0));
-    FIELD(void*, a0, 0) = g_003239a0_1;
+    a0->f_0 = g_003239a0_1;
 }
 
+struct unk_003239dc_a0 {
+    void* f_0;
+};
 extern char g_003239dc_0[];
 extern char g_003239dc_1[];
-void fn_003239dc(void* a0, int a1) {
+void fn_003239dc(unk_003239dc_a0* a0, int a1) {
     fn_0030d7d8((void*)(a0), (int)(a1), (void*)(g_003239dc_0));
-    FIELD(void*, a0, 0) = g_003239dc_1;
+    a0->f_0 = g_003239dc_1;
 }
 
 }

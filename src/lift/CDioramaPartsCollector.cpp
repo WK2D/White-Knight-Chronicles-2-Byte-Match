@@ -6,18 +6,18 @@ extern "C" {
 
 void* fn_00bb9d5c(void*);
 
-void* fn_008c6d7c(int a0) {
-    void* t0 = fn_00bb9d5c((void*)(a0 + 196));
+void* fn_008c6d7c(void* a0) {
+    void* t0 = fn_00bb9d5c((void*)((char*)a0 + 196));
     return t0;
 }
 
-void* fn_008c6dac(int a0) {
-    void* t0 = fn_00bb9d5c((void*)(a0 + 188));
+void* fn_008c6dac(void* a0) {
+    void* t0 = fn_00bb9d5c((void*)((char*)a0 + 188));
     return t0;
 }
 
-void* fn_008c6ddc(int a0) {
-    void* t0 = fn_00bb9d5c((void*)(a0 + 180));
+void* fn_008c6ddc(void* a0) {
+    void* t0 = fn_00bb9d5c((void*)((char*)a0 + 180));
     return t0;
 }
 

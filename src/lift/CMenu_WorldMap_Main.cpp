@@ -6,9 +6,13 @@ extern "C" {
 
 void fn_00046268(void*);
 
-int fn_007ab6e4(void* a0) {
+struct unk_007ab6e4_a0 {
+    char pad_0[68];
+    u32 f_44;
+};
+int fn_007ab6e4(unk_007ab6e4_a0* a0) {
     fn_00046268((void*)((char*)a0 + 40));
-    FIELD(u32, a0, 68) = 2;
+    a0->f_44 = 2;
     return 0;
 }
 

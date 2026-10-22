@@ -4,6 +4,8 @@
 
 extern "C" {
 
+int fn_00b38078(int);
+int fn_00b38088(int);
 int fn_00b38098(void);
 int fn_00b380a8(void);
 int fn_00b380b8(void);
@@ -16,7 +18,18 @@ int fn_00b38118(void);
 int fn_00b38128(void);
 int fn_00b38138(void);
 int fn_00b38148(void);
+void fn_00b38158(int);
 void fn_00b38178(void);
+
+int fn_0001b52c(void) {
+    int t0 = fn_00b38078((int)(0));
+    return t0;
+}
+
+int fn_0001b558(void) {
+    int t0 = fn_00b38088((int)(0));
+    return t0;
+}
 
 int fn_0001b584(void) {
     int t0 = fn_00b38098();
@@ -84,8 +97,16 @@ int fn_0001b7b4(void) {
     return t0 - t1;
 }
 
-void fn_0001bc38(void* a0) {
-    FIELD(u32, a0, 25532) = -1;
+void fn_0001b7f4(int a0, int a1) {
+    fn_00b38158((int)(a1));
+}
+
+struct unk_0001bc38_a0 {
+    char pad_0[25532];
+    u32 f_63bc;
+};
+void fn_0001bc38(unk_0001bc38_a0* a0) {
+    a0->f_63bc = -1;
     fn_00b38178();
 }
 

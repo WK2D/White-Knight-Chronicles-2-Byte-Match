@@ -4,11 +4,25 @@
 
 extern "C" {
 
+int fn_001a5bdc(u32);
 
+struct unk_0019ad60_a0 {
+    char pad_0[4];
+    u32 f_4;
+};
+u16 fn_0019ad60(unk_0019ad60_a0* a0) {
+    int t0 = fn_001a5bdc((u32)(a0->f_4));
+    return (u16)t0;
+}
+
+struct unk_0019b114_a0 {
+    void* f_0;
+    u32 f_4;
+};
 extern char g_0019b114_0[];
-void fn_0019b114(void* a0, int a1) {
-    FIELD(u32, a0, 4) = a1;
-    FIELD(void*, a0, 0) = g_0019b114_0;
+void fn_0019b114(unk_0019b114_a0* a0, int a1) {
+    a0->f_4 = a1;
+    a0->f_0 = g_0019b114_0;
 }
 
 }

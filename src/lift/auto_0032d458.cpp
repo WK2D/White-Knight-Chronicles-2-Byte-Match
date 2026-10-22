@@ -4,7 +4,22 @@
 
 extern "C" {
 
+void fn_0003fab0(void*, u16);
+static void __attribute__((noinline)) stub_0032daa8(void) { __asm__ volatile (""); }
+int fn_003f48dc(u32);
 void fn_003fe194(u32);
+
+int fn_0032dd54(void) {
+    stub_0032daa8();
+    return 1;
+}
+
+extern char g_00332b90_0[];
+int fn_00332b90(void* a0) {
+    int t0 = fn_003f48dc((u32)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_00332b90_0, 0), 108), 8), 252)));
+    fn_0003fab0((void*)(a0), (u16)((u16)t0));
+    return 1;
+}
 
 extern char g_00333bf8_0[];
 int fn_00333bf8(void) {

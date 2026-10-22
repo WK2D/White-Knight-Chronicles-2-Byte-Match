@@ -5,20 +5,32 @@
 extern "C" {
 
 
-int fn_0052e250(void* a0) {
-    return (int)FIELD(u32, FIELD(u32, a0, 0), 16);
+struct unk_0052e250_a0 {
+    u32 f_0;
+};
+int fn_0052e250(unk_0052e250_a0* a0) {
+    return (int)FIELD(u32, a0->f_0, 16);
 }
 
-int fn_0052e260(void* a0) {
-    return (int)FIELD(u32, FIELD(u32, a0, 0), 24);
+struct unk_0052e260_a0 {
+    u32 f_0;
+};
+int fn_0052e260(unk_0052e260_a0* a0) {
+    return (int)FIELD(u32, a0->f_0, 24);
 }
 
-int fn_0052e270(void* a0) {
-    return (int)FIELD(u32, FIELD(u32, a0, 0), 28);
+struct unk_0052e270_a0 {
+    u32 f_0;
+};
+int fn_0052e270(unk_0052e270_a0* a0) {
+    return (int)FIELD(u32, a0->f_0, 28);
 }
 
-int fn_0052e280(void* a0) {
-    return (int)FIELD(u32, FIELD(u32, a0, 0), 32);
+struct unk_0052e280_a0 {
+    u32 f_0;
+};
+int fn_0052e280(unk_0052e280_a0* a0) {
+    return (int)FIELD(u32, a0->f_0, 32);
 }
 
 }

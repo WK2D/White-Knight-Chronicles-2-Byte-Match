@@ -4,7 +4,45 @@
 
 extern "C" {
 
+void* fn_00043544(void*);
 void fn_000c0398(void);
+static void __attribute__((noinline)) stub_00695f10(void* p0, void* p1, void* p2, int p3) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); }
+static void __attribute__((noinline)) stub_006960dc(void* p0, int p1, void* p2, void* p3, int p4, int p5, u8 p6) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4), "r"(p5), "r"(p6)); }
+void fn_0070a2f0(u32);
+void fn_0070a37c(u32);
+void fn_00b38268(void*, int);
+
+struct unk_00695c3c_a0 {
+    char pad_0[612];
+    u32 f_264;
+};
+void fn_00695c3c(unk_00695c3c_a0* a0) {
+    fn_0070a2f0((u32)(a0->f_264));
+}
+
+struct unk_00695c64_a0 {
+    char pad_0[612];
+    u32 f_264;
+};
+void fn_00695c64(unk_00695c64_a0* a0) {
+    fn_0070a37c((u32)(a0->f_264));
+}
+
+struct unk_00696164_a0 {
+    char pad_0[612];
+    u32 f_264;
+};
+int fn_00696164(unk_00696164_a0* a0, int a1, void* a2, void* a3, int a4, int a5) {
+    fn_00b38268((void*)(a0->f_264 + 140), (int)(a4));
+    stub_006960dc((void*)(a0), (int)(a1), (void*)(a2), (void*)(a3), (int)(0), (int)(0), (u8)((u8)a5));
+    return 1;
+}
+
+int fn_00696618(void* a0, int a1, void* a2, int a3) {
+    void* t0 = fn_00043544((void*)((char*)a0 + 936));
+    stub_00695f10((void*)(a0), (void*)(t0), (void*)(a2), (int)(a3));
+    return 1;
+}
 
 void fn_0069840c(void) {
     fn_000c0398();

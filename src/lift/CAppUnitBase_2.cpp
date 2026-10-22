@@ -5,6 +5,14 @@
 extern "C" {
 
 void fn_00a7c3b0(u32);
+void fn_00a7c85c(u32);
+void fn_00a7ec4c(u32);
+
+extern char g_009326d0_0[];
+void fn_009326d0(void) {
+    fn_00a7c85c((u32)(FIELD(u32, g_009326d0_0, 0)));
+    fn_00a7ec4c((u32)(FIELD(u32, g_009326d0_0, 0)));
+}
 
 extern char g_00932790_0[];
 void fn_00932790(void) {

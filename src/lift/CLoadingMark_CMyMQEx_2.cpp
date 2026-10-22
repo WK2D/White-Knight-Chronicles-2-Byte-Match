@@ -4,10 +4,12 @@
 
 extern "C" {
 
+void fn_000e3ffc(void*);
 void fn_000e9664(int);
 void fn_000e9684(int);
 void fn_000e96b8(int, int, int, int, int, int);
 void fn_000e96ec(int, int, int, int, int, int);
+void fn_000ed584(void*);
 
 void fn_000e2028(int a0, int a1, int a2, int a3, int a4, int a5) {
     fn_000e96ec((int)(a0), (int)(a1), (int)(a2), (int)(a3), (int)(a4), (int)(a5));
@@ -23,6 +25,14 @@ void fn_000e2070(int a0) {
 
 void fn_000e2094(int a0) {
     fn_000e9684((int)(a0));
+}
+
+void fn_000e2148(void* a0) {
+    fn_000e3ffc((void*)((char*)a0 + 1408));
+}
+
+void fn_000e22b4(void* a0) {
+    fn_000ed584((void*)((char*)a0 + 1032));
 }
 
 }

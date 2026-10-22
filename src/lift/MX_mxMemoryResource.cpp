@@ -7,31 +7,79 @@ extern "C" {
 void fn_00b41f98(void);
 void* fn_00b42288(void);
 
-void fn_00aede64(void* a0, void* a1, void* a2, void* a3, void* a4) {
-    FIELD(u16, a1, 0) = FIELD(u16, FIELD(u32, a0, 92), 72);
-    FIELD(u16, a2, 0) = FIELD(u16, FIELD(u32, a0, 92), 74);
-    FIELD(u16, a3, 0) = FIELD(u16, FIELD(u32, a0, 92), 76);
-    FIELD(u16, a4, 0) = FIELD(u16, FIELD(u32, a0, 92), 78);
+struct unk_00aede64_a0 {
+    char pad_0[92];
+    u32 f_5c;
+};
+struct unk_00aede64_a1 {
+    u16 f_0;
+};
+struct unk_00aede64_a2 {
+    u16 f_0;
+};
+struct unk_00aede64_a3 {
+    u16 f_0;
+};
+struct unk_00aede64_a4 {
+    u16 f_0;
+};
+void fn_00aede64(unk_00aede64_a0* a0, unk_00aede64_a1* a1, unk_00aede64_a2* a2, unk_00aede64_a3* a3, unk_00aede64_a4* a4) {
+    a1->f_0 = FIELD(u16, a0->f_5c, 72);
+    a2->f_0 = FIELD(u16, a0->f_5c, 74);
+    a3->f_0 = FIELD(u16, a0->f_5c, 76);
+    a4->f_0 = FIELD(u16, a0->f_5c, 78);
 }
 
-void fn_00aede8c(void* a0, void* a1) {
-    FIELD(u32, a1, 0) = FIELD(u32, a0, 64);
+struct unk_00aede8c_a0 {
+    char pad_0[64];
+    u32 f_40;
+};
+struct unk_00aede8c_a1 {
+    u32 f_0;
+};
+void fn_00aede8c(unk_00aede8c_a0* a0, unk_00aede8c_a1* a1) {
+    a1->f_0 = a0->f_40;
 }
 
-void fn_00aede98(void* a0, void* a1) {
-    FIELD(u32, a1, 0) = FIELD(u32, a0, 68);
+struct unk_00aede98_a0 {
+    char pad_0[68];
+    u32 f_44;
+};
+struct unk_00aede98_a1 {
+    u32 f_0;
+};
+void fn_00aede98(unk_00aede98_a0* a0, unk_00aede98_a1* a1) {
+    a1->f_0 = a0->f_44;
 }
 
-void fn_00aedea4(void* a0, void* a1) {
-    FIELD(u32, a1, 0) = FIELD(u32, a0, 56);
+struct unk_00aedea4_a0 {
+    char pad_0[56];
+    u32 f_38;
+};
+struct unk_00aedea4_a1 {
+    u32 f_0;
+};
+void fn_00aedea4(unk_00aedea4_a0* a0, unk_00aedea4_a1* a1) {
+    a1->f_0 = a0->f_38;
 }
 
-void fn_00aedeb0(void* a0, void* a1) {
-    FIELD(u32, a1, 0) = FIELD(u32, a0, 60);
+struct unk_00aedeb0_a0 {
+    char pad_0[60];
+    u32 f_3c;
+};
+struct unk_00aedeb0_a1 {
+    u32 f_0;
+};
+void fn_00aedeb0(unk_00aedeb0_a0* a0, unk_00aedeb0_a1* a1) {
+    a1->f_0 = a0->f_3c;
 }
 
-void fn_00aee1b4(void* a0) {
-    FIELD(u32, a0, 4) = FIELD(u32, FIELD(u32, a0, 0), 0);
+struct unk_00aee1b4_a0 {
+    u32 f_0;
+    u32 f_4;
+};
+void fn_00aee1b4(unk_00aee1b4_a0* a0) {
+    a0->f_4 = FIELD(u32, a0->f_0, 0);
 }
 
 void fn_00aee21c(void) {

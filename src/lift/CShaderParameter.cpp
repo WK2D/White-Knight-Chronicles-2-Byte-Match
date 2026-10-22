@@ -11,16 +11,22 @@ void fn_000c4850(void) {
     fn_000c39ac();
 }
 
+struct unk_000c49b4_a0 {
+    void* f_0;
+};
 extern char g_000c49b4_0[];
-void fn_000c49b4(void* a0) {
+void fn_000c49b4(unk_000c49b4_a0* a0) {
     fn_000c38d8((void*)(a0));
-    FIELD(void*, a0, 0) = g_000c49b4_0;
+    a0->f_0 = g_000c49b4_0;
 }
 
+struct unk_000c49ec_a0 {
+    void* f_0;
+};
 extern char g_000c49ec_0[];
-void fn_000c49ec(void* a0) {
+void fn_000c49ec(unk_000c49ec_a0* a0) {
     fn_000c38d8((void*)(a0));
-    FIELD(void*, a0, 0) = g_000c49ec_0;
+    a0->f_0 = g_000c49ec_0;
 }
 
 }

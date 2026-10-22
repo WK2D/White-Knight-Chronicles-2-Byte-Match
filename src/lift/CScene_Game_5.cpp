@@ -5,8 +5,12 @@
 extern "C" {
 
 
-int fn_00b91944(void* a0, int a1) {
-    FIELD(u32, a0, 184) = a1;
+struct unk_00b91944_a0 {
+    char pad_0[184];
+    u32 f_b8;
+};
+int fn_00b91944(unk_00b91944_a0* a0, int a1) {
+    a0->f_b8 = a1;
     return a1;
 }
 

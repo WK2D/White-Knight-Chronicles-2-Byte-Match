@@ -5,11 +5,30 @@
 extern "C" {
 
 
-void fn_0008a7c8(void* a0, void* a1, void* a2, void* a3, void* a4) {
-    FIELD(u16, a1, 0) = FIELD(u16, a0, 448);
-    FIELD(u16, a2, 0) = FIELD(u16, a0, 450);
-    FIELD(u16, a3, 0) = FIELD(u16, a0, 452);
-    FIELD(u16, a4, 0) = FIELD(u16, a0, 454);
+struct unk_0008a7c8_a0 {
+    char pad_0[448];
+    u16 f_1c0;
+    u16 f_1c2;
+    u16 f_1c4;
+    u16 f_1c6;
+};
+struct unk_0008a7c8_a1 {
+    u16 f_0;
+};
+struct unk_0008a7c8_a2 {
+    u16 f_0;
+};
+struct unk_0008a7c8_a3 {
+    u16 f_0;
+};
+struct unk_0008a7c8_a4 {
+    u16 f_0;
+};
+void fn_0008a7c8(unk_0008a7c8_a0* a0, unk_0008a7c8_a1* a1, unk_0008a7c8_a2* a2, unk_0008a7c8_a3* a3, unk_0008a7c8_a4* a4) {
+    a1->f_0 = a0->f_1c0;
+    a2->f_0 = a0->f_1c2;
+    a3->f_0 = a0->f_1c4;
+    a4->f_0 = a0->f_1c6;
 }
 
 }

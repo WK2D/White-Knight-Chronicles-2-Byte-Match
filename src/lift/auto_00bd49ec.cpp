@@ -4,6 +4,11 @@
 
 extern "C" {
 
+void fn_00acad68(int);
+
+void fn_00bd4b0c(int a0, int a1, int a2) {
+    fn_00acad68((int)(a2));
+}
 
 int fn_00bd5f58(int a0, int a1) {
     return a1;

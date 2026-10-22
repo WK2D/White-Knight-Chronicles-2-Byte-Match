@@ -4,9 +4,44 @@
 
 extern "C" {
 
+void fn_00a5e79c(u32);
+void fn_00a5e7c0(int);
 
-int fn_00a5ebbc(int a0, int a1, void* a2) {
-    FIELD(u32, a2, 0) = 1;
+struct unk_00a5e994_a0 {
+    u32 f_0;
+};
+void fn_00a5e994(unk_00a5e994_a0* a0) {
+    fn_00a5e79c((u32)(a0->f_0));
+}
+
+struct unk_00a5e9bc_a0 {
+    u32 f_0;
+};
+void fn_00a5e9bc(unk_00a5e9bc_a0* a0) {
+    fn_00a5e79c((u32)(a0->f_0));
+}
+
+struct unk_00a5e9e4_a0 {
+    u32 f_0;
+};
+void fn_00a5e9e4(unk_00a5e9e4_a0* a0, int a1) {
+    a0->f_0 = a1;
+    fn_00a5e7c0((int)(a1));
+}
+
+struct unk_00a5ea10_a0 {
+    u32 f_0;
+};
+void fn_00a5ea10(unk_00a5ea10_a0* a0, int a1) {
+    a0->f_0 = a1;
+    fn_00a5e7c0((int)(a1));
+}
+
+struct unk_00a5ebbc_a2 {
+    u32 f_0;
+};
+int fn_00a5ebbc(int a0, int a1, unk_00a5ebbc_a2* a2) {
+    a2->f_0 = 1;
     return 0;
 }
 

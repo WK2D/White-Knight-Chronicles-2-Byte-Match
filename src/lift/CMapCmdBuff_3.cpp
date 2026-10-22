@@ -7,10 +7,13 @@ extern "C" {
 void fn_002ca860(void*, void*, int);
 void fn_00b569f4(void);
 
+struct unk_00b8c770_a0 {
+    void* f_0;
+};
 extern char g_00b8c770_0[];
-void fn_00b8c770(void* a0) {
+void fn_00b8c770(unk_00b8c770_a0* a0) {
     fn_002ca860((void*)(a0), (void*)((char*)a0 + 32), (int)(128));
-    FIELD(void*, a0, 0) = g_00b8c770_0;
+    a0->f_0 = g_00b8c770_0;
 }
 
 void fn_00b8c7b8(void) {

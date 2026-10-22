@@ -4,7 +4,24 @@
 
 extern "C" {
 
+static int __attribute__((noinline)) stub_008cddbc(void* p0, u16 p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
+void fn_00b3d088(void*, int, int);
+int fn_00b3d9c8(int);
 void fn_00b3e2e8(void);
+
+u8 fn_008cdf40(void* a0, int a1) {
+    int t0 = fn_00b3d9c8((int)(a1));
+    int t1 = stub_008cddbc((void*)(a0), (u16)((u16)t0));
+    return (u8)t1;
+}
+
+void fn_008cdf84(void* a0) {
+    fn_00b3d088((void*)((char*)a0 + 2536), (int)(0), (int)(768));
+}
+
+void fn_008cdfb8(void* a0) {
+    fn_00b3d088((void*)((char*)a0 + 804), (int)(0), (int)(1728));
+}
 
 void fn_008ceec4(void) {
     fn_00b3e2e8();

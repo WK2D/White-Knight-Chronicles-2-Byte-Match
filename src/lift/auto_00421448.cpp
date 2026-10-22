@@ -35,16 +35,25 @@ int fn_004214a8(void) {
     return 1;
 }
 
-u32 fn_00422700(void* a0) {
-    return FIELD(u32, FIELD(u32, FIELD(u32, a0, 0), 0), 0);
+struct unk_00422700_a0 {
+    u32 f_0;
+};
+u32 fn_00422700(unk_00422700_a0* a0) {
+    return FIELD(u32, FIELD(u32, a0->f_0, 0), 0);
 }
 
-u32 fn_00422b54(void* a0) {
-    return FIELD(u32, FIELD(u32, FIELD(u32, a0, 0), 0), 4);
+struct unk_00422b54_a0 {
+    u32 f_0;
+};
+u32 fn_00422b54(unk_00422b54_a0* a0) {
+    return FIELD(u32, FIELD(u32, a0->f_0, 0), 4);
 }
 
-u8 fn_00422b64(void* a0) {
-    return FIELD(u8, FIELD(u32, FIELD(u32, a0, 0), 0), 14);
+struct unk_00422b64_a0 {
+    u32 f_0;
+};
+u8 fn_00422b64(unk_00422b64_a0* a0) {
+    return FIELD(u8, FIELD(u32, a0->f_0, 0), 14);
 }
 
 }

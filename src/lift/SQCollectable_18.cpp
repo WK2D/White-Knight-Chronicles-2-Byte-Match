@@ -17,8 +17,14 @@ void* fn_009d2eec(void) {
     return t0;
 }
 
-int fn_009d2f8c(void* a0, void* a1) {
-    return FIELD(u16, a0, 0) - FIELD(u16, a1, 0);
+struct unk_009d2f8c_a0 {
+    u16 f_0;
+};
+struct unk_009d2f8c_a1 {
+    u16 f_0;
+};
+int fn_009d2f8c(unk_009d2f8c_a0* a0, unk_009d2f8c_a1* a1) {
+    return a0->f_0 - a1->f_0;
 }
 
 }

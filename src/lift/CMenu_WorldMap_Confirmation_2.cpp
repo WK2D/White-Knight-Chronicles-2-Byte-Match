@@ -6,8 +6,8 @@ extern "C" {
 
 void fn_00046268(void*);
 
-int fn_007a471c(int a0) {
-    fn_00046268((void*)(a0 + 44));
+int fn_007a471c(void* a0) {
+    fn_00046268((void*)((char*)a0 + 44));
     return 0;
 }
 

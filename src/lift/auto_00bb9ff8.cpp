@@ -4,6 +4,7 @@
 
 extern "C" {
 
+void fn_00b3d088(u32, int, int);
 void fn_00bba8b4(void);
 void fn_00bba948(void);
 void fn_00bba9dc(void);
@@ -21,6 +22,14 @@ int fn_00bba9b4(void) {
 int fn_00bbaa48(void) {
     fn_00bba9dc();
     return 1;
+}
+
+struct unk_00bbb1d4_a0 {
+    char pad_0[8];
+    u32 f_8;
+};
+void fn_00bbb1d4(unk_00bbb1d4_a0* a0) {
+    fn_00b3d088((u32)(a0->f_8), (int)(0), (int)(96));
 }
 
 }

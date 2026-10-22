@@ -5,10 +5,15 @@
 extern "C" {
 
 
+struct unk_00dc753c_a0 {
+    char pad_0[4];
+    void* f_4;
+    u32 f_8;
+};
 extern char g_00dc753c_0[];
-void fn_00dc753c(void* a0, int a1) {
-    FIELD(u32, a0, 8) = a1;
-    FIELD(void*, a0, 4) = g_00dc753c_0;
+void fn_00dc753c(unk_00dc753c_a0* a0, int a1) {
+    a0->f_8 = a1;
+    a0->f_4 = g_00dc753c_0;
 }
 
 }

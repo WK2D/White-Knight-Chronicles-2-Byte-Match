@@ -7,6 +7,9 @@ extern "C" {
 void fn_0027bddc(void*);
 void* fn_0027c47c(void);
 void* fn_0027c4f0(void);
+void fn_00281d00(void*);
+void fn_00283c94(void*);
+void fn_005312ec(void*);
 
 void* fn_0028dbbc(void) {
     void* t0 = fn_0027c47c();
@@ -18,8 +21,17 @@ void* fn_0028dbe4(void) {
     return t0;
 }
 
-void fn_0028dda0(int a0) {
-    fn_0027bddc((void*)(a0 + 128));
+void fn_0028dd74(void* a0) {
+    fn_00281d00((void*)((char*)a0 + 128));
+}
+
+void fn_0028dda0(void* a0) {
+    fn_0027bddc((void*)((char*)a0 + 128));
+}
+
+void fn_0028ded4(void* a0) {
+    fn_00283c94((void*)((char*)a0 + 128));
+    fn_005312ec((void*)((char*)a0 + 4444));
 }
 
 }

@@ -4,22 +4,38 @@
 
 extern "C" {
 
+void fn_000e93a0(void*);
 void fn_000e983c(void);
 void fn_000e9940(void);
 void fn_000ea07c(void);
+static void __attribute__((noinline)) stub_000ea624(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
 
 int fn_000ec8c0(void) {
     fn_000e9940();
     return 0;
 }
 
-void fn_000ec918(void* a0) {
+struct unk_000ec918_a0 {
+    char pad_0[72];
+    u32 f_48;
+};
+void fn_000ec918(unk_000ec918_a0* a0) {
     fn_000ea07c();
-    FIELD(u32, a0, 72) = 0;
+    a0->f_48 = 0;
 }
 
 void fn_000ec950(void) {
     fn_000e983c();
+}
+
+struct unk_000ed4c8_a0 {
+    char pad_0[116];
+    u32 f_74;
+};
+void fn_000ed4c8(unk_000ed4c8_a0* a0) {
+    fn_000e93a0((void*)(a0));
+    stub_000ea624((void*)((char*)a0 + 76));
+    a0->f_74 = 0;
 }
 
 }

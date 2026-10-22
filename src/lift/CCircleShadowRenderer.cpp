@@ -4,7 +4,18 @@
 
 extern "C" {
 
+int fn_00036140(int, void*);
 void fn_000c3a44(void);
+
+struct unk_004c1a80_a0 {
+    char pad_0[560];
+    u32 f_230;
+};
+int fn_004c1a80(unk_004c1a80_a0* a0, int a1) {
+    int t0 = fn_00036140((int)(a1), (void*)(-1));
+    a0->f_230 = t0;
+    return t0;
+}
 
 void fn_004c1ac0(void) {
     fn_000c3a44();

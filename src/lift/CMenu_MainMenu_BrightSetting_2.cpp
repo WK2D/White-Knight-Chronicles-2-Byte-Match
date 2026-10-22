@@ -5,10 +5,26 @@
 extern "C" {
 
 void fn_00046268(void*);
+void fn_00b37f88(void*, void*, int);
 
-int fn_005ce5b8(void* a0) {
+struct unk_005ce5b8_a0 {
+    char pad_0[68];
+    u32 f_44;
+};
+int fn_005ce5b8(unk_005ce5b8_a0* a0) {
     fn_00046268((void*)((char*)a0 + 40));
-    FIELD(u32, a0, 68) = 1;
+    a0->f_44 = 1;
+    return 1;
+}
+
+struct unk_005ce5fc_a0 {
+    char pad_0[35];
+    u8 f_23;
+};
+extern char g_005ce5fc_0[];
+int fn_005ce5fc(unk_005ce5fc_a0* a0) {
+    fn_00b37f88((void*)((char*)a0 + 4), (void*)(g_005ce5fc_0), (int)(32));
+    a0->f_23 = 0;
     return 1;
 }
 

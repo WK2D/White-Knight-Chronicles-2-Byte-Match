@@ -5,20 +5,33 @@
 extern "C" {
 
 
-u32 fn_002d4f00(void* a0) {
-    return FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, a0, 0), 0), 0) + FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, a0, 0), 0), 0), 28), 0);
+struct unk_002d4f00_a0 {
+    u32 f_0;
+};
+u32 fn_002d4f00(unk_002d4f00_a0* a0) {
+    return FIELD(u32, FIELD(u32, FIELD(u32, a0->f_0, 0), 0) + FIELD(u32, FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 28), 0);
 }
 
-u32 fn_002d5324(void* a0) {
-    return FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, a0, 0), 0), 0), 44);
+struct unk_002d5324_a0 {
+    u32 f_0;
+};
+u32 fn_002d5324(unk_002d5324_a0* a0) {
+    return FIELD(u32, FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 44);
 }
 
-u16 fn_002d5338(void* a0) {
-    return FIELD(u16, FIELD(u32, FIELD(u32, FIELD(u32, a0, 0), 0), 0), 24);
+struct unk_002d5338_a0 {
+    u32 f_0;
+};
+u16 fn_002d5338(unk_002d5338_a0* a0) {
+    return FIELD(u16, FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 24);
 }
 
-u32 fn_002d63f4(void* a0) {
-    return FIELD(u32, FIELD(u32, a0, 4) + FIELD(u32, FIELD(u32, FIELD(u32, a0, 0), 0), 0), 24);
+struct unk_002d63f4_a0 {
+    u32 f_0;
+    u32 f_4;
+};
+u32 fn_002d63f4(unk_002d63f4_a0* a0) {
+    return FIELD(u32, a0->f_4 + FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 24);
 }
 
 }

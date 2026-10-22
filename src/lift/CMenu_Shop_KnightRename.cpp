@@ -5,10 +5,20 @@
 extern "C" {
 
 void fn_00046268(void*);
+static void __attribute__((noinline)) stub_007f4c58(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 
-void fn_007f5010(void* a0) {
+int fn_007f4c98(int a0) {
+    stub_007f4c58((int)(a0));
+    return 1;
+}
+
+struct unk_007f5010_a0 {
+    char pad_0[120];
+    u8 f_78;
+};
+void fn_007f5010(unk_007f5010_a0* a0) {
     fn_00046268((void*)((char*)a0 + 48));
-    FIELD(u8, a0, 120) = 1;
+    a0->f_78 = 1;
 }
 
 }

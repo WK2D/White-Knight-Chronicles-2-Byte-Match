@@ -7,18 +7,28 @@ extern "C" {
 void* fn_002c7f98(void*);
 void fn_002c7fac(void*);
 void fn_002c7fb8(void*);
+void fn_002c808c(void*, void*);
+void fn_002c8550(void*, void*);
 
-void* fn_002bb8b4(int a0) {
-    void* t0 = fn_002c7f98((void*)(a0 + 11064));
+void* fn_002bb8b4(void* a0) {
+    void* t0 = fn_002c7f98((void*)((char*)a0 + 11064));
     return t0;
 }
 
-void fn_002bb8e4(int a0) {
-    fn_002c7fb8((void*)(a0 + 11064));
+void fn_002bb8e4(void* a0) {
+    fn_002c7fb8((void*)((char*)a0 + 11064));
 }
 
-void fn_002bb910(int a0) {
-    fn_002c7fac((void*)(a0 + 11064));
+void fn_002bb910(void* a0) {
+    fn_002c7fac((void*)((char*)a0 + 11064));
+}
+
+void fn_002bb93c(void* a0) {
+    fn_002c8550((void*)((char*)a0 + 11064), (void*)(a0));
+}
+
+void fn_002bb970(void* a0) {
+    fn_002c808c((void*)((char*)a0 + 11064), (void*)(a0));
 }
 
 }

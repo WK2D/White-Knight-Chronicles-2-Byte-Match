@@ -5,18 +5,38 @@
 extern "C" {
 
 
-int fn_00ad0dd0(void* a0, void* a1) {
-    FIELD(u32, a1, 0) = FIELD(u32, a0, 16) + FIELD(u32, a0, 20);
+struct unk_00ad0dd0_a0 {
+    char pad_0[16];
+    u32 f_10;
+    u32 f_14;
+};
+struct unk_00ad0dd0_a1 {
+    u32 f_0;
+};
+int fn_00ad0dd0(unk_00ad0dd0_a0* a0, unk_00ad0dd0_a1* a1) {
+    a1->f_0 = a0->f_10 + a0->f_14;
     return 0;
 }
 
-u32 fn_00ad0dec(void* a0, void* a1) {
-    FIELD(u32, a1, 0) = FIELD(u32, a0, 48);
-    return FIELD(u32, a0, 52);
+struct unk_00ad0dec_a0 {
+    char pad_0[48];
+    u32 f_30;
+    u32 f_34;
+};
+struct unk_00ad0dec_a1 {
+    u32 f_0;
+};
+u32 fn_00ad0dec(unk_00ad0dec_a0* a0, unk_00ad0dec_a1* a1) {
+    a1->f_0 = a0->f_30;
+    return a0->f_34;
 }
 
-u8 fn_00ad0e70(int a0, void* a1) {
-    return FIELD(u8, a1, 4);
+struct unk_00ad0e70_a1 {
+    char pad_0[4];
+    u8 f_4;
+};
+u8 fn_00ad0e70(int a0, unk_00ad0e70_a1* a1) {
+    return a1->f_4;
 }
 
 }

@@ -4,7 +4,29 @@
 
 extern "C" {
 
+static void* __attribute__((noinline)) stub_0055c6d8(int p0) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static int __attribute__((noinline)) stub_0055e7b8(int p0, void* p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
+static int __attribute__((noinline)) stub_0055e818(int p0, void* p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
+static int __attribute__((noinline)) stub_0055eaf8(int p0, void* p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 void fn_00ba1eac(void);
+
+u8 fn_0055e7dc(int a0) {
+    void* t0 = stub_0055c6d8((int)(a0));
+    int t1 = stub_0055e7b8((int)(a0), (void*)(t0));
+    return (u8)t1;
+}
+
+u8 fn_0055e83c(int a0) {
+    void* t0 = stub_0055c6d8((int)(a0));
+    int t1 = stub_0055e818((int)(a0), (void*)(t0));
+    return (u8)t1;
+}
+
+u8 fn_0055eb1c(int a0) {
+    void* t0 = stub_0055c6d8((int)(a0));
+    int t1 = stub_0055eaf8((int)(a0), (void*)(t0));
+    return (u8)t1;
+}
 
 void fn_0055f1b0(void) {
     fn_00ba1eac();

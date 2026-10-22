@@ -5,6 +5,13 @@
 extern "C" {
 
 void fn_000e383c(void);
+void* fn_00b389a8(void*, int);
+
+extern char g_004a8c78_0[];
+void* fn_004a8c78(int a0) {
+    void* t0 = fn_00b389a8((void*)(g_004a8c78_0), (int)(a0));
+    return t0;
+}
 
 void fn_004a91d4(void) {
     fn_000e383c();

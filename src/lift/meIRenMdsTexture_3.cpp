@@ -5,10 +5,25 @@
 extern "C" {
 
 
-void fn_00bec9e0(void* a0, void* a1, void* a2, void* a3) {
-    FIELD(u32, a1, 0) = FIELD(u32, a0, 36);
-    FIELD(u32, a2, 0) = FIELD(u32, a0, 40);
-    FIELD(u32, a3, 0) = FIELD(u32, a0, 44);
+struct unk_00bec9e0_a0 {
+    char pad_0[36];
+    u32 f_24;
+    u32 f_28;
+    u32 f_2c;
+};
+struct unk_00bec9e0_a1 {
+    u32 f_0;
+};
+struct unk_00bec9e0_a2 {
+    u32 f_0;
+};
+struct unk_00bec9e0_a3 {
+    u32 f_0;
+};
+void fn_00bec9e0(unk_00bec9e0_a0* a0, unk_00bec9e0_a1* a1, unk_00bec9e0_a2* a2, unk_00bec9e0_a3* a3) {
+    a1->f_0 = a0->f_24;
+    a2->f_0 = a0->f_28;
+    a3->f_0 = a0->f_2c;
 }
 
 }

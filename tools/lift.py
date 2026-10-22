@@ -50,12 +50,32 @@ def branch_target(address, word):
 
 
 class Value:
-    def __init__(self, text, ctype='int', prec=0, call=None):
+    def __init__(self, text, ctype='int', prec=0, call=None, origin=None):
         self.text, self.ctype, self.prec, self.call = text, ctype, prec, call
+        self.origin = origin       # for 'x + n': x, which is a pointer if the sum is used as one
 
 
 def paren(v):
     return v.text if v.prec == 0 else f'({v.text})'
+
+
+SIZES = {'u8': 1, 'u16': 2, 's16': 2, 'u32': 4, 'float': 4, 'void*': 4, 'double': 8, 'u64': 8}
+
+
+def struct_decl(tag, by_offset):
+    """struct tag { fields at their offsets }, or None if they overlap, are
+    misaligned or lie before the start (negative offsets)."""
+    out, at = [f'struct {tag} {{'], 0
+    for off in sorted(by_offset):
+        t = by_offset[off]
+        if off < at or off % SIZES[t]:
+            return None
+        if off > at:
+            out.append(f'    char pad_{at:x}[{off - at}];')
+        out.append(f'    {t} f_{off:x};')
+        at = off + SIZES[t]
+    out.append('};')
+    return '\n'.join(out)
 
 
 def reads_before_writes(words):
@@ -111,9 +131,12 @@ def reads_before_writes(words):
 
 
 class Lifter:
-    def __init__(self, address, words, arity, preset=None):
+    def __init__(self, address, words, arity, preset=None, layouts=None):
         self.address, self.words, self.arity = address, words, arity
         self.preset = preset or {}
+        self.layouts = layouts or {}      # argument register -> {offset: type} (second pass)
+        self.access = defaultdict(set)    # argument register -> {(offset, type)} (first pass)
+        self.static = {}                  # callees called without a TOC slot: static in this file
         self.gpr = {r: None for r in range(32)}
         self.fpr = {r: None for r in range(32)}
         self.args, self.fargs = {}, {}
@@ -168,6 +191,8 @@ class Lifter:
             v.ctype = 'ptr'
             if v.call is not None:
                 v.call['type'] = 'void*'
+        if v.origin is not None:
+            self.pointer(v.origin)
         return v
 
     def address_of_global(self, d):
@@ -181,6 +206,11 @@ class Lifter:
                 raise Fail('non-word TOC load')
             return self.address_of_global(d)
         self.pointer(base)
+        for k, arg in self.args.items():
+            if base is arg:
+                self.access[k].add((d, ctype))
+                if k in self.layouts and self.layouts[k].get(d) == ctype:
+                    return Value(f'{base.text}->f_{d:x}' if d >= 0 else f'{base.text}->f_m{-d:x}', ctype)
         return Value(f'FIELD({ctype}, {base.text}, {d})', ctype)
 
     def run(self):
@@ -218,7 +248,7 @@ class Lifter:
             if base.ctype in ('ptr', 'addr', 'gaddr'):
                 self.set(rt, Value(f'(char*){paren(base)} + {d}', 'addr', 1))
             else:
-                self.set(rt, Value(f'{paren(base)} + {d}', 'int', 1))
+                self.set(rt, Value(f'{paren(base)} + {d}', 'int', 1, origin=base))
             return
         if op == 15 and ra == 0:
             self.set(rt, Value(str(d << 16), 'int'))
@@ -274,6 +304,8 @@ class Lifter:
                     v = Value(v.text, 'ptr', v.prec)
                 else:
                     self.pointer(v)
+                    if v.origin is not None and v.ctype == 'ptr' and v.text.startswith('('):
+                        pass
                 self.set(ra, v)
                 return
             if sh == 0 and mb in (48, 56):
@@ -282,16 +314,22 @@ class Lifter:
                 return
             raise Fail('rldicl')
         if op == 18 and w & 3 == 1:
-            self.call(branch_target(self.address + 4 * i, w))
+            following = self.words[i + 1] if i + 1 < len(self.words) else BLR
+            self.call(branch_target(self.address + 4 * i, w), local=following not in (NOP, TOC_RESTORE))
             return
         raise Fail(f'opcode {op}')
 
-    def call(self, target):
+    def call(self, target, local=False):
         nargs, nfargs = self.arity(target)
         if nfargs:
             raise Fail('float arguments')
+        # The caller's own setup also shows arguments: registers it filled.
+        fresh = sorted(r for r in self.fresh if 3 <= r <= 10)
+        while fresh and fresh == list(range(3, 3 + len(fresh))) and len(fresh) > nargs:
+            nargs = len(fresh)
         args = [self.reg(r) for r in range(3, 3 + nargs)]
-        info = {'used': False, 'type': 'int', 'target': target, 'args': args, 'temp': f't{len(self.calls)}'}
+        info = {'used': False, 'type': 'int', 'target': target, 'args': args, 'temp': f't{len(self.calls)}',
+                'local': local}
         self.calls[len(self.calls)] = info
         self.stmts.append(info)
         for r in range(0, 13):
@@ -318,19 +356,28 @@ class Lifter:
                 rtype = s['type'] if s['used'] else 'void'
                 if s['target'] in callees and callees[s['target']] != (rtype, types):
                     raise Fail('one callee, two signatures')
-                callees[s['target']] = (rtype, types)
-                call = f'fn_{s["target"]:08x}({", ".join(f"({t})({a.text})" for a, t in zip(s["args"], types))})'
+                callees[s['target']] = (rtype, types, s['local'])
+                prefix = 'stub' if s['local'] else 'fn'
+                call = f'{prefix}_{s["target"]:08x}({", ".join(f"({t})({a.text})" for a, t in zip(s["args"], types))})'
                 body.append(f'{rtype} {s["temp"]} = {call};' if s['used'] else f'{call};')
             else:
                 body.append(s)
         if ret is not None:
             body.append(f'return {ret.text};')
-        params = [f'{CTYPES.get(self.args[k].ctype, "int")} {self.args[k].text}' for k in sorted(self.args)]
+        params = []
+        structs = []
+        for k in sorted(self.args):
+            if k in self.layouts:
+                tag = f'unk_{self.address:08x}_{self.args[k].text}'
+                structs.append(struct_decl(tag, self.layouts[k]))
+                params.append(f'{tag}* {self.args[k].text}')
+            else:
+                params.append(f'{CTYPES.get(self.args[k].ctype, "int")} {self.args[k].text}')
         if self.fargs:
             if self.args:
                 raise Fail('mixed arguments')
             params = [f'float {self.fargs[k].text}' for k in sorted(self.fargs)]
-        decls = [f'extern char {n}[];' for n in self.globals.values()]
+        decls = structs + [f'extern char {n}[];' for n in self.globals.values()]
         sig = f'{ret_type} fn_{self.address:08x}({", ".join(params) if params else "void"})'
         return decls, sig + ' {\n    ' + '\n    '.join(body) + '\n}', callees
 
@@ -339,7 +386,18 @@ def lift(address, words, arity):
     try:
         first = Lifter(address, words, arity).run()
         preset = {k: v.ctype for k, v in first.args.items()}
-        second = Lifter(address, words, arity, preset).run()
+        typed = Lifter(address, words, arity, preset).run()
+        layouts = {}
+        for k, fields in typed.access.items():
+            by_offset = {}
+            for off, ctype in fields:
+                if by_offset.get(off, ctype) != ctype:
+                    break
+                by_offset[off] = ctype
+            else:
+                if struct_decl('x', by_offset) is not None:
+                    layouts[k] = by_offset
+        second = Lifter(address, words, arity, preset, layouts).run()
         if not second.stmts and not second.args:
             return None
         return second.render()
@@ -428,8 +486,20 @@ def main():
         text = ['// Generated by tools/lift.py from the original machine code: straight-line',
                 f'// functions of unit {unit}. Each one compiles to the original bytes.',
                 '#include "wkc2.h"', '', 'extern "C" {', '']
-        for target, (rtype, types) in sorted(callees.items()):
-            text.append(f'{rtype} fn_{target:08x}({", ".join(types) if types else "void"});')
+        for target, (rtype, types, local) in sorted(callees.items()):
+            if not local:
+                text.append(f'{rtype} fn_{target:08x}({", ".join(types) if types else "void"});')
+                continue
+            # A callee in the same source file: GCC calls static functions
+            # without a TOC slot. Placeholder until it is decompiled;
+            # check.py ignores stub_* functions.
+            params = ', '.join(f'{t} p{n}' for n, t in enumerate(types)) or 'void'
+            uses = ', '.join(f'"r"(p{n})' for n in range(len(types)))
+            if rtype == 'void':
+                body = f'__asm__ volatile ("" : : {uses});' if types else '__asm__ volatile ("");'
+            else:
+                body = (f'{rtype} r; __asm__ volatile ("" : "=r"(r){" : " + uses if types else ""}); return r;')
+            text.append(f'static {rtype} __attribute__((noinline)) stub_{target:08x}({params}) {{ {body} }}')
         text.append('')
         for address, decls, code in keep:
             text += decls + [code, '']

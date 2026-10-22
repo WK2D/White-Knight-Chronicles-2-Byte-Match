@@ -5,10 +5,23 @@
 extern "C" {
 
 void* fn_00b897a0(u32);
+void fn_00b89858(u32);
 
-void* fn_002aa868(void* a0) {
-    void* t0 = fn_00b897a0((u32)(FIELD(u32, a0, 4)));
+struct unk_002aa868_a0 {
+    char pad_0[4];
+    u32 f_4;
+};
+void* fn_002aa868(unk_002aa868_a0* a0) {
+    void* t0 = fn_00b897a0((u32)(a0->f_4));
     return t0;
+}
+
+struct unk_002aa894_a0 {
+    char pad_0[4];
+    u32 f_4;
+};
+void fn_002aa894(unk_002aa894_a0* a0) {
+    fn_00b89858((u32)(a0->f_4));
 }
 
 }

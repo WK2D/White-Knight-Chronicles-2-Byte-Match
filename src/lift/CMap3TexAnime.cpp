@@ -4,13 +4,32 @@
 
 extern "C" {
 
+void fn_00b3b5a8(u32);
 
-void fn_002b9428(void* a0) {
-    FIELD(u32, a0, 4) = FIELD(u32, FIELD(u32, FIELD(u32, a0, 16), 0), 0);
+struct unk_002b9168_a0 {
+    char pad_0[12];
+    u32 f_c;
+};
+void fn_002b9168(unk_002b9168_a0* a0) {
+    fn_00b3b5a8((u32)(a0->f_c));
 }
 
-u32 fn_002b9588(int a0, void* a1) {
-    return FIELD(u32, a1, 312);
+struct unk_002b9428_a0 {
+    char pad_0[4];
+    u32 f_4;
+    char pad_8[8];
+    u32 f_10;
+};
+void fn_002b9428(unk_002b9428_a0* a0) {
+    a0->f_4 = FIELD(u32, FIELD(u32, a0->f_10, 0), 0);
+}
+
+struct unk_002b9588_a1 {
+    char pad_0[312];
+    u32 f_138;
+};
+u32 fn_002b9588(int a0, unk_002b9588_a1* a1) {
+    return a1->f_138;
 }
 
 }

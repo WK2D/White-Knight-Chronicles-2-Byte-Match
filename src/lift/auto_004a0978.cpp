@@ -5,14 +5,22 @@
 extern "C" {
 
 
-void fn_004a1418(void* a0, int a1) {
-    FIELD(u32, a0, 0) = a1;
-    FIELD(u32, a0, 4) = -1;
+struct unk_004a1418_a0 {
+    u32 f_0;
+    u32 f_4;
+};
+void fn_004a1418(unk_004a1418_a0* a0, int a1) {
+    a0->f_0 = a1;
+    a0->f_4 = -1;
 }
 
-void fn_004a1428(void* a0, int a1) {
-    FIELD(u32, a0, 0) = a1;
-    FIELD(u32, a0, 4) = -1;
+struct unk_004a1428_a0 {
+    u32 f_0;
+    u32 f_4;
+};
+void fn_004a1428(unk_004a1428_a0* a0, int a1) {
+    a0->f_0 = a1;
+    a0->f_4 = -1;
 }
 
 }

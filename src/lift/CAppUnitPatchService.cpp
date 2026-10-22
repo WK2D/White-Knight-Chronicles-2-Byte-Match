@@ -4,6 +4,7 @@
 
 extern "C" {
 
+void fn_00931fec(void*, int);
 void fn_00932070(void*);
 void* fn_0093238c(void);
 
@@ -12,15 +13,31 @@ void* fn_00934434(void) {
     return t0;
 }
 
+struct unk_0093445c_a0 {
+    void* f_0;
+};
+extern char g_0093445c_0[];
+void fn_0093445c(unk_0093445c_a0* a0) {
+    a0->f_0 = g_0093445c_0;
+    fn_00932070((void*)(a0));
+    fn_00931fec((void*)(a0), (int)(13016));
+}
+
+struct unk_009344a4_a0 {
+    void* f_0;
+};
 extern char g_009344a4_0[];
-void fn_009344a4(void* a0) {
-    FIELD(void*, a0, 0) = g_009344a4_0;
+void fn_009344a4(unk_009344a4_a0* a0) {
+    a0->f_0 = g_009344a4_0;
     fn_00932070((void*)(a0));
 }
 
+struct unk_009344d4_a0 {
+    void* f_0;
+};
 extern char g_009344d4_0[];
-void fn_009344d4(void* a0) {
-    FIELD(void*, a0, 0) = g_009344d4_0;
+void fn_009344d4(unk_009344d4_a0* a0) {
+    a0->f_0 = g_009344d4_0;
     fn_00932070((void*)(a0));
 }
 

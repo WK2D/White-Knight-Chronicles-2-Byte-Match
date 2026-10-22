@@ -5,9 +5,12 @@
 extern "C" {
 
 
+struct unk_004972c0_a0 {
+    u32 f_0;
+};
 extern char g_004972c0_0[];
-void fn_004972c0(void* a0) {
-    FIELD(u32, a0, 0) = 0;
+void fn_004972c0(unk_004972c0_a0* a0) {
+    a0->f_0 = 0;
     FIELD(u32, g_004972c0_0, 0) = 0;
 }
 

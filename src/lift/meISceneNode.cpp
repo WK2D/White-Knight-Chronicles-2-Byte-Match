@@ -11,9 +11,13 @@ void* fn_00af63b0(int);
 void fn_00af63bc(void);
 void fn_00b01ca4(u32, int, int, void*);
 
+struct unk_00aeb7f8_a0 {
+    char pad_0[20];
+    u32 f_14;
+};
 extern char g_00aeb7f8_0[];
-void fn_00aeb7f8(void* a0, int a1, int a2) {
-    fn_00b01ca4((u32)(FIELD(u32, a0, 20)), (int)(a1), (int)(a2), (void*)(g_00aeb7f8_0));
+void fn_00aeb7f8(unk_00aeb7f8_a0* a0, int a1, int a2) {
+    fn_00b01ca4((u32)(a0->f_14), (int)(a1), (int)(a2), (void*)(g_00aeb7f8_0));
 }
 
 void* fn_00aebc3c(int a0) {

@@ -6,21 +6,46 @@ extern "C" {
 
 int fn_0055c414(u32);
 int fn_00562798(u32);
+void* fn_005644cc(u32);
 void* fn_005ad484(void*);
+void fn_005aecc0(void*);
 
-void* fn_0054e52c(int a0) {
-    void* t0 = fn_005ad484((void*)(a0 + 16908));
+void fn_0054e4c4(void* a0) {
+    fn_005aecc0((void*)((char*)a0 + 16908));
+}
+
+void* fn_0054e52c(void* a0) {
+    void* t0 = fn_005ad484((void*)((char*)a0 + 16908));
     return t0;
 }
 
-int fn_0054f360(void* a0) {
-    int t0 = fn_0055c414((u32)(FIELD(u32, a0, 24)));
-    FIELD(u32, a0, 1068) = t0;
+struct unk_0054ef50_a0 {
+    char pad_0[24];
+    u32 f_18;
+};
+void* fn_0054ef50(unk_0054ef50_a0* a0) {
+    void* t0 = fn_005644cc((u32)(a0->f_18));
     return t0;
 }
 
-u8 fn_0054f398(void* a0) {
-    int t0 = fn_00562798((u32)(FIELD(u32, a0, 24)));
+struct unk_0054f360_a0 {
+    char pad_0[24];
+    u32 f_18;
+    char pad_1c[1040];
+    u32 f_42c;
+};
+int fn_0054f360(unk_0054f360_a0* a0) {
+    int t0 = fn_0055c414((u32)(a0->f_18));
+    a0->f_42c = t0;
+    return t0;
+}
+
+struct unk_0054f398_a0 {
+    char pad_0[24];
+    u32 f_18;
+};
+u8 fn_0054f398(unk_0054f398_a0* a0) {
+    int t0 = fn_00562798((u32)(a0->f_18));
     return (u8)t0;
 }
 

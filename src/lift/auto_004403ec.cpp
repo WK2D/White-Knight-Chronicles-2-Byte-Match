@@ -5,47 +5,87 @@
 extern "C" {
 
 
+struct unk_004403ec_a0 {
+    u32 f_0;
+};
 extern char g_004403ec_0[];
-void fn_004403ec(void* a0) {
-    FIELD(u32, a0, 0) = 0;
+void fn_004403ec(unk_004403ec_a0* a0) {
+    a0->f_0 = 0;
     FIELD(u32, g_004403ec_0, 0) = 0;
 }
 
-int fn_00441330(void* a0) {
-    FIELD(u32, a0, 172) = 0;
-    FIELD(u32, a0, 176) = 0;
-    FIELD(u32, a0, 180) = 0;
-    FIELD(u32, a0, 184) = 0;
-    FIELD(u32, a0, 188) = 0;
-    FIELD(u32, a0, 192) = 0;
-    FIELD(u32, a0, 196) = 0;
-    FIELD(u32, a0, 200) = 0;
-    FIELD(u32, a0, 204) = 0;
-    FIELD(u32, a0, 208) = 0;
-    FIELD(u32, a0, 212) = 0;
-    FIELD(u32, a0, 216) = 0;
-    FIELD(u32, a0, 220) = 0;
-    FIELD(u32, a0, 224) = 0;
-    FIELD(u32, a0, 228) = 0;
-    FIELD(u32, a0, 232) = 0;
-    FIELD(u32, a0, 236) = 0;
-    FIELD(u32, a0, 240) = 0;
-    FIELD(u32, a0, 168) = 0;
-    FIELD(u32, a0, 244) = 0;
-    FIELD(u32, a0, 248) = 0;
-    FIELD(u32, a0, 252) = 0;
-    FIELD(u32, a0, 256) = 0;
-    FIELD(u32, a0, 260) = 0;
-    FIELD(u32, a0, 264) = 0;
-    FIELD(u32, a0, 268) = 0;
-    FIELD(u32, a0, 272) = 0;
-    FIELD(u32, a0, 276) = 0;
-    FIELD(u32, a0, 280) = 0;
-    FIELD(u32, a0, 284) = 0;
-    FIELD(u32, a0, 288) = 0;
-    FIELD(u32, a0, 292) = 0;
-    FIELD(u32, a0, 296) = 0;
-    FIELD(u32, a0, 300) = 0;
+struct unk_00441330_a0 {
+    char pad_0[168];
+    u32 f_a8;
+    u32 f_ac;
+    u32 f_b0;
+    u32 f_b4;
+    u32 f_b8;
+    u32 f_bc;
+    u32 f_c0;
+    u32 f_c4;
+    u32 f_c8;
+    u32 f_cc;
+    u32 f_d0;
+    u32 f_d4;
+    u32 f_d8;
+    u32 f_dc;
+    u32 f_e0;
+    u32 f_e4;
+    u32 f_e8;
+    u32 f_ec;
+    u32 f_f0;
+    u32 f_f4;
+    u32 f_f8;
+    u32 f_fc;
+    u32 f_100;
+    u32 f_104;
+    u32 f_108;
+    u32 f_10c;
+    u32 f_110;
+    u32 f_114;
+    u32 f_118;
+    u32 f_11c;
+    u32 f_120;
+    u32 f_124;
+    u32 f_128;
+    u32 f_12c;
+};
+int fn_00441330(unk_00441330_a0* a0) {
+    a0->f_ac = 0;
+    a0->f_b0 = 0;
+    a0->f_b4 = 0;
+    a0->f_b8 = 0;
+    a0->f_bc = 0;
+    a0->f_c0 = 0;
+    a0->f_c4 = 0;
+    a0->f_c8 = 0;
+    a0->f_cc = 0;
+    a0->f_d0 = 0;
+    a0->f_d4 = 0;
+    a0->f_d8 = 0;
+    a0->f_dc = 0;
+    a0->f_e0 = 0;
+    a0->f_e4 = 0;
+    a0->f_e8 = 0;
+    a0->f_ec = 0;
+    a0->f_f0 = 0;
+    a0->f_a8 = 0;
+    a0->f_f4 = 0;
+    a0->f_f8 = 0;
+    a0->f_fc = 0;
+    a0->f_100 = 0;
+    a0->f_104 = 0;
+    a0->f_108 = 0;
+    a0->f_10c = 0;
+    a0->f_110 = 0;
+    a0->f_114 = 0;
+    a0->f_118 = 0;
+    a0->f_11c = 0;
+    a0->f_120 = 0;
+    a0->f_124 = 0;
+    a0->f_128 = 0;
+    a0->f_12c = 0;
     return 1;
 }
 

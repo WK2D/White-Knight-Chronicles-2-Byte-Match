@@ -7,6 +7,12 @@ extern "C" {
 int fn_0093556c(void);
 void fn_0093925c(void);
 void fn_00939384(void);
+void fn_009645d8(void*, void*);
+
+int fn_00977fec(void* a0) {
+    fn_009645d8((void*)(a0), (void*)((char*)a0 + 56));
+    return 1;
+}
 
 int fn_009788d8(void) {
     int t0 = fn_0093556c();

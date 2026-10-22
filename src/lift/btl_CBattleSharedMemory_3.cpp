@@ -4,12 +4,10 @@
 
 extern "C" {
 
-void fn_00ba18c4(void*);
+void fn_00b37fa8(void*, int, int);
 
-extern char g_00ba21a0_0[];
-void fn_00ba21a0(void* a0) {
-    FIELD(void*, a0, 0) = g_00ba21a0_0;
-    fn_00ba18c4((void*)(a0));
+void fn_00ba18c4(void* a0) {
+    fn_00b37fa8((void*)((char*)a0 + 4), (int)(0), (int)(2400));
 }
 
 }

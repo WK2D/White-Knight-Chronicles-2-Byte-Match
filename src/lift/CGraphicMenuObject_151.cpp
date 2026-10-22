@@ -5,13 +5,22 @@
 extern "C" {
 
 
-int fn_00772000(void* a0) {
-    FIELD(u32, a0, 24) = FIELD(u32, a0, 28);
+struct unk_00772000_a0 {
+    char pad_0[24];
+    u32 f_18;
+    u32 f_1c;
+};
+int fn_00772000(unk_00772000_a0* a0) {
+    a0->f_18 = a0->f_1c;
     return 0;
 }
 
-int fn_0077206c(void* a0, int a1) {
-    FIELD(u32, a0, 24) = a1;
+struct unk_0077206c_a0 {
+    char pad_0[24];
+    u32 f_18;
+};
+int fn_0077206c(unk_0077206c_a0* a0, int a1) {
+    a0->f_18 = a1;
     return 0;
 }
 

@@ -5,17 +5,23 @@
 extern "C" {
 
 
+struct unk_00a7bfb0_a0 {
+    void* f_0;
+};
 extern char g_00a7bfb0_0[];
 extern char g_00a7bfb0_1[];
-void* fn_00a7bfb0(void* a0) {
-    FIELD(void*, a0, 0) = g_00a7bfb0_0;
+void* fn_00a7bfb0(unk_00a7bfb0_a0* a0) {
+    a0->f_0 = g_00a7bfb0_0;
     return g_00a7bfb0_1;
 }
 
+struct unk_00a7bfc0_a0 {
+    void* f_0;
+};
 extern char g_00a7bfc0_0[];
 extern char g_00a7bfc0_1[];
-void* fn_00a7bfc0(void* a0) {
-    FIELD(void*, a0, 0) = g_00a7bfc0_0;
+void* fn_00a7bfc0(unk_00a7bfc0_a0* a0) {
+    a0->f_0 = g_00a7bfc0_0;
     return g_00a7bfc0_1;
 }
 

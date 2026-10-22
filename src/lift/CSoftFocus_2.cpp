@@ -15,10 +15,21 @@ void fn_004bfcfc(void) {
     fn_004b30dc();
 }
 
-void fn_004c0448(void* a0, void* a1) {
-    FIELD(u32, a0, 16) = FIELD(u32, a1, 0);
-    FIELD(u32, a0, 20) = FIELD(u32, a1, 4);
-    FIELD(u32, a0, 24) = FIELD(u32, a1, 8);
+struct unk_004c0448_a0 {
+    char pad_0[16];
+    u32 f_10;
+    u32 f_14;
+    u32 f_18;
+};
+struct unk_004c0448_a1 {
+    u32 f_0;
+    u32 f_4;
+    u32 f_8;
+};
+void fn_004c0448(unk_004c0448_a0* a0, unk_004c0448_a1* a1) {
+    a0->f_10 = a1->f_0;
+    a0->f_14 = a1->f_4;
+    a0->f_18 = a1->f_8;
 }
 
 }

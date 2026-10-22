@@ -5,18 +5,12 @@
 extern "C" {
 
 
-void fn_0091c5f0(void* a0) {
-    FIELD(u32, a0, 12) = 0;
-    FIELD(u32, a0, 4) = 0;
-    FIELD(u32, a0, 0) = 0;
-    FIELD(u32, a0, 8) = 0;
-}
-
-void fn_0091c608(void* a0) {
-    FIELD(u32, a0, 12) = 0;
-    FIELD(u32, a0, 4) = 0;
-    FIELD(u32, a0, 0) = 0;
-    FIELD(u32, a0, 8) = 0;
+struct unk_0091c768_a0 {
+    char pad_0[4100];
+    u32 f_1004;
+};
+void fn_0091c768(unk_0091c768_a0* a0, int a1) {
+    a0->f_1004 = a0->f_1004 + a1;
 }
 
 }

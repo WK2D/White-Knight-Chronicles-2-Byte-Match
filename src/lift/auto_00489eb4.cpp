@@ -5,12 +5,22 @@
 extern "C" {
 
 int fn_00041b48(int);
+static void __attribute__((noinline)) stub_0048a590(u32 p0, u16 p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 
 extern char g_0048a2dc_0[];
 int fn_0048a2dc(int a0) {
     int t0 = fn_00041b48((int)(a0));
     FIELD(u16, FIELD(u32, g_0048a2dc_0, 0), 14) = 0;
     FIELD(u32, FIELD(u32, FIELD(u32, g_0048a2dc_0, 0), 8), 0) = t0;
+    return 1;
+}
+
+extern char g_0048a63c_0[];
+int fn_0048a63c(int a0) {
+    int t0 = fn_00041b48((int)(a0));
+    stub_0048a590((u32)(FIELD(u32, g_0048a63c_0, 0)), (u16)((u16)t0));
+    FIELD(u16, FIELD(u32, g_0048a63c_0, 0), 12) = 0;
+    FIELD(u32, FIELD(u32, g_0048a63c_0, 0), 16) = t0;
     return 1;
 }
 

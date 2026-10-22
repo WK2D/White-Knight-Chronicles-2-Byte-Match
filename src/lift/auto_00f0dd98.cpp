@@ -5,11 +5,23 @@
 extern "C" {
 
 
-void fn_00f0de24(void* a0, void* a1) {
-    FIELD(float, a1, 0) = FIELD(float, a0, 0);
-    FIELD(float, a1, 4) = FIELD(float, a0, 4);
-    FIELD(float, a1, 8) = FIELD(float, a0, 8);
-    FIELD(float, a1, 12) = FIELD(float, a0, 12);
+struct unk_00f0de24_a0 {
+    float f_0;
+    float f_4;
+    float f_8;
+    float f_c;
+};
+struct unk_00f0de24_a1 {
+    float f_0;
+    float f_4;
+    float f_8;
+    float f_c;
+};
+void fn_00f0de24(unk_00f0de24_a0* a0, unk_00f0de24_a1* a1) {
+    a1->f_0 = a0->f_0;
+    a1->f_4 = a0->f_4;
+    a1->f_8 = a0->f_8;
+    a1->f_c = a0->f_c;
 }
 
 }

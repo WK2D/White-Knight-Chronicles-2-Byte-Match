@@ -5,9 +5,14 @@
 extern "C" {
 
 
-int fn_0037dca0(void* a0) {
-    FIELD(u8, FIELD(u32, a0, 4), 0) = 0;
-    FIELD(u8, FIELD(u32, a0, 8), 0) = 0;
+struct unk_0037dca0_a0 {
+    char pad_0[4];
+    u32 f_4;
+    u32 f_8;
+};
+int fn_0037dca0(unk_0037dca0_a0* a0) {
+    FIELD(u8, a0->f_4, 0) = 0;
+    FIELD(u8, a0->f_8, 0) = 0;
     return 1;
 }
 

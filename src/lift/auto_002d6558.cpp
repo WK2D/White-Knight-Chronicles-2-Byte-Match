@@ -4,26 +4,88 @@
 
 extern "C" {
 
+void* fn_00076a98(void*, int, int, int, int, int);
 void fn_002d2864(int);
+void fn_002d2b5c(u32);
+static void __attribute__((noinline)) stub_002d6cec(void* p0, int p1, int p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
 
-void fn_002d6670(void* a0, int a1, int a2) {
-    FIELD(u32, a0, 4) = a2;
-    FIELD(u32, a0, 0) = a1;
+struct unk_002d6620_a0 {
+    u32 f_0;
+};
+void fn_002d6620(unk_002d6620_a0* a0) {
+    fn_002d2b5c((u32)(a0->f_0));
+}
+
+struct unk_002d6648_a0 {
+    u32 f_0;
+};
+void fn_002d6648(unk_002d6648_a0* a0) {
+    fn_002d2b5c((u32)(a0->f_0));
+}
+
+struct unk_002d6670_a0 {
+    u32 f_0;
+    u32 f_4;
+};
+void fn_002d6670(unk_002d6670_a0* a0, int a1, int a2) {
+    a0->f_4 = a2;
+    a0->f_0 = a1;
     fn_002d2864((int)(a1));
 }
 
-void fn_002d66a4(void* a0, int a1, int a2) {
-    FIELD(u32, a0, 4) = a2;
-    FIELD(u32, a0, 0) = a1;
+struct unk_002d66a4_a0 {
+    u32 f_0;
+    u32 f_4;
+};
+void fn_002d66a4(unk_002d66a4_a0* a0, int a1, int a2) {
+    a0->f_4 = a2;
+    a0->f_0 = a1;
     fn_002d2864((int)(a1));
 }
 
-u32 fn_002d66d8(void* a0) {
-    return FIELD(u32, FIELD(u32, a0, 4) + FIELD(u32, FIELD(u32, FIELD(u32, a0, 0), 0), 0), 8);
+struct unk_002d66d8_a0 {
+    u32 f_0;
+    u32 f_4;
+};
+u32 fn_002d66d8(unk_002d66d8_a0* a0) {
+    return FIELD(u32, a0->f_4 + FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 8);
 }
 
-u8 fn_002d6dc4(void* a0) {
-    return FIELD(u8, FIELD(u32, a0, 8) + FIELD(u32, FIELD(u32, FIELD(u32, a0, 0), 0), 0), 28);
+extern char g_002d6cac_0[];
+void* fn_002d6cac(int a0) {
+    void* t0 = fn_00076a98((void*)(g_002d6cac_0), (int)(a0), (int)(0), (int)(-1), (int)(0), (int)(0));
+    return t0;
+}
+
+struct unk_002d6d44_a0 {
+    char pad_0[16];
+    u8 f_10;
+    u8 f_11;
+};
+void fn_002d6d44(unk_002d6d44_a0* a0, int a1, int a2) {
+    stub_002d6cec((void*)(a0), (int)(a1), (int)(a2));
+    a0->f_10 = 1;
+    a0->f_11 = 0;
+}
+
+struct unk_002d6d80_a0 {
+    char pad_0[16];
+    u8 f_10;
+    u8 f_11;
+};
+void fn_002d6d80(unk_002d6d80_a0* a0, int a1, int a2) {
+    stub_002d6cec((void*)(a0), (int)(a1), (int)(a2));
+    a0->f_10 = 1;
+    a0->f_11 = 0;
+}
+
+struct unk_002d6dc4_a0 {
+    u32 f_0;
+    char pad_4[4];
+    u32 f_8;
+};
+u8 fn_002d6dc4(unk_002d6dc4_a0* a0) {
+    return FIELD(u8, a0->f_8 + FIELD(u32, FIELD(u32, a0->f_0, 0), 0), 28);
 }
 
 }

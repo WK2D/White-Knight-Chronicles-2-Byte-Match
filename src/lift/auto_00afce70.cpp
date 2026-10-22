@@ -9,6 +9,7 @@ void fn_00af63a0(void);
 void* fn_00af63a4(int);
 void* fn_00af63b0(int);
 void fn_00af63bc(void);
+void* fn_00b00ad4(u32);
 
 void* fn_00afe600(int a0) {
     void* t0 = fn_00af63a4((int)(a0));
@@ -30,6 +31,15 @@ void fn_00afe674(void) {
 
 void fn_00afe698(int a0, int a1) {
     fn_00af6390((int)(a0), (int)(a1));
+}
+
+struct unk_00afe6c4_a0 {
+    char pad_0[16];
+    u32 f_10;
+};
+void* fn_00afe6c4(unk_00afe6c4_a0* a0) {
+    void* t0 = fn_00b00ad4((u32)(a0->f_10));
+    return t0;
 }
 
 }

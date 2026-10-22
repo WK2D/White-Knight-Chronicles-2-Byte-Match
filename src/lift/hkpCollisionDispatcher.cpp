@@ -5,8 +5,11 @@
 extern "C" {
 
 
-int fn_00ce9dc0(int a0, void* a1, int a2) {
-    FIELD(u8, a1, 0) = 0;
+struct unk_00ce9dc0_a1 {
+    u8 f_0;
+};
+int fn_00ce9dc0(int a0, unk_00ce9dc0_a1* a1, int a2) {
+    a1->f_0 = 0;
     return a2;
 }
 

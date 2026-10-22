@@ -4,10 +4,35 @@
 
 extern "C" {
 
+void fn_00f42c50(void*);
+void fn_00f42e2c(int, int, void*);
+void fn_00f42f3c(int, void*);
+void fn_00f43060(int, void*);
 void fn_00f430fc(int, void*);
+void fn_00f43418(int, void*);
 
-void fn_00d6f304(int a0, int a1) {
-    fn_00f430fc((int)(a1), (void*)(a0 + 16));
+void fn_00d6f244(void* a0) {
+    fn_00f42c50((void*)((char*)a0 + 80));
+}
+
+void fn_00d6f270(void* a0, int a1) {
+    fn_00f42f3c((int)(a1), (void*)((char*)a0 + 16));
+}
+
+void fn_00d6f2a0(void* a0, int a1, int a2) {
+    fn_00f42e2c((int)(a1), (int)(a2), (void*)((char*)a0 + 16));
+}
+
+void fn_00d6f2d4(void* a0, int a1) {
+    fn_00f43418((int)(a1), (void*)((char*)a0 + 16));
+}
+
+void fn_00d6f304(void* a0, int a1) {
+    fn_00f430fc((int)(a1), (void*)((char*)a0 + 16));
+}
+
+void fn_00d6f334(void* a0, int a1) {
+    fn_00f43060((int)(a1), (void*)((char*)a0 + 16));
 }
 
 }

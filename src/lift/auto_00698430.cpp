@@ -24,8 +24,12 @@ void fn_006a129c(int a0, int a1) {
     fn_003e70cc((u32)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, g_006a129c_0, 0), 108), 8), 264)), (int)(a1));
 }
 
-int fn_006a3124(void* a0) {
-    return (int)FIELD(u32, FIELD(u32, a0, 600), 220);
+struct unk_006a3124_a0 {
+    char pad_0[600];
+    u32 f_258;
+};
+int fn_006a3124(unk_006a3124_a0* a0) {
+    return (int)FIELD(u32, a0->f_258, 220);
 }
 
 }
