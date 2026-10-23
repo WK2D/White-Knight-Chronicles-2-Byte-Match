@@ -8,7 +8,9 @@ int fn_00041b48_2(int);
 int fn_00041b48(void*);
 static void __attribute__((noinline)) stub_0008a838(u32 p0, void* p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 static void __attribute__((noinline)) stub_0008b634(u32 p0, int p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
+static void __attribute__((noinline)) stub_0008bbd8(int p0, int p1, void* p2, void* p3, int p4, int p5) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4), "r"(p5)); }
 static void __attribute__((noinline)) stub_0008c2d0(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
+static void __attribute__((noinline)) stub_0008d3b0(int p0, int p1, void* p2, void* p3, int p4) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4)); }
 
 struct unk_0008b8b4_l;
 struct unk_0008b8b4_gm7610;
@@ -52,6 +54,17 @@ int fn_0008b928(int a0) {
     return (int)(0);
 }
 
+struct unk_0008c29c_l;
+struct unk_0008c29c_l {
+    char pad_0[4];
+    float f_4;
+};
+float fn_0008c29c(int a0, int a1, int a2) {
+    unk_0008c29c_l l;
+    stub_0008bbd8((int)(a0), (int)(a1), (void*)((&l)), (void*)((&l.f_4)), (int)(0), (int)(a2));
+    return (float)(l.f_4);
+}
+
 struct unk_0008c2d8_a0 {
     char pad_0[380];
     float f_17c;
@@ -59,6 +72,17 @@ struct unk_0008c2d8_a0 {
 void fn_0008c2d8(unk_0008c2d8_a0* a0, float f0) {
     a0->f_17c = f0;
     stub_0008c2d0((void*)(a0));
+}
+
+struct unk_0008d9d4_l;
+struct unk_0008d9d4_l {
+    char pad_0[4];
+    float f_4;
+};
+float fn_0008d9d4(int a0, int a1, int a2) {
+    unk_0008d9d4_l l;
+    stub_0008d3b0((int)(a0), (int)(a1), (void*)((&l)), (void*)((&l.f_4)), (int)(a2));
+    return (float)(l.f_4);
 }
 
 }

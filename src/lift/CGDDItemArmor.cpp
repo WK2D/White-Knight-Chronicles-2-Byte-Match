@@ -13,6 +13,10 @@ int fn_003d6690(unk_003d6690_a0* a0) {
     return (int)((int)(short)(a0->f_c));
 }
 
+float fn_003d6ca8(void) {
+    return (float)(0.0f);
+}
+
 struct unk_003d71a4_a0 {
     char pad_0[8];
     u16 f_8;

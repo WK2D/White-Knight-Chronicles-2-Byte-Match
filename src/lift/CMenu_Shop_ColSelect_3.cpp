@@ -6,6 +6,14 @@ extern "C" {
 
 static void __attribute__((noinline)) stub_007cb318(void) { __asm__ volatile (""); }
 
+float fn_007cb308(void) {
+    return (float)(0.15000000596046448f);
+}
+
+float fn_007cb310(void) {
+    return (float)(0.15000000596046448f);
+}
+
 struct unk_007cb318_g7738;
 struct unk_007cb318_g7738_0;
 struct unk_007cb318_g7738_0_6c;

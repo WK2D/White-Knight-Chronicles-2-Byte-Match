@@ -106,6 +106,10 @@ void fn_00185bc4(int a0) {
     fn_00b37fa8((int)(a0), (int)(0), (int)(320));
 }
 
+float fn_00185cd8(float f0, float f1, float f2, float f3, float f4, float f5) {
+    return (float)((((f3 - f2) * f4 + f2) - ((f1 - f0) * f4 + f0)) * f5 + ((f1 - f0) * f4 + f0));
+}
+
 void fn_00185da4(void) {
     stub_00185d28((float)(0.0f), (float)(0.0f), (float)(0.0f));
 }

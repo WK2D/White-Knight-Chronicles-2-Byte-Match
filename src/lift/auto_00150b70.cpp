@@ -9,6 +9,30 @@ static void __attribute__((noinline)) stub_0015264c(void* p0) { __asm__ volatile
 static void __attribute__((noinline)) stub_001526cc(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
 static void __attribute__((noinline)) stub_00152710(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
 
+struct unk_00152548_a0 {
+    float f_0;
+    float f_4;
+    float f_8;
+    float f_c;
+    float f_10;
+    u8 f_14;
+};
+float fn_00152548(unk_00152548_a0* a0) {
+    if (a0->f_4 >= a0->f_0) {
+        return (float)(a0->f_c);
+    }
+    if (a0->f_0 > 0.0f) {
+        if ((int)(a0->f_14) != (int)(0)) {
+            if (__builtin_fabsf(a0->f_10 - a0->f_8) / (__builtin_fabsf(a0->f_10 - a0->f_8) + __builtin_fabsf(a0->f_c - a0->f_10)) <= a0->f_4 / a0->f_0) {
+                return (float)((a0->f_c - a0->f_10) * (((a0->f_4 / a0->f_0) - (__builtin_fabsf(a0->f_10 - a0->f_8) / (__builtin_fabsf(a0->f_10 - a0->f_8) + __builtin_fabsf(a0->f_c - a0->f_10)))) / (1.0f - (__builtin_fabsf(a0->f_10 - a0->f_8) / (__builtin_fabsf(a0->f_10 - a0->f_8) + __builtin_fabsf(a0->f_c - a0->f_10))))) + a0->f_10);
+            }
+            return (float)((a0->f_10 - a0->f_8) * ((a0->f_4 / a0->f_0) / (__builtin_fabsf(a0->f_10 - a0->f_8) / (__builtin_fabsf(a0->f_10 - a0->f_8) + __builtin_fabsf(a0->f_c - a0->f_10)))) + a0->f_8);
+        }
+        return (float)((a0->f_4 / a0->f_0) * (a0->f_c - a0->f_8) + a0->f_8);
+    }
+    return (float)(a0->f_8);
+}
+
 struct unk_001526b0_a0 {
     float f_0;
 };

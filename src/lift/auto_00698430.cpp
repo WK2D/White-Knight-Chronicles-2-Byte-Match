@@ -5,6 +5,7 @@
 extern "C" {
 
 void fn_0004dfb8(void*, u32, int, int, int);
+void fn_0004fbd4(void*, u32, int, float, float, int);
 void fn_0004fe84(void*, u32, int, float);
 void fn_0012937c(void*);
 void fn_001293a4(void*, int, int);
@@ -21,6 +22,7 @@ void fn_003d3d74(u32, int, int);
 void fn_003e70cc(u32, int);
 void fn_003e70ec(u32, int);
 int fn_003e70fc(u32);
+void fn_003ea464(u32, int, int, int, int, int);
 void fn_003ea750(u32, int);
 void fn_003eb104(u32, int);
 void fn_003eb85c(u32, int);
@@ -81,6 +83,14 @@ struct unk_006a07c8_a0 {
 };
 void fn_006a07c8(unk_006a07c8_a0* a0) {
     fn_0004fe84((void*)((&a0->f_3a8)), (u32)(FIELD(u32, (&a0->f_3a8), 404)), (int)(88), (float)(0.0f));
+}
+
+struct unk_006a0940_a0 {
+    char pad_0[936];
+    u8 f_3a8;
+};
+void fn_006a0940(unk_006a0940_a0* a0) {
+    fn_0004fbd4((void*)((&a0->f_3a8)), (u32)(FIELD(u32, (&a0->f_3a8), 404)), (int)(175), (float)(0.0f), (float)(0.3499999940395355f), (int)(8));
 }
 
 struct unk_006a0b20_g3f68;
@@ -554,6 +564,30 @@ struct unk_006a12d4_g3f68_0_6c_8 {
 extern unk_006a12d4_g3f68 g_006a12d4_0;
 void fn_006a12d4(int a0, int a1) {
     fn_003eb104((u32)((&g_006a12d4_0)->f_0->f_6c->f_8->f_108), (int)(a1));
+}
+
+struct unk_006a130c_g3f68;
+struct unk_006a130c_g3f68_0;
+struct unk_006a130c_g3f68_0_6c;
+struct unk_006a130c_g3f68_0_6c_8;
+struct unk_006a130c_g3f68 {
+    unk_006a130c_g3f68_0* f_0;
+};
+struct unk_006a130c_g3f68_0 {
+    char pad_0[108];
+    unk_006a130c_g3f68_0_6c* f_6c;
+};
+struct unk_006a130c_g3f68_0_6c {
+    char pad_0[8];
+    unk_006a130c_g3f68_0_6c_8* f_8;
+};
+struct unk_006a130c_g3f68_0_6c_8 {
+    char pad_0[264];
+    u32 f_108;
+};
+extern unk_006a130c_g3f68 g_006a130c_0;
+void fn_006a130c(int a0, int a1, int a2, int a3, int a4, int a5) {
+    fn_003ea464((u32)((&g_006a130c_0)->f_0->f_6c->f_8->f_108), (int)(a1), (int)(a2), (int)(a3), (int)(a4), (int)(a5));
 }
 
 struct unk_006a1344_g3f68;

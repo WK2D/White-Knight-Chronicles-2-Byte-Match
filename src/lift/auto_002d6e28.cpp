@@ -139,6 +139,23 @@ void fn_002d7154(unk_002d7154_a0* a0, unk_002d7154_a1* a1) {
     FIELD(float, (int)(a0->f_4) + (int)(a0->f_0->f_0->f_0), 32) = a1->f_28;
 }
 
+struct unk_002d7234_a0_0;
+struct unk_002d7234_a0_0_0;
+struct unk_002d7234_a0_0 {
+    unk_002d7234_a0_0_0* f_0;
+};
+struct unk_002d7234_a0_0_0 {
+    u32 f_0;
+};
+struct unk_002d7234_a0 {
+    unk_002d7234_a0_0* f_0;
+    char pad_4[4];
+    u32 f_8;
+};
+float fn_002d7234(unk_002d7234_a0* a0) {
+    return (float)(FIELD(float, (int)(a0->f_8) + (int)(a0->f_0->f_0->f_0), 20));
+}
+
 struct unk_002d7254_a0_0;
 struct unk_002d7254_a0_0_0;
 struct unk_002d7254_a0_0 {

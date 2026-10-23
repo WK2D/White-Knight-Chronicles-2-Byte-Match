@@ -22,6 +22,16 @@ int fn_00a11430(void) {
     return (int)((int)((&g_00a11430_0)->f_2c) >> 5);
 }
 
+struct unk_00a11444_gm2738;
+struct unk_00a11444_gm2738 {
+    char pad_0[44];
+    u32 f_2c;
+};
+extern unk_00a11444_gm2738 g_00a11444_0;
+float fn_00a11444(void) {
+    return (float)((float)(int)((int)(&g_00a11444_0)->f_2c) * 0.000244140625f);
+}
+
 extern char g_00a11a6c_0[];
 int fn_00a11a6c(int a0) {
     void* t0;

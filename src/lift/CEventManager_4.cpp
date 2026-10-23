@@ -21,4 +21,20 @@ u32 fn_00b9f018(unk_00b9f018_a0* a0) {
     return (u32)(((u32)(a0->f_5c8) >> 30) & 0x1);
 }
 
+struct unk_00b9f040_a0 {
+    char pad_0[1472];
+    double f_5c0;
+};
+float fn_00b9f040(unk_00b9f040_a0* a0) {
+    return (float)((float)(a0->f_5c0));
+}
+
+struct unk_00b9f054_a0 {
+    char pad_0[1488];
+    u32 f_5d0;
+};
+float fn_00b9f054(unk_00b9f054_a0* a0) {
+    return (float)((float)(int)((int)a0->f_5d0));
+}
+
 }

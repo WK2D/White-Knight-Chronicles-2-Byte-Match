@@ -12,4 +12,17 @@ int fn_00d525bc(int a0, int a1, int a2) {
     return (int)(128);
 }
 
+struct unk_00d525dc_a0 {
+    char pad_0[16];
+    u32 f_10;
+    char pad_14[76];
+    u32 f_60;
+    char pad_64[12];
+    float f_70;
+    float f_74;
+};
+float fn_00d525dc(unk_00d525dc_a0* a0, int a1, int a2) {
+    return (float)((float)(int)(FIELD(u16, (int)((u32)((int)((int)(a2) * (int)(a0->f_10)) + (int)(a1)) << 1) + (int)(a0->f_60), 0)) * a0->f_74 + a0->f_70);
+}
+
 }

@@ -20,6 +20,30 @@ void fn_00f0d548(int a0, int a1) {
     (&g_00f0d548_0)->f_0 = (u8)(0);
 }
 
+float fn_00f0d80c(void) {
+    return (float)(0.125f);
+}
+
+float fn_00f0d814(void) {
+    return (float)(0.015625f);
+}
+
+float fn_00f0d81c(void) {
+    return (float)(0.00390625f);
+}
+
+float fn_00f0d824(void) {
+    return (float)(0.00048828125f);
+}
+
+float fn_00f0d82c(void) {
+    return (float)(6.103515625e-05f);
+}
+
+float fn_00f0d834(void) {
+    return (float)(1.1920928955078125e-07f);
+}
+
 struct unk_00f0d860_g7c78;
 struct unk_00f0d860_g7c78 {
     u8 f_0;

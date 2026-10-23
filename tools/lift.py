@@ -903,7 +903,8 @@ class Lifter:
 
     def emit_return(self):
         self.returns.append({'value': self.gpr[3], 'fresh': 3 in self.fresh, 'stmt': None,
-                             'vvalue': self.vr[2] if 2 in self.vfresh else None})
+                             'vvalue': self.vr[2] if 2 in self.vfresh else None,
+                             'fvalue': self.fpr[1] if 1 in self.ffresh else None})
         stmt = ['return', len(self.returns) - 1]
         self.stmts.append(stmt)
         self.ended = True
@@ -1794,6 +1795,14 @@ class Lifter:
         extend = gfresh & self.bfresh if complete else gfresh
         while last + 1 in extend:
             last += 1
+        # A filled register whose value is part of another argument is the
+        # scratch of an address chain (r9 = p->a; r3 = r9->b), not an argument.
+        def scratch(r):
+            text = self.gpr[r].text
+            return len(text) > 3 and any(text in self.gpr[q].text and self.gpr[q].text != text
+                                         for q in range(first, last + 1) if q != r and q in gfresh)
+        while last > max(first - 1, 2 + nint) and scratch(last):
+            last -= 1
         args = []
         for r in range(first, last + 1):
             if r in gfresh:
@@ -1962,6 +1971,13 @@ class Lifter:
         vvalued = not valued and self.returns and all(r['vvalue'] is not None for r in self.returns)
         if vvalued:
             ret_type = 'vector float'
+        # A float result: every return path set f1 (and none set r3).
+        fvalued = not valued and not vvalued and self.returns and all(r['fvalue'] is not None for r in self.returns)
+        if fvalued:
+            ftypes = {r['fvalue'].ctype for r in self.returns}
+            if len(ftypes) != 1 or not ftypes <= {'float', 'double'}:
+                raise Fail('return type')
+            ret_type = ftypes.pop()
         if valued:
             types = {CTYPES.get(r['value'].ctype) for r in self.returns if r['value'] is not None}
             if None in types or any(r['value'] is None for r in self.returns):
@@ -2055,7 +2071,8 @@ class Lifter:
                 elif isinstance(st, list) and st[0] == 'return':
                     r = self.returns[st[1]]
                     out.append(pad + (f'return ({ret_type})({r["value"].text});' if valued else
-                                      f'return {r["vvalue"].text};' if vvalued else 'return;'))
+                                      f'return {r["vvalue"].text};' if vvalued else
+                                      f'return ({ret_type})({r["fvalue"].text});' if fvalued else 'return;'))
                 elif isinstance(st, list) and st[0] == 'while':
                     out.append(pad + f'while ({st[1]}) {{')
                     out += lines(st[2], indent + 1)

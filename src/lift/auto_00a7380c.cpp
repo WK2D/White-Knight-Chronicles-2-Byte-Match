@@ -22,18 +22,6 @@ void fn_00a745a4(unk_00a745a4_a0* a0) {
     }
 }
 
-struct unk_00a74884_a0 {
-    char pad_0[4];
-    u16 f_4;
-    u8 f_6;
-    u8 f_7;
-};
-void fn_00a74884(unk_00a74884_a0* a0, float f0, int a2, int a3) {
-    a0->f_6 = (u8)(a2);
-    a0->f_7 = (u8)(a3);
-    a0->f_4 = (u16)((u32)((int)(f0 * 256.0f)) & 0x1fff);
-}
-
 struct unk_00a74940_a0 {
     char pad_0[8];
     u32 f_8;

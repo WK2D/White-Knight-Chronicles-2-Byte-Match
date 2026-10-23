@@ -5,6 +5,34 @@
 extern "C" {
 
 void fn_001251a8(u32);
+int fn_00126dfc(u32, int, int, int, int, int);
+
+struct unk_00123a4c_gm65d4;
+struct unk_00123a4c_gm65d4_0;
+struct unk_00123a4c_gm65d4 {
+    unk_00123a4c_gm65d4_0* f_0;
+};
+struct unk_00123a4c_gm65d4_0 {
+    char pad_0[132];
+    u32 f_84;
+};
+struct unk_00123a4c_a0 {
+    char pad_0[564];
+    u8 f_234;
+    char pad_235[1];
+    u16 f_236;
+};
+extern unk_00123a4c_gm65d4 g_00123a4c_0;
+int fn_00123a4c(unk_00123a4c_a0* a0) {
+    int t0;
+    t0 = fn_00126dfc((u32)((&g_00123a4c_0)->f_0->f_84), (int)(0), (int)(0), (int)(0), (int)(0), (int)(0));
+    if ((int)(t0) != (int)(0)) {
+        a0->f_234 = (u8)(0);
+        return (int)(0);
+    }
+    a0->f_236 = (u16)(3);
+    return (int)(1);
+}
 
 struct unk_00123ba4_gm65d4;
 struct unk_00123ba4_gm65d4_0;

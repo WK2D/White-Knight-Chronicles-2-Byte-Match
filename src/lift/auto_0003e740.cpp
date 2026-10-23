@@ -52,6 +52,13 @@ int fn_0003f9e0(void* a0) {
     return (int)((int)(FIELD(float, a0, 4)));
 }
 
+float fn_0003fa14(void* a0) {
+    if ((int)(FIELD(u32, a0, 0)) == (int)(0)) {
+        return (float)((float)(int)((int)FIELD(u32, a0, 4)));
+    }
+    return (float)(FIELD(float, a0, 4));
+}
+
 struct unk_0003fab0_a0_4;
 struct unk_0003fab0_a0_4 {
     char pad_0[4];

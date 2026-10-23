@@ -5,12 +5,32 @@
 extern "C" {
 
 
+float fn_00b9143c(void) {
+    return (float)(1.0f);
+}
+
+float fn_00b91570(void) {
+    return (float)(0.0f);
+}
+
+float fn_00b91578(void) {
+    return (float)(0.0f);
+}
+
+float fn_00b91580(void) {
+    return (float)(0.0f);
+}
+
 struct unk_00b91590_a1 {
     vec f_0;
 };
 int fn_00b91590(int a0, unk_00b91590_a1* a1) {
     a1->f_0 = (vector float){0, 0, 0, 0};
     return (int)(0);
+}
+
+float fn_00b915a0(void) {
+    return (float)(0.0f);
 }
 
 }

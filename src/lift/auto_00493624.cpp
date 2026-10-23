@@ -46,6 +46,28 @@ int fn_00493668(void) {
     return (int)(v6);
 }
 
+struct unk_00493dc8_a0 {
+    char pad_0[9];
+    u8 f_9;
+};
+float fn_00493dc8(unk_00493dc8_a0* a0) {
+    if ((int)(a0->f_9) == (int)(0)) {
+        return (float)(0.0f);
+    }
+    return (float)((float)(int)(a0->f_9) / 100.0f);
+}
+
+struct unk_00493df8_a0 {
+    char pad_0[10];
+    u8 f_a;
+};
+float fn_00493df8(unk_00493df8_a0* a0) {
+    if ((int)(a0->f_a) != (int)(100)) {
+        return (float)((float)(int)(a0->f_a) / 100.0f);
+    }
+    return (float)(1.0f);
+}
+
 void fn_00493e78(int a0) {
     stub_00493e2c((int)(a0));
 }

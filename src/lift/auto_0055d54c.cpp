@@ -38,6 +38,10 @@ static int __attribute__((noinline)) stub_0055ec84(int p0, int p1) { int r; __as
 static void __attribute__((noinline)) stub_0055f048(int p0, void* p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 void fn_00ba1eac(void);
 
+float fn_0055d5b8(void) {
+    return (float)(0.0f);
+}
+
 int fn_0055d99c(int a0, int a1) {
     int t0;
     t0 = stub_0055d960((int)(a0), (int)(a1));

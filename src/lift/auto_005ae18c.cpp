@@ -9,6 +9,18 @@ float fn_00595978(float);
 static int __attribute__((noinline)) stub_005acc58(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static void* __attribute__((noinline)) stub_005ad060(int p0, int p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 
+struct unk_005ae18c_a0_0;
+struct unk_005ae18c_a0_0 {
+    char pad_0[22];
+    u16 f_16;
+};
+struct unk_005ae18c_a0 {
+    unk_005ae18c_a0_0* f_0;
+};
+float fn_005ae18c(unk_005ae18c_a0* a0) {
+    return (float)((float)(int)((int)(short)(a0->f_0->f_16)) / 100.0f);
+}
+
 struct unk_005ae1b4_a0_0;
 struct unk_005ae1b4_a0_0 {
     char pad_0[24];

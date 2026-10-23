@@ -14,6 +14,7 @@ void fn_0003fab0_3(void*, int);
 void fn_0003fab0_4(int, u8);
 int fn_0003fab0_5(void*, int);
 void fn_0003fab0(void*, u8);
+void fn_000c0a70(u32, int, int, int, int, int);
 int fn_000f9818(u32);
 int fn_000f9a0c(u32);
 int fn_000fa39c(u32);
@@ -105,6 +106,34 @@ struct unk_0032def4_gm1c38_0 {
 extern unk_0032def4_gm1c38 g_0032def4_0;
 int fn_0032def4(void) {
     fn_002deecc((u32)((&g_0032def4_0)->f_0->f_0), (int)(101), (int)(0), (int)(0));
+    return (int)(1);
+}
+
+struct unk_0032df34_gm1c38;
+struct unk_0032df34_gm1c38_0;
+struct unk_0032df34_gm1c38 {
+    unk_0032df34_gm1c38_0* f_0;
+};
+struct unk_0032df34_gm1c38_0 {
+    u32 f_0;
+};
+extern unk_0032df34_gm1c38 g_0032df34_0;
+int fn_0032df34(void) {
+    fn_000c0a70((u32)((&g_0032df34_0)->f_0->f_0), (int)(2), (int)(10335), (int)(0), (int)(0), (int)(5));
+    return (int)(1);
+}
+
+struct unk_0032df7c_gm1c38;
+struct unk_0032df7c_gm1c38_0;
+struct unk_0032df7c_gm1c38 {
+    unk_0032df7c_gm1c38_0* f_0;
+};
+struct unk_0032df7c_gm1c38_0 {
+    u32 f_0;
+};
+extern unk_0032df7c_gm1c38 g_0032df7c_0;
+int fn_0032df7c(void) {
+    fn_000c0a70((u32)((&g_0032df7c_0)->f_0->f_0), (int)(2), (int)(10333), (int)(0), (int)(0), (int)(5));
     return (int)(1);
 }
 

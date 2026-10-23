@@ -6,6 +6,22 @@ extern "C" {
 
 static int __attribute__((noinline)) stub_00586784(int p0, void* p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 
+struct unk_0058660c_a0_0;
+struct unk_0058660c_a0_0 {
+    u8 f_0;
+    char pad_1[11];
+    float f_c;
+};
+struct unk_0058660c_a0 {
+    unk_0058660c_a0_0* f_0;
+};
+float fn_0058660c(unk_0058660c_a0* a0) {
+    if ((int)(a0->f_0->f_0) == (int)(0)) {
+        return (float)(a0->f_0->f_c);
+    }
+    return (float)(-1.0f);
+}
+
 struct unk_0058662c_a0_0;
 struct unk_0058662c_a0_0 {
     u8 f_0;
@@ -20,6 +36,22 @@ void fn_0058662c(unk_0058662c_a0* a0, float f0) {
         return;
     }
     a0->f_0->f_c = a0->f_0->f_c + f0;
+}
+
+struct unk_0058664c_a0_0;
+struct unk_0058664c_a0_0 {
+    u8 f_0;
+    char pad_1[17];
+    u16 f_12;
+};
+struct unk_0058664c_a0 {
+    unk_0058664c_a0_0* f_0;
+};
+float fn_0058664c(unk_0058664c_a0* a0) {
+    if ((int)(a0->f_0->f_0) == (int)(0)) {
+        return (float)((float)(int)(a0->f_0->f_12));
+    }
+    return (float)(-1.0f);
 }
 
 struct unk_0058667c_a0_0;

@@ -7,6 +7,16 @@ extern "C" {
 static void __attribute__((noinline)) stub_0059cd44(int p0, int p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 static void __attribute__((noinline)) stub_0059cefc(int p0, void* p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 
+float fn_0059cbf8(void* a0) {
+    if ((int)(FIELD(u32, a0, 0)) != (int)(1)) {
+        if ((int)(FIELD(u32, a0, 0)) != (int)(2)) {
+            return (float)(0.0f);
+        }
+        return (float)(FIELD(float, a0, 4));
+    }
+    return (float)((float)(int)((int)FIELD(u32, a0, 4)));
+}
+
 struct unk_0059cc34_a0 {
     u32 f_0;
     u32 f_4;

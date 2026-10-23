@@ -26,4 +26,11 @@ void fn_009f5578(void) {
     }
 }
 
+float fn_009f6548(float f0, float f1) {
+    if (f1 != 0.0f) {
+        return (float)(f0 / f1);
+    }
+    return (float)(3.4028234663852886e+38f);
+}
+
 }

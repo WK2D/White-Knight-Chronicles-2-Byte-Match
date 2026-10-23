@@ -41,6 +41,22 @@ void fn_002d7d9c(unk_002d7d9c_a0* a0, int a1, int a2) {
     fn_002d2864((int)(a1));
 }
 
+struct unk_002d7e7c_a0_0;
+struct unk_002d7e7c_a0_0_0;
+struct unk_002d7e7c_a0_0 {
+    unk_002d7e7c_a0_0_0* f_0;
+};
+struct unk_002d7e7c_a0_0_0 {
+    u32 f_0;
+};
+struct unk_002d7e7c_a0 {
+    unk_002d7e7c_a0_0* f_0;
+    u32 f_4;
+};
+float fn_002d7e7c(unk_002d7e7c_a0* a0) {
+    return (float)(FIELD(float, (int)(a0->f_4) + (int)(a0->f_0->f_0->f_0), 56));
+}
+
 struct unk_002d7e9c_a0_0;
 struct unk_002d7e9c_a0_0_0;
 struct unk_002d7e9c_a0_0 {

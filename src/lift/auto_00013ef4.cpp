@@ -76,4 +76,45 @@ void* fn_000148c0(int a0) {
     return (void*)(v0);
 }
 
+float fn_00014bf8(void) {
+    return (float)(0.0f);
+}
+
+float fn_00014c14(float f0, float f1) {
+    if (f1 != 0.0f) {
+        return (float)(f1);
+    }
+    return (float)(f0);
+}
+
+float fn_00014c34(float f0, float f1) {
+    return (float)(f0 + f1);
+}
+
+float fn_00014c3c(float f0, float f1) {
+    return (float)(f0 - f1);
+}
+
+float fn_00014c44(float f0, float f1) {
+    return (float)(f1 - f0);
+}
+
+float fn_00014c4c(float f0, float f1) {
+    return (float)(f0 * f1);
+}
+
+float fn_00014c54(float f0, float f1) {
+    if (f1 == 0.0f) {
+        return (float)(0.0f);
+    }
+    return (float)(f0 / f1);
+}
+
+float fn_00014c6c(float f0, float f1) {
+    if (f0 == 0.0f) {
+        return (float)(0.0f);
+    }
+    return (float)(f1 / f0);
+}
+
 }

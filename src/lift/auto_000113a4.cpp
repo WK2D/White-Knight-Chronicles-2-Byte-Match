@@ -16,4 +16,16 @@ u8 fn_00012750(unk_00012750_a0* a0) {
     return (u8)((u8)t0);
 }
 
+struct unk_000129a8_a0_0;
+struct unk_000129a8_a0_0 {
+    char pad_0[424];
+    float f_1a8;
+};
+struct unk_000129a8_a0 {
+    unk_000129a8_a0_0* f_0;
+};
+float fn_000129a8(unk_000129a8_a0* a0) {
+    return (float)((float)(u32)(FIELD(u32, (int)(a0) + 65536, 28396)) * a0->f_0->f_1a8);
+}
+
 }

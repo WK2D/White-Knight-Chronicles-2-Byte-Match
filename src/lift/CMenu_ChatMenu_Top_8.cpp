@@ -7,6 +7,18 @@ extern "C" {
 static void __attribute__((noinline)) stub_0079cd88(void* p0, int p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 static int __attribute__((noinline)) stub_0079d004(void* p0, int p1, void* p2, int p3) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); return r; }
 
+float fn_0079ce04(void) {
+    return (float)(0.20000000298023224f);
+}
+
+float fn_0079ce0c(void) {
+    return (float)(0.20000000298023224f);
+}
+
+float fn_0079ce14(void) {
+    return (float)(0.20000000298023224f);
+}
+
 struct unk_0079d0dc_a0 {
     char pad_0[4364];
     u32 f_110c;

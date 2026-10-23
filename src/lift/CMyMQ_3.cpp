@@ -6,6 +6,8 @@ extern "C" {
 
 static void* __attribute__((noinline)) stub_000be2ac(u32 p0, u16 p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static int __attribute__((noinline)) stub_000be6ac(u32 p0, u16 p1, int p2, int p3, int p4, int p5, int p6, int p7) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4), "r"(p5), "r"(p6), "r"(p7)); return r; }
+static int __attribute__((noinline)) stub_000bef50(u32 p0, u16 p1, int p2, int p3, int p4, int p5) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4), "r"(p5)); return r; }
+static int __attribute__((noinline)) stub_000beff8(u32 p0, u16 p1, int p2, int p3, int p4, int p5, int p6) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4), "r"(p5), "r"(p6)); return r; }
 
 struct unk_000c0718_gm7038;
 struct unk_000c0718_a0_4;
@@ -36,6 +38,56 @@ void* fn_000c0718(unk_000c0718_a0* a0) {
         v0 = (int)(0);
     }
     return (void*)(v0);
+}
+
+struct unk_000c0768_gm7038;
+struct unk_000c0768_a0_4;
+struct unk_000c0768_gm7038_0;
+struct unk_000c0768_gm7038 {
+    unk_000c0768_gm7038_0* f_0;
+};
+struct unk_000c0768_a0_4 {
+    char pad_0[32];
+    u16 f_20;
+};
+struct unk_000c0768_gm7038_0 {
+    char pad_0[72];
+    u32 f_48;
+};
+struct unk_000c0768_a0 {
+    char pad_0[4];
+    unk_000c0768_a0_4* f_4;
+};
+extern unk_000c0768_gm7038 g_000c0768_0;
+u8 fn_000c0768(unk_000c0768_a0* a0, int a1, int a2, int a3, int a4, int a5) {
+    int t0;
+    t0 = stub_000beff8((u32)((&g_000c0768_0)->f_0->f_48), (u16)(a0->f_4->f_20), (int)(a1), (int)(a2), (int)(a3), (int)(a4), (int)(a5));
+    return (u8)((u8)t0);
+}
+
+struct unk_000c08f4_gm7038;
+struct unk_000c08f4_a0_4;
+struct unk_000c08f4_gm7038_0;
+struct unk_000c08f4_gm7038 {
+    unk_000c08f4_gm7038_0* f_0;
+};
+struct unk_000c08f4_a0_4 {
+    char pad_0[32];
+    u16 f_20;
+};
+struct unk_000c08f4_gm7038_0 {
+    char pad_0[72];
+    u32 f_48;
+};
+struct unk_000c08f4_a0 {
+    char pad_0[4];
+    unk_000c08f4_a0_4* f_4;
+};
+extern unk_000c08f4_gm7038 g_000c08f4_0;
+u8 fn_000c08f4(unk_000c08f4_a0* a0, int a1, int a2, int a3, int a4) {
+    int t0;
+    t0 = stub_000bef50((u32)((&g_000c08f4_0)->f_0->f_48), (u16)(a0->f_4->f_20), (int)(a1), (int)(a2), (int)(a3), (int)(a4));
+    return (u8)((u8)t0);
 }
 
 struct unk_000c0950_gm7038;

@@ -24,7 +24,7 @@ alternative to the static-recompilation port at
   `-O2` and not with `-fno-ivopts`. The project used `-O2 -fno-ivopts` before
   2026-10-22; only `src/game/CPostEffectManager.cpp` keeps that, as an
   override, until a natural `-O2` form of `fn_004b32e8` is found.
-- Matched: **17,636 of 50,844 functions** (3.90% of code). Six are by hand
+- Matched: **17,760 of 50,844 functions** (3.93% of code). Six are by hand
   (`src/game/*.cpp`); the rest are generated: `tools/gen_simple.py`
   (`src/gen/`, small shapes), `tools/lift.py` (`src/lift/`, the lifter),
   `tools/permute.py` (`src/perm/`, lifter output in another statement order)
@@ -470,6 +470,18 @@ counts over all functions up to 384 instructions):
   1,200-byte frame, ours 192). Only shortfalls of 64 bytes or more are
   padded: GCC leaves gaps before the register saves, and padding every
   shortfall lost 86 matches.
+- Call arguments: registers the caller filled after the callee's own
+  argument count are still passed (an ignored trailing 0 is real), but not
+  when the value is part of another argument: that is scratch from an
+  address chain (`r9 = g->a; r10 = r9->b; r3 = r10->c`, `fn_006a130c`).
+  Passing it kept the value alive across the call and saved an extra
+  register. Functions that set only f1 before returning return `float`
+  or `double` (`lfs f1,d(r2); blr`, `fn_00014bf8`); they used to lift as
+  empty void functions.
+- Near-miss tools: `build/check.log` holds only matches after the final
+  pruning; for near-misses run the unpruned lift and check (first lines of
+  `permute_all.sh`) and use `build/check_unpruned.log` before anything
+  rebuilds the objects.
 - Complete near-miss picture (2026-10-23, 15,000 near-misses with nothing
   hidden): the first difference is the prologue in about 3,600; the
   original saves more callee-saved registers in about 3,400 (variables the

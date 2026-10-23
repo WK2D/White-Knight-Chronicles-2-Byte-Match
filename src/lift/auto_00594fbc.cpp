@@ -20,6 +20,18 @@ int fn_00ba23ec(int);
 void fn_00ba2434(int);
 int fn_00ba2440(int);
 
+float fn_0059500c(void) {
+    return (float)(0.0f);
+}
+
+float fn_00595954(void) {
+    return (float)(9999.0f);
+}
+
+float fn_00595970(void) {
+    return (float)(9999.0f);
+}
+
 void fn_0059598c(int a0) {
     fn_00ba2268((int)(a0));
 }

@@ -6,6 +6,22 @@ extern "C" {
 
 static void __attribute__((noinline)) stub_00048908(int p0, int p1, int p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
 
+float fn_00048768(float f0, float f1, float f2) {
+    return (float)((1.0f - f2) * f0 + (f2 * f1));
+}
+
+float fn_00048848(float f0, float f1, float f2) {
+    return (float)((f1 - f0) * ((f2 * f2) * (f2 * f2)) + f0);
+}
+
+float fn_00048884(float f0, float f1, float f2) {
+    return (float)((f0 - f1) * ((f2 - 1.0f) * (f2 - 1.0f)) + f1);
+}
+
+float fn_000488c4(float f0, float f1, float f2) {
+    return (float)((f0 - f1) * (((f2 - 1.0f) * (f2 - 1.0f)) * ((f2 - 1.0f) * (f2 - 1.0f))) + f1);
+}
+
 void fn_00048a44(int a0, int a1, int a2) {
     stub_00048908((int)(a0), (int)(a1), (int)(a2));
 }

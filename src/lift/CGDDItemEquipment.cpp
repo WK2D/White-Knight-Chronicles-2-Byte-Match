@@ -59,6 +59,10 @@ int fn_003d5890(unk_003d5890_a0* a0) {
     return (int)(v0);
 }
 
+float fn_003d5a1c(void) {
+    return (float)(1.0f);
+}
+
 struct unk_003d5a24_a0 {
     virtual void vf0();
     virtual void vf1();

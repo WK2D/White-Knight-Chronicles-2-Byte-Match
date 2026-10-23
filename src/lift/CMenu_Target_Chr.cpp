@@ -38,6 +38,18 @@ int fn_0080f4b4(unk_0080f4b4_a0* a0) {
     return (int)(1);
 }
 
+struct unk_0080f4d0_a0 {
+    char pad_0[1692];
+    float f_69c;
+    u8 f_6a0;
+};
+float fn_0080f4d0(unk_0080f4d0_a0* a0) {
+    if ((int)(a0->f_6a0) == (int)(0)) {
+        return (float)(a0->f_69c + a0->f_69c);
+    }
+    return (float)(1.0f);
+}
+
 int fn_0080f530(int a0) {
     stub_0080f4f0((int)(a0));
     return (int)(1);

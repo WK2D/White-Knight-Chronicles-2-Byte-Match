@@ -6,6 +6,7 @@ extern "C" {
 
 static void* __attribute__((noinline)) stub_0011aa3c(int p0, int p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static int __attribute__((noinline)) stub_0011d184(int p0, u32 p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
+static int __attribute__((noinline)) stub_0011d794(void* p0, void* p1, int p2, int p3, int p4, int p5) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4), "r"(p5)); return r; }
 void fn_00fccdb0(void*);
 
 struct unk_0011d158_a0 {
@@ -70,6 +71,23 @@ int fn_0011d548(int a0) {
         v0 = (int)(1);
     }
     return (int)(v0);
+}
+
+struct unk_0011d9a0_a0 {
+    char pad_0[15426];
+    u8 f_3c42;
+    char pad_3c43[1];
+    u16 f_3c44;
+};
+int fn_0011d9a0(unk_0011d9a0_a0* a0) {
+    int t0;
+    t0 = stub_0011d794((void*)(a0), (void*)(((int)(a0) + 65536) + -22220), (int)((int)FIELD(u32, (int)(a0) + 65536, -22204)), (int)(0), (int)(1), (int)(256));
+    if ((int)((int)(signed char)(t0)) == (int)(0)) {
+        a0->f_3c42 = (u8)((int)(signed char)(t0));
+        return (int)(0);
+    }
+    a0->f_3c44 = (u16)(3);
+    return (int)(1);
 }
 
 }
