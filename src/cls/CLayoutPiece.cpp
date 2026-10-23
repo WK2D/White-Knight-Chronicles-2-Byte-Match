@@ -4,6 +4,7 @@
 
 extern "C" {
 
+void fn_00fc88dc(void*);
 
 struct unk_0004a808_a0 {
     unk_0004a808_a0(void);
@@ -39,6 +40,14 @@ unk_0004a83c_a0::unk_0004a83c_a0() {
     this->f_8 = 1.0f;
     this->f_c = 1.0f;
     this->f_2c = (u32)((u32)((u32)(this->f_2c) & 0xfffff) | 0xf0000);
+}
+
+struct unk_0004a970_a0 {
+    unk_0004a970_a0(void);
+    virtual void vf0();
+};
+unk_0004a970_a0::unk_0004a970_a0() {
+    fn_00fc88dc((void*)(this));
 }
 
 }

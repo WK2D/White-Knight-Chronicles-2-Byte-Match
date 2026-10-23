@@ -470,6 +470,13 @@ class Lifter:
         return v
 
     def field(self, ctype, base, d):
+        # An access through a member's address is an access to the containing
+        # object at the summed offset.
+        if getattr(base, 'flat', None) is not None:
+            parent, off = base.flat
+            return self.field(ctype, parent, off + d)
+        if getattr(base, 'local_off', None) and base.local_off > 0:
+            return self.field(ctype, Value('/*frame*/', 'frame'), LOCALS + base.local_off + d)
         if base.ctype == 'frame':                                    # a local variable
             off = d - LOCALS
             if off < 0:
@@ -1270,6 +1277,9 @@ class Lifter:
             if base.ctype in ('ptr', 'addr', 'gaddr') and path is not None and d >= 0:
                 self.addressed[path].add(d)                          # &p->f_d: a member's address
                 if d in self.layouts.get(path, {}):
+                    # Kept as a base of its own (not flattened into the object):
+                    # the game computes such addresses once, as for an embedded
+                    # sub-object, and so does GCC for this form.
                     self.set(rt, Value(f'(&{base.text}->f_{d:x})', 'addr'))
                     return
             if base.ctype in ('ptr', 'addr', 'gaddr'):

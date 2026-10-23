@@ -143,7 +143,7 @@ python tools/lift.py            # lift functions to src/lift/; then check, then
                                 # "lift.py --prune build/check.log" (repeat until stable)
 sh tools/lift_all.sh [python]   # all of the above until nothing more is pruned (15-30 min)
 sh tools/build_all.sh [python]  # gen_simple (pruned) and then lift_all: regenerate everything
-sh tools/permute_all.sh [python] # unpruned check, permute.py, lift_all (about 45 min)
+sh tools/permute_all.sh [python] # unpruned check, permute.py, classgen.py, lift_all (about 45 min)
 python tools/classgen.py        # constructors as C++ classes -> src/cls/, config/symbols_cls.txt
                                 # (needs build/vtables.json from tools/classes.py; then lift_all)
 python tools/permute.py LOG     # try other statement orders and if/else inversions -> src/perm/
@@ -310,7 +310,11 @@ Rename units to their real source files as they are identified, and edit
   before the vtable store becomes a base class (defined `noinline` in the
   file when the original call was local). Constructors that build member
   objects (stores through `this + N`) need embedded member structs, which
-  the lifter does not model yet.
+  the lifter does not model yet. Evidence: the game computes `this + N` once and
+  stores through it (`FIELD(u32, (&a0->f_4), 12)` matches); flattening such
+  accesses into the containing struct (`a0->f_10`) lost 51 matches, so the
+  lifter keeps a member's address as its own base. Accesses through a local's
+  address are flattened (`l.f_9`), which is neutral.
 - Function descriptors (OPD): 189 functions have several descriptors with
   different TOC bases; the right one is the base most of them give
   (`classgen.toc_bases`). lift.py's constant reader still takes the last.
