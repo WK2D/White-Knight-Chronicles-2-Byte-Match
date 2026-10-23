@@ -252,6 +252,7 @@ class Lifter:
         self.vr = {r: None for r in range(32)}   # AltiVec registers
         self.vargs = {}                   # vector parameters (v2, v3, ...)
         self.vfresh = set()               # vector registers written since the last call
+        self.vsaves = set()               # frame offsets (as text) of saved vector registers
         self.stmts, self.calls, self.globals = [], {}, {}
         self.fresh = set()
         self.cr = {}                      # condition field -> (lhs, rhs, 'signed'|'unsigned'|'pointer')
@@ -358,6 +359,9 @@ class Lifter:
     def vector_op(self, w):
         vd, va, vb, vc = (w >> 21) & 31, (w >> 16) & 31, (w >> 11) & 31, (w >> 6) & 31
         x11, x6 = w & 0x7FF, w & 0x3F
+        if (x11 == 1156 and va == vb) or (x6 == 44 and va == vb and vc & 15 == 0):   # vor/vsldoi: a copy
+            self.vset(vd, self.vreg(va))
+            return
         if x11 == 1220 and va == vb:                               # vxor v,v,v: zero
             self.vset(vd, Value('(vector float){0, 0, 0, 0}', 'vec'))
             return
@@ -1304,6 +1308,12 @@ class Lifter:
         if op == 4:
             self.vector_op(w)
             return
+        if op == 31 and (w >> 1) & 0x3FF in (103, 359) and rt >= 20 and ra == 1                 and getattr(self.reg(rb), 'text', '') in self.vsaves:     # restoring a callee-saved register
+            self.vr[rt] = None
+            return
+        if op == 31 and (w >> 1) & 0x3FF in (231, 487) and rt >= 20 and ra == 1 and self.vr[rt] is None:
+            self.vsaves.add(self.reg(rb).text)                       # saving a callee-saved register
+            return
         if op == 31 and (w >> 1) & 0x3FF in (103, 359):                # lvx / lvxl
             base, off = self.vector_address(ra, rb)
             self.vset(rt, self.field('vec', base, off))
@@ -1513,6 +1523,11 @@ class Lifter:
     def call(self, target, local=False):
         nargs, nfargs, complete = self.arity(target)
         args = self.gather_args(3, nargs, complete)
+        k = 2
+        while k in self.vfresh:                                      # vector arguments: v2, v3, ...
+            args.append(self.vr[k])
+            k += 1
+        self.vfresh = set()
         info = {'used': False, 'type': 'int', 'target': target, 'args': args, 'temp': f't{len(self.calls)}',
                 'local': local}
         self.calls[len(self.calls)] = info
@@ -1522,8 +1537,6 @@ class Lifter:
                 self.gpr[r] = None
         for r in range(0, 14):
             self.fpr[r] = None
-        if self.vfresh & set(range(2, 14)):
-            raise Fail('vector call arguments')
         for r in range(0, 20):
             self.vr[r] = None
         self.vfresh = set()
