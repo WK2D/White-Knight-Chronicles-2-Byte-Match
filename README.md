@@ -40,7 +40,7 @@ more native with every green square.
 - **Compiler flags:** `-O2`. Loops written as natural C (array indexing,
   `for (int i = 0; ...)`) match byte for byte with it. Files that need other
   flags are listed in [`config/flags.txt`](config/flags.txt).
-- **Code:** 52,279 functions in 16.5 MB of PowerPC code (not counting 2,885 linker stubs). **15,784 match**
+- **Code:** 52,279 functions in 16.5 MB of PowerPC code (not counting 2,885 linker stubs). **15,799 match**
   (3.06% of the code): six by hand, the rest small functions written by
   [`tools/gen_simple.py`](tools/gen_simple.py) from their instruction shape
   (empty bodies, constant returns, field getters and setters, global loads,
@@ -98,6 +98,7 @@ register and every instruction, has to be identical.
 | `src/gen/` | Generated small functions, one file per unit |
 | `src/lift/` | Functions lifted to C from the machine code, one file per unit |
 | `src/perm/` | Lifted functions that match once their statements are reordered |
+| `src/cls/` | Constructors written as C++ classes (`tools/classgen.py`) |
 | [`HANDOFF.md`](HANDOFF.md) | State, workflow and pitfalls for whoever picks this up next |
 | `orig/` | Your own game files (never committed) |
 

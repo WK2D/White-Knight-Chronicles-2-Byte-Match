@@ -1795,6 +1795,7 @@ class Lifter:
 
 
 WHY = None   # set to a Counter by --why: failure reasons
+LAST = None  # the Lifter of the last successful lift()
 
 
 def drop_loop_guards(stmts):
@@ -1882,6 +1883,8 @@ def lift(address, words, arity):
         second = Lifter(address, words, arity, preset, layouts, poly=first.polymorphic).run()
         if not second.stmts and not second.args:
             return None
+        global LAST
+        LAST = second                          # for tools that need more than the source
         return second.render()
     except RecursionError:
         return None
@@ -2035,6 +2038,10 @@ def main():
                 m = re.match(r'\S.*?\bfn_([0-9a-f]{8})\(', line)
                 if m and not line.rstrip().endswith(');'):
                     elsewhere.add(int(m.group(1), 16))
+    for extra in ('symbols_cls.txt',):                           # functions matched as C++ classes
+        path = ROOT / 'config' / extra
+        if path.exists():
+            elsewhere |= {int(l.split()[0], 16) for l in path.read_text().splitlines() if l and not l.startswith('#')}
     elsewhere |= {int(l.split()[0], 16) for l in (ROOT / 'config' / 'symbols_gen.txt').read_text().splitlines()
                   if l and not l.startswith('#')}
     elsewhere |= {int(l.split()[0], 16) for l in (ROOT / 'config' / 'symbols.txt').read_text().splitlines()

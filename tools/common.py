@@ -57,9 +57,10 @@ def load_units():
 def load_symbols():
     """{object symbol: address}: which compiled function stands for which
     original. config/symbols.txt is written by hand, symbols_gen.txt by
-    tools/gen_simple.py."""
+    tools/gen_simple.py, symbols_cls.txt by tools/classgen.py."""
     out = {}
-    for path in (ROOT / 'config' / 'symbols.txt', ROOT / 'config' / 'symbols_gen.txt'):
+    for path in (ROOT / 'config' / 'symbols.txt', ROOT / 'config' / 'symbols_gen.txt',
+                 ROOT / 'config' / 'symbols_cls.txt'):
         if not path.exists():
             continue
         for line in path.read_text().splitlines():

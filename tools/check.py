@@ -145,7 +145,7 @@ def main():
             elif name in symbols:
                 address = symbols[name]
             else:
-                if 'src/gen/' not in src.relative_to(ROOT).as_posix():   # generated files carry extra
+                if not src.relative_to(ROOT).as_posix().startswith(('src/gen/', 'src/cls/')):   # generated files carry extra
                     problems.append(f'{src.relative_to(ROOT)}: {name} is not in config/symbols.txt')
                 continue                  # compiler-made variants (D0/D2 destructors)
             if address not in functions:
