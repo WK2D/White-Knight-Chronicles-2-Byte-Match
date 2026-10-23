@@ -24,7 +24,7 @@ alternative to the static-recompilation port at
   `-O2` and not with `-fno-ivopts`. The project used `-O2 -fno-ivopts` before
   2026-10-22; only `src/game/CPostEffectManager.cpp` keeps that, as an
   override, until a natural `-O2` form of `fn_004b32e8` is found.
-- Matched: **15,999 of 51,438 functions** (3.17% of code). Six are by hand
+- Matched: **16,006 of 51,438 functions** (3.18% of code). Six are by hand
   (`src/game/*.cpp`); the rest are generated: `tools/gen_simple.py`
   (`src/gen/`, small shapes), `tools/lift.py` (`src/lift/`, the lifter),
   `tools/permute.py` (`src/perm/`, lifter output in another statement order)
@@ -397,6 +397,8 @@ counts over all functions up to 384 instructions):
   `char l[N]` accessed by offset.
 - `drop_dead_vars` tokenizes each line once (it was quadratic and took over
   10 minutes on large functions).
+- Joins keep the comparisons every path made the same way (GCC reuses a
+  condition field across a join); `merge()` takes any number of paths.
 - Calls through function pointers: `lwz r0,0(rX); std r2,40(r1); mtctr r0;
   lwz r2,4(rX); bctrl` with rX not a vtable slot is `((T (*)(...))(x))(...)`
   (rX points to the callee's descriptor). Weak-symbol tests (`if (&f)`) are

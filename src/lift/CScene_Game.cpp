@@ -120,6 +120,56 @@ u32 fn_0031832c(unk_0031832c_a0* a0, unk_0031832c_a1* a1, unk_0031832c_a2* a2) {
     return (u32)(a0->f_a0);
 }
 
+struct unk_00318358_a0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual void vf5();
+    virtual void vf6();
+    virtual void vf7();
+    virtual void vf8();
+    virtual void vf9();
+    virtual void vf10();
+    virtual void vf11();
+    virtual void vf12();
+    virtual void vf13();
+    virtual void vf14();
+    virtual void vf15();
+    virtual void vf16();
+    virtual void vf17();
+    virtual void vf18();
+    virtual void vf19();
+    virtual void vf20();
+    virtual void vf21();
+    virtual void vf22();
+    virtual void vf23();
+    virtual void vf24();
+    virtual int vf25(void*, void*, int);
+    char pad_4[156];
+    u32 f_a0;
+    char pad_a4[16];
+    u32 f_b4;
+    char pad_b8[4];
+    u8 f_bc;
+};
+struct unk_00318358_a2 {
+    u8 f_0;
+};
+u32 fn_00318358(unk_00318358_a0* a0, void* a1, unk_00318358_a2* a2) {
+    int t0;
+    t0 = a0->vf25((void*)((&a0->f_b4)), (void*)((&a0->f_bc)), (int)(0));
+    a0->f_a0 = (u32)(t0);
+    if ((int)(a1) != (int)(0)) {
+        FIELD(u32, a1, 0) = (u32)(a0->f_b4);
+    }
+    if ((int)(a2) != (int)(0)) {
+        a2->f_0 = (u8)(a0->f_bc);
+    }
+    return (u32)(a0->f_a0);
+}
+
 struct unk_00318454_a0 {
     virtual void vf0();
     virtual void vf1();

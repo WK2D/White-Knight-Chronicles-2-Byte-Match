@@ -12,6 +12,38 @@ int fn_000f955c(int a0) {
     return (int)((int)((u32)(((int)((u32)((int)(t0) >> 31) ^ (u32)(t0)) - (int)((int)(t0) >> 31)) + -1) >> 31));
 }
 
+int fn_000f9e28(int a0, int a1) {
+    u32 v1;
+    int v3;
+    if ((int)(a0) > (int)(0)) {
+        v1 = (u32)((u32)(1) << (int)((u32)(a0 + -1) & 0xf));
+    } else {
+        v1 = (u32)(65535);
+    }
+    if ((int)(a1) > (int)(0)) {
+        v3 = (int)((u32)(65536) << (int)((u32)(a1 + -1) & 0xf));
+    } else {
+        v3 = (int)(-65536);
+    }
+    return (int)((int)((u32)(v1) | (u32)(v3)));
+}
+
+int fn_000f9edc(int a0, int a1) {
+    int v1;
+    int v3;
+    if ((int)(a0) > (int)(0)) {
+        v1 = (int)((u32)(1) << (int)((u32)(a0 + -1) & 0xf));
+    } else {
+        v1 = (int)(0);
+    }
+    if ((int)(a1) > (int)(0)) {
+        v3 = (int)((u32)(65536) << (int)((u32)(a1 + -1) & 0xf));
+    } else {
+        v3 = (int)(0);
+    }
+    return (int)((int)((u32)(v1) | (u32)(v3)));
+}
+
 int fn_000fa3c8(int a0) {
     int t0;
     t0 = stub_000f9408((int)(a0), (int)(30));

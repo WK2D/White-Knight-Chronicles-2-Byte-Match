@@ -773,28 +773,30 @@ class Lifter:
         if len(live) == 1:
             self.restore(live[0][0])
             return
-        (a, sa), (b, sb) = live[0], live[1]
+        a = live[0][0]
         merged = dict(a[0])
-        fresh = a[2] | b[2]
+        fresh = set().union(*(st[2] for st, _ in live))
         for r in range(32):
-            va, vb = a[0].get(r), b[0].get(r)
-            if va is vb:
+            values = [st[0].get(r) for st, _ in live]
+            if all(v is values[0] for v in values):
                 continue
-            if va is None or vb is None or r in (1, 2):
+            if any(v is None for v in values) or r in (1, 2):
                 merged[r] = None
                 continue
-            ta, tb = CTYPES.get(va.ctype, 'int'), CTYPES.get(vb.ctype, 'int')
-            ctype = va.ctype if ta == tb else 'int'
+            types = {CTYPES.get(v.ctype, 'int') for v in values}
+            ctype = values[0].ctype if len(types) == 1 else 'int'
             name = f'v{len(self.vars)}'
             vtype = CTYPES.get(ctype, 'int')
             self.vars.append((vtype, name))
-            for v in (va, vb):
+            for (_, stmts), v in zip(live, values):
                 if v.call is not None:
                     v.call['used'] = True
-            sa.append(f'{name} = ({vtype})({va.text});')
-            sb.append(f'{name} = ({vtype})({vb.text});')
+                stmts.append(f'{name} = ({vtype})({v.text});')
             merged[r] = Value(name, ctype)
-        self.gpr, self.fpr, self.fresh, self.cr, self.ended = merged, dict(a[1]), fresh, {}, False
+        # A comparison every path made the same way still holds after the join
+        # (GCC reuses a condition field across it).
+        cr = {f: c for f, c in a[3].items() if all(st[3].get(f) == c for st, _ in live[1:])}
+        self.gpr, self.fpr, self.fresh, self.cr, self.ended = merged, dict(a[1]), fresh, cr, False
 
     def written_in(self, start, end):
         """Registers the instructions in [start, end) write (a call writes r0, r3-r12)."""

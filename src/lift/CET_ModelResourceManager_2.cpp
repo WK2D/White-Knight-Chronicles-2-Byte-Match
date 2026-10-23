@@ -91,4 +91,29 @@ int fn_00914844(void) {
     return (int)(1);
 }
 
+struct unk_00914b00_gm4ce0;
+struct unk_00914b00_gm4ce0 {
+    char pad_0[16];
+    u32 f_10;
+};
+struct unk_00914b00_a0 {
+    char pad_0[72];
+    u32 f_48;
+};
+extern unk_00914b00_gm4ce0 g_00914b00_0;
+int fn_00914b00(unk_00914b00_a0* a0, int a1, int a2) {
+    int v0;
+    if ((int)((u32)(a1) & 0xf) != (int)(0)) {
+        v0 = (int)(((u32)(a1) & 0xfffffff0) + 16);
+    } else {
+        v0 = (int)(a1);
+    }
+    (&g_00914b00_0)->f_10 = (u32)((int)(v0) + (int)((&g_00914b00_0)->f_10));
+    if ((int)(a2) == (int)(0)) {
+        return (int)(1);
+    }
+    a0->f_48 = (u32)((int)(v0) + (int)(a0->f_48));
+    return (int)(1);
+}
+
 }
