@@ -4,10 +4,12 @@
 
 extern "C" {
 
+void fn_00b3b128_2(u32, int, int);
 void fn_00b3b128(u32, void*, int);
 void fn_00b3b208(u32, float);
 void fn_00b3b218(u32, int, int);
 void fn_00b3b228(u32, int);
+void fn_00b3b258(u32, int);
 void fn_00b3b268(u32, int);
 
 struct unk_002730f0_a0 {
@@ -33,6 +35,15 @@ int fn_002730f0(unk_002730f0_a0* a0, unk_002730f0_a1* a1) {
     fn_00b3b208((u32)(a1->f_0), (float)(a0->f_8));
     fn_00b3b218((u32)(a1->f_0), (int)(-3), (int)(0));
     return (int)(1);
+}
+
+struct unk_002735d0_a0 {
+    u32 f_0;
+};
+void fn_002735d0(unk_002735d0_a0* a0, int a1, int a2, int a3) {
+    fn_00b3b128_2((u32)(a0->f_0), (int)(a1), (int)(-1));
+    fn_00b3b258((u32)(a0->f_0), (int)(a2));
+    fn_00b3b218((u32)(a0->f_0), (int)(a3), (int)(0));
 }
 
 struct unk_00273780_a0 {

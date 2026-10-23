@@ -4,6 +4,7 @@
 
 extern "C" {
 
+static int __attribute__((noinline)) stub_009394ac_2(int p0, int p1, u32 p2, void* p3) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); return r; }
 static int __attribute__((noinline)) stub_009394ac(int p0, int p1, int p2, void* p3) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); return r; }
 
 struct unk_0093a144_l;
@@ -21,6 +22,78 @@ int fn_0093a144(int a0, int a1, unk_0093a144_a2* a2) {
     t0 = stub_009394ac((int)(a0), (int)(a1), (int)(2048), (void*)((&l)));
     if ((int)((u32)(t0) & 0xff) != (int)(0)) {
         a2->f_0 = (u32)(FIELD(u32, l.f_0, 4));
+        v0 = (int)(0);
+    } else {
+        v0 = (int)(-1);
+    }
+    return (int)(v0);
+}
+
+struct unk_0093a1a4_l;
+struct unk_0093a1a4_l {
+    u32 f_0;
+};
+struct unk_0093a1a4_a2 {
+    u32 f_0;
+};
+struct unk_0093a1a4_a3 {
+    u32 f_0;
+};
+int fn_0093a1a4(int a0, int a1, unk_0093a1a4_a2* a2, unk_0093a1a4_a3* a3) {
+    int t0;
+    unk_0093a1a4_l l;
+    int v1;
+    l.f_0 = (u32)(0);
+    t0 = stub_009394ac_2((int)(a0), (int)(a1), (u32)(167772288), (void*)((&l)));
+    if ((int)((u32)(t0) & 0xff) != (int)(0)) {
+        a2->f_0 = (u32)(FIELD(u32, l.f_0, 4) + 40);
+        if ((int)(a3) != (int)(0)) {
+            a3->f_0 = (u32)(FIELD(u32, FIELD(u32, l.f_0, 4), 36));
+        }
+        v1 = (int)(0);
+    } else {
+        v1 = (int)(-1);
+    }
+    return (int)(v1);
+}
+
+struct unk_0093a22c_l;
+struct unk_0093a22c_l {
+    u32 f_0;
+};
+struct unk_0093a22c_a2 {
+    u32 f_0;
+};
+int fn_0093a22c(int a0, int a1, unk_0093a22c_a2* a2) {
+    int t0;
+    unk_0093a22c_l l;
+    int v0;
+    l.f_0 = (u32)(0);
+    t0 = stub_009394ac_2((int)(a0), (int)(a1), (u32)(134221824), (void*)((&l)));
+    if ((int)((u32)(t0) & 0xff) != (int)(0)) {
+        a2->f_0 = (u32)(FIELD(u32, l.f_0, 4));
+        v0 = (int)(0);
+    } else {
+        v0 = (int)(-1);
+    }
+    return (int)(v0);
+}
+
+struct unk_0093a290_l;
+struct unk_0093a290_l {
+    u32 f_0;
+};
+struct unk_0093a290_a2 {
+    u32 f_0;
+};
+int fn_0093a290(int a0, int a1, unk_0093a290_a2* a2) {
+    int t0;
+    unk_0093a290_l l;
+    int v0;
+    l.f_0 = (u32)(0);
+    t0 = stub_009394ac_2((int)(a0), (int)(a1), (u32)(134217744), (void*)((&l)));
+    if ((int)((u32)(t0) & 0xff) != (int)(0)) {
+        a2->f_0 = (u32)(FIELD(u32, l.f_0, 4) + 28);
         v0 = (int)(0);
     } else {
         v0 = (int)(-1);

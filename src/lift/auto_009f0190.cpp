@@ -4,6 +4,7 @@
 
 extern "C" {
 
+static void* __attribute__((noinline)) stub_009f07f4_2(int p0, void* p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static void* __attribute__((noinline)) stub_009f07f4(int p0, int p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 
 struct unk_009f0190_gm2e84;
@@ -104,6 +105,58 @@ void* fn_009f08b0(int a0) {
     t0 = stub_009f07f4((int)(a0), (int)(0));
     if ((int)(t0) != (int)(0)) {
         v0 = (int)(FIELD(u32, t0, 24));
+    } else {
+        v0 = (int)(0);
+    }
+    return (void*)(v0);
+}
+
+extern char g_009f08e8_0[];
+int fn_009f08e8(int a0) {
+    void* t0;
+    int v0;
+    t0 = stub_009f07f4_2((int)(a0), (void*)(g_009f08e8_0));
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)(FIELD(u32, t0, 36));
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
+extern char g_009f0920_0[];
+int fn_009f0920(int a0) {
+    void* t0;
+    int v0;
+    t0 = stub_009f07f4_2((int)(a0), (void*)(g_009f0920_0));
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)(FIELD(u32, t0, 28));
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
+extern char g_009f0958_0[];
+int fn_009f0958(int a0) {
+    void* t0;
+    int v0;
+    t0 = stub_009f07f4_2((int)(a0), (void*)(g_009f0958_0));
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)(FIELD(u32, t0, 28));
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
+extern char g_009f0990_0[];
+void* fn_009f0990(int a0) {
+    void* t0;
+    int v0;
+    t0 = stub_009f07f4_2((int)(a0), (void*)(g_009f0990_0));
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)(FIELD(u32, t0, 16));
     } else {
         v0 = (int)(0);
     }

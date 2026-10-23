@@ -9,6 +9,7 @@ void fn_00a051f8(int);
 int fn_00a056c4(void*);
 int fn_00a06724(int);
 void fn_00a06c20(int);
+void fn_00a072e8_2(int, int, int, int);
 void fn_00a072e8(int, int, void*, int);
 void fn_00a0749c(int, void*, int, int, int, int, int);
 void fn_00a19cd0(int);
@@ -63,6 +64,10 @@ void fn_009fdaf4(int a0, int a1, int a2) {
     unk_009fdaf4_l l;
     l.f_0 = (u32)(a2);
     fn_00a072e8((int)(a0), (int)(a1), (void*)((&l)), (int)(1));
+}
+
+void fn_009fdb24(int a0, int a1) {
+    fn_00a072e8_2((int)(a0), (int)(a1), (int)(0), (int)(0));
 }
 
 int fn_009fdb50(int a0, void* a1, int a2, int a3, void* a4, int a5) {

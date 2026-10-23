@@ -4,9 +4,18 @@
 
 extern "C" {
 
+static void __attribute__((noinline)) stub_0027bdec(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
+static void __attribute__((noinline)) stub_0027be04(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
+static void __attribute__((noinline)) stub_0027bffc(u32 p0) { __asm__ volatile ("" : : "r"(p0)); }
+static int __attribute__((noinline)) stub_0027c018(u32 p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static void __attribute__((noinline)) stub_0027c060(u32 p0) { __asm__ volatile ("" : : "r"(p0)); }
+static int __attribute__((noinline)) stub_0027c078(u32 p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static void* __attribute__((noinline)) stub_0027e70c_2(void* p0) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static void __attribute__((noinline)) stub_0027e70c(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
 void fn_00b3b188(void*, int);
 int fn_00b3b198(void*);
+int fn_00b3b1d8(void*, u8);
+int fn_00b3b1f8(void*);
 
 int fn_0028028c(int a0) {
     int t2;
@@ -15,6 +24,29 @@ int fn_0028028c(int a0) {
     stub_0027e70c((void*)((&l)));
     t2 = fn_00b3b198((void*)((&l)));
     return (int)(t2);
+}
+
+int fn_002802e0(int a0) {
+    void* t1;
+    int t2;
+    int t3;
+    char l[8] __attribute__((aligned(8)));
+    fn_00b3b188((void*)((&l)), (int)(a0));
+    t1 = stub_0027e70c_2((void*)((&l)));
+    t2 = stub_0027c018((u32)(FIELD(u32, t1, 4208)));
+    t3 = fn_00b3b1d8((void*)((&l)), (u8)((u8)t2));
+    return (int)(t3);
+}
+
+int fn_00280340(int a0) {
+    void* t1;
+    int t3;
+    char l[8] __attribute__((aligned(8)));
+    fn_00b3b188((void*)((&l)), (int)(a0));
+    t1 = stub_0027e70c_2((void*)((&l)));
+    stub_0027bffc((u32)(FIELD(u32, t1, 4208)));
+    t3 = fn_00b3b198((void*)((&l)));
+    return (int)(t3);
 }
 
 int fn_0028039c(int a0) {
@@ -26,6 +58,29 @@ int fn_0028039c(int a0) {
     return (int)(t2);
 }
 
+int fn_002803f0(int a0) {
+    void* t1;
+    int t2;
+    int t3;
+    char l[8] __attribute__((aligned(8)));
+    fn_00b3b188((void*)((&l)), (int)(a0));
+    t1 = stub_0027e70c_2((void*)((&l)));
+    t2 = stub_0027c078((u32)(FIELD(u32, t1, 4212)));
+    t3 = fn_00b3b1d8((void*)((&l)), (u8)((u8)t2));
+    return (int)(t3);
+}
+
+int fn_00280450(int a0) {
+    void* t1;
+    int t3;
+    char l[8] __attribute__((aligned(8)));
+    fn_00b3b188((void*)((&l)), (int)(a0));
+    t1 = stub_0027e70c_2((void*)((&l)));
+    stub_0027c060((u32)(FIELD(u32, t1, 4212)));
+    t3 = fn_00b3b198((void*)((&l)));
+    return (int)(t3);
+}
+
 int fn_002804ac(int a0) {
     int t2;
     char l[8] __attribute__((aligned(8)));
@@ -33,6 +88,61 @@ int fn_002804ac(int a0) {
     stub_0027e70c((void*)((&l)));
     t2 = fn_00b3b198((void*)((&l)));
     return (int)(t2);
+}
+
+int fn_00280500(int a0) {
+    void* t1;
+    int t2;
+    int t3;
+    char l[8] __attribute__((aligned(8)));
+    fn_00b3b188((void*)((&l)), (int)(a0));
+    t1 = stub_0027e70c_2((void*)((&l)));
+    t2 = stub_0027c078((u32)(FIELD(u32, t1, 4212)));
+    t3 = fn_00b3b1d8((void*)((&l)), (u8)((u8)t2));
+    return (int)(t3);
+}
+
+int fn_00280560(int a0) {
+    void* t1;
+    int t3;
+    char l[8] __attribute__((aligned(8)));
+    fn_00b3b188((void*)((&l)), (int)(a0));
+    t1 = stub_0027e70c_2((void*)((&l)));
+    stub_0027c060((u32)(FIELD(u32, t1, 4212)));
+    t3 = fn_00b3b198((void*)((&l)));
+    return (int)(t3);
+}
+
+int fn_002813b4(int a0) {
+    void* t1;
+    int t3;
+    int t4;
+    char l[8] __attribute__((aligned(8)));
+    fn_00b3b188((void*)((&l)), (int)(a0));
+    t1 = stub_0027e70c_2((void*)((&l)));
+    if ((int)(t1) != (int)(0)) {
+        stub_0027be04((void*)(t1));
+        t3 = fn_00b3b198((void*)((&l)));
+        return (int)(t3);
+    }
+    t4 = fn_00b3b1f8((void*)((&l)));
+    return (int)(t4);
+}
+
+int fn_00281440(int a0) {
+    void* t1;
+    int t3;
+    int t4;
+    char l[8] __attribute__((aligned(8)));
+    fn_00b3b188((void*)((&l)), (int)(a0));
+    t1 = stub_0027e70c_2((void*)((&l)));
+    if ((int)(t1) != (int)(0)) {
+        stub_0027bdec((void*)(t1));
+        t3 = fn_00b3b198((void*)((&l)));
+        return (int)(t3);
+    }
+    t4 = fn_00b3b1f8((void*)((&l)));
+    return (int)(t4);
 }
 
 }

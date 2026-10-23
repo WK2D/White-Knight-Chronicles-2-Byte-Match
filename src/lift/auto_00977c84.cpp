@@ -16,6 +16,7 @@ void fn_00939384(int);
 int fn_00939664(int, int);
 int fn_009397e0(int, int);
 int fn_00939c08(int, int, int);
+void fn_0093a290(void*, int, void*);
 int fn_0093a500(int, int);
 int fn_0093ab54(int, int, int);
 int fn_0093ad4c(int, int);
@@ -24,6 +25,7 @@ int fn_0093b1d4(int, int);
 int fn_0093b3f4(int, int);
 int fn_0093bba8(int, int);
 int fn_0093c484(int, int);
+void fn_0093d5a0_2(void*, int);
 void fn_0093d5a0(int, int);
 int fn_0093da60(int, int);
 int fn_0093f298(int, int);
@@ -126,6 +128,31 @@ int fn_009782ec(int a0) {
 int fn_00978318(int a0) {
     fn_0093d5a0((int)(a0), (int)(1));
     return (int)(1);
+}
+
+struct unk_00978344_l;
+struct unk_00978344_a0_8c;
+struct unk_00978344_l {
+    u32 f_0;
+};
+struct unk_00978344_a0_8c {
+    char pad_0[164];
+    u32 f_a4;
+};
+struct unk_00978344_a0 {
+    char pad_0[140];
+    unk_00978344_a0_8c* f_8c;
+};
+extern char g_00978344_0[];
+int fn_00978344(unk_00978344_a0* a0) {
+    int t2;
+    unk_00978344_l l;
+    fn_0093d5a0_2((void*)(a0), (int)(2));
+    fn_0093a290((void*)(a0), (int)(-1), (void*)((&l)));
+    if ((int)(a0->f_8c->f_a4) != (int)(0)) {
+        t2 = ((int (*)(void*, void*, u32))(a0->f_8c->f_a4))((void*)(a0), (void*)(g_00978344_0), (u32)(l.f_0));
+    }
+    return (int)(0);
 }
 
 int fn_009783c8(int a0) {

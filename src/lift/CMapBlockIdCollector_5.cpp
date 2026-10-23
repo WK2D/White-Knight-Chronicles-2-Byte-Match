@@ -7,6 +7,8 @@ extern "C" {
 void* fn_0003f9e0(void*);
 float fn_0003fa14(int);
 void* fn_0003faa8(void*);
+void fn_0003fab0(void*, int);
+int fn_00076a98_2(void*, void*, int, int, int, int);
 void* fn_00076a98(void*, void*, int, int, int, int);
 void* fn_002aa740(u32);
 void* fn_002b9720(void*);
@@ -126,6 +128,23 @@ int fn_003482fc(void* a0, int a1) {
         v0 = (int)(0);
     }
     return (int)(v0);
+}
+
+struct unk_00349994_a0 {
+    char pad_0[8];
+    u8 f_8;
+};
+extern char g_00349994_0[];
+int fn_00349994(unk_00349994_a0* a0, int a1) {
+    void* t0;
+    int t1;
+    if ((int)(a1) != (int)(2)) {
+        return (int)(0);
+    }
+    t0 = fn_0003faa8((void*)(a0));
+    t1 = fn_00076a98_2((void*)(g_00349994_0), (void*)(t0), (int)(0), (int)(-1), (int)(0), (int)(0));
+    fn_0003fab0((void*)((&a0->f_8)), (int)(t1));
+    return (int)(1);
 }
 
 struct unk_0034e5a4_gm1c38;

@@ -10,6 +10,7 @@ void fn_000c0398(int);
 void fn_00308994(void*);
 void fn_003089cc(void*);
 static void __attribute__((noinline)) stub_005b6448(int p0) { __asm__ volatile ("" : : "r"(p0)); }
+static void __attribute__((noinline)) stub_005b6714_2(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 static void __attribute__((noinline)) stub_005b6714(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
 
 struct unk_005b5b5c_g1aa8;
@@ -77,6 +78,10 @@ struct unk_005b67b0_a0 {
 int fn_005b67b0(unk_005b67b0_a0* a0) {
     stub_005b6714((void*)((&a0->f_490)));
     return (int)(1);
+}
+
+void fn_005b67dc(int a0) {
+    stub_005b6714_2((int)(a0));
 }
 
 void fn_005b67e0(int a0) {

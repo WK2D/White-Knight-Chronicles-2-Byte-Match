@@ -8,6 +8,8 @@ int fn_0039513c(void*, void*, int);
 void* fn_00395da4(void*, int);
 void fn_003db02c(void*, int, int, int);
 static int __attribute__((noinline)) stub_003ebe6c(int p0, int p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
+static int __attribute__((noinline)) stub_003edb48(int p0, int p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
+static int __attribute__((noinline)) stub_003ee764_2(int p0, int p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static int __attribute__((noinline)) stub_003ee764(void* p0, void* p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 
 struct unk_003ed5dc_gm11f8;
@@ -104,6 +106,17 @@ int fn_003ee888(unk_003ee888_a0* a0) {
     }
     t0 = stub_003ee764((void*)(a0), (void*)(a0->f_4->f_7c));
     return (int)(t0);
+}
+
+int fn_003ee9e0(int a0, int a1) {
+    int t0;
+    int t1;
+    t0 = stub_003edb48((int)(a0), (int)(a1));
+    if ((int)((u32)(t0) & 0xff) == (int)(0)) {
+        return (int)(0);
+    }
+    t1 = stub_003ee764_2((int)(a0), (int)(a1));
+    return (int)(t1);
 }
 
 }

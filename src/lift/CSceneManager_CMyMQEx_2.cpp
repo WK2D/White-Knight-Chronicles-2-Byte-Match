@@ -10,6 +10,7 @@ void fn_0001c77c(u32, int);
 void fn_0001d6f4(u32);
 void fn_0001d798(u32);
 void fn_0001f858(u32, int, int);
+void fn_000bf55c_2(void*, void*);
 void fn_000bf55c(void*, int);
 void fn_00164b54(u32);
 void fn_00222434(u32, int);
@@ -27,6 +28,20 @@ int fn_002edd08(void* a0, unk_002edd08_a1* a1) {
         return (int)(0);
     }
     fn_000bf55c((void*)(a0), (int)(104));
+    return (int)(0);
+}
+
+struct unk_002edea8_a1 {
+    char pad_0[4];
+    u32 f_4;
+};
+int fn_002edea8(void* a0, unk_002edea8_a1* a1) {
+    if ((int)(a1->f_4) != (int)(2)) {
+        if ((int)(a1->f_4) != (int)(4)) {
+            return (int)(0);
+        }
+    }
+    fn_000bf55c_2((void*)(a0), (void*)(a1->f_4));
     return (int)(0);
 }
 

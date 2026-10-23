@@ -8,8 +8,10 @@ static int __attribute__((noinline)) stub_0086d208(int p0, u16 p1) { int r; __as
 static int __attribute__((noinline)) stub_0086dbd4(int p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static void __attribute__((noinline)) stub_0086e920(void) { __asm__ volatile (""); }
 static void* __attribute__((noinline)) stub_0086eb14(int p0) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static void __attribute__((noinline)) stub_0086fd54_2(void* p0, void* p1, int p2, int p3, float p4) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4)); }
 static void __attribute__((noinline)) stub_0086fd54(void* p0, void* p1, u32 p2, int p3, float p4) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4)); }
 static int __attribute__((noinline)) stub_00870548(void* p0, void* p1, void* p2, int p3) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); return r; }
+static void __attribute__((noinline)) stub_00870954_2(void* p0, int p1, int p2, int p3) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); }
 static int __attribute__((noinline)) stub_00870954(void* p0, int p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 void fn_0087d8e8(u32);
 void fn_0088fd60(u32, int, int);
@@ -379,6 +381,14 @@ void fn_0086fe00(unk_0086fe00_a0* a0) {
     stub_0086fd54((void*)(a0), (void*)((&a0->f_158)), (u32)(a0->f_21b4), (int)(-150), (float)(1.0f));
 }
 
+struct unk_0086fe20_a0 {
+    char pad_0[344];
+    u8 f_158;
+};
+void fn_0086fe20(unk_0086fe20_a0* a0) {
+    stub_0086fd54_2((void*)(a0), (void*)((&a0->f_158)), (int)(12), (int)(1168), (float)(1.0f));
+}
+
 struct unk_008702f0_a0 {
     char pad_0[344];
     u8 f_158;
@@ -447,6 +457,20 @@ u8 fn_00870a0c(unk_00870a0c_a0* a0, int a1, int a2, int a3, int a4) {
     a0->f_13c->f_8c = (u8)(a4);
     t0 = stub_00870954((void*)(a0), (int)(10));
     return (u8)((u8)t0);
+}
+
+struct unk_00870a44_a0_138;
+struct unk_00870a44_a0_138 {
+    char pad_0[136];
+    u32 f_88;
+};
+struct unk_00870a44_a0 {
+    char pad_0[312];
+    unk_00870a44_a0_138* f_138;
+};
+void fn_00870a44(unk_00870a44_a0* a0) {
+    a0->f_138->f_88 = (u32)(0);
+    stub_00870954_2((void*)(a0), (int)(9), (int)(0), (int)(4));
 }
 
 struct unk_00870a64_a0_138;
@@ -581,6 +605,20 @@ u8 fn_00870bd8(unk_00870bd8_a0* a0, int a1) {
     a0->f_11c->f_88 = (u32)(a1);
     t0 = stub_00870954((void*)(a0), (int)(3));
     return (u8)((u8)t0);
+}
+
+struct unk_00870c0c_a0_118;
+struct unk_00870c0c_a0_118 {
+    char pad_0[312];
+    u32 f_138;
+};
+struct unk_00870c0c_a0 {
+    char pad_0[280];
+    unk_00870c0c_a0_118* f_118;
+};
+void fn_00870c0c(unk_00870c0c_a0* a0) {
+    a0->f_118->f_138 = (u32)(0);
+    stub_00870954_2((void*)(a0), (int)(2), (int)(0), (int)(4));
 }
 
 struct unk_00870c2c_a0_118;

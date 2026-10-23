@@ -4,6 +4,7 @@
 
 extern "C" {
 
+int fn_00c01c98_2(u32, u32, int, int);
 int fn_00c01c98(u32, u32, u32, int);
 void fn_00c93fa4(void);
 void fn_00c941a0(void);
@@ -29,8 +30,58 @@ void fn_00c91150(void) {
     fn_00c93fa4();
 }
 
+struct unk_00c91c78_tm6dc8;
+struct unk_00c91c78_tm6dc8 {
+    u32 f_0;
+};
+struct unk_00c91c78_a0 {
+    u32 f_0;
+    char pad_4[4];
+    u32 f_8;
+};
+__thread unk_00c91c78_tm6dc8 tls_00c91c78_0;
+void fn_00c91c78(unk_00c91c78_a0* a0) {
+    int t0;
+    if ((int)(a0->f_8) >= (int)(0)) {
+        t0 = fn_00c01c98_2((u32)((&tls_00c91c78_0)->f_0), (u32)(a0->f_0), (int)((int)((u32)(a0->f_8) << 3)), (int)(24));
+    }
+}
+
 void fn_00c91cc8(void) {
     fn_00c941a0();
+}
+
+struct unk_00c924d8_tm6dc8;
+struct unk_00c924d8_tm6dc8 {
+    u32 f_0;
+};
+struct unk_00c924d8_a0 {
+    u32 f_0;
+    char pad_4[4];
+    u32 f_8;
+};
+__thread unk_00c924d8_tm6dc8 tls_00c924d8_0;
+void fn_00c924d8(unk_00c924d8_a0* a0) {
+    int t0;
+    if ((int)(a0->f_8) >= (int)(0)) {
+        t0 = fn_00c01c98_2((u32)((&tls_00c924d8_0)->f_0), (u32)(a0->f_0), (int)((int)((u32)(a0->f_8) << 2)), (int)(24));
+    }
+}
+
+struct unk_00c92aec_tm6dc8;
+struct unk_00c92aec_tm6dc8 {
+    u32 f_0;
+};
+struct unk_00c92aec_a0 {
+    char pad_0[4];
+    u8 f_4;
+};
+__thread unk_00c92aec_tm6dc8 tls_00c92aec_0;
+void fn_00c92aec(unk_00c92aec_a0* a0) {
+    int t0;
+    if ((int)(FIELD(u32, (&a0->f_4), 8)) >= (int)(0)) {
+        t0 = fn_00c01c98_2((u32)((&tls_00c92aec_0)->f_0), (u32)(FIELD(u32, (&a0->f_4), 0)), (int)((int)((u32)(FIELD(u32, (&a0->f_4), 8)) << 3)), (int)(24));
+    }
 }
 
 void fn_00c92b3c(void) {

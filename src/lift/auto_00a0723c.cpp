@@ -4,6 +4,7 @@
 
 extern "C" {
 
+static int __attribute__((noinline)) stub_00a08b84_2(int p0, void* p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static void* __attribute__((noinline)) stub_00a08b84(int p0, void* p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static void __attribute__((noinline)) stub_00a09a44(int p0, int p1, int p2, void* p3) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); }
 void fn_00fcce90(void*);
@@ -111,6 +112,19 @@ int fn_00a09c60(int a0) {
         v0 = (int)(0);
     }
     return (int)(v0);
+}
+
+extern char g_00a0a6e4_0[];
+void* fn_00a0a6e4(int a0) {
+    int t0;
+    int v0;
+    t0 = stub_00a08b84_2((int)(a0), (void*)(g_00a0a6e4_0));
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)(t0 + 412);
+    } else {
+        v0 = (int)(0);
+    }
+    return (void*)(v0);
 }
 
 extern char g_00a0a71c_0[];

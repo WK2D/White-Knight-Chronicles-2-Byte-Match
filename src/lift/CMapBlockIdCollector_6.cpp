@@ -5,9 +5,15 @@
 extern "C" {
 
 void* fn_0003faa8(void*);
+void* fn_00076a98_2(void*, void*, int, int, int, int);
 void* fn_00076a98(void*, int, int, int, int, int);
 void* fn_002aa740(u32);
+void* fn_002b9720(void*);
+void* fn_002b9728(void*);
+int fn_002b9734(void*, void*);
+void fn_002b97f8(void*, u16);
 void fn_002b9888(void*, int);
+int fn_002ba5a0(u16, void*, void*);
 static void __attribute__((noinline)) stub_004cc7e0(void* p0, void* p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 static int __attribute__((noinline)) stub_004d5cd8(void* p0, void* p1, int p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
 static void __attribute__((noinline)) stub_004d67b4(void) { __asm__ volatile (""); }
@@ -64,6 +70,43 @@ void fn_004d6b60(void* a0, int a1) {
     void* t0;
     t0 = fn_00076a98((void*)(g_004d6b60_0), (int)(a1), (int)(0), (int)(-1), (int)(0), (int)(0));
     stub_004cc7e0((void*)(a0), (void*)(t0));
+}
+
+struct unk_004d85dc_g2d4;
+struct unk_004d85dc_g2d4_0;
+struct unk_004d85dc_g2d4 {
+    unk_004d85dc_g2d4_0* f_0;
+};
+struct unk_004d85dc_g2d4_0 {
+    char pad_0[8];
+    u32 f_8;
+};
+extern unk_004d85dc_g2d4 g_004d85dc_0;
+extern char g_004d85dc_1[];
+int fn_004d85dc(void* a0, int a1) {
+    void* t0;
+    void* t1;
+    void* t2;
+    void* t3;
+    void* t4;
+    int t5;
+    int t6;
+    if ((int)(a1) > (int)(0)) {
+        t0 = fn_0003faa8((void*)(a0));
+        t1 = fn_002aa740((u32)((&g_004d85dc_0)->f_0->f_8));
+        t2 = fn_002b9720((void*)(t1));
+        t3 = fn_002b9728((void*)(t1));
+        t4 = fn_00076a98_2((void*)(g_004d85dc_1), (void*)(t0), (int)(0), (int)(-1), (int)(0), (int)(0));
+        t5 = fn_002b9734((void*)(t4), (void*)(t3));
+        if ((int)((u32)(t5) & 0xffff) != (int)(65535)) {
+            t6 = fn_002ba5a0((u16)((u16)t5), (void*)(t2), (void*)(t3));
+            if ((int)((u32)(t6) & 0xffff) != (int)(65535)) {
+                fn_002b97f8((void*)(t1), (u16)((u16)t6));
+                return (int)(1);
+            }
+        }
+    }
+    return (int)(0);
 }
 
 }

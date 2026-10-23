@@ -4,6 +4,7 @@
 
 extern "C" {
 
+void fn_00b3d2f8_2(void*, int);
 void fn_00b3d2f8(int, int);
 int fn_00b3e1d8(int, int, int);
 int fn_00b3f378(int, int);
@@ -11,6 +12,7 @@ void* fn_00b3f818(int, int);
 void* fn_00b41a38(int, int);
 void* fn_00b42098(int, int);
 int fn_00c01c98(u32, u32, int, int);
+void* fn_00c021e0(u32, int, int);
 
 struct unk_00bf8d10_tm6dc8;
 struct unk_00bf8d10_tm6dc8 {
@@ -61,6 +63,20 @@ int fn_00bf9384(int a0, int a1) {
     int t0;
     t0 = fn_00b3f378((int)(a0), (int)(a1));
     return (int)(t0);
+}
+
+struct unk_00bf9d98_tm6dc8;
+struct unk_00bf9d98_tm6dc8 {
+    u32 f_0;
+};
+__thread unk_00bf9d98_tm6dc8 tls_00bf9d98_0;
+void* fn_00bf9d98(int a0, int a1, int a2) {
+    int t0;
+    void* t1;
+    t0 = fn_00b3e1d8((int)(a0), (int)(a1), (int)(a2));
+    t1 = fn_00c021e0((u32)((&tls_00bf9d98_0)->f_0), (int)(t0 + 1), (int)(23));
+    fn_00b3d2f8_2((void*)(t1), (int)(a0));
+    return (void*)(t1);
 }
 
 }

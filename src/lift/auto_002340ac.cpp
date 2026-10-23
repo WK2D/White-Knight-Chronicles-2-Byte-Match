@@ -4,6 +4,7 @@
 
 extern "C" {
 
+void fn_00b37fa8_2(int, int, int);
 void fn_00b37fa8(void*, int, int);
 int fn_00b5c638(void*);
 
@@ -43,6 +44,10 @@ struct unk_00234854_a0 {
 void fn_00234854(unk_00234854_a0* a0) {
     fn_00b37fa8((void*)(a0), (int)(0), (int)(72));
     a0->f_4 = 0.20000000298023224f;
+}
+
+void fn_00234894(int a0) {
+    fn_00b37fa8_2((int)(a0), (int)(0), (int)(72));
 }
 
 }

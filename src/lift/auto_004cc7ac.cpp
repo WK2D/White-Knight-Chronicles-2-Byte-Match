@@ -4,10 +4,17 @@
 
 extern "C" {
 
+void fn_0003f9e0_2(int);
+void fn_0003f9e0_3(void*);
 int fn_0003f9e0(int);
+float fn_0003fa14_2(void*);
 float fn_0003fa14(int);
+int fn_0003faa8_2(int);
 void fn_0003faa8(int);
+void fn_0003fab0_2(void*, int);
 void fn_0003fab0(int, int);
+int fn_000750f8(int);
+void fn_002ae398(u32, void*, int);
 static void* __attribute__((noinline)) stub_004cd54c(void) { void* r; __asm__ volatile ("" : "=r"(r)); return r; }
 
 struct unk_004cc7ac_g2d0;
@@ -62,6 +69,20 @@ int fn_004cd144(int a0) {
     int t0;
     t0 = fn_0003f9e0((int)(a0));
     (&g_004cd144_0)->f_8->f_8 = (u32)(t0);
+    return (int)(1);
+}
+
+int fn_004cd178(int a0) {
+    fn_0003f9e0_2((int)(a0));
+    return (int)(1);
+}
+
+struct unk_004cd258_a0 {
+    char pad_0[8];
+    u8 f_8;
+};
+int fn_004cd258(unk_004cd258_a0* a0) {
+    fn_0003f9e0_3((void*)((&a0->f_8)));
     return (int)(1);
 }
 
@@ -125,6 +146,17 @@ int fn_004cd424(int a0) {
     return (int)(1);
 }
 
+int fn_004cd44c(void* a0) {
+    int t0;
+    t0 = fn_000750f8((int)(6146));
+    if ((int)(t0) != (int)(2)) {
+        fn_0003fab0_2((void*)(a0), (int)(0));
+        return (int)(1);
+    }
+    fn_0003fab0_2((void*)(a0), (int)(1));
+    return (int)(1);
+}
+
 int fn_004cd868(int a0) {
     float t0;
     void* t1;
@@ -185,6 +217,40 @@ int fn_004cd9d0(int a0) {
     t0 = fn_0003fa14((int)(a0));
     t1 = stub_004cd54c();
     FIELD(float, t1, 0) = t0;
+    return (int)(1);
+}
+
+struct unk_004cdbe4_a0 {
+    char pad_0[8];
+    u8 f_8;
+};
+int fn_004cdbe4(unk_004cdbe4_a0* a0) {
+    float t0;
+    t0 = fn_0003fa14_2((void*)(a0));
+    fn_0003fab0_2((void*)((&a0->f_8)), (int)((int)(t0)));
+    return (int)(1);
+}
+
+struct unk_004cdd10_l;
+struct unk_004cdd10_g2d4;
+struct unk_004cdd10_g2d4_0;
+struct unk_004cdd10_l {
+    u32 f_0;
+};
+struct unk_004cdd10_g2d4 {
+    unk_004cdd10_g2d4_0* f_0;
+};
+struct unk_004cdd10_g2d4_0 {
+    char pad_0[8];
+    u32 f_8;
+};
+extern unk_004cdd10_g2d4 g_004cdd10_0;
+int fn_004cdd10(int a0) {
+    int t0;
+    unk_004cdd10_l l;
+    t0 = fn_0003faa8_2((int)(a0));
+    l.f_0 = (u32)(t0);
+    fn_002ae398((u32)((&g_004cdd10_0)->f_0->f_8), (void*)((&l)), (int)(1));
     return (int)(1);
 }
 

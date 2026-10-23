@@ -11,6 +11,7 @@ void* fn_00b42288(int, int);
 int fn_00fc8cac(void*);
 void* fn_00fcca90(int);
 void* fn_00fccab0(int, int);
+void* fn_00fccc10_2(void);
 void* fn_00fccc10(int);
 void fn_00fccd90(void*, int);
 void fn_00fccdb0(void*);
@@ -202,6 +203,12 @@ void* fn_00aee4bc(int a0, int a1) {
     void* t0;
     t0 = fn_00fccc10((int)(a1));
     return (void*)(t0);
+}
+
+u32 fn_00aee4e8(void) {
+    void* t0;
+    t0 = fn_00fccc10_2();
+    return (u32)(FIELD(u32, t0, 0));
 }
 
 void* fn_00aee820(int a0, int a1) {

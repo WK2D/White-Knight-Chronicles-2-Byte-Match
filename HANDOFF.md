@@ -24,7 +24,7 @@ alternative to the static-recompilation port at
   `-O2` and not with `-fno-ivopts`. The project used `-O2 -fno-ivopts` before
   2026-10-22; only `src/game/CPostEffectManager.cpp` keeps that, as an
   override, until a natural `-O2` form of `fn_004b32e8` is found.
-- Matched: **16,105 of 51,438 functions** (3.23% of code). Six are by hand
+- Matched: **16,382 of 51,438 functions** (3.36% of code). Six are by hand
   (`src/game/*.cpp`); the rest are generated: `tools/gen_simple.py`
   (`src/gen/`, small shapes), `tools/lift.py` (`src/lift/`, the lifter),
   `tools/permute.py` (`src/perm/`, lifter output in another statement order)
@@ -411,6 +411,11 @@ counts over all functions up to 384 instructions):
   is read).
 - Switch: when a case leaves the switch into the default's block, that block
   is the code after the switch (no default body).
+- A callee called with different argument counts (in one function, or by
+  two functions of one file) gets alias declarations `fn_X_2`, `fn_X_3`
+  (`callee_name`): the call target is a masked relocation, so the name does
+  not change the bytes. Call keys are the address, or (address, k) for an
+  alias (`callee_address`).
 - Calls through function pointers: `lwz r0,0(rX); std r2,40(r1); mtctr r0;
   lwz r2,4(rX); bctrl` with rX not a vtable slot is `((T (*)(...))(x))(...)`
   (rX points to the callee's descriptor). Weak-symbol tests (`if (&f)`) are

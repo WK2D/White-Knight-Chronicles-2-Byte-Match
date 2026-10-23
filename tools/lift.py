@@ -1934,19 +1934,26 @@ class Lifter:
                     types = [CTYPES.get(a.ctype, 'int') for a in st['args']]
                     rtype = st['type'] if st['used'] else 'void'
                     key = (rtype, types, st['local'])
-                    prev = callees.get(st['target'])
+                    name_key = st['target']
+                    prev = callees.get(name_key)
                     if prev is not None and prev != key:
                         # One declaration for both calls: the first one's parameter
                         # types (arguments are cast), and a return type if either uses it.
-                        if len(prev[1]) != len(types) or prev[2] != key[2] \
-                                or 'void' not in (prev[0], rtype) and prev[0] != rtype:
-                            raise Fail('one callee, two signatures')
-                        types = prev[1]
-                        rtype = prev[0] if rtype == 'void' else rtype
-                        key = (rtype, types, st['local'])
-                    callees[st['target']] = key
-                    prefix = 'stub' if st['local'] else 'fn'
-                    call = f'{prefix}_{st["target"]:08x}({", ".join(f"({t})({a.text})" for a, t in zip(st["args"], types))})'
+                        if len(prev[1]) == len(types) and prev[2] == key[2] \
+                                and ('void' in (prev[0], rtype) or prev[0] == rtype):
+                            types = prev[1]
+                            rtype = prev[0] if rtype == 'void' else rtype
+                            key = (rtype, types, st['local'])
+                        else:
+                            # Another argument count: a second declaration under an
+                            # alias. The call's target is a masked relocation, so the
+                            # name does not matter for the bytes.
+                            k = 2
+                            while callees.get((st['target'], k), key) != key:
+                                k += 1
+                            name_key = (st['target'], k)
+                    callees[name_key] = key
+                    call = f'{callee_name(name_key, st["local"])}({", ".join(f"({t})({a.text})" for a, t in zip(st["args"], types))})'
                     if st['used'] and rtype != st['type']:
                         call = f'({st["type"]})({call})'
                     out.append(pad + (f'{st["temp"]} = {call};' if st['used'] else f'{call};'))
@@ -2198,13 +2205,24 @@ def arity_finder(orig, functions):
     return arity
 
 
+def callee_name(key, local):
+    """fn_<address> (stub_ for a callee in the same file), with _<k> for the
+    k-th declaration of the same callee under another signature."""
+    target, k = (key, None) if isinstance(key, int) else key
+    return f'{"stub" if local else "fn"}_{target:08x}' + (f'_{k}' if k else '')
+
+
+def callee_address(key):
+    return key if isinstance(key, int) else key[0]
+
+
 def file_text(header, callees, keep):
     """A source file: header comment lines, callee declarations (static
     placeholder stubs for callees in the same file) and the functions."""
     text = header + ['#include "wkc2.h"', '', 'extern "C" {', '']
-    for target, (rtype, types, local) in sorted(callees.items()):
+    for target, (rtype, types, local) in sorted(callees.items(), key=lambda kv: (callee_address(kv[0]), str(kv[0]))):
         if not local:
-            text.append(f'{rtype} fn_{target:08x}({", ".join(types) if types else "void"});')
+            text.append(f'{rtype} {callee_name(target, False)}({", ".join(types) if types else "void"});')
             continue
         # A callee in the same source file: GCC calls static functions
         # without a TOC slot. Placeholder until it is decompiled;
@@ -2215,7 +2233,7 @@ def file_text(header, callees, keep):
             body = f'__asm__ volatile ("" : : {uses});' if types else '__asm__ volatile ("");'
         else:
             body = (f'{rtype} r; __asm__ volatile ("" : "=r"(r){" : " + uses if types else ""}); return r;')
-        text.append(f'static {rtype} __attribute__((noinline)) stub_{target:08x}({params}) {{ {body} }}')
+        text.append(f'static {rtype} __attribute__((noinline)) {callee_name(target, True)}({params}) {{ {body} }}')
     text.append('')
     for address, decls, code in keep:
         text += decls + [code, '']
@@ -2325,15 +2343,23 @@ def main():
         callers = defaultdict(set)
         for address, _, _, calls in items:
             for t in calls:
-                callers[t].add(address)
+                callers[callee_address(t)].add(address)
         lifted = {a for a, *_ in items}
         callees, keep, kept = {}, [], set()
-        leaves_first = sorted(items, key=lambda it: (any(t in lifted for t in it[3]), it[0]))
+        leaves_first = sorted(items, key=lambda it: (any(callee_address(t) in lifted for t in it[3]), it[0]))
         for address, decls, code, calls in leaves_first:
-            if any(t in kept for t in calls) or any(c in kept for c in callers[address]):
+            if any(callee_address(t) in kept for t in calls) or any(c in kept for c in callers[address]):
                 continue
-            if any(t in callees and callees[t] != c for t, c in calls.items()):
-                continue
+            # A callee another function of the file declares differently gets
+            # an alias declaration (its name is a masked relocation).
+            for t, c in list(calls.items()):
+                if t in callees and callees[t] != c:
+                    base, k = callee_address(t), 2
+                    while callees.get((base, k), c) != c or (base, k) in calls:
+                        k += 1
+                    code = re.sub(rf'\b{callee_name(t, c[2])}\(', f'{callee_name((base, k), c[2])}(', code)
+                    del calls[t]
+                    calls[(base, k)] = c
             callees.update(calls)
             keep.append((address, decls, code))
             kept.add(address)

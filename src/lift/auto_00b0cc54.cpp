@@ -4,9 +4,13 @@
 
 extern "C" {
 
+void fn_00b0c6ac_2(void*);
 void fn_00b0c6ac(int);
+void fn_00b0c728_2(void*);
 void fn_00b0c728(int);
 static void __attribute__((noinline)) stub_00b0cc54(void* p0, u16 p1, void* p2, void* p3, void* p4) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4)); }
+int fn_00b0e19c_2(void*, void*, void*, void*);
+int fn_00b0e19c_3(void*, void*, int, int);
 int fn_00b0e19c(void*, int, void*, void*);
 
 __thread char tls_00b0cf30_0[4];
@@ -28,6 +32,26 @@ int fn_00b0df38(int a0, void* a1, void* a2) {
     t1 = fn_00b0e19c((void*)(g_00b0df38_0), (int)(a0), (void*)(a1), (void*)(a2));
     fn_00b0c6ac((int)(a0));
     return (int)(t1);
+}
+
+extern char g_00b0e01c_0[];
+extern char g_00b0e01c_1[];
+int fn_00b0e01c(void* a0, void* a1) {
+    int t1;
+    fn_00b0c728_2((void*)(g_00b0e01c_0));
+    t1 = fn_00b0e19c_2((void*)(g_00b0e01c_1), (void*)(g_00b0e01c_0), (void*)(a0), (void*)(a1));
+    fn_00b0c6ac_2((void*)(g_00b0e01c_0));
+    return (int)(t1);
+}
+
+extern char g_00b0e104_0[];
+int fn_00b0e104(void* a0, int a1, int a2) {
+    int t0;
+    t0 = fn_00b0e19c_3((void*)(g_00b0e104_0), (void*)(a0), (int)(a1), (int)(a2));
+    if ((int)(t0) >= (int)(0)) {
+        FIELD(u8, (char*)a0 + (int)(t0), 0) = (u8)(0);
+    }
+    return (int)(t0);
 }
 
 }

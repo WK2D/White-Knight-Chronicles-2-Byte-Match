@@ -4,10 +4,30 @@
 
 extern "C" {
 
+static void __attribute__((noinline)) stub_004eb908_2(int p0, int p1, u8 p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
 static void __attribute__((noinline)) stub_004eb908(int p0, int p1, int p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
 
 void fn_004ebe34(int a0, int a1) {
     stub_004eb908((int)(a0), (int)(a1), (int)(1));
+}
+
+struct unk_004ebe3c_g2d4;
+struct unk_004ebe3c_g2d4_0;
+struct unk_004ebe3c_g2d4_0_2c;
+struct unk_004ebe3c_g2d4 {
+    unk_004ebe3c_g2d4_0* f_0;
+};
+struct unk_004ebe3c_g2d4_0 {
+    char pad_0[44];
+    unk_004ebe3c_g2d4_0_2c* f_2c;
+};
+struct unk_004ebe3c_g2d4_0_2c {
+    char pad_0[1492];
+    u8 f_5d4;
+};
+extern unk_004ebe3c_g2d4 g_004ebe3c_0;
+void fn_004ebe3c(int a0, int a1) {
+    stub_004eb908_2((int)(a0), (int)(a1), (u8)((&g_004ebe3c_0)->f_0->f_2c->f_5d4));
 }
 
 }

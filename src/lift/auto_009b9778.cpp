@@ -5,6 +5,7 @@
 extern "C" {
 
 void fn_009b66b4(int, void*);
+void* fn_009b9330_2(void*);
 void* fn_009b9330(void);
 void fn_009b9334(void*);
 int fn_00b3d088(void*, int, int);
@@ -29,6 +30,28 @@ void fn_009b97d4(void) {
 void* fn_009b9a90(void) {
     void* t0;
     t0 = fn_009b9330();
+    return (void*)(t0);
+}
+
+struct unk_009b9ab8_l;
+struct unk_009b9ab8_gm3b24;
+struct unk_009b9ab8_l {
+    u32 f_0;
+};
+struct unk_009b9ab8_gm3b24 {
+    char pad_0[416];
+    u32 f_1a0;
+    u32 f_1a4;
+};
+struct unk_009b9ab8_a0 {
+    u32 f_0;
+};
+extern unk_009b9ab8_gm3b24 g_009b9ab8_0;
+void* fn_009b9ab8(unk_009b9ab8_a0* a0) {
+    void* t0;
+    unk_009b9ab8_l l;
+    t0 = fn_009b9330_2((void*)((&l)));
+    a0->f_0 = (u32)((int)((int)(l.f_0) - (int)((&g_009b9ab8_0)->f_1a0)) + (int)((&g_009b9ab8_0)->f_1a4));
     return (void*)(t0);
 }
 

@@ -4,6 +4,7 @@
 
 extern "C" {
 
+int fn_00944994_2(void*, void*);
 void fn_00944994(void*, void*);
 
 extern char g_00953730_0[];
@@ -18,6 +19,21 @@ int fn_00953730(void* a0, void* a1, void* a2, void* a3, int a4) {
     }
     fn_00944994((void*)(a0), (void*)(g_00953730_0));
     return (int)(0);
+}
+
+extern char g_00953854_0[];
+int fn_00953854(void* a0, void* a1, int a2, int a3, int a4) {
+    int t0;
+    int t1;
+    int v0;
+    t0 = ((int (*)(int, int, int))(a1))((int)(a2), (int)(a3), (int)(a4));
+    if ((int)(a4) != (int)(t0)) {
+        t1 = fn_00944994_2((void*)(a0), (void*)(g_00953854_0));
+        v0 = (int)(0);
+    } else {
+        v0 = (int)(1);
+    }
+    return (int)(v0);
 }
 
 }
