@@ -18,7 +18,7 @@ static int __attribute__((noinline)) stub_002e164c(int p0, u32 p1) { int r; __as
 static void __attribute__((noinline)) stub_002e3974(int p0, int p1, int p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
 static int __attribute__((noinline)) stub_002ea45c(int p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static int __attribute__((noinline)) stub_002eb0d0(int p0, int p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
-static void __attribute__((noinline)) stub_002eb590(int p0, int p1, int p2, int p3, int p4, int p5) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4), "r"(p5)); }
+static void __attribute__((noinline)) stub_002eb4f8(int p0, int p1, int p2, int p3, int p4, int p5, int p6) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4), "r"(p5), "r"(p6)); }
 void fn_00b38978(u32, int, int);
 int fn_00b38eb8(void*, void*, void*, int);
 
@@ -415,12 +415,29 @@ int fn_002eb27c(int a0) {
     return (int)(v0);
 }
 
-void fn_002ec008(int a0, int a1, int a2, int a3, int a4) {
-    stub_002eb590((int)(a0), (int)(a1), (int)(a2), (int)(a3), (int)(a4), (int)(0));
-}
-
-void fn_002ec16c(int a0, int a1, int a2, int a3, int a4) {
-    stub_002eb590((int)(a0), (int)(a1), (int)(a2), (int)(a3), (int)(a4), (int)(0));
+void fn_002eb590(int a0, int a1, int a2, int a3, int a4, int a5) {
+    stub_002eb4f8((int)(a0), (int)(4106), (int)(4), (int)(a1), (int)(a2), (int)(a3), (int)(a4));
+    stub_002eb4f8((int)(a0), (int)(4115), (int)(5), (int)(a1), (int)(a2), (int)(a3), (int)(a4));
+    stub_002eb4f8((int)(a0), (int)(6160), (int)(6), (int)(a1), (int)(a2), (int)(a3), (int)(a4));
+    stub_002eb4f8((int)(a0), (int)(6147), (int)(7), (int)(a1), (int)(a2), (int)(a3), (int)(a4));
+    stub_002eb4f8((int)(a0), (int)(6184), (int)(9), (int)(a1), (int)(a2), (int)(a3), (int)(a4));
+    stub_002eb4f8((int)(a0), (int)(6196), (int)(11), (int)(a1), (int)(a2), (int)(a3), (int)(a4));
+    stub_002eb4f8((int)(a0), (int)(6209), (int)(12), (int)(a1), (int)(a2), (int)(a3), (int)(a4));
+    stub_002eb4f8((int)(a0), (int)(6226), (int)(20), (int)(a1), (int)(a2), (int)(a3), (int)(a4));
+    stub_002eb4f8((int)(a0), (int)(6230), (int)(21), (int)(a1), (int)(a2), (int)(a3), (int)(a4));
+    stub_002eb4f8((int)(a0), (int)(6233), (int)(19), (int)(a1), (int)(a2), (int)(a3), (int)(a4));
+    stub_002eb4f8((int)(a0), (int)(6202), (int)(22), (int)(a1), (int)(a2), (int)(a3), (int)(a4));
+    stub_002eb4f8((int)(a0), (int)(6172), (int)(24), (int)(a1), (int)(a2), (int)(a3), (int)(a4));
+    stub_002eb4f8((int)(a0), (int)(6242), (int)(25), (int)(a1), (int)(a2), (int)(a3), (int)(a4));
+    stub_002eb4f8((int)(a0), (int)(6223), (int)(27), (int)(a1), (int)(a2), (int)(a3), (int)(a4));
+    stub_002eb4f8((int)(a0), (int)(6255), (int)(21), (int)(a1), (int)(a2), (int)(a3), (int)(a4));
+    stub_002eb4f8((int)(a0), (int)(6270), (int)(31), (int)(a1), (int)(a2), (int)(a3), (int)(a4));
+    stub_002eb4f8((int)(a0), (int)(6306), (int)(42), (int)(a1), (int)(a2), (int)(a3), (int)(a4));
+    stub_002eb4f8((int)(a0), (int)(6309), (int)(43), (int)(a1), (int)(a2), (int)(a3), (int)(a4));
+    if ((int)(a5) == (int)(0)) {
+        return;
+    }
+    stub_002eb4f8((int)(a0), (int)(6177), (int)(15), (int)(a1), (int)(a2), (int)(a3), (int)(a4));
 }
 
 }

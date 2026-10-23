@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" font-family="Segoe UI, Helvetica, Arial, sans-serif">
 <rect width="960" height="540" fill="#0d1117"/>
-<text x="12" y="28" fill="#e6edf3" font-size="20" font-weight="600">White Knight Chronicles II: 3.085% of code matched</text>
+<text x="12" y="28" fill="#e6edf3" font-size="20" font-weight="600">White Knight Chronicles II: 3.094% of code matched</text>
 <text x="12" y="50" fill="#8b949e" font-size="13">15,830 of 51,438 functions compile to identical bytes · 4672 units · each square fills in as its functions match</text>
 <g><title>auto_00010240: 12.06% matched, 12.06% fuzzy, 1,028 bytes</title>
 <rect x="0.00" y="64.00" width="7.21" height="3.97" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
@@ -2114,9 +2114,9 @@
 <rect x="74.79" y="476.95" width="5.14" height="11.52" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
 <rect x="74.79" y="487.00" width="5.14" height="1.47" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
 </g>
-<g><title>auto_002df4f0: 3.65% matched, 3.65% fuzzy, 52,436 bytes</title>
+<g><title>auto_002df4f0: 5.04% matched, 5.04% fuzzy, 52,436 bytes</title>
 <rect x="79.93" y="454.58" width="43.00" height="33.90" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
-<rect x="79.93" y="487.24" width="43.00" height="1.24" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
+<rect x="79.93" y="486.76" width="43.00" height="1.71" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
 </g>
 <g><title>CSceneManager_CMyMQEx: 12.72% matched, 12.72% fuzzy, 4,404 bytes</title>
 <rect x="61.82" y="488.47" width="22.39" height="5.47" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
@@ -5653,9 +5653,9 @@
 <rect x="269.24" y="495.62" width="9.50" height="0.00" fill="#3b82f6" stroke="#0d1117" stroke-width="1"/>
 <rect x="269.24" y="495.62" width="9.50" height="0.42" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
 </g>
-<g><title>auto_00695320: 5.48% matched, 5.48% fuzzy, 12,560 bytes</title>
+<g><title>auto_00695320: 10.64% matched, 10.64% fuzzy, 12,560 bytes</title>
 <rect x="278.74" y="479.64" width="21.29" height="16.40" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
-<rect x="278.74" y="495.15" width="21.29" height="0.90" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
+<rect x="278.74" y="494.30" width="21.29" height="1.74" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
 </g>
 <g><title>auto_00698430: 2.09% matched, 2.09% fuzzy, 89,068 bytes</title>
 <rect x="240.39" y="496.04" width="56.33" height="43.96" fill="#30363d" stroke="#0d1117" stroke-width="1"/>

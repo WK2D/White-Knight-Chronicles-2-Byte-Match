@@ -35,7 +35,7 @@ STORES = {36: 'u32', 38: 'u8', 44: 'u16', 52: 'float', 54: 'double', 62: 'u64'}
 CTYPES = {'ptr': 'void*', 'addr': 'void*', 'gaddr': 'void*', 'u32': 'u32', 'u8': 'u8', 'u16': 'u16',
           's16': 's16', 'u64': 'u64', 'int': 'int', 'float': 'float', 'double': 'double', 'vec': 'vector float'}
 BLR, NOP, TOC_RESTORE = 0x4E800020, 0x60000000, 0xE8410028
-MAX_WORDS = 128
+MAX_WORDS = 384
 
 
 class Fail(Exception):

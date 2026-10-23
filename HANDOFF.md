@@ -49,7 +49,8 @@ alternative to the static-recompilation port at
     `src/gen/`.
   - Float constant returns read their value from the TOC entry (the TOC base
     comes from the OPD).
-- `tools/lift.py` lifts functions of up to 128 instructions: forward branches,
+- `tools/lift.py` lifts functions of up to 384 instructions (`MAX_WORDS`; 128
+  until 2026-10-23): forward branches,
   loops (`do`/`while`/`for (;;)` with break, continue and return inside), and
   virtual calls.
   `python tools/lift.py --why` counts why functions with loops fail to lift. It runs each one symbolically:

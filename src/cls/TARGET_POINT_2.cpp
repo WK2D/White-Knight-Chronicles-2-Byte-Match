@@ -4,26 +4,27 @@
 
 extern "C" {
 
-static void __attribute__((noinline)) stub_003089cc(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
 void fn_00fc88dc(void*);
 
+struct unk_00309a00_a0_m4 { unk_00309a00_a0_m4(); char pad[1]; };
+__attribute__((noinline)) unk_00309a00_a0_m4::unk_00309a00_a0_m4() { __asm__ volatile (""); }
 struct unk_00309a00_a0 {
     unk_00309a00_a0(void);
     virtual void vf0();
-    u8 f_4;
+    unk_00309a00_a0_m4 f_4;
 };
 unk_00309a00_a0::unk_00309a00_a0() {
-    stub_003089cc((void*)((&this->f_4)));
     fn_00fc88dc((void*)(this));
 }
 
+struct unk_00309a4c_a0_m4 { unk_00309a4c_a0_m4(); char pad[1]; };
+__attribute__((noinline)) unk_00309a4c_a0_m4::unk_00309a4c_a0_m4() { __asm__ volatile (""); }
 struct unk_00309a4c_a0 {
     unk_00309a4c_a0(void);
     virtual void vf0();
-    u8 f_4;
+    unk_00309a4c_a0_m4 f_4;
 };
 unk_00309a4c_a0::unk_00309a4c_a0() {
-    stub_003089cc((void*)((&this->f_4)));
 }
 
 }
