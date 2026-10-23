@@ -9,6 +9,49 @@ static int __attribute__((noinline)) stub_0048bad0(void* p0, void* p1, void* p2,
 static int __attribute__((noinline)) stub_0048bb6c(void* p0, void* p1, void* p2, void* p3, u8 p4) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4)); return r; }
 static void __attribute__((noinline)) stub_0048bbf8(void* p0, int p1, u32 p2, u32 p3) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); }
 
+struct unk_0048b90c_a0 {
+    char pad_0[8];
+    u32 f_8;
+    char pad_c[12];
+    u32 f_18;
+    char pad_1c[12];
+    u32 f_28;
+    char pad_2c[12];
+    u32 f_38;
+    char pad_3c[12];
+    u32 f_48;
+    char pad_4c[12];
+    u32 f_58;
+    char pad_5c[4062];
+    u8 f_103a;
+};
+extern char g_0048b90c_0[];
+void* fn_0048b90c(unk_0048b90c_a0* a0) {
+    switch (a0->f_103a) {
+    case 1:
+        return (void*)(a0->f_8);
+        break;
+    case 6:
+        return (void*)(a0->f_58);
+        break;
+    case 5:
+        return (void*)(a0->f_38);
+        break;
+    case 4:
+        return (void*)(a0->f_18);
+        break;
+    case 3:
+        return (void*)(a0->f_48);
+        break;
+    case 2:
+        return (void*)(a0->f_28);
+        break;
+    default:
+        return (void*)(0);
+        break;
+    }
+}
+
 struct unk_0048bc94_a0 {
     char pad_0[424];
     u32 f_1a8;

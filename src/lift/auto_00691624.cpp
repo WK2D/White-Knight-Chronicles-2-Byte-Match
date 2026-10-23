@@ -74,6 +74,20 @@ int fn_00691a0c(unk_00691a0c_a0* a0) {
     return (int)((int)(signed char)(a0->f_2fe1));
 }
 
+struct unk_00691b10_g3f68;
+struct unk_00691b10_g3f68_0;
+struct unk_00691b10_g3f68 {
+    unk_00691b10_g3f68_0* f_0;
+};
+struct unk_00691b10_g3f68_0 {
+    char pad_0[4];
+    float f_4;
+};
+extern unk_00691b10_g3f68 g_00691b10_0;
+u16 fn_00691b10(void) {
+    return (u16)((u16)((&g_00691b10_0)->f_0->f_4));
+}
+
 struct unk_00691b34_a0 {
     char pad_0[13792];
     u16 f_35e0;

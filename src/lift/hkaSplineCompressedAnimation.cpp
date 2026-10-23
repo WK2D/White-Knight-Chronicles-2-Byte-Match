@@ -9,4 +9,12 @@ u8 fn_00ecec1c(int a0, int a1, int a2) {
     return (u8)((u8)((u32)((u32)((u32)(a1) << 2) | (u32)(a0)) | (u32)((u32)(a2) << 6)));
 }
 
+u8 fn_00ecec8c(float f0, float f1, float f2) {
+    return (u8)((u8)(((f2 - f0) / (f1 - f0)) * 255.0f));
+}
+
+u16 fn_00ececb4(float f0, float f1, float f2) {
+    return (u16)((u16)(((f2 - f0) / (f1 - f0)) * 65535.0f));
+}
+
 }

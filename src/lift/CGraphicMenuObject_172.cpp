@@ -5,12 +5,165 @@
 extern "C" {
 
 
+struct unk_007b5570_a0 {
+    char pad_0[9];
+    u8 f_9;
+};
+extern char g_007b5570_0[];
+int fn_007b5570(unk_007b5570_a0* a0) {
+    switch (a0->f_9) {
+    case 2:
+        return (int)(95);
+        break;
+    case 9:
+    case 11:
+        return (int)(18);
+        break;
+    case 7:
+    case 10:
+        return (int)(28);
+        break;
+    case 6:
+        return (int)(98);
+        break;
+    case 5:
+        return (int)(97);
+        break;
+    case 4:
+        return (int)(96);
+        break;
+    case 1:
+    case 3:
+        return (int)(16);
+        break;
+    default:
+        return (int)(13);
+        break;
+    }
+}
+
+struct unk_007b5698_a0 {
+    char pad_0[9];
+    u8 f_9;
+};
+extern char g_007b5698_0[];
+int fn_007b5698(unk_007b5698_a0* a0) {
+    switch (a0->f_9) {
+    case 1:
+    case 2:
+    case 3:
+        return (int)(2);
+        break;
+    case 4:
+        return (int)(11);
+        break;
+    case 5:
+        return (int)(8);
+        break;
+    case 18:
+    case 22:
+        return (int)(3);
+        break;
+    case 23:
+        return (int)(9);
+        break;
+    case 19:
+    case 26:
+        return (int)(7);
+        break;
+    case 34:
+        return (int)(88);
+        break;
+    case 49:
+        return (int)(90);
+        break;
+    case 53:
+        return (int)(91);
+        break;
+    case 56:
+        return (int)(93);
+        break;
+    default:
+        return (int)(1);
+        break;
+    }
+}
+
+struct unk_007b5908_a0 {
+    char pad_0[9];
+    u8 f_9;
+};
+extern char g_007b5908_0[];
+int fn_007b5908(unk_007b5908_a0* a0) {
+    switch (a0->f_9) {
+    case 6:
+        return (int)(26);
+        break;
+    case 45:
+        return (int)(113);
+        break;
+    case 44:
+        return (int)(112);
+        break;
+    case 43:
+        return (int)(111);
+        break;
+    case 12:
+        return (int)(122);
+        break;
+    case 2:
+    case 3:
+    case 4:
+    case 10:
+        return (int)(20);
+        break;
+    case 5:
+    case 8:
+        return (int)(103);
+        break;
+    default:
+        return (int)(25);
+        break;
+    }
+}
+
 struct unk_007b5a2c_a0 {
     char pad_0[9];
     u8 f_9;
 };
 int fn_007b5a2c(unk_007b5a2c_a0* a0) {
     return (int)(110 - (int)((u32)(-(int)((u32)(a0->f_9) ^ 0x3)) >> 31));
+}
+
+struct unk_007b5ae8_a0 {
+    char pad_0[9];
+    u8 f_9;
+};
+extern char g_007b5ae8_0[];
+int fn_007b5ae8(unk_007b5ae8_a0* a0) {
+    switch (a0->f_9) {
+    case 1:
+        return (int)(89);
+        break;
+    case 6:
+        return (int)(129);
+        break;
+    case 5:
+        return (int)(128);
+        break;
+    case 4:
+        return (int)(127);
+        break;
+    case 3:
+        return (int)(126);
+        break;
+    case 2:
+        return (int)(94);
+        break;
+    default:
+        return (int)(87);
+        break;
+    }
 }
 
 void* fn_007b5d84(int a0) {

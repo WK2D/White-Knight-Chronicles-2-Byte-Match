@@ -29,4 +29,20 @@ int fn_008e26e0(unk_008e26e0_a0* a0, int a1) {
     return (int)(1);
 }
 
+struct unk_008e2bf4_a0 {
+    float f_0;
+    u32 f_4;
+    u32 f_8;
+    u32 f_c;
+};
+int fn_008e2bf4(unk_008e2bf4_a0* a0, int a1) {
+    if ((int)((u32)(a0->f_c) & 0x1) == (int)(0)) {
+        if ((int)((int)((int)(a0->f_0 - (float)(int)((int)a0->f_8))) + (int)(a1)) > (int)(a0->f_4)) {
+            return (int)(1);
+        }
+        return (int)(0);
+    }
+    return (int)(0);
+}
+
 }

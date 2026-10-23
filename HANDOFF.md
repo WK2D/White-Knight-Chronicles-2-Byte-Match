@@ -24,7 +24,7 @@ alternative to the static-recompilation port at
   `-O2` and not with `-fno-ivopts`. The project used `-O2 -fno-ivopts` before
   2026-10-22; only `src/game/CPostEffectManager.cpp` keeps that, as an
   override, until a natural `-O2` form of `fn_004b32e8` is found.
-- Matched: **16,006 of 51,438 functions** (3.18% of code). Six are by hand
+- Matched: **16,024 of 51,438 functions** (3.19% of code). Six are by hand
   (`src/game/*.cpp`); the rest are generated: `tools/gen_simple.py`
   (`src/gen/`, small shapes), `tools/lift.py` (`src/lift/`, the lifter),
   `tools/permute.py` (`src/perm/`, lifter output in another statement order)
@@ -222,24 +222,19 @@ Rename units to their real source files as they are identified, and edit
 
 ## Next steps
 
-In progress (2026-10-23): **switch statements** (`lift.py --why`: "indirect
-branch", about 880 functions). GCC compiles `switch` to a jump table:
-`cmplwi rX,N-1; bgt default` (or `ble table`), then `lwz rT,<toc>(r2)` (the
-table's address), `rlwinm rI,rX,2,...`, `lwzx r0,rI,rT`, `extsw`,
-`add r0,r0,rT`, `mtctr r0`, `bctr`, and the table itself right after the
-`bctr`: N words, each an offset from the table's start to a case block
-(cases can share a block). Example: `fn_00039ba0`. Plan:
-- In `run()`, recognise a `bctr` after that sequence, read the table words
-  until one is not a plausible offset into the function (cross-check N with
-  the `cmplwi`), mark them as data (not instructions), and make every target
-  a block leader; `successors()` and `reach_all()` must follow the targets.
-- Remember the switch value: the register the `rlwinm` shifts.
-- In `region()`, a conditional branch whose one side is the table block is
-  the bounds check: emit `switch (x) { case k: ... break; ... default: ... }`
-  with the other side as `default`, each case region lifted to the common
-  join (the smallest block every case reaches) and merged with `merge()`,
-  which already takes any number of paths. Fall-through between cases is not
-  handled yet (fail).
+Switch statements (done 2026-10-23, `lift.py`): GCC compiles `switch` to a
+jump table: `cmplwi x,N-1; ble table` (bounds check; the other side is
+`default`), `lwz rT,<toc>(r2)`, `rlwinm rI,x,2,...`, `lwzx r0,rI,rT`,
+`extsw`, `add r0,r0,rT`, `mtctr r0`, `bctr`, then N words right after the
+`bctr`: offsets from the table's start to each case block (cases share
+blocks). `jump_table()` reads them (up to the `cmplwi` bound), marks them as
+data, and makes the targets block leaders; `switch_region()` lifts each case
+to the common join and merges the paths. Cases are emitted in the order
+their blocks sit in memory: GCC lays case bodies out in source order (in
+`fn_00039ba0` `case 2: case 3:` comes before `case 0: case 1:`). Fall-through
+between cases is not handled (fail). Float-to-int conversions through the
+red zone (`addi r9,r1,-16; fctiwz; stfiwx f0,0,r9; lbz r3,-13(r1)`) lift as
+`(u8)(f)` etc.
 
 After that, by size (`lift.py` failure reasons, `build/why_all.py`-style
 counts over all functions up to 384 instructions):

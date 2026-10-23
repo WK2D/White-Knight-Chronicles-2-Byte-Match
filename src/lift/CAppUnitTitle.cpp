@@ -88,6 +88,16 @@ void* fn_009350d4(unk_009350d4_a0* a0) {
     return (void*)(v1);
 }
 
+int fn_009350fc(void* a0) {
+    if ((int)((u32)(FIELD(u32, a0, 0)) & 0x4000000) != (int)(0)) {
+        if ((int)(FIELD(u32, a0, 0)) != (int)(83886084)) {
+            return (int)((int)FIELD(u32, a0, 4));
+        }
+        return (int)((int)(FIELD(float, a0, 4)));
+    }
+    return (int)(0);
+}
+
 struct unk_00935190_a0 {
     u32 f_0;
     u32 f_4;

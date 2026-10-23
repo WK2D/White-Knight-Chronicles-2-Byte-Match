@@ -276,6 +276,11 @@ class Lifter:
         self.tails = set()                # indexes of tail calls (b to another function)
         self.budget = 16 * len(words)     # instructions step() may execute in total
         self.noreturn = set()             # callees that never return (the function ends in a call)
+        self.data = set()                 # word indexes holding jump tables
+        self.switches = {}                # bctr index -> case targets (word indexes)
+        self.switch_index = {}            # rlwinm index -> its switch's bctr: the switch value
+        self.switch_values = {}           # bctr index -> the switch value
+        self.switch_blocks = {}           # start of the block ending in a switch's bctr -> the bctr
         self.slots = {}                   # stack offset -> (kind, value): int/float conversions go through memory         # blocks outside a loop that only lead to a return
         self.polymorphic = set()          # argument registers whose offset-0 word is a vptr
         self.vclasses = {}                # class tag -> {slot: (rtype, [types])}
@@ -482,6 +487,14 @@ class Lifter:
             return self.field(ctype, parent, off + d)
         if getattr(base, 'local_off', None) and base.local_off > 0:
             return self.field(ctype, Value('/*frame*/', 'frame'), LOCALS + base.local_off + d)
+        if base.ctype == 'frame' and d < 0:                          # red zone: part of a conversion
+            for k, t in ((0, 'int'), (2, 'u16'), (3, 'u8')):
+                slot = self.slots.get(d - k)
+                if slot is not None and slot[0] == 'fctiw' and SIZES.get(ctype, 4) == 4 - k:
+                    v = Value(f'({t})({slot[1].text})' if k else f'(int)({slot[1].text})', ctype)
+                    v.conv = True
+                    return v
+            raise Fail('red zone access')
         if base.ctype == 'frame':                                    # a local variable
             off = d - LOCALS
             if off < 0:
@@ -545,6 +558,8 @@ class Lifter:
         leaders = {0}
         back = []                                          # backward branches: (source, target)
         for i, x in enumerate(w):
+            if i in self.data:                             # a jump table, not code
+                continue
             op = x >> 26
             if op == 16:                                   # bc
                 t = i + (s16(x & 0xFFFC) >> 2)
@@ -568,10 +583,15 @@ class Lifter:
                 xo = (x >> 1) & 0x3FF
                 if x == 0x4E800421:                       # bctrl: a call, handled by step()
                     continue
+                if x == 0x4E800420:                       # bctr: a switch's jump table
+                    targets = self.jump_table(i)
+                    leaders |= set(targets) | {i + 1, i + 1 + len(targets)}
+                    continue
                 if xo != 16 or x & 1:
                     raise Fail('indirect branch')
                 leaders.add(i + 1)
         self.leaders = sorted(l for l in leaders if l < n)
+        self.switch_blocks = {self.block_start(i): i for i in self.switches}
         # A backward branch is a loop only if its target leads back to it.
         # Otherwise GCC placed a shared tail (often the epilogue) earlier and
         # jumps back to it: lift that as the path it is.
@@ -583,6 +603,8 @@ class Lifter:
         for h, l in self.loops.items():
             latch_block = self.leaders[bisect.bisect_right(self.leaders, l) - 1]
             for j in range(h, l + 1):                      # exits: the block after the loop, or a return path
+                if j in self.data:
+                    continue
                 x = w[j]
                 t = None
                 if x >> 26 == 16:
@@ -597,6 +619,8 @@ class Lifter:
                     continue
                 raise Fail('branch out of a loop body')
             for j in range(0, h):                          # the way in: the header, or a jump to the test
+                if j in self.data:
+                    continue
                 x = w[j]
                 t = None
                 if x >> 26 == 16:
@@ -648,6 +672,8 @@ class Lifter:
                 todo += [last + (s16(t & 0xFFFC) >> 2), last + 1]
             elif op == 18 and not t & 1:
                 todo.append(last + (branch_target(0, t) >> 2))
+            elif last in self.switches:
+                todo += self.switches[last]
             elif op == 19 and t != 0x4E800421:
                 if (t >> 21) & 0x14 != 0x14:
                     todo.append(last + 1)
@@ -663,6 +689,83 @@ class Lifter:
             if t >> 26 == 16 and s16(t & 0xFFFC) <= 0:
                 return False
         return True
+
+    def switch_region(self, b, default, stop):
+        """Lift the switch whose table block starts at b (default: the block
+        its bounds check sends other values to); return the block after it."""
+        kind, last = self.run_block(b)
+        if kind != 'switch':
+            raise Fail('switch block')
+        value = self.switch_values.get(last)
+        if value is None:
+            raise Fail('switch value')
+        groups = {}
+        for k, t in enumerate(self.switches[last]):
+            if t != default:                            # values that go to default need no case
+                groups.setdefault(t, []).append(k)
+        targets = list(groups) + ([default] if default is not None else [])
+        common = set.intersection(*(self.successors(t) for t in targets))
+        join = min(common) if common else None
+        if stop is not None and join is not None and join > stop:
+            join = stop
+        for t in targets:
+            if t != join and any(o in self.successors(t) for o in set(targets) - {t, join}):
+                raise Fail('switch fall-through')
+        start = self.snapshot()
+        outer, states, cases = self.stmts, [], []
+        for t in sorted(groups):                         # GCC lays case bodies out in source order
+            self.restore(start)
+            body = []
+            self.stmts = body
+            if t != join:
+                self.region(t, join)
+            states.append((self.snapshot(), body))
+            cases.append((groups[t], body))
+        default_body = []
+        self.restore(start)
+        if default is not None and default != join:
+            self.stmts = default_body
+            self.region(default, join)
+        states.append((self.snapshot(), default_body))
+        self.stmts = outer
+        self.stmts.append(['switch', value.text, cases, default_body])
+        if join is None:
+            if not all(st[4] for st, _ in states):
+                raise Fail('switch without a join does not return')
+            self.ended = True
+            return None
+        self.merge(states, join)
+        return None if self.ended else join
+
+    def jump_table(self, i):
+        """Targets (word indexes, one per case value) of the jump table after
+        the bctr at i. GCC: cmplwi x,N-1; ...; rlwinm rI,x,2,...;
+        lwzx r0,rI,rTable; extsw; add r0,r0,rTable; mtctr r0; bctr; then N
+        words, each the offset of a case block from the table's start."""
+        w, n = self.words, len(self.words)
+        shift = next((k for k in range(i - 1, max(i - 8, -1), -1)
+                      if w[k] >> 26 == 21 and (w[k] >> 11) & 31 == 2), None)
+        if shift is None:
+            raise Fail('indirect branch')
+        bound = next((k for k in range(shift - 1, max(shift - 12, -1), -1) if w[k] >> 26 == 10), None)
+        targets = []
+        for j in range(i + 1, n):
+            e = w[j] - (1 << 32) if w[j] & 0x80000000 else w[j]
+            t = i + 1 + e // 4
+            if e <= 0 or e % 4 or not i < t < n:
+                break
+            targets.append(t)
+        if bound is not None:
+            count = (w[bound] & 0xFFFF) + 1                # cmplwi x,N-1
+            if count > len(targets):
+                raise Fail('jump table shorter than its bound')
+            targets = targets[:count]
+        if len(targets) < 2:
+            raise Fail('indirect branch')
+        self.data |= set(range(i + 1, i + 1 + len(targets)))
+        self.switches[i] = targets
+        self.switch_index[shift] = i
+        return targets
 
     def block_end(self, b):
         k = bisect.bisect_right(self.leaders, b)
@@ -686,6 +789,8 @@ class Lifter:
                 target = last + (branch_target(0, t) >> 2)
                 if target > last:
                     todo.append(target)
+            elif last in self.switches:
+                todo += [x for x in self.switches[last] if x > last]
             elif op == 19 and t != 0x4E800421:
                 if (t >> 21) & 0x14 != 0x14:              # conditional return: may fall through
                     todo.append(last + 1)
@@ -750,6 +855,8 @@ class Lifter:
         op = t >> 26
         if t == BLR:
             return 'ret', None
+        if last in self.switches:
+            return 'switch', last
         if op == 16:
             return 'cond', (last + (s16(t & 0xFFFC) >> 2), last + 1, self.branch_condition(t))
         if op == 18 and not t & 1 and last in self.tails:
@@ -1009,7 +1116,19 @@ class Lifter:
             if b in self.loops and b not in self.in_loop:
                 b = self.loop(b)
                 continue
+            if b in self.switch_blocks:
+                b = self.switch_region(b, None, stop)          # a switch without a bounds check
+                if b is None:
+                    return
+                continue
             kind, data = self.run_block(b)
+            if kind == 'cond' and (data[0] in self.switch_blocks) != (data[1] in self.switch_blocks):
+                taken, fall, _ = data                     # the bounds check: the other side is default
+                sw, default = (taken, fall) if taken in self.switch_blocks else (fall, taken)
+                b = self.switch_region(sw, default, stop)
+                if b is None:
+                    return
+                continue
             if kind == 'goto' and data in self.while_entry and self.while_entry[data] == self.block_end(b) \
                     and self.while_entry[data] not in self.in_loop:
                 b = self.loop(self.while_entry[data], test=data)
@@ -1138,6 +1257,8 @@ class Lifter:
             b = join
 
     def step(self, w, i):
+        if i in self.switch_index:                   # rlwinm rI,x,2: x is the switch value
+            self.switch_values[self.switch_index[i]] = self.reg((w >> 21) & 31)
         self.budget -= 1
         if self.budget < 0:                  # inlined shared tails can multiply without end
             raise Fail('too much duplicated code')
@@ -1255,6 +1376,11 @@ class Lifter:
             self.set(rt, v)
             return
         if op == 14 and rt == 1 and ra == 1:                         # frame pop
+            return
+        if op == 14 and ra == 1 and d < 0:                           # an address in the red zone:
+            v = Value('/*red zone*/', 'redzone')                     # a conversion's scratch slot
+            v.redzone = d
+            self.set(rt, v)
             return
         if op == 14 and ra == 1:
             self.set(rt, self.local_address(d - LOCALS))
@@ -1392,6 +1518,9 @@ class Lifter:
                 if getattr(base, 'local_off', None) is not None:
                     self.local_refs -= 1                             # only the conversion's slot
                     self.slots[LOCALS + base.local_off] = f
+                    return
+                if getattr(base, 'redzone', None) is not None:
+                    self.slots[base.redzone] = f
                     return
                 target = self.field('u32', base, 0)
                 self.stmts.append(f'{target.text} = (u32)((int)({f[1].text}));')
@@ -1775,6 +1904,16 @@ class Lifter:
                     out.append(pad + f'while ({st[1]}) {{')
                     out += lines(st[2], indent + 1)
                     out.append(pad + '}')
+                elif isinstance(st, list) and st[0] == 'switch':
+                    out.append(pad + f'switch ({st[1]}) {{')
+                    for cases, body in st[2]:
+                        out += [pad + f'case {c}:' for c in cases]
+                        out += lines(body, indent + 1)
+                        out.append(pad + '    break;')
+                    out.append(pad + 'default:')
+                    out += lines(st[3], indent + 1)
+                    out.append(pad + '    break;')
+                    out.append(pad + '}')
                 elif isinstance(st, list) and st[0] == 'cfor':
                     n = st[2] if re.fullmatch(r'\d+', st[2]) else f'(int)({st[2]})'
                     out.append(pad + f'for ({st[1]} = 0; {st[1]} < {n}; {st[1]}++) {{')
@@ -1875,6 +2014,8 @@ def drop_loop_guards(stmts):
             st = [st[0], drop_loop_guards(st[1])] + st[2:]
         elif isinstance(st, list) and st[0] == 'while':
             st = ['while', st[1], drop_loop_guards(st[2])]
+        elif isinstance(st, list) and st[0] == 'switch':
+            st = ['switch', st[1], [(c, drop_loop_guards(b)) for c, b in st[2]], drop_loop_guards(st[3])]
         out.append(st)
     return out
 

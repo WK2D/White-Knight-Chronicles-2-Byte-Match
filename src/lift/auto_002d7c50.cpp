@@ -121,4 +121,16 @@ void* fn_002d7f50(unk_002d7f50_a0* a0, int a1) {
     return (void*)((char*)((char*)((int)(a0->f_4) + (int)(a0->f_0->f_0->f_0)) + (int)(FIELD(u32, (int)(a0->f_4) + (int)(a0->f_0->f_0->f_0), 60))) + (int)((int)(a1) * (int)(FIELD(u32, (char*)((int)(a0->f_4) + (int)(a0->f_0->f_0->f_0)) + (int)(FIELD(u32, (int)(a0->f_4) + (int)(a0->f_0->f_0->f_0), 16)), 0))));
 }
 
+struct unk_002d824c_a0 {
+    char pad_0[24];
+    float f_18;
+};
+struct unk_002d824c_a1 {
+    char pad_0[24];
+    float f_18;
+};
+int fn_002d824c(unk_002d824c_a0* a0, unk_002d824c_a1* a1) {
+    return (int)((int)(a0->f_18 - a1->f_18));
+}
+
 }

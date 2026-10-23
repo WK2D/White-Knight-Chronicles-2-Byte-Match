@@ -88,6 +88,22 @@ void fn_0058df10(unk_0058df10_a0* a0, int a1) {
     a0->f_0->f_14 = (u8)(a1);
 }
 
+struct unk_0058df28_a0_0;
+struct unk_0058df28_a0_0 {
+    u8 f_0;
+    char pad_1[17];
+    u16 f_12;
+};
+struct unk_0058df28_a0 {
+    unk_0058df28_a0_0* f_0;
+};
+void fn_0058df28(unk_0058df28_a0* a0, float f0) {
+    if ((int)(a0->f_0->f_0) != (int)(0)) {
+        return;
+    }
+    a0->f_0->f_12 = (u16)((int)(f0));
+}
+
 struct unk_0058eab8_a0_0;
 struct unk_0058eab8_a0_0 {
     char pad_0[4];
@@ -211,6 +227,10 @@ void* fn_0058ed3c(unk_0058ed3c_a0* a0) {
         v0 = (int)(0);
     }
     return (void*)(v0);
+}
+
+int fn_0058eef0(float f0) {
+    return (int)((int)(f0 * 1000.0f));
 }
 
 }
