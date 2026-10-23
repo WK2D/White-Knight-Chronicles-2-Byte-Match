@@ -15,6 +15,36 @@ void fn_005c6e78(unk_005c6e78_a0* a0) {
     stub_005c6e5c((void*)(a0));
 }
 
+int fn_005c6eb8(float f0, float f1, float f2) {
+    if (!(f2 < f0)) {
+        if (f2 > f1) {
+            return (int)((int)((u32)((u32)(1) ^ 0x1) & 0xff));
+        }
+        return (int)((int)((u32)((u32)(0) ^ 0x1) & 0xff));
+    }
+    return (int)(0);
+}
+
+int fn_005c6ee8(float f0, float f1, float f2) {
+    if (!(f2 < f0)) {
+        if (f2 > f1) {
+            return (int)((int)((u32)((u32)(1) ^ 0x1) & 0xff));
+        }
+        return (int)((int)((u32)((u32)(0) ^ 0x1) & 0xff));
+    }
+    return (int)(0);
+}
+
+int fn_005c6f18(float f0, float f1, float f2) {
+    if (!(f2 < f0)) {
+        if (f2 > f1) {
+            return (int)((int)((u32)((u32)(1) ^ 0x1) & 0xff));
+        }
+        return (int)((int)((u32)((u32)(0) ^ 0x1) & 0xff));
+    }
+    return (int)(0);
+}
+
 struct unk_005c6ffc_a0_1ec;
 struct unk_005c6ffc_a0_1ec {
     char pad_0[36];

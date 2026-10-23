@@ -33,6 +33,26 @@ int fn_005ae1b4(unk_005ae1b4_a0* a0) {
     return (int)((int)(signed char)(a0->f_0->f_18));
 }
 
+struct unk_005ae1d8_a0 {
+    char pad_0[22];
+    u16 f_16;
+};
+void fn_005ae1d8(unk_005ae1d8_a0* a0, float f0) {
+    int v0;
+    int v1;
+    if (!(f0 > 15.0f)) {
+        if (!(f0 < -15.0f)) {
+            v0 = (int)((u16)(f0 * 100.0f));
+        } else {
+            v0 = (int)(-1500);
+        }
+        v1 = (int)(v0);
+    } else {
+        v1 = (int)(1500);
+    }
+    a0->f_16 = (u16)(v1);
+}
+
 struct unk_005ae230_a0 {
     u16 f_0;
     char pad_2[12];

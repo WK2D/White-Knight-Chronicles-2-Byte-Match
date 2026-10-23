@@ -4,6 +4,7 @@
 
 extern "C" {
 
+static void __attribute__((noinline)) stub_001fae00(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
 
 struct unk_001fade0_a0 {
     char pad_0[132];
@@ -19,6 +20,23 @@ int fn_001fade0(unk_001fade0_a0* a0) {
         v1 = (int)(0);
     }
     return (int)(v1);
+}
+
+struct unk_001fae14_a0 {
+    char pad_0[820];
+    float f_334;
+    float f_338;
+    char pad_33c[4];
+    u8 f_340;
+};
+void fn_001fae14(unk_001fae14_a0* a0, float f0) {
+    a0->f_338 = f0;
+    a0->f_340 = (u8)(0);
+    a0->f_334 = 0.0f;
+    if (!(f0 <= 0.0f)) {
+        return;
+    }
+    stub_001fae00((void*)(a0));
 }
 
 }

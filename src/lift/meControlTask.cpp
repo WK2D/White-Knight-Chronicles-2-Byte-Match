@@ -5,6 +5,23 @@
 extern "C" {
 
 
+struct unk_00ae2000_a0 {
+    char pad_0[12];
+    float f_c;
+    float f_10;
+    float f_14;
+};
+void fn_00ae2000(unk_00ae2000_a0* a0, float f0) {
+    a0->f_c = f0;
+    if (f0 < a0->f_10) {
+        a0->f_c = a0->f_10;
+    }
+    if (!(a0->f_c > a0->f_14)) {
+        return;
+    }
+    a0->f_c = a0->f_14;
+}
+
 struct unk_00ae202c_a0_8;
 struct unk_00ae202c_a0_8 {
     char pad_0[32];

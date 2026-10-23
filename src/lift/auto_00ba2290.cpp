@@ -33,11 +33,34 @@ void fn_00ba23c4(void* a0) {
     }
 }
 
+int fn_00ba23ec(void* a0) {
+    int v0;
+    for (v0 = 0; v0 < 12; v0++) {
+        if (!(FIELD(float, (char*)a0 + (int)(v0) * 4, 0) >= -1000000.0f)) {
+            return (int)(0);
+        }
+    }
+    return (int)(1);
+}
+
 struct unk_00ba2434_a0 {
     float f_0;
 };
 void fn_00ba2434(unk_00ba2434_a0* a0) {
     a0->f_0 = -10000000.0f;
+}
+
+struct unk_00ba2440_a0 {
+    float f_0;
+};
+u32 fn_00ba2440(unk_00ba2440_a0* a0) {
+    int v0;
+    if (!(a0->f_0 >= -1000000.0f)) {
+        v0 = (int)(0);
+    } else {
+        v0 = (int)(1);
+    }
+    return (u32)((u32)(v0) & 0x1);
 }
 
 void* fn_00ba2734(int a0, int a1, int a2) {

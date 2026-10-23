@@ -24,7 +24,7 @@ alternative to the static-recompilation port at
   `-O2` and not with `-fno-ivopts`. The project used `-O2 -fno-ivopts` before
   2026-10-22; only `src/game/CPostEffectManager.cpp` keeps that, as an
   override, until a natural `-O2` form of `fn_004b32e8` is found.
-- Matched: **19,205 of 50,844 functions** (4.90% of code). Six are by hand
+- Matched: **19,246 of 50,844 functions** (4.91% of code). Six are by hand
   (`src/game/*.cpp`); the rest are generated: `tools/gen_simple.py`
   (`src/gen/`, small shapes), `tools/lift.py` (`src/lift/`, the lifter),
   `tools/permute.py` (`src/perm/`, lifter output in another statement order)
@@ -523,6 +523,11 @@ counts over all functions up to 384 instructions):
   is `-abs(x)`): lifted as `__builtin_abs(x)` (`fn_00018b44`,
   `fn_00b67514`). Written out as shifts and xor, GCC reorders the operands.
   About 880 near-misses contain `srawi x,31`; this gained 365.
+- Float comparisons: the opposite of `a > b` is `!(a > b)`, not `a <= b`
+  (NaN). GCC compiles `a <= b` with `cror` and `!(a > b)` as one branch, so
+  `condition()` writes negated float tests as `!(...)` and `negate()` keeps
+  them that way (`FLOAT_CONDS` holds the float comparison texts)
+  (`fn_001293bc`, which then matches as `return a0->f_168 > 35.0f;`).
 - Not solved yet: `(p[0]<<24)|(p[1]<<16)|(p[2]<<8)|p[3]` byte assembly
   (`fn_0003de80`): GCC reassociates our version whatever the types; the
   original ors the first three before loading the fourth byte. Destructor

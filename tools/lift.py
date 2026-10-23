@@ -141,7 +141,14 @@ def class_decl(tag, slots, fields, ptrs=None):
     return '\n'.join(out)
 
 
+FLOAT_CONDS = set()     # float comparisons made by condition(): their negation is !(...) (NaN)
+
+
 def negate(cond):
+    if cond.startswith('!(') and cond.endswith(')') and cond[2:-1] in FLOAT_CONDS:
+        return cond[2:-1]
+    if cond in FLOAT_CONDS and not (' == ' in cond or ' != ' in cond):
+        return f'!({cond})'
     flip = {' < ': ' >= ', ' >= ': ' < ', ' > ': ' <= ', ' <= ': ' > ', ' == ': ' != ', ' != ': ' == '}
     for a, b in flip.items():
         if a in cond:
@@ -897,7 +904,15 @@ class Lifter:
             raise Fail('summary-overflow bit')
         bt = b.text if isinstance(b, Value) else b
         if kind == 'float':
-            return f'{a.text} {ops[bit, true]} {bt}'
+            if true is False and bit in (0, 1):
+                # Not less is not greater-or-equal for floats (NaN): GCC
+                # writes a >= b with cror, !(a < b) with one branch.
+                text = f'{a.text} {ops[bit, True]} {bt}'
+                FLOAT_CONDS.add(text)
+                return f'!({text})'
+            text = f'{a.text} {ops[bit, true]} {bt}'
+            FLOAT_CONDS.add(text)
+            return text
         if kind == 'unsigned':
             return f'(u32)({a.text}) {ops[bit, true]} (u32)({bt})'
         if kind == 'pointer':
@@ -927,6 +942,10 @@ class Lifter:
                   frozenset({0, 1}): ('!=', '==')}.get(bits)
             if op is None:
                 raise Fail('combined condition bits')
+            if not true and bits != frozenset({0, 1}) and self.cr.get(crf, (0, 0, ''))[2] == 'float':
+                inner = self.condition(crf, op[0], None)
+                FLOAT_CONDS.add(inner)
+                return f'!({inner})'                                     # not (a <= b), NaN included
             return self.condition(crf, op[0] if true else op[1], None)
         return self.condition(bi >> 2, bi & 3, true)
 
