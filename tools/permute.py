@@ -222,16 +222,39 @@ def voided(code):
     return '\n'.join([f'void {m.group(2)}'] + body)
 
 
+def struct_return(code):
+    """A function that returns its first parameter, a struct pointer, may
+    return a struct by value: the caller passes the result's address in r3
+    and GCC returns it (fn_00417f58). The parameter becomes the address of
+    the returned local, so the body stays as it is."""
+    lines = code.split('\n')
+    m = re.match(r'^\S.*? (fn_[0-9a-f]{8})\((unk_\w+_a0)\* a0(?:, (.*))?\) \{$', lines[0])
+    if not m:
+        return None
+    body = lines[1:]
+    rets = [l for l in body if re.match(r'^\s*return\b', l)]
+    if not rets or any(not re.match(r'^\s*return (\([^()]*\)\(a0\)|a0);$', l) for l in rets):
+        return None
+    tag = m.group(2)
+    body = [re.sub(r'^(\s*)return .*;$', r'\1return r_;', l) for l in body]
+    return '\n'.join([f'{tag} {m.group(1)}({m.group(3) or "void"}) {{', f'    {tag} r_;',
+                      f'    {tag}* a0 = &r_;'] + body)
+
+
 def variants(code):
     """Other forms of a lifted function: statement orders, inverted ifs,
-    swapped comparisons, a void version, and a few statement orders of each."""
+    swapped comparisons, a void version, a struct returned by value, and a
+    few statement orders of each."""
     out = reorders(code)
     void = voided(code)
+    sret = struct_return(code)
     for other in pointer_tests(code) + flips(code) + swaps(code) + ([void] if void else []):
         out.append(other)
         out += reorders(other)[:8]
     if void:                                     # the void version first among the extras
         out.insert(0, void)
+    if sret:
+        out.insert(0, sret)
     return list(dict.fromkeys(out))[:MAX_VARIANTS * 3]
 
 

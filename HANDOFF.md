@@ -24,7 +24,7 @@ alternative to the static-recompilation port at
   `-O2` and not with `-fno-ivopts`. The project used `-O2 -fno-ivopts` before
   2026-10-22; only `src/game/CPostEffectManager.cpp` keeps that, as an
   override, until a natural `-O2` form of `fn_004b32e8` is found.
-- Matched: **18,657 of 50,844 functions** (4.63% of code). Six are by hand
+- Matched: **18,777 of 50,844 functions** (4.66% of code). Six are by hand
   (`src/game/*.cpp`); the rest are generated: `tools/gen_simple.py`
   (`src/gen/`, small shapes), `tools/lift.py` (`src/lift/`, the lifter),
   `tools/permute.py` (`src/perm/`, lifter output in another statement order)
@@ -509,6 +509,12 @@ counts over all functions up to 384 instructions):
   pointer is folded away and does not count; `*(void**)&(a0->f_0) != 0`
   does. `permute.py` tries that form for every `if` testing a memory word
   against 0 (`pointer_tests`).
+- Structs returned by value: the caller passes the result's address in
+  r3, the function zero-extends it once (`clrldi r29,r3,32`) and returns
+  it (`mr r3,r29`). Lifted as `void* f(S* a0, ...) { ...; return a0; }` it
+  does not match; `S f(...) { S r_; S* a0 = &r_; ...; return r_; }` does
+  (`fn_00417f58`). `permute.py` tries this form (`struct_return`) for
+  functions that return their first, struct-pointer parameter.
 - Quick single-function test: `python tools/lift.py --one ADDR --file >
   build/try/x.cpp` then `python tools/try.py build/try/x.cpp -d`.
 - Editing tools from the agent's shell: heredocs passed through the Bash
