@@ -5,8 +5,10 @@
 extern "C" {
 
 int fn_0003f9e0(int);
+float fn_0003fa14(int);
 void fn_0003faa8(int);
 void fn_0003fab0(int, int);
+static void* __attribute__((noinline)) stub_004cd54c(void) { void* r; __asm__ volatile ("" : "=r"(r)); return r; }
 
 struct unk_004cc7ac_g2d0;
 struct unk_004cc7ac_g2d0 {
@@ -120,6 +122,69 @@ int fn_004cd3ec(int a0) {
 
 int fn_004cd424(int a0) {
     fn_0003faa8((int)(a0));
+    return (int)(1);
+}
+
+int fn_004cd868(int a0) {
+    float t0;
+    void* t1;
+    t0 = fn_0003fa14((int)(a0));
+    t1 = stub_004cd54c();
+    FIELD(float, t1, 24) = t0;
+    return (int)(1);
+}
+
+int fn_004cd8a4(int a0) {
+    float t0;
+    void* t1;
+    t0 = fn_0003fa14((int)(a0));
+    t1 = stub_004cd54c();
+    FIELD(float, t1, 20) = t0;
+    return (int)(1);
+}
+
+int fn_004cd8e0(int a0) {
+    float t0;
+    void* t1;
+    t0 = fn_0003fa14((int)(a0));
+    t1 = stub_004cd54c();
+    FIELD(float, t1, 16) = t0;
+    return (int)(1);
+}
+
+int fn_004cd91c(int a0) {
+    float t0;
+    void* t1;
+    t0 = fn_0003fa14((int)(a0));
+    t1 = stub_004cd54c();
+    FIELD(float, t1, 12) = t0;
+    return (int)(1);
+}
+
+int fn_004cd958(int a0) {
+    float t0;
+    void* t1;
+    t0 = fn_0003fa14((int)(a0));
+    t1 = stub_004cd54c();
+    FIELD(float, t1, 8) = t0;
+    return (int)(1);
+}
+
+int fn_004cd994(int a0) {
+    float t0;
+    void* t1;
+    t0 = fn_0003fa14((int)(a0));
+    t1 = stub_004cd54c();
+    FIELD(float, t1, 4) = t0;
+    return (int)(1);
+}
+
+int fn_004cd9d0(int a0) {
+    float t0;
+    void* t1;
+    t0 = fn_0003fa14((int)(a0));
+    t1 = stub_004cd54c();
+    FIELD(float, t1, 0) = t0;
     return (int)(1);
 }
 

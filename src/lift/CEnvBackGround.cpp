@@ -33,6 +33,26 @@ void fn_004c5cec(int a0, int a1) {
     stub_004c5a7c((int)(a0), (int)(a1));
 }
 
+struct unk_004c5e70_a1 {
+    char pad_0[32];
+    float f_20;
+    float f_24;
+    float f_28;
+    float f_2c;
+    float f_30;
+    float f_34;
+};
+void fn_004c5e70(void* a0, unk_004c5e70_a1* a1) {
+    FIELD(float, a0, 0) = a1->f_2c;
+    FIELD(float, a0, 4) = a1->f_30;
+    FIELD(float, a0, 8) = a1->f_34;
+    if ((a1->f_24 - a1->f_20) * (a1->f_24 - a1->f_20) >= 9.999999747378752e-05f) {
+        FIELD(float, a0, 12) = (a1->f_28 - a1->f_20) / (a1->f_24 - a1->f_20);
+        return;
+    }
+    FIELD(u32, a0, 12) = (u32)(0);
+}
+
 struct unk_004c60c8_a0 {
     char pad_0[4180];
     u8 f_1054;

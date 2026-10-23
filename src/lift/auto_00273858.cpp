@@ -4,41 +4,22 @@
 
 extern "C" {
 
-void fn_00b38938(void);
-void fn_00b39638(void);
+void fn_00b37f98(float, float);
 void fn_00b3b188(void*, int);
-void fn_00b3b1e8(void*, int);
+float fn_00b3b1e8(void*, int);
 int fn_00b3b238(void*);
-void fn_00b3b288(void);
 
-int fn_00273b88(int a0) {
-    int t3;
+int fn_00273b00(int a0) {
+    float t1;
+    float t2;
+    int t4;
     char l[8] __attribute__((aligned(8)));
     fn_00b3b188((void*)((&l)), (int)(a0));
-    fn_00b3b1e8((void*)((&l)), (int)(0));
-    fn_00b3b288();
-    t3 = fn_00b3b238((void*)((&l)));
-    return (int)(t3);
-}
-
-int fn_00273cc0(int a0) {
-    int t3;
-    char l[8] __attribute__((aligned(8)));
-    fn_00b3b188((void*)((&l)), (int)(a0));
-    fn_00b3b1e8((void*)((&l)), (int)(0));
-    fn_00b38938();
-    t3 = fn_00b3b238((void*)((&l)));
-    return (int)(t3);
-}
-
-int fn_00273d24(int a0) {
-    int t3;
-    char l[8] __attribute__((aligned(8)));
-    fn_00b3b188((void*)((&l)), (int)(a0));
-    fn_00b3b1e8((void*)((&l)), (int)(0));
-    fn_00b39638();
-    t3 = fn_00b3b238((void*)((&l)));
-    return (int)(t3);
+    t1 = fn_00b3b1e8((void*)((&l)), (int)(0));
+    t2 = fn_00b3b1e8((void*)((&l)), (int)(1));
+    fn_00b37f98((float)(t1), (float)(t2));
+    t4 = fn_00b3b238((void*)((&l)));
+    return (int)(t4);
 }
 
 }

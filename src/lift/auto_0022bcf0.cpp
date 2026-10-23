@@ -5,6 +5,7 @@
 extern "C" {
 
 int fn_00041b48(int);
+float fn_00041b90(void*);
 void fn_00b37fa8(void*, int, int);
 
 struct unk_0022be90_gm42b4;
@@ -191,6 +192,70 @@ int fn_0022c11c(void) {
     if ((int)((&g_0022c11c_0)->f_0->f_4c) < (int)(0)) {
         (&g_0022c11c_0)->f_0->f_4c = (u32)((u32)((&g_0022c11c_0)->f_0->f_4c) & 0x7fffffff);
         (&g_0022c11c_0)->f_0->f_14 = (u32)((&g_0022c11c_0)->f_0->f_14 + 1);
+        v0 = (int)(0);
+    } else {
+        v0 = (int)(1);
+    }
+    return (int)(v0);
+}
+
+struct unk_0022c330_gm42b4;
+struct unk_0022c330_gm42b4_0;
+struct unk_0022c330_gm42b4_0_2c;
+struct unk_0022c330_gm42b4_0_2c_0;
+struct unk_0022c330_gm42b4 {
+    unk_0022c330_gm42b4_0* f_0;
+};
+struct unk_0022c330_gm42b4_0 {
+    char pad_0[44];
+    unk_0022c330_gm42b4_0_2c* f_2c;
+};
+struct unk_0022c330_gm42b4_0_2c {
+    unk_0022c330_gm42b4_0_2c_0* f_0;
+};
+struct unk_0022c330_gm42b4_0_2c_0 {
+    char pad_0[64];
+    float f_40;
+};
+extern unk_0022c330_gm42b4 g_0022c330_0;
+int fn_0022c330(void* a0, int a1) {
+    float t0;
+    int v0;
+    if ((int)(a1) > (int)(0)) {
+        t0 = fn_00041b90((void*)(a0));
+        (&g_0022c330_0)->f_0->f_2c->f_0->f_40 = t0 * 0.01745329238474369f;
+        v0 = (int)(0);
+    } else {
+        v0 = (int)(1);
+    }
+    return (int)(v0);
+}
+
+struct unk_0022c388_gm42b4;
+struct unk_0022c388_gm42b4_0;
+struct unk_0022c388_gm42b4_0_2c;
+struct unk_0022c388_gm42b4_0_2c_0;
+struct unk_0022c388_gm42b4 {
+    unk_0022c388_gm42b4_0* f_0;
+};
+struct unk_0022c388_gm42b4_0 {
+    char pad_0[44];
+    unk_0022c388_gm42b4_0_2c* f_2c;
+};
+struct unk_0022c388_gm42b4_0_2c {
+    unk_0022c388_gm42b4_0_2c_0* f_0;
+};
+struct unk_0022c388_gm42b4_0_2c_0 {
+    char pad_0[60];
+    float f_3c;
+};
+extern unk_0022c388_gm42b4 g_0022c388_0;
+int fn_0022c388(void* a0, int a1) {
+    float t0;
+    int v0;
+    if ((int)(a1) > (int)(0)) {
+        t0 = fn_00041b90((void*)(a0));
+        (&g_0022c388_0)->f_0->f_2c->f_0->f_3c = t0 * t0;
         v0 = (int)(0);
     } else {
         v0 = (int)(1);

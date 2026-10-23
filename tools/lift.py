@@ -254,6 +254,7 @@ class Lifter:
         self.vargs = {}                   # vector parameters (v2, v3, ...)
         self.vfresh = set()               # vector registers written since the last call
         self.vsaves = set()               # frame offsets (as text) of saved vector registers
+        self.crbits = {}                  # condition bit -> combined comparison (cror/crnor)
         self.stmts, self.calls, self.globals = [], {}, {}
         self.fresh = set()
         self.cr = {}                      # condition field -> (lhs, rhs, 'signed'|'unsigned'|'pointer')
@@ -426,6 +427,8 @@ class Lifter:
             raise Fail(f'f{r} read before it is set')
         if v.call is not None:
             v.call['used'] = True
+            if getattr(v, 'float_result', False):
+                v.call['type'] = 'float'
         return v
 
     def set(self, r, v):
@@ -587,6 +590,8 @@ class Lifter:
                     targets = self.jump_table(i)
                     leaders |= set(targets) | {i + 1, i + 1 + len(targets)}
                     continue
+                if xo in (449, 33):                       # cror / crnor: combine comparison bits
+                    continue
                 if xo != 16 or x & 1:
                     raise Fail('indirect branch')
                 leaders.add(i + 1)
@@ -706,6 +711,8 @@ class Lifter:
         targets = list(groups) + ([default] if default is not None else [])
         common = set.intersection(*(self.successors(t) for t in targets))
         join = min(common) if common else None
+        if default is not None and any(default in self.successors(t) for t in groups):
+            join = default                       # cases leave the switch into the default's block: no default body
         if stop is not None and join is not None and join > stop:
             join = stop
         for t in targets:
@@ -809,10 +816,14 @@ class Lifter:
         self.vr, self.vfresh = dict(state[6]), set(state[7])
 
     def condition(self, crf, bit, true):
+        """The C condition for a bit of field crf (true: the bit set); bit may
+        also be an operator string (true None) for combined bits."""
         if crf not in self.cr:
             raise Fail('condition field never set')
         a, b, kind = self.cr[crf]
         ops = {(0, True): '<', (1, True): '>', (2, True): '==', (0, False): '>=', (1, False): '<=', (2, False): '!='}
+        if true is None:
+            ops = {(bit, None): bit}
         if (bit, true) not in ops:
             raise Fail('summary-overflow bit')
         bt = b.text if isinstance(b, Value) else b
@@ -836,6 +847,18 @@ class Lifter:
             true = False
         else:
             raise Fail(f'BO {bo}')
+        combined = self.crbits.get(bi)
+        if combined is not None and self.cr.get(combined[0]) is combined[3] and self.cr.get(bi >> 2) is combined[4]:
+            crf, bits, negated, _, _ = combined
+            true = true != negated
+            if len(bits) == 1:
+                return self.condition(crf, next(iter(bits)), true)
+            # lt|eq is <=, gt|eq is >=, lt|gt is !=; the branch on the opposite is the complement.
+            op = {frozenset({0, 2}): ('<=', '>'), frozenset({1, 2}): ('>=', '<'),
+                  frozenset({0, 1}): ('!=', '==')}.get(bits)
+            if op is None:
+                raise Fail('combined condition bits')
+            return self.condition(crf, op[0] if true else op[1], None)
         return self.condition(bi >> 2, bi & 3, true)
 
     def emit_return(self):
@@ -1326,6 +1349,15 @@ class Lifter:
         # Saving and restoring the condition register (the function keeps
         # comparisons in cr2-cr4 across calls): mfcr rX; stw rX,8(r1) ...
         # lwz rX,8(r1); mtcrf. Neither is part of the source.
+        if op == 19 and (w >> 1) & 0x3FF in (449, 33):               # cror / crnor bt,ba,bb
+            bt, ba, bb = rt, ra, rb
+            if ba >> 2 != bb >> 2 or ba >> 2 not in self.cr:
+                raise Fail('condition bits from two fields')
+            negate_ = (w >> 1) & 0x3FF == 33
+            if negate_ and ba != bb:
+                raise Fail('crnor of two bits')
+            self.crbits[bt] = (ba >> 2, frozenset({ba & 3, bb & 3}), negate_, self.cr[ba >> 2], self.cr.get(bt >> 2))
+            return
         if w & 0xFC1FFFFF == 0x7C000026:                             # mfcr rX
             self.gpr[rt] = Value('/*condition register*/', 'crsave')
             return
@@ -1705,6 +1737,8 @@ class Lifter:
         self.vfresh = set()
         self.made_call = True
         self.gpr[3] = Value(info['temp'], 'int', 0, info)
+        self.fpr[1] = Value(info['temp'], 'float', 0, info)        # a float result comes back in f1
+        self.fpr[1].float_result = True
         self.fresh = set()
         self.ffresh = set()
 
@@ -1820,6 +1854,8 @@ class Lifter:
         self.vfresh = set()
         self.made_call = True
         self.gpr[3] = Value(info['temp'], 'int', 0, info)
+        self.fpr[1] = Value(info['temp'], 'float', 0, info)        # a float result comes back in f1
+        self.fpr[1].float_result = True
         self.fresh = set()
         self.ffresh = set()
         self.ctr = None

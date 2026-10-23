@@ -24,7 +24,7 @@ alternative to the static-recompilation port at
   `-O2` and not with `-fno-ivopts`. The project used `-O2 -fno-ivopts` before
   2026-10-22; only `src/game/CPostEffectManager.cpp` keeps that, as an
   override, until a natural `-O2` form of `fn_004b32e8` is found.
-- Matched: **16,056 of 51,438 functions** (3.20% of code). Six are by hand
+- Matched: **16,105 of 51,438 functions** (3.23% of code). Six are by hand
   (`src/game/*.cpp`); the rest are generated: `tools/gen_simple.py`
   (`src/gen/`, small shapes), `tools/lift.py` (`src/lift/`, the lifter),
   `tools/permute.py` (`src/perm/`, lifter output in another statement order)
@@ -404,6 +404,13 @@ counts over all functions up to 384 instructions):
   470 functions: small structs passed in one register), varargs functions
   (the prologue stores r4-r10: "spill", about 700), `mftb` (time base),
   conditional traps (`tw`).
+- Float comparisons `<=`/`>=` combine two condition bits:
+  `fcmpu cr7,a,b; cror 4*cr7+eq,4*cr7+gt,4*cr7+eq; beq` is `a >= b`
+  (`crbits`; a combined bit is used only while its comparison is current).
+- Calls return floats in f1 (the call's result type becomes `float` when f1
+  is read).
+- Switch: when a case leaves the switch into the default's block, that block
+  is the code after the switch (no default body).
 - Calls through function pointers: `lwz r0,0(rX); std r2,40(r1); mtctr r0;
   lwz r2,4(rX); bctrl` with rX not a vtable slot is `((T (*)(...))(x))(...)`
   (rX points to the callee's descriptor). Weak-symbol tests (`if (&f)`) are

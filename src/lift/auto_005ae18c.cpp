@@ -4,6 +4,8 @@
 
 extern "C" {
 
+float fn_0059595c(float);
+float fn_00595978(float);
 static int __attribute__((noinline)) stub_005acc58(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static void* __attribute__((noinline)) stub_005ad060(int p0, int p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 
@@ -39,6 +41,76 @@ struct unk_005ae374_a0 {
 };
 int fn_005ae374(unk_005ae374_a0* a0) {
     return (int)((int)(short)(a0->f_0->f_14));
+}
+
+struct unk_005ae384_a0_0;
+struct unk_005ae384_a0_0 {
+    char pad_0[12];
+    u16 f_c;
+};
+struct unk_005ae384_a0 {
+    unk_005ae384_a0_0* f_0;
+};
+int fn_005ae384(unk_005ae384_a0* a0) {
+    float t0;
+    t0 = fn_00595978((float)((float)(int)((int)(short)(a0->f_0->f_c))));
+    return (int)((int)(t0));
+}
+
+struct unk_005ae3d8_a0_0;
+struct unk_005ae3d8_a0_0 {
+    char pad_0[18];
+    u16 f_12;
+};
+struct unk_005ae3d8_a0 {
+    unk_005ae3d8_a0_0* f_0;
+};
+int fn_005ae3d8(unk_005ae3d8_a0* a0) {
+    float t0;
+    t0 = fn_0059595c((float)((float)(int)((int)(short)(a0->f_0->f_12))));
+    return (int)((int)(t0));
+}
+
+struct unk_005ae42c_a0_0;
+struct unk_005ae42c_a0_0 {
+    char pad_0[18];
+    u16 f_12;
+};
+struct unk_005ae42c_a0 {
+    unk_005ae42c_a0_0* f_0;
+};
+int fn_005ae42c(unk_005ae42c_a0* a0) {
+    float t0;
+    t0 = fn_0059595c((float)((float)(int)((int)(short)(a0->f_0->f_12))));
+    return (int)((int)(t0));
+}
+
+struct unk_005ae480_a0_0;
+struct unk_005ae480_a0_0 {
+    char pad_0[16];
+    u16 f_10;
+};
+struct unk_005ae480_a0 {
+    unk_005ae480_a0_0* f_0;
+};
+int fn_005ae480(unk_005ae480_a0* a0) {
+    float t0;
+    t0 = fn_0059595c((float)((float)(int)((int)(short)(a0->f_0->f_10))));
+    return (int)((int)(t0));
+}
+
+struct unk_005ae4d4_a0_0;
+struct unk_005ae4d4_a0_0 {
+    char pad_0[14];
+    u16 f_e;
+};
+struct unk_005ae4d4_a0 {
+    unk_005ae4d4_a0_0* f_0;
+};
+int fn_005ae4d4(unk_005ae4d4_a0* a0) {
+    float t0;
+    t0 = fn_0059595c((float)((float)(int)((int)(short)(a0->f_0->f_e))));
+    return (int)((int)(t0));
 }
 
 struct unk_005ae528_a0_0;

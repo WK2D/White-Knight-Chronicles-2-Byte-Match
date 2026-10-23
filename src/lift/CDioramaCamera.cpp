@@ -6,6 +6,19 @@ extern "C" {
 
 void fn_00522850(void*, int);
 void fn_005228d4(void*);
+void fn_00b38928(float, float);
+float fn_00b3aeb8(float, float);
+
+struct unk_00528448_a0 {
+    char pad_0[304];
+    float f_130;
+    float f_134;
+};
+void fn_00528448(unk_00528448_a0* a0, float f0) {
+    float t0;
+    t0 = fn_00b3aeb8((float)(a0->f_134), (float)(f0));
+    fn_00b38928((float)(a0->f_130), (float)(t0));
+}
 
 struct unk_005284e0_a0 {
     void* f_0;

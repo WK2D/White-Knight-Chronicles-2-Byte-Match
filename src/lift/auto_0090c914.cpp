@@ -6,6 +6,8 @@ extern "C" {
 
 static void* __attribute__((noinline)) stub_0090b804(void) { void* r; __asm__ volatile ("" : "=r"(r)); return r; }
 void fn_00b41748(void*, int);
+float fn_00b41768(void*);
+void fn_00b41778(void*, float);
 
 int fn_0090ce14(void* a0) {
     void* t0;
@@ -56,6 +58,17 @@ int fn_0090cfcc(void* a0) {
         v1 = (int)(0);
     }
     fn_00b41748((void*)(a0), (int)(v1));
+    return (int)(1);
+}
+
+struct unk_0090d2f0_a0 {
+    char pad_0[8];
+    u8 f_8;
+};
+int fn_0090d2f0(unk_0090d2f0_a0* a0) {
+    float t0;
+    t0 = fn_00b41768((void*)(a0));
+    fn_00b41778((void*)((&a0->f_8)), (float)(t0 * 0.01745329238474369f));
     return (int)(1);
 }
 

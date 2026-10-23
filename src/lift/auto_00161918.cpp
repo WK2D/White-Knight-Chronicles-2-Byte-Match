@@ -4,7 +4,30 @@
 
 extern "C" {
 
+float fn_00153c1c(u32);
+float fn_00153d2c(u32);
 void fn_001d4d00(void*, void*);
+
+struct unk_00161918_a0 {
+    u32 f_0;
+};
+struct unk_00161918_a1 {
+    u32 f_0;
+};
+int fn_00161918(unk_00161918_a0* a0, unk_00161918_a1* a1) {
+    float t0;
+    float t1;
+    float t2;
+    float t3;
+    t0 = fn_00153c1c((u32)(a0->f_0));
+    t1 = fn_00153d2c((u32)(a0->f_0));
+    t2 = fn_00153c1c((u32)(a1->f_0));
+    t3 = fn_00153d2c((u32)(a1->f_0));
+    if (t0 * t0 + ((t1 * t1) * 1.5f) >= t2 * t2 + ((t3 * t3) * 1.5f)) {
+        return (int)(1);
+    }
+    return (int)(-1);
+}
 
 struct unk_001619fc_l;
 struct unk_001619fc_l {

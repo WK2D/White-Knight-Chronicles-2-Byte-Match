@@ -5,6 +5,7 @@
 extern "C" {
 
 int fn_00041b48(int);
+float fn_00041b90(int);
 
 struct unk_00211fc0_gm48f8;
 struct unk_00211fc0_gm48f8_1fc;
@@ -39,6 +40,42 @@ int fn_00212004(int a0) {
     int t0;
     t0 = fn_00041b48((int)(a0));
     (&g_00212004_0)->f_1fc->f_18 = (u32)((u32)((((u32)((((u32)((&g_00212004_0)->f_1fc->f_18) << 16) | ((u32)((&g_00212004_0)->f_1fc->f_18) >> 16)) & 0xfffff) << 16) | ((u32)((((u32)((&g_00212004_0)->f_1fc->f_18) << 16) | ((u32)((&g_00212004_0)->f_1fc->f_18) >> 16)) & 0xfffff) >> 16)) & 0xffffffff) | (u32)(((u32)(t0) << 4) & 0xfff0));
+    return (int)(1);
+}
+
+struct unk_00212274_gm48f8;
+struct unk_00212274_gm48f8_1fc;
+struct unk_00212274_gm48f8 {
+    char pad_0[508];
+    unk_00212274_gm48f8_1fc* f_1fc;
+};
+struct unk_00212274_gm48f8_1fc {
+    char pad_0[20];
+    float f_14;
+};
+extern unk_00212274_gm48f8 g_00212274_0;
+int fn_00212274(int a0) {
+    float t0;
+    t0 = fn_00041b90((int)(a0));
+    (&g_00212274_0)->f_1fc->f_14 = t0;
+    return (int)(1);
+}
+
+struct unk_002122a8_gm48f8;
+struct unk_002122a8_gm48f8_1fc;
+struct unk_002122a8_gm48f8 {
+    char pad_0[508];
+    unk_002122a8_gm48f8_1fc* f_1fc;
+};
+struct unk_002122a8_gm48f8_1fc {
+    char pad_0[16];
+    float f_10;
+};
+extern unk_002122a8_gm48f8 g_002122a8_0;
+int fn_002122a8(int a0) {
+    float t0;
+    t0 = fn_00041b90((int)(a0));
+    (&g_002122a8_0)->f_1fc->f_10 = t0;
     return (int)(1);
 }
 

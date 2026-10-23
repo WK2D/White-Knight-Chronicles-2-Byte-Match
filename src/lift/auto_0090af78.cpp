@@ -12,6 +12,8 @@ int fn_00b3cd18(void*, void*, int, int, int, int);
 int fn_00b41738(void*);
 void fn_00b41748(void*, int);
 void* fn_00b41758(void*);
+float fn_00b41768(void*);
+void fn_00b41778(void*, float);
 
 struct unk_0090b16c_a0 {
     u32 f_0;
@@ -83,6 +85,28 @@ int fn_0090bbe8(unk_0090bbe8_a0* a0) {
     t0 = fn_00b41758((void*)(a0));
     t1 = fn_00b3cd18((void*)(g_0090bbe8_0), (void*)(t0), (int)(0), (int)(-1), (int)(0), (int)(0));
     fn_00b41748((void*)((&a0->f_8)), (int)(t1));
+    return (int)(1);
+}
+
+struct unk_0090bc54_a0 {
+    char pad_0[8];
+    u8 f_8;
+};
+int fn_0090bc54(unk_0090bc54_a0* a0) {
+    float t0;
+    t0 = fn_00b41768((void*)(a0));
+    fn_00b41778((void*)((&a0->f_8)), (float)(t0 * 57.295780181884766f));
+    return (int)(1);
+}
+
+struct unk_0090bca4_a0 {
+    char pad_0[8];
+    u8 f_8;
+};
+int fn_0090bca4(unk_0090bca4_a0* a0) {
+    float t0;
+    t0 = fn_00b41768((void*)(a0));
+    fn_00b41778((void*)((&a0->f_8)), (float)(t0 * 30.0f));
     return (int)(1);
 }
 
