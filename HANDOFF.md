@@ -24,7 +24,7 @@ alternative to the static-recompilation port at
   `-O2` and not with `-fno-ivopts`. The project used `-O2 -fno-ivopts` before
   2026-10-22; only `src/game/CPostEffectManager.cpp` keeps that, as an
   override, until a natural `-O2` form of `fn_004b32e8` is found.
-- Matched: **16,024 of 51,438 functions** (3.19% of code). Six are by hand
+- Matched: **16,056 of 51,438 functions** (3.20% of code). Six are by hand
   (`src/game/*.cpp`); the rest are generated: `tools/gen_simple.py`
   (`src/gen/`, small shapes), `tools/lift.py` (`src/lift/`, the lifter),
   `tools/permute.py` (`src/perm/`, lifter output in another statement order)
@@ -394,6 +394,16 @@ counts over all functions up to 384 instructions):
   10 minutes on large functions).
 - Joins keep the comparisons every path made the same way (GCC reuses a
   condition field across a join); `merge()` takes any number of paths.
+- `rlwinm` covers every form: shifts, masks, fields taken from the rotated-in
+  bits (a right shift), wrap-around masks and real rotates
+  (`((x << n) | (x >> 32 - n)) & mask`).
+- The condition register save (`mfcr r12; stw r12,8(r1)` ... `lwz; mtcrf`) is
+  ignored: it belongs to the prologue of functions that keep comparisons in
+  cr2-cr4 across calls.
+- Not lifted yet: 64-bit composition (`rldicr rX,rY,32,31; rldimi`, about
+  470 functions: small structs passed in one register), varargs functions
+  (the prologue stores r4-r10: "spill", about 700), `mftb` (time base),
+  conditional traps (`tw`).
 - Calls through function pointers: `lwz r0,0(rX); std r2,40(r1); mtctr r0;
   lwz r2,4(rX); bctrl` with rX not a vtable slot is `((T (*)(...))(x))(...)`
   (rX points to the callee's descriptor). Weak-symbol tests (`if (&f)`) are

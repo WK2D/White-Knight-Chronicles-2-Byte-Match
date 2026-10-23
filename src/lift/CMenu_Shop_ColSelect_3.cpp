@@ -117,6 +117,35 @@ void* fn_007cb410(void) {
     return (void*)(v0);
 }
 
+struct unk_007cb454_a0_1134;
+struct unk_007cb454_a0_1134 {
+    char pad_0[184];
+    u32 f_b8;
+};
+struct unk_007cb454_a0 {
+    char pad_0[4404];
+    unk_007cb454_a0_1134* f_1134;
+};
+void fn_007cb454(unk_007cb454_a0* a0, int a1) {
+    if ((int)(a0->f_1134) == (int)(0)) {
+        return;
+    }
+    a0->f_1134->f_b8 = (u32)((u32)((((u32)((((u32)(a0->f_1134->f_b8) << 3) | ((u32)(a0->f_1134->f_b8) >> 29)) & 0x7fffffff) << 29) | ((u32)((((u32)(a0->f_1134->f_b8) << 3) | ((u32)(a0->f_1134->f_b8) >> 29)) & 0x7fffffff) >> 3)) & 0xffffffff) | (u32)(((u32)(a1) << 28) & 0x10000000));
+}
+
+struct unk_007cb4a8_a0_1134;
+struct unk_007cb4a8_a0_1134 {
+    char pad_0[184];
+    u32 f_b8;
+};
+struct unk_007cb4a8_a0 {
+    char pad_0[4404];
+    unk_007cb4a8_a0_1134* f_1134;
+};
+void fn_007cb4a8(unk_007cb4a8_a0* a0, int a1) {
+    a0->f_1134->f_b8 = (u32)((u32)((((u32)((((u32)(a0->f_1134->f_b8) << 1) | ((u32)(a0->f_1134->f_b8) >> 31)) & 0x7fffffff) << 31) | ((u32)((((u32)(a0->f_1134->f_b8) << 1) | ((u32)(a0->f_1134->f_b8) >> 31)) & 0x7fffffff) >> 1)) & 0xffffffff) | (u32)(((u32)(a1) << 30) & 0x40000000));
+}
+
 struct unk_007cb658_a0 {
     char pad_0[4412];
     u32 f_113c;

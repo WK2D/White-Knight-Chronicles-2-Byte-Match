@@ -13,6 +13,22 @@ u32 fn_0002e9e0(int a0, unk_0002e9e0_a1* a1) {
     return (u32)(a1->f_8);
 }
 
+struct unk_0002eabc_a1 {
+    u32 f_0;
+    u32 f_4;
+};
+int fn_0002eabc(int a0, unk_0002eabc_a1* a1, int a2, int a3, int a4, int a5) {
+    int v0;
+    if (a1 != 0) {
+        a1->f_4 = (u32)(a5);
+        a1->f_0 = (u32)((u32)((u32)((u32)((u32)((u32)((((u32)((((u32)(a1->f_0) << 28) | ((u32)(a1->f_0) >> 4)) & 0x1fffffff) << 4) | ((u32)((((u32)(a1->f_0) << 28) | ((u32)(a1->f_0) >> 4)) & 0x1fffffff) >> 28)) & 0xffffffff) | (u32)(((u32)(a2) << 1) & 0xe)) & 0xf) | (u32)((u32)(a3) << 4)) & 0xfffffffe) | (u32)((u32)(a4) & 0x1));
+        v0 = (int)(0);
+    } else {
+        v0 = (int)(-1);
+    }
+    return (int)(v0);
+}
+
 struct unk_0002eb28_a1 {
     char pad_0[8];
     void* f_8;

@@ -41,6 +41,19 @@ int fn_00683654(unk_00683654_a0* a0) {
     return (int)(v0);
 }
 
+struct unk_00683680_a0_10fc;
+struct unk_00683680_a0_10fc {
+    char pad_0[192];
+    u32 f_c0;
+};
+struct unk_00683680_a0 {
+    char pad_0[4348];
+    unk_00683680_a0_10fc* f_10fc;
+};
+void fn_00683680(unk_00683680_a0* a0, int a1) {
+    a0->f_10fc->f_c0 = (u32)((u32)((((u32)((((u32)(a0->f_10fc->f_c0) << 2) | ((u32)(a0->f_10fc->f_c0) >> 30)) & 0x7fffffff) << 30) | ((u32)((((u32)(a0->f_10fc->f_c0) << 2) | ((u32)(a0->f_10fc->f_c0) >> 30)) & 0x7fffffff) >> 2)) & 0xffffffff) | (u32)(((u32)(a1) << 29) & 0x20000000));
+}
+
 struct unk_00683a50_a0 {
     char pad_0[272];
     u8 f_110;

@@ -310,6 +310,22 @@ int fn_005d7e40(unk_005d7e40_a0* a0) {
     return (int)(v0);
 }
 
+struct unk_005d8054_a0_100c;
+struct unk_005d8054_a0_100c {
+    char pad_0[1844];
+    u32 f_734;
+};
+struct unk_005d8054_a0 {
+    char pad_0[4108];
+    unk_005d8054_a0_100c* f_100c;
+};
+void fn_005d8054(unk_005d8054_a0* a0, int a1) {
+    if ((int)(a0->f_100c) == (int)(0)) {
+        return;
+    }
+    a0->f_100c->f_734 = (u32)((u32)((((u32)((((u32)(a0->f_100c->f_734) << 7) | ((u32)(a0->f_100c->f_734) >> 25)) & 0x7fffffff) << 25) | ((u32)((((u32)(a0->f_100c->f_734) << 7) | ((u32)(a0->f_100c->f_734) >> 25)) & 0x7fffffff) >> 7)) & 0xffffffff) | (u32)(((u32)(a1) << 24) & 0x1000000));
+}
+
 struct unk_005d8080_a1 {
     virtual void vf0();
     virtual void vf1();

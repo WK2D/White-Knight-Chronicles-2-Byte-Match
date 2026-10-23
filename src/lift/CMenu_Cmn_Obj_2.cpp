@@ -7,6 +7,22 @@ extern "C" {
 void* fn_00043544(void*, int);
 void fn_00043698(void*, void*, int);
 
+struct unk_007c231c_a0 {
+    char pad_0[56];
+    u32 f_38;
+};
+void fn_007c231c(unk_007c231c_a0* a0) {
+    a0->f_38 = (u32)((((u32)((((u32)(a0->f_38) << 26) | ((u32)(a0->f_38) >> 6)) & 0x3fffffff) << 6) | ((u32)((((u32)(a0->f_38) << 26) | ((u32)(a0->f_38) >> 6)) & 0x3fffffff) >> 26)) & 0xffffffff);
+}
+
+struct unk_007c2330_a0 {
+    char pad_0[56];
+    u32 f_38;
+};
+void fn_007c2330(unk_007c2330_a0* a0) {
+    a0->f_38 = (u32)((u32)((((u32)((((u32)(a0->f_38) << 26) | ((u32)(a0->f_38) >> 6)) & 0x7fffffff) << 6) | ((u32)((((u32)(a0->f_38) << 26) | ((u32)(a0->f_38) >> 6)) & 0x7fffffff) >> 26)) & 0xffffffff) | 0x10);
+}
+
 struct unk_007c2348_a0 {
     char pad_0[56];
     u32 f_38;

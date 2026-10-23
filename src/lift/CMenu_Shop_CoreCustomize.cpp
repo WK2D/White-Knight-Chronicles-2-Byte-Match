@@ -6,6 +6,7 @@ extern "C" {
 
 void fn_007bb690(u32, u32, int, int, int, int);
 static void __attribute__((noinline)) stub_007d5000(int p0) { __asm__ volatile ("" : : "r"(p0)); }
+static void __attribute__((noinline)) stub_007d5278(void* p0, int p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 
 int fn_007d5098(int a0) {
     stub_007d5000((int)(a0));
@@ -19,6 +20,16 @@ struct unk_007d50bc_a0 {
 };
 void fn_007d50bc(unk_007d50bc_a0* a0, int a1) {
     fn_007bb690((u32)(a0->f_d0), (u32)(a0->f_cc), (int)(a1), (int)(698), (int)(620), (int)(701));
+}
+
+struct unk_007d5398_a0 {
+    char pad_0[304];
+    u32 f_130;
+};
+int fn_007d5398(unk_007d5398_a0* a0, int a1, int a2) {
+    a0->f_130 = (u32)((((u32)((((u32)(a0->f_130) << 1) | ((u32)(a0->f_130) >> 31)) & 0x7fffffff) << 31) | ((u32)((((u32)(a0->f_130) << 1) | ((u32)(a0->f_130) >> 31)) & 0x7fffffff) >> 1)) & 0xffffffff);
+    stub_007d5278((void*)(a0), (int)(a2));
+    return (int)(1);
 }
 
 }

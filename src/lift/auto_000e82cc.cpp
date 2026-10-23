@@ -8,6 +8,8 @@ int fn_000e983c(void*);
 int fn_000e98b4(void*, u32);
 int fn_000e9940(void*);
 int fn_000e99b4(void*);
+int fn_000e9f64(int);
+int fn_000ea07c(int);
 void fn_00b39b18(int);
 void fn_00b39b28(int);
 
@@ -60,6 +62,18 @@ void fn_000e95c8(unk_000e95c8_a0* a0) {
     if ((int)(a0->f_0) != (int)(0)) {
         t0 = fn_000e99b4((void*)(a0));
     }
+}
+
+int fn_000e95fc(int a0) {
+    int t0;
+    t0 = fn_000e9f64((int)(a0));
+    return (int)((((u32)(~((u32)(t0) | (u32)(t0))) >> 30) & 0x2) + -2);
+}
+
+int fn_000e9630(int a0) {
+    int t0;
+    t0 = fn_000ea07c((int)(a0));
+    return (int)((((u32)(~((u32)(t0) | (u32)(t0))) >> 30) & 0x2) + -2);
 }
 
 }

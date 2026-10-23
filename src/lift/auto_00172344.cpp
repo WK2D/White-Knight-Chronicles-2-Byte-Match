@@ -5,6 +5,26 @@
 extern "C" {
 
 int fn_000a8dfc(void*, void*);
+int fn_000a90ac(void*);
+
+struct unk_0017240c_a0 {
+    char pad_0[1308];
+    u32 f_51c;
+    char pad_520[32];
+    u32 f_540;
+};
+int fn_0017240c(unk_0017240c_a0* a0) {
+    int t0;
+    int v2;
+    if ((int)(a0->f_51c) != (int)(0)) {
+        t0 = fn_000a90ac((void*)(a0->f_51c));
+        a0->f_540 = (u32)((((u32)((((u32)(a0->f_540) << 28) | ((u32)(a0->f_540) >> 4)) & 0x7fffffff) << 4) | ((u32)((((u32)(a0->f_540) << 28) | ((u32)(a0->f_540) >> 4)) & 0x7fffffff) >> 28)) & 0xffffffff);
+        v2 = (int)(1);
+    } else {
+        v2 = (int)(0);
+    }
+    return (int)(v2);
+}
 
 struct unk_00172468_a0 {
     char pad_0[1308];

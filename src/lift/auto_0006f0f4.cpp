@@ -77,4 +77,8 @@ void* fn_00072004(int a0) {
     return (void*)(g_00072004_1);
 }
 
+int fn_0007208c(int a0) {
+    return (int)((((u32)(-(int)((u32)(a0) ^ 0x1)) >> 30) & 0x2) + 44);
+}
+
 }

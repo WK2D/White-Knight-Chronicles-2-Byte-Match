@@ -71,4 +71,20 @@ int fn_006717c0(unk_006717c0_a0* a0) {
     return (int)(0);
 }
 
+struct unk_00671a3c_a0_10c0;
+struct unk_00671a3c_a0_10c0 {
+    char pad_0[40];
+    u32 f_28;
+};
+struct unk_00671a3c_a0 {
+    char pad_0[4288];
+    unk_00671a3c_a0_10c0* f_10c0;
+};
+void fn_00671a3c(unk_00671a3c_a0* a0, int a1) {
+    if ((int)(a0->f_10c0) == (int)(0)) {
+        return;
+    }
+    a0->f_10c0->f_28 = (u32)((u32)((((u32)((((u32)(a0->f_10c0->f_28) << 8) | ((u32)(a0->f_10c0->f_28) >> 24)) & 0x7fffffff) << 24) | ((u32)((((u32)(a0->f_10c0->f_28) << 8) | ((u32)(a0->f_10c0->f_28) >> 24)) & 0x7fffffff) >> 8)) & 0xffffffff) | (u32)(((u32)(a1) << 23) & 0x800000));
+}
+
 }

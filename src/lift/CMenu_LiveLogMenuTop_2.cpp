@@ -19,6 +19,14 @@ int fn_0079f7f4(int a0, float f0) {
     return (int)(1);
 }
 
+struct unk_0079fd08_a0 {
+    char pad_0[6448];
+    u32 f_1930;
+};
+void fn_0079fd08(unk_0079fd08_a0* a0, int a1) {
+    a0->f_1930 = (u32)((u32)((((u32)((((u32)(a0->f_1930) << 3) | ((u32)(a0->f_1930) >> 29)) & 0x7fffffff) << 29) | ((u32)((((u32)(a0->f_1930) << 3) | ((u32)(a0->f_1930) >> 29)) & 0x7fffffff) >> 3)) & 0xffffffff) | (u32)(((u32)((u32)(a1) ^ 0x1) << 28) & 0x10000000));
+}
+
 int fn_007a1398(int a0, int a1, void* a2) {
     stub_0079fa58((int)(a0));
     stub_0079f84c((int)(a0), (void*)(a2));

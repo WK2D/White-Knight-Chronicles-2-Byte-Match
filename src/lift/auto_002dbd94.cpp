@@ -5,8 +5,29 @@
 extern "C" {
 
 void* fn_002aa740(u32);
+int fn_002aae0c(u32, u32);
 void* fn_002b9538(void*, u16);
 int fn_002c8b0c(void*, u16, u8);
+
+struct unk_002dbd94_gm24b8;
+struct unk_002dbd94_gm24b8_0;
+struct unk_002dbd94_gm24b8 {
+    unk_002dbd94_gm24b8_0* f_0;
+};
+struct unk_002dbd94_gm24b8_0 {
+    char pad_0[8];
+    u32 f_8;
+};
+struct unk_002dbd94_a1 {
+    char pad_0[4];
+    u32 f_4;
+};
+extern unk_002dbd94_gm24b8 g_002dbd94_0;
+u32 fn_002dbd94(int a0, unk_002dbd94_a1* a1) {
+    int t0;
+    t0 = fn_002aae0c((u32)((&g_002dbd94_0)->f_0->f_8), (u32)(a1->f_4));
+    return (u32)(((u32)(-(int)((u32)(t0) & 0xff)) >> 30) & 0x2);
+}
 
 struct unk_002dc048_gm24b8;
 struct unk_002dc048_gm24b8_0;

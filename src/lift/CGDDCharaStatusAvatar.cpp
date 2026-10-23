@@ -306,6 +306,18 @@ int fn_0038af24(unk_0038af24_a0* a0) {
     return (int)((int)(signed char)(a0->f_1301));
 }
 
+struct unk_0038af40_a0 {
+    char pad_0[4960];
+    u32 f_1360;
+};
+void fn_0038af40(unk_0038af40_a0* a0, int a1) {
+    a0->f_1360 = (u32)((((u32)((((u32)(a0->f_1360) << 8) | ((u32)(a0->f_1360) >> 24)) & 0x7fffffff) << 24) | ((u32)((((u32)(a0->f_1360) << 8) | ((u32)(a0->f_1360) >> 24)) & 0x7fffffff) >> 8)) & 0xffffffff);
+    if ((int)(a1) == (int)(0)) {
+        return;
+    }
+    a0->f_1360 = (u32)((u32)((((u32)((((u32)(a0->f_1360) << 8) | ((u32)(a0->f_1360) >> 24)) & 0x7fffffff) << 24) | ((u32)((((u32)(a0->f_1360) << 8) | ((u32)(a0->f_1360) >> 24)) & 0x7fffffff) >> 8)) & 0xffffffff) | 0x800000);
+}
+
 struct unk_0038af64_a0 {
     char pad_0[4960];
     u32 f_1360;

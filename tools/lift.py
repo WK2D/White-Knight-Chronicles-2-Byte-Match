@@ -1323,6 +1323,19 @@ class Lifter:
             self.set(ra, res)
             self.cr[0] = (res, '0', 'signed')
             return
+        # Saving and restoring the condition register (the function keeps
+        # comparisons in cr2-cr4 across calls): mfcr rX; stw rX,8(r1) ...
+        # lwz rX,8(r1); mtcrf. Neither is part of the source.
+        if w & 0xFC1FFFFF == 0x7C000026:                             # mfcr rX
+            self.gpr[rt] = Value('/*condition register*/', 'crsave')
+            return
+        if op == 31 and (w >> 1) & 0x3FF == 144:                     # mtcrf
+            return
+        if op == 36 and ra == 1 and self.gpr.get(rt) is not None and self.gpr[rt].ctype == 'crsave':
+            return
+        if op == 32 and ra == 1 and 0 <= d < 48:                     # lwz from the linkage area: the saved CR
+            self.gpr[rt] = Value('/*condition register*/', 'crsave')
+            return
         if w == 0x7C0802A6:                                          # mflr r0
             self.gpr[0] = Value('/*return address*/', 'lr')
             return
@@ -1698,8 +1711,6 @@ class Lifter:
     def rlwinm(self, w):
         rs, ra = (w >> 21) & 31, (w >> 16) & 31
         sh, mb, me = (w >> 11) & 31, (w >> 6) & 31, (w >> 1) & 31
-        if mb > me:
-            raise Fail('wrapping rlwinm mask')
         clz = getattr(self.reg(rs), 'clz_of', None)
         if clz is not None and sh == 27 and mb == 5 and me == 31:    # cntlzw; srwi 5: x == 0
             self.set(ra, Value(f'({clz.text} == 0)', 'int', 1))
@@ -1707,8 +1718,13 @@ class Lifter:
                 self.cr[0] = (self.gpr[ra], '0', 'signed')
             return
         x = f'(u32)({self.reg(rs).text})'
-        mask = ((1 << (32 - mb)) - 1) & ~((1 << (31 - me)) - 1) & 0xFFFFFFFF
-        if sh == 0:
+        if mb <= me:
+            mask = ((1 << (32 - mb)) - 1) & ~((1 << (31 - me)) - 1) & 0xFFFFFFFF
+        else:                                                        # the mask wraps around
+            mask = ((1 << (32 - mb)) - 1) | (~((1 << (31 - me)) - 1) & 0xFFFFFFFF)
+        if mb > me and sh != 0:
+            text = f'(({x} << {sh}) | ({x} >> {32 - sh})) & {mask:#x}'
+        elif sh == 0:
             text = f'{x} & {mask:#x}'
         elif mb == 0 and me == 31 - sh:                              # slwi
             text = f'{x} << {sh}'
@@ -1718,8 +1734,10 @@ class Lifter:
             text = f'({x} >> {32 - sh}) & {(1 << (32 - mb)) - 1:#x}'
         elif mask & ((1 << sh) - 1) == 0:                           # shift left, then mask
             text = f'({x} << {sh}) & {mask:#x}'
-        else:
-            raise Fail('rlwinm rotate')
+        elif mask & ~((1 << sh) - 1) & 0xFFFFFFFF == 0:              # only rotated-in bits: shift right
+            text = f'({x} >> {32 - sh}) & {mask:#x}'
+        else:                                                        # a real rotate
+            text = f'(({x} << {sh}) | ({x} >> {32 - sh})) & {mask:#x}'
         self.set(ra, Value(text, 'u32', 1))
         if w & 1:
             self.cr[0] = (self.gpr[ra], '0', 'signed')

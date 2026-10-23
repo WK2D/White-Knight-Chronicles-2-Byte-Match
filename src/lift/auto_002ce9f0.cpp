@@ -18,6 +18,18 @@ void* fn_002d03cc(unk_002d03cc_a0* a0) {
     return (void*)((int)(a0->f_0) + (int)(a0->f_8));
 }
 
+struct unk_002d04cc_a0_0;
+struct unk_002d04cc_a0_0 {
+    char pad_0[12];
+    u32 f_c;
+};
+struct unk_002d04cc_a0 {
+    unk_002d04cc_a0_0* f_0;
+};
+void fn_002d04cc(unk_002d04cc_a0* a0, int a1) {
+    a0->f_0->f_c = (u32)((u32)((((u32)((((u32)(a0->f_0->f_c) << 24) | ((u32)(a0->f_0->f_c) >> 8)) & 0x1ffffff) << 8) | ((u32)((((u32)(a0->f_0->f_c) << 24) | ((u32)(a0->f_0->f_c) >> 8)) & 0x1ffffff) >> 24)) & 0xffffffff) | (u32)(((u32)(a1) << 1) & 0xfe));
+}
+
 struct unk_002d04ec_a0_0;
 struct unk_002d04ec_a0_0 {
     char pad_0[12];

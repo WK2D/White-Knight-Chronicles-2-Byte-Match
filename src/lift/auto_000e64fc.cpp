@@ -6,6 +6,17 @@ extern "C" {
 
 void fn_00fccd90(void*);
 void fn_00fccdb0(void*);
+int fn_00fcd050(void*);
+
+struct unk_000e65c4_a0 {
+    char pad_0[24];
+    u8 f_18;
+};
+int fn_000e65c4(unk_000e65c4_a0* a0) {
+    int t0;
+    t0 = fn_00fcd050((void*)((&a0->f_18)));
+    return (int)((((u32)(~((u32)(t0) | (u32)(t0))) >> 30) & 0x2) + -2);
+}
 
 struct unk_000e6658_a0 {
     char pad_0[24];

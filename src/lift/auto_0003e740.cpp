@@ -7,6 +7,26 @@ extern "C" {
 static void __attribute__((noinline)) stub_0003f7d8(int p0, int p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 void fn_00b38738(void*, void*, int, int, int, int, int, int);
 
+struct unk_0003f55c_a0 {
+    u32 f_0;
+    char pad_4[4];
+    u32 f_8;
+    u32 f_c;
+    u8 f_10;
+};
+void fn_0003f55c(unk_0003f55c_a0* a0) {
+    int v0;
+    void* v5;
+    a0->f_0 = (u32)((u32)((u32)((u32)(a0->f_0) << 24) | (u32)(((u32)(a0->f_0) << 8) & 0xff0000)) | (u32)((u32)(((u32)(a0->f_0) >> 8) & 0xff00) | (u32)((u32)(a0->f_0) >> 24)));
+    a0->f_8 = (u32)((u32)((u32)((u32)(a0->f_8) << 24) | (u32)(((u32)(a0->f_8) << 8) & 0xff0000)) | (u32)((u32)(((u32)(a0->f_8) >> 8) & 0xff00) | (u32)((u32)(a0->f_8) >> 24)));
+    a0->f_c = (u32)((u32)((u32)((u32)(a0->f_c) << 24) | (u32)(((u32)(a0->f_c) << 8) & 0xff0000)) | (u32)((u32)(((u32)(a0->f_c) >> 8) & 0xff00) | (u32)((u32)(a0->f_c) >> 24)));
+    v5 = (void*)((&a0->f_10));
+    for (v0 = 0; v0 < 10; v0++) {
+        FIELD(u32, v5, 0) = (u32)((u32)((u32)((u32)(FIELD(u32, v5, 0)) << 24) | (u32)(((u32)(FIELD(u32, v5, 0)) << 8) & 0xff0000)) | (u32)((u32)(((u32)(FIELD(u32, v5, 0)) >> 8) & 0xff00) | (u32)((u32)(FIELD(u32, v5, 0)) >> 24)));
+        v5 = (void*)((char*)v5 + 4);
+    }
+}
+
 void fn_0003f948(int a0, int a1) {
     stub_0003f7d8((int)(a0), (int)(a1));
 }

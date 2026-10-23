@@ -38,6 +38,17 @@ void fn_003bb2e8(unk_003bb2e8_a0* a0, int a1) {
     fn_00b38268((void*)(a0->f_8 + 10), (int)(a1));
 }
 
+struct unk_003bd680_a0 {
+    char pad_0[172];
+    u32 f_ac;
+    char pad_b0[8];
+    u32 f_b8;
+};
+void fn_003bd680(unk_003bd680_a0* a0) {
+    a0->f_ac = (u32)(0);
+    a0->f_b8 = (u32)((((u32)((((u32)(a0->f_b8) << 16) | ((u32)(a0->f_b8) >> 16)) & 0x3fffffff) << 16) | ((u32)((((u32)(a0->f_b8) << 16) | ((u32)(a0->f_b8) >> 16)) & 0x3fffffff) >> 16)) & 0xffffffff);
+}
+
 struct unk_003bde20_a0_4;
 struct unk_003bde20_a0_4 {
     char pad_0[8960];
@@ -151,6 +162,22 @@ int fn_003bdfc8(unk_003bdfc8_a0* a0) {
     return (int)(v0);
 }
 
+struct unk_003bdfe8_a0_8;
+struct unk_003bdfe8_a0_8 {
+    char pad_0[64];
+    u32 f_40;
+};
+struct unk_003bdfe8_a0 {
+    char pad_0[8];
+    unk_003bdfe8_a0_8* f_8;
+};
+void fn_003bdfe8(unk_003bdfe8_a0* a0, int a1) {
+    if ((int)(a0->f_8) == (int)(0)) {
+        return;
+    }
+    a0->f_8->f_40 = (u32)((u32)((((u32)((((u32)(a0->f_8->f_40) << 1) | ((u32)(a0->f_8->f_40) >> 31)) & 0x7fffffff) << 31) | ((u32)((((u32)(a0->f_8->f_40) << 1) | ((u32)(a0->f_8->f_40) >> 31)) & 0x7fffffff) >> 1)) & 0xffffffff) | (u32)(((u32)(a1) << 30) & 0x40000000));
+}
+
 struct unk_003be014_a0_8;
 struct unk_003be014_a0_8 {
     char pad_0[64];
@@ -168,6 +195,22 @@ int fn_003be014(unk_003be014_a0* a0) {
         v1 = (int)(0);
     }
     return (int)(v1);
+}
+
+struct unk_003be124_a0_8;
+struct unk_003be124_a0_8 {
+    char pad_0[64];
+    u32 f_40;
+};
+struct unk_003be124_a0 {
+    char pad_0[8];
+    unk_003be124_a0_8* f_8;
+};
+void fn_003be124(unk_003be124_a0* a0, int a1) {
+    if ((int)(a0->f_8) == (int)(0)) {
+        return;
+    }
+    a0->f_8->f_40 = (u32)((u32)((((u32)((((u32)(a0->f_8->f_40) << 2) | ((u32)(a0->f_8->f_40) >> 30)) & 0x7fffffff) << 30) | ((u32)((((u32)(a0->f_8->f_40) << 2) | ((u32)(a0->f_8->f_40) >> 30)) & 0x7fffffff) >> 2)) & 0xffffffff) | (u32)(((u32)(a1) << 29) & 0x20000000));
 }
 
 struct unk_003be150_a0_8;

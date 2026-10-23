@@ -24,6 +24,24 @@ int fn_00211fc0(int a0) {
     return (int)(1);
 }
 
+struct unk_00212004_gm48f8;
+struct unk_00212004_gm48f8_1fc;
+struct unk_00212004_gm48f8 {
+    char pad_0[508];
+    unk_00212004_gm48f8_1fc* f_1fc;
+};
+struct unk_00212004_gm48f8_1fc {
+    char pad_0[24];
+    u32 f_18;
+};
+extern unk_00212004_gm48f8 g_00212004_0;
+int fn_00212004(int a0) {
+    int t0;
+    t0 = fn_00041b48((int)(a0));
+    (&g_00212004_0)->f_1fc->f_18 = (u32)((u32)((((u32)((((u32)((&g_00212004_0)->f_1fc->f_18) << 16) | ((u32)((&g_00212004_0)->f_1fc->f_18) >> 16)) & 0xfffff) << 16) | ((u32)((((u32)((&g_00212004_0)->f_1fc->f_18) << 16) | ((u32)((&g_00212004_0)->f_1fc->f_18) >> 16)) & 0xfffff) >> 16)) & 0xffffffff) | (u32)(((u32)(t0) << 4) & 0xfff0));
+    return (int)(1);
+}
+
 struct unk_00212f80_gm48f8;
 struct unk_00212f80_gm48f8_1fc;
 struct unk_00212f80_gm48f8 {
