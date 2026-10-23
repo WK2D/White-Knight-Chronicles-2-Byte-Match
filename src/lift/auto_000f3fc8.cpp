@@ -5,6 +5,37 @@
 extern "C" {
 
 static void* __attribute__((noinline)) stub_000f4304(void* p0, int p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
+int fn_00b3a0a8(void*, int);
+int fn_00fccd90(void*, int);
+void fn_00fccdb0(u32);
+
+struct unk_000f4304_l;
+struct unk_000f4304_l {
+    u32 f_0;
+};
+struct unk_000f4304_a0 {
+    char pad_0[20924];
+    u32 f_51bc;
+};
+void* fn_000f4304(unk_000f4304_a0* a0, int a1) {
+    int t0;
+    int t1;
+    unk_000f4304_l l;
+    if ((int)(a0->f_51bc) == (int)(0)) {
+        return (void*)(0);
+    }
+    t0 = fn_00fccd90((void*)(a0->f_51bc), (int)(0));
+    if ((int)(t0) != (int)(0)) {
+        return (void*)(0);
+    }
+    l.f_0 = (u32)(t0);
+    t1 = fn_00b3a0a8((void*)((&l)), (int)(a1));
+    fn_00fccdb0((u32)(a0->f_51bc));
+    if ((int)(t1) != (int)(0)) {
+        return (void*)(0);
+    }
+    return (void*)(l.f_0);
+}
 
 struct unk_000f439c_a1 {
     u32 f_0;

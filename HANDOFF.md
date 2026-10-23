@@ -24,7 +24,7 @@ alternative to the static-recompilation port at
   `-O2` and not with `-fno-ivopts`. The project used `-O2 -fno-ivopts` before
   2026-10-22; only `src/game/CPostEffectManager.cpp` keeps that, as an
   override, until a natural `-O2` form of `fn_004b32e8` is found.
-- Matched: **17,566 of 50,844 functions** (3.85% of code). Six are by hand
+- Matched: **17,622 of 50,844 functions** (3.89% of code). Six are by hand
   (`src/game/*.cpp`); the rest are generated: `tools/gen_simple.py`
   (`src/gen/`, small shapes), `tools/lift.py` (`src/lift/`, the lifter),
   `tools/permute.py` (`src/perm/`, lifter output in another statement order)
@@ -248,14 +248,6 @@ between cases is not handled (fail). Float-to-int conversions through the
 red zone (`addi r9,r1,-16; fctiwz; stfiwx f0,0,r9; lbz r3,-13(r1)`) lift as
 `(u8)(f)` etc.
 
-Regression to look at (2026-10-23): 56 functions that matched before the
-blind-spot fix no longer do, e.g. `fn_00078284`, which now lifts as nested
-ifs with a merge variable where it used to lift as early returns (96%), and
-`fn_002df8dc` (90%). One of the day's control-flow changes (comparisons kept
-across joins, N-way merge, switch support, out-of-line loop blocks) is the
-likely cause; compare `git show <old>:src/lift/auto_000775fc.cpp` with
-`lift.py --one 78284`.
-
 After that, by size (`lift.py` failure reasons, `build/why_all.py`-style
 counts over all functions up to 384 instructions):
 1. Loops GCC restructured (about 3,800: "branch out of a loop body", "jump
@@ -462,7 +454,8 @@ counts over all functions up to 384 instructions):
 - Out-of-line loop blocks: GCC moves an if's then-block out of a loop to the
   end of the function; it jumps back into the loop (`fn_0001c828`). A
   backward branch from after a loop's latch into that loop is recorded in
-  `outlined_ret` (not a loop); `successors()` follows it, and the loop's
+  `outlined_ret` (not a loop; only between real loops, cycles found with
+  `reach_all`: jumps back to a shared return tail are not loops); `successors()` follows it, and the loop's
   written registers include `outlined_regions`.
 - Loops ending in `cmpwi rI,C; bne` with rI an induction register become
   `for (i = 0; i < N; i++)` like counted loops (`compare_trips`: N = C/S + 1

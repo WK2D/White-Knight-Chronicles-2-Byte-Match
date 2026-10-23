@@ -46,10 +46,10 @@ int fn_00178634(unk_00178634_a0* a0, unk_00178634_a1* a1) {
     if ((int)((u32)(FIELD(u16, t0, 32)) & 0x20) != (int)(0)) {
         return (int)(0);
     }
-    if ((int)(a1) != (int)(0)) {
-        a1->f_0 = (void*)(t0);
+    if ((int)(a1) == (int)(0)) {
         return (int)(1);
     }
+    a1->f_0 = (void*)(t0);
     return (int)(1);
 }
 

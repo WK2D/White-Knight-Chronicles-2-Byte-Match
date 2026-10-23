@@ -18,10 +18,10 @@ void* fn_00019bd0(unk_00019bd0_a0* a0, int a1) {
     if ((int)(a0->f_38) <= (int)(a1)) {
         return (void*)(0);
     }
-    if ((int)(a0->f_34) == (int)(0)) {
-        return (void*)(0);
+    if ((int)(a0->f_34) != (int)(0)) {
+        return (void*)((int)(a0->f_34) + (int)((u32)(a1) << 7));
     }
-    return (void*)((int)(a0->f_34) + (int)((u32)(a1) << 7));
+    return (void*)(0);
 }
 
 struct unk_00019cbc_l;

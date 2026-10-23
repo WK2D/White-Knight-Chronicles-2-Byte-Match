@@ -20,18 +20,17 @@ int fn_00161894(unk_00161894_a0* a0, unk_00161894_a1* a1) {
     float t0;
     float t1;
     if ((int)((int)(signed char)(a0->f_2a)) > (int)((int)(signed char)(a1->f_2a))) {
-    } else {
-        if ((int)((int)(signed char)(a0->f_2a)) < (int)((int)(signed char)(a1->f_2a))) {
-            return (int)(-1);
-        }
-        t0 = fn_00153c1c((u32)(a0->f_0));
-        t1 = fn_00153c1c((u32)(a1->f_0));
-        if (t0 > t1) {
-            return (int)(1);
-        }
+        return (int)(1);
+    }
+    if ((int)((int)(signed char)(a0->f_2a)) < (int)((int)(signed char)(a1->f_2a))) {
         return (int)(-1);
     }
-    return (int)(1);
+    t0 = fn_00153c1c((u32)(a0->f_0));
+    t1 = fn_00153c1c((u32)(a1->f_0));
+    if (t0 > t1) {
+        return (int)(1);
+    }
+    return (int)(-1);
 }
 
 }

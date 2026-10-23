@@ -607,8 +607,9 @@ class Lifter:
         # A backward branch from a block placed after a loop's latch into that
         # loop is not a loop of its own: GCC moved part of the loop body (an
         # if's then-block) out of line, and it jumps back.
-        for i, t in back:
-            if any(h < t <= i2 < i for i2, h in back if (i2, h) != (i, t)):
+        cyclic = [(i, t) for i, t in back if self.block_start(i) in self.reach_all(t)]
+        for i, t in cyclic:                                # only between real loops
+            if any(h < t <= i2 < i for i2, h in cyclic if (i2, h) != (i, t)):
                 self.outlined_ret[i] = t
         for i, t in back:
             if i in self.outlined_ret:

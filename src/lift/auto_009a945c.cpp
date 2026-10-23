@@ -5,8 +5,32 @@
 extern "C" {
 
 int fn_009b3758(void*);
+int fn_009b4c80(u32, u32);
+int fn_009b4c94(u32);
 int fn_009b4ca4(void*);
 void fn_009b509c(void*, int);
+
+struct unk_009a99e0_a0 {
+    u32 f_0;
+    u32 f_4;
+    u32 f_8;
+};
+u32 fn_009a99e0(unk_009a99e0_a0* a0) {
+    int t0;
+    int t1;
+    if (a0 != 0) {
+        t0 = fn_009b4c80((u32)(a0->f_0), (u32)(a0->f_8));
+        if ((int)(t0) != (int)(0)) {
+            return (u32)((u32)(20) & (u32)(23));
+        }
+        t1 = fn_009b4c94((u32)(a0->f_4));
+        if ((int)(t1) != (int)(0)) {
+            return (u32)((u32)(20) & (u32)(23));
+        }
+        return (u32)((u32)(0) & (u32)(23));
+    }
+    return (u32)((u32)(3) & (u32)(23));
+}
 
 struct unk_009a9a54_a0 {
     u32 f_0;

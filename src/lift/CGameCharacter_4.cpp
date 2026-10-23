@@ -73,6 +73,23 @@ int fn_00185a78(int a0, unk_00185a78_a1* a1) {
     return (int)(255);
 }
 
+struct unk_00185b24_gm57b8;
+struct unk_00185b24_gm57b8 {
+    u32 f_0;
+};
+extern unk_00185b24_gm57b8 g_00185b24_0;
+void* fn_00185b24(int a0) {
+    int t0;
+    t0 = fn_0053a4fc((u16)((u16)a0));
+    if ((u32)(t0) > (u32)(39)) {
+        return (void*)(0);
+    }
+    if ((int)(FIELD(u16, (int)((u32)(t0) << 3) + (int)((&g_00185b24_0)->f_0), 4)) != (int)((u32)(a0) & 0xffff)) {
+        return (void*)(0);
+    }
+    return (void*)((int)((u32)(t0) << 3) + (int)((&g_00185b24_0)->f_0));
+}
+
 void* fn_00185b90(int a0) {
     void* t0;
     int v0;
