@@ -64,4 +64,19 @@ void fn_00dc7574(int a0, int a1) {
     (&g_00dc7574_0)->f_0 = (u8)(0);
 }
 
+struct unk_00dc7660_a0 {
+    char pad_0[32];
+    vec f_20;
+};
+struct unk_00dc7660_a1 {
+    char pad_0[16];
+    vec f_10;
+};
+struct unk_00dc7660_a5 {
+    vec f_0;
+};
+void fn_00dc7660(unk_00dc7660_a0* a0, unk_00dc7660_a1* a1, int a2, int a3, int a4, unk_00dc7660_a5* a5) {
+    a5->f_0 = vec_add(a5->f_0, vec_sub(a0->f_20, vec_madd(a0->f_20, vec_splat(vec_add(vec_add(vec_madd(a0->f_20, a1->f_10, (vector float){0, 0, 0, 0}), vec_sld(vec_madd(a0->f_20, a1->f_10, (vector float){0, 0, 0, 0}), vec_madd(a0->f_20, a1->f_10, (vector float){0, 0, 0, 0}), 8)), vec_sld(vec_madd(a0->f_20, a1->f_10, (vector float){0, 0, 0, 0}), vec_madd(a0->f_20, a1->f_10, (vector float){0, 0, 0, 0}), 4)), 0), (vector float){0, 0, 0, 0})));
+}
+
 }

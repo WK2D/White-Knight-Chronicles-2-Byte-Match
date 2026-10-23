@@ -59,4 +59,26 @@ void fn_00d6f334(unk_00d6f334_a0* a0, int a1) {
     fn_00f43060((int)(a1), (void*)((&a0->f_10)));
 }
 
+struct unk_00d6f364_a0 {
+    char pad_0[208];
+    vec f_d0;
+};
+struct unk_00d6f364_a1 {
+    vec f_0;
+};
+void fn_00d6f364(unk_00d6f364_a0* a0, unk_00d6f364_a1* a1) {
+    a0->f_d0 = a1->f_0;
+}
+
+struct unk_00d6f374_a0 {
+    char pad_0[224];
+    vec f_e0;
+};
+struct unk_00d6f374_a1 {
+    vec f_0;
+};
+void fn_00d6f374(unk_00d6f374_a0* a0, unk_00d6f374_a1* a1) {
+    a0->f_e0 = a1->f_0;
+}
+
 }

@@ -5,6 +5,22 @@
 extern "C" {
 
 
+struct unk_00dfb420_a0 {
+    char pad_0[112];
+    vec f_70;
+    vec f_80;
+};
+struct unk_00dfb420_a1 {
+    vec f_0;
+};
+struct unk_00dfb420_a2 {
+    vec f_0;
+};
+void fn_00dfb420(unk_00dfb420_a0* a0, unk_00dfb420_a1* a1, unk_00dfb420_a2* a2) {
+    a1->f_0 = a0->f_70;
+    a2->f_0 = a0->f_80;
+}
+
 struct unk_00dfb43c_a0 {
     char pad_0[164];
     u32 f_a4;

@@ -18,4 +18,15 @@ void* fn_00e68164(unk_00e68164_a0* a0) {
     return (void*)(a0->f_30->f_18 + 48);
 }
 
+struct unk_00e68184_a0 {
+    char pad_0[16];
+    vec f_10;
+};
+struct unk_00e68184_a1 {
+    vec f_0;
+};
+void fn_00e68184(unk_00e68184_a0* a0, unk_00e68184_a1* a1) {
+    a0->f_10 = a1->f_0;
+}
+
 }

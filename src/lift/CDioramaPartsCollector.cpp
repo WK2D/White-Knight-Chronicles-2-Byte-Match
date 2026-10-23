@@ -110,6 +110,22 @@ void fn_008c6d00(unk_008c6d00_a0* a0, int a1) {
     a0->f_cc = (u32)((u32)(a0->f_cc) & ~(u32)(a1));
 }
 
+struct unk_008c6d34_a0 {
+    char pad_0[224];
+    vec f_e0;
+};
+void fn_008c6d34(unk_008c6d34_a0* a0, vector float q0) {
+    a0->f_e0 = q0;
+}
+
+struct unk_008c6d68_a0 {
+    char pad_0[256];
+    vec f_100;
+};
+void fn_008c6d68(unk_008c6d68_a0* a0, vector float q0) {
+    a0->f_100 = q0;
+}
+
 struct unk_008c6d7c_a0 {
     char pad_0[196];
     u8 f_c4;

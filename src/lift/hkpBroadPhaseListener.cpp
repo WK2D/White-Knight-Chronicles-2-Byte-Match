@@ -55,4 +55,15 @@ void fn_00d78d90(unk_00d78d90_a0* a0) {
     fn_00d94f98((u32)(a0->f_8));
 }
 
+struct unk_00d78db8_a0 {
+    char pad_0[16];
+    vec f_10;
+};
+struct unk_00d78db8_a1 {
+    vec f_0;
+};
+void fn_00d78db8(unk_00d78db8_a0* a0, unk_00d78db8_a1* a1) {
+    a0->f_10 = a1->f_0;
+}
+
 }

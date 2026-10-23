@@ -33,7 +33,7 @@ UPDATE = {33, 35, 41, 43, 49, 51, 37, 39, 45, 53, 55}   # lwzu lbzu lhzu lhau lf
 INDEXED = {23: 32, 87: 34, 279: 40, 343: 42, 535: 48, 599: 50, 151: 36, 215: 38, 407: 44, 663: 52, 727: 54}
 STORES = {36: 'u32', 38: 'u8', 44: 'u16', 52: 'float', 54: 'double', 62: 'u64'}
 CTYPES = {'ptr': 'void*', 'addr': 'void*', 'gaddr': 'void*', 'u32': 'u32', 'u8': 'u8', 'u16': 'u16',
-          's16': 's16', 'u64': 'u64', 'int': 'int', 'float': 'float', 'double': 'double'}
+          's16': 's16', 'u64': 'u64', 'int': 'int', 'float': 'float', 'double': 'double', 'vec': 'vector float'}
 BLR, NOP, TOC_RESTORE = 0x4E800020, 0x60000000, 0xE8410028
 MAX_WORDS = 128
 
@@ -68,7 +68,7 @@ def paren(v):
 
 LOCALS = 112        # locals start after the linkage area (48) and the parameter save area (64)
 
-SIZES = {'u8': 1, 'u16': 2, 's16': 2, 'u32': 4, 'float': 4, 'void*': 4, 'double': 8, 'u64': 8}
+SIZES = {'u8': 1, 'u16': 2, 's16': 2, 'u32': 4, 'float': 4, 'void*': 4, 'double': 8, 'u64': 8, 'vec': 16}
 
 
 def struct_decl(tag, by_offset, ptrs=None):
@@ -249,6 +249,9 @@ class Lifter:
         self.gpr = {r: None for r in range(32)}
         self.fpr = {r: None for r in range(32)}
         self.args, self.fargs = {}, {}
+        self.vr = {r: None for r in range(32)}   # AltiVec registers
+        self.vargs = {}                   # vector parameters (v2, v3, ...)
+        self.vfresh = set()               # vector registers written since the last call
         self.stmts, self.calls, self.globals = [], {}, {}
         self.fresh = set()
         self.cr = {}                      # condition field -> (lhs, rhs, 'signed'|'unsigned'|'pointer')
@@ -321,6 +324,80 @@ class Lifter:
         if v.call is not None:
             v.call['used'] = True
         return v
+
+    def vreg(self, r):
+        v = self.vr[r]
+        if v is None:
+            if 2 <= r <= 13 and r not in self.vargs:
+                for j in range(2, r + 1):
+                    if j not in self.vargs:
+                        self.vargs[j] = Value(f'q{j - 2}', 'vec')
+                        if self.vr[j] is None:
+                            self.vr[j] = self.vargs[j]
+                return self.vr[r]
+            raise Fail(f'v{r} read before it is set')
+        if v.call is not None:
+            v.call['used'] = True
+        return v
+
+    def vset(self, r, v):
+        self.vr[r] = v
+        self.vfresh.add(r)
+
+    def vector_address(self, ra, rb):
+        """(base, offset) for an indexed vector access: a constant index
+        becomes a field offset."""
+        if ra == 0:
+            return self.reg(rb), 0
+        a, b = self.reg(ra), self.reg(rb)
+        for base, index in ((a, b), (b, a)):
+            if re.fullmatch(r'-?\d+', index.text):
+                return base, int(index.text)
+        return self.sum(a, b), 0
+
+    def vector_op(self, w):
+        vd, va, vb, vc = (w >> 21) & 31, (w >> 16) & 31, (w >> 11) & 31, (w >> 6) & 31
+        x11, x6 = w & 0x7FF, w & 0x3F
+        if x11 == 1220 and va == vb:                               # vxor v,v,v: zero
+            self.vset(vd, Value('(vector float){0, 0, 0, 0}', 'vec'))
+            return
+        binary = {10: 'vec_add', 74: 'vec_sub', 1220: 'vec_xor', 1156: 'vec_or', 1028: 'vec_and',
+                  1092: 'vec_andc', 1034: 'vec_max', 1098: 'vec_min', 140: 'vec_mergeh', 396: 'vec_mergel'}
+        if x11 in binary:
+            self.vset(vd, Value(f'{binary[x11]}({self.vreg(va).text}, {self.vreg(vb).text})', 'vec'))
+            return
+        if x11 == 1284 and va == vb:                               # vnor v,a,a: not
+            self.vset(vd, Value(f'vec_nor({self.vreg(va).text}, {self.vreg(va).text})', 'vec'))
+            return
+        unary = {330: 'vec_rsqrte', 266: 'vec_re'}
+        if x11 in unary:
+            self.vset(vd, Value(f'{unary[x11]}({self.vreg(vb).text})', 'vec'))
+            return
+        if x11 == 652:                                             # vspltw vD,vB,imm
+            self.vset(vd, Value(f'vec_splat({self.vreg(vb).text}, {va & 3})', 'vec'))
+            return
+        if x11 == 908:                                             # vspltisw vD,simm
+            imm = va - 32 if va & 16 else va
+            self.vset(vd, Value(f'(vector float)vec_splat_s32({imm})', 'vec'))
+            return
+        if x6 == 46:                                               # vmaddfp vD = vA * vC + vB
+            self.vset(vd, Value(f'vec_madd({self.vreg(va).text}, {self.vreg(vc).text}, {self.vreg(vb).text})', 'vec'))
+            return
+        if x6 == 47:                                               # vnmsubfp vD = -(vA * vC - vB)
+            self.vset(vd, Value(f'vec_nmsub({self.vreg(va).text}, {self.vreg(vc).text}, {self.vreg(vb).text})', 'vec'))
+            return
+        if x6 == 42:                                               # vsel
+            self.vset(vd, Value(f'vec_sel({self.vreg(va).text}, {self.vreg(vb).text}, '
+                                f'(vector unsigned int)({self.vreg(vc).text}))', 'vec'))
+            return
+        if x6 == 43:                                               # vperm
+            self.vset(vd, Value(f'vec_perm({self.vreg(va).text}, {self.vreg(vb).text}, '
+                                f'(vector unsigned char)({self.vreg(vc).text}))', 'vec'))
+            return
+        if x6 == 44:                                               # vsldoi vD,vA,vB,sh
+            self.vset(vd, Value(f'vec_sld({self.vreg(va).text}, {self.vreg(vb).text}, {vc & 15})', 'vec'))
+            return
+        raise Fail(f'vector op {x11}')
 
     def freg(self, r):
         v = self.fpr[r]
@@ -601,12 +678,14 @@ class Lifter:
         return out
 
     def snapshot(self):
-        return (dict(self.gpr), dict(self.fpr), set(self.fresh), dict(self.cr), self.ended, set(self.ffresh))
+        return (dict(self.gpr), dict(self.fpr), set(self.fresh), dict(self.cr), self.ended, set(self.ffresh),
+                dict(self.vr), set(self.vfresh))
 
     def restore(self, state):
         self.gpr, self.fpr, self.fresh, self.cr, self.ended = (dict(state[0]), dict(state[1]), set(state[2]),
                                                                dict(state[3]), state[4])
         self.ffresh = set(state[5])
+        self.vr, self.vfresh = dict(state[6]), set(state[7])
 
     def condition(self, crf, bit, true):
         if crf not in self.cr:
@@ -639,7 +718,8 @@ class Lifter:
         return self.condition(bi >> 2, bi & 3, true)
 
     def emit_return(self):
-        self.returns.append({'value': self.gpr[3], 'fresh': 3 in self.fresh, 'stmt': None})
+        self.returns.append({'value': self.gpr[3], 'fresh': 3 in self.fresh, 'stmt': None,
+                             'vvalue': self.vr[2] if 2 in self.vfresh else None})
         stmt = ['return', len(self.returns) - 1]
         self.stmts.append(stmt)
         self.ended = True
@@ -1221,6 +1301,24 @@ class Lifter:
         if op in STORES and (op != 62 or w & 3 == 0):
             self.store(op, rt, self.reg(ra), d)
             return
+        if op == 4:
+            self.vector_op(w)
+            return
+        if op == 31 and (w >> 1) & 0x3FF in (103, 359):                # lvx / lvxl
+            base, off = self.vector_address(ra, rb)
+            self.vset(rt, self.field('vec', base, off))
+            return
+        if op == 31 and (w >> 1) & 0x3FF in (231, 487):                # stvx / stvxl
+            base, off = self.vector_address(ra, rb)
+            target = self.field('vec', base, off)
+            self.stmts.append(f'{target.text} = {self.vreg(rt).text};')
+            return
+        if op == 31 and (w >> 1) & 0x3FF == 199:                       # stvewx: one element
+            base, off = self.vector_address(ra, rb)
+            self.pointer(base)
+            addr = f'(float*)((char*){paren(base)} + {off})' if off else f'(float*)({base.text})'
+            self.stmts.append(f'vec_ste({self.vreg(rt).text}, 0, {addr});')
+            return
         if op == 31 and (w >> 1) & 0x3FF in INDEXED and ra != 1:
             # Indexed load or store: the access at 0(ra + rb).
             base = self.sum(self.reg(ra), self.reg(rb)) if ra else self.reg(rb)
@@ -1424,6 +1522,11 @@ class Lifter:
                 self.gpr[r] = None
         for r in range(0, 14):
             self.fpr[r] = None
+        if self.vfresh & set(range(2, 14)):
+            raise Fail('vector call arguments')
+        for r in range(0, 20):
+            self.vr[r] = None
+        self.vfresh = set()
         self.made_call = True
         self.gpr[3] = Value(info['temp'], 'int', 0, info)
         self.fresh = set()
@@ -1521,6 +1624,11 @@ class Lifter:
                 self.gpr[r] = None
         for r in range(0, 14):
             self.fpr[r] = None
+        if self.vfresh & set(range(2, 14)):
+            raise Fail('vector call arguments')
+        for r in range(0, 20):
+            self.vr[r] = None
+        self.vfresh = set()
         self.made_call = True
         self.gpr[3] = Value(info['temp'], 'int', 0, info)
         self.fresh = set()
@@ -1533,6 +1641,9 @@ class Lifter:
         valued = any(r['fresh'] or (r['value'] is not None and r['value'].call is not None and r['value'].call['used'])
                      for r in self.returns)
         ret_type = 'void'
+        vvalued = not valued and self.returns and all(r['vvalue'] is not None for r in self.returns)
+        if vvalued:
+            ret_type = 'vector float'
         if valued:
             types = {CTYPES.get(r['value'].ctype) for r in self.returns if r['value'] is not None}
             if None in types or len(types) != 1 or any(r['value'] is None for r in self.returns):
@@ -1596,7 +1707,8 @@ class Lifter:
                     out.append(pad + (f'{st["temp"]} = {call};' if st['used'] else f'{call};'))
                 elif isinstance(st, list) and st[0] == 'return':
                     r = self.returns[st[1]]
-                    out.append(pad + (f'return ({ret_type})({r["value"].text});' if valued else 'return;'))
+                    out.append(pad + (f'return ({ret_type})({r["value"].text});' if valued else
+                                      f'return {r["vvalue"].text};' if vvalued else 'return;'))
                 elif isinstance(st, list) and st[0] == 'while':
                     out.append(pad + f'while ({st[1]}) {{')
                     out += lines(st[2], indent + 1)
@@ -1649,9 +1761,10 @@ class Lifter:
             else:
                 params.append(f'{CTYPES.get(self.args[k].ctype, "int")} {self.args[k].text}')
         if self.fargs:
-            if self.args:
+            if self.args or self.vargs:
                 raise Fail('mixed arguments')
             params = [f'float {self.fargs[k].text}' for k in sorted(self.fargs)]
+        params += [f'vector float {self.vargs[k].text}' for k in sorted(self.vargs)]
         for tag, slots in self.vclasses.items():           # objects that are not arguments
             structs.append(class_decl(tag, slots, {}))
         decls = structs + [f'extern {self.tag(("g", d))} {n};' if ('g', d) in self.layouts else f'extern char {n}[];'

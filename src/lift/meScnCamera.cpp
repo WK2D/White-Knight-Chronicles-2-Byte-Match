@@ -5,6 +5,17 @@
 extern "C" {
 
 
+struct unk_00ad9910_a0 {
+    char pad_0[240];
+    vec f_f0;
+};
+struct unk_00ad9910_a1 {
+    vec f_0;
+};
+void fn_00ad9910(unk_00ad9910_a0* a0, unk_00ad9910_a1* a1) {
+    a0->f_f0 = a1->f_0;
+}
+
 struct unk_00ad993c_a0 {
     char pad_0[16];
     u32 f_10;

@@ -5,6 +5,16 @@
 extern "C" {
 
 
+struct unk_0059e1c0_a0 {
+    vec f_0;
+};
+struct unk_0059e1c0_a1 {
+    vec f_0;
+};
+void fn_0059e1c0(unk_0059e1c0_a0* a0, unk_0059e1c0_a1* a1) {
+    a0->f_0 = a1->f_0;
+}
+
 struct unk_0059e1cc_g1900;
 struct unk_0059e1cc_g1900_0;
 struct unk_0059e1cc_g1900_0_6c;

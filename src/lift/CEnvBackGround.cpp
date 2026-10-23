@@ -18,6 +18,17 @@ void fn_004c54e0(int a0) {
     fn_000c39ac((int)(a0));
 }
 
+struct unk_004c5504_a0 {
+    char pad_0[16];
+    vec f_10;
+};
+struct unk_004c5504_a1 {
+    vec f_0;
+};
+void fn_004c5504(unk_004c5504_a0* a0, unk_004c5504_a1* a1) {
+    a0->f_10 = a1->f_0;
+}
+
 void fn_004c5cec(int a0, int a1) {
     stub_004c5a7c((int)(a0), (int)(a1));
 }

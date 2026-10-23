@@ -51,4 +51,26 @@ void fn_0008a600(unk_0008a600_a0* a0, unk_0008a600_a1* a1, unk_0008a600_a2* a2, 
     a3->f_0 = a0->f_138;
 }
 
+struct unk_0008a67c_a0 {
+    char pad_0[384];
+    vec f_180;
+};
+struct unk_0008a67c_a1 {
+    vec f_0;
+};
+void fn_0008a67c(unk_0008a67c_a0* a0, unk_0008a67c_a1* a1) {
+    a0->f_180 = a1->f_0;
+}
+
+struct unk_0008a6a4_a0 {
+    char pad_0[400];
+    vec f_190;
+};
+struct unk_0008a6a4_a1 {
+    vec f_0;
+};
+void fn_0008a6a4(unk_0008a6a4_a0* a0, unk_0008a6a4_a1* a1) {
+    a0->f_190 = a1->f_0;
+}
+
 }

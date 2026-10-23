@@ -85,6 +85,22 @@ void fn_001771ec(unk_001771ec_a0* a0) {
     (&g_001771ec_0)->f_0 = (u32)((&g_001771ec_0)->f_0 + -1);
 }
 
+struct unk_0017729c_a0 {
+    char pad_0[1376];
+    vec f_560;
+    vec f_570;
+};
+struct unk_0017729c_a1 {
+    vec f_0;
+};
+struct unk_0017729c_a2 {
+    vec f_0;
+};
+void fn_0017729c(unk_0017729c_a0* a0, unk_0017729c_a1* a1, unk_0017729c_a2* a2) {
+    a1->f_0 = a0->f_560;
+    a2->f_0 = a0->f_570;
+}
+
 struct unk_00177630_a0_34;
 struct unk_00177630_a0_34_f4;
 struct unk_00177630_a0_34 {

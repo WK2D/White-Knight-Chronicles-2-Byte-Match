@@ -15,4 +15,12 @@ void fn_00b915fc(unk_00b915fc_a0* a0) {
     fn_00fc88dc((void*)(a0));
 }
 
+struct unk_00b91638_a1 {
+    vec f_0;
+};
+int fn_00b91638(int a0, unk_00b91638_a1* a1) {
+    a1->f_0 = (vector float){0, 0, 0, 0};
+    return (int)(0);
+}
+
 }

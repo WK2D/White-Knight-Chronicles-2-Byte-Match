@@ -12,4 +12,11 @@ void fn_00f4bf7c(int a0, int a1, int a2, unk_00f4bf7c_a3* a3) {
     FIELD(u64, (int)((u32)(a2) << 3) + (int)(a1), 0) = (u64)(a3->f_0);
 }
 
+struct unk_00f4bf9c_a3 {
+    vec f_0;
+};
+void fn_00f4bf9c(int a0, int a1, int a2, unk_00f4bf9c_a3* a3) {
+    FIELD(vec, (int)((u32)(a2) << 4) + (int)(a1), 0) = a3->f_0;
+}
+
 }

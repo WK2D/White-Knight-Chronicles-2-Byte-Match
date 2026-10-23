@@ -15,4 +15,31 @@ void fn_005228b4(unk_005228b4_a0* a0) {
     stub_00522850((void*)(a0), (int)(304));
 }
 
+struct unk_00522ac8_a0 {
+    char pad_0[224];
+    vec f_e0;
+    vec f_f0;
+    char pad_100[20];
+    float f_114;
+    float f_118;
+    float f_11c;
+    float f_120;
+};
+struct unk_00522ac8_a1 {
+    vec f_0;
+    vec f_10;
+    float f_20;
+    float f_24;
+    float f_28;
+    float f_2c;
+};
+void fn_00522ac8(unk_00522ac8_a0* a0, unk_00522ac8_a1* a1) {
+    a0->f_e0 = a1->f_0;
+    a0->f_f0 = a1->f_10;
+    a0->f_114 = a1->f_20 * 0.01745329238474369f;
+    a0->f_118 = a1->f_24;
+    a0->f_11c = a1->f_28;
+    a0->f_120 = a1->f_2c;
+}
+
 }

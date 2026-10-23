@@ -45,4 +45,36 @@ void fn_0001f524(int a0, int a1) {
     stub_0001a1b8((int)(a0), (u32)(((u32)(a1) >> 24)), (u32)(((u32)(a1) >> 16) & 0xff));
 }
 
+struct unk_0001f530_a0 {
+    char pad_0[20144];
+    vec f_4eb0;
+};
+struct unk_0001f530_a1 {
+    vec f_0;
+};
+void fn_0001f530(unk_0001f530_a0* a0, unk_0001f530_a1* a1) {
+    a1->f_0 = a0->f_4eb0;
+}
+
+struct unk_0001f540_a0 {
+    char pad_0[20128];
+    vec f_4ea0;
+};
+struct unk_0001f540_a1 {
+    vec f_0;
+};
+void fn_0001f540(unk_0001f540_a0* a0, unk_0001f540_a1* a1) {
+    a1->f_0 = a0->f_4ea0;
+}
+
+struct unk_0001f550_a0 {
+    char pad_0[20128];
+    vec f_4ea0;
+    vec f_4eb0;
+};
+void fn_0001f550(unk_0001f550_a0* a0, vector float q0, vector float q1) {
+    a0->f_4ea0 = q0;
+    a0->f_4eb0 = q1;
+}
+
 }

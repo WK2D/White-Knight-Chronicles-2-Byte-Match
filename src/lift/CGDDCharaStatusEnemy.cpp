@@ -6454,6 +6454,14 @@ void* fn_00394388(unk_00394388_a0* a0) {
     return (void*)(t0);
 }
 
+struct unk_003944e0_a0 {
+    char pad_0[608];
+    vec f_260;
+};
+void fn_003944e0(unk_003944e0_a0* a0, vector float q0) {
+    a0->f_260 = q0;
+}
+
 void* fn_003945fc(void* a0, void* a1, int a2) {
     void* t0;
     if ((int)(a1) == (int)(0)) {

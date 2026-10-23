@@ -14,4 +14,20 @@ void fn_00dc87f4(unk_00dc87f4_a0* a0, int a1) {
     fn_00dc6fe0((void*)((&a0->f_10)), (int)(56), (int)(a1));
 }
 
+struct unk_00dc8894_a0 {
+    char pad_0[32];
+    vec f_20;
+    vec f_30;
+};
+struct unk_00dc8894_a1 {
+    vec f_0;
+};
+struct unk_00dc8894_a2 {
+    vec f_0;
+};
+void fn_00dc8894(unk_00dc8894_a0* a0, unk_00dc8894_a1* a1, unk_00dc8894_a2* a2) {
+    a0->f_20 = a1->f_0;
+    a0->f_30 = a2->f_0;
+}
+
 }

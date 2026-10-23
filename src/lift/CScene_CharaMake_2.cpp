@@ -6,6 +6,54 @@ extern "C" {
 
 void fn_0030d7d8(void*, int, void*);
 
+struct unk_0030ddf0_a0 {
+    char pad_0[160];
+    vec f_a0;
+};
+struct unk_0030ddf0_a1 {
+    vec f_0;
+};
+int fn_0030ddf0(unk_0030ddf0_a0* a0, unk_0030ddf0_a1* a1) {
+    a0->f_a0 = a1->f_0;
+    return (int)(1);
+}
+
+struct unk_0030de04_a0 {
+    char pad_0[160];
+    vec f_a0;
+};
+struct unk_0030de04_a1 {
+    vec f_0;
+};
+int fn_0030de04(unk_0030de04_a0* a0, unk_0030de04_a1* a1) {
+    a1->f_0 = a0->f_a0;
+    return (int)(1);
+}
+
+struct unk_0030de18_a0 {
+    char pad_0[144];
+    vec f_90;
+};
+struct unk_0030de18_a1 {
+    vec f_0;
+};
+int fn_0030de18(unk_0030de18_a0* a0, unk_0030de18_a1* a1) {
+    a0->f_90 = a1->f_0;
+    return (int)(1);
+}
+
+struct unk_0030de2c_a0 {
+    char pad_0[144];
+    vec f_90;
+};
+struct unk_0030de2c_a1 {
+    vec f_0;
+};
+int fn_0030de2c(unk_0030de2c_a0* a0, unk_0030de2c_a1* a1) {
+    a1->f_0 = a0->f_90;
+    return (int)(1);
+}
+
 struct unk_0030de40_a0 {
     void* f_0;
 };

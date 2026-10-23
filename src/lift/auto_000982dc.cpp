@@ -14,4 +14,11 @@ void fn_00098600(int a0) {
     stub_00098548((int)(a0));
 }
 
+struct unk_000989d8_a0 {
+    vec f_0;
+};
+void fn_000989d8(unk_000989d8_a0* a0) {
+    a0->f_0 = (vector float){0, 0, 0, 0};
+}
+
 }

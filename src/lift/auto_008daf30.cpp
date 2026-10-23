@@ -21,6 +21,15 @@ int fn_008dbc60(unk_008dbc60_a0* a0) {
     return (int)(1);
 }
 
+struct unk_008dbd04_a0 {
+    vec f_0;
+    vec f_10;
+};
+void fn_008dbd04(unk_008dbd04_a0* a0) {
+    a0->f_0 = (vector float){0, 0, 0, 0};
+    a0->f_10 = (vector float){0, 0, 0, 0};
+}
+
 void* fn_008dbec4(int a0, int a1) {
     int v0;
     if ((int)(a1) != (int)(0)) {

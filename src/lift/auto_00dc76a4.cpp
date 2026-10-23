@@ -18,4 +18,19 @@ void fn_00dc7778(unk_00dc7778_a0* a0, int a1) {
     a0->f_a = (u8)(((u32)((int)(a0->f_8) + (int)(a0->f_9)) << 2) + 20);
 }
 
+struct unk_00dc7b14_a0 {
+    char pad_0[32];
+    vec f_20;
+};
+struct unk_00dc7b14_a1 {
+    char pad_0[16];
+    vec f_10;
+};
+struct unk_00dc7b14_a6 {
+    vec f_0;
+};
+void fn_00dc7b14(unk_00dc7b14_a0* a0, unk_00dc7b14_a1* a1, int a2, int a3, int a4, int a5, unk_00dc7b14_a6* a6) {
+    a6->f_0 = vec_sub(a6->f_0, vec_sub(a0->f_20, vec_madd(a0->f_20, vec_splat(vec_add(vec_add(vec_madd(a0->f_20, a1->f_10, (vector float){0, 0, 0, 0}), vec_sld(vec_madd(a0->f_20, a1->f_10, (vector float){0, 0, 0, 0}), vec_madd(a0->f_20, a1->f_10, (vector float){0, 0, 0, 0}), 8)), vec_sld(vec_madd(a0->f_20, a1->f_10, (vector float){0, 0, 0, 0}), vec_madd(a0->f_20, a1->f_10, (vector float){0, 0, 0, 0}), 4)), 0), (vector float){0, 0, 0, 0})));
+}
+
 }

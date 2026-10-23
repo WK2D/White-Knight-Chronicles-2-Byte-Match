@@ -16,4 +16,25 @@ void fn_00d05404(int a0, int a1) {
     fn_00c038f8((int)(a0), (int)(a1), (void*)(g_00d05404_0));
 }
 
+struct unk_00d0542c_a2 {
+    vec f_0;
+};
+void fn_00d0542c(int a0, int a1, unk_00d0542c_a2* a2) {
+    a2->f_0 = (vector float){0, 0, 0, 0};
+}
+
+struct unk_00d05460_a1 {
+    vec f_0;
+};
+void fn_00d05460(int a0, unk_00d05460_a1* a1) {
+    a1->f_0 = (vector float){0, 0, 0, 0};
+}
+
+struct unk_00d0546c_a1 {
+    vec f_0;
+};
+void fn_00d0546c(int a0, unk_00d0546c_a1* a1) {
+    a1->f_0 = (vector float){0, 0, 0, 0};
+}
+
 }

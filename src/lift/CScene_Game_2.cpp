@@ -375,6 +375,54 @@ u8 fn_0031aee4(void) {
     return (u8)((u8)t0);
 }
 
+struct unk_0031b7b0_a0 {
+    char pad_0[304];
+    vec f_130;
+};
+struct unk_0031b7b0_a1 {
+    vec f_0;
+};
+int fn_0031b7b0(unk_0031b7b0_a0* a0, unk_0031b7b0_a1* a1) {
+    a0->f_130 = a1->f_0;
+    return (int)(1);
+}
+
+struct unk_0031b7c4_a0 {
+    char pad_0[304];
+    vec f_130;
+};
+struct unk_0031b7c4_a1 {
+    vec f_0;
+};
+int fn_0031b7c4(unk_0031b7c4_a0* a0, unk_0031b7c4_a1* a1) {
+    a1->f_0 = a0->f_130;
+    return (int)(1);
+}
+
+struct unk_0031b7d8_a0 {
+    char pad_0[288];
+    vec f_120;
+};
+struct unk_0031b7d8_a1 {
+    vec f_0;
+};
+int fn_0031b7d8(unk_0031b7d8_a0* a0, unk_0031b7d8_a1* a1) {
+    a0->f_120 = a1->f_0;
+    return (int)(1);
+}
+
+struct unk_0031b7ec_a0 {
+    char pad_0[288];
+    vec f_120;
+};
+struct unk_0031b7ec_a1 {
+    vec f_0;
+};
+int fn_0031b7ec(unk_0031b7ec_a0* a0, unk_0031b7ec_a1* a1) {
+    a1->f_0 = a0->f_120;
+    return (int)(1);
+}
+
 struct unk_0031de38_a0 {
     virtual void vf0();
     virtual void vf1();

@@ -6,6 +6,24 @@ extern "C" {
 
 static void __attribute__((noinline)) stub_007b1fa0(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 
+struct unk_007af3a8_a0_5bc;
+struct unk_007af3a8_a0_5bc {
+    char pad_0[16];
+    vec f_10;
+};
+struct unk_007af3a8_a0 {
+    char pad_0[1468];
+    unk_007af3a8_a0_5bc* f_5bc;
+};
+struct unk_007af3a8_a1 {
+    vec f_0;
+};
+void fn_007af3a8(unk_007af3a8_a0* a0, unk_007af3a8_a1* a1) {
+    if ((int)(a0->f_5bc) != (int)(0)) {
+        a0->f_5bc->f_10 = a1->f_0;
+    }
+}
+
 int fn_007b1fec(int a0) {
     stub_007b1fa0((int)(a0));
     return (int)(1);

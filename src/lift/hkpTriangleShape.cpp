@@ -11,4 +11,15 @@ void fn_00d05e1c(int a0, int a1) {
     fn_00c038f8((int)(a0), (int)(a1), (void*)(g_00d05e1c_0));
 }
 
+struct unk_00d05e8c_a0 {
+    char pad_0[32];
+    vec f_20;
+};
+struct unk_00d05e8c_a1 {
+    vec f_0;
+};
+void fn_00d05e8c(unk_00d05e8c_a0* a0, unk_00d05e8c_a1* a1) {
+    a1->f_0 = a0->f_20;
+}
+
 }

@@ -11,4 +11,22 @@ void fn_00cfca30(int a0, int a1) {
     fn_00c038f8((int)(a0), (int)(a1), (void*)(g_00cfca30_0));
 }
 
+struct unk_00cfca58_a0 {
+    char pad_0[32];
+    vec f_20;
+};
+struct unk_00cfca58_a1 {
+    vec f_0;
+};
+void fn_00cfca58(unk_00cfca58_a0* a0, unk_00cfca58_a1* a1) {
+    a1->f_0 = a0->f_20;
+}
+
+struct unk_00cfcb40_a1 {
+    vec f_0;
+};
+void fn_00cfcb40(int a0, unk_00cfcb40_a1* a1) {
+    a1->f_0 = (vector float){0, 0, 0, 0};
+}
+
 }

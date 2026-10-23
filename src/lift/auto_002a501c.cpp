@@ -18,4 +18,12 @@ void* fn_002a5130(void* a0) {
     return (void*)(v0);
 }
 
+struct unk_002a52e4_a0 {
+    char pad_0[992];
+    vec f_3e0;
+};
+void fn_002a52e4(unk_002a52e4_a0* a0, vector float q0) {
+    a0->f_3e0 = q0;
+}
+
 }

@@ -11,6 +11,7 @@ int fn_0055df20(u32, void*);
 void fn_0055e060(u32, void*, void*, void*);
 int fn_0055e83c(u32, u8);
 int fn_0055eb1c(u32, u8);
+void fn_00564c94(void*, u32, void*);
 
 struct unk_0055b610_a0 {
     char pad_0[4];
@@ -22,6 +23,25 @@ void fn_0055b610(unk_0055b610_a0* a0, void* a1, void* a2) {
     t0 = stub_0055b498((void*)(a0));
     t1 = fn_0055df20((u32)(a0->f_4), (void*)(t0));
     fn_0055e060((u32)(a0->f_4), (void*)((int)(signed char)(t1)), (void*)(a1), (void*)(a2));
+}
+
+struct unk_0055b680_l;
+struct unk_0055b680_l {
+    vec f_0;
+};
+struct unk_0055b680_a0 {
+    char pad_0[4];
+    u32 f_4;
+};
+struct unk_0055b680_a1 {
+    vec f_0;
+};
+void fn_0055b680(unk_0055b680_a0* a0, unk_0055b680_a1* a1) {
+    void* t0;
+    unk_0055b680_l l;
+    t0 = stub_0055b498((void*)(a0));
+    fn_00564c94((void*)((&l)), (u32)(a0->f_4), (void*)(t0));
+    a1->f_0 = l.f_0;
 }
 
 struct unk_0055b938_a0 {

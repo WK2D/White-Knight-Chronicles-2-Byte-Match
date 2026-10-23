@@ -24,4 +24,56 @@ void fn_008bae6c(unk_008bae6c_a0* a0) {
     fn_00b3ebd8((u32)((&g_008bae6c_0)->f_0->f_68), (u32)(a0->f_4), (int)(0));
 }
 
+struct unk_008baf7c_gm5adc;
+struct unk_008baf7c_gm5ae0;
+struct unk_008baf7c_gm5aec;
+struct unk_008baf7c_gm5adc_0;
+struct unk_008baf7c_gm5ae0_0;
+struct unk_008baf7c_gm5aec_0;
+struct unk_008baf7c_gm5adc_0_68;
+struct unk_008baf7c_gm5ae0_0_e8;
+struct unk_008baf7c_gm5adc_0_68_28;
+struct unk_008baf7c_gm5adc {
+    unk_008baf7c_gm5adc_0* f_0;
+};
+struct unk_008baf7c_gm5ae0 {
+    unk_008baf7c_gm5ae0_0* f_0;
+};
+struct unk_008baf7c_gm5aec {
+    unk_008baf7c_gm5aec_0* f_0;
+};
+struct unk_008baf7c_gm5adc_0 {
+    char pad_0[104];
+    unk_008baf7c_gm5adc_0_68* f_68;
+};
+struct unk_008baf7c_gm5ae0_0 {
+    char pad_0[232];
+    unk_008baf7c_gm5ae0_0_e8* f_e8;
+};
+struct unk_008baf7c_gm5aec_0 {
+    char pad_0[48];
+    vec f_30;
+};
+struct unk_008baf7c_gm5adc_0_68 {
+    char pad_0[40];
+    unk_008baf7c_gm5adc_0_68_28* f_28;
+};
+struct unk_008baf7c_gm5ae0_0_e8 {
+    char pad_0[10220];
+    u8 f_27ec;
+};
+struct unk_008baf7c_gm5adc_0_68_28 {
+    char pad_0[320];
+    vec f_140;
+};
+extern unk_008baf7c_gm5ae0 g_008baf7c_0;
+extern unk_008baf7c_gm5adc g_008baf7c_1;
+extern unk_008baf7c_gm5aec g_008baf7c_2;
+int fn_008baf7c(void) {
+    if ((int)((&g_008baf7c_0)->f_0->f_e8->f_27ec) == (int)(0)) {
+        (&g_008baf7c_1)->f_0->f_68->f_28->f_140 = (&g_008baf7c_2)->f_0->f_30;
+    }
+    return (int)(0);
+}
+
 }

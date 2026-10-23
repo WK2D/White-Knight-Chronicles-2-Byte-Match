@@ -25,4 +25,15 @@ void fn_002b5eb0(int a0, int a1) {
     fn_00b39728((int)(a1));
 }
 
+struct unk_002b5fec_a0 {
+    char pad_0[16];
+    vec f_10;
+};
+struct unk_002b5fec_a1 {
+    vec f_0;
+};
+void fn_002b5fec(unk_002b5fec_a0* a0, unk_002b5fec_a1* a1) {
+    a0->f_10 = a1->f_0;
+}
+
 }
