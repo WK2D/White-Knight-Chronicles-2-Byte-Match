@@ -24,7 +24,7 @@ alternative to the static-recompilation port at
   `-O2` and not with `-fno-ivopts`. The project used `-O2 -fno-ivopts` before
   2026-10-22; only `src/game/CPostEffectManager.cpp` keeps that, as an
   override, until a natural `-O2` form of `fn_004b32e8` is found.
-- Matched: **18,653 of 50,844 functions** (4.63% of code). Six are by hand
+- Matched: **18,657 of 50,844 functions** (4.63% of code). Six are by hand
   (`src/game/*.cpp`); the rest are generated: `tools/gen_simple.py`
   (`src/gen/`, small shapes), `tools/lift.py` (`src/lift/`, the lifter),
   `tools/permute.py` (`src/perm/`, lifter output in another statement order)
@@ -501,7 +501,9 @@ counts over all functions up to 384 instructions):
   f14-f31) across a call were read before the call (it may change memory):
   `hold_loads()` makes them a variable assigned just before the call
   (`fn_0001ea70`). The lifter used to repeat the read after the call.
-  Not done yet for virtual calls (`vcall`): it compares `this` by identity.
+  This one change gained 870 matches (17,783 to 18,653). Virtual and
+  function-pointer calls do the same, leaving the called object alone
+  (`vcall` compares `this` with it by identity).
 - Branch layout: GCC predicts a pointer tested against 0 to be non-null,
   which decides which block it lays out first (`fn_000163f4`). A cast to a
   pointer is folded away and does not count; `*(void**)&(a0->f_0) != 0`

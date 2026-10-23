@@ -4,8 +4,10 @@
 
 extern "C" {
 
+void fn_00952f10(void*, int);
 void* fn_0095859c(u32, int);
 int fn_00958670(u32, void*);
+void fn_0095f1cc(void*);
 int fn_009640bc(int);
 void fn_0096440c(int, int);
 void fn_00964510(int);
@@ -53,6 +55,30 @@ int fn_0093556c(int a0) {
 
 void fn_00935594(int a0, int a1) {
     fn_0096469c((int)(a0), (int)(a1));
+}
+
+struct unk_0093564c_a0_8c;
+struct unk_0093564c_a0_8c {
+    char pad_0[76];
+    u32 f_4c;
+};
+struct unk_0093564c_a0 {
+    char pad_0[140];
+    unk_0093564c_a0_8c* f_8c;
+};
+struct unk_0093564c_vc0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4(void);
+};
+void fn_0093564c(unk_0093564c_a0* a0) {
+    unk_0093564c_a0_8c* v0;
+    v0 = (unk_0093564c_a0_8c*)(a0->f_8c);
+    ((unk_0093564c_vc0*)(a0->f_8c->f_4c))->vf4();
+    fn_0095f1cc((void*)(v0));
+    fn_00952f10((void*)(v0), (int)(180));
 }
 
 }

@@ -1865,15 +1865,18 @@ class Lifter:
             raise Fail('float argument never set')
         return args + floats
 
-    def hold_loads(self):
+    def hold_loads(self, keep=()):
         """Before a call: a value read from memory that a callee-saved
         register (r14-r31, f14-f31) carries across the call was read before
         it (the call may change memory), so it becomes a variable set here.
-        Left as an expression, it would be read again after the call."""
+        Left as an expression, it would be read again after the call.
+        keep: values to leave alone (a virtual call's object). Returns
+        {id(old value): variable}."""
+        held_of = {}
         for regs, lo in ((self.gpr, 14), (self.fpr, 14)):
             for r in range(lo, 32):
                 v = regs[r]
-                if v is None or v.call is not None or v.vt is not None \
+                if v is None or v.call is not None or v.vt is not None or any(v is x for x in keep) \
                         or v.ctype in ('addr', 'gaddr', 'toc', 'frame', 'tls', 'vec') \
                         or address_text(v.text) or not re.search(r'->|FIELD\(|\bl\.f_', v.text):
                     continue
@@ -1883,10 +1886,12 @@ class Lifter:
                 self.stmts.append(f'{name} = ({vtype})({v.text});')
                 held = copy.copy(v)                # keeps its access path (struct fields through it)
                 held.text, held.prec = name, 0
+                held_of[id(v)] = held
                 for bank in (self.gpr, self.fpr):
                     for k in range(32):
                         if bank[k] is v:
                             bank[k] = held
+        return held_of
 
     def call(self, target, local=False):
         self.hold_loads()
@@ -2014,6 +2019,8 @@ class Lifter:
             args = [this] + self.gather_args(4)
             info = {'used': False, 'type': 'int', 'target': None, 'args': args, 'temp': f't{len(self.calls)}',
                     'local': False, 'virtual': (obj, slot)}
+        held_of = self.hold_loads(keep=[info['virtual'][0]] if info.get('virtual') else [info['fptr']])
+        info['args'] = [held_of.get(id(a), a) for a in info['args']]
         self.calls[len(self.calls)] = info
         self.stmts.append(info)
         for r in range(0, 13):

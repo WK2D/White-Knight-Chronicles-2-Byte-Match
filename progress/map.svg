@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" font-family="Segoe UI, Helvetica, Arial, sans-serif">
 <rect width="960" height="540" fill="#0d1117"/>
-<text x="12" y="28" fill="#e6edf3" font-size="20" font-weight="600">White Knight Chronicles II: 4.627% of code matched</text>
-<text x="12" y="50" fill="#8b949e" font-size="13">18,653 of 50,844 functions compile to identical bytes · 4672 units · each square fills in as its functions match</text>
+<text x="12" y="28" fill="#e6edf3" font-size="20" font-weight="600">White Knight Chronicles II: 4.631% of code matched</text>
+<text x="12" y="50" fill="#8b949e" font-size="13">18,657 of 50,844 functions compile to identical bytes · 4672 units · each square fills in as its functions match</text>
 <g><title>auto_00010240: 12.06% matched, 12.06% fuzzy, 1,028 bytes</title>
 <rect x="0.00" y="64.00" width="7.21" height="3.97" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
 <rect x="0.00" y="67.49" width="7.21" height="0.48" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
@@ -9295,9 +9295,9 @@
 <rect x="619.99" y="154.67" width="8.62" height="9.65" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
 <rect x="619.99" y="159.91" width="8.62" height="4.41" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
 </g>
-<g><title>auto_00935410: 10.51% matched, 10.51% fuzzy, 2,664 bytes</title>
+<g><title>auto_00935410: 14.56% matched, 14.56% fuzzy, 2,664 bytes</title>
 <rect x="616.11" y="164.32" width="12.50" height="5.93" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
-<rect x="616.11" y="169.62" width="12.50" height="0.62" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
+<rect x="616.11" y="169.38" width="12.50" height="0.86" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
 </g>
 <g><title>auto_00935e78: 0.00% matched, 0.00% fuzzy, 2,544 bytes</title>
 <rect x="599.89" y="170.25" width="4.64" height="15.25" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
@@ -9756,8 +9756,9 @@
 <g><title>auto_009d0cf0: 0.00% matched, 0.00% fuzzy, 1,456 bytes</title>
 <rect x="713.53" y="246.12" width="6.19" height="6.54" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
 </g>
-<g><title>SQCollectable_17: 0.00% matched, 0.00% fuzzy, 1,360 bytes</title>
+<g><title>SQCollectable_17: 10.88% matched, 10.88% fuzzy, 1,360 bytes</title>
 <rect x="713.53" y="252.66" width="6.19" height="6.11" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
+<rect x="713.53" y="258.11" width="6.19" height="0.66" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
 </g>
 <g><title>SQCollectable_18: 5.20% matched, 5.20% fuzzy, 6,852 bytes</title>
 <rect x="688.49" y="258.77" width="16.92" height="11.26" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
@@ -12787,8 +12788,9 @@
 <rect x="660.69" y="529.29" width="1.64" height="1.49" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
 <rect x="660.69" y="529.29" width="1.64" height="1.49" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
 </g>
-<g><title>SQUserData_3: 0.00% matched, 0.00% fuzzy, 168 bytes</title>
+<g><title>SQUserData_3: 100.00% matched, 100.00% fuzzy, 168 bytes</title>
 <rect x="662.33" y="527.80" width="1.57" height="2.98" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
+<rect x="662.33" y="527.80" width="1.57" height="2.98" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
 </g>
 <g><title>SQArray_2: 100.00% matched, 100.00% fuzzy, 88 bytes</title>
 <rect x="663.90" y="525.58" width="1.35" height="1.81" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
@@ -13889,10 +13891,9 @@
 <g><title>hkSimpleLocalFrame_4: 0.00% matched, 0.00% fuzzy, 1,716 bytes</title>
 <rect x="791.03" y="161.60" width="7.76" height="6.15" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
 </g>
-<g><title>hkStatisticsCollector: 21.84% matched, 21.84% fuzzy, 824 bytes</title>
+<g><title>hkStatisticsCollector: 40.78% matched, 40.78% fuzzy, 824 bytes</title>
 <rect x="791.03" y="167.75" width="7.76" height="2.95" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
-<rect x="791.03" y="170.06" width="7.76" height="0.00" fill="#3b82f6" stroke="#0d1117" stroke-width="1"/>
-<rect x="791.03" y="170.06" width="7.76" height="0.64" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
+<rect x="791.03" y="169.50" width="7.76" height="1.20" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
 </g>
 <g><title>hkStatisticsCollector_2: 0.00% matched, 0.00% fuzzy, 1,244 bytes</title>
 <rect x="783.17" y="170.70" width="7.73" height="4.48" fill="#30363d" stroke="#0d1117" stroke-width="1"/>

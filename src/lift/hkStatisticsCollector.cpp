@@ -4,6 +4,7 @@
 
 extern "C" {
 
+int fn_00c04f20(void*);
 
 struct unk_00c4bd90_a0 {
     char pad_0[12];
@@ -37,6 +38,42 @@ void* fn_00c4bd90(unk_00c4bd90_a0* a0, unk_00c4bd90_a1* a1) {
         return (void*)(t1);
     }
     return (void*)(0);
+}
+
+struct unk_00c4bfdc_a0 {
+    char pad_0[12];
+    u32 f_c;
+    u8 f_10;
+};
+struct unk_00c4bfdc_a1 {
+    char pad_0[4];
+    u16 f_4;
+};
+struct unk_00c4bfdc_vc0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual void* vf5(void);
+};
+int fn_00c4bfdc(unk_00c4bfdc_a0* a0, unk_00c4bfdc_a1* a1) {
+    void* t0;
+    int t1;
+    u32 v0;
+    if ((int)((u32)(a1->f_4) & 0x7fff) == (int)(0)) {
+        if ((int)(a0->f_10) == (int)(0)) {
+            return (int)((int)((u32)(a1->f_4) & 0x7fff));
+        }
+        v0 = (u32)((u32)(a1->f_4) & 0x7fff);
+        t0 = ((unk_00c4bfdc_vc0*)(a0->f_c))->vf5();
+        if ((int)(t0) == (int)(0)) {
+            return (int)((int)v0);
+        }
+        t1 = fn_00c04f20((void*)(t0));
+        return (int)(t1);
+    }
+    return (int)((int)((u32)(a1->f_4) & 0x7fff));
 }
 
 }
