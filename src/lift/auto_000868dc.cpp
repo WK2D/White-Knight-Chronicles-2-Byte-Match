@@ -37,6 +37,21 @@ void fn_00086b70(unk_00086b70_a0* a0, int a1) {
     fn_0007c1ac((void*)((&a0->f_1)), (void*)((&l)), (int)(4));
 }
 
+struct unk_00086bb4_l;
+struct unk_00086bb4_l {
+    float f_0;
+};
+struct unk_00086bb4_a0 {
+    u8 f_0;
+    u8 f_1;
+};
+void fn_00086bb4(unk_00086bb4_a0* a0, float f0) {
+    unk_00086bb4_l l;
+    a0->f_0 = (u8)(1);
+    l.f_0 = f0;
+    fn_0007c1ac((void*)((&a0->f_1)), (void*)((&l)), (int)(4));
+}
+
 struct unk_00086bf8_l;
 struct unk_00086bf8_l {
     u32 f_0;

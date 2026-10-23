@@ -423,6 +423,15 @@ int fn_0031b7ec(unk_0031b7ec_a0* a0, unk_0031b7ec_a1* a1) {
     return (int)(1);
 }
 
+struct unk_0031c33c_a0 {
+    char pad_0[308];
+    float f_134;
+};
+int fn_0031c33c(unk_0031c33c_a0* a0, float f0) {
+    a0->f_134 = f0;
+    return (int)(1);
+}
+
 struct unk_0031de38_a0 {
     virtual void vf0();
     virtual void vf1();

@@ -4,6 +4,7 @@
 
 extern "C" {
 
+int fn_00b3f398(u32, u32, u32, void*);
 void fn_00fcac30(void);
 
 struct unk_00853944_a1 {
@@ -16,6 +17,34 @@ void fn_00853944(int a0, unk_00853944_a1* a1) {
 
 void fn_00853a24(void) {
     fn_00fcac30();
+}
+
+struct unk_00853a48_gm6f04;
+struct unk_00853a48_gm6f04_0;
+struct unk_00853a48_gm6f04_0_6c;
+struct unk_00853a48_gm6f04 {
+    unk_00853a48_gm6f04_0* f_0;
+};
+struct unk_00853a48_gm6f04_0 {
+    char pad_0[108];
+    unk_00853a48_gm6f04_0_6c* f_6c;
+};
+struct unk_00853a48_gm6f04_0_6c {
+    char pad_0[8];
+    u32 f_8;
+};
+struct unk_00853a48_a0 {
+    char pad_0[4];
+    u32 f_4;
+    char pad_8[4];
+    u32 f_c;
+};
+extern unk_00853a48_gm6f04 g_00853a48_0;
+u8 fn_00853a48(unk_00853a48_a0* a0) {
+    int t0;
+    char l[8] __attribute__((aligned(8)));
+    t0 = fn_00b3f398((u32)((&g_00853a48_0)->f_0->f_6c->f_8), (u32)(a0->f_4), (u32)(a0->f_c), (void*)((&l)));
+    return (u8)((u8)t0);
 }
 
 }

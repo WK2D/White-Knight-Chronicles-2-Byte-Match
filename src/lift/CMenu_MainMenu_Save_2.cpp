@@ -5,6 +5,14 @@
 extern "C" {
 
 void fn_00046268(void*);
+void fn_00fccdf0(void*, void*, int, int, int, int, void*);
+
+extern char g_0064df68_0[];
+extern char g_0064df68_1[];
+void fn_0064df68(int a0) {
+    char l[8] __attribute__((aligned(8)));
+    fn_00fccdf0((void*)((&l)), (void*)(g_0064df68_1), (int)(a0), (int)(1001), (int)(16384), (int)(0), (void*)(g_0064df68_0));
+}
 
 struct unk_0064e444_a0 {
     char pad_0[40];

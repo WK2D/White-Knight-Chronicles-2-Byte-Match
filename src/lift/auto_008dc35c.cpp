@@ -4,7 +4,40 @@
 
 extern "C" {
 
+int fn_008f553c(void*, int);
 int fn_00b41108(void*, u32, int);
+
+struct unk_008dc6c0_a1 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual void vf5();
+    virtual void vf6();
+    virtual void vf7();
+    virtual void vf8();
+    virtual void vf9();
+    virtual void vf10();
+    virtual void vf11();
+    virtual void vf12();
+    virtual void vf13();
+    virtual void vf14();
+    virtual void vf15(void*, int);
+};
+int fn_008dc6c0(int a0, unk_008dc6c0_a1* a1) {
+    int t1;
+    char l[8] __attribute__((aligned(8)));
+    int v1;
+    if ((int)(a1) != (int)(0)) {
+        a1->vf15((void*)((&l)), (int)(16));
+        t1 = fn_008f553c((void*)((&l)), (int)(1));
+        v1 = (int)(1);
+    } else {
+        v1 = (int)(0);
+    }
+    return (int)(v1);
+}
 
 struct unk_008dc740_a0 {
     char pad_0[48];

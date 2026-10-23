@@ -10,6 +10,7 @@ static int __attribute__((noinline)) stub_0003a060(void* p0, int p1) { int r; __
 static int __attribute__((noinline)) stub_0003a0b0(void* p0, u16 p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static int __attribute__((noinline)) stub_0003a100(void* p0, int p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static int __attribute__((noinline)) stub_0003a148(void* p0, void* p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
+static int __attribute__((noinline)) stub_0003a194(void* p0, float p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static int __attribute__((noinline)) stub_0003a614(void* p0, void* p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static void* __attribute__((noinline)) stub_0003dee4(int p0) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 
@@ -50,6 +51,20 @@ int fn_0003df10(int a0, void* a1) {
     t0 = stub_0003dee4((int)(a0));
     if ((int)(t0) != (int)(0)) {
         t1 = stub_0003a614((void*)(t0), (void*)(a1));
+        v0 = (int)(1);
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
+int fn_0003df9c(int a0, float f0) {
+    void* t0;
+    int t1;
+    int v0;
+    t0 = stub_0003dee4((int)(a0));
+    if ((int)(t0) != (int)(0)) {
+        t1 = stub_0003a194((void*)(t0), (float)(f0));
         v0 = (int)(1);
     } else {
         v0 = (int)(0);

@@ -4,7 +4,38 @@
 
 extern "C" {
 
+static void* __attribute__((noinline)) stub_00019148(void* p0) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static void __attribute__((noinline)) stub_0001db18(int p0, u32 p1, u32 p2, int p3, int p4) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4)); }
+int fn_00b381b8(int);
+
+struct unk_0001cb64_a0 {
+    char pad_0[23792];
+    u8 f_5cf0;
+    u8 f_5cf1;
+    u8 f_5cf2;
+};
+int fn_0001cb64(unk_0001cb64_a0* a0) {
+    void* t0;
+    int t1;
+    if ((int)(a0->f_5cf1) != (int)(0)) {
+        if ((int)(a0->f_5cf2) == (int)(0)) {
+            return (int)(a0->f_5cf0);
+        }
+        if ((int)(a0->f_5cf0) != (int)(0)) {
+            return (int)(1);
+        }
+        t0 = stub_00019148((void*)(a0));
+        if ((int)(t0) == (int)(0)) {
+            return (int)(0);
+        }
+        if ((int)(FIELD(u32, t0, 4)) == (int)(-1)) {
+            return (int)(0);
+        }
+        t1 = fn_00b381b8((int)((int)FIELD(u32, t0, 4)));
+        return (int)((int)((u32)(((u32)(t1) >> 5) & 0x1) ^ 0x1));
+    }
+    return (int)(a0->f_5cf0);
+}
 
 void fn_0001e2fc(int a0, int a1, int a2, int a3) {
     stub_0001db18((int)(a0), (u32)(((u32)(a1) >> 24)), (u32)(((u32)(a1) >> 16) & 0xff), (int)(a2), (int)(a3));

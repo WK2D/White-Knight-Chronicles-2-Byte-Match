@@ -20,6 +20,31 @@ int fn_00043228(int a0, unk_00043228_a1* a1) {
     return (int)(v0);
 }
 
+struct unk_000434c4_a0 {
+    char pad_0[8];
+    u32 f_8;
+    u32 f_c;
+    float f_10;
+};
+int fn_000434c4(unk_000434c4_a0* a0, int a1, float f0) {
+    int v0;
+    int v1;
+    if ((int)(a0->f_8) != (int)(a1)) {
+        if ((int)(a1) != (int)(-1)) {
+            a0->f_c = (u32)(a0->f_8);
+            a0->f_10 = f0;
+            a0->f_8 = (u32)(a1);
+            v0 = (int)(a1);
+        } else {
+            v0 = (int)(a0->f_8);
+        }
+        v1 = (int)(v0);
+    } else {
+        v1 = (int)(a0->f_8);
+    }
+    return (int)(v1);
+}
+
 struct unk_000434f4_a0 {
     char pad_0[20];
     u8 f_14;

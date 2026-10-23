@@ -4,10 +4,41 @@
 
 extern "C" {
 
+void fn_00d7ca38(void*, u32, void*);
 void fn_00fc92cc(int, int);
 
 void fn_00ebb008(int a0, int a1) {
     fn_00fc92cc((int)(a0), (int)(a1));
+}
+
+struct unk_00ebb130_a0_18;
+struct unk_00ebb130_a0_18 {
+    char pad_0[8];
+    u32 f_8;
+};
+struct unk_00ebb130_a0 {
+    char pad_0[24];
+    unk_00ebb130_a0_18* f_18;
+    char pad_1c[32];
+    u32 f_3c;
+};
+struct unk_00ebb130_vc0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual void vf5();
+    virtual void vf6();
+    virtual void vf7();
+    virtual void vf8();
+    virtual void vf9();
+    virtual void vf10(void);
+};
+void fn_00ebb130(unk_00ebb130_a0* a0) {
+    char l[8] __attribute__((aligned(8)));
+    ((unk_00ebb130_vc0*)(a0->f_3c))->vf10();
+    fn_00d7ca38((void*)((&l)), (u32)(a0->f_18->f_8), (void*)(a0->f_18));
 }
 
 }

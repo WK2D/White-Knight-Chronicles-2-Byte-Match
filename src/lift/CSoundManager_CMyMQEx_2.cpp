@@ -4,7 +4,27 @@
 
 extern "C" {
 
+static int __attribute__((noinline)) stub_0001a434(void* p0, void* p1, void* p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
+static void* __attribute__((noinline)) stub_00029508(void* p0, int p1, u16 p2, void* p3, int p4, int p5) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4), "r"(p5)); return r; }
 static int __attribute__((noinline)) stub_0002a3c8(void* p0, int p1, int p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
+int fn_00493eec(int);
+
+void* fn_000296a4(void* a0, int a1, int a2, void* a3) {
+    int t0;
+    int t1;
+    void* t2;
+    char l[8] __attribute__((aligned(8)));
+    t0 = fn_00493eec((int)(a1));
+    if ((int)((u32)(t0) & 0xff) > (int)(0)) {
+        t1 = stub_0001a434((void*)(a0), (void*)(a3), (void*)((&l)));
+        if ((int)((u32)(t1) & 0xff) == (int)(0)) {
+            return (void*)(-1);
+        }
+        t2 = stub_00029508((void*)(a0), (int)(a1), (u16)((u16)a2), (void*)((&l)), (int)((int)((u32)(t0) & 0xff)), (int)(254));
+        return (void*)(t2);
+    }
+    return (void*)(-1);
+}
 
 struct unk_0002a470_a0_18;
 struct unk_0002a470_a0_18 {

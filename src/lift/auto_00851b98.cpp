@@ -18,6 +18,7 @@ void fn_00fcadd0(int, int, void*, void*, int);
 int fn_00fcae30(int, void*, u32, void*, void*, void*, void*, void*);
 int fn_00fcaf70(void*);
 int fn_00fcafd0(int, void*, u32, void*, void*, void*, void*, void*);
+void fn_00fccdf0(void*, void*, void*, int, int, int, void*);
 void fn_00fcd030(int);
 
 struct unk_00851c4c_a0 {
@@ -91,6 +92,20 @@ void fn_00852284(unk_00852284_a0* a0) {
     t0 = fn_00fcae30((int)(0), (void*)((&a0->f_994)), (u32)(a0->f_2d8), (void*)((&a0->f_280)), (void*)(g_00852284_1), (void*)(g_00852284_0), (void*)(-1), (void*)(a0));
     stub_00851988((void*)(a0), (int)(t0));
     fn_00fcd030((int)(0));
+}
+
+struct unk_00852300_a0 {
+    char pad_0[704];
+    u32 f_2c0;
+    u32 f_2c4;
+};
+extern char g_00852300_0[];
+extern char g_00852300_1[];
+int fn_00852300(unk_00852300_a0* a0) {
+    char l[8] __attribute__((aligned(8)));
+    fn_00fccdf0((void*)((&l)), (void*)(g_00852300_1), (void*)(a0), (int)((int)a0->f_2c0), (int)(16384), (int)(0), (void*)(g_00852300_0));
+    a0->f_2c4 = (u32)(2);
+    return (int)(1);
 }
 
 struct unk_00852530_a0 {

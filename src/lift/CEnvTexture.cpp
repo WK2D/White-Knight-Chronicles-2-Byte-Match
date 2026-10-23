@@ -65,4 +65,15 @@ void fn_004c69c0(unk_004c69c0_a0* a0) {
     a0->f_8 = (u32)(0);
 }
 
+struct unk_004c6bc4_a0 {
+    char pad_0[128];
+    float f_80;
+    char pad_84[36];
+    float f_a8;
+};
+void fn_004c6bc4(unk_004c6bc4_a0* a0, float f0) {
+    a0->f_a8 = f0;
+    a0->f_80 = f0 + a0->f_80;
+}
+
 }

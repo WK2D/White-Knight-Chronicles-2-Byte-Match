@@ -5,6 +5,8 @@
 extern "C" {
 
 void fn_00b3b128(int, void*, int);
+void fn_00b3b188(void*, int);
+int fn_00b3b198(void*);
 void fn_00b3b208(int, float);
 void fn_00b3b218(int, int, int);
 void fn_00b3b2f8(int);
@@ -28,6 +30,14 @@ void fn_0027cfb8(int a0, unk_0027cfb8_a1* a1) {
     fn_00b3b128((int)(a0), (void*)(g_0027cfb8_2), (int)(-1));
     fn_00b3b208((int)(a0), (float)(a1->f_8));
     fn_00b3b218((int)(a0), (int)(-3), (int)(0));
+}
+
+int fn_0027d264(int a0) {
+    int t1;
+    char l[8] __attribute__((aligned(8)));
+    fn_00b3b188((void*)((&l)), (int)(a0));
+    t1 = fn_00b3b198((void*)((&l)));
+    return (int)(t1);
 }
 
 }

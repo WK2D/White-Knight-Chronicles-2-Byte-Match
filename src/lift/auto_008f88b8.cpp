@@ -125,6 +125,28 @@ void fn_008fa31c(int a0, unk_008fa31c_a1* a1) {
     stub_008f7cc8((int)(a0), (void*)(t0));
 }
 
+struct unk_008fa3c0_a1 {
+    u32 f_0;
+};
+int fn_008fa3c0(int a0, unk_008fa3c0_a1* a1, float f0) {
+    void* t0;
+    int v0;
+    int v1;
+    t0 = stub_008f7780((int)(a0), (u32)(a1->f_0));
+    if ((int)(t0) != (int)(0)) {
+        if ((int)(FIELD(u32, t0, 0)) != (int)(0)) {
+            FIELD(float, FIELD(u32, t0, 0), 312) = f0;
+            v0 = (int)(1);
+        } else {
+            v0 = (int)(0);
+        }
+        v1 = (int)(v0);
+    } else {
+        v1 = (int)(0);
+    }
+    return (int)(v1);
+}
+
 struct unk_008fa4f4_a1 {
     u32 f_0;
 };

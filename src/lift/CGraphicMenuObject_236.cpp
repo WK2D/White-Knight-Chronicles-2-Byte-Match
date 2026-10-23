@@ -18,6 +18,31 @@ void fn_00863d34(unk_00863d34_a0* a0) {
     a0->f_1054 = (u32)(2);
 }
 
+struct unk_00863d48_a0 {
+    char pad_0[4180];
+    u32 f_1054;
+    u16 f_1058;
+    u16 f_105a;
+    u32 f_105c;
+    char pad_1060[24];
+    u8 f_1078;
+    u8 f_1079;
+};
+int fn_00863d48(unk_00863d48_a0* a0) {
+    if ((int)(a0->f_1054) != (int)(2)) {
+        return (int)(0);
+    }
+    if ((int)(a0->f_1058) != (int)(a0->f_105a)) {
+        if ((int)(a0->f_105c) != (int)(2)) {
+            return (int)(0);
+        }
+    }
+    if ((int)(a0->f_1078) == (int)(0)) {
+        return (int)(1);
+    }
+    return (int)(a0->f_1079);
+}
+
 struct unk_00863df4_a0 {
     char pad_0[3088];
     u8 f_c10;

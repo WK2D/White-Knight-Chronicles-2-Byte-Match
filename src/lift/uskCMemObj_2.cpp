@@ -110,6 +110,19 @@ void fn_00082620(unk_00082620_a0* a0) {
     fn_000886b0((void*)((&a0->f_10)));
 }
 
+void* fn_0008264c(int a0) {
+    int t0;
+    char l[8] __attribute__((aligned(8)));
+    int v0;
+    if ((int)(a0) != (int)(0)) {
+        t0 = fn_00b42924((void*)((&l)), (int)(16));
+        v0 = (int)((int)(a0) - (int)((int)(t0) - (int)((&l))));
+    } else {
+        v0 = (int)(0);
+    }
+    return (void*)(v0);
+}
+
 struct unk_000826a8_a0 {
     char pad_0[4];
     u32 f_4;

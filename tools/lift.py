@@ -249,6 +249,7 @@ class Lifter:
         self.gpr = {r: None for r in range(32)}
         self.fpr = {r: None for r in range(32)}
         self.args, self.fargs = {}, {}
+        self.read_args = set()            # integer parameter registers the code reads
         self.vr = {r: None for r in range(32)}   # AltiVec registers
         self.vargs = {}                   # vector parameters (v2, v3, ...)
         self.vfresh = set()               # vector registers written since the last call
@@ -312,6 +313,7 @@ class Lifter:
         if v is None:
             if 3 <= r <= 10 and r not in self.args:
                 self.param(r)
+                self.read_args.add(r)
                 return self.gpr[r]
             if r == 2:
                 v = Value('TOC', 'toc')
@@ -324,6 +326,9 @@ class Lifter:
             raise Fail(f'r{r} read before it is set')
         if v.call is not None:
             v.call['used'] = True
+        for k, a in self.args.items():
+            if v is a:
+                self.read_args.add(k)
         return v
 
     def vreg(self, r):
@@ -1669,9 +1674,16 @@ class Lifter:
             ret_type = 'vector float'
         if valued:
             types = {CTYPES.get(r['value'].ctype) for r in self.returns if r['value'] is not None}
-            if None in types or len(types) != 1 or any(r['value'] is None for r in self.returns):
+            if None in types or any(r['value'] is None for r in self.returns):
                 raise Fail('return type')
-            ret_type = types.pop()
+            if len(types) == 1:
+                ret_type = types.pop()
+            elif types <= {'void*'} | {CTYPES[t] for t in ('u32', 'int')} and 'void*' in types:
+                ret_type = 'void*'                       # pointers and words: a pointer (each return is cast)
+            elif not types & {'float', 'double', 'vector float', 'u64'}:
+                ret_type = 'int'                         # mixed integer widths: one int (each return is cast)
+            else:
+                raise Fail('return type')
         if valued:
             for r in self.returns:
                 if r['value'] is not None and r['value'].call is not None:
@@ -1681,9 +1693,15 @@ class Lifter:
             if info['used']:
                 top.append(f'{info["type"]} {info["temp"]};')
         if self.local_refs > 0:
-            if ('l',) not in self.layouts:
-                raise Fail('locals without a layout')
-            top.append(f'{self.tag(("l",))} l;')
+            if ('l',) in self.layouts:
+                top.append(f'{self.tag(("l",))} l;')
+            else:
+                # No struct fits (a slot used with two types): raw bytes,
+                # accessed by offset.
+                ends = [off + SIZES.get(t, 4) for off, t in self.access.get(('l',), ())]
+                ends += [off + 1 for off in self.addressed.get(('l',), ())]
+                size = max(ends + [8])
+                top.append(f'char l[{(size + 7) // 8 * 8}] __attribute__((aligned(8)));')
         top += [f'{t} {n};' for t, n in self.vars]
         def lines(stmts, indent):
             out = []
@@ -1784,9 +1802,15 @@ class Lifter:
             else:
                 params.append(f'{CTYPES.get(self.args[k].ctype, "int")} {self.args[k].text}')
         if self.fargs:
-            if self.args or self.vargs:
+            if self.vargs:
                 raise Fail('mixed arguments')
-            params = [f'float {self.fargs[k].text}' for k in sorted(self.fargs)]
+            # A float parameter also takes an integer register's place, so
+            # integer parameters the code never reads are where floats sit.
+            floats = [f'float {self.fargs[k].text}' for k in sorted(self.fargs)]
+            merged = []
+            for k, p in zip(sorted(self.args), params):
+                merged.append(floats.pop(0) if k not in self.read_args and floats else p)
+            params = merged + floats
         params += [f'vector float {self.vargs[k].text}' for k in sorted(self.vargs)]
         for tag, slots in self.vclasses.items():           # objects that are not arguments
             structs.append(class_decl(tag, slots, {}))
@@ -1838,20 +1862,26 @@ def drop_dead_vars(body, names):
     """Remove merge variables nobody reads: their declarations and every
     assignment to them. GCC deletes such stores too, but late: left in, they
     change which induction variables it picks for a loop."""
+    # Each line once: the variable it assigns or declares (if any) and the
+    # variable names it mentions.
+    info = []
+    for l in body:
+        m = re.match(r'^\s*(v\d+) = .*;$', l) or re.fullmatch(r'\s*\w[\w ]*\*? (v\d+);', l)
+        info.append((m.group(1) if m else None, set(re.findall(r'\bv\d+\b', l))))
+    alive = [True] * len(body)
     while True:
-        dead = set()
-        for name in names:
-            assign = re.compile(rf'^\s*{name} = .*;$')
-            decl = re.compile(rf'\w[\w ]*\*? {name};')
-            if not any(re.search(rf'\b{name}\b', l) for l in body
-                       if not assign.match(l) and not decl.fullmatch(l.strip())):
-                dead.add(name)
+        read = set()
+        for keep, (own, mentioned) in zip(alive, info):
+            if keep:
+                read |= mentioned - {own}            # its own assignment or declaration is not a read
+        dead = names - read
         if not dead:
             break
         names = names - dead
-        body = [l for l in body
-                if not any(re.match(rf'^\s*{n} = .*;$', l) or re.fullmatch(rf'\w[\w ]*\*? {n};', l.strip())
-                           for n in dead)]
+        for k, (own, _) in enumerate(info):
+            if own in dead:
+                alive[k] = False
+    body = [l for keep, l in zip(alive, body) if keep]
     # Branches left empty: "} else {" straight before "}", and "if (c) {}".
     out = []
     for l in body:

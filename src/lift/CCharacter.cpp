@@ -17,6 +17,44 @@ void fn_0015283c(unk_0015283c_a0* a0, unk_0015283c_a1* a1) {
     a0->f_d0 = a1->f_0;
 }
 
+struct unk_0015284c_a0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual void vf5();
+    virtual void vf6();
+    virtual void vf7();
+    virtual void vf8();
+    virtual void vf9();
+    virtual void vf10();
+    virtual void vf11();
+    virtual void vf12();
+    virtual void vf13();
+    virtual void vf14();
+    virtual void vf15();
+    virtual void vf16();
+    virtual void vf17();
+    virtual void vf18();
+    virtual void vf19();
+    virtual void vf20();
+    virtual void vf21(void);
+    virtual void vf22(float);
+    virtual void vf23(float);
+    virtual void vf24(float);
+    virtual void vf25();
+    virtual void vf26();
+    virtual void vf27(float);
+};
+void fn_0015284c(unk_0015284c_a0* a0, float f0) {
+    a0->vf21();
+    a0->vf23((float)(f0));
+    a0->vf27((float)(f0));
+    a0->vf24((float)(f0));
+    a0->vf22((float)(f0));
+}
+
 struct unk_001529e8_a0 {
     char pad_0[52];
     u32 f_34;

@@ -27,6 +27,26 @@ int fn_003e6c0c(unk_003e6c0c_a0* a0) {
     return (int)(v0);
 }
 
+struct unk_003e6c2c_a0_8;
+struct unk_003e6c2c_a0_8 {
+    char pad_0[204];
+    u16 f_cc;
+    u16 f_ce;
+};
+struct unk_003e6c2c_a0 {
+    char pad_0[8];
+    unk_003e6c2c_a0_8* f_8;
+};
+int fn_003e6c2c(unk_003e6c2c_a0* a0) {
+    if ((int)(a0->f_8) != (int)(0)) {
+        if ((u32)(a0->f_8->f_cc) > (u32)(a0->f_8->f_ce)) {
+            return (int)(a0->f_8->f_cc);
+        }
+        return (int)(a0->f_8->f_ce);
+    }
+    return (int)(0);
+}
+
 void* fn_003e6d28(int a0, int a1) {
     int t0;
     int v0;

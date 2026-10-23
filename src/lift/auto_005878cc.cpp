@@ -20,4 +20,20 @@ void* fn_00587cf0(int a0, int a1, int a2) {
     return (void*)(t1);
 }
 
+struct unk_00587db4_a0_0;
+struct unk_00587db4_a0_0 {
+    u8 f_0;
+    char pad_1[11];
+    float f_c;
+};
+struct unk_00587db4_a0 {
+    unk_00587db4_a0_0* f_0;
+};
+void fn_00587db4(unk_00587db4_a0* a0, float f0) {
+    if ((int)(a0->f_0->f_0) != (int)(0)) {
+        return;
+    }
+    a0->f_0->f_c = f0;
+}
+
 }

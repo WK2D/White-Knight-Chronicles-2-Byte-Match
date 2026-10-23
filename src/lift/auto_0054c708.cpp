@@ -8,6 +8,8 @@ int fn_00545ecc(void*);
 void fn_00565a8c(u32, int, int);
 void fn_0056797c(u32, int, int);
 int fn_00568ca8(u32, int);
+void fn_00568e64(u32, float, void*, void*, void*);
+void fn_0056a1e4(u32);
 void fn_0056c22c(u32);
 void* fn_00573d94(void*, u32, u16, u16, int, void*);
 void* fn_00587494(u32);
@@ -79,6 +81,15 @@ struct unk_0054d1f8_a0 {
 };
 void fn_0054d1f8(unk_0054d1f8_a0* a0) {
     fn_0056c22c((u32)(a0->f_318));
+}
+
+struct unk_0054d220_a0 {
+    char pad_0[792];
+    u32 f_318;
+};
+void fn_0054d220(unk_0054d220_a0* a0, float f0, void* a2, void* a3) {
+    fn_0056a1e4((u32)(a0->f_318));
+    fn_00568e64((u32)(a0->f_318), (float)(f0), (void*)(a0), (void*)(a2), (void*)(a3));
 }
 
 struct unk_0054d294_a2 {

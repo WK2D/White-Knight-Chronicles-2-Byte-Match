@@ -32,4 +32,28 @@ void* fn_00d79f00(unk_00d79f00_a0* a0) {
     return (void*)(t1);
 }
 
+struct unk_00d79f88_a0 {
+    char pad_0[8];
+    u32 f_8;
+    char pad_c[172];
+    u32 f_b8;
+};
+struct unk_00d79f88_vc0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual void* vf5(float);
+};
+void* fn_00d79f88(unk_00d79f88_a0* a0, float f0) {
+    void* t1;
+    fn_00c04814();
+    a0->f_b8 = (u32)(a0->f_b8 + 1);
+    t1 = ((unk_00d79f88_vc0*)(a0->f_8))->vf5((float)(f0));
+    a0->f_b8 = (u32)(a0->f_b8 + -1);
+    fn_00c03c0c();
+    return (void*)(t1);
+}
+
 }

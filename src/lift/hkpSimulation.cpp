@@ -6,6 +6,16 @@ extern "C" {
 
 void fn_00df2f28(int, int);
 
+struct unk_00d94f98_a0 {
+    char pad_0[20];
+    float f_14;
+    char pad_18[8];
+    float f_20;
+};
+void fn_00d94f98(unk_00d94f98_a0* a0, float f0) {
+    a0->f_20 = a0->f_14 + f0;
+}
+
 void fn_00d95288(int a0, int a1, int a2) {
     fn_00df2f28((int)(a1), (int)(a2));
 }

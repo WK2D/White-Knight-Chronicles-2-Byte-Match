@@ -5,6 +5,22 @@
 extern "C" {
 
 
+struct unk_0058662c_a0_0;
+struct unk_0058662c_a0_0 {
+    u8 f_0;
+    char pad_1[11];
+    float f_c;
+};
+struct unk_0058662c_a0 {
+    unk_0058662c_a0_0* f_0;
+};
+void fn_0058662c(unk_0058662c_a0* a0, float f0) {
+    if ((int)(a0->f_0->f_0) != (int)(0)) {
+        return;
+    }
+    a0->f_0->f_c = a0->f_0->f_c + f0;
+}
+
 struct unk_0058667c_a0_0;
 struct unk_0058667c_a0_0 {
     u8 f_0;

@@ -16,4 +16,19 @@ void fn_00d59d14(unk_00d59d14_a0* a0) {
     a0->f_20 = (vector float){0, 0, 0, 0};
 }
 
+struct unk_00d59d2c_a0 {
+    char pad_0[24];
+    float f_18;
+    char pad_1c[4];
+    vec f_20;
+};
+void fn_00d59d2c(unk_00d59d2c_a0* a0, float f0, float f1) {
+    if (a0->f_18 == f0) {
+        a0->f_18 = f1;
+        return;
+    }
+    a0->f_18 = -1.0f;
+    a0->f_20 = (vector float){0, 0, 0, 0};
+}
+
 }

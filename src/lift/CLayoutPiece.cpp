@@ -25,12 +25,44 @@ void fn_00049b4c(int a0, int a1, int a2, int a3) {
     stub_00049714((int)(a0), (int)(a1), (u16)((u16)a3));
 }
 
+struct unk_0004a020_a0 {
+    char pad_0[124];
+    u8 f_7c;
+    char pad_7d[7];
+    float f_84;
+};
+void fn_0004a020(unk_0004a020_a0* a0, float f0) {
+    if ((int)(a0->f_7c) == (int)(0)) {
+        return;
+    }
+    if (a0->f_84 > 0.0f) {
+        return;
+    }
+    a0->f_84 = -f0;
+}
+
 struct unk_0004a510_a0 {
     char pad_0[104];
     u8 f_68;
 };
 void fn_0004a510(unk_0004a510_a0* a0, int a1, int a2, int a3) {
     stub_0004a4bc((void*)(a0), (void*)((&a0->f_68)), (int)(a1), (int)(a3), (int)(a3));
+}
+
+struct unk_0004a5dc_a0 {
+    char pad_0[144];
+    u8 f_90;
+    char pad_91[7];
+    float f_98;
+};
+void fn_0004a5dc(unk_0004a5dc_a0* a0, float f0) {
+    if ((int)(a0->f_90) == (int)(0)) {
+        return;
+    }
+    if (a0->f_98 > 0.0f) {
+        return;
+    }
+    a0->f_98 = -f0;
 }
 
 }

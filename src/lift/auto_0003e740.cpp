@@ -41,6 +41,22 @@ void fn_0003fab0(unk_0003fab0_a0* a0, int a1) {
     a0->f_4->f_4 = (u32)(a1);
 }
 
+struct unk_0003fac8_a0_4;
+struct unk_0003fac8_a0_4 {
+    char pad_0[4];
+    float f_4;
+};
+struct unk_0003fac8_a0 {
+    u32 f_0;
+    unk_0003fac8_a0_4* f_4;
+};
+void fn_0003fac8(unk_0003fac8_a0* a0, float f0) {
+    if ((int)(a0->f_0) != (int)(3)) {
+        return;
+    }
+    a0->f_4->f_4 = f0;
+}
+
 struct unk_0003fae0_a0_4;
 struct unk_0003fae0_a0_4 {
     char pad_0[4];
