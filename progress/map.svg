@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" font-family="Segoe UI, Helvetica, Arial, sans-serif">
 <rect width="960" height="540" fill="#0d1117"/>
 <text x="12" y="28" fill="#e6edf3" font-size="20" font-weight="600">White Knight Chronicles II: 3.475% of code matched</text>
-<text x="12" y="50" fill="#8b949e" font-size="13">16,722 of 51,438 functions compile to identical bytes · 4672 units · each square fills in as its functions match</text>
+<text x="12" y="50" fill="#8b949e" font-size="13">16,722 of 50,844 functions compile to identical bytes · 4672 units · each square fills in as its functions match</text>
 <g><title>auto_00010240: 12.06% matched, 12.06% fuzzy, 1,028 bytes</title>
 <rect x="0.00" y="64.00" width="7.21" height="3.97" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
 <rect x="0.00" y="67.49" width="7.21" height="0.48" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>

@@ -24,7 +24,7 @@ alternative to the static-recompilation port at
   `-O2` and not with `-fno-ivopts`. The project used `-O2 -fno-ivopts` before
   2026-10-22; only `src/game/CPostEffectManager.cpp` keeps that, as an
   override, until a natural `-O2` form of `fn_004b32e8` is found.
-- Matched: **16,722 of 51,438 functions** (3.47% of code). Six are by hand
+- Matched: **16,722 of 50,844 functions** (3.47% of code). Six are by hand
   (`src/game/*.cpp`); the rest are generated: `tools/gen_simple.py`
   (`src/gen/`, small shapes), `tools/lift.py` (`src/lift/`, the lifter),
   `tools/permute.py` (`src/perm/`, lifter output in another statement order)
@@ -173,7 +173,7 @@ The checker masks only linker-filled fields:
 | Item | Value |
 | --- | --- |
 | `.text` | `0x10240`–`0xfc983c` (16.5 MB) |
-| Functions | 55,164 in `.text` (`config/functions.txt`: boundaries from the recomp's analysis; 886 nop-only padding entries dropped, 73 stray `ld r2,40(r1)` words joined to the function before them). 2,885 of them are linker TOC stubs (`config/linker_stubs.txt`), which `load_functions()` leaves out. 841 entries were the ends of exception cleanups (a short block ending in `bl _Unwind_Resume`, 0xb383b8) split off their function; they are merged into it. 51,438 count. |
+| Functions | 55,164 in `.text` (`config/functions.txt`: boundaries from the recomp's analysis; 886 nop-only padding entries dropped, 73 stray `ld r2,40(r1)` words joined to the function before them). 2,885 of them are linker TOC stubs (`config/linker_stubs.txt`), which `load_functions()` leaves out. 841 entries were the ends of exception cleanups (a short block ending in `bl _Unwind_Resume`, 0xb383b8) split off their function, and 594 more were other pieces of the function before them (no descriptor, never called, reached by a conditional branch from that function: e.g. `fn_0002ba70`, the `__cxa_call_unexpected` path of an exception specification); `tools/merge_pieces.py` finds them. All are merged into their function: 50,844 count. |
 | OPD (function descriptors) | `0x12d9b90`, size `0x72388`: `{u32 code, u32 toc}` |
 | TOC bases | `0x1353f18`, `0x1363ee8`, `0x1373ee0` (multi-TOC) |
 | ABI | lv2: 64-bit registers, 32-bit pointers (`sizeof(void*) == 4`) |
@@ -243,8 +243,9 @@ counts over all functions up to 384 instructions):
    structuring algorithm; goto does not reproduce GCC's own loop rotation.
 2. Constructors with member objects and destructors (see the C++ notes
    above): structure reproduced, store scheduling not yet.
-3. Frameless functions ending in a call that never returns (about 730,
-   `fn_0002ba70`): a `noreturn` callee still makes GCC 4.1 build a frame.
+3. (Done: the "frameless functions ending in a call that never returns"
+   were pieces of the function before them, the exception-specification
+   path; merged, see Binary facts.)
 4. Identify real source files and rename units (assert-string paths, class
    names from RTTI).
 5. Submit the repository on bytematch.dev (the user signs in).
