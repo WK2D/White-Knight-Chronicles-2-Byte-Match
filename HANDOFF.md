@@ -24,7 +24,7 @@ alternative to the static-recompilation port at
   `-O2` and not with `-fno-ivopts`. The project used `-O2 -fno-ivopts` before
   2026-10-22; only `src/game/CPostEffectManager.cpp` keeps that, as an
   override, until a natural `-O2` form of `fn_004b32e8` is found.
-- Matched: **19,246 of 50,844 functions** (4.91% of code). Six are by hand
+- Matched: **19,256 of 50,844 functions** (4.92% of code). Six are by hand
   (`src/game/*.cpp`); the rest are generated: `tools/gen_simple.py`
   (`src/gen/`, small shapes), `tools/lift.py` (`src/lift/`, the lifter),
   `tools/permute.py` (`src/perm/`, lifter output in another statement order)
@@ -519,6 +519,10 @@ counts over all functions up to 384 instructions):
   void, all pointer tests) on functions over 48 words that are at least
   20% alike (`BIG_FUZZY`); that gained 63. A full cycle takes about 35
   minutes.
+- `permute.py` tries every order of runs of up to 5 assignments (120;
+  before: up to 4) and puts the other forms first (`MAX_EXTRAS`). Net +10
+  for about 5 more minutes per cycle: store order is rarely the last
+  difference.
 - `srawi t,x,31; xor y,t,x; subf z,t,y` is GCC's `abs(x)` (`subf z,y,t`
   is `-abs(x)`): lifted as `__builtin_abs(x)` (`fn_00018b44`,
   `fn_00b67514`). Written out as shifts and xor, GCC reorders the operands.

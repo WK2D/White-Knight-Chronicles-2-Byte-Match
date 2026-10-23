@@ -28,7 +28,8 @@ PERM = ROOT / 'src' / 'perm'
 WORK = BUILD / 'perm'
 MAX_WORDS = 48          # functions up to this many instructions
 BIG_FUZZY = 20.0        # larger functions: only the few cheap forms, and only if this close
-MAX_VARIANTS = 48       # orders tried per function
+MAX_VARIANTS = 120      # orders tried per function (every order of a run of 5)
+MAX_EXTRAS = 72         # other forms (and a few orders of each) per function
 ASSIGN = re.compile(r'^(\s+)(?!return\b)[^\s].* = .*;$')
 
 
@@ -54,7 +55,7 @@ def runs(lines):
 def orders(n):
     """Orders of a run of n statements to try: all of them for short runs,
     else reversal, adjacent swaps and rotations."""
-    if n <= 4:
+    if n <= 5:
         return list(itertools.permutations(range(n)))
     base = list(range(n))
     out = [tuple(base), tuple(reversed(base))]
@@ -253,17 +254,14 @@ def variants(code):
     """Other forms of a lifted function: statement orders, inverted ifs,
     swapped comparisons, a void version, a struct returned by value, and a
     few statement orders of each."""
-    out = reorders(code)
     void = voided(code)
     sret = struct_return(code)
+    extras = [v for v in (sret, void) if v]
     for other in pointer_tests(code) + flips(code) + swaps(code) + ([void] if void else []):
-        out.append(other)
-        out += reorders(other)[:8]
-    if void:                                     # the void version first among the extras
-        out.insert(0, void)
-    if sret:
-        out.insert(0, sret)
-    return list(dict.fromkeys(out))[:MAX_VARIANTS * 3]
+        extras.append(other)
+        extras += reorders(other)[:8]
+    extras = list(dict.fromkeys(extras))[:MAX_EXTRAS]
+    return list(dict.fromkeys(extras + reorders(code)))
 
 
 def main():

@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" font-family="Segoe UI, Helvetica, Arial, sans-serif">
 <rect width="960" height="540" fill="#0d1117"/>
-<text x="12" y="28" fill="#e6edf3" font-size="20" font-weight="600">White Knight Chronicles II: 4.913% of code matched</text>
-<text x="12" y="50" fill="#8b949e" font-size="13">19,246 of 50,844 functions compile to identical bytes · 4672 units · each square fills in as its functions match</text>
+<text x="12" y="28" fill="#e6edf3" font-size="20" font-weight="600">White Knight Chronicles II: 4.917% of code matched</text>
+<text x="12" y="50" fill="#8b949e" font-size="13">19,256 of 50,844 functions compile to identical bytes · 4672 units · each square fills in as its functions match</text>
 <g><title>auto_00010240: 12.06% matched, 12.06% fuzzy, 1,028 bytes</title>
 <rect x="0.00" y="64.00" width="7.21" height="3.97" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
 <rect x="0.00" y="67.49" width="7.21" height="0.48" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
@@ -88,9 +88,9 @@
 <rect x="32.56" y="97.96" width="2.89" height="14.48" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
 <rect x="32.56" y="111.82" width="2.89" height="0.62" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
 </g>
-<g><title>auto_0002b45c: 3.62% matched, 3.62% fuzzy, 5,080 bytes</title>
+<g><title>auto_0002b45c: 4.41% matched, 4.41% fuzzy, 5,080 bytes</title>
 <rect x="35.45" y="97.96" width="12.14" height="11.64" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
-<rect x="35.45" y="109.18" width="12.14" height="0.42" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
+<rect x="35.45" y="109.09" width="12.14" height="0.51" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
 </g>
 <g><title>auto_0002c834: 3.23% matched, 3.23% fuzzy, 1,240 bytes</title>
 <rect x="35.45" y="109.60" width="12.14" height="2.84" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
@@ -277,9 +277,10 @@
 <rect x="104.48" y="101.45" width="18.08" height="19.32" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
 <rect x="104.48" y="119.98" width="18.08" height="0.78" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
 </g>
-<g><title>auto_00072208: 3.43% matched, 3.43% fuzzy, 1,984 bytes</title>
+<g><title>auto_00072208: 9.48% matched, 9.48% fuzzy, 1,984 bytes</title>
 <rect x="104.48" y="120.76" width="18.08" height="3.05" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
-<rect x="104.48" y="123.71" width="18.08" height="0.10" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
+<rect x="104.48" y="123.53" width="18.08" height="0.00" fill="#3b82f6" stroke="#0d1117" stroke-width="1"/>
+<rect x="104.48" y="123.53" width="18.08" height="0.29" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
 </g>
 <g><title>auto_000729c8: 57.00% matched, 57.00% fuzzy, 4,772 bytes</title>
 <rect x="63.01" y="123.81" width="9.04" height="14.67" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
@@ -684,10 +685,10 @@
 <rect x="79.15" y="215.79" width="13.57" height="2.54" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
 <rect x="79.15" y="217.77" width="13.57" height="0.56" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
 </g>
-<g><title>CLoadingMark_CMyMQEx_2: 3.92% matched, 3.92% fuzzy, 12,536 bytes</title>
+<g><title>CLoadingMark_CMyMQEx_2: 4.63% matched, 4.63% fuzzy, 12,536 bytes</title>
 <rect x="79.15" y="218.33" width="13.57" height="25.67" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
-<rect x="79.15" y="243.00" width="13.57" height="0.00" fill="#3b82f6" stroke="#0d1117" stroke-width="1"/>
-<rect x="79.15" y="243.00" width="13.57" height="1.01" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
+<rect x="79.15" y="242.81" width="13.57" height="0.00" fill="#3b82f6" stroke="#0d1117" stroke-width="1"/>
+<rect x="79.15" y="242.81" width="13.57" height="1.19" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
 </g>
 <g><title>auto_000e22e0: 2.09% matched, 2.09% fuzzy, 7,656 bytes</title>
 <rect x="92.72" y="185.41" width="16.81" height="12.66" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
@@ -797,9 +798,9 @@
 <rect x="61.90" y="272.16" width="6.95" height="16.57" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
 <rect x="61.90" y="281.50" width="6.95" height="7.23" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
 </g>
-<g><title>auto_000fa568: 3.33% matched, 3.33% fuzzy, 6,960 bytes</title>
+<g><title>auto_000fa568: 8.16% matched, 8.16% fuzzy, 6,960 bytes</title>
 <rect x="68.85" y="272.16" width="11.68" height="16.57" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
-<rect x="68.85" y="288.17" width="11.68" height="0.55" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
+<rect x="68.85" y="287.37" width="11.68" height="1.35" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
 </g>
 <g><title>auto_000fc098: 3.06% matched, 3.06% fuzzy, 2,220 bytes</title>
 <rect x="61.90" y="288.73" width="4.58" height="13.48" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
@@ -3094,9 +3095,9 @@
 <rect x="273.18" y="102.99" width="10.39" height="15.42" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
 <rect x="273.18" y="111.99" width="10.39" height="6.42" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
 </g>
-<g><title>auto_004168ac: 24.10% matched, 24.10% fuzzy, 6,024 bytes</title>
+<g><title>auto_004168ac: 24.77% matched, 24.77% fuzzy, 6,024 bytes</title>
 <rect x="283.58" y="102.99" width="14.14" height="11.84" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
-<rect x="283.58" y="111.98" width="14.14" height="2.85" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
+<rect x="283.58" y="111.90" width="14.14" height="2.93" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
 </g>
 <g><title>auto_00418034: 9.01% matched, 9.01% fuzzy, 1,820 bytes</title>
 <rect x="283.58" y="114.83" width="14.14" height="3.58" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
@@ -3488,9 +3489,9 @@
 <rect x="270.42" y="287.88" width="4.78" height="14.16" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
 <rect x="270.42" y="301.46" width="4.78" height="0.58" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
 </g>
-<g><title>CPostEffectManager_3: 4.20% matched, 4.20% fuzzy, 4,284 bytes</title>
+<g><title>CPostEffectManager_3: 5.04% matched, 5.04% fuzzy, 4,284 bytes</title>
 <rect x="275.20" y="287.88" width="10.11" height="11.78" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
-<rect x="275.20" y="299.17" width="10.11" height="0.50" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
+<rect x="275.20" y="299.07" width="10.11" height="0.59" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
 </g>
 <g><title>CPostEffectTexture: 62.50% matched, 62.50% fuzzy, 864 bytes</title>
 <rect x="275.20" y="299.66" width="10.11" height="2.38" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
@@ -4211,9 +4212,9 @@
 <rect x="399.90" y="183.17" width="21.68" height="23.23" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
 <rect x="399.90" y="205.55" width="21.68" height="0.86" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
 </g>
-<g><title>auto_0058c5b0: 11.37% matched, 11.37% fuzzy, 10,944 bytes</title>
+<g><title>auto_0058c5b0: 11.92% matched, 11.92% fuzzy, 10,944 bytes</title>
 <rect x="392.28" y="206.40" width="29.30" height="10.38" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
-<rect x="392.28" y="215.61" width="29.30" height="1.18" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
+<rect x="392.28" y="215.55" width="29.30" height="1.24" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
 </g>
 <g><title>auto_0058f070: 13.05% matched, 13.05% fuzzy, 2,176 bytes</title>
 <rect x="392.28" y="216.79" width="6.84" height="8.85" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
@@ -4467,9 +4468,9 @@
 <rect x="439.46" y="243.43" width="1.15" height="5.33" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
 <rect x="439.46" y="248.47" width="1.15" height="0.29" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
 </g>
-<g><title>CMenu_MainMenu_ChatSetting_3: 13.32% matched, 13.32% fuzzy, 10,092 bytes</title>
+<g><title>CMenu_MainMenu_ChatSetting_3: 13.67% matched, 13.67% fuzzy, 10,092 bytes</title>
 <rect x="421.58" y="248.76" width="19.02" height="14.75" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
-<rect x="421.58" y="261.55" width="19.02" height="1.96" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
+<rect x="421.58" y="261.50" width="19.02" height="2.02" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
 </g>
 <g><title>auto_005d8438: 15.46% matched, 15.46% fuzzy, 3,364 bytes</title>
 <rect x="421.58" y="263.51" width="11.17" height="8.37" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
@@ -13508,9 +13509,10 @@
 <rect x="734.85" y="123.47" width="16.66" height="18.26" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
 <rect x="734.85" y="141.69" width="16.66" height="0.03" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
 </g>
-<g><title>hkMemory_2: 31.58% matched, 31.58% fuzzy, 684 bytes</title>
+<g><title>hkMemory_2: 17.54% matched, 17.54% fuzzy, 684 bytes</title>
 <rect x="734.85" y="141.73" width="6.16" height="3.09" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
-<rect x="734.85" y="143.84" width="6.16" height="0.98" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
+<rect x="734.85" y="144.27" width="6.16" height="0.00" fill="#3b82f6" stroke="#0d1117" stroke-width="1"/>
+<rect x="734.85" y="144.27" width="6.16" height="0.54" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
 </g>
 <g><title>hkMonitorStreamColorTable: 14.80% matched, 14.80% fuzzy, 1,432 bytes</title>
 <rect x="734.85" y="144.81" width="6.16" height="6.46" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
