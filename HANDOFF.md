@@ -24,7 +24,7 @@ alternative to the static-recompilation port at
   `-O2` and not with `-fno-ivopts`. The project used `-O2 -fno-ivopts` before
   2026-10-22; only `src/game/CPostEffectManager.cpp` keeps that, as an
   override, until a natural `-O2` form of `fn_004b32e8` is found.
-- Matched: **17,760 of 50,844 functions** (3.93% of code). Six are by hand
+- Matched: **17,783 of 50,844 functions** (3.94% of code). Six are by hand
   (`src/game/*.cpp`); the rest are generated: `tools/gen_simple.py`
   (`src/gen/`, small shapes), `tools/lift.py` (`src/lift/`, the lifter),
   `tools/permute.py` (`src/perm/`, lifter output in another statement order)
@@ -478,6 +478,25 @@ counts over all functions up to 384 instructions):
   register. Functions that set only f1 before returning return `float`
   or `double` (`lfs f1,d(r2); blr`, `fn_00014bf8`); they used to lift as
   empty void functions.
+- Stack locals read and written with two types at one offset (an integer
+  store of 0 into a float that a callee fills, `fn_0014e6d8`) are a union
+  member (`union { float v_float; u32 v_u32; } f_0;`, `l.f_0.v_u32`). The
+  raw `char l[N]` fallback made GCC keep `&l` in a saved register; still
+  used when slots of different offsets overlap.
+- Float parameters passed on unchanged to a callee that reads them (the
+  caller sets only f2: `lfs f2,..; b g`, `fn_0001ce7c`) are passed, after
+  the integer arguments, but only those before a float the caller sets:
+  passing trailing unchanged ones too lost 7 matches (they add parameters
+  that shift the integer ones).
+- `extsw` of an untouched parameter means the parameter is unsigned (`u32`;
+  the ABI already sign-extends `int` parameters): `fn_0003a128`.
+- Do not edit `tools/lift.py` while `permute_all.sh` runs: every step
+  re-runs it, so the result mixes versions.
+- Stopping a background `permute_all.sh` from the agent's task tool can
+  leave its `sh` children running (Git Bash on Windows). Before starting
+  another run, check for leftover `permute_all.sh`/`tools/*.py` processes
+  and `ubuntu:14.04` containers you started; two runs at once wreck each
+  other's objects (a collision showed 10,006 matches instead of 17,760).
 - Near-miss tools: `build/check.log` holds only matches after the final
   pruning; for near-misses run the unpruned lift and check (first lines of
   `permute_all.sh`) and use `build/check_unpruned.log` before anything

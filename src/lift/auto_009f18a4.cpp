@@ -49,7 +49,7 @@ struct unk_009f2e38_gm2e84 {
     u32 f_44;
 };
 extern unk_009f2e38_gm2e84 g_009f2e38_0;
-void fn_009f2e38(int a0, void* a1, int a2) {
+void fn_009f2e38(u32 a0, void* a1, int a2) {
     int v2;
     int v3;
     if ((int)(a2) >= (int)(0)) {
@@ -62,7 +62,7 @@ void fn_009f2e38(int a0, void* a1, int a2) {
     } else {
         v3 = (int)(0);
     }
-    stub_009f2c9c((int)(a0), (void*)(a1), (void*)(v3));
+    stub_009f2c9c((int)((int)a0), (void*)(a1), (void*)(v3));
 }
 
 struct unk_009f2e70_gm2e84;
@@ -72,7 +72,7 @@ struct unk_009f2e70_gm2e84 {
     u32 f_44;
 };
 extern unk_009f2e70_gm2e84 g_009f2e70_0;
-void fn_009f2e70(int a0, int a1, int a2) {
+void fn_009f2e70(u32 a0, u32 a1, int a2) {
     int v2;
     int v3;
     if ((int)(a2) >= (int)(0)) {
@@ -85,7 +85,7 @@ void fn_009f2e70(int a0, int a1, int a2) {
     } else {
         v3 = (int)(0);
     }
-    stub_009f2bc0((int)(a0), (int)(a1), (void*)(v3));
+    stub_009f2bc0((int)((int)a0), (int)((int)a1), (void*)(v3));
 }
 
 void fn_009f38f4(int a0) {

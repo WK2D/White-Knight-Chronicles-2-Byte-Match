@@ -35,14 +35,14 @@ int fn_009a4f14(void) {
 struct unk_009a568c_a0 {
     u32 f_0;
 };
-u32 fn_009a568c(unk_009a568c_a0* a0, void* a1, int a2) {
+u32 fn_009a568c(unk_009a568c_a0* a0, void* a1, u32 a2) {
     void* t0;
     if (a0 != 0) {
         a0->f_0 = (u32)(0);
         if ((u32)(a2) > (u32)(255)) {
             return (u32)((u32)(10) & (u32)(11));
         }
-        t0 = stub_009a4668((void*)(a1), (int)(a2));
+        t0 = stub_009a4668((void*)(a1), (int)((int)a2));
         if ((int)(t0) == (int)(0)) {
             return (u32)((u32)(0) & (u32)(11));
         }

@@ -12,9 +12,9 @@ void fn_00010280(void) {
     fn_00fccfb0((int)(0));
 }
 
-void fn_0001032c(int a0) {
+void fn_0001032c(u32 a0) {
     stub_000102a8();
-    fn_00fcd090((int)(a0));
+    fn_00fcd090((int)((int)a0));
 }
 
 }

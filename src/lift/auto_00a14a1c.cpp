@@ -8,7 +8,7 @@ int fn_009ef89c(int, void*, int);
 static void* __attribute__((noinline)) stub_00a118c4(int p0, void* p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 
 extern char g_00a14a1c_0[];
-int fn_00a14a1c(int a0, void* a1, int a2) {
+int fn_00a14a1c(int a0, void* a1, u32 a2) {
     void* t0;
     int t1;
     int v1;
@@ -16,7 +16,7 @@ int fn_00a14a1c(int a0, void* a1, int a2) {
     t0 = stub_00a118c4((int)(a0), (void*)(g_00a14a1c_0));
     if ((int)(t0) != (int)(0)) {
         if ((int)((int)(short)(FIELD(u16, t0, 34))) >= (int)(0)) {
-            t1 = fn_009ef89c((int)((int)(short)(FIELD(u16, t0, 34))), (void*)(a1), (int)(a2));
+            t1 = fn_009ef89c((int)((int)(short)(FIELD(u16, t0, 34))), (void*)(a1), (int)((int)a2));
             v1 = (int)(t1);
         } else {
             v1 = (int)(0);

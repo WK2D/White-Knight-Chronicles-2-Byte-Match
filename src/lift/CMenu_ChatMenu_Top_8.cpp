@@ -25,11 +25,11 @@ struct unk_0079d0dc_a0 {
     char pad_1110[12];
     u32 f_111c;
 };
-u8 fn_0079d0dc(unk_0079d0dc_a0* a0, void* a1, int a2) {
+u8 fn_0079d0dc(unk_0079d0dc_a0* a0, void* a1, u32 a2) {
     int t1;
     a0->f_111c = (u32)((((u32)((((u32)(a0->f_111c) << 30) | ((u32)(a0->f_111c) >> 2)) & 0x7fffffff) << 2) | ((u32)((((u32)(a0->f_111c) << 30) | ((u32)(a0->f_111c) >> 2)) & 0x7fffffff) >> 30)) & 0xffffffff);
     stub_0079cd88((void*)(a0), (int)(0));
-    t1 = stub_0079d004((void*)(a0), (int)((int)a0->f_110c), (void*)(a1), (int)(a2));
+    t1 = stub_0079d004((void*)(a0), (int)((int)a0->f_110c), (void*)(a1), (int)((int)a2));
     return (u8)((u8)t1);
 }
 

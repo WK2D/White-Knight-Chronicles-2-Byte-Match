@@ -72,11 +72,11 @@ void fn_009fdb24(int a0, int a1) {
     fn_00a072e8_2((int)(a0), (int)(a1), (int)(0), (int)(0));
 }
 
-int fn_009fdb50(int a0, void* a1, int a2, int a3, void* a4, int a5) {
+int fn_009fdb50(int a0, void* a1, u32 a2, u32 a3, void* a4, u32 a5) {
     int t4;
     fn_00a06c20((int)(a0));
-    fn_00a0749c((int)(a0), (void*)(a1), (int)(0), (int)(0), (int)(0), (int)(a2), (int)(0));
-    fn_00a072e8((int)(a0), (int)(a3), (void*)(a4), (int)(a5));
+    fn_00a0749c((int)(a0), (void*)(a1), (int)(0), (int)(0), (int)(0), (int)((int)a2), (int)(0));
+    fn_00a072e8((int)(a0), (int)((int)a3), (void*)(a4), (int)((int)a5));
     fn_00a051f8((int)(a0));
     t4 = fn_00a06724((int)(a0));
     return (int)(t4);

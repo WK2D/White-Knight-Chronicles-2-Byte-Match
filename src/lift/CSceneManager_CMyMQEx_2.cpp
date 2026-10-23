@@ -4,6 +4,7 @@
 
 extern "C" {
 
+void fn_0001bc64(u32, int, int);
 void fn_0001c2cc(u32, int, float, float);
 void fn_0001c420(u32, int, int);
 void fn_0001c77c(u32, int);
@@ -257,6 +258,34 @@ void fn_002ef9d0(void) {
     fn_0001c420((u32)((&g_002ef9d0_0)->f_0->f_78), (int)(13), (int)(1));
 }
 
+struct unk_002efa08_gm2404;
+struct unk_002efa08_gm2404_0;
+struct unk_002efa08_gm2404 {
+    unk_002efa08_gm2404_0* f_0;
+};
+struct unk_002efa08_gm2404_0 {
+    char pad_0[120];
+    u32 f_78;
+};
+extern unk_002efa08_gm2404 g_002efa08_0;
+void fn_002efa08(int a0, u32 a1) {
+    fn_0001bc64((u32)((&g_002efa08_0)->f_0->f_78), (int)((int)a1), (int)(0));
+}
+
+struct unk_002efa98_gm2404;
+struct unk_002efa98_gm2404_0;
+struct unk_002efa98_gm2404 {
+    unk_002efa98_gm2404_0* f_0;
+};
+struct unk_002efa98_gm2404_0 {
+    char pad_0[120];
+    u32 f_78;
+};
+extern unk_002efa98_gm2404 g_002efa98_0;
+void fn_002efa98(int a0, u32 a1) {
+    fn_0001f858((u32)((&g_002efa98_0)->f_0->f_78), (int)((int)a1), (int)(2));
+}
+
 struct unk_002efad0_gm2404;
 struct unk_002efad0_gm2404_0;
 struct unk_002efad0_gm2404 {
@@ -271,6 +300,20 @@ void fn_002efad0(void) {
     fn_0001f858((u32)((&g_002efad0_0)->f_0->f_78), (int)(0), (int)(2));
 }
 
+struct unk_002efb08_gm2404;
+struct unk_002efb08_gm2404_0;
+struct unk_002efb08_gm2404 {
+    unk_002efb08_gm2404_0* f_0;
+};
+struct unk_002efb08_gm2404_0 {
+    char pad_0[120];
+    u32 f_78;
+};
+extern unk_002efb08_gm2404 g_002efb08_0;
+void fn_002efb08(int a0, u32 a1) {
+    fn_0001c77c((u32)((&g_002efb08_0)->f_0->f_78), (int)((int)a1));
+}
+
 struct unk_002efb3c_gm2404;
 struct unk_002efb3c_gm2404_0;
 struct unk_002efb3c_gm2404 {
@@ -283,6 +326,20 @@ struct unk_002efb3c_gm2404_0 {
 extern unk_002efb3c_gm2404 g_002efb3c_0;
 void fn_002efb3c(void) {
     fn_0001c77c((u32)((&g_002efb3c_0)->f_0->f_78), (int)(2));
+}
+
+struct unk_002efb70_gm2404;
+struct unk_002efb70_gm2404_0;
+struct unk_002efb70_gm2404 {
+    unk_002efb70_gm2404_0* f_0;
+};
+struct unk_002efb70_gm2404_0 {
+    char pad_0[120];
+    u32 f_78;
+};
+extern unk_002efb70_gm2404 g_002efb70_0;
+void fn_002efb70(float f0, u32 a1, float f1) {
+    fn_0001c2cc((u32)((&g_002efb70_0)->f_0->f_78), (int)((int)a1), (float)(f1), (float)(f0));
 }
 
 struct unk_002efbb0_gm2404;
@@ -311,6 +368,20 @@ struct unk_002efbf0_gm2404_0 {
 extern unk_002efbf0_gm2404 g_002efbf0_0;
 void fn_002efbf0(void) {
     fn_0001c420((u32)((&g_002efbf0_0)->f_0->f_78), (int)(13), (int)(2));
+}
+
+struct unk_002efc28_gm2404;
+struct unk_002efc28_gm2404_0;
+struct unk_002efc28_gm2404 {
+    unk_002efc28_gm2404_0* f_0;
+};
+struct unk_002efc28_gm2404_0 {
+    char pad_0[120];
+    u32 f_78;
+};
+extern unk_002efc28_gm2404 g_002efc28_0;
+void fn_002efc28(int a0, u32 a1) {
+    fn_0001c420((u32)((&g_002efc28_0)->f_0->f_78), (int)((int)a1), (int)(2));
 }
 
 struct unk_002efc60_gm2404;

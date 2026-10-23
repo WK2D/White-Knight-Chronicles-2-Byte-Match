@@ -1,0 +1,3 @@
+ppu-lv2-g++: error: build/obj/src/gen/CDioramaWriter.cpp.o: No such file or directory
+ppu-lv2-g++: error: build/cls/002f60dc_0.v2-g++: No such file or directory
+ppu-lv2-g++: error: no input files

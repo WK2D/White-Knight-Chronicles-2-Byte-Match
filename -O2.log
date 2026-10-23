@@ -1,0 +1,12 @@
+src/perm/uskCScript_4.cpp: 1: src/perm/uskCScript_4.cpp: //: Permission denied
+src/perm/uskCScript_4.cpp: 2: src/perm/uskCScript_4.cpp: //: Permission denied
+src/perm/uskCScript_4.cpp: 5: src/perm/uskCScript_4.cpp: extern: not found
+src/perm/uskCScript_4.cpp: 7: src/perm/uskCScript_4.cpp: Syntax error: "(" src/perm/TARGET_POINT.cpp: 9: src/perm/TARGET_POINT.cpp: char: not found
+src/perm/TARGET_POINT.cpp: 10: src/perm/TARGET_POINT.cpp: u32: not found
+src/perm/TARGET_POINT.cpp: 11: src/perm/TARGET_POINT.cpp: usrc/perm/Stat
+src/perm/TARGET_POINT.cpp: 12: src/perm/TARGET_POINT.cpp:
+u32: not found
+src/perm/TARGET_POINT.cpp: 13: src/perm/TARGET_POINT.cp
+src/perm/StateAction.cpp: 14: src/perm/StateAction.cpp: char: not found
+src/perm/StateAction.cpp: 15: src/perm/StateAction.cpp: float: not found
+src/perm/StateAction.cpp: 16: src/perm/StateAction.cpp: Syntax error: "}" unexpected

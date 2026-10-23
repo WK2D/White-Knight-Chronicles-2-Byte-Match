@@ -17,7 +17,7 @@ struct unk_000f4304_a0 {
     char pad_0[20924];
     u32 f_51bc;
 };
-void* fn_000f4304(unk_000f4304_a0* a0, int a1) {
+void* fn_000f4304(unk_000f4304_a0* a0, u32 a1) {
     int t0;
     int t1;
     unk_000f4304_l l;
@@ -29,7 +29,7 @@ void* fn_000f4304(unk_000f4304_a0* a0, int a1) {
         return (void*)(0);
     }
     l.f_0 = (u32)(t0);
-    t1 = fn_00b3a0a8((void*)((&l)), (int)(a1));
+    t1 = fn_00b3a0a8((void*)((&l)), (int)((int)a1));
     fn_00fccdb0((u32)(a0->f_51bc));
     if ((int)(t1) != (int)(0)) {
         return (void*)(0);

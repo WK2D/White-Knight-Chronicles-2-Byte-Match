@@ -99,13 +99,13 @@ int fn_0003dfe8(int a0, void* a1) {
     return (int)(v0);
 }
 
-int fn_0003e034(int a0, int a1) {
+int fn_0003e034(int a0, u32 a1) {
     void* t0;
     int t1;
     int v0;
     t0 = stub_0003dee4((int)(a0));
     if ((int)(t0) != (int)(0)) {
-        t1 = stub_0003a100((void*)(t0), (int)(a1));
+        t1 = stub_0003a100((void*)(t0), (int)((int)a1));
         v0 = (int)(1);
     } else {
         v0 = (int)(0);

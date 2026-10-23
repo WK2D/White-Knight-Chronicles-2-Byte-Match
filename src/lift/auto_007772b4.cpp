@@ -124,7 +124,7 @@ struct unk_00777e78_a0 {
     u32 f_1190;
     u32 f_1194;
 };
-u8 fn_00777e78(unk_00777e78_a0* a0, int a1, int a2) {
+u8 fn_00777e78(unk_00777e78_a0* a0, int a1, u32 a2) {
     void* t0;
     int t1;
     t0 = fn_0004361c((void*)((&a0->f_110)), (int)(a1));
@@ -132,7 +132,7 @@ u8 fn_00777e78(unk_00777e78_a0* a0, int a1, int a2) {
         a0->f_1190 = (u32)(FIELD(u32, t0, 0));
     }
     a0->f_1194 = (u32)(10);
-    t1 = stub_00777cdc((void*)(a0), (int)((int)a0->f_117c), (int)(a1), (int)(a2));
+    t1 = stub_00777cdc((void*)(a0), (int)((int)a0->f_117c), (int)(a1), (int)((int)a2));
     return (u8)((u8)t1);
 }
 

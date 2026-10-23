@@ -26,12 +26,12 @@ extern unk_00a1702c_gm2730 g_00a1702c_0;
 extern unk_00a1702c_gm2728 g_00a1702c_1;
 extern char g_00a1702c_2[];
 extern char g_00a1702c_3[];
-int fn_00a1702c(int a0, int a1, int a2, int a3) {
+int fn_00a1702c(int a0, int a1, int a2, u32 a3) {
     int t0;
     int t1;
     t0 = fn_00a0a200((int)(a0), (int)(a1), (int)(a2));
     if ((int)(t0) != (int)(0)) {
-        t1 = stub_00a16584_2((int)(2), (int)(a0), (int)(a1), (int)(a2), (int)(a3), (int)(0));
+        t1 = stub_00a16584_2((int)(2), (int)(a0), (int)(a1), (int)(a2), (int)((int)a3), (int)(0));
         return (int)(t1);
     }
     if ((int)((u32)((&g_00a1702c_0)->f_0) & 0x1) == (int)(0)) {

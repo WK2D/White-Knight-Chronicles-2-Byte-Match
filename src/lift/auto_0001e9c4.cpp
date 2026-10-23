@@ -18,14 +18,14 @@ struct unk_0001e9c4_a3 {
     u32 f_8;
 };
 extern char g_0001e9c4_0[];
-int fn_0001e9c4(int a0, void* a1, int a2, unk_0001e9c4_a3* a3) {
+int fn_0001e9c4(int a0, void* a1, u32 a2, unk_0001e9c4_a3* a3) {
     int t4;
     char l[3792] __attribute__((aligned(8)));
     int v0;
     if ((int)(a1) != (int)(0)) {
         fn_000430e0((void*)((&l)));
         fn_00041c80((void*)((&l)), (void*)(g_0001e9c4_0));
-        fn_00042dd4((void*)((&l)), (void*)(a1), (int)(a2));
+        fn_00042dd4((void*)((&l)), (void*)(a1), (int)((int)a2));
         fn_00042d98((void*)((&l)));
         t4 = fn_00035ad0((u32)(a3->f_8));
         v0 = (int)(1);

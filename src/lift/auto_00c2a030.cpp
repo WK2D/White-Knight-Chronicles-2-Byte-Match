@@ -5,6 +5,7 @@
 extern "C" {
 
 int fn_00c01c98(u32, u32, int, int);
+void* fn_00c021e0(u32, int, int);
 void fn_00c02a70(u32, int);
 int fn_00c2a8d8(void*, void*);
 int fn_00c2aa48(void*, void*);
@@ -78,6 +79,17 @@ struct unk_00c2a584_tm6dc8 {
 __thread unk_00c2a584_tm6dc8 tls_00c2a584_0;
 void fn_00c2a584(int a0) {
     fn_00c02a70((u32)((&tls_00c2a584_0)->f_0), (int)(a0));
+}
+
+struct unk_00c2a5b8_tm6dc8;
+struct unk_00c2a5b8_tm6dc8 {
+    u32 f_0;
+};
+__thread unk_00c2a5b8_tm6dc8 tls_00c2a5b8_0;
+void* fn_00c2a5b8(u32 a0) {
+    void* t0;
+    t0 = fn_00c021e0((u32)((&tls_00c2a5b8_0)->f_0), (int)((int)a0), (int)(29));
+    return (void*)(t0);
 }
 
 struct unk_00c2a5f4_tm6dc8;

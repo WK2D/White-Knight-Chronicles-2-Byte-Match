@@ -27,12 +27,12 @@ int fn_00043580(int a0, int a1) {
     return (int)(v1);
 }
 
-int fn_000435c0(int a0, int a1, int a2) {
+int fn_000435c0(int a0, int a1, u32 a2) {
     void* t0;
     int t1;
     t0 = stub_00043544((int)(a0), (int)(a1));
     if ((int)(t0) != (int)(0)) {
-        t1 = stub_000434c4((void*)(t0), (int)(a2), (float)(-1.0f));
+        t1 = stub_000434c4((void*)(t0), (int)((int)a2), (float)(-1.0f));
         return (int)(t1);
     }
     return (int)(-1);
@@ -52,12 +52,12 @@ int fn_00043658(int a0, int a1) {
     return (int)(v1);
 }
 
-int fn_00043698(int a0, int a1, int a2) {
+int fn_00043698(int a0, int a1, u32 a2) {
     void* t0;
     int t1;
     t0 = stub_0004361c((int)(a0), (int)(a1));
     if ((int)(t0) != (int)(0)) {
-        t1 = stub_000434c4((void*)(t0), (int)(a2), (float)(-1.0f));
+        t1 = stub_000434c4((void*)(t0), (int)((int)a2), (float)(-1.0f));
         return (int)(t1);
     }
     return (int)(-1);

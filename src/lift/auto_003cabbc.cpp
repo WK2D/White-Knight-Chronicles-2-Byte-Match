@@ -133,11 +133,11 @@ void fn_003cb598(int a0, int a1) {
     stub_003c8c84((int)(a0), (int)(t0));
 }
 
-u8 fn_003cb64c(int a0, int a1, int a2) {
+u8 fn_003cb64c(int a0, int a1, u32 a2) {
     int t0;
     int t1;
     t0 = stub_003cb5cc((int)(a0), (int)(a1));
-    t1 = stub_003c8958((int)(a0), (int)(t0), (int)(a2));
+    t1 = stub_003c8958((int)(a0), (int)(t0), (int)((int)a2));
     return (u8)((u8)t1);
 }
 
@@ -147,11 +147,11 @@ void fn_003cb698(int a0, int a1) {
     stub_003c8924((int)(a0), (int)(t0));
 }
 
-u8 fn_003cb74c(int a0, int a1, int a2) {
+u8 fn_003cb74c(int a0, int a1, u32 a2) {
     int t0;
     int t1;
     t0 = stub_003cb6cc((int)(a0), (int)(a1));
-    t1 = stub_003c8334((int)(a0), (int)(t0), (int)(a2));
+    t1 = stub_003c8334((int)(a0), (int)(t0), (int)((int)a2));
     return (u8)((u8)t1);
 }
 
@@ -161,11 +161,11 @@ void fn_003cb798(int a0, int a1) {
     stub_003c8300((int)(a0), (int)(t0));
 }
 
-u8 fn_003cb84c(int a0, int a1, int a2) {
+u8 fn_003cb84c(int a0, int a1, u32 a2) {
     int t0;
     int t1;
     t0 = stub_003cb7cc((int)(a0), (int)(a1));
-    t1 = stub_003c8e68((int)(a0), (int)(t0), (int)(a2));
+    t1 = stub_003c8e68((int)(a0), (int)(t0), (int)((int)a2));
     return (u8)((u8)t1);
 }
 
@@ -175,11 +175,11 @@ void fn_003cb898(int a0, int a1) {
     stub_003c8e34((int)(a0), (int)(t0));
 }
 
-u8 fn_003cb94c(int a0, int a1, int a2) {
+u8 fn_003cb94c(int a0, int a1, u32 a2) {
     int t0;
     int t1;
     t0 = stub_003cb8cc((int)(a0), (int)(a1));
-    t1 = stub_003c876c((int)(a0), (int)(t0), (int)(a2));
+    t1 = stub_003c876c((int)(a0), (int)(t0), (int)((int)a2));
     return (u8)((u8)t1);
 }
 
@@ -347,11 +347,11 @@ u8 fn_003cd958(int a0, int a1, float f0, int a3, void* a4) {
     return (u8)((u8)t1);
 }
 
-u8 fn_003cdd88(int a0, int a1, int a2, int a3, void* a4) {
+u8 fn_003cdd88(int a0, int a1, u32 a2, int a3, void* a4) {
     int t0;
     int t1;
     t0 = stub_003cbe7c((int)(a0), (int)(a1));
-    t1 = stub_003cd9c4((int)(a0), (int)(t0), (int)(a2), (u8)((u8)a3), (void*)(a4));
+    t1 = stub_003cd9c4((int)(a0), (int)(t0), (int)((int)a2), (u8)((u8)a3), (void*)(a4));
     return (u8)((u8)t1);
 }
 

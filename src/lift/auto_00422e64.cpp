@@ -23,7 +23,7 @@ void* fn_00422e64(int a0, float f0, float f1) {
     return (void*)((u32)(t2 * ((1.0f - f0) * f1)));
 }
 
-int fn_00423bc4(int a0, int a1) {
+int fn_00423bc4(int a0, u32 a1) {
     int t0;
     int t1;
     float t2;
@@ -33,10 +33,10 @@ int fn_00423bc4(int a0, int a1) {
     }
     t1 = stub_00422550((int)(a0), (int)(1));
     t2 = fn_0058eee4((int)((int)(short)(t1)), (float)((float)(int)((int)(short)(t1))));
-    return (int)((int)(t2 * (float)(int)(a1)));
+    return (int)((int)(t2 * (float)(int)((int)a1)));
 }
 
-int fn_00423c80(int a0, int a1) {
+int fn_00423c80(int a0, u32 a1) {
     int t0;
     int t1;
     float t2;
@@ -46,7 +46,7 @@ int fn_00423c80(int a0, int a1) {
     }
     t1 = stub_00422550((int)(a0), (int)(0));
     t2 = fn_0058eee4((int)((int)(short)(t1)), (float)((float)(int)((int)(short)(t1))));
-    return (int)((int)(t2 * (float)(int)(a1)));
+    return (int)((int)(t2 * (float)(int)((int)a1)));
 }
 
 struct unk_0042423c_a0_0;

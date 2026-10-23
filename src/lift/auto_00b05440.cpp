@@ -23,10 +23,10 @@ void* fn_00b05664(void* a0, void* a1) {
     return (void*)(t2);
 }
 
-int fn_00b059d0(int a0, int a1, int a2) {
+int fn_00b059d0(int a0, u32 a1, u32 a2) {
     int t1;
     fn_00b0c728((int)(a0));
-    t1 = fn_00b0a034((int)(a0), (int)(0), (int)(a1), (int)(a2));
+    t1 = fn_00b0a034((int)(a0), (int)(0), (int)((int)a1), (int)((int)a2));
     fn_00b0c6ac((int)(a0));
     return (int)(t1);
 }

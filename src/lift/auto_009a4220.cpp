@@ -9,13 +9,13 @@ static void* __attribute__((noinline)) stub_009a4668(void* p0, int p1) { void* r
 struct unk_009a48dc_a2 {
     u32 f_0;
 };
-u32 fn_009a48dc(void* a0, int a1, unk_009a48dc_a2* a2) {
+u32 fn_009a48dc(void* a0, u32 a1, unk_009a48dc_a2* a2) {
     void* t0;
     if ((int)(a0) != (int)(0)) {
         if ((u32)(a1) <= (u32)(255)) {
             if ((int)(a2) != (int)(0)) {
                 a2->f_0 = (u32)(16777215);
-                t0 = stub_009a4668((void*)(a0), (int)(a1));
+                t0 = stub_009a4668((void*)(a0), (int)((int)a1));
                 if ((int)(t0) != (int)(0)) {
                     if ((int)(FIELD(u32, t0, 32)) != (int)(0)) {
                         a2->f_0 = (u32)(1);

@@ -27,12 +27,12 @@ int fn_006712b4(void*);
 void fn_00b37fa8(int, int, int);
 
 extern char g_0033e27c_0[];
-int fn_0033e27c(int a0, void* a1, void* a2) {
+int fn_0033e27c(u32 a0, void* a1, void* a2) {
     void* t0;
     int t1;
     if ((int)(a1) != (int)(0)) {
         t0 = fn_00076a98((void*)(g_0033e27c_0), (void*)(a1), (int)(0), (int)(-1), (int)(0), (int)(0));
-        t1 = stub_0032c678((int)(a0), (void*)(t0), (void*)(a2));
+        t1 = stub_0032c678((int)((int)a0), (void*)(t0), (void*)(a2));
         return (int)(t1);
     }
     return (int)(0);

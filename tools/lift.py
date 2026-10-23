@@ -73,6 +73,16 @@ LOCALS = 112        # locals start after the linkage area (48) and the parameter
 SIZES = {'u8': 1, 'u16': 2, 's16': 2, 'u32': 4, 'float': 4, 'void*': 4, 'double': 8, 'u64': 8, 'vec': 16}
 
 
+def tsize(t):
+    """Size of a member type; ('union', types) is a slot read and written
+    with several types (a local float set with an integer store of 0)."""
+    return max(SIZES[x] for x in t[1]) if isinstance(t, tuple) else SIZES[t]
+
+
+def member(ctype):
+    return 'v_' + ctype.replace('*', 'p')
+
+
 def struct_decl(tag, by_offset, ptrs=None):
     """struct tag { fields at their offsets }, or None if they overlap, are
     misaligned or lie before the start (negative offsets). ptrs: {offset:
@@ -81,12 +91,15 @@ def struct_decl(tag, by_offset, ptrs=None):
     out, at = [f'struct {tag} {{'], 0
     for off in sorted(by_offset):
         t = by_offset[off]
-        if off < at or off % SIZES[t]:
+        if off < at or off % tsize(t):
             return None
         if off > at:
             out.append(f'    char pad_{at:x}[{off - at}];')
-        out.append(f'    {ptrs[off] + "*" if off in ptrs else t} f_{off:x};')
-        at = off + SIZES[t]
+        if isinstance(t, tuple):
+            out.append(f'    union {{ {" ".join(f"{x} {member(x)};" for x in t[1])} }} f_{off:x};')
+        else:
+            out.append(f'    {ptrs[off] + "*" if off in ptrs else t} f_{off:x};')
+        at = off + tsize(t)
     out.append('};')
     return '\n'.join(out)
 
@@ -508,8 +521,11 @@ class Lifter:
                 raise Fail('frame access in the linkage area')
             self.local_refs += 1
             self.access[('l',)].add((off, ctype))
-            if self.layouts.get(('l',), {}).get(off) == ctype:
+            t = self.layouts.get(('l',), {}).get(off)
+            if t == ctype:
                 return Value(f'l.f_{off:x}', ctype)
+            if isinstance(t, tuple) and ctype in t[1]:
+                return Value(f'l.f_{off:x}.{member(ctype)}', ctype)
             return Value(f'FIELD({ctype}, &l, {off})', ctype)
         if base.ctype == 'toc':
             if ctype in ('float', 'double') and CONSTANTS is not None:   # a literal kept in the TOC
@@ -776,7 +792,7 @@ class Lifter:
         """Grow the locals struct to the original's size, so the frame matches
         (buffers the code only passes by address are otherwise too small)."""
         want = self.locals_size()
-        have = max((off + SIZES.get(t, 4) for off, t in layout.items()), default=0)
+        have = max((off + tsize(t) for off, t in layout.items()), default=0)
         # GCC leaves gaps between the locals and the register saves, so a small
         # shortfall is not missing data (padding it lost 86 matches): only a
         # buffer the code never touches is.
@@ -1680,6 +1696,11 @@ class Lifter:
                 elif v.call is not None:
                     v.call['type'] = 'int'
                     v.ctype = 'int'
+                elif v.ctype == 'int' and any(v is a for a in self.args.values()):
+                    # A parameter the ABI hands over sign-extended needs no
+                    # extsw: it was unsigned.
+                    v.ctype = 'u32'
+                    v = Value(f'(int){paren(v)}', 'int')
                 self.set(ra, v)
                 return
             if xo in (266, 40):                                      # add, subf
@@ -1774,7 +1795,7 @@ class Lifter:
             return Value(f'(char*){paren(p_)} + (int)({i_.text})', 'addr', 1)
         return Value(f'(int)({a.text}) + (int)({b.text})', 'int', 1)
 
-    def gather_args(self, first, nint=0, complete=False):
+    def gather_args(self, first, nint=0, complete=False, nfloat=0):
         """Argument values in parameter order, from GPR first (r3, or r4 after
         'this'). Floats go in f1, f2, ... and each also takes a GPR position:
         GPR positions the caller left unwritten hold the floats, in order;
@@ -1785,6 +1806,20 @@ class Lifter:
         while k in self.ffresh:
             floats.append(self.fpr[k])
             k += 1
+        # A float parameter passed on unchanged before one the caller sets
+        # (only f2 set: f1 is passed on): the callee reads both and no call
+        # has clobbered it. Trailing unchanged ones need not be written.
+        passed = False
+        if not floats and complete and not self.made_call:
+            k = 1
+            while k <= nfloat and k not in self.ffresh and (self.fpr[k] is None or self.fpr[k] is self.fargs.get(k)):
+                k += 1
+            if 1 < k <= nfloat and k in self.ffresh:
+                floats = [self.freg(j) for j in range(1, k)]
+                while k in self.ffresh:
+                    floats.append(self.fpr[k])
+                    k += 1
+                passed = True
         # The callee's reads give the count; registers the caller filled extend
         # it only while they run on without a gap (a lone r9 is scratch, not
         # a seventh argument).
@@ -1807,7 +1842,7 @@ class Lifter:
         for r in range(first, last + 1):
             if r in gfresh:
                 args.append(self.reg(r))
-            elif floats:
+            elif floats and not passed:
                 args.append(floats.pop(0))
             elif self.gpr[r] is None and (r in self.args or self.made_call):
                 break       # clobbered or never set: the callee's apparent read is not a real argument
@@ -1819,7 +1854,7 @@ class Lifter:
 
     def call(self, target, local=False):
         nargs, nfargs, complete = self.arity(target)
-        args = self.gather_args(3, nargs, complete)
+        args = self.gather_args(3, nargs, complete, nfargs)
         k = 2
         while k in self.vfresh:                                      # vector arguments: v2, v3, ...
             args.append(self.vr[k])
@@ -2247,6 +2282,14 @@ def lift(address, words, arity):
                 if layouts.get(parent, {}).get(path[-1]) != 'u32':
                     continue                      # loaded from something without a struct
             by_offset = {}
+            if path == ('l',):
+                # A local slot used with several types is a union of them.
+                types = defaultdict(set)
+                for off, ctype in fields:
+                    types[off].add(ctype)
+                by_offset = {off: ts.pop() if len(ts) == 1 else ('union', tuple(sorted(ts)))
+                             for off, ts in types.items()}
+                fields = ()
             for off, ctype in fields:
                 if by_offset.get(off, ctype) != ctype:
                     break
@@ -2254,7 +2297,7 @@ def lift(address, words, arity):
             else:
                 # Offsets whose address is taken get a byte member where nothing overlaps.
                 for off in sorted(typed.addressed.get(path, ())):
-                    if off not in by_offset and all(not o <= off < o + SIZES[t] for o, t in by_offset.items()):
+                    if off not in by_offset and all(not o <= off < o + tsize(t) for o, t in by_offset.items()):
                         by_offset[off] = 'u8'
                 if by_offset and struct_decl('x', by_offset) is not None:
                     layouts[path] = by_offset

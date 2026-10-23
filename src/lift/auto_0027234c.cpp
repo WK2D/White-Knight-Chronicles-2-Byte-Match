@@ -68,10 +68,10 @@ int fn_00272f50(int a0) {
 struct unk_0027307c_a0 {
     u32 f_0;
 };
-void fn_0027307c(unk_0027307c_a0* a0, int a1, float f0, int a3) {
+void fn_0027307c(unk_0027307c_a0* a0, int a1, float f0, u32 a3) {
     fn_00b3b128((u32)(a0->f_0), (int)(a1), (int)(-1));
     fn_00b3b208((u32)(a0->f_0), (float)(f0));
-    fn_00b3b218((u32)(a0->f_0), (int)(a3), (int)(0));
+    fn_00b3b218((u32)(a0->f_0), (int)((int)a3), (int)(0));
 }
 
 }

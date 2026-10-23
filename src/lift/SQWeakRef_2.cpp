@@ -10,12 +10,12 @@ void fn_00944994(void*, void*);
 static int __attribute__((noinline)) stub_00953730(int p0, int p1, int p2, void* p3, int p4) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4)); return r; }
 
 extern char g_00953730_0[];
-int fn_00953730(void* a0, void* a1, void* a2, void* a3, int a4) {
+int fn_00953730(void* a0, void* a1, void* a2, void* a3, u32 a4) {
     int t0;
     if ((int)(a4) == (int)(0)) {
         return (int)(1);
     }
-    t0 = ((int (*)(void*, void*, int))(a1))((void*)(a2), (void*)(a3), (int)(a4));
+    t0 = ((int (*)(void*, void*, int))(a1))((void*)(a2), (void*)(a3), (int)((int)a4));
     if ((int)(a4) == (int)(t0)) {
         return (int)(1);
     }
@@ -50,11 +50,11 @@ int fn_009537dc(int a0, int a1, int a2, int a3) {
 }
 
 extern char g_00953854_0[];
-int fn_00953854(void* a0, void* a1, int a2, int a3, int a4) {
+int fn_00953854(void* a0, void* a1, int a2, int a3, u32 a4) {
     int t0;
     int t1;
     int v0;
-    t0 = ((int (*)(int, int, int))(a1))((int)(a2), (int)(a3), (int)(a4));
+    t0 = ((int (*)(int, int, int))(a1))((int)(a2), (int)(a3), (int)((int)a4));
     if ((int)(a4) != (int)(t0)) {
         t1 = fn_00944994_3((void*)(a0), (void*)(g_00953854_0));
         v0 = (int)(0);

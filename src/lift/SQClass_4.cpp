@@ -34,12 +34,12 @@ struct unk_00bc32b0_a0 {
     char pad_0[4];
     u32 f_4;
 };
-void fn_00bc32b0(unk_00bc32b0_a0* a0, int a1) {
+void fn_00bc32b0(unk_00bc32b0_a0* a0, u32 a1) {
     int t0;
     int t1;
     t0 = fn_00945324((u32)(a0->f_4));
     if ((int)(t0) != (int)(a1)) {
-        t1 = fn_0094765c((u32)(a0->f_4), (int)(a1));
+        t1 = fn_0094765c((u32)(a0->f_4), (int)((int)a1));
     }
 }
 

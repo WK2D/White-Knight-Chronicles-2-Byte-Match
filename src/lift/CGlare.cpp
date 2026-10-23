@@ -146,13 +146,13 @@ struct unk_004b81ac_vc0 {
     virtual void vf21();
     virtual void vf22(void*);
 };
-void fn_004b81ac(unk_004b81ac_a0* a0, void* a1, int a2) {
+void fn_004b81ac(unk_004b81ac_a0* a0, void* a1, u32 a2) {
     if ((int)(a2) == (int)(0)) {
         fn_004b5320((u32)(a0->f_3c->f_10->f_4), (u32)(a0->f_3c->f_c), (void*)(a0->f_3c->f_14->f_20 + -1));
         ((unk_004b81ac_vc0*)(a0->f_3c))->vf22((void*)(a1));
         return;
     }
-    fn_004b2fbc((void*)(a0), (void*)(a1), (int)(a2));
+    fn_004b2fbc((void*)(a0), (void*)(a1), (int)((int)a2));
 }
 
 }

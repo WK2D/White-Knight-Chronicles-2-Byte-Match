@@ -444,10 +444,10 @@ void fn_00560428(void* a0, int a1) {
     stub_0055d01c_2((void*)(a0), (void*)(t0));
 }
 
-void fn_00560464(void* a0, int a1, int a2) {
+void fn_00560464(void* a0, int a1, u32 a2) {
     void* t0;
     t0 = fn_0054af54((int)(a1));
-    stub_0055cff4((void*)(a0), (void*)(t0), (int)(a2));
+    stub_0055cff4((void*)(a0), (void*)(t0), (int)((int)a2));
 }
 
 void fn_005604b0(void* a0, int a1) {
@@ -794,10 +794,10 @@ void fn_0056136c(void* a0, int a1) {
     stub_00561324((void*)(a0), (void*)(t0));
 }
 
-void fn_005615bc(void* a0, int a1, int a2) {
+void fn_005615bc(void* a0, int a1, u32 a2) {
     void* t0;
     t0 = fn_0054af54((int)(a1));
-    stub_005614d0((void*)(a0), (void*)(t0), (int)(a2));
+    stub_005614d0((void*)(a0), (void*)(t0), (int)((int)a2));
 }
 
 u8 fn_00561684(void* a0, int a1) {

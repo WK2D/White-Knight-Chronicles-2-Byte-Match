@@ -25,11 +25,11 @@ u8 fn_00025ae0(int a0, int a1, int a2) {
 }
 
 extern char g_00026918_0[];
-u8 fn_00026918(void* a0, int a1, int a2) {
+u8 fn_00026918(void* a0, int a1, u32 a2) {
     void* t0;
     int t1;
     t0 = fn_00076a98((void*)(g_00026918_0), (int)(a1), (int)(0), (int)(-1), (int)(0), (int)(0));
-    t1 = stub_0001be74((void*)(a0), (void*)(t0), (int)(a2));
+    t1 = stub_0001be74((void*)(a0), (void*)(t0), (int)((int)a2));
     return (u8)((u8)t1);
 }
 

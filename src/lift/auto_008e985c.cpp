@@ -35,7 +35,7 @@ struct unk_008ea0e4_a0 {
     char pad_0[16];
     u8 f_10;
 };
-int fn_008ea0e4(unk_008ea0e4_a0* a0, void* a1, int a2, void* a3, int a4) {
+int fn_008ea0e4(unk_008ea0e4_a0* a0, void* a1, u32 a2, void* a3, int a4) {
     void* t0;
     if ((int)(a1) == (int)(0)) {
         return (int)(-1);
@@ -43,7 +43,7 @@ int fn_008ea0e4(unk_008ea0e4_a0* a0, void* a1, int a2, void* a3, int a4) {
     if ((int)((&a0->f_10)) == (int)(0)) {
         return (int)(-1);
     }
-    t0 = fn_008e1888((void*)((&a0->f_10)), (void*)(a1), (int)(a2), (void*)(a3), (u8)((u8)a4));
+    t0 = fn_008e1888((void*)((&a0->f_10)), (void*)(a1), (int)((int)a2), (void*)(a3), (u8)((u8)a4));
     if ((int)(t0) == (int)(0)) {
         return (int)(-1);
     }

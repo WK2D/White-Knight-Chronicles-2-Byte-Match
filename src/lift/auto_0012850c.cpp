@@ -65,10 +65,10 @@ void fn_00128a4c(unk_00128a4c_a0* a0) {
 struct unk_00128a58_a1 {
     u32 f_0;
 };
-int fn_00128a58(int a0, unk_00128a58_a1* a1, int a2) {
+int fn_00128a58(int a0, unk_00128a58_a1* a1, u32 a2) {
     int t0;
     if (a1 != 0) {
-        t0 = fn_00fc9c70((int)(a2));
+        t0 = fn_00fc9c70((int)((int)a2));
         if ((int)(t0) >= (int)(0)) {
             a1->f_0 = (u32)(t0);
             return (int)(1);

@@ -10,10 +10,22 @@ int fn_00fcaab0(u32, u32, int, void*);
 int fn_00fcaaf0(u32, u32, void*, void*);
 void fn_00fcad90(void);
 void fn_00fcc310(void);
+void fn_00fcc3d0(void*);
 int fn_00fcc3f0(int);
 int fn_00fcc410(void);
 int fn_00fccdf0(void*, void*, void*, int, int, int, void*);
 void fn_00fcd030(int);
+
+struct unk_0014e6d8_l;
+struct unk_0014e6d8_l {
+    union { float v_float; u32 v_u32; } f_0;
+};
+float fn_0014e6d8(void) {
+    unk_0014e6d8_l l;
+    l.f_0.v_u32 = (u32)(0);
+    fn_00fcc3d0((void*)((&l)));
+    return (float)(l.f_0.v_float);
+}
 
 struct unk_0014e76c_a0 {
     u32 f_0;

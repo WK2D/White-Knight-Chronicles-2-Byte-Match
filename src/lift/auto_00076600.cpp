@@ -22,11 +22,11 @@ int fn_00076890(void* a0, void* a1) {
     return (int)(0);
 }
 
-void* fn_00076948(void* a0, void* a1, int a2) {
+void* fn_00076948(void* a0, void* a1, u32 a2) {
     int t1;
     char l[8] __attribute__((aligned(8)));
     if ((int)(a0) != (int)(0)) {
-        stub_000768b0((void*)((&l)), (void*)(a1), (int)(a2));
+        stub_000768b0((void*)((&l)), (void*)(a1), (int)((int)a2));
         t1 = fn_0007ae90((void*)(a0), (void*)((&l)), (int)(16));
     }
     return (void*)(a0);

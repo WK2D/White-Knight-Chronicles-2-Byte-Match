@@ -541,11 +541,11 @@ struct unk_008708ec_a0 {
     char pad_0[344];
     u8 f_158;
 };
-u8 fn_008708ec(unk_008708ec_a0* a0, int a1, void* a2, int a3) {
+u8 fn_008708ec(unk_008708ec_a0* a0, int a1, void* a2, u32 a3) {
     void* t0;
     int t1;
     t0 = fn_00b3e188((void*)((&a0->f_158)), (int)(a1));
-    t1 = stub_00870548((void*)(a0), (void*)(t0), (void*)(a2), (int)(a3));
+    t1 = stub_00870548((void*)(a0), (void*)(t0), (void*)(a2), (int)((int)a3));
     return (u8)((u8)t1);
 }
 

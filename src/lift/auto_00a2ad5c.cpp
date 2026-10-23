@@ -60,11 +60,11 @@ int fn_00a2b470(void* a0, void* a1) {
     return (int)(t1);
 }
 
-int fn_00a2b4d4(void* a0, void* a1, int a2) {
+int fn_00a2b4d4(void* a0, void* a1, u32 a2) {
     void* t0;
     int t1;
     t0 = fn_00a200ec();
-    t1 = ((int (*)(void*, void*, int))(t0))((void*)(a0), (void*)(a1), (int)(a2));
+    t1 = ((int (*)(void*, void*, int))(t0))((void*)(a0), (void*)(a1), (int)((int)a2));
     return (int)(t1);
 }
 

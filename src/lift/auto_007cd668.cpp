@@ -53,14 +53,14 @@ struct unk_007cdf7c_a0 {
     u32 f_1284;
     u32 f_1288;
 };
-u8 fn_007cdf7c(unk_007cdf7c_a0* a0, void* a1, int a2, int a3) {
+u8 fn_007cdf7c(unk_007cdf7c_a0* a0, void* a1, u32 a2, int a3) {
     int t0;
     a0->f_1288 = (u32)(a0->f_1284);
     a0->f_1284 = (u32)(7);
     if ((int)((int)(signed char)(a3)) >= (int)(0)) {
         a0->f_1140->f_638 = (u8)(a3);
     }
-    t0 = stub_007cdd74((void*)(a0), (int)((int)a0->f_10f4), (void*)(a1), (int)(a2));
+    t0 = stub_007cdd74((void*)(a0), (int)((int)a0->f_10f4), (void*)(a1), (int)((int)a2));
     return (u8)((u8)t0);
 }
 

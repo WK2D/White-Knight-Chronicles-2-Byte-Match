@@ -310,6 +310,10 @@ void fn_0003a124(int a0, int a1) {
     stub_0003a100((int)(a0), (int)(a1));
 }
 
+void fn_0003a128(int a0, u32 a1) {
+    stub_0003a100((int)(a0), (int)((int)a1));
+}
+
 void fn_0003a130(int a0, float f0) {
     stub_0003a100((int)(a0), (int)((int)(f0)));
 }

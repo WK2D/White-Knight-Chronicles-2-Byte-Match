@@ -9,9 +9,9 @@ struct unk_00c18468_a0 {
     char pad_0[12];
     u32 f_c;
 };
-int fn_00c18468(unk_00c18468_a0* a0, int a1) {
+int fn_00c18468(unk_00c18468_a0* a0, u32 a1) {
     a0->f_c = (u32)((int)(a0->f_c) + (int)(a1));
-    return (int)(a1);
+    return (int)((int)a1);
 }
 
 }
