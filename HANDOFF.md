@@ -24,7 +24,7 @@ alternative to the static-recompilation port at
   `-O2` and not with `-fno-ivopts`. The project used `-O2 -fno-ivopts` before
   2026-10-22; only `src/game/CPostEffectManager.cpp` keeps that, as an
   override, until a natural `-O2` form of `fn_004b32e8` is found.
-- Matched: **17,622 of 50,844 functions** (3.89% of code). Six are by hand
+- Matched: **17,636 of 50,844 functions** (3.90% of code). Six are by hand
   (`src/game/*.cpp`); the rest are generated: `tools/gen_simple.py`
   (`src/gen/`, small shapes), `tools/lift.py` (`src/lift/`, the lifter),
   `tools/permute.py` (`src/perm/`, lifter output in another statement order)
@@ -464,6 +464,18 @@ counts over all functions up to 384 instructions):
   one iteration short when the game compares the old value.
 - `loop()` tells a `bdnz` latch by its BO bits; it used to evaluate the
   latch condition at the loop's entry and fail ("condition field never set").
+- Locals are padded to the original's size (`locals_size`: frame minus 112
+  minus 8 per saved GPR/FPR in the prologue): buffers the code only passes
+  by address were otherwise sized by the bytes it touches (`fn_00010d68`:
+  1,200-byte frame, ours 192). Only shortfalls of 64 bytes or more are
+  padded: GCC leaves gaps before the register saves, and padding every
+  shortfall lost 86 matches.
+- Complete near-miss picture (2026-10-23, 15,000 near-misses with nothing
+  hidden): the first difference is the prologue in about 3,600; the
+  original saves more callee-saved registers in about 3,400 (variables the
+  optimiser removed), fewer in about 2,100 (our code keeps values live
+  across calls where the game reloads them), other registers in about
+  1,600, and only the frame size differs in about 900.
 - Calls through function pointers: `lwz r0,0(rX); std r2,40(r1); mtctr r0;
   lwz r2,4(rX); bctrl` with rX not a vtable slot is `((T (*)(...))(x))(...)`
   (rX points to the callee's descriptor). Weak-symbol tests (`if (&f)`) are

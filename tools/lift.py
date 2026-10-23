@@ -761,6 +761,29 @@ class Lifter:
         self.merge(states, join)
         return None if self.ended else join
 
+    def locals_size(self):
+        """The size of the original's locals: its frame (stdu r1,-N(r1)) less
+        the 112-byte linkage and parameter area and the saved registers
+        (std r14-r31 / stfd f14-f31 in the prologue). None without a frame."""
+        frame = next((-s16(w & 0xFFFC) for w in self.words[:6] if w >> 26 == 62 and w & 3 == 1 and (w >> 16) & 31 == 1), None)
+        if frame is None:
+            return None
+        saved = sum(1 for w in self.words[:40]
+                    if (w >> 16) & 31 == 1 and (w >> 21) & 31 >= 14 and (w >> 26 == 62 and w & 3 == 0 or w >> 26 == 54))
+        return frame - LOCALS - 8 * saved
+
+    def pad_locals(self, decl, layout):
+        """Grow the locals struct to the original's size, so the frame matches
+        (buffers the code only passes by address are otherwise too small)."""
+        want = self.locals_size()
+        have = max((off + SIZES.get(t, 4) for off, t in layout.items()), default=0)
+        # GCC leaves gaps between the locals and the register saves, so a small
+        # shortfall is not missing data (padding it lost 86 matches): only a
+        # buffer the code never touches is.
+        if want is None or want - have < 64:
+            return decl
+        return decl[:-2] + f'    char pad_end[{want - have}];\n}};'
+
     def jump_table(self, i):
         """Targets (word indexes, one per case value) of the jump table after
         the bctr at i. GCC: cmplwi x,N-1; ...; rlwinm rI,x,2,...;
@@ -1968,6 +1991,8 @@ class Lifter:
                 ends = [off + SIZES.get(t, 4) for off, t in self.access.get(('l',), ())]
                 ends += [off + 1 for off in self.addressed.get(('l',), ())]
                 size = max(ends + [8])
+                if (self.locals_size() or 0) - size >= 64:     # an untouched buffer: the original's size
+                    size = self.locals_size()
                 top.append(f'char l[{(size + 7) // 8 * 8}] __attribute__((aligned(8)));')
         top += [f'{t} {n};' for t, n in self.vars]
         def lines(stmts, indent):
@@ -2078,7 +2103,10 @@ class Lifter:
         nested = [path for path in self.layouts if path[0] in ('g', 'l', 't') or len(path) > 1]
         structs += [f'struct {self.tag(path)};' for path in nested]   # forward declarations
         for path in nested:
-            structs.append(struct_decl(self.tag(path), self.layouts[path], self.pointer_fields(path)))
+            decl = struct_decl(self.tag(path), self.layouts[path], self.pointer_fields(path))
+            if path == ('l',):
+                decl = self.pad_locals(decl, self.layouts[path])
+            structs.append(decl)
         for k in sorted(self.args):
             tag = f'unk_{self.address:08x}_{self.args[k].text}'
             if tag in self.vclasses:

@@ -4,6 +4,9 @@
 
 extern "C" {
 
+void fn_00e44ee0(void*, int, int, int);
+void fn_00e46c50(void*, int, int, int);
+void fn_00e47b20(void*, int, int, int, int, int);
 
 struct unk_00e372e8_g5958;
 struct unk_00e372e8_g5958 {
@@ -18,6 +21,21 @@ void fn_00e372e8(int a0, int a1) {
         return;
     }
     (&g_00e372e8_0)->f_0 = (u8)(0);
+}
+
+void fn_00e3aee8(int a0, int a1, int a2) {
+    char l[112] __attribute__((aligned(8)));
+    fn_00e44ee0((void*)((&l)), (int)(a0), (int)(a1), (int)(a2));
+}
+
+void fn_00e3afe0(int a0, int a1, int a2, int a3, int a4) {
+    char l[80] __attribute__((aligned(8)));
+    fn_00e47b20((void*)((&l)), (int)(a0), (int)(a1), (int)(a2), (int)(a4), (int)(a4));
+}
+
+void fn_00e3b01c(int a0, int a1, int a2) {
+    char l[80] __attribute__((aligned(8)));
+    fn_00e46c50((void*)((&l)), (int)(a0), (int)(a1), (int)(a2));
 }
 
 }
