@@ -7,9 +7,9 @@ extern "C" {
 static void* __attribute__((noinline)) stub_0090ae70(void* p0) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static void __attribute__((noinline)) stub_0090af1c_2(void* p0, void* p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 static void* __attribute__((noinline)) stub_0090af1c(void* p0, void* p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
-static int __attribute__((noinline)) stub_0090b040(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static void __attribute__((noinline)) stub_0090b2e4_2(void* p0, void* p1, void* p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
 static int __attribute__((noinline)) stub_0090b2e4(void* p0, void* p1, void* p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
+static void __attribute__((noinline)) stub_0090b380(void* p0, void* p1, void* p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
 int fn_00b3cd18_2(void*, void*, int, int, int, int);
 void* fn_00b3cd18(void*, int, int, int, int, int);
 int fn_00b41738(void*);
@@ -17,22 +17,6 @@ void fn_00b41748(void*, int);
 void* fn_00b41758(void*);
 float fn_00b41768(void*);
 void fn_00b41778(void*, float);
-
-struct unk_0090b16c_a0 {
-    u32 f_0;
-};
-u32 fn_0090b16c(unk_0090b16c_a0* a0) {
-    int t0;
-    int v0;
-    t0 = stub_0090b040((void*)(a0));
-    if ((int)(t0) != (int)(0)) {
-        a0->f_0 = (u32)(0);
-        v0 = (int)(1);
-    } else {
-        v0 = (int)(0);
-    }
-    return (u32)((u32)(v0) & 0x1);
-}
 
 void* fn_0090b380(void* a0, void* a1, void* a2) {
     void* t0;
@@ -71,6 +55,13 @@ void fn_0090b5a8(unk_0090b5a8_a0* a0, int a1) {
         return;
     }
     a0->f_0 = (u32)(a1);
+}
+
+extern char g_0090b750_0[];
+void fn_0090b750(void* a0, int a1, void* a2) {
+    void* t0;
+    t0 = fn_00b3cd18((void*)(g_0090b750_0), (int)(a1), (int)(0), (int)(-1), (int)(0), (int)(0));
+    stub_0090b380((void*)(a0), (void*)(t0), (void*)(a2));
 }
 
 extern char g_0090b7ac_0[];

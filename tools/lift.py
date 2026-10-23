@@ -2340,16 +2340,11 @@ def main():
         # A function and one it calls cannot both be kept: the call would need
         # the callee's real signature, not a placeholder's. Callees win (they
         # are leaves more often); a caller whose callee was dropped is fine.
-        callers = defaultdict(set)
-        for address, _, _, calls in items:
-            for t in calls:
-                callers[callee_address(t)].add(address)
-        lifted = {a for a, *_ in items}
+        # Every function is kept: one that calls another function of the file
+        # calls a placeholder stub_ (a different name), and call targets are
+        # masked relocations anyway.
         callees, keep, kept = {}, [], set()
-        leaves_first = sorted(items, key=lambda it: (any(callee_address(t) in lifted for t in it[3]), it[0]))
-        for address, decls, code, calls in leaves_first:
-            if any(callee_address(t) in kept for t in calls) or any(c in kept for c in callers[address]):
-                continue
+        for address, decls, code, calls in items:
             # A callee another function of the file declares differently gets
             # an alias declaration (its name is a masked relocation).
             for t, c in list(calls.items()):

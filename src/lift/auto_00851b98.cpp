@@ -11,6 +11,9 @@ static void __attribute__((noinline)) stub_00851ddc(u32 p0, void* p1, int p2, in
 static void __attribute__((noinline)) stub_00851fa8(u32 p0, void* p1, int p2, int p3) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); }
 static void __attribute__((noinline)) stub_00852788_2(void* p0, int p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 static void __attribute__((noinline)) stub_00852788(int p0, int p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
+static void __attribute__((noinline)) stub_00852970_2(int p0, int p1, int p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
+static void __attribute__((noinline)) stub_00852970_3(int p0, u32 p1, int p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
+static void __attribute__((noinline)) stub_00852970(void* p0, int p1, int p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
 static void __attribute__((noinline)) stub_00852a08(int p0, int p1, int p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
 void fn_00b3d2f8(void*, int);
 void fn_00b3f328(void*, void*);
@@ -184,8 +187,41 @@ void fn_00852970(unk_00852970_a0* a0, int a1, int a2) {
     fn_00fcadd0((int)(a1), (int)(a2), (void*)(g_00852970_0), (void*)(a0), (int)(0));
 }
 
+struct unk_008529b4_a0 {
+    char pad_0[4];
+    u32 f_4;
+};
+void fn_008529b4(unk_008529b4_a0* a0, int a1) {
+    stub_00852970((void*)(a0), (int)(4225), (int)(a1));
+    a0->f_4 = (u32)(0);
+}
+
+void fn_008529f0(int a0, int a1) {
+    stub_00852970_2((int)(a0), (int)(129), (int)(a1));
+}
+
+void fn_008529fc(int a0, int a1) {
+    stub_00852970_2((int)(a0), (int)(161), (int)(a1));
+}
+
+void fn_00852a08(int a0, int a1, int a2) {
+    stub_00852970_3((int)(a0), (u32)((u32)((((u32)(a2 + -1) >> 23) & 0x100) + 145) & 0x3ff), (int)(a1));
+}
+
 void fn_00852a20(int a0, int a1) {
     stub_00852a08((int)(a0), (int)(a1), (int)(0));
+}
+
+void fn_00852a28(int a0, int a1) {
+    stub_00852970_2((int)(a0), (int)(128), (int)(a1));
+}
+
+void fn_00852a34(int a0, int a1) {
+    stub_00852970_2((int)(a0), (int)(16), (int)(a1));
+}
+
+void fn_00852a40(int a0, int a1) {
+    stub_00852970_2((int)(a0), (int)(160), (int)(a1));
 }
 
 }

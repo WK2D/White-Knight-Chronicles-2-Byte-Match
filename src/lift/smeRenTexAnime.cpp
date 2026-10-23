@@ -9,6 +9,7 @@ static void __attribute__((noinline)) stub_001a6c0c(void* p0, int p1) { __asm__ 
 static void __attribute__((noinline)) stub_001a778c(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 static void __attribute__((noinline)) stub_001a7f60(void* p0, void* p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 static void __attribute__((noinline)) stub_001a8110(int p0) { __asm__ volatile ("" : : "r"(p0)); }
+static void __attribute__((noinline)) stub_001a81ac(float p0) { __asm__ volatile ("" : : "r"(p0)); }
 void fn_00b395e8(u32);
 void fn_00b39608(u32);
 
@@ -109,6 +110,10 @@ void fn_001a7fec(unk_001a7fec_a0* a0) {
 
 void fn_001a81ac(int a0) {
     stub_001a8110((int)(a0));
+}
+
+void fn_001a81b0(float f0) {
+    stub_001a81ac((float)(f0 * 30.0f));
 }
 
 }

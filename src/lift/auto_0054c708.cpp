@@ -4,7 +4,9 @@
 
 extern "C" {
 
+void fn_0041dfd0(void*, void*, void*, int);
 int fn_00545ecc(void*);
+static void* __attribute__((noinline)) stub_0054d294(void* p0, void* p1, void* p2, void* p3, void* p4) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4)); return r; }
 void fn_00565a8c(u32, int, int);
 void fn_0056797c(u32, int, int);
 int fn_00568ca8(u32, int);
@@ -15,6 +17,7 @@ void* fn_00573d94(void*, u32, u16, u16, int, void*);
 void* fn_00587494(u32);
 int fn_00587540(u32, int, int, int);
 void fn_00587c4c(u32, int);
+void* fn_0058ecc0(void);
 void fn_00b37f58(void*, int, int);
 
 struct unk_0054c954_a0 {
@@ -114,6 +117,23 @@ void* fn_0054d294(void* a0, void* a1, unk_0054d294_a2* a2, void* a3, void* a4) {
         v3 = (int)(0);
     }
     t2 = fn_00573d94((void*)(a0), (u32)(a2->f_0), (u16)((u16)v1), (u16)((u16)v3), (int)(0), (void*)(a1));
+    return (void*)(t2);
+}
+
+struct unk_0054d344_l;
+struct unk_0054d344_l {
+    u32 f_0;
+    char pad_4[12];
+    u32 f_10;
+};
+void* fn_0054d344(void* a0, void* a1, void* a2, void* a3, void* a4) {
+    void* t0;
+    void* t2;
+    unk_0054d344_l l;
+    t0 = fn_0058ecc0();
+    fn_0041dfd0((void*)((&l.f_10)), (void*)(t0), (void*)(a2), (int)(0));
+    l.f_0 = (u32)(l.f_10);
+    t2 = stub_0054d294((void*)(a0), (void*)(a1), (void*)((&l)), (void*)(a3), (void*)(a4));
     return (void*)(t2);
 }
 

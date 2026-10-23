@@ -6,6 +6,7 @@ extern "C" {
 
 static int __attribute__((noinline)) stub_00049088(void* p0, void* p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static void* __attribute__((noinline)) stub_0004cce0(int p0, int p1, int p2) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
+static void* __attribute__((noinline)) stub_0004e8c0(int p0, int p1, int p2, int p3) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); return r; }
 static void* __attribute__((noinline)) stub_0004eb10(void) { void* r; __asm__ volatile ("" : "=r"(r)); return r; }
 static int __attribute__((noinline)) stub_0004ec4c(int p0, int p1, int p2, int p3, int p4, int p5) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4), "r"(p5)); return r; }
 static void* __attribute__((noinline)) stub_0004ef28(void) { void* r; __asm__ volatile ("" : "=r"(r)); return r; }
@@ -61,6 +62,18 @@ int fn_0004e8c0(int a0, int a1, int a2, void* a3) {
         return (int)(t1);
     }
     return (int)(0);
+}
+
+int fn_0004ead8(int a0, int a1, int a2, int a3) {
+    void* t0;
+    int v0;
+    t0 = stub_0004e8c0((int)(a0), (int)(a1), (int)(a2), (int)(a3));
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)(((u32)(FIELD(u32, t0, 44)) >> 19) & 0x1);
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
 }
 
 int fn_0004ebc4(int a0, int a1, int a2, int a3, int a4) {
@@ -137,9 +150,51 @@ int fn_0004f00c(void) {
     return (int)(v0);
 }
 
+int fn_0004f3e8(int a0, int a1, int a2, int a3) {
+    void* t0;
+    int v0;
+    t0 = stub_0004e8c0((int)(a0), (int)(a1), (int)(a2), (int)(a3));
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)((u32)(FIELD(u16, t0, 44)) & 0x7);
+    } else {
+        v0 = (int)(-1);
+    }
+    return (int)(v0);
+}
+
 void fn_0004f4d8(int a0, int a1, int a2, int a3, int a4, int a5) {
     stub_0004f47c((int)(a0), (int)(a1), (int)(a2), (int)(a3), (int)(a4));
     stub_0004f420((int)(a0), (int)(a1), (int)(a2), (int)(a3), (u16)((u16)a5));
+}
+
+int fn_0004f708(int a0, int a1, int a2, int a3) {
+    void* t0;
+    t0 = stub_0004e8c0((int)(a0), (int)(a1), (int)(a2), (int)(a3));
+    if ((int)(t0) != (int)(0)) {
+        if ((int)((u32)(FIELD(u16, t0, 44)) & 0x7) == (int)(0)) {
+            return (int)(FIELD(u16, t0, 18));
+        }
+        if ((int)((u32)(FIELD(u16, t0, 44)) & 0x7) == (int)(1)) {
+            return (int)(FIELD(u16, t0, 18));
+        }
+        return (int)(0);
+    }
+    return (int)(0);
+}
+
+int fn_0004f768(int a0, int a1, int a2, int a3) {
+    void* t0;
+    t0 = stub_0004e8c0((int)(a0), (int)(a1), (int)(a2), (int)(a3));
+    if ((int)(t0) != (int)(0)) {
+        if ((int)((u32)(FIELD(u16, t0, 44)) & 0x7) == (int)(0)) {
+            return (int)(FIELD(u16, t0, 16));
+        }
+        if ((int)((u32)(FIELD(u16, t0, 44)) & 0x7) == (int)(1)) {
+            return (int)(FIELD(u16, t0, 16));
+        }
+        return (int)(0);
+    }
+    return (int)(0);
 }
 
 void fn_0004fb2c(int a0, int a1, int a2, int a3, int a4, int a5, int a6) {

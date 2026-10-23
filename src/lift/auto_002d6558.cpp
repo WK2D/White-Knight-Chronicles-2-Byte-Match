@@ -8,6 +8,7 @@ void* fn_00076a98(void*, int, int, int, int, int);
 void fn_002d2864(int);
 void fn_002d2b5c(u32);
 static void __attribute__((noinline)) stub_002d6cec(void* p0, int p1, int p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
+static void __attribute__((noinline)) stub_002d6d44(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 
 struct unk_002d6620_a0 {
     u32 f_0;
@@ -253,6 +254,14 @@ struct unk_002d6dc4_a0 {
 };
 u8 fn_002d6dc4(unk_002d6dc4_a0* a0) {
     return (u8)(FIELD(u8, (int)(a0->f_8) + (int)(a0->f_0->f_0->f_0), 28));
+}
+
+void fn_002d6e10(int a0) {
+    stub_002d6d44((int)(a0));
+}
+
+void fn_002d6e14(int a0) {
+    stub_002d6d44((int)(a0));
 }
 
 }

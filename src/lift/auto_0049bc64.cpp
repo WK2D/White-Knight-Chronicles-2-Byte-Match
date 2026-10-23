@@ -7,6 +7,7 @@ extern "C" {
 int fn_0036dee0(void*);
 static void __attribute__((noinline)) stub_0049bc64(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 static void __attribute__((noinline)) stub_0049db14(int p0) { __asm__ volatile ("" : : "r"(p0)); }
+static void __attribute__((noinline)) stub_0049db2c(void) { __asm__ volatile (""); }
 
 void fn_0049bca4(int a0) {
     stub_0049bc64((int)(a0));
@@ -79,6 +80,10 @@ extern unk_0049db2c_gm660 g_0049db2c_0;
 void fn_0049db2c(int a0) {
     (&g_0049db2c_0)->f_0 = (u32)(0);
     stub_0049db14((int)(a0));
+}
+
+void fn_0049db3c(void) {
+    stub_0049db2c();
 }
 
 }

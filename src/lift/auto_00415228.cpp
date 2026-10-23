@@ -7,6 +7,7 @@ extern "C" {
 static void __attribute__((noinline)) stub_00414b14(void* p0, int p1, int p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
 static int __attribute__((noinline)) stub_00414bcc(void* p0, u32 p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static void* __attribute__((noinline)) stub_00414db8(void* p0) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static int __attribute__((noinline)) stub_004153d4(int p0, u32 p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static int __attribute__((noinline)) stub_004164f4(void* p0, int p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 void fn_004188ac(void*, u32);
 void fn_0041de8c(void*, void*, u32, int);
@@ -57,6 +58,126 @@ u8 fn_004153d4(int a0, int a1) {
     l.f_0 = (u32)(l.f_10);
     t1 = fn_004224b0((void*)((&l)));
     return (u8)((u8)t1);
+}
+
+u8 fn_00415418(int a0) {
+    int t0;
+    t0 = stub_004153d4((int)(a0), (u32)(527086760));
+    return (u8)((u8)t0);
+}
+
+u8 fn_00415444(int a0) {
+    int t0;
+    t0 = stub_004153d4((int)(a0), (u32)(1595207737));
+    return (u8)((u8)t0);
+}
+
+u8 fn_00415470(int a0) {
+    int t0;
+    t0 = stub_004153d4((int)(a0), (u32)(672383151));
+    return (u8)((u8)t0);
+}
+
+u8 fn_0041549c(int a0) {
+    int t0;
+    t0 = stub_004153d4((int)(a0), (u32)(528768369));
+    return (u8)((u8)t0);
+}
+
+u8 fn_004154c8(int a0) {
+    int t0;
+    t0 = stub_004153d4((int)(a0), (u32)(527086760));
+    return (u8)((u8)t0);
+}
+
+u8 fn_004154f4(int a0) {
+    int t0;
+    t0 = stub_004153d4((int)(a0), (u32)(3062951201));
+    return (u8)((u8)t0);
+}
+
+u8 fn_00415524(int a0) {
+    int t0;
+    t0 = stub_004153d4((int)(a0), (u32)(438673965));
+    return (u8)((u8)t0);
+}
+
+u8 fn_00415550(int a0) {
+    int t0;
+    t0 = stub_004153d4((int)(a0), (u32)(430011971));
+    return (u8)((u8)t0);
+}
+
+u8 fn_0041557c(int a0) {
+    int t0;
+    t0 = stub_004153d4((int)(a0), (u32)(1830982331));
+    return (u8)((u8)t0);
+}
+
+u8 fn_004155a8(int a0) {
+    int t0;
+    t0 = stub_004153d4((int)(a0), (u32)(430011971));
+    return (u8)((u8)t0);
+}
+
+u8 fn_004155d4(int a0) {
+    int t0;
+    t0 = stub_004153d4((int)(a0), (u32)(1432630506));
+    return (u8)((u8)t0);
+}
+
+u8 fn_0041565c(int a0) {
+    int t0;
+    t0 = stub_004153d4((int)(a0), (u32)(822669806));
+    return (u8)((u8)t0);
+}
+
+u8 fn_00415688(int a0) {
+    int t0;
+    t0 = stub_004153d4((int)(a0), (u32)(4096508673));
+    return (u8)((u8)t0);
+}
+
+u8 fn_00415788(int a0) {
+    int t0;
+    t0 = stub_004153d4((int)(a0), (u32)(274032382));
+    return (u8)((u8)t0);
+}
+
+u8 fn_004157b4(int a0) {
+    int t0;
+    t0 = stub_004153d4((int)(a0), (u32)(3091948819));
+    return (u8)((u8)t0);
+}
+
+u8 fn_004157e0(int a0) {
+    int t0;
+    t0 = stub_004153d4((int)(a0), (u32)(3761107594));
+    return (u8)((u8)t0);
+}
+
+u8 fn_00415810(int a0) {
+    int t0;
+    t0 = stub_004153d4((int)(a0), (u32)(2536161820));
+    return (u8)((u8)t0);
+}
+
+u8 fn_00415840(int a0) {
+    int t0;
+    t0 = stub_004153d4((int)(a0), (u32)(237212582));
+    return (u8)((u8)t0);
+}
+
+u8 fn_0041586c(int a0) {
+    int t0;
+    t0 = stub_004153d4((int)(a0), (u32)(3633114358));
+    return (u8)((u8)t0);
+}
+
+u8 fn_0041589c(int a0) {
+    int t0;
+    t0 = stub_004153d4((int)(a0), (u32)(2945178720));
+    return (u8)((u8)t0);
 }
 
 u8 fn_0041672c(void* a0, int a1) {

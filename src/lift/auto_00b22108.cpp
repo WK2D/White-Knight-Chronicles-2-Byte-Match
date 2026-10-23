@@ -11,10 +11,6 @@ void fn_00b22abc(int a0) {
     fn_00b22ae0((int)(a0));
 }
 
-void fn_00b22b18(int a0) {
-    fn_00b22ae0((int)(a0));
-}
-
 struct unk_00b22b58_a0 {
     void* f_0;
 };

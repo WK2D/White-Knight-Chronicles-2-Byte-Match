@@ -4,8 +4,10 @@
 
 extern "C" {
 
+static void* __attribute__((noinline)) stub_008f7740(int p0, int p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static void* __attribute__((noinline)) stub_008f7780(int p0, int p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static int __attribute__((noinline)) stub_008f7aa4(int p0, void* p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
+static void __attribute__((noinline)) stub_008f7cc8(int p0, void* p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 
 u8 fn_008f7ac8(int a0, int a1) {
     void* t0;
@@ -27,6 +29,12 @@ void* fn_008f7cc8(int a0, unk_008f7cc8_a1* a1) {
         v0 = (int)(0);
     }
     return (void*)(v0);
+}
+
+void fn_008f7ce0(int a0, int a1) {
+    void* t0;
+    t0 = stub_008f7740((int)(a0), (int)(a1));
+    stub_008f7cc8((int)(a0), (void*)(t0));
 }
 
 }

@@ -7,6 +7,7 @@ extern "C" {
 static void __attribute__((noinline)) stub_0008a358(int p0, int p1, int p2, int p3, int p4) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4)); }
 static void __attribute__((noinline)) stub_0008a36c(int p0, float p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 static void __attribute__((noinline)) stub_0008a374(int p0, float p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
+static void __attribute__((noinline)) stub_0008a67c(void* p0, void* p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 
 void fn_0008a37c(int a0) {
     stub_0008a358((int)(a0), (int)(0), (int)(0), (int)(0), (int)(0));
@@ -60,6 +61,18 @@ struct unk_0008a67c_a1 {
 };
 void fn_0008a67c(unk_0008a67c_a0* a0, unk_0008a67c_a1* a1) {
     a0->f_180 = a1->f_0;
+}
+
+struct unk_0008a68c_a0 {
+    char pad_0[368];
+    vec f_170;
+};
+struct unk_0008a68c_a1 {
+    vec f_0;
+};
+void fn_0008a68c(unk_0008a68c_a0* a0, unk_0008a68c_a1* a1) {
+    a0->f_170 = a1->f_0;
+    stub_0008a67c((void*)(a0), (void*)(a1));
 }
 
 struct unk_0008a6a4_a0 {

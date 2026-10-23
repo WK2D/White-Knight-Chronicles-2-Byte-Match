@@ -11,6 +11,8 @@ void fn_005db844(u32);
 void fn_005e2734(u32);
 void fn_005e4c44(u32);
 static void __attribute__((noinline)) stub_0063a0b8(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
+static void __attribute__((noinline)) stub_0063a59c(u32 p0, int p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
+static void __attribute__((noinline)) stub_0063b078(u32 p0) { __asm__ volatile ("" : : "r"(p0)); }
 
 struct unk_0063b000_a0 {
     char pad_0[272];
@@ -57,6 +59,28 @@ int fn_0063b078(unk_0063b078_a0* a0) {
     fn_00046118((void*)(a0->f_11c + 8));
     fn_005d9a98((u32)(a0->f_11c));
     a0->f_110 = (u32)(1);
+    return (int)(0);
+}
+
+struct unk_0063b140_a0 {
+    char pad_0[268];
+    u32 f_10c;
+};
+struct unk_0063b140_a1 {
+    char pad_0[4];
+    u32 f_4;
+};
+int fn_0063b140(unk_0063b140_a0* a0, unk_0063b140_a1* a1) {
+    if ((int)(a1->f_4) != (int)(751)) {
+        if ((int)(a1->f_4) != (int)(1104)) {
+            if ((int)(a1->f_4) != (int)(1005)) {
+                return (int)(0);
+            }
+        }
+        stub_0063a59c((u32)(a0->f_10c), (int)(0));
+        return (int)(0);
+    }
+    stub_0063b078((u32)(a0->f_10c));
     return (int)(0);
 }
 

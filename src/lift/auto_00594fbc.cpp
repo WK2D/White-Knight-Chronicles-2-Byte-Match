@@ -4,6 +4,11 @@
 
 extern "C" {
 
+static void __attribute__((noinline)) stub_0059598c(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
+static int __attribute__((noinline)) stub_005959f8(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static int __attribute__((noinline)) stub_00595a70(int p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static int __attribute__((noinline)) stub_00595ae4(int p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static int __attribute__((noinline)) stub_00595b58(int p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 void fn_00ba2268(int);
 int fn_00ba2290(int);
 void fn_00ba22dc(int);
@@ -19,9 +24,30 @@ void fn_0059598c(int a0) {
     fn_00ba2268((int)(a0));
 }
 
+struct unk_005959b0_a0 {
+    u32 f_0;
+    u32 f_4;
+    u8 f_8;
+};
+void fn_005959b0(unk_005959b0_a0* a0) {
+    stub_0059598c((void*)((&a0->f_8)));
+    a0->f_0 = (u32)(0);
+    a0->f_4 = (u32)(67242);
+}
+
 u8 fn_005959f8(int a0) {
     int t0;
     t0 = fn_00ba2290((int)(a0));
+    return (u8)((u8)t0);
+}
+
+struct unk_00595a20_a0 {
+    char pad_0[8];
+    u8 f_8;
+};
+u8 fn_00595a20(unk_00595a20_a0* a0) {
+    int t0;
+    t0 = stub_005959f8((void*)((&a0->f_8)));
     return (u8)((u8)t0);
 }
 
@@ -35,6 +61,12 @@ u8 fn_00595a70(int a0) {
     return (u8)((u8)t0);
 }
 
+u8 fn_00595a98(int a0, int a1) {
+    int t0;
+    t0 = stub_00595a70((int)(a1));
+    return (u8)((u8)t0);
+}
+
 void fn_00595ac0(int a0) {
     fn_00ba2350((int)(a0));
 }
@@ -45,6 +77,12 @@ u8 fn_00595ae4(int a0) {
     return (u8)((u8)t0);
 }
 
+u8 fn_00595b0c(int a0, int a1) {
+    int t0;
+    t0 = stub_00595ae4((int)(a1));
+    return (u8)((u8)t0);
+}
+
 void fn_00595b34(int a0) {
     fn_00ba23c4((int)(a0));
 }
@@ -52,6 +90,12 @@ void fn_00595b34(int a0) {
 u8 fn_00595b58(int a0) {
     int t0;
     t0 = fn_00ba23ec((int)(a0));
+    return (u8)((u8)t0);
+}
+
+u8 fn_00595b80(int a0, int a1) {
+    int t0;
+    t0 = stub_00595b58((int)(a1));
     return (u8)((u8)t0);
 }
 

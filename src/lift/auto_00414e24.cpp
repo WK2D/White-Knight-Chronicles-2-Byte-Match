@@ -5,11 +5,18 @@
 extern "C" {
 
 static void* __attribute__((noinline)) stub_00414fe0(int p0) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static int __attribute__((noinline)) stub_0041504c(void) { int r; __asm__ volatile ("" : "=r"(r)); return r; }
 
 int fn_0041504c(int a0) {
     void* t0;
     t0 = stub_00414fe0((int)(a0));
     return (int)((int)((u32)(-(int)((u32)((u32)(FIELD(u16, t0, 0)) >> 12) ^ 0x1)) >> 31));
+}
+
+u8 fn_00415084(void) {
+    int t0;
+    t0 = stub_0041504c();
+    return (u8)((u8)((u32)(t0) ^ 0x1));
 }
 
 }

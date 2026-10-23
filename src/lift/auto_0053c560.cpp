@@ -8,6 +8,9 @@ void fn_0041dfd0(void*, void*, void*, int);
 static int __attribute__((noinline)) stub_00539930(void* p0, void* p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static int __attribute__((noinline)) stub_00539c40(int p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static void __attribute__((noinline)) stub_0053ea64(void* p0, u8 p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
+static void* __attribute__((noinline)) stub_00543308(int p0, void* p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
+static void __attribute__((noinline)) stub_005434b8(int p0, int p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
+static int __attribute__((noinline)) stub_00543534(int p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 void fn_005520c4(u32, void*, int, int);
 void fn_005534c4(u32, void*, int);
 void* fn_0055cc4c(u32, void*);
@@ -30,6 +33,7 @@ void fn_00564acc(u32, void*, int, int);
 void* fn_0058ecc0(void);
 void* fn_00592184(int, int);
 int fn_0059bf44(void*);
+int fn_0059bfa4(void*, void*);
 
 struct unk_0053c8c8_l;
 struct unk_0053c8c8_l {
@@ -144,6 +148,22 @@ int fn_00543308(unk_00543308_a0* a0, int a1) {
     return (int)((int)(signed char)(t0));
 }
 
+void* fn_00543344(int a0, void* a1) {
+    void* t0;
+    void* t1;
+    int t2;
+    int v0;
+    t0 = fn_00592184((int)(a0), (int)(0));
+    if ((int)(t0) != (int)(0)) {
+        t1 = stub_00543308((int)(a0), (void*)(a1));
+        t2 = fn_0059bfa4((void*)(t0), (void*)(t1));
+        v0 = (int)(t2);
+    } else {
+        v0 = (int)(0);
+    }
+    return (void*)(v0);
+}
+
 struct unk_005434b8_a0 {
     char pad_0[4];
     u32 f_4;
@@ -169,6 +189,12 @@ int fn_00543534(unk_00543534_a0* a0) {
     int t0;
     t0 = fn_00563afc((u32)(a0->f_4), (void*)((int)(short)(a0->f_8)));
     return (int)((int)(short)(t0));
+}
+
+void fn_0054356c(int a0, int a1) {
+    int t0;
+    t0 = stub_00543534((int)(a0));
+    stub_005434b8((int)(a0), (int)((int)(t0) + (int)(a1)));
 }
 
 struct unk_005435b0_a0 {

@@ -5,10 +5,13 @@
 extern "C" {
 
 int fn_00036140(u32, void*);
+void* fn_00043544(void*, int);
 void fn_00043698(void*, int, int);
 void fn_000436f4(void*, int);
+static void __attribute__((noinline)) stub_0067109c(void* p0, u32 p1, int p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
 static int __attribute__((noinline)) stub_006711f0(void* p0, int p1, int p2, int p3) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); return r; }
 static void __attribute__((noinline)) stub_006715dc(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
+void fn_0067bfd8(void*, void*);
 
 struct unk_00671040_g39a4;
 struct unk_00671040_g39a4 {
@@ -38,6 +41,45 @@ struct unk_0067109c_a0 {
 int fn_0067109c(unk_0067109c_a0* a0, int a1, int a2) {
     fn_00043698((void*)((&a0->f_110)), (int)(a1), (int)(a2));
     return (int)(1);
+}
+
+struct unk_006710cc_a0_10c0;
+struct unk_006710cc_a0_10c0 {
+    char pad_0[40];
+    u32 f_28;
+};
+struct unk_006710cc_a0 {
+    char pad_0[272];
+    u8 f_110;
+    char pad_111[4015];
+    unk_006710cc_a0_10c0* f_10c0;
+    char pad_10c4[24];
+    u32 f_10dc;
+    char pad_10e0[38];
+    u8 f_1106;
+    char pad_1107[5];
+    u32 f_110c;
+    u32 f_1110;
+    u32 f_1114;
+};
+int fn_006710cc(unk_006710cc_a0* a0) {
+    void* t1;
+    void* t3;
+    if ((int)(a0->f_110c) != (int)(2)) {
+        return (int)(-1);
+    }
+    if ((int)(a0->f_10dc) == (int)(0)) {
+        return (int)(-2);
+    }
+    a0->f_10dc = (u32)(3);
+    fn_0067bfd8((void*)(a0->f_10c0), (void*)((&a0->f_110)));
+    a0->f_10c0->f_28 = (u32)((((u32)((((u32)(a0->f_10c0->f_28) << 19) | ((u32)(a0->f_10c0->f_28) >> 13)) & 0x7fffffff) << 13) | ((u32)((((u32)(a0->f_10c0->f_28) << 19) | ((u32)(a0->f_10c0->f_28) >> 13)) & 0x7fffffff) >> 19)) & 0xffffffff);
+    t1 = fn_00043544((void*)((&a0->f_110)), (int)((int)a0->f_1110));
+    stub_0067109c((void*)(a0), (u32)(FIELD(u32, t1, 4)), (int)(4));
+    t3 = fn_00043544((void*)((&a0->f_110)), (int)((int)a0->f_1114));
+    stub_0067109c((void*)(a0), (u32)(FIELD(u32, t3, 4)), (int)(4));
+    a0->f_1106 = (u8)(0);
+    return (int)(0);
 }
 
 struct unk_006711c0_a0 {

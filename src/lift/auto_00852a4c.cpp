@@ -4,11 +4,19 @@
 
 extern "C" {
 
+static void __attribute__((noinline)) stub_00852c10(void) { __asm__ volatile (""); }
+void fn_00b3ccd8(void*, void*, int);
 void fn_00b3d088(void*, int, int);
 
 extern char g_00852c10_0[];
 void fn_00852c10(void) {
     fn_00b3d088((void*)(g_00852c10_0), (int)(0), (int)(64));
+}
+
+extern char g_00852c40_0[];
+void fn_00852c40(void* a0) {
+    stub_00852c10();
+    fn_00b3ccd8((void*)(g_00852c40_0), (void*)(a0), (int)(64));
 }
 
 }

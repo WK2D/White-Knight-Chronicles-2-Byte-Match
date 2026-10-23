@@ -4,7 +4,9 @@
 
 extern "C" {
 
+static void __attribute__((noinline)) stub_00090870(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 static void __attribute__((noinline)) stub_00092410(int p0, void* p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
+static void __attribute__((noinline)) stub_00092d2c(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 static void __attribute__((noinline)) stub_000952cc(int p0, int p1, int p2, int p3, int p4) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4)); }
 static void __attribute__((noinline)) stub_00096114(int p0, int p1, int p2, int p3, int p4, int p5) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4), "r"(p5)); }
 
@@ -36,6 +38,11 @@ void fn_00092d2c(int a0) {
     l.f_10 = (u32)((&g_00092d2c_0)->f_10);
     l.f_14 = (u32)((&g_00092d2c_0)->f_14);
     stub_00092410((int)(a0), (void*)((&l)));
+}
+
+void fn_00092d84(int a0) {
+    stub_00090870((int)(a0));
+    stub_00092d2c((int)(a0));
 }
 
 void fn_00095cb4(int a0, int a1, int a2, int a3) {

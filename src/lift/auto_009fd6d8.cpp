@@ -4,6 +4,8 @@
 
 extern "C" {
 
+static void __attribute__((noinline)) stub_009fdb50_2(int p0, int p1, int p2, int p3, int p4, int p5) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4), "r"(p5)); }
+static int __attribute__((noinline)) stub_009fdb50(int p0, int p1, int p2, int p3, void* p4, int p5) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4), "r"(p5)); return r; }
 static void __attribute__((noinline)) stub_009fe6a0(int p0, int p1, int p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
 void fn_00a051f8(int);
 int fn_00a056c4(void*);
@@ -78,6 +80,70 @@ int fn_009fdb50(int a0, void* a1, int a2, int a3, void* a4, int a5) {
     fn_00a051f8((int)(a0));
     t4 = fn_00a06724((int)(a0));
     return (int)(t4);
+}
+
+struct unk_009fdc14_l;
+struct unk_009fdc14_l {
+    u32 f_0;
+    u32 f_4;
+    u32 f_8;
+    u32 f_c;
+};
+int fn_009fdc14(int a0, int a1, int a2, int a3, int a4, int a5, int a6, int a7) {
+    int t0;
+    unk_009fdc14_l l;
+    l.f_0 = (u32)(a4);
+    l.f_4 = (u32)(a5);
+    l.f_8 = (u32)(a6);
+    l.f_c = (u32)(a7);
+    t0 = stub_009fdb50((int)(a0), (int)(a1), (int)(a2), (int)(a3), (void*)((&l)), (int)(4));
+    return (int)(t0);
+}
+
+struct unk_009fdc50_l;
+struct unk_009fdc50_l {
+    u32 f_0;
+    u32 f_4;
+    u32 f_8;
+};
+int fn_009fdc50(int a0, int a1, int a2, int a3, int a4, int a5, int a6) {
+    int t0;
+    unk_009fdc50_l l;
+    l.f_0 = (u32)(a4);
+    l.f_4 = (u32)(a5);
+    l.f_8 = (u32)(a6);
+    t0 = stub_009fdb50((int)(a0), (int)(a1), (int)(a2), (int)(a3), (void*)((&l)), (int)(3));
+    return (int)(t0);
+}
+
+struct unk_009fdc88_l;
+struct unk_009fdc88_l {
+    u32 f_0;
+    u32 f_4;
+};
+int fn_009fdc88(int a0, int a1, int a2, int a3, int a4, int a5) {
+    int t0;
+    unk_009fdc88_l l;
+    l.f_0 = (u32)(a4);
+    l.f_4 = (u32)(a5);
+    t0 = stub_009fdb50((int)(a0), (int)(a1), (int)(a2), (int)(a3), (void*)((&l)), (int)(2));
+    return (int)(t0);
+}
+
+struct unk_009fdcbc_l;
+struct unk_009fdcbc_l {
+    u32 f_0;
+};
+int fn_009fdcbc(int a0, int a1, int a2, int a3, int a4) {
+    int t0;
+    unk_009fdcbc_l l;
+    l.f_0 = (u32)(a4);
+    t0 = stub_009fdb50((int)(a0), (int)(a1), (int)(a2), (int)(a3), (void*)((&l)), (int)(1));
+    return (int)(t0);
+}
+
+void fn_009fdcec(int a0, int a1, int a2, int a3) {
+    stub_009fdb50_2((int)(a0), (int)(a1), (int)(a2), (int)(a3), (int)(0), (int)(0));
 }
 
 struct unk_009fe644_gm2c90;

@@ -6,10 +6,6 @@ extern "C" {
 
 void fn_00bfbe74(int, int);
 void fn_00c02a70(u32, int);
-void fn_00f3faa4(void*, int, void*);
-int fn_00f3fac8(int, void*);
-void* fn_00f3ffc0(int, int);
-void fn_00f40160(int, int, void*);
 
 int fn_00f3f960(int a0, int a1) {
     return (int)(a1);
@@ -28,15 +24,6 @@ u32 fn_00f3f9d8(unk_00f3f9d8_a0* a0, int a1) {
     return (u32)(FIELD(u32, (int)((u32)((int)(a1) + (int)(a0->f_8)) << 2) + (int)(a0->f_0), 4));
 }
 
-struct unk_00f3f9f8_a0 {
-    u32 f_0;
-    char pad_4[4];
-    u32 f_8;
-};
-u32 fn_00f3f9f8(unk_00f3f9f8_a0* a0, int a1) {
-    return (u32)(FIELD(u32, (int)((u32)((int)((u32)(a0->f_8) << 1) + (int)(a1)) << 2) + (int)(a0->f_0), 8));
-}
-
 struct unk_00f3fa1c_a0 {
     u32 f_0;
     char pad_4[4];
@@ -53,37 +40,6 @@ struct unk_00f3fe44_tm6dc8 {
 __thread unk_00f3fe44_tm6dc8 tls_00f3fe44_0;
 void fn_00f3fe44(int a0) {
     fn_00c02a70((u32)((&tls_00f3fe44_0)->f_0), (int)(a0));
-}
-
-struct unk_00f400e8_l;
-struct unk_00f400e8_l {
-    u8 f_0;
-};
-u32 fn_00f400e8(int a0, int a1) {
-    void* t0;
-    int t2;
-    unk_00f400e8_l l;
-    int v0;
-    t0 = fn_00f3ffc0((int)(a0), (int)(a1));
-    fn_00f3faa4((void*)((&l)), (int)(a0), (void*)(t0));
-    if ((int)(l.f_0) != (int)(0)) {
-        t2 = fn_00f3fac8((int)(a0), (void*)(t0));
-        v0 = (int)(0);
-    } else {
-        v0 = (int)(1);
-    }
-    return (u32)((u32)(v0) & 0x1);
-}
-
-struct unk_00f401e8_l;
-struct unk_00f401e8_l {
-    u32 f_0;
-};
-u32 fn_00f401e8(int a0, int a1, int a2) {
-    unk_00f401e8_l l;
-    l.f_0 = (u32)(a2);
-    fn_00f40160((int)(a0), (int)(a1), (void*)((&l)));
-    return (u32)(l.f_0);
 }
 
 void fn_00f40f90(int a0, int a1) {

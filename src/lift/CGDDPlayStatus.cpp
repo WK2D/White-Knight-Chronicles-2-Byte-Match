@@ -6,6 +6,7 @@ extern "C" {
 
 static int __attribute__((noinline)) stub_0040496c(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static int __attribute__((noinline)) stub_00404a98(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static int __attribute__((noinline)) stub_00404b18(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static int __attribute__((noinline)) stub_00404b98(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static void* __attribute__((noinline)) stub_00404c48(int p0, int p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static int __attribute__((noinline)) stub_00404c70(int p0, int p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
@@ -124,6 +125,49 @@ void* fn_00404b18(unk_00404b18_a0* a0) {
         v3 = (int)(0);
     }
     return (void*)(v3);
+}
+
+struct unk_00404b48_gmea4;
+struct unk_00404b48_gmea8;
+struct unk_00404b48_gmea4_0;
+struct unk_00404b48_gmea4_0_6c;
+struct unk_00404b48_gmea4_0_6c_8;
+struct unk_00404b48_gmea4 {
+    unk_00404b48_gmea4_0* f_0;
+};
+struct unk_00404b48_gmea8 {
+    u8 f_0;
+};
+struct unk_00404b48_gmea4_0 {
+    char pad_0[108];
+    unk_00404b48_gmea4_0_6c* f_6c;
+};
+struct unk_00404b48_gmea4_0_6c {
+    char pad_0[8];
+    unk_00404b48_gmea4_0_6c_8* f_8;
+};
+struct unk_00404b48_gmea4_0_6c_8 {
+    char pad_0[276];
+    u32 f_114;
+};
+extern unk_00404b48_gmea8 g_00404b48_0;
+extern unk_00404b48_gmea4 g_00404b48_1;
+int fn_00404b48(void) {
+    int t0;
+    if ((int)((&g_00404b48_0)->f_0) == (int)(0)) {
+        return (int)(0);
+    }
+    if ((int)((&g_00404b48_1)->f_0->f_6c) == (int)(0)) {
+        return (int)(0);
+    }
+    if ((int)((&g_00404b48_1)->f_0->f_6c->f_8) == (int)(0)) {
+        return (int)(0);
+    }
+    if ((int)((&g_00404b48_1)->f_0->f_6c->f_8->f_114) == (int)(0)) {
+        return (int)(0);
+    }
+    t0 = stub_00404b18((void*)((&g_00404b48_1)->f_0->f_6c->f_8->f_114));
+    return (int)(t0);
 }
 
 struct unk_00404bc8_gmea4;

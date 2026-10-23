@@ -5,6 +5,7 @@
 extern "C" {
 
 static void __attribute__((noinline)) stub_00449794(int p0) { __asm__ volatile ("" : : "r"(p0)); }
+static void __attribute__((noinline)) stub_004497dc(void) { __asm__ volatile (""); }
 
 struct unk_004497dc_gmb68;
 struct unk_004497dc_gmb68 {
@@ -14,6 +15,10 @@ extern unk_004497dc_gmb68 g_004497dc_0;
 void fn_004497dc(int a0) {
     (&g_004497dc_0)->f_0 = (u32)(0);
     stub_00449794((int)(a0));
+}
+
+void fn_004497ec(void) {
+    stub_004497dc();
 }
 
 struct unk_00449860_gmb68;

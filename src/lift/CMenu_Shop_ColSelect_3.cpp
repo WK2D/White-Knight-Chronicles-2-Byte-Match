@@ -4,6 +4,7 @@
 
 extern "C" {
 
+static void __attribute__((noinline)) stub_007cb318(void) { __asm__ volatile (""); }
 
 struct unk_007cb318_g7738;
 struct unk_007cb318_g7738_0;
@@ -55,6 +56,10 @@ int fn_007cb318(void) {
         v6 = (int)(0);
     }
     return (int)(v6);
+}
+
+void fn_007cb364(void) {
+    stub_007cb318();
 }
 
 struct unk_007cb368_g7738;

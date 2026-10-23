@@ -21,8 +21,4 @@ void* fn_00b4eca4(int a0, int a1) {
     return (void*)((u32)((int)(a0) + (int)(a1)) & ~(u32)(a1));
 }
 
-int fn_00b4ecb4(int a0, int a1) {
-    return (int)((int)((u32)(a0) & ~(u32)(a1)));
-}
-
 }

@@ -4,39 +4,10 @@
 
 extern "C" {
 
+void fn_00d9153c(int, int);
 
-struct unk_00d91510_a0 {
-    void* f_0;
-    char pad_4[32];
-    float f_24;
-};
-extern char g_00d91510_0[];
-void fn_00d91510(unk_00d91510_a0* a0, int a1) {
-    a0->f_0 = (void*)(g_00d91510_0);
-    if ((int)(a1) == (int)(0)) {
-        return;
-    }
-    if (a0->f_24 != 0.0f) {
-        return;
-    }
-    a0->f_24 = 1.0f;
-}
-
-struct unk_00d9153c_a0 {
-    void* f_0;
-    char pad_4[32];
-    float f_24;
-};
-extern char g_00d9153c_0[];
-void fn_00d9153c(unk_00d9153c_a0* a0, int a1) {
-    a0->f_0 = (void*)(g_00d9153c_0);
-    if ((int)(a1) == (int)(0)) {
-        return;
-    }
-    if (a0->f_24 != 0.0f) {
-        return;
-    }
-    a0->f_24 = 1.0f;
+void fn_00d91ba8(int a0, int a1) {
+    fn_00d9153c((int)(a0), (int)(a1));
 }
 
 }

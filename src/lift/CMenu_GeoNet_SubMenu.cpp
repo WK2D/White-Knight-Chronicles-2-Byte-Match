@@ -6,6 +6,7 @@ extern "C" {
 
 int fn_00691ed8(u32);
 int fn_00693788(u32);
+static int __attribute__((noinline)) stub_006d4834(int p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 
 struct unk_006d4818_a0 {
     char pad_0[196];
@@ -23,6 +24,24 @@ u8 fn_006d4834(unk_006d4834_a0* a0) {
     int t0;
     t0 = fn_00693788((u32)(a0->f_24));
     return (u8)((u8)t0);
+}
+
+int fn_006d4860(int a0, int a1) {
+    int t0;
+    t0 = stub_006d4834((int)(a0));
+    if ((int)((u32)(t0) & 0xff) != (int)(0)) {
+        if ((int)((int)(short)(a1)) >= (int)(0)) {
+            if ((int)((int)(short)(a1)) > (int)(4)) {
+                if ((int)((int)(short)(a1)) > (int)(9)) {
+                } else {
+                    return (int)((int)(short)(a1) + 1);
+                }
+            } else {
+                return (int)((int)(short)(a1));
+            }
+        }
+    }
+    return (int)((int)(short)(a1));
 }
 
 struct unk_006d4a90_a0 {
