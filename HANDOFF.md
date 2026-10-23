@@ -323,6 +323,15 @@ Rename units to their real source files as they are identified, and edit
   without). Merging the cleanup tails into their functions (see Binary
   facts) was needed first; it cost 4 earlier matches whose tails had been
   cut off.
+- Member objects: classgen also tries a form where each call on
+  `&this->f_N` becomes a member of a class with that constructor (run
+  implicitly, in declaration order) and plain member stores move to the
+  initializer list (`with_members`). It matched nothing new yet. Hand test on
+  `fn_000cb5ec` (base, a member with an out-of-line constructor, three 8-byte
+  members zeroed inline, more u32 members): the right frame, calls and
+  exception cleanup, 77% identical; only the scheduling of the last stores
+  differs, and no ordering of initializer list, body and inline member
+  constructors tried matched it.
 - Destructors are still open: `struct D : B { virtual ~D(); }; D::~D() {}`
   gives the right instructions for `fn_00bd5fbc` but loads the vtable after
   the prologue (the game loads it into r11 before), with every flag tried.

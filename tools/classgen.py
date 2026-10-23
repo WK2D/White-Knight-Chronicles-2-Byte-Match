@@ -96,6 +96,59 @@ def constructor(address, decls, code, vtable_globals, calls, cleanup=False):
     return out, '\n'.join([f'{cls}::{cls}({params}) {{'] + body + ['}']), cls, calls
 
 
+def with_members(decls, code, cls, calls):
+    """The constructor with member objects: a call on &this->f_N becomes a
+    member of a class whose constructor is that call (C++ runs it implicitly,
+    in declaration order, before the body), and plain member stores go to the
+    initializer list. None if there is no such call or the order cannot be
+    expressed."""
+    lines = code.split('\n')
+    head, body = lines[0], lines[1:-1]
+    mcall = re.compile(r'    (stub|fn)_([0-9a-f]{8})\(\(void\*\)\(\(&this->f_([0-9a-f]+)\)\)\);')
+    simple = re.compile(r'    this->f_([0-9a-f]+) = (.+);')
+    decl = re.compile(r'    [\w* ]+ [tv]\d+;')
+    last = max((i for i, l in enumerate(body) if mcall.fullmatch(l)), default=None)
+    if last is None:
+        return None
+    members, inits, rest = {}, {}, []
+    for i, line in enumerate(body):
+        m, s = mcall.fullmatch(line), simple.fullmatch(line)
+        if m:
+            members[int(m.group(3), 16)] = (int(m.group(2), 16), m.group(1) == 'stub')
+        elif s and 'this' not in s.group(2) and not re.search(r'\b[tv]\d+\b', s.group(2)) \
+                and int(s.group(1), 16) not in inits:
+            inits[int(s.group(1), 16)] = s.group(2)
+        elif decl.fullmatch(line) or i > last:
+            rest.append(line)
+        else:
+            return None                                  # other work before a member's construction
+    out = []
+    for d in decls:
+        if not d.startswith(f'struct {cls} '):
+            out.append(d)
+            continue
+        fields = d.split('\n')
+        for off, (target, local) in members.items():
+            k = next((j for j, l in enumerate(fields) if l == f'    u8 f_{off:x};'), None)
+            if k is None:
+                return None                              # the member is also used as a plain field
+            size = 1
+            pad = re.fullmatch(rf'    char pad_{off + 1:x}\[(\d+)\];', fields[k + 1]) if k + 1 < len(fields) else None
+            if pad:
+                size += int(pad.group(1))
+                del fields[k + 1]
+            mname = f'{cls}_m{off:x}'
+            fields[k] = f'    {mname} f_{off:x};'
+            out.append(f'struct {mname} {{ {mname}(); char pad[{size}]; }};')
+            if local:
+                out.append(f'__attribute__((noinline)) {mname}::{mname}() {{ __asm__ volatile (""); }}')
+        out.append('\n'.join(fields))
+    init = ', '.join(f'f_{off:x}({value})' for off, value in sorted(inits.items()))
+    new_head = head[:-2] + (f' : {init} {{' if init else ' {')
+    calls = {t: c for t, c in calls.items() if t not in {tg for tg, _ in members.values()}}
+    return out, '\n'.join([new_head] + rest + ['}']), calls
+
+
 def offset_order(code):
     """The constructor with each run of member stores sorted by offset: the
     order members are usually initialized in (declaration order)."""
@@ -153,11 +206,15 @@ def main():
         if made is None:
             continue
         decls, code, cls, calls = made
-        for k, body in enumerate(bodies(code)):
+        forms = [(decls, body, calls) for body in bodies(code)]
+        member = with_members(decls, code, cls, calls)
+        if member is not None:
+            forms.insert(0, member)                      # member objects first: the likelier source
+        for k, (form_decls, body, form_calls) in enumerate(forms):
             path = WORK / f'{address:08x}_{k}.cpp'
-            path.write_text(file_text([], calls, [(address, decls, body)]), encoding='utf-8', newline='\n')
+            path.write_text(file_text([], form_calls, [(address, form_decls, body)]), encoding='utf-8', newline='\n')
             jobs.append(path)
-            info[path] = (address, decls, body, cls, calls)
+            info[path] = (address, form_decls, body, cls, form_calls)
     print(f'{len(jobs)} constructor variants of {len({i[0] for i in info.values()})} functions')
     if not jobs:
         return
