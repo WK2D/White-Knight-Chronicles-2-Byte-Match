@@ -421,6 +421,20 @@ counts over all functions up to 384 instructions):
   (`callee_name`): the call target is a masked relocation, so the name does
   not change the bytes. Call keys are the address, or (address, k) for an
   alias (`callee_address`).
+- Bool bitfields: the game's flags are `bool x : 1` (a `u8` bitfield
+  compiles differently). Reading one is `lbz; rldicl r0,r0,64-p,63`
+  (`rldicl r0,r0,62,63` is bit 2 from the bottom); setting it is
+  `lbz; ori r0,r0,1<<p; stb` and clearing it `lbz; li rX,~(1<<p); and; stb`.
+  `wkc2.h` defines `BF8` (eight `bool` bitfields, most significant first;
+  C++ only) and the lifter writes `FIELD(BF8, p, off).b2`. Found from the
+  near-miss analysis: the original had `rldicl` where ours had `rlwinm` in
+  about 700 near-misses. Wider containers (`lhz`/`lwz`) are not handled yet.
+  It gained no matches by itself (those functions differ in other ways too;
+  a bit test against 0 compiles the same either way), and bytes of stack
+  locals are left alone.
+- Prologue saves of r29 where ours saves r31 (about 700 near-misses): the
+  original kept r30/r31 for variables the optimiser later removed; not
+  reproducible from the machine code alone.
 - Calls through function pointers: `lwz r0,0(rX); std r2,40(r1); mtctr r0;
   lwz r2,4(rX); bctrl` with rX not a vtable slot is `((T (*)(...))(x))(...)`
   (rX points to the callee's descriptor). Weak-symbol tests (`if (&f)`) are

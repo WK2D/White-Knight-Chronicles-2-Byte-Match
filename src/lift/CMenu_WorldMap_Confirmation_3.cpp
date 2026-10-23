@@ -72,7 +72,7 @@ extern unk_007a59c8_g6f28 g_007a59c8_0;
 int fn_007a59c8(unk_007a59c8_a0* a0) {
     if ((int)(a0->f_122e) != (int)(0)) {
         if ((int)((&g_007a59c8_0)->f_0->f_c0) != (int)(0)) {
-            if ((int)(((u32)((&g_007a59c8_0)->f_0->f_c0->f_114b) >> 6) & 0x1) == (int)(0)) {
+            if ((int)((int)FIELD(BF8, (&g_007a59c8_0)->f_0->f_c0, 4427).b6) == (int)(0)) {
                 return (int)(1);
             }
             fn_00b3b778((void*)((&g_007a59c8_0)->f_0->f_c0), (int)(1));

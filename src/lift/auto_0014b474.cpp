@@ -13,7 +13,7 @@ struct unk_0014b8d4_a0 {
 };
 void* fn_0014b8d4(unk_0014b8d4_a0* a0) {
     int v0;
-    if ((int)(((u32)(a0->f_0) >> 2) & 0x1) != (int)(0)) {
+    if ((int)((int)FIELD(BF8, a0, 0).b2) != (int)(0)) {
         v0 = (int)(a0->f_8);
     } else {
         v0 = (int)(3);
@@ -44,7 +44,7 @@ struct unk_0014b914_a0 {
 };
 void* fn_0014b914(unk_0014b914_a0* a0) {
     int v0;
-    if ((int)(((u32)(a0->f_1) >> 6) & 0x1) != (int)(0)) {
+    if ((int)((int)FIELD(BF8, a0, 1).b6) != (int)(0)) {
         v0 = (int)(a0->f_10);
     } else {
         v0 = (int)(3);

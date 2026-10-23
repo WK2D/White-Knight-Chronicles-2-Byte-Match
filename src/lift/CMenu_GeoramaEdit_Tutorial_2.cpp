@@ -34,7 +34,7 @@ struct unk_0089cbfc_gm60c8_0_c0 {
 extern unk_0089cbfc_gm60c8 g_0089cbfc_0;
 extern unk_0089cbfc_gm60e0 g_0089cbfc_1;
 void fn_0089cbfc(void) {
-    if ((int)(((u32)((&g_0089cbfc_0)->f_0->f_c0->f_114b) >> 6) & 0x1) != (int)(0)) {
+    if ((int)((int)FIELD(BF8, (&g_0089cbfc_0)->f_0->f_c0, 4427).b6) != (int)(0)) {
         fn_008740b4((void*)((&g_0089cbfc_1)->f_0));
         (&g_0089cbfc_1)->f_0->f_2838 = (u32)(19);
     }
@@ -66,7 +66,7 @@ struct unk_0089ce38_gm60c8_0_c0 {
 extern unk_0089ce38_gm60c8 g_0089ce38_0;
 extern unk_0089ce38_gm60e0 g_0089ce38_1;
 void fn_0089ce38(void) {
-    if ((int)(((u32)((&g_0089ce38_0)->f_0->f_c0->f_114b) >> 6) & 0x1) != (int)(0)) {
+    if ((int)((int)FIELD(BF8, (&g_0089ce38_0)->f_0->f_c0, 4427).b6) != (int)(0)) {
         fn_008740b4((void*)((&g_0089ce38_1)->f_0));
         (&g_0089ce38_1)->f_0->f_2838 = (u32)(15);
     }
@@ -98,7 +98,7 @@ struct unk_0089ce94_gm60c8_0_c0 {
 extern unk_0089ce94_gm60c8 g_0089ce94_0;
 extern unk_0089ce94_gm60e0 g_0089ce94_1;
 void fn_0089ce94(void) {
-    if ((int)(((u32)((&g_0089ce94_0)->f_0->f_c0->f_114b) >> 6) & 0x1) != (int)(0)) {
+    if ((int)((int)FIELD(BF8, (&g_0089ce94_0)->f_0->f_c0, 4427).b6) != (int)(0)) {
         fn_008740b4((void*)((&g_0089ce94_1)->f_0));
         (&g_0089ce94_1)->f_0->f_2838 = (u32)(25);
     }
@@ -130,7 +130,7 @@ struct unk_0089cef0_gm60c8_0_c0 {
 extern unk_0089cef0_gm60c8 g_0089cef0_0;
 extern unk_0089cef0_gm60e0 g_0089cef0_1;
 void fn_0089cef0(void) {
-    if ((int)(((u32)((&g_0089cef0_0)->f_0->f_c0->f_114b) >> 6) & 0x1) != (int)(0)) {
+    if ((int)((int)FIELD(BF8, (&g_0089cef0_0)->f_0->f_c0, 4427).b6) != (int)(0)) {
         fn_008740b4((void*)((&g_0089cef0_1)->f_0));
         (&g_0089cef0_1)->f_0->f_2838 = (u32)(7);
     }
@@ -162,7 +162,7 @@ struct unk_0089cf4c_gm60c8_0_c0 {
 extern unk_0089cf4c_gm60c8 g_0089cf4c_0;
 extern unk_0089cf4c_gm60e0 g_0089cf4c_1;
 void fn_0089cf4c(void) {
-    if ((int)(((u32)((&g_0089cf4c_0)->f_0->f_c0->f_114b) >> 6) & 0x1) != (int)(0)) {
+    if ((int)((int)FIELD(BF8, (&g_0089cf4c_0)->f_0->f_c0, 4427).b6) != (int)(0)) {
         fn_008740b4((void*)((&g_0089cf4c_1)->f_0));
         (&g_0089cf4c_1)->f_0->f_2838 = (u32)(1);
     }
@@ -194,7 +194,7 @@ struct unk_0089d048_gm60c8_0_c0 {
 extern unk_0089d048_gm60c8 g_0089d048_0;
 extern unk_0089d048_gm60e0 g_0089d048_1;
 void fn_0089d048(void) {
-    if ((int)(((u32)((&g_0089d048_0)->f_0->f_c0->f_114b) >> 6) & 0x1) != (int)(0)) {
+    if ((int)((int)FIELD(BF8, (&g_0089d048_0)->f_0->f_c0, 4427).b6) != (int)(0)) {
         fn_008740b4((void*)((&g_0089d048_1)->f_0));
         (&g_0089d048_1)->f_0->f_2838 = (u32)(31);
     }
@@ -226,7 +226,7 @@ struct unk_0089d0a4_gm60c8_0_c0 {
 extern unk_0089d0a4_gm60c8 g_0089d0a4_0;
 extern unk_0089d0a4_gm60e0 g_0089d0a4_1;
 void fn_0089d0a4(void) {
-    if ((int)(((u32)((&g_0089d0a4_0)->f_0->f_c0->f_114b) >> 6) & 0x1) != (int)(0)) {
+    if ((int)((int)FIELD(BF8, (&g_0089d0a4_0)->f_0->f_c0, 4427).b6) != (int)(0)) {
         fn_008740b4((void*)((&g_0089d0a4_1)->f_0));
         (&g_0089d0a4_1)->f_0->f_2838 = (u32)(30);
     }
@@ -258,7 +258,7 @@ struct unk_0089d100_gm60c8_0_c0 {
 extern unk_0089d100_gm60c8 g_0089d100_0;
 extern unk_0089d100_gm60e0 g_0089d100_1;
 void fn_0089d100(void) {
-    if ((int)(((u32)((&g_0089d100_0)->f_0->f_c0->f_114b) >> 6) & 0x1) != (int)(0)) {
+    if ((int)((int)FIELD(BF8, (&g_0089d100_0)->f_0->f_c0, 4427).b6) != (int)(0)) {
         fn_008740b4((void*)((&g_0089d100_1)->f_0));
         (&g_0089d100_1)->f_0->f_2838 = (u32)(11);
     }
@@ -290,7 +290,7 @@ struct unk_0089d15c_gm60c8_0_c0 {
 extern unk_0089d15c_gm60c8 g_0089d15c_0;
 extern unk_0089d15c_gm60e0 g_0089d15c_1;
 void fn_0089d15c(void) {
-    if ((int)(((u32)((&g_0089d15c_0)->f_0->f_c0->f_114b) >> 6) & 0x1) != (int)(0)) {
+    if ((int)((int)FIELD(BF8, (&g_0089d15c_0)->f_0->f_c0, 4427).b6) != (int)(0)) {
         fn_008740b4((void*)((&g_0089d15c_1)->f_0));
         (&g_0089d15c_1)->f_0->f_2838 = (u32)(21);
     }

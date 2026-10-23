@@ -16,7 +16,7 @@ struct unk_0040ec70_a0 {
 int fn_0040ec70(unk_0040ec70_a0* a0) {
     int v1;
     if ((int)(a0->f_4) != (int)(0)) {
-        v1 = (int)(((u32)(a0->f_4->f_0) >> 5) & 0x1);
+        v1 = (int)((int)FIELD(BF8, a0->f_4, 0).b5);
     } else {
         v1 = (int)(0);
     }
@@ -34,7 +34,7 @@ struct unk_0040ec94_a0 {
 int fn_0040ec94(unk_0040ec94_a0* a0) {
     int v1;
     if ((int)(a0->f_4) != (int)(0)) {
-        v1 = (int)(((u32)(a0->f_4->f_0) >> 4) & 0x1);
+        v1 = (int)((int)FIELD(BF8, a0->f_4, 0).b4);
     } else {
         v1 = (int)(0);
     }
@@ -107,7 +107,7 @@ struct unk_0040ed30_a0 {
 int fn_0040ed30(unk_0040ed30_a0* a0) {
     int v1;
     if ((int)(a0->f_4) != (int)(0)) {
-        v1 = (int)((u32)(((u32)(a0->f_4->f_0) >> 1) & 0x1) ^ 0x1);
+        v1 = (int)((u32)((int)FIELD(BF8, a0->f_4, 0).b1) ^ 0x1);
     } else {
         v1 = (int)(0);
     }
@@ -125,7 +125,7 @@ struct unk_0040ed58_a0 {
 int fn_0040ed58(unk_0040ed58_a0* a0) {
     int v1;
     if ((int)(a0->f_4) != (int)(0)) {
-        v1 = (int)(((u32)(a0->f_4->f_0) >> 2) & 0x1);
+        v1 = (int)((int)FIELD(BF8, a0->f_4, 0).b2);
     } else {
         v1 = (int)(0);
     }
@@ -143,7 +143,7 @@ struct unk_0040ed7c_a0 {
 int fn_0040ed7c(unk_0040ed7c_a0* a0) {
     int v1;
     if ((int)(a0->f_4) != (int)(0)) {
-        v1 = (int)((u32)(((u32)(a0->f_4->f_0) >> 3) & 0x1) ^ 0x1);
+        v1 = (int)((u32)((int)FIELD(BF8, a0->f_4, 0).b3) ^ 0x1);
     } else {
         v1 = (int)(0);
     }
@@ -216,7 +216,7 @@ struct unk_0040ee10_a0 {
 int fn_0040ee10(unk_0040ee10_a0* a0) {
     int v1;
     if ((int)(a0->f_4) != (int)(0)) {
-        v1 = (int)(((u32)(a0->f_4->f_0) >> 1) & 0x1);
+        v1 = (int)((int)FIELD(BF8, a0->f_4, 0).b1);
     } else {
         v1 = (int)(0);
     }
@@ -234,7 +234,7 @@ struct unk_0040ee34_a0 {
 int fn_0040ee34(unk_0040ee34_a0* a0) {
     int v1;
     if ((int)(a0->f_4) != (int)(0)) {
-        v1 = (int)(((u32)(a0->f_4->f_0) >> 2) & 0x1);
+        v1 = (int)((int)FIELD(BF8, a0->f_4, 0).b2);
     } else {
         v1 = (int)(0);
     }
@@ -252,7 +252,7 @@ struct unk_0040ee58_a0 {
 int fn_0040ee58(unk_0040ee58_a0* a0) {
     int v1;
     if ((int)(a0->f_4) != (int)(0)) {
-        v1 = (int)(((u32)(a0->f_4->f_0) >> 6) & 0x1);
+        v1 = (int)((int)FIELD(BF8, a0->f_4, 0).b6);
     } else {
         v1 = (int)(0);
     }
@@ -270,7 +270,7 @@ struct unk_0040ee7c_a0 {
 int fn_0040ee7c(unk_0040ee7c_a0* a0) {
     int v1;
     if ((int)(a0->f_4) != (int)(0)) {
-        v1 = (int)(((u32)(a0->f_4->f_0) >> 3) & 0x1);
+        v1 = (int)((int)FIELD(BF8, a0->f_4, 0).b3);
     } else {
         v1 = (int)(0);
     }
@@ -289,7 +289,7 @@ struct unk_0040eea0_a0 {
 int fn_0040eea0(unk_0040eea0_a0* a0) {
     int v1;
     if ((int)(a0->f_4) != (int)(0)) {
-        v1 = (int)(((u32)(a0->f_4->f_1) >> 6) & 0x1);
+        v1 = (int)((int)FIELD(BF8, a0->f_4, 1).b6);
     } else {
         v1 = (int)(0);
     }
@@ -308,7 +308,7 @@ struct unk_0040eec4_a0 {
 int fn_0040eec4(unk_0040eec4_a0* a0) {
     int v1;
     if ((int)(a0->f_4) != (int)(0)) {
-        v1 = (int)(((u32)(a0->f_4->f_1) >> 5) & 0x1);
+        v1 = (int)((int)FIELD(BF8, a0->f_4, 1).b5);
     } else {
         v1 = (int)(0);
     }
@@ -327,7 +327,7 @@ struct unk_0040eee8_a0 {
 int fn_0040eee8(unk_0040eee8_a0* a0) {
     int v1;
     if ((int)(a0->f_4) != (int)(0)) {
-        v1 = (int)(((u32)(a0->f_4->f_1) >> 4) & 0x1);
+        v1 = (int)((int)FIELD(BF8, a0->f_4, 1).b4);
     } else {
         v1 = (int)(0);
     }
@@ -346,7 +346,7 @@ struct unk_0040ef0c_a0 {
 int fn_0040ef0c(unk_0040ef0c_a0* a0) {
     int v1;
     if ((int)(a0->f_4) != (int)(0)) {
-        v1 = (int)(((u32)(a0->f_4->f_3) >> 3) & 0x1);
+        v1 = (int)((int)FIELD(BF8, a0->f_4, 3).b3);
     } else {
         v1 = (int)(0);
     }
@@ -365,7 +365,7 @@ struct unk_0040ef30_a0 {
 int fn_0040ef30(unk_0040ef30_a0* a0) {
     int v1;
     if ((int)(a0->f_4) != (int)(0)) {
-        v1 = (int)(((u32)(a0->f_4->f_3) >> 2) & 0x1);
+        v1 = (int)((int)FIELD(BF8, a0->f_4, 3).b2);
     } else {
         v1 = (int)(0);
     }
@@ -384,7 +384,7 @@ struct unk_0040ef54_a0 {
 int fn_0040ef54(unk_0040ef54_a0* a0) {
     int v1;
     if ((int)(a0->f_4) != (int)(0)) {
-        v1 = (int)(((u32)(a0->f_4->f_3) >> 1) & 0x1);
+        v1 = (int)((int)FIELD(BF8, a0->f_4, 3).b1);
     } else {
         v1 = (int)(0);
     }
@@ -441,7 +441,7 @@ struct unk_0040efc0_a0 {
 int fn_0040efc0(unk_0040efc0_a0* a0) {
     int v1;
     if ((int)(a0->f_4) != (int)(0)) {
-        v1 = (int)(((u32)(a0->f_4->f_4) >> 6) & 0x1);
+        v1 = (int)((int)FIELD(BF8, a0->f_4, 4).b6);
     } else {
         v1 = (int)(0);
     }
@@ -460,7 +460,7 @@ struct unk_0040efe4_a0 {
 int fn_0040efe4(unk_0040efe4_a0* a0) {
     int v1;
     if ((int)(a0->f_4) != (int)(0)) {
-        v1 = (int)(((u32)(a0->f_4->f_4) >> 5) & 0x1);
+        v1 = (int)((int)FIELD(BF8, a0->f_4, 4).b5);
     } else {
         v1 = (int)(0);
     }
@@ -479,7 +479,7 @@ struct unk_0040f008_a0 {
 int fn_0040f008(unk_0040f008_a0* a0) {
     int v1;
     if ((int)(a0->f_4) != (int)(0)) {
-        v1 = (int)(((u32)(a0->f_4->f_4) >> 4) & 0x1);
+        v1 = (int)((int)FIELD(BF8, a0->f_4, 4).b4);
     } else {
         v1 = (int)(0);
     }
@@ -498,7 +498,7 @@ struct unk_0040f02c_a0 {
 int fn_0040f02c(unk_0040f02c_a0* a0) {
     int v1;
     if ((int)(a0->f_4) != (int)(0)) {
-        v1 = (int)(((u32)(a0->f_4->f_4) >> 3) & 0x1);
+        v1 = (int)((int)FIELD(BF8, a0->f_4, 4).b3);
     } else {
         v1 = (int)(0);
     }
@@ -517,7 +517,7 @@ struct unk_0040f050_a0 {
 int fn_0040f050(unk_0040f050_a0* a0) {
     int v1;
     if ((int)(a0->f_4) != (int)(0)) {
-        v1 = (int)(((u32)(a0->f_4->f_4) >> 2) & 0x1);
+        v1 = (int)((int)FIELD(BF8, a0->f_4, 4).b2);
     } else {
         v1 = (int)(0);
     }
@@ -536,7 +536,7 @@ struct unk_0040f074_a0 {
 int fn_0040f074(unk_0040f074_a0* a0) {
     int v1;
     if ((int)(a0->f_4) != (int)(0)) {
-        v1 = (int)(((u32)(a0->f_4->f_4) >> 1) & 0x1);
+        v1 = (int)((int)FIELD(BF8, a0->f_4, 4).b1);
     } else {
         v1 = (int)(0);
     }
@@ -593,7 +593,7 @@ struct unk_0040f0e0_a0 {
 int fn_0040f0e0(unk_0040f0e0_a0* a0) {
     int v1;
     if ((int)(a0->f_4) != (int)(0)) {
-        v1 = (int)(((u32)(a0->f_4->f_5) >> 6) & 0x1);
+        v1 = (int)((int)FIELD(BF8, a0->f_4, 5).b6);
     } else {
         v1 = (int)(0);
     }
@@ -612,7 +612,7 @@ struct unk_0040f104_a0 {
 int fn_0040f104(unk_0040f104_a0* a0) {
     int v1;
     if ((int)(a0->f_4) != (int)(0)) {
-        v1 = (int)(((u32)(a0->f_4->f_5) >> 5) & 0x1);
+        v1 = (int)((int)FIELD(BF8, a0->f_4, 5).b5);
     } else {
         v1 = (int)(0);
     }
@@ -631,7 +631,7 @@ struct unk_0040f128_a0 {
 int fn_0040f128(unk_0040f128_a0* a0) {
     int v1;
     if ((int)(a0->f_4) != (int)(0)) {
-        v1 = (int)(((u32)(a0->f_4->f_5) >> 4) & 0x1);
+        v1 = (int)((int)FIELD(BF8, a0->f_4, 5).b4);
     } else {
         v1 = (int)(0);
     }
@@ -650,7 +650,7 @@ struct unk_0040f14c_a0 {
 int fn_0040f14c(unk_0040f14c_a0* a0) {
     int v1;
     if ((int)(a0->f_4) != (int)(0)) {
-        v1 = (int)(((u32)(a0->f_4->f_5) >> 3) & 0x1);
+        v1 = (int)((int)FIELD(BF8, a0->f_4, 5).b3);
     } else {
         v1 = (int)(0);
     }

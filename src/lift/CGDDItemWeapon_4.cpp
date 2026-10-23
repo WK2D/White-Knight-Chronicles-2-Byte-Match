@@ -11,7 +11,7 @@ int fn_003de4d0(int a0) {
     int v0;
     t0 = stub_003dccd8((int)(a0));
     if ((int)(t0) != (int)(0)) {
-        v0 = (int)(((u32)(FIELD(u8, t0, 9)) >> 5) & 0x1);
+        v0 = (int)((int)FIELD(BF8, t0, 9).b5);
     } else {
         v0 = (int)(0);
     }

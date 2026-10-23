@@ -62,8 +62,8 @@ struct unk_005ae040_a0_0 {
 struct unk_005ae040_a0 {
     unk_005ae040_a0_0* f_0;
 };
-u32 fn_005ae040(unk_005ae040_a0* a0) {
-    return (u32)(((u32)(a0->f_0->f_2) >> 7) & 0x1);
+int fn_005ae040(unk_005ae040_a0* a0) {
+    return (int)((int)FIELD(BF8, a0->f_0, 2).b7);
 }
 
 struct unk_005ae050_a0_0;
@@ -74,8 +74,8 @@ struct unk_005ae050_a0_0 {
 struct unk_005ae050_a0 {
     unk_005ae050_a0_0* f_0;
 };
-u32 fn_005ae050(unk_005ae050_a0* a0) {
-    return (u32)(((u32)(a0->f_0->f_2) >> 6) & 0x1);
+int fn_005ae050(unk_005ae050_a0* a0) {
+    return (int)((int)FIELD(BF8, a0->f_0, 2).b6);
 }
 
 struct unk_005ae060_a0_0;
@@ -86,8 +86,8 @@ struct unk_005ae060_a0_0 {
 struct unk_005ae060_a0 {
     unk_005ae060_a0_0* f_0;
 };
-u32 fn_005ae060(unk_005ae060_a0* a0) {
-    return (u32)(((u32)(a0->f_0->f_2) >> 5) & 0x1);
+int fn_005ae060(unk_005ae060_a0* a0) {
+    return (int)((int)FIELD(BF8, a0->f_0, 2).b5);
 }
 
 struct unk_005ae070_a0_0;

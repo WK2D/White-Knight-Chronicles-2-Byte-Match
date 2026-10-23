@@ -1326,7 +1326,10 @@ class Lifter:
             if op in (24, 25) and re.fullmatch(r'-?\d+', v.text):     # lis/li then ori: a constant
                 self.set(ra, Value(str((int(v.text) | imm) & 0xFFFFFFFF), 'u32'))
                 return
-            self.set(ra, Value(f'(u32)({v.text}) {sym} {imm:#x}', 'u32', 1))
+            result = Value(f'(u32)({v.text}) {sym} {imm:#x}', 'u32', 1)
+            if op == 24 and getattr(v, 'byte_of', None) and imm < 256 and imm & (imm - 1) == 0:
+                result.bit_op = (v.byte_of, imm.bit_length() - 1, 1)   # sets one bool bitfield
+            self.set(ra, result)
             return
         if op == 8:                                                  # subfic: imm - x
             self.set(rt, Value(f'{d} - (int)({self.reg(ra).text})', 'int', 1))
@@ -1551,7 +1554,14 @@ class Lifter:
                 text = {28: f'(u32)({a.text}) & (u32)({b.text})', 316: f'(u32)({a.text}) ^ (u32)({b.text})',
                         124: f'~((u32)({a.text}) | (u32)({b.text}))', 60: f'(u32)({a.text}) & ~(u32)({b.text})',
                         444: f'(u32)({a.text}) | (u32)({b.text})'}[xo]
-                self.set(ra, Value(text, 'u32', 1))
+                result = Value(text, 'u32', 1)
+                if xo == 28:                                         # and with ~bit: clears one bool bitfield
+                    for byte, mask in ((a, b), (b, a)):
+                        if getattr(byte, 'byte_of', None) and re.fullmatch(r'\d+', mask.text):
+                            cleared = ~int(mask.text) & 0xFF
+                            if cleared and cleared & (cleared - 1) == 0:
+                                result.bit_op = (byte.byte_of, cleared.bit_length() - 1, 0)
+                self.set(ra, result)
                 if w & 1:
                     self.cr[0] = (self.gpr[ra], '0', 'signed')
                 return
@@ -1627,6 +1637,10 @@ class Lifter:
                 t = 'u16' if mb == 48 else 'u8'
                 self.set(ra, Value(f'({t}){paren(v)}', t))
                 return
+            if mb == 63 and getattr(v, 'byte_of', None) and (sh == 0 or 57 <= sh <= 63):
+                base, off = v.byte_of                                # one bool bitfield of the byte
+                self.set(ra, Value(f'(int)FIELD(BF8, {paren(base)}, {off}).b{(64 - sh) % 64}', 'int'))
+                return
             # Bit fields of a 32-bit value: rotate right by 64 - sh, keep 64 - mb bits.
             n, width = (64 - sh) % 64, 64 - mb
             if sh == 1 and mb == 63:                                 # the sign bit (sign-extended value)
@@ -1647,6 +1661,9 @@ class Lifter:
 
     def load(self, op, rt, base, d):
         v = self.field(LOADS[op], base, d)
+        if op == 34 and base.ctype not in ('frame', 'redzone') and getattr(base, 'local_off', None) is None:
+            v = Value(v.text, v.ctype, v.prec, v.call, v.origin, v.vt)
+            v.byte_of = (base, d)
         if op in (48, 50):
             self.fpr[rt] = v
             self.ffresh.add(rt)
@@ -1657,6 +1674,10 @@ class Lifter:
         if base.ctype == 'toc':
             raise Fail('store into the TOC')
         value = self.freg(rt) if op in (52, 54) else self.reg(rt)
+        bit = getattr(value, 'bit_op', None)
+        if op == 38 and bit is not None and (bit[0][0] is base or bit[0][0].text == base.text) and bit[0][1] == d:
+            self.stmts.append(f'FIELD(BF8, {paren(base)}, {d}).b{bit[1]} = {bit[2]};')
+            return
         ctype = STORES[op]
         if ctype == 'u32' and value.ctype in ('ptr', 'addr', 'gaddr'):
             ctype = 'void*'
