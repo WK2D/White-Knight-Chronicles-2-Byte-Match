@@ -6,6 +6,7 @@ extern "C" {
 
 static void* __attribute__((noinline)) stub_0055c6d8(int p0, int p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static int __attribute__((noinline)) stub_0055d960(int p0, int p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
+static void __attribute__((noinline)) stub_0055dc98(int p0, int p1, void* p2, void* p3) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); }
 static int __attribute__((noinline)) stub_0055df20(int p0, int p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static void __attribute__((noinline)) stub_0055df74(int p0, void* p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 static void __attribute__((noinline)) stub_0055dfd0(int p0, void* p1, void* p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
@@ -41,6 +42,16 @@ int fn_0055d99c(int a0, int a1) {
     int t0;
     t0 = stub_0055d960((int)(a0), (int)(a1));
     return (int)((int)((u32)((int)(signed char)(t0)) << 2) + (int)((int)(signed char)(t0)));
+}
+
+void fn_0055dcd0(int a0, int a1, int a2) {
+    int v0;
+    int v12;
+    v12 = (int)(a2);
+    for (v0 = 0; v0 < 11; v0++) {
+        stub_0055dc98((int)(a0), (int)(a1), (void*)((int)(v0) * 1), (void*)(v12));
+        v12 = (int)((char*)v12 + 12);
+    }
 }
 
 void fn_0055df98(int a0, int a1) {

@@ -29,6 +29,28 @@ int fn_008e26e0(unk_008e26e0_a0* a0, int a1) {
     return (int)(1);
 }
 
+struct unk_008e2a24_a0 {
+    char pad_0[8];
+    u32 f_8;
+};
+void* fn_008e2a24(unk_008e2a24_a0* a0, void* a1) {
+    int v0;
+    u32 v1;
+    int v3;
+    int v4;
+    v1 = (u32)(a0->f_8);
+    for (v0 = 0; v0 < (int)(a1); v0++) {
+        if ((int)(v1) != (int)(0)) {
+            v3 = (int)(FIELD(u32, v1, 12));
+        } else {
+            v3 = (int)(v1);
+        }
+        v1 = (u32)(v3);
+    }
+    v4 = (int)(v1);
+    return (void*)(v4);
+}
+
 struct unk_008e2bf4_a0 {
     float f_0;
     u32 f_4;

@@ -26,19 +26,18 @@ int fn_0070c8e8(unk_0070c8e8_a0* a0, unk_0070c8e8_a1* a1) {
     int t0;
     if ((int)(a0->f_ab8) == (int)(0)) {
         if ((int)(a0->f_49c->f_3871) != (int)(0)) {
-            a1->f_0 = (u8)(1);
+        } else {
+            t0 = fn_00691ed8((void*)(a0->f_49c));
+            if ((int)((u32)(t0) & 0xff) != (int)(0)) {
+                a1->f_0 = (u8)(1);
+                return (int)(1);
+            }
+            if ((int)(a0->f_a91) != (int)(0)) {
+                a1->f_0 = (u8)(1);
+                return (int)(1);
+            }
             return (int)(1);
         }
-        t0 = fn_00691ed8((void*)(a0->f_49c));
-        if ((int)((u32)(t0) & 0xff) != (int)(0)) {
-            a1->f_0 = (u8)(1);
-            return (int)(1);
-        }
-        if ((int)(a0->f_a91) != (int)(0)) {
-            a1->f_0 = (u8)(1);
-            return (int)(1);
-        }
-        return (int)(1);
     }
     a1->f_0 = (u8)(1);
     return (int)(1);

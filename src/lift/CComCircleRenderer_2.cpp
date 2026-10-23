@@ -5,7 +5,24 @@
 extern "C" {
 
 void fn_000c36fc(void*);
+static void __attribute__((noinline)) stub_006704c8(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
+static void __attribute__((noinline)) stub_00674020(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
 static void __attribute__((noinline)) stub_00674270(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
+
+struct unk_00674270_a0 {
+    char pad_0[4];
+    u8 f_4;
+};
+void fn_00674270(unk_00674270_a0* a0) {
+    int v0;
+    void* v12;
+    v12 = (void*)((&a0->f_4));
+    for (v0 = 0; v0 < 4; v0++) {
+        stub_006704c8((void*)(v12));
+        v12 = (void*)((char*)v12 + 36);
+    }
+    stub_00674020((void*)(a0));
+}
 
 struct unk_006742cc_a0 {
     virtual void vf0();

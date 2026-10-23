@@ -175,13 +175,28 @@ def swaps(code):
     return out
 
 
+def voided(code):
+    """The function returning nothing: the lifter takes whatever r3 holds at
+    a return for a result, but the source may have been void (r3 then held
+    a leftover, such as the last call's argument)."""
+    lines = code.split('\n')
+    m = re.match(r'^(\S.*?) (fn_[0-9a-f]{8}\(.*)$', lines[0])
+    if not m or m.group(1) == 'void':
+        return None
+    body = [re.sub(r'^(\s*)return .+;$', r'\1return;', l) for l in lines[1:]]
+    return '\n'.join([f'void {m.group(2)}'] + body)
+
+
 def variants(code):
     """Other forms of a lifted function: statement orders, inverted ifs,
-    swapped comparisons, and a few statement orders of each."""
+    swapped comparisons, a void version, and a few statement orders of each."""
     out = reorders(code)
-    for other in flips(code) + swaps(code):
+    void = voided(code)
+    for other in flips(code) + swaps(code) + ([void] if void else []):
         out.append(other)
         out += reorders(other)[:8]
+    if void:                                     # the void version first among the extras
+        out.insert(0, void)
     return list(dict.fromkeys(out))[:MAX_VARIANTS * 3]
 
 

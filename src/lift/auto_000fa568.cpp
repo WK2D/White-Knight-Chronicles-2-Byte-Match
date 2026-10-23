@@ -25,6 +25,19 @@ u32 fn_000fa568(void) {
     return (u32)(((u32)((&g_000fa568_0)->f_0->f_78->f_1798) >> 31));
 }
 
+int fn_000fa62c(int a0, int a1) {
+    int v0;
+    int v2;
+    v2 = (int)(((int)(a0) + 851968) + 6892);
+    for (v0 = 0; v0 < 16; v0++) {
+        if ((int)(FIELD(u32, v2, 0)) == (int)(a1)) {
+            return (int)(1);
+        }
+        v2 = (int)((char*)v2 + 4);
+    }
+    return (int)(0);
+}
+
 struct unk_000fa68c_a0 {
     u8 f_0;
 };

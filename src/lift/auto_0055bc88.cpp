@@ -42,6 +42,22 @@ void fn_0055c42c(unk_0055c42c_a0* a0, int a1) {
     a0->f_0->f_4 = (u32)((int)(a0->f_0->f_4) + (int)(a1));
 }
 
+struct unk_0055c6d8_a0 {
+    u32 f_0;
+};
+int fn_0055c6d8(unk_0055c6d8_a0* a0, int a1) {
+    int v0;
+    int v3;
+    v3 = (int)(a0->f_0 + 332);
+    for (v0 = 0; v0 < 16; v0++) {
+        if ((int)(FIELD(u8, v3, 0)) == (int)(a1)) {
+            return (int)((int)(v0) * 1);
+        }
+        v3 = (int)((char*)v3 + 2);
+    }
+    return (int)(-1);
+}
+
 void fn_0055c714(int a0, int a1) {
     stub_0055c6d8((int)(a0), (int)(a1));
 }

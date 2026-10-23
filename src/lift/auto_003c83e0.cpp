@@ -5,6 +5,29 @@
 extern "C" {
 
 
+struct unk_003c8568_a0 {
+    char pad_0[4];
+    u32 f_4;
+};
+int fn_003c8568(unk_003c8568_a0* a0) {
+    int v0;
+    int v2;
+    int v4;
+    if ((int)(a0->f_4) != (int)(0)) {
+        v2 = (int)(a0->f_4 + 17944);
+        for (v0 = 0; v0 < 1024; v0++) {
+            if ((int)((int)(signed char)(FIELD(u8, v2, 0))) >= (int)(0)) {
+                FIELD(u8, v2, 0) = (u8)(0);
+            }
+            v2 = (int)((char*)v2 + 1);
+        }
+        v4 = (int)(1);
+    } else {
+        v4 = (int)(0);
+    }
+    return (int)(v4);
+}
+
 struct unk_003c8f88_a0_8;
 struct unk_003c8f88_a0_8 {
     char pad_0[3728];

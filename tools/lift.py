@@ -55,6 +55,8 @@ def branch_target(address, word):
 
 class Value:
     def __init__(self, text, ctype='int', prec=0, call=None, origin=None, vt=None):
+        if len(text) > 4000:                 # nested copies of an expression can grow without end
+            raise Fail('expression too large')
         self.text, self.ctype, self.prec, self.call = text, ctype, prec, call
         self.origin = origin       # for 'x + n': x, which is a pointer if the sum is used as one
         # Virtual dispatch: ('vptr', obj) the word at offset 0 of obj, ('slot', obj, k)
@@ -255,6 +257,8 @@ class Lifter:
         self.vfresh = set()               # vector registers written since the last call
         self.vsaves = set()               # frame offsets (as text) of saved vector registers
         self.crbits = {}                  # condition bit -> combined comparison (cror/crnor)
+        self.outlined_ret = {}            # index of a b from an out-of-line loop block -> its target in the loop
+        self.outlined_regions = {}        # loop header -> [(start, end)] of its out-of-line blocks
         self.stmts, self.calls, self.globals = [], {}, {}
         self.fresh = set()
         self.cr = {}                      # condition field -> (lhs, rhs, 'signed'|'unsigned'|'pointer')
@@ -600,7 +604,15 @@ class Lifter:
         # A backward branch is a loop only if its target leads back to it.
         # Otherwise GCC placed a shared tail (often the epilogue) earlier and
         # jumps back to it: lift that as the path it is.
+        # A backward branch from a block placed after a loop's latch into that
+        # loop is not a loop of its own: GCC moved part of the loop body (an
+        # if's then-block) out of line, and it jumps back.
         for i, t in back:
+            if any(h < t <= i2 < i for i2, h in back if (i2, h) != (i, t)):
+                self.outlined_ret[i] = t
+        for i, t in back:
+            if i in self.outlined_ret:
+                continue
             if self.block_start(i) in self.reach_all(t):
                 self.loops[t] = max(self.loops.get(t, i), i)
             else:
@@ -617,6 +629,10 @@ class Lifter:
                 elif x >> 26 == 18 and not x & 1:
                     t = j + (branch_target(0, x) >> 2)
                 if t is None or h <= t <= l + 1 or t in self.back_returns or j in self.tails:
+                    continue
+                outlined = [i for i, t2 in self.outlined_ret.items() if t <= i and h <= t2 <= l and t > l]
+                if outlined:                                   # into an out-of-line part of the body
+                    self.outlined_regions.setdefault(h, []).append((t, max(outlined) + 1))
                     continue
                 if t > l + 1 and self.only_returns(t) and not any(
                         h2 <= x_ <= l2 for x_ in self.successors(t) for h2, l2 in self.loops.items()):
@@ -794,7 +810,7 @@ class Lifter:
                 todo += ([target] if target > last else []) + [last + 1]
             elif op == 18 and not t & 1:
                 target = last + (branch_target(0, t) >> 2)
-                if target > last:
+                if target > last or last in self.outlined_ret:
                     todo.append(target)
             elif last in self.switches:
                 todo += [x for x in self.switches[last] if x > last]
@@ -949,14 +965,42 @@ class Lifter:
         out.discard(2)
         return out
 
+    def declared(self, var):
+        """The C type a merge or loop variable was declared with (its value's
+        ctype can change later, when it turns out to be a pointer)."""
+        return next((t for t, n in self.vars if n == var.text), CTYPES.get(var.ctype, 'int'))
+
     def loop_updates(self):
         """Assignments that give the loop variables their current values."""
         out = []
         for r, var in self.loop_vars[-1].items():
             now = self.gpr[r]
             if now is not None and now is not var:
-                out.append(f'{var.text} = ({CTYPES.get(var.ctype, "int")})({now.text});')
+                out.append(f'{var.text} = ({self.declared(var)})({now.text});')
         return out
+
+    def compare_trips(self, header, latch, ivs):
+        """The trip count (as text) of a loop whose latch is
+        cmpwi/cmplwi rI,C; bne header with rI an induction register from 0
+        by S: C/S + 1 if the compare reads rI before its step, C/S after.
+        None for any other latch."""
+        w = self.words
+        x = w[latch]
+        if (x >> 21) & 0x1E not in (4, 6) or ((x >> 16) & 31) & 3 != 2:
+            return None                                   # not "branch if not equal"
+        crf = ((x >> 16) & 31) >> 2
+        block = self.block_start(latch)
+        cmp = next((k for k in range(latch - 1, block - 1, -1)
+                    if w[k] >> 26 in (10, 11) and (w[k] >> 23) & 7 == crf), None)
+        if cmp is None or (w[cmp] >> 16) & 31 not in ivs:
+            return None
+        r = (w[cmp] >> 16) & 31
+        step = ivs[r]
+        limit = w[cmp] & 0xFFFF if w[cmp] >> 26 == 10 else s16(w[cmp] & 0xFFFF)
+        stepped = next((k for k in range(header, latch) if w[k] >> 26 == 14 and (w[k] >> 21) & 31 == r), None)
+        if step <= 0 or limit <= 0 or limit % step or stepped is None:
+            return None
+        return str(limit // step + (1 if stepped > cmp else 0))
 
     def induction_registers(self, start, end):
         """{register: stride} for registers that [start, end) writes only
@@ -983,17 +1027,21 @@ class Lifter:
         exit_ = latch + 1
         last = self.words[latch]
         conditional = last >> 26 == 16
-        counted = conditional and self.branch_condition(last) == 'BDNZ'
+        counted = conditional and (last >> 21) & 0x16 == 0x10       # bdnz (by its BO bits; no condition yet)
         written = self.written_in(header, exit_)
+        for start, end in self.outlined_regions.get(header, ()):
+            written |= self.written_in(start, end)
         # Counted loops become for (i = 0; i < n; i++). Registers that start
         # at 0 and only step by a constant are byte offsets i * stride:
         # written that way, GCC picks the original's induction variables.
-        ivs = self.induction_registers(header, exit_) if counted and test is None and self.ctr is not None else {}
+        ivs = self.induction_registers(header, exit_) if test is None and conditional else {}
         ivs = {r: s for r, s in ivs.items() if self.gpr[r] is not None and self.gpr[r].text == '0'}
-        if counted and test is None and self.ctr is not None:
+        trips = self.ctr.text if counted and self.ctr is not None else None
+        if not counted and conditional and test is None:
+            trips = self.compare_trips(header, latch, ivs)
+        if test is None and trips is not None and (not counted or self.ctr is not None):
             index = f'v{len(self.vars)}'
             self.vars.append(('int', index))
-            trips = self.ctr.text
             self.ctr = None
             carried = {}
             for r in sorted(written):
@@ -1028,7 +1076,7 @@ class Lifter:
                     if getattr(now, 'iv', None) != (index, ivs[r], 1):
                         raise Fail('induction variable not stepped once')
                 elif now is not None and now is not var:
-                    body.append(f'{var.text} = ({CTYPES.get(var.ctype, "int")})({now.text});')
+                    body.append(f'{var.text} = ({self.declared(var)})({now.text});')
             self.loop_vars.pop()
             self.in_loop.pop()
             self.stmts = outer
@@ -1102,7 +1150,7 @@ class Lifter:
             for r, var in carried.items():
                 now = self.gpr[r]
                 if now is not None and now is not var:
-                    body.append(f'{var.text} = ({CTYPES.get(var.ctype, "int")})({now.text});')
+                    body.append(f'{var.text} = ({self.declared(var)})({now.text});')
                     updates[id(now)] = var
             if counted:
                 cond = f'--{counter} != 0'
@@ -2304,9 +2352,14 @@ def main():
         return
     prune = set()
     pruned_path = BUILD / 'lift_pruned.txt'
-    if '--prune' in sys.argv:
-        log = Path(sys.argv[sys.argv.index('--prune') + 1]).read_text(encoding='utf-8', errors='replace')
-        prune = {int(m.group(1), 16) for m in re.finditer(r'^([0-9a-f]{8}) +[\d.]+% (?!MATCH)', log, re.M)}
+    if '--prune' in sys.argv or '--prune-errors' in sys.argv:
+        # --prune drops what does not match; --prune-errors only what does not
+        # compile (so every near-miss stays visible to tools/permute.py).
+        flag = '--prune' if '--prune' in sys.argv else '--prune-errors'
+        log = Path(sys.argv[sys.argv.index(flag) + 1]).read_text(encoding='utf-8', errors='replace')
+        prune = set()
+        if flag == '--prune':
+            prune = {int(m.group(1), 16) for m in re.finditer(r'^([0-9a-f]{8}) +[\d.]+% (?!MATCH)', log, re.M)}
         for block in re.split(r'^warning: ', log, flags=re.M):
             if 'compile failed' not in block.split('\n', 1)[0]:
                 continue

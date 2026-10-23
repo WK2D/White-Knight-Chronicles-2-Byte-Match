@@ -7,10 +7,14 @@ extern "C" {
 static void __attribute__((noinline)) stub_008df76c(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
 static void __attribute__((noinline)) stub_008e06dc(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
 void fn_00b3d088(void*, int, int);
+void fn_00bba068(void*);
+void fn_00bba08c(void*);
 void fn_00bbb428(void*);
 void fn_00bbb48c(void*);
 void fn_00bbb4f0(void*);
 void fn_00bbb554(void*);
+void fn_00bbb5b8_2(void*);
+void fn_00bbb700_2(void*);
 void fn_00bbb848(void*);
 void fn_00bbb914(void*);
 void fn_00bbb9e0(void*);
@@ -48,6 +52,32 @@ void fn_00bbb5b8(unk_00bbb5b8_a0* a0) {
     a0->f_504 = (u32)(0);
 }
 
+struct unk_00bbb66c_a0 {
+    u32 f_0;
+    u32 f_4;
+    u32 f_8;
+};
+void fn_00bbb66c(unk_00bbb66c_a0* a0) {
+    u32 v0;
+    int v11;
+    u32 v13;
+    if ((int)(a0->f_4) != (int)(0)) {
+        if ((int)(a0->f_8) > (int)(0)) {
+            v0 = (u32)(a0->f_8);
+            v11 = (int)(0);
+            v13 = (u32)(a0->f_4);
+            do {
+                fn_00bbb5b8_2((void*)(v13));
+                FIELD(u32, v13, 1284) = (u32)(a0->f_0);
+                fn_00bba08c((void*)(v13));
+                v0 = (u32)(a0->f_8);
+                v11 = (int)(v11 + 1);
+                v13 = (u32)((char*)v13 + 1288);
+            } while ((int)(v0) > (int)(v11));
+        }
+    }
+}
+
 struct unk_00bbb700_a0 {
     char pad_0[160];
     u8 f_a0;
@@ -76,6 +106,32 @@ void fn_00bbb700(unk_00bbb700_a0* a0) {
     stub_008df76c((void*)((&a0->f_424)));
     fn_00bbb428((void*)((&a0->f_a0)));
     a0->f_4c4 = (u32)(0);
+}
+
+struct unk_00bbb7b4_a0 {
+    u32 f_0;
+    u32 f_4;
+    u32 f_8;
+};
+void fn_00bbb7b4(unk_00bbb7b4_a0* a0) {
+    u32 v0;
+    int v11;
+    u32 v13;
+    if ((int)(a0->f_4) != (int)(0)) {
+        if ((int)(a0->f_8) > (int)(0)) {
+            v0 = (u32)(a0->f_8);
+            v11 = (int)(0);
+            v13 = (u32)(a0->f_4);
+            do {
+                fn_00bbb700_2((void*)(v13));
+                FIELD(u32, v13, 1220) = (u32)(a0->f_0);
+                fn_00bba068((void*)(v13));
+                v0 = (u32)(a0->f_8);
+                v11 = (int)(v11 + 1);
+                v13 = (u32)((char*)v13 + 1224);
+            } while ((int)(v0) > (int)(v11));
+        }
+    }
 }
 
 struct unk_00bbbb78_a0 {

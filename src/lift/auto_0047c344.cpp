@@ -4,7 +4,6 @@
 
 extern "C" {
 
-int fn_0036dee0(void*);
 static void __attribute__((noinline)) stub_0047c344(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 static void* __attribute__((noinline)) stub_0047f10c(int p0, int p1, int p2) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
 static void* __attribute__((noinline)) stub_0047f41c(int p0, int p1, int p2) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
@@ -18,36 +17,6 @@ void fn_0047c3e0(int a0) {
     stub_0047c344((int)(a0));
 }
 
-struct unk_0047f308_a0 {
-    char pad_0[72];
-    u32 f_48;
-    char pad_4c[16];
-    u32 f_5c;
-    u32 f_60;
-    char pad_64[20];
-    u8 f_78;
-};
-void* fn_0047f308(unk_0047f308_a0* a0) {
-    int t0;
-    if ((int)(a0->f_78) == (int)(0)) {
-        return (void*)(0);
-    }
-    if ((int)(a0->f_60) == (int)(0)) {
-        return (void*)(0);
-    }
-    if ((int)(a0->f_5c) == (int)(0)) {
-        return (void*)(0);
-    }
-    if ((int)(a0->f_48) == (int)(0)) {
-        return (void*)(0);
-    }
-    t0 = fn_0036dee0((void*)(a0->f_48));
-    if ((int)((u32)(t0) & 0xff) == (int)(0)) {
-        return (void*)(0);
-    }
-    return (void*)(a0->f_60);
-}
-
 void* fn_0047f624(int a0, int a1) {
     void* t0;
     int t1;
@@ -57,36 +26,6 @@ void* fn_0047f624(int a0, int a1) {
     }
     t1 = stub_0047f518((int)(a0), (int)(a1), (int)(0));
     return (void*)(t1);
-}
-
-struct unk_0047f790_a0 {
-    char pad_0[24];
-    u32 f_18;
-    char pad_1c[4];
-    u32 f_20;
-    u32 f_24;
-    char pad_28[77];
-    u8 f_75;
-};
-void* fn_0047f790(unk_0047f790_a0* a0) {
-    int t0;
-    if ((int)(a0->f_75) == (int)(0)) {
-        return (void*)(0);
-    }
-    if ((int)(a0->f_24) == (int)(0)) {
-        return (void*)(0);
-    }
-    if ((int)(a0->f_20) == (int)(0)) {
-        return (void*)(0);
-    }
-    if ((int)(a0->f_18) == (int)(0)) {
-        return (void*)(0);
-    }
-    t0 = fn_0036dee0((void*)(a0->f_18));
-    if ((int)((u32)(t0) & 0xff) == (int)(0)) {
-        return (void*)(0);
-    }
-    return (void*)(a0->f_24);
 }
 
 void* fn_0047fb50(int a0, int a1) {

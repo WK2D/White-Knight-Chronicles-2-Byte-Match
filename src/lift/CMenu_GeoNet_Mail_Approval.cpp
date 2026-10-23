@@ -28,12 +28,12 @@ int fn_006ea278(unk_006ea278_a0* a0, unk_006ea278_a1* a1) {
     int t0;
     if ((int)(a0->f_15bc) != (int)(0)) {
         a1->f_0 = (u8)(1);
-        return (int)(1);
-    }
-    t0 = fn_00691ed8((u32)(a0->f_24));
-    if ((int)((u32)(t0) & 0xff) != (int)(0)) {
-        a1->f_0 = (u8)(1);
-        return (int)(1);
+    } else {
+        t0 = fn_00691ed8((u32)(a0->f_24));
+        if ((int)((u32)(t0) & 0xff) != (int)(0)) {
+            a1->f_0 = (u8)(1);
+            return (int)(1);
+        }
     }
     return (int)(1);
 }

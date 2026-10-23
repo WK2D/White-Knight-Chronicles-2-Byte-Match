@@ -43,26 +43,4 @@ int fn_00078228(int a0) {
     return (int)(0);
 }
 
-u32 fn_00078284(int a0) {
-    if ((int)(a0) != (int)(0)) {
-        if ((int)(a0) >= (int)(0)) {
-            return (u32)((u32)(1) & 0x7);
-        }
-        if ((int)((int)(signed char)((u32)(a0) << 1)) >= (int)(0)) {
-            return (u32)((u32)(1) & 0x7);
-        }
-        if ((int)((int)(signed char)((u32)((int)(signed char)((u32)(a0) << 1)) << 1)) >= (int)(0)) {
-            return (u32)((u32)(2) & 0x7);
-        }
-        if ((int)((int)(signed char)((u32)((int)(signed char)((u32)((int)(signed char)((u32)(a0) << 1)) << 1)) << 1)) >= (int)(0)) {
-            return (u32)((u32)(3) & 0x7);
-        }
-        if ((int)((int)(signed char)((u32)((int)(signed char)((u32)((int)(signed char)((u32)((int)(signed char)((u32)(a0) << 1)) << 1)) << 1)) << 1)) >= (int)(0)) {
-            return (u32)((u32)(4) & 0x7);
-        }
-        return (u32)((u32)(1) & 0x7);
-    }
-    return (u32)((u32)(0) & 0x7);
-}
-
 }

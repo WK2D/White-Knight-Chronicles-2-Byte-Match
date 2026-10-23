@@ -5,7 +5,6 @@
 extern "C" {
 
 int fn_00041b48(void*);
-int fn_0036dee0(void*);
 static void __attribute__((noinline)) stub_00482338(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 
 void fn_004823b0(int a0) {
@@ -215,36 +214,6 @@ int fn_004830b0(unk_004830b0_a0* a0) {
         v2 = (int)(0);
     }
     return (int)(v2);
-}
-
-struct unk_00484364_a0 {
-    char pad_0[28];
-    u32 f_1c;
-    u32 f_20;
-    char pad_24[4];
-    u32 f_28;
-    char pad_2c[53];
-    u8 f_61;
-};
-void* fn_00484364(unk_00484364_a0* a0) {
-    int t0;
-    if ((int)(a0->f_61) == (int)(0)) {
-        return (void*)(0);
-    }
-    if ((int)(a0->f_1c) == (int)(0)) {
-        return (void*)(0);
-    }
-    if ((int)(a0->f_20) == (int)(0)) {
-        return (void*)(0);
-    }
-    if ((int)(a0->f_28) == (int)(0)) {
-        return (void*)(0);
-    }
-    t0 = fn_0036dee0((void*)(a0->f_1c));
-    if ((int)((u32)(t0) & 0xff) == (int)(0)) {
-        return (void*)(0);
-    }
-    return (void*)(a0->f_20);
 }
 
 }

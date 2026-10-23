@@ -7,6 +7,16 @@ extern "C" {
 void fn_00b37fa8(void*, int, int);
 void fn_00fca710(void);
 
+void fn_00017680(int a0) {
+    int v0;
+    int v12;
+    v12 = (int)(a0 + 12);
+    for (v0 = 0; v0 < 7; v0++) {
+        fn_00b37fa8((void*)(v12), (int)(0), (int)(124));
+        v12 = (int)((char*)v12 + 136);
+    }
+}
+
 void fn_0001787c(void) {
     fn_00fca710();
 }

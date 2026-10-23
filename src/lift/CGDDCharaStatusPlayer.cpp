@@ -11554,11 +11554,11 @@ int fn_00387324(unk_00387324_a0* a0, unk_00387324_a1* a1, int a2) {
         return (int)(0);
     }
     t3 = a1->vf53();
-    if ((int)((u32)(t3) & 0xff) == (int)(0)) {
+    if ((int)((u32)(t3) & 0xff) != (int)(0)) {
+        a0->vf249((void*)(a1));
+        a0->vf267((int)(3));
         return (int)(0);
     }
-    a0->vf249((void*)(a1));
-    a0->vf267((int)(3));
     return (int)(0);
 }
 

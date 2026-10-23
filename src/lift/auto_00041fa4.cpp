@@ -4,6 +4,47 @@
 
 extern "C" {
 
+static int __attribute__((noinline)) stub_00042a2c_2(int p0, int p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
+static int __attribute__((noinline)) stub_00042a2c(void* p0, int p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
+int fn_00b38038(u32, void*);
+
+struct unk_00042d10_a0 {
+    char pad_0[40];
+    u32 f_28;
+    u32 f_2c;
+};
+void fn_00042d10(unk_00042d10_a0* a0, void* a1) {
+    int t0;
+    int t1;
+    void* v1;
+    v1 = (void*)(a0);
+    for (;;) {
+        t0 = stub_00042a2c((void*)(a0), (int)(0));
+        if ((int)(t0) < (int)(0)) {
+            v1 = (void*)(t0);
+            break;
+        }
+        if ((int)(a0->f_28) <= (int)(t0)) {
+            v1 = (void*)(t0);
+            break;
+        }
+        t1 = fn_00b38038((u32)(FIELD(u32, (int)((u32)(t0) << 3) + (int)(a0->f_2c), 0)), (void*)(a1));
+        v1 = (void*)(t1);
+        if ((int)(v1) == (int)(0)) {
+            break;
+        }
+    }
+}
+
+void fn_00042d98(int a0) {
+    int t0;
+    int v1;
+    v1 = (int)(a0);
+    do {
+        t0 = stub_00042a2c_2((int)(a0), (int)(1));
+        v1 = (int)(t0);
+    } while ((int)(v1) >= (int)(0));
+}
 
 struct unk_00043228_a1 {
     char pad_0[20];

@@ -24,7 +24,7 @@ alternative to the static-recompilation port at
   `-O2` and not with `-fno-ivopts`. The project used `-O2 -fno-ivopts` before
   2026-10-22; only `src/game/CPostEffectManager.cpp` keeps that, as an
   override, until a natural `-O2` form of `fn_004b32e8` is found.
-- Matched: **16,722 of 50,844 functions** (3.47% of code). Six are by hand
+- Matched: **17,566 of 50,844 functions** (3.85% of code). Six are by hand
   (`src/game/*.cpp`); the rest are generated: `tools/gen_simple.py`
   (`src/gen/`, small shapes), `tools/lift.py` (`src/lift/`, the lifter),
   `tools/permute.py` (`src/perm/`, lifter output in another statement order)
@@ -202,6 +202,18 @@ Rename units to their real source files as they are identified, and edit
 
 ## Pitfalls
 
+- Near-miss tools need every lifted function to compile. In an unpruned
+  check about 740 files failed (so all their functions were invisible to
+  `permute.py` and `nearmiss.py`); `permute_all.sh` now repeats
+  `lift.py --prune-errors` (drops only what fails to compile) before the
+  search. Loop and merge variables keep their declared type in updates
+  (`declared()`), which removed the most common error.
+- Expressions longer than 4,000 characters fail the lift ("expression too
+  large"): nested copies of one expression grew until Python ran out of
+  memory, which silently stopped `permute_all.sh` (its `&&` chains skip the
+  rest). If a pipeline step's count does not change at all, run that step by
+  hand and read its traceback.
+
 - Do not edit `tools/lift.py` (or the other tools a pipeline calls) while
   `lift_all.sh` / `permute_all.sh` runs: each round re-runs the scripts.
 - Docker Desktop sometimes stops (and Windows updates restart the machine).
@@ -235,6 +247,14 @@ their blocks sit in memory: GCC lays case bodies out in source order (in
 between cases is not handled (fail). Float-to-int conversions through the
 red zone (`addi r9,r1,-16; fctiwz; stfiwx f0,0,r9; lbz r3,-13(r1)`) lift as
 `(u8)(f)` etc.
+
+Regression to look at (2026-10-23): 56 functions that matched before the
+blind-spot fix no longer do, e.g. `fn_00078284`, which now lifts as nested
+ifs with a merge variable where it used to lift as early returns (96%), and
+`fn_002df8dc` (90%). One of the day's control-flow changes (comparisons kept
+across joins, N-way merge, switch support, out-of-line loop blocks) is the
+likely cause; compare `git show <old>:src/lift/auto_000775fc.cpp` with
+`lift.py --one 78284`.
 
 After that, by size (`lift.py` failure reasons, `build/why_all.py`-style
 counts over all functions up to 384 instructions):
@@ -324,6 +344,9 @@ counts over all functions up to 384 instructions):
   variants in about 5 minutes. Inverting if/else (one at a time and all
   together, each with a few reorders) found only 36 more from 48,108 variants; swapping comparison operands
   found 1 from 67,044 (GCC puts compare operands in its own order).
+  It also tries each function as `void` (`voided`): the lifter takes whatever
+  r3 holds at a return for a result, but often the source returned nothing
+  and r3 held a leftover (`fn_0001c828` went from 17% to 96% that way).
 - C++ constructors: a store of a vtable pointer (a TOC word that is a
   vtable address from RTTI, build/vtables.json; the stored value is the
   listed address itself) into `this` at offset 0 marks a constructor.
@@ -436,6 +459,18 @@ counts over all functions up to 384 instructions):
 - Prologue saves of r29 where ours saves r31 (about 700 near-misses): the
   original kept r30/r31 for variables the optimiser later removed; not
   reproducible from the machine code alone.
+- Out-of-line loop blocks: GCC moves an if's then-block out of a loop to the
+  end of the function; it jumps back into the loop (`fn_0001c828`). A
+  backward branch from after a loop's latch into that loop is recorded in
+  `outlined_ret` (not a loop); `successors()` follows it, and the loop's
+  written registers include `outlined_regions`.
+- Loops ending in `cmpwi rI,C; bne` with rI an induction register become
+  `for (i = 0; i < N; i++)` like counted loops (`compare_trips`: N = C/S + 1
+  when the compare reads rI before its step, C/S after). Before this the
+  lifter tested the stepped value (`do { ...; v += S; } while (v != C)`),
+  one iteration short when the game compares the old value.
+- `loop()` tells a `bdnz` latch by its BO bits; it used to evaluate the
+  latch condition at the loop's entry and fail ("condition field never set").
 - Calls through function pointers: `lwz r0,0(rX); std r2,40(r1); mtctr r0;
   lwz r2,4(rX); bctrl` with rX not a vtable slot is `((T (*)(...))(x))(...)`
   (rX points to the callee's descriptor). Weak-symbol tests (`if (&f)`) are

@@ -34,6 +34,21 @@ void* fn_009d2f14(void) {
     return (void*)(g_009d2f14_0);
 }
 
+void* fn_009d2f54(int a0, int a1, void* a2) {
+    int v0;
+    int v2;
+    int v3;
+    int v5;
+    v2 = (int)(0);
+    v3 = (int)(a1);
+    for (v0 = 0; v0 < (int)(a2); v0++) {
+        v2 = (int)((u32)(v2) | (u32)((u32)(1) << (int)(FIELD(u16, v3, 0))));
+        v3 = (int)((char*)v3 + 2);
+    }
+    v5 = (int)(v2);
+    return (void*)(v5);
+}
+
 struct unk_009d2f8c_a0 {
     u16 f_0;
 };

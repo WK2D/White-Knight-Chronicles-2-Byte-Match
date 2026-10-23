@@ -9,9 +9,12 @@ float fn_00041b90(int);
 void fn_000c0398(int);
 void fn_00308994(void*);
 void fn_003089cc(void*);
+static void __attribute__((noinline)) stub_005b55a4(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
+static void __attribute__((noinline)) stub_005b55ac(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
 static void __attribute__((noinline)) stub_005b6448(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 static void __attribute__((noinline)) stub_005b6714_2(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 static void __attribute__((noinline)) stub_005b6714(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
+void fn_00b37fa8(void*, int, int);
 
 struct unk_005b5b5c_g1aa8;
 struct unk_005b5b5c_g1aa8_4;
@@ -28,6 +31,18 @@ int fn_005b5b5c(int a0) {
     float t0;
     t0 = fn_00041b90((int)(a0));
     (&g_005b5b5c_0)->f_4->f_59c = t0;
+    return (int)(1);
+}
+
+struct unk_005b5cf8_a0 {
+    char pad_0[1072];
+    u8 f_430;
+};
+int fn_005b5cf8(unk_005b5cf8_a0* a0) {
+    int v0;
+    for (v0 = 0; v0 < 8; v0++) {
+        fn_00b37fa8((void*)((&a0->f_430)), (int)(0), (int)(64));
+    }
     return (int)(1);
 }
 
@@ -86,6 +101,34 @@ void fn_005b67dc(int a0) {
 
 void fn_005b67e0(int a0) {
     stub_005b6448((int)(a0));
+}
+
+struct unk_005b6904_a0 {
+    char pad_0[256];
+    u8 f_100;
+};
+void fn_005b6904(unk_005b6904_a0* a0) {
+    void* v11;
+    v11 = (void*)(a0);
+    do {
+        stub_005b55a4((void*)(v11));
+        v11 = (void*)((char*)v11 + 8);
+    } while ((int)((&a0->f_100)) != (int)(v11));
+    stub_005b55ac((void*)(a0));
+}
+
+struct unk_005b695c_a0 {
+    char pad_0[256];
+    u8 f_100;
+};
+void fn_005b695c(unk_005b695c_a0* a0) {
+    void* v11;
+    v11 = (void*)(a0);
+    do {
+        stub_005b55a4((void*)(v11));
+        v11 = (void*)((char*)v11 + 8);
+    } while ((int)((&a0->f_100)) != (int)(v11));
+    stub_005b55ac((void*)(a0));
 }
 
 void fn_005b69b4(int a0) {

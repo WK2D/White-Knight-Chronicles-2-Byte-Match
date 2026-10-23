@@ -5,6 +5,7 @@
 extern "C" {
 
 static void __attribute__((noinline)) stub_000d2260(float p0, float p1, float p2, float p3) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); }
+static void __attribute__((noinline)) stub_000d2348(int p0, u16 p1, float p2, float p3, float p4, float p5) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4), "r"(p5)); }
 
 void* fn_000d2130(float f0, float f1, float f2, float f3) {
     return (void*)((u32)((u32)((u32)((u32)((u32)(f0 * 255.0f)) << 24) | (u32)(((u32)((u32)(f1 * 255.0f)) << 16) & 0xff0000)) | (u32)(((u32)((u32)(f2 * 255.0f)) << 8) & 0xff00)) | (u32)((u32)((u32)(f3 * 255.0f)) & 0xff));
@@ -12,6 +13,13 @@ void* fn_000d2130(float f0, float f1, float f2, float f3) {
 
 void fn_000d22d0(float f0, float f1, float f2, float f3) {
     stub_000d2260((float)((f0 + f0) - 1.0f), (float)(f1 * -2.0f + 1.0f), (float)(f2 + f2), (float)(f3 + f3));
+}
+
+void fn_000d2380(int a0, float f0, float f1, float f2, float f3) {
+    int v0;
+    for (v0 = 0; v0 < 4; v0++) {
+        stub_000d2348((int)(a0), (u16)((u16)((int)(v0) * 1)), (float)(f0), (float)(f1), (float)(f2), (float)(f3));
+    }
 }
 
 }

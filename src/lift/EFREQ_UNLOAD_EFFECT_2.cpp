@@ -9,7 +9,8 @@ static int __attribute__((noinline)) stub_008f714c(void* p0) { int r; __asm__ vo
 static void* __attribute__((noinline)) stub_008f7780_2(int p0, u32 p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static void* __attribute__((noinline)) stub_008f7780(int p0, int p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static void __attribute__((noinline)) stub_008feea4(void* p0, float p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
-static int __attribute__((noinline)) stub_008ff250(void* p0, void* p1, u16 p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
+static int __attribute__((noinline)) stub_008ff250_2(void* p0, void* p1, u16 p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
+static int __attribute__((noinline)) stub_008ff250(void* p0, u32 p1, u16 p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
 static int __attribute__((noinline)) stub_008ff5d4(void* p0, void* p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static int __attribute__((noinline)) stub_008ff7fc(int p0, void* p1, u8 p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
 static int __attribute__((noinline)) stub_008ffbac(int p0, int p1, int p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
@@ -30,12 +31,37 @@ void fn_008ff098(unk_008ff098_a0* a0, float f0) {
     stub_008feea4((void*)(a0), (float)(f0));
 }
 
+struct unk_008ff4e8_a0 {
+    char pad_0[23056];
+    u32 f_5a10;
+};
+int fn_008ff4e8(unk_008ff4e8_a0* a0, int a1, int a2) {
+    int t0;
+    u32 v0;
+    if ((int)(a0->f_5a10) != (int)(0)) {
+        v0 = (u32)(a0->f_5a10);
+        for (;;) {
+            if ((int)(FIELD(u32, v0, 8)) != (int)(0)) {
+                if ((int)(FIELD(u32, FIELD(u32, v0, 8), 36)) == (int)(a1)) {
+                    t0 = stub_008ff250((void*)(a0), (u32)(FIELD(u32, FIELD(u32, v0, 8), 4)), (u16)((u16)a2));
+                    return (int)((int)((u32)(t0) & 0xff));
+                }
+            }
+            v0 = (u32)(FIELD(u32, v0, 4));
+            if ((int)(v0) == (int)(0)) {
+                break;
+            }
+        }
+    }
+    return (int)(0);
+}
+
 extern char g_008ff570_0[];
 u8 fn_008ff570(void* a0, int a1, int a2) {
     void* t0;
     int t1;
     t0 = fn_00b3cd18((void*)(g_008ff570_0), (int)(a1), (int)(0), (int)(-1), (int)(0), (int)(0));
-    t1 = stub_008ff250((void*)(a0), (void*)(t0), (u16)((u16)a2));
+    t1 = stub_008ff250_2((void*)(a0), (void*)(t0), (u16)((u16)a2));
     return (u8)((u8)t1);
 }
 

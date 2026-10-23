@@ -11,7 +11,6 @@ static int __attribute__((noinline)) stub_0045520c(int p0, int p1, int p2) { int
 static void* __attribute__((noinline)) stub_0045544c(int p0, int p1, int p2) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
 static void* __attribute__((noinline)) stub_004555ec(int p0, int p1, int p2) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
 static void* __attribute__((noinline)) stub_004557f0(int p0, int p1, int p2) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
-static void* __attribute__((noinline)) stub_00455e4c(int p0, int p1, int p2) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
 static int __attribute__((noinline)) stub_004561bc(int p0, int p1, int p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
 static void* __attribute__((noinline)) stub_00456374(int p0, int p1, int p2) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
 static void* __attribute__((noinline)) stub_00456524(int p0, int p1, int p2) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
@@ -203,35 +202,6 @@ void* fn_00456828(int a0, int a1) {
     }
     t3 = stub_004561bc((int)(a0), (int)(a1), (int)(0));
     return (void*)(t3);
-}
-
-void* fn_004568d0(int a0, int a1) {
-    void* t0;
-    void* t1;
-    void* t2;
-    void* t3;
-    void* t4;
-    t0 = stub_00456728((int)(a0), (int)(a1), (int)(0));
-    if ((int)(t0) != (int)(0)) {
-        return (void*)(FIELD(u32, t0, 88));
-    }
-    t1 = stub_00456524((int)(a0), (int)(a1), (int)(0));
-    if ((int)(t1) != (int)(0)) {
-        return (void*)(FIELD(u32, t1, 88));
-    }
-    t2 = stub_00455e4c((int)(a0), (int)(a1), (int)(0));
-    if ((int)(t2) != (int)(0)) {
-        return (void*)(FIELD(u32, t2, 20));
-    }
-    t3 = stub_004557f0((int)(a0), (int)(a1), (int)(0));
-    if ((int)(t3) != (int)(0)) {
-        return (void*)(FIELD(u32, t3, 80));
-    }
-    t4 = stub_004555ec((int)(a0), (int)(a1), (int)(0));
-    if ((int)(t4) == (int)(0)) {
-        return (void*)(0);
-    }
-    return (void*)(FIELD(u32, t4, 80));
 }
 
 }

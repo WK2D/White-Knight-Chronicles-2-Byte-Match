@@ -38,12 +38,12 @@ int fn_0088570c(unk_0088570c_a0* a0, unk_0088570c_a1* a1) {
     t0 = stub_008854a8((void*)(a0));
     if ((int)((u32)(t0) & 0xff) != (int)(0)) {
         a1->f_0 = (u8)(1);
-        return (int)(1);
-    }
-    t1 = fn_00873d8c((u32)(a0->f_640));
-    if ((int)((u32)(t1) & 0xff) != (int)(0)) {
-        a1->f_0 = (u8)(1);
-        return (int)(1);
+    } else {
+        t1 = fn_00873d8c((u32)(a0->f_640));
+        if ((int)((u32)(t1) & 0xff) != (int)(0)) {
+            a1->f_0 = (u8)(1);
+            return (int)(1);
+        }
     }
     return (int)(1);
 }

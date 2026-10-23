@@ -4,8 +4,10 @@
 
 extern "C" {
 
+float fn_00417cb8(void*, void*);
 static int __attribute__((noinline)) stub_00422550(int p0, int p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static int __attribute__((noinline)) stub_00422700(int p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+void* fn_0058ecc0(void);
 float fn_0058eee4(int, float);
 
 void* fn_00422e64(int a0, float f0, float f1) {
@@ -45,6 +47,25 @@ int fn_00423c80(int a0, int a1) {
     t1 = stub_00422550((int)(a0), (int)(0));
     t2 = fn_0058eee4((int)((int)(short)(t1)), (float)((float)(int)((int)(short)(t1))));
     return (int)((int)(t2 * (float)(int)(a1)));
+}
+
+struct unk_0042423c_a0_0;
+struct unk_0042423c_a0_0 {
+    char pad_0[20];
+    u32 f_14;
+};
+struct unk_0042423c_a0 {
+    unk_0042423c_a0_0* f_0;
+};
+void fn_0042423c(unk_0042423c_a0* a0, void* a1) {
+    void* t0;
+    float t1;
+    int v0;
+    t0 = fn_0058ecc0();
+    for (v0 = 0; v0 < 6; v0++) {
+        t1 = fn_00417cb8((void*)(t0), (void*)((u32)((u32)((u32)(15) << (int)((int)(v0) * 4)) & (u32)(a0->f_0->f_14)) >> (int)((int)(v0) * 4)));
+        FIELD(float, (char*)a1 + (int)(v0) * 4, 0) = t1;
+    }
 }
 
 }

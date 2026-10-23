@@ -9,9 +9,32 @@ static int __attribute__((noinline)) stub_003d73e8(int p0, void* p1, int p2, int
 static void* __attribute__((noinline)) stub_003dccd8_2(int p0) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static void* __attribute__((noinline)) stub_003dccd8(void* p0) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static void __attribute__((noinline)) stub_003dd4d4(int p0, int p1, int p2, int p3) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); }
+static int __attribute__((noinline)) stub_003ddc14(int p0, int p1, int p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
 
 void fn_003dd810(int a0, int a1, int a2) {
     stub_003dd4d4((int)(a0), (int)(a1), (int)(a2), (int)(0));
+}
+
+int fn_003ddec4(int a0, int a1, int a2) {
+    int t0;
+    int v1;
+    v1 = (int)(a0);
+    do {
+        t0 = stub_003ddc14((int)(a0), (int)(a1), (int)(a2));
+        v1 = (int)((u32)(t0) & 0xff);
+    } while ((int)(v1) != (int)(0));
+    return (int)(1);
+}
+
+int fn_003de3a4(int a0, int a1) {
+    int t0;
+    int v1;
+    v1 = (int)(a0);
+    do {
+        t0 = stub_003ddc14((int)(a0), (int)(a1), (int)(0));
+        v1 = (int)((u32)(t0) & 0xff);
+    } while ((int)(v1) != (int)(0));
+    return (int)(1);
 }
 
 int fn_003de3f8(int a0, int a1) {

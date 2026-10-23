@@ -25,12 +25,12 @@ int fn_006e7f04(unk_006e7f04_a0* a0, unk_006e7f04_a1* a1) {
     int t0;
     if ((int)(FIELD(u32, (int)(a0) + 65536, 4760)) != (int)(0)) {
         a1->f_0 = (u8)(1);
-        return (int)(1);
-    }
-    t0 = fn_00691ed8((u32)(a0->f_28));
-    if ((int)((u32)(t0) & 0xff) != (int)(0)) {
-        a1->f_0 = (u8)(1);
-        return (int)(1);
+    } else {
+        t0 = fn_00691ed8((u32)(a0->f_28));
+        if ((int)((u32)(t0) & 0xff) != (int)(0)) {
+            a1->f_0 = (u8)(1);
+            return (int)(1);
+        }
     }
     return (int)(1);
 }

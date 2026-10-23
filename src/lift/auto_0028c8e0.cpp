@@ -5,6 +5,8 @@
 extern "C" {
 
 static void __attribute__((noinline)) stub_0028c908(int p0) { __asm__ volatile ("" : : "r"(p0)); }
+static void __attribute__((noinline)) stub_0028c974(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
+static void __attribute__((noinline)) stub_0028cc88(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
 
 void fn_0028c974(int a0) {
     stub_0028c908((int)(a0));
@@ -12,6 +14,34 @@ void fn_0028c974(int a0) {
 
 void fn_0028c978(int a0) {
     stub_0028c908((int)(a0));
+}
+
+struct unk_0028ccd8_a0 {
+    char pad_0[19520];
+    u8 f_4c40;
+};
+void fn_0028ccd8(unk_0028ccd8_a0* a0) {
+    void* v11;
+    v11 = (void*)(a0);
+    do {
+        stub_0028c974((void*)(v11));
+        v11 = (void*)((char*)v11 + 488);
+    } while ((int)((&a0->f_4c40)) != (int)(v11));
+    stub_0028cc88((void*)(a0));
+}
+
+struct unk_0028cd30_a0 {
+    char pad_0[19520];
+    u8 f_4c40;
+};
+void fn_0028cd30(unk_0028cd30_a0* a0) {
+    void* v11;
+    v11 = (void*)(a0);
+    do {
+        stub_0028c974((void*)(v11));
+        v11 = (void*)((char*)v11 + 488);
+    } while ((int)((&a0->f_4c40)) != (int)(v11));
+    stub_0028cc88((void*)(a0));
 }
 
 }

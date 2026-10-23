@@ -18,4 +18,23 @@ u8 fn_000189b0(int a0, int a1, int a2, int a3) {
     return (u8)((u8)t0);
 }
 
+struct unk_00018aa8_a0 {
+    char pad_0[20084];
+    u32 f_4e74;
+};
+void* fn_00018aa8(unk_00018aa8_a0* a0, int a1) {
+    int v0;
+    u32 v3;
+    v3 = (u32)(a0->f_4e74);
+    for (v0 = 0; v0 < 128; v0++) {
+        if ((int)(FIELD(u32, v3, 0)) > (int)(0)) {
+            if ((int)(FIELD(u32, v3, 4)) == (int)(a1)) {
+                return (void*)(FIELD(u32, v3, 8));
+            }
+        }
+        v3 = (u32)((char*)v3 + 76);
+    }
+    return (void*)(0);
+}
+
 }
