@@ -15,4 +15,20 @@ void fn_000be284(unk_000be284_a0* a0) {
     stub_000be260((void*)((&a0->f_4)));
 }
 
+struct unk_000bf43c_a0 {
+    char pad_0[8];
+    u32 f_8;
+};
+void* fn_000bf43c(unk_000bf43c_a0* a0, void* a1) {
+    int t0;
+    int v0;
+    if ((int)(a0->f_8) != (int)(0)) {
+        t0 = ((int (*)(void*))(a0->f_8))((void*)(a1));
+        v0 = (int)(t0);
+    } else {
+        v0 = (int)(0);
+    }
+    return (void*)(v0);
+}
+
 }

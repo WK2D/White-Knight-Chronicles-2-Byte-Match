@@ -6,6 +6,38 @@ extern "C" {
 
 static int __attribute__((noinline)) stub_000f9408(int p0, int p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 
+struct unk_000f8684_gm6a44;
+struct unk_000f8684_gm6a44_91c;
+struct unk_000f8684_gm6a44 {
+    char pad_0[2332];
+    unk_000f8684_gm6a44_91c* f_91c;
+};
+struct unk_000f8684_gm6a44_91c {
+    char pad_0[20912];
+    u32 f_51b0;
+};
+extern unk_000f8684_gm6a44 g_000f8684_0;
+void fn_000f8684(void) {
+    ((void (*)(void))((&g_000f8684_0)->f_91c->f_51b0))();
+}
+
+struct unk_000f8fa4_gm6a44;
+struct unk_000f8fa4_gm6a44_91c;
+struct unk_000f8fa4_gm6a44 {
+    char pad_0[2332];
+    unk_000f8fa4_gm6a44_91c* f_91c;
+};
+struct unk_000f8fa4_gm6a44_91c {
+    char pad_0[20908];
+    u32 f_51ac;
+};
+extern unk_000f8fa4_gm6a44 g_000f8fa4_0;
+void* fn_000f8fa4(void) {
+    void* t0;
+    t0 = ((void* (*)(void))((&g_000f8fa4_0)->f_91c->f_51ac))();
+    return (void*)(t0);
+}
+
 struct unk_000f92f8_gm69b0;
 struct unk_000f92f8_gm69b0 {
     char pad_0[4];

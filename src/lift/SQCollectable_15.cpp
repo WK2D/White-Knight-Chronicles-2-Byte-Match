@@ -8,6 +8,26 @@ static int __attribute__((noinline)) stub_009cd5c0(int p0, int p1, int p2, void*
 static int __attribute__((noinline)) stub_009cedc0(int p0, int p1, void* p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
 int fn_00b42008(void*, int, int);
 
+struct unk_009cd9c8_gm3908;
+struct unk_009cd9c8_gm3910;
+struct unk_009cd9c8_gm3908 {
+    char pad_0[4];
+    u32 f_4;
+};
+struct unk_009cd9c8_gm3910 {
+    char pad_0[4];
+    u32 f_4;
+};
+extern unk_009cd9c8_gm3910 g_009cd9c8_0;
+extern unk_009cd9c8_gm3908 g_009cd9c8_1;
+int fn_009cd9c8(void) {
+    int t0;
+    if ((int)((&g_009cd9c8_0)->f_4) != (int)(0)) {
+        t0 = ((int (*)(void*))((&g_009cd9c8_1)->f_4))((void*)((&(&g_009cd9c8_0)->f_4)));
+    }
+    return (int)(0);
+}
+
 struct unk_009cda60_gm3910;
 struct unk_009cda60_gm3910 {
     char pad_0[4];

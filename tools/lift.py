@@ -1296,7 +1296,11 @@ class Lifter:
             self.set(rt, Value(str(d << 16), 'int'))
             return
         if op == 32 and rt == 2:                                     # lwz r2,4(descriptor): callee's TOC
-            v = self.field('u32', self.reg(ra), d)
+            base = self.reg(ra)
+            if base.vt is None and d == 4:
+                self.fp_desc = base                                  # a function pointer's descriptor
+                return
+            v = self.field('u32', base, d)
             if v.vt is None or v.vt[0] != 'toc':
                 raise Fail('r2 loaded from something other than a descriptor')
             return
@@ -1636,15 +1640,23 @@ class Lifter:
 
     def vcall(self):
         c = self.ctr
-        if c is None or c.vt is None or c.vt[0] != 'code':
-            raise Fail('indirect call that is not a virtual call')
-        obj, slot = c.vt[1], c.vt[2]
-        this = self.reg(3)
-        if this is not obj and this.text != obj.text:
-            raise Fail('this is not the object whose vtable was read')
-        args = [this] + self.gather_args(4)
-        info = {'used': False, 'type': 'int', 'target': None, 'args': args, 'temp': f't{len(self.calls)}',
-                'local': False, 'virtual': (obj, slot)}
+        fp = getattr(self, 'fp_desc', None)
+        if c is not None and c.vt is not None and c.vt[0] == 'vptr' and fp is not None and c.vt[1] is fp:
+            # A call through a function pointer: word 0 of its descriptor.
+            args = self.gather_args(3)
+            info = {'used': False, 'type': 'int', 'target': None, 'args': args, 'temp': f't{len(self.calls)}',
+                    'local': False, 'fptr': fp}
+            self.fp_desc = None
+        else:
+            if c is None or c.vt is None or c.vt[0] != 'code':
+                raise Fail('indirect call that is not a virtual call')
+            obj, slot = c.vt[1], c.vt[2]
+            this = self.reg(3)
+            if this is not obj and this.text != obj.text:
+                raise Fail('this is not the object whose vtable was read')
+            args = [this] + self.gather_args(4)
+            info = {'used': False, 'type': 'int', 'target': None, 'args': args, 'temp': f't{len(self.calls)}',
+                    'local': False, 'virtual': (obj, slot)}
         self.calls[len(self.calls)] = info
         self.stmts.append(info)
         for r in range(0, 13):
@@ -1707,6 +1719,13 @@ class Lifter:
             out = []
             pad = '    ' * indent
             for st in stmts:
+                if isinstance(st, dict) and st.get('fptr') is not None:
+                    types = [CTYPES.get(a.ctype, 'int') for a in st['args']]
+                    rtype = st['type'] if st['used'] else 'void'
+                    fn = f'(({rtype} (*)({", ".join(types) if types else "void"}))({st["fptr"].text}))'
+                    call = f'{fn}({", ".join(f"({t})({a.text})" for a, t in zip(st["args"], types))})'
+                    out.append(pad + (f'{st["temp"]} = {call};' if st['used'] else f'{call};'))
+                    continue
                 if isinstance(st, dict) and st.get('virtual'):
                     obj, slot = st['virtual']
                     types = [CTYPES.get(a.ctype, 'int') for a in st['args'][1:]]

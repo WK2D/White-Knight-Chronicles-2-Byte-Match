@@ -8,7 +8,23 @@ int fn_00945324(u32);
 void fn_00945384(int, void*);
 int fn_0094765c(u32, int);
 int fn_0094dce8(void*);
+void fn_00952f10(void*, int);
 void fn_00bc3210(int, int, int, int, int, int, int, int);
+
+struct unk_00bc2a38_a0 {
+    virtual void vf0(void);
+    char pad_4[72];
+    u32 f_4c;
+    u32 f_50;
+};
+void fn_00bc2a38(unk_00bc2a38_a0* a0) {
+    int t0;
+    if ((int)(a0->f_50) != (int)(0)) {
+        t0 = ((int (*)(u32, int))(a0->f_50))((u32)(a0->f_4c), (int)(0));
+    }
+    a0->vf0();
+    fn_00952f10((void*)(a0), (int)(92));
+}
 
 void fn_00bc328c(int a0, int a1, int a2, int a3, int a4, int a5, int a6, int a7) {
     fn_00bc3210((int)(a0), (int)(a1), (int)(a2), (int)(a3), (int)(a4), (int)(a5), (int)(a6), (int)(a7));

@@ -56,4 +56,40 @@ void* fn_000f3ca4(int a0, int a1) {
     return (void*)(v0);
 }
 
+struct unk_000f3ec8_gm6a44;
+struct unk_000f3ec8_gm6a44 {
+    char pad_0[2316];
+    u32 f_90c;
+};
+extern unk_000f3ec8_gm6a44 g_000f3ec8_0;
+void* fn_000f3ec8(void* a0) {
+    int t0;
+    int v1;
+    if ((int)((&g_000f3ec8_0)->f_90c) != (int)(0)) {
+        t0 = ((int (*)(void*))((&g_000f3ec8_0)->f_90c))((void*)(a0));
+        v1 = (int)(t0);
+    } else {
+        v1 = (int)(0);
+    }
+    return (void*)(v1);
+}
+
+struct unk_000f3f20_gm6a44;
+struct unk_000f3f20_gm6a44 {
+    char pad_0[2320];
+    u32 f_910;
+};
+extern unk_000f3f20_gm6a44 g_000f3f20_0;
+void* fn_000f3f20(void* a0, void* a1) {
+    int t0;
+    int v1;
+    if ((int)((&g_000f3f20_0)->f_910) != (int)(0)) {
+        t0 = ((int (*)(void*, void*))((&g_000f3f20_0)->f_910))((void*)(a0), (void*)(a1));
+        v1 = (int)(t0);
+    } else {
+        v1 = (int)(0);
+    }
+    return (void*)(v1);
+}
+
 }

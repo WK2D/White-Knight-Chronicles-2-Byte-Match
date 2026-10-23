@@ -5,7 +5,30 @@
 extern "C" {
 
 void fn_00a2bd18(void*, u32, int);
+static void* __attribute__((noinline)) stub_00a3da58(int p0, void* p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static void __attribute__((noinline)) stub_00a3e264(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
+void fn_00bd0eb0(int);
+
+struct unk_00a3dae0_l;
+struct unk_00a3dae0_l {
+    u32 f_0;
+};
+int fn_00a3dae0(int a0, int a1, void* a2) {
+    void* t1;
+    int t2;
+    unk_00a3dae0_l l;
+    int v0;
+    fn_00bd0eb0((int)(a0));
+    l.f_0 = (u32)(0);
+    t1 = stub_00a3da58((int)(a0), (void*)((&l)));
+    if ((int)(t1) != (int)(0)) {
+        t2 = ((int (*)(u32, int, u8, void*))(t1))((u32)(l.f_0), (int)(a0), (u8)((u8)a1), (void*)(a2));
+        v0 = (int)(t2);
+    } else {
+        v0 = (int)(2147550988);
+    }
+    return (int)(v0);
+}
 
 struct unk_00a3e3dc_a0_40;
 struct unk_00a3e3dc_a0_40 {

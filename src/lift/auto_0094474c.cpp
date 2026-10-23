@@ -5,6 +5,15 @@
 extern "C" {
 
 
+struct unk_009451bc_a0 {
+    char pad_0[236];
+    u32 f_ec;
+    u32 f_f0;
+};
+void fn_009451bc(unk_009451bc_a0* a0) {
+    ((void (*)(u32))(a0->f_ec))((u32)(a0->f_f0));
+}
+
 struct unk_00945330_a0 {
     char pad_0[16];
     u8 f_10;

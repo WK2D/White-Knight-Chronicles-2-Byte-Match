@@ -4,6 +4,9 @@
 
 extern "C" {
 
+void* fn_00a1ff60(void);
+void* fn_00a200ec(void);
+void* fn_00a20278(void);
 void fn_00a2123c(int);
 void fn_00a21380(void*);
 static void __attribute__((noinline)) stub_00a2abd8(void* p0, int p1, int p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
@@ -47,6 +50,28 @@ void* fn_00a2b020(int a0) {
 
 void fn_00a2b2d0(int a0) {
     stub_00a2b120((int)(a0), (int)(0));
+}
+
+int fn_00a2b470(void* a0, void* a1) {
+    void* t0;
+    int t1;
+    t0 = fn_00a20278();
+    t1 = ((int (*)(void*, void*))(t0))((void*)(a0), (void*)(a1));
+    return (int)(t1);
+}
+
+int fn_00a2b4d4(void* a0, void* a1, int a2) {
+    void* t0;
+    int t1;
+    t0 = fn_00a200ec();
+    t1 = ((int (*)(void*, void*, int))(t0))((void*)(a0), (void*)(a1), (int)(a2));
+    return (int)(t1);
+}
+
+void fn_00a2b548(void* a0) {
+    void* t0;
+    t0 = fn_00a1ff60();
+    ((void (*)(void*))(t0))((void*)(a0));
 }
 
 extern char g_00a2b6cc_0[];
