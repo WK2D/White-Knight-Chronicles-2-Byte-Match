@@ -306,6 +306,9 @@ Rename units to their real source files as they are identified, and edit
   callee-saved vector saves (`li r0,N; stvx v31,r1,r0`) and vector call
   arguments (after the integer ones). Most remaining vector functions are
   larger matrix code that lifts but does not match yet.
+- Tried and reverted: writing `(char*)(t0) + 16` for arithmetic on a call's
+  result (so `t0 + 16` compiles when t0 becomes `void*`). It lost 13
+  matches and made GCC 4.1 crash (tree-vrp.c:415) on `fn_0044dae0`.
 - Thread-local variables: `addis rX,r13,ha; addi rY,rX,lo` is the address
   of a `__thread` variable defined in the same file (GCC then emits exactly
   that, with TPREL16_HA/LO relocations, which check.py masks). An
