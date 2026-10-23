@@ -9,8 +9,6 @@ void fn_00b8f724(void*, void*, void*, void*);
 void fn_00b8f800(void*, void*, void*, void*);
 void* fn_00b8f8dc(void*);
 void* fn_00b8fb10(void*);
-void fn_00b8fd30(int);
-void fn_00b8fdc0(int);
 
 struct unk_00b8f99c_a0_10;
 struct unk_00b8f99c_a0_14;
@@ -84,14 +82,6 @@ void* fn_00b8fbc8(unk_00b8fbc8_a0* a0) {
     a0->f_1c = (u32)(a0->f_14->f_0->f_0);
     t0 = fn_00b8fb10((void*)(a0));
     return (void*)(t0);
-}
-
-void fn_00b8fd94(int a0) {
-    fn_00b8fd30((int)(a0));
-}
-
-void fn_00b8fe24(int a0) {
-    fn_00b8fdc0((int)(a0));
 }
 
 struct unk_00b8fe50_a1_0;

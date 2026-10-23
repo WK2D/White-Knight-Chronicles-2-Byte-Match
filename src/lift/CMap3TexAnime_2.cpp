@@ -10,9 +10,7 @@ void* fn_00b8b7b8(void*);
 void* fn_00b8b9e4(void*);
 void fn_00b8bc04(void*, void*, void*, void*);
 void fn_00b8bea0(int);
-void fn_00b8bf0c(int);
 void fn_00b8bf9c(int);
-void fn_00b8c008(int);
 
 struct unk_00b8b1e8_a0 {
     char pad_0[8];
@@ -101,16 +99,8 @@ void fn_00b8bee8(int a0) {
     fn_00b8bea0((int)(a0));
 }
 
-void fn_00b8bf70(int a0) {
-    fn_00b8bf0c((int)(a0));
-}
-
 void fn_00b8bfe4(int a0) {
     fn_00b8bf9c((int)(a0));
-}
-
-void fn_00b8c06c(int a0) {
-    fn_00b8c008((int)(a0));
 }
 
 struct unk_00b8c0f8_a1_0;

@@ -25,6 +25,7 @@ from lift import OPD, arity_finder, file_text, short_name
 from permute import reorders, runs
 
 VARIANTS = 24       # bodies tried per constructor
+UNWIND_RESUME = 0xb383b8   # _Unwind_Resume's linker stub: its call ends an exception cleanup
 
 CLS = ROOT / 'src' / 'cls'
 WORK = BUILD / 'cls'
@@ -40,7 +41,7 @@ def toc_bases(orig):
     return {code: c.most_common(1)[0][0] for code, c in tocs.items()}
 
 
-def constructor(address, decls, code, vtable_globals, calls):
+def constructor(address, decls, code, vtable_globals, calls, cleanup=False):
     """(decls, code, class name, calls) of the function as a constructor, or
     None. A call on this before the vtable store is the base class's
     constructor."""
@@ -80,7 +81,10 @@ def constructor(address, decls, code, vtable_globals, calls):
             # The base class: its constructor stands for the call. In the same
             # file in the original (a local call), so defined here too.
             bname = f'{cls}_base'
-            out.append(f'struct {bname} {{ {bname}(); }};')
+            # An exception cleanup in the original destroys the base again if
+            # a later member constructor throws: the base has a destructor.
+            dtor = f' virtual ~{bname}();' if cleanup else ''
+            out.append(f'struct {bname} {{ {bname}();{dtor} }};')
             if base[1]:
                 out.append(f'__attribute__((noinline)) {bname}::{bname}() {{ __asm__ volatile (""); }}')
             head = f'struct {cls} : {bname} {{'
@@ -141,7 +145,11 @@ def main():
             value = struct.unpack('>I', orig.read(toc_of[address] + d, 4))[0]
             if value in vtables:
                 vtable_globals.add(name)
-        made = constructor(address, decls, code, vtable_globals, calls) if vtable_globals else None
+        cleanup = any(w >> 26 == 18 and w & 3 == 1 and lift.branch_target(address + 4 * i, w) == UNWIND_RESUME
+                      for i, w in enumerate(words))
+        made = constructor(address, decls, code, vtable_globals, calls, cleanup) if vtable_globals else None
+        if made is not None and cleanup and '_base' not in made[2] and not any('_base' in d for d in made[0]):
+            made = None                                  # a cleanup without a base class: not modelled
         if made is None:
             continue
         decls, code, cls, calls = made

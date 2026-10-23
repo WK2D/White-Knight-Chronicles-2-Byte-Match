@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" font-family="Segoe UI, Helvetica, Arial, sans-serif">
 <rect width="960" height="540" fill="#0d1117"/>
-<text x="12" y="28" fill="#e6edf3" font-size="20" font-weight="600">White Knight Chronicles II: 3.072% of code matched</text>
-<text x="12" y="50" fill="#8b949e" font-size="13">15,814 of 52,279 functions compile to identical bytes · 4672 units · each square fills in as its functions match</text>
+<text x="12" y="28" fill="#e6edf3" font-size="20" font-weight="600">White Knight Chronicles II: 3.085% of code matched</text>
+<text x="12" y="50" fill="#8b949e" font-size="13">15,830 of 51,438 functions compile to identical bytes · 4672 units · each square fills in as its functions match</text>
 <g><title>auto_00010240: 12.06% matched, 12.06% fuzzy, 1,028 bytes</title>
 <rect x="0.00" y="64.00" width="7.21" height="3.97" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
 <rect x="0.00" y="67.49" width="7.21" height="0.48" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
@@ -653,9 +653,9 @@
 <rect x="78.85" y="206.84" width="13.87" height="0.00" fill="#3b82f6" stroke="#0d1117" stroke-width="1"/>
 <rect x="78.85" y="206.84" width="13.87" height="0.19" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
 </g>
-<g><title>CFrameBufferTexture: 2.29% matched, 2.29% fuzzy, 4,368 bytes</title>
+<g><title>CFrameBufferTexture: 9.07% matched, 9.07% fuzzy, 4,368 bytes</title>
 <rect x="78.85" y="207.04" width="13.87" height="8.75" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
-<rect x="78.85" y="215.59" width="13.87" height="0.20" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
+<rect x="78.85" y="215.00" width="13.87" height="0.79" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
 </g>
 <g><title>CRenderableTexture: 2.31% matched, 2.31% fuzzy, 5,540 bytes</title>
 <rect x="61.90" y="215.79" width="9.50" height="16.21" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
@@ -1842,9 +1842,9 @@
 <g><title>auto_002b14b4: 0.00% matched, 0.00% fuzzy, 6,372 bytes</title>
 <rect x="0.00" y="521.41" width="14.74" height="12.02" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
 </g>
-<g><title>CMap3MQ: 2.85% matched, 2.85% fuzzy, 2,108 bytes</title>
+<g><title>CMap3MQ: 18.41% matched, 18.41% fuzzy, 2,108 bytes</title>
 <rect x="0.00" y="533.43" width="8.92" height="6.57" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
-<rect x="0.00" y="539.81" width="8.92" height="0.19" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
+<rect x="0.00" y="538.79" width="8.92" height="1.21" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
 </g>
 <g><title>CSoListener: 16.33% matched, 16.33% fuzzy, 196 bytes</title>
 <rect x="8.92" y="533.43" width="0.98" height="5.56" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
@@ -6794,35 +6794,34 @@
 <rect x="390.04" y="422.79" width="22.53" height="28.87" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
 <rect x="390.04" y="451.53" width="22.53" height="0.13" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
 </g>
-<g><title>CMenu_CM_Etc: 18.52% matched, 18.52% fuzzy, 2,700 bytes</title>
+<g><title>CMenu_CM_Etc: 26.22% matched, 26.22% fuzzy, 2,700 bytes</title>
 <rect x="412.58" y="422.79" width="7.94" height="9.45" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
-<rect x="412.58" y="430.49" width="7.94" height="0.00" fill="#3b82f6" stroke="#0d1117" stroke-width="1"/>
-<rect x="412.58" y="430.49" width="7.94" height="1.75" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
+<rect x="412.58" y="429.76" width="7.94" height="2.48" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
 </g>
-<g><title>CMenu_CM_Eye: 23.85% matched, 23.85% fuzzy, 2,868 bytes</title>
+<g><title>CMenu_CM_Eye: 31.10% matched, 31.10% fuzzy, 2,868 bytes</title>
 <rect x="412.58" y="432.24" width="7.94" height="10.04" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
-<rect x="412.58" y="439.88" width="7.94" height="2.39" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
+<rect x="412.58" y="439.16" width="7.94" height="3.12" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
 </g>
-<g><title>CMenu_CM_Face: 25.52% matched, 25.52% fuzzy, 2,680 bytes</title>
+<g><title>CMenu_CM_Face: 33.28% matched, 33.28% fuzzy, 2,680 bytes</title>
 <rect x="412.58" y="442.28" width="7.94" height="9.38" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
-<rect x="412.58" y="449.26" width="7.94" height="2.39" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
+<rect x="412.58" y="448.54" width="7.94" height="3.12" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
 </g>
-<g><title>CMenu_CM_Figure: 18.42% matched, 18.42% fuzzy, 2,888 bytes</title>
+<g><title>CMenu_CM_Figure: 25.62% matched, 25.62% fuzzy, 2,888 bytes</title>
 <rect x="390.04" y="451.66" width="15.07" height="5.33" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
-<rect x="390.04" y="456.00" width="15.07" height="0.00" fill="#3b82f6" stroke="#0d1117" stroke-width="1"/>
-<rect x="390.04" y="456.00" width="15.07" height="0.98" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
+<rect x="390.04" y="455.62" width="15.07" height="1.37" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
 </g>
-<g><title>CMenu_CM_Hair: 17.41% matched, 17.41% fuzzy, 3,056 bytes</title>
+<g><title>CMenu_CM_Hair: 24.21% matched, 24.21% fuzzy, 3,056 bytes</title>
 <rect x="390.04" y="456.98" width="7.86" height="10.80" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
-<rect x="390.04" y="465.91" width="7.86" height="1.88" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
+<rect x="390.04" y="465.17" width="7.86" height="0.00" fill="#3b82f6" stroke="#0d1117" stroke-width="1"/>
+<rect x="390.04" y="465.17" width="7.86" height="2.62" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
 </g>
-<g><title>CMenu_CM_Nose: 24.43% matched, 24.43% fuzzy, 2,800 bytes</title>
+<g><title>CMenu_CM_Nose: 31.86% matched, 31.86% fuzzy, 2,800 bytes</title>
 <rect x="397.91" y="456.98" width="7.20" height="10.80" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
-<rect x="397.91" y="465.15" width="7.20" height="2.64" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
+<rect x="397.91" y="464.35" width="7.20" height="3.44" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
 </g>
-<g><title>CMenu_CM_Ok: 29.56% matched, 29.56% fuzzy, 2,476 bytes</title>
+<g><title>CMenu_CM_Ok: 37.96% matched, 37.96% fuzzy, 2,476 bytes</title>
 <rect x="390.04" y="467.79" width="6.49" height="10.61" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
-<rect x="390.04" y="475.26" width="6.49" height="3.14" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
+<rect x="390.04" y="474.37" width="6.49" height="4.03" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
 </g>
 <g><title>CMenu_PresetListWindow: 100.00% matched, 100.00% fuzzy, 120 bytes</title>
 <rect x="390.04" y="478.40" width="1.65" height="2.02" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
@@ -6863,9 +6862,9 @@
 <g><title>CMenu_PresetListWindow_4: 0.00% matched, 0.00% fuzzy, 48 bytes</title>
 <rect x="405.11" y="467.10" width="3.90" height="0.34" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
 </g>
-<g><title>CMenu_CM_ColorTop: 17.14% matched, 17.14% fuzzy, 3,104 bytes</title>
+<g><title>CMenu_CM_ColorTop: 23.84% matched, 23.84% fuzzy, 3,104 bytes</title>
 <rect x="409.01" y="459.94" width="11.51" height="7.50" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
-<rect x="409.01" y="466.15" width="11.51" height="1.29" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
+<rect x="409.01" y="465.65" width="11.51" height="1.79" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
 </g>
 <g><title>CMenu_CM_Top: 12.62% matched, 12.62% fuzzy, 856 bytes</title>
 <rect x="405.11" y="467.44" width="3.85" height="6.18" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
@@ -11645,10 +11644,9 @@
 <g><title>CMap3SkyRenBegin_3: 0.00% matched, 0.00% fuzzy, 1,156 bytes</title>
 <rect x="625.52" y="510.25" width="4.97" height="6.47" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
 </g>
-<g><title>CMap3TexAnime_2: 14.11% matched, 14.11% fuzzy, 6,380 bytes</title>
+<g><title>CMap3TexAnime_2: 12.98% matched, 12.98% fuzzy, 6,380 bytes</title>
 <rect x="615.07" y="516.72" width="15.41" height="11.51" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
-<rect x="615.07" y="526.60" width="15.41" height="0.00" fill="#3b82f6" stroke="#0d1117" stroke-width="1"/>
-<rect x="615.07" y="526.60" width="15.41" height="1.62" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
+<rect x="615.07" y="526.73" width="15.41" height="1.49" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
 </g>
 <g><title>CMapCmdBuff_2: 100.00% matched, 100.00% fuzzy, 276 bytes</title>
 <rect x="615.07" y="528.22" width="6.15" height="1.25" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
@@ -11754,9 +11752,9 @@
 <g><title>CMapSearchImage_3: 0.00% matched, 0.00% fuzzy, 660 bytes</title>
 <rect x="630.48" y="490.54" width="2.16" height="8.49" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
 </g>
-<g><title>CMapSearchMgfx_2: 19.07% matched, 19.07% fuzzy, 4,028 bytes</title>
+<g><title>CMapSearchMgfx_2: 17.28% matched, 17.28% fuzzy, 4,028 bytes</title>
 <rect x="632.64" y="490.54" width="13.19" height="8.49" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
-<rect x="632.64" y="497.41" width="13.19" height="1.62" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
+<rect x="632.64" y="497.56" width="13.19" height="1.47" fill="#22c55e" stroke="#0d1117" stroke-width="1"/>
 </g>
 <g><title>CMapAreaListener_4: 20.00% matched, 20.00% fuzzy, 60 bytes</title>
 <rect x="630.48" y="499.03" width="1.79" height="0.93" fill="#30363d" stroke="#0d1117" stroke-width="1"/>
