@@ -24,7 +24,7 @@ alternative to the static-recompilation port at
   `-O2` and not with `-fno-ivopts`. The project used `-O2 -fno-ivopts` before
   2026-10-22; only `src/game/CPostEffectManager.cpp` keeps that, as an
   override, until a natural `-O2` form of `fn_004b32e8` is found.
-- Matched: **18,777 of 50,844 functions** (4.66% of code). Six are by hand
+- Matched: **18,840 of 50,844 functions** (4.76% of code). Six are by hand
   (`src/game/*.cpp`); the rest are generated: `tools/gen_simple.py`
   (`src/gen/`, small shapes), `tools/lift.py` (`src/lift/`, the lifter),
   `tools/permute.py` (`src/perm/`, lifter output in another statement order)
@@ -515,6 +515,10 @@ counts over all functions up to 384 instructions):
   does not match; `S f(...) { S r_; S* a0 = &r_; ...; return r_; }` does
   (`fn_00417f58`). `permute.py` tries this form (`struct_return`) for
   functions that return their first, struct-pointer parameter.
+- `permute.py` tries only the cheap whole-function forms (struct return,
+  void, all pointer tests) on functions over 48 words that are at least
+  20% alike (`BIG_FUZZY`); that gained 63. A full cycle takes about 35
+  minutes.
 - Quick single-function test: `python tools/lift.py --one ADDR --file >
   build/try/x.cpp` then `python tools/try.py build/try/x.cpp -d`.
 - Editing tools from the agent's shell: heredocs passed through the Bash

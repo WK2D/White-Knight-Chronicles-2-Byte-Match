@@ -27,6 +27,7 @@ from lift import arity_finder, file_text, lift, short_name
 PERM = ROOT / 'src' / 'perm'
 WORK = BUILD / 'perm'
 MAX_WORDS = 48          # functions up to this many instructions
+BIG_FUZZY = 20.0        # larger functions: only the few cheap forms, and only if this close
 MAX_VARIANTS = 48       # orders tried per function
 ASSIGN = re.compile(r'^(\s+)(?!return\b)[^\s].* = .*;$')
 
@@ -241,6 +242,13 @@ def struct_return(code):
                       f'    {tag}* a0 = &r_;'] + body)
 
 
+def cheap_variants(code):
+    """The few whole-function forms worth a compile for larger functions:
+    a struct returned by value, the void version and pointer tests."""
+    out = [struct_return(code), voided(code)] + pointer_tests(code)[-1:]
+    return [v for v in dict.fromkeys(out) if v]
+
+
 def variants(code):
     """Other forms of a lifted function: statement orders, inverted ifs,
     swapped comparisons, a void version, a struct returned by value, and a
@@ -276,13 +284,14 @@ def main():
     jobs, info = [], {}
     for address, fuzzy in sorted(misses.items()):
         size = functions.get(address)
-        if not size or size // 4 > MAX_WORDS or address in done:
+        big = size and size // 4 > MAX_WORDS
+        if not size or address in done or big and fuzzy < BIG_FUZZY:
             continue
         result = lift(address, struct.unpack(f'>{size // 4}I', orig.read(address, size)), arity)
         if result is None:
             continue
         decls, code, calls = result
-        for k, variant in enumerate(variants(code)):
+        for k, variant in enumerate(cheap_variants(code) if big else variants(code)):
             path = WORK / f'{address:08x}_{k}.cpp'
             path.write_text(file_text([], calls, [(address, decls, variant)]), encoding='utf-8', newline='\n')
             jobs.append(path)
