@@ -14,6 +14,7 @@ int fn_00af297c(u32);
 int fn_00af41d4(u32);
 void fn_00af9b9c(void*, u8);
 void fn_00af9c84(void*);
+int fn_00b02e90(u32, u32, u32);
 
 struct unk_00acad18_a0 {
     char pad_0[4];
@@ -89,6 +90,46 @@ void fn_00acae34(unk_00acae34_a0* a0) {
         a0->f_4->f_68->f_18 = (u64)(0);
     }
     a0->f_4->f_70 = (u64)(0);
+}
+
+struct unk_00acb038_a0_4;
+struct unk_00acb038_a1_10;
+struct unk_00acb038_a0_4_68;
+struct unk_00acb038_a0_4 {
+    char pad_0[104];
+    unk_00acb038_a0_4_68* f_68;
+};
+struct unk_00acb038_a1_10 {
+    char pad_0[8];
+    u32 f_8;
+    char pad_c[4];
+    u32 f_10;
+    char pad_14[4];
+    u64 f_18;
+};
+struct unk_00acb038_a0_4_68 {
+    char pad_0[20];
+    u32 f_14;
+    u64 f_18;
+};
+struct unk_00acb038_a0 {
+    char pad_0[4];
+    unk_00acb038_a0_4* f_4;
+};
+struct unk_00acb038_a1 {
+    char pad_0[16];
+    unk_00acb038_a1_10* f_10;
+};
+void fn_00acb038(unk_00acb038_a0* a0, unk_00acb038_a1* a1) {
+    int t0;
+    unk_00acb038_a0_4* v0;
+    unk_00acb038_a1_10* v1;
+    if (a0->f_4->f_68->f_18 != a1->f_10->f_18) {
+        v0 = (unk_00acb038_a0_4*)(a0->f_4);
+        v1 = (unk_00acb038_a1_10*)(a1->f_10);
+        t0 = fn_00b02e90((u32)(a0->f_4->f_68->f_14), (u32)(a1->f_10->f_10), (u32)(a1->f_10->f_8));
+        v0->f_68->f_18 = (u64)(v1->f_18);
+    }
 }
 
 struct unk_00acb290_a0_4;

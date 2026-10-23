@@ -4,12 +4,71 @@
 
 extern "C" {
 
+int fn_00980698(void*, void*);
 void fn_0098173c(u16);
 void fn_00983dc0(int, int);
+void fn_009ac768(void*, int, int);
 
 int fn_00985ef8(int a0, int a1, int a2) {
     fn_00983dc0((int)(a0), (int)(a2));
     return (int)(1);
+}
+
+struct unk_00986154_l;
+struct unk_00986154_gm3ea8;
+struct unk_00986154_a0_400;
+struct unk_00986154_gm3ea8_0;
+struct unk_00986154_l {
+    u32 f_0;
+};
+struct unk_00986154_gm3ea8 {
+    unk_00986154_gm3ea8_0* f_0;
+};
+struct unk_00986154_a0_400 {
+    char pad_0[28];
+    u32 f_1c;
+};
+struct unk_00986154_gm3ea8_0 {
+    char pad_0[304];
+    u32 f_130;
+};
+struct unk_00986154_a0 {
+    char pad_0[1024];
+    unk_00986154_a0_400* f_400;
+};
+struct unk_00986154_a3 {
+    u32 f_0;
+};
+extern unk_00986154_gm3ea8 g_00986154_0;
+int fn_00986154(unk_00986154_a0* a0, int a1, int a2, unk_00986154_a3* a3) {
+    int t0;
+    unk_00986154_l l;
+    void* v0;
+    unk_00986154_a0_400* v1;
+    if ((int)(a0) != (int)(0)) {
+        if ((u32)(a2) <= (u32)(255)) {
+            l.f_0 = (u32)(256);
+            if ((int)((&g_00986154_0)->f_0->f_130) != (int)(a0)) {
+                return (int)(4);
+            }
+            if ((int)(a0->f_400) == (int)(0)) {
+                return (int)(4);
+            }
+            v0 = (void*)((&g_00986154_0)->f_0->f_130);
+            v1 = (unk_00986154_a0_400*)(a0->f_400);
+            t0 = fn_00980698((void*)((&l)), (void*)(v0));
+            if ((int)(t0) != (int)(0)) {
+                return (int)(4);
+            }
+            if ((int)(l.f_0) == (int)(256)) {
+                return (int)(4);
+            }
+            v1->f_1c = (u32)(a3->f_0);
+            fn_009ac768((void*)(v0), (int)(-1), (int)(0));
+            return (int)(4);
+        }
+    }
+    return (int)(4);
 }
 
 struct unk_009875dc_a3 {

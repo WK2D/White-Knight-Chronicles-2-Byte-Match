@@ -4,7 +4,35 @@
 
 extern "C" {
 
+void fn_0004da94(void*, u32, int, void*, void*);
+void fn_00050690(void*, u32, u32, int, int, float, int);
 int fn_00691ed8(u32);
+
+struct unk_00713738_l;
+struct unk_00713738_l {
+    u16 f_0;
+    u16 f_2;
+};
+struct unk_00713738_a0 {
+    char pad_0[204];
+    u32 f_cc;
+    char pad_d0[16];
+    u16 f_e0;
+    u16 f_e2;
+};
+struct unk_00713738_a1 {
+    char pad_0[404];
+    u32 f_194;
+};
+void fn_00713738(unk_00713738_a0* a0, unk_00713738_a1* a1, int a2) {
+    unk_00713738_l l;
+    u32 v0;
+    v0 = (u32)(a1->f_194);
+    fn_0004da94((void*)(a1), (u32)(v0), (int)(a2), (void*)((&l)), (void*)((&l.f_2)));
+    a0->f_e0 = (u16)(l.f_0 + -40);
+    a0->f_e2 = (u16)(l.f_2 + -40);
+    fn_00050690((void*)(a1), (u32)(v0), (u32)(a0->f_cc), (int)((int)(short)(l.f_0 + -40)), (int)((int)(short)(l.f_2 + -40)), (float)(0.15000000596046448f), (int)(8));
+}
 
 struct unk_007138e0_a0 {
     char pad_0[36];

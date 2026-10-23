@@ -7,6 +7,8 @@ extern "C" {
 int fn_00034a88(void);
 static void* __attribute__((noinline)) stub_003ba91c(void* p0, u16 p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static int __attribute__((noinline)) stub_003ba94c(void* p0, void* p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
+void fn_003d4044(void*, u16, int);
+int fn_00408704(void*, int);
 int fn_00531ed8(u32, u16, void*);
 int fn_00531f44(u32, int, void*, int);
 int fn_00531fd0(u32, int, int, void*);
@@ -28,6 +30,71 @@ int fn_003b9d74(unk_003b9d74_a0* a0) {
     a0->f_4->f_0 = (u8)(0);
     a0->f_8->f_0 = (u8)(0);
     return (int)(1);
+}
+
+struct unk_003ba010_gm1444;
+struct unk_003ba010_gm1444_0;
+struct unk_003ba010_gm1444_0_6c;
+struct unk_003ba010_gm1444_0_6c_8;
+struct unk_003ba010_gm1444 {
+    unk_003ba010_gm1444_0* f_0;
+};
+struct unk_003ba010_gm1444_0 {
+    char pad_0[108];
+    unk_003ba010_gm1444_0_6c* f_6c;
+};
+struct unk_003ba010_gm1444_0_6c {
+    char pad_0[8];
+    unk_003ba010_gm1444_0_6c_8* f_8;
+};
+struct unk_003ba010_gm1444_0_6c_8 {
+    char pad_0[244];
+    u32 f_f4;
+    char pad_f8[28];
+    u32 f_114;
+};
+struct unk_003ba010_a1 {
+    char pad_0[12];
+    u16 f_c;
+};
+extern unk_003ba010_gm1444 g_003ba010_0;
+int fn_003ba010(int a0, unk_003ba010_a1* a1) {
+    int t1;
+    u32 v0;
+    int v2;
+    int v5;
+    int v7;
+    int v9;
+    int v11;
+    if (a1 != 0) {
+        if ((int)((&g_003ba010_0)->f_0->f_6c) != (int)(0)) {
+            if ((int)((&g_003ba010_0)->f_0->f_6c->f_8) != (int)(0)) {
+                if ((int)((&g_003ba010_0)->f_0->f_6c->f_8->f_f4) != (int)(0)) {
+                    if ((int)((&g_003ba010_0)->f_0->f_6c->f_8->f_114) != (int)(0)) {
+                        v0 = (u32)((&g_003ba010_0)->f_0->f_6c->f_8->f_114);
+                        fn_003d4044((void*)((&g_003ba010_0)->f_0->f_6c->f_8->f_f4), (u16)(a1->f_c), (int)(1));
+                        t1 = fn_00408704((void*)(v0), (int)(7));
+                        v2 = (int)(1);
+                    } else {
+                        v2 = (int)(0);
+                    }
+                    v5 = (int)(v2);
+                } else {
+                    v5 = (int)(0);
+                }
+                v7 = (int)(v5);
+            } else {
+                v7 = (int)(0);
+            }
+            v9 = (int)(v7);
+        } else {
+            v9 = (int)(0);
+        }
+        v11 = (int)(v9);
+    } else {
+        v11 = (int)(0);
+    }
+    return (int)(v11);
 }
 
 struct unk_003ba94c_a0_8;

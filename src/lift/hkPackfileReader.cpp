@@ -4,7 +4,23 @@
 
 extern "C" {
 
+int fn_00bf9384(void*, void*);
+void* fn_00c6a8b0(void);
 void fn_00fc8d7c(int, int, int);
+
+struct unk_00c4c61c_a0 {
+    char pad_0[20];
+    u32 f_14;
+};
+int fn_00c4c61c(unk_00c4c61c_a0* a0) {
+    void* t0;
+    int t1;
+    u32 v0;
+    v0 = (u32)(a0->f_14);
+    t0 = fn_00c6a8b0();
+    t1 = fn_00bf9384((void*)(v0), (void*)(t0));
+    return (int)((int)((u32)(((int)((u32)((int)(t1) >> 31) ^ (u32)(t1)) - (int)((int)(t1) >> 31)) + -1) >> 31));
+}
 
 void fn_00c4c674(int a0, int a1, int a2, int a3) {
     fn_00fc8d7c((int)(a0), (int)(a3), (int)(a1));

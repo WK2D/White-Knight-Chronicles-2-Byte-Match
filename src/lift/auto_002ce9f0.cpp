@@ -7,6 +7,8 @@ extern "C" {
 void* fn_002c88e0(u32);
 void fn_002c8910(u32);
 void* fn_002c8a60(u32);
+void fn_002c9404(u32, void*);
+void fn_002c9ac0(u32, int, int);
 void fn_002d7294(void*, void*);
 
 struct unk_002d03cc_a0 {
@@ -66,6 +68,18 @@ void* fn_002d07e8(void* a0, unk_002d07e8_a1* a1) {
     t0 = fn_002c88e0((u32)(a1->f_0));
     fn_002d7294((void*)(a0), (void*)((int)(FIELD(u32, FIELD(u32, FIELD(u32, t0, 4), 0), 0)) + (int)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, t0, 8), 0), 0), 0))));
     return (void*)(a0);
+}
+
+struct unk_002d08f0_a0 {
+    u32 f_0;
+};
+void fn_002d08f0(unk_002d08f0_a0* a0, int a1) {
+    void* t1;
+    u32 v0;
+    fn_002c9ac0((u32)(a0->f_0), (int)(0), (int)(a1));
+    v0 = (u32)(a0->f_0);
+    t1 = fn_002c88e0((u32)(v0));
+    fn_002c9404((u32)(v0), (void*)((int)(FIELD(u32, FIELD(u32, FIELD(u32, t1, 4), 0), 0)) + (int)(FIELD(u32, FIELD(u32, FIELD(u32, FIELD(u32, t1, 8), 0), 0), 0))));
 }
 
 }

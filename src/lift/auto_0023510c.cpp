@@ -5,7 +5,44 @@
 extern "C" {
 
 int fn_0022a6b4(u8);
+int fn_002301fc(void*, u32);
 void fn_00265b60(void*);
+
+struct unk_0023619c_a1_3c;
+struct unk_0023619c_a1_3c {
+    char pad_0[64];
+    u32 f_40;
+    char pad_44[36];
+    u32 f_68;
+};
+struct unk_0023619c_a0 {
+    char pad_0[30392];
+    u8 f_76b8;
+};
+struct unk_0023619c_a1 {
+    char pad_0[56];
+    u32 f_38;
+    unk_0023619c_a1_3c* f_3c;
+};
+int fn_0023619c(unk_0023619c_a0* a0, unk_0023619c_a1* a1) {
+    int t0;
+    unk_0023619c_a1_3c* v0;
+    int v1;
+    if ((int)(a1->f_3c) != (int)(0)) {
+        v0 = (unk_0023619c_a1_3c*)(a1->f_3c);
+        t0 = fn_002301fc((void*)((&a0->f_76b8)), (u32)(a1->f_3c->f_40));
+        for (v1 = 0; v1 < 2; v1++) {
+            fn_002301fc((void*)((&a0->f_76b8)), (u32)(FIELD(u32, (char*)v0 + (int)(v1) * 12, 8)));
+        }
+        fn_002301fc((void*)((&a0->f_76b8)), (u32)(v0->f_68));
+        return (int)(1);
+    }
+    if ((int)(a1->f_38) == (int)(0)) {
+        return (int)(0);
+    }
+    fn_002301fc((void*)((&a0->f_76b8)), (u32)(a1->f_38));
+    return (int)(1);
+}
 
 struct unk_002370d0_a0 {
     char pad_0[30544];

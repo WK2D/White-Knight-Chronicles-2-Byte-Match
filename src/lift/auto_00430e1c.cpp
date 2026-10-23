@@ -4,10 +4,92 @@
 
 extern "C" {
 
+int fn_00031c38(void*, void*, int, int);
+int fn_00041b48(void*);
+void* fn_0036df1c(void*, int);
+static int __attribute__((noinline)) stub_00430d50(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static int __attribute__((noinline)) stub_004311a0(void* p0, u32 p1, u32 p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
+static int __attribute__((noinline)) stub_00431354(void* p0, u32 p1, u32 p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
 static void* __attribute__((noinline)) stub_004315b4(int p0, int p1, int p2) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
 static void* __attribute__((noinline)) stub_0043167c(int p0, void* p1, u8 p2) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
 static void __attribute__((noinline)) stub_00431f0c(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 static void __attribute__((noinline)) stub_00431f70(void) { __asm__ volatile (""); }
+void fn_00b37fa8(u32, int, void*);
+
+struct unk_00430ee4_gmbf4;
+struct unk_00430ee4_gmbf4_4;
+struct unk_00430ee4_gmbf4 {
+    char pad_0[4];
+    unk_00430ee4_gmbf4_4* f_4;
+};
+struct unk_00430ee4_gmbf4_4 {
+    u32 f_0;
+    char pad_4[12];
+    u32 f_10;
+    u32 f_14;
+    u32 f_18;
+};
+extern unk_00430ee4_gmbf4 g_00430ee4_0;
+int fn_00430ee4(void* a0) {
+    int t0;
+    int t1;
+    void* t2;
+    int t3;
+    unk_00430ee4_gmbf4_4* v0;
+    void* v1;
+    unk_00430ee4_gmbf4_4* v2;
+    v0 = (unk_00430ee4_gmbf4_4*)((&g_00430ee4_0)->f_4);
+    t0 = stub_00430d50((void*)(v0));
+    if ((int)((u32)(t0) & 0xff) == (int)(0)) {
+        return (int)(0);
+    }
+    v0->f_18 = (u32)(0);
+    t1 = fn_00041b48((void*)(a0));
+    v0->f_14 = (u32)(t1);
+    if ((int)((&g_00430ee4_0)->f_4->f_0) == (int)(0)) {
+        return (int)(0);
+    }
+    t2 = fn_0036df1c((void*)((&g_00430ee4_0)->f_4->f_0), (int)(0));
+    (&g_00430ee4_0)->f_4->f_10 = (u32)(0);
+    if ((int)((u32)((&g_00430ee4_0)->f_4->f_14) << 3) == (int)(0)) {
+        return (int)(1);
+    }
+    v1 = (void*)((u32)((&g_00430ee4_0)->f_4->f_14) << 3);
+    v2 = (unk_00430ee4_gmbf4_4*)((&g_00430ee4_0)->f_4);
+    t3 = fn_00031c38((void*)(t2), (void*)(v1), (int)(16), (int)(0));
+    v2->f_10 = (u32)(t3);
+    fn_00b37fa8((u32)((&g_00430ee4_0)->f_4->f_10), (int)(0), (void*)(v1));
+    return (int)(1);
+}
+
+struct unk_004312f8_gmbf4;
+struct unk_004312f8_gmbf4_4;
+struct unk_004312f8_gmbf4 {
+    char pad_0[4];
+    unk_004312f8_gmbf4_4* f_4;
+};
+struct unk_004312f8_gmbf4_4 {
+    char pad_0[16];
+    u32 f_10;
+    char pad_14[4];
+    u32 f_18;
+};
+extern unk_004312f8_gmbf4 g_004312f8_0;
+int fn_004312f8(void) {
+    int t0;
+    int t1;
+    unk_004312f8_gmbf4_4* v0;
+    int v1;
+    v0 = (unk_004312f8_gmbf4_4*)((&g_004312f8_0)->f_4);
+    t0 = stub_00430d50((void*)(v0));
+    if ((int)((u32)(t0) & 0xff) != (int)(0)) {
+        t1 = stub_004311a0((void*)(v0), (u32)(v0->f_10), (u32)(v0->f_18));
+        v1 = (int)(1);
+    } else {
+        v1 = (int)(0);
+    }
+    return (int)(v1);
+}
 
 void* fn_00431758(int a0, int a1, int a2, int a3) {
     void* t0;
@@ -21,6 +103,37 @@ void* fn_00431758(int a0, int a1, int a2, int a3) {
         v0 = (int)(0);
     }
     return (void*)(v0);
+}
+
+struct unk_004317b4_gmbf4;
+struct unk_004317b4_gmbf4_4;
+struct unk_004317b4_gmbf4 {
+    char pad_0[4];
+    unk_004317b4_gmbf4_4* f_4;
+};
+struct unk_004317b4_gmbf4_4 {
+    char pad_0[8];
+    u32 f_8;
+    u32 f_c;
+    char pad_10[24];
+    u8 f_28;
+};
+extern unk_004317b4_gmbf4 g_004317b4_0;
+int fn_004317b4(void) {
+    int t0;
+    int t1;
+    unk_004317b4_gmbf4_4* v0;
+    int v3;
+    v0 = (unk_004317b4_gmbf4_4*)((&g_004317b4_0)->f_4);
+    t0 = stub_00430d50((void*)(v0));
+    if ((int)((u32)(t0) & 0xff) != (int)(0)) {
+        t1 = stub_00431354((void*)(v0), (u32)(v0->f_c), (u32)(v0->f_8));
+        (&g_004317b4_0)->f_4->f_28 = (u8)(1);
+        v3 = (int)(1);
+    } else {
+        v3 = (int)(0);
+    }
+    return (int)(v3);
 }
 
 void fn_00431f70(int a0) {

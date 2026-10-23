@@ -5,6 +5,34 @@
 extern "C" {
 
 static void __attribute__((noinline)) stub_00b04fc8(int p0, int p1, int p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
+int fn_00b15fd4(void*, u32);
+
+struct unk_00b04f3c_gm76dc;
+struct unk_00b04f3c_gm76dc {
+    u32 f_0;
+    u32 f_4;
+    char pad_8[256];
+    u32 f_108;
+};
+extern unk_00b04f3c_gm76dc g_00b04f3c_0;
+int fn_00b04f3c(int a0) {
+    int t0;
+    void* v0;
+    u32 v1;
+    int v2;
+    v0 = (void*)((&g_00b04f3c_0)->f_0);
+    v1 = (u32)((&g_00b04f3c_0)->f_4);
+    t0 = fn_00b15fd4((void*)(v0), (u32)((u32)(a0) << 2));
+    if ((int)(t0) != (int)(0)) {
+        (&g_00b04f3c_0)->f_0 = (u32)(t0);
+        (&g_00b04f3c_0)->f_4 = (u32)((int)(t0) + (int)((int)(v1) - (int)(v0)));
+        (&g_00b04f3c_0)->f_108 = (u32)((int)(a0) + (int)((&g_00b04f3c_0)->f_108));
+        v2 = (int)(0);
+    } else {
+        v2 = (int)(1);
+    }
+    return (int)(v2);
+}
 
 void fn_00b05128(int a0) {
     stub_00b04fc8((int)(a0), (int)(0), (int)(0));

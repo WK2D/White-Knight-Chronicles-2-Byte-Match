@@ -109,6 +109,102 @@ int fn_003ca3e4(int a0) {
     return (int)(1);
 }
 
+struct unk_003ca434_a0_8;
+struct unk_003ca434_a0_8 {
+    char pad_0[3472];
+    u8 f_d90;
+};
+struct unk_003ca434_a0 {
+    char pad_0[8];
+    unk_003ca434_a0_8* f_8;
+};
+int fn_003ca434(unk_003ca434_a0* a0) {
+    int t1;
+    unk_003ca434_a0_8* v0;
+    int v1;
+    if ((int)(a0->f_8) != (int)(0)) {
+        v0 = (unk_003ca434_a0_8*)(a0->f_8);
+        fn_00b37fa8((void*)((char*)a0->f_8 + 1936), (int)(0), (int)(256));
+        t1 = fn_00b37fa8((void*)((&v0->f_d90)), (int)(0), (int)(256));
+        v1 = (int)(1);
+    } else {
+        v1 = (int)(0);
+    }
+    return (int)(v1);
+}
+
+struct unk_003ca4a0_a0_8;
+struct unk_003ca4a0_a0_8 {
+    char pad_0[3216];
+    u8 f_c90;
+};
+struct unk_003ca4a0_a0 {
+    char pad_0[8];
+    unk_003ca4a0_a0_8* f_8;
+};
+int fn_003ca4a0(unk_003ca4a0_a0* a0) {
+    int t1;
+    unk_003ca4a0_a0_8* v0;
+    int v1;
+    if ((int)(a0->f_8) != (int)(0)) {
+        v0 = (unk_003ca4a0_a0_8*)(a0->f_8);
+        fn_00b37fa8((void*)((char*)a0->f_8 + 1680), (int)(0), (int)(256));
+        t1 = fn_00b37fa8((void*)((&v0->f_c90)), (int)(0), (int)(256));
+        v1 = (int)(1);
+    } else {
+        v1 = (int)(0);
+    }
+    return (int)(v1);
+}
+
+struct unk_003ca50c_a0_8;
+struct unk_003ca50c_a0_8 {
+    char pad_0[2960];
+    u8 f_b90;
+};
+struct unk_003ca50c_a0 {
+    char pad_0[8];
+    unk_003ca50c_a0_8* f_8;
+};
+int fn_003ca50c(unk_003ca50c_a0* a0) {
+    int t1;
+    unk_003ca50c_a0_8* v0;
+    int v1;
+    if ((int)(a0->f_8) != (int)(0)) {
+        v0 = (unk_003ca50c_a0_8*)(a0->f_8);
+        fn_00b37fa8((void*)((char*)a0->f_8 + 1552), (int)(0), (int)(128));
+        t1 = fn_00b37fa8((void*)((&v0->f_b90)), (int)(0), (int)(256));
+        v1 = (int)(1);
+    } else {
+        v1 = (int)(0);
+    }
+    return (int)(v1);
+}
+
+struct unk_003ca578_a0_8;
+struct unk_003ca578_a0_8 {
+    char pad_0[2704];
+    u8 f_a90;
+};
+struct unk_003ca578_a0 {
+    char pad_0[8];
+    unk_003ca578_a0_8* f_8;
+};
+int fn_003ca578(unk_003ca578_a0* a0) {
+    int t1;
+    unk_003ca578_a0_8* v0;
+    int v1;
+    if ((int)(a0->f_8) != (int)(0)) {
+        v0 = (unk_003ca578_a0_8*)(a0->f_8);
+        fn_00b37fa8((void*)((char*)a0->f_8 + 1488), (int)(0), (int)(64));
+        t1 = fn_00b37fa8((void*)((&v0->f_a90)), (int)(0), (int)(256));
+        v1 = (int)(1);
+    } else {
+        v1 = (int)(0);
+    }
+    return (int)(v1);
+}
+
 struct unk_003ca650_a0 {
     char pad_0[4];
     u32 f_4;

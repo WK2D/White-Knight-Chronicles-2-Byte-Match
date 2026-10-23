@@ -9,6 +9,8 @@ void* fn_0003faa8_2(void*);
 void* fn_0003faa8(int);
 void fn_0003fab0_2(void*, u8);
 void fn_0003fab0(void*, int);
+void fn_003c75c4(void*);
+int fn_003c789c(void*);
 void fn_0040cc94(u32, void*, void*);
 void fn_0040cd28(u32, void*);
 void fn_0040cd7c(u32, void*);
@@ -178,6 +180,37 @@ int fn_00336c30(void* a0) {
     int t0;
     t0 = fn_00b3b398((u32)((&g_00336c30_0)->f_0->f_74));
     fn_0003fab0_2((void*)(a0), (u8)((u8)t0));
+    return (int)(1);
+}
+
+struct unk_0033778c_gm1c30;
+struct unk_0033778c_gm1c30_0;
+struct unk_0033778c_gm1c30_0_6c;
+struct unk_0033778c_gm1c30_0_6c_8;
+struct unk_0033778c_gm1c30 {
+    unk_0033778c_gm1c30_0* f_0;
+};
+struct unk_0033778c_gm1c30_0 {
+    char pad_0[108];
+    unk_0033778c_gm1c30_0_6c* f_6c;
+};
+struct unk_0033778c_gm1c30_0_6c {
+    char pad_0[8];
+    unk_0033778c_gm1c30_0_6c_8* f_8;
+};
+struct unk_0033778c_gm1c30_0_6c_8 {
+    char pad_0[256];
+    u32 f_100;
+};
+extern unk_0033778c_gm1c30 g_0033778c_0;
+int fn_0033778c(void) {
+    int t1;
+    void* v0;
+    if ((int)((&g_0033778c_0)->f_0->f_6c->f_8->f_100) != (int)(0)) {
+        v0 = (void*)((&g_0033778c_0)->f_0->f_6c->f_8->f_100);
+        fn_003c75c4((void*)(v0));
+        t1 = fn_003c789c((void*)(v0));
+    }
     return (int)(1);
 }
 

@@ -5,8 +5,40 @@
 extern "C" {
 
 int fn_0036dee0(void*);
+static int __attribute__((noinline)) stub_00431e94(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static int __attribute__((noinline)) stub_0043230c(void* p0, u32 p1, u8 p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
 static void* __attribute__((noinline)) stub_004323f8(void* p0, u16 p1, u8 p2) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
+static int __attribute__((noinline)) stub_00432874(void* p0, u32 p1, u32 p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
+
+struct unk_00433354_gmbec;
+struct unk_00433354_gmbec_0;
+struct unk_00433354_gmbec {
+    unk_00433354_gmbec_0* f_0;
+};
+struct unk_00433354_gmbec_0 {
+    char pad_0[8];
+    u32 f_8;
+    u32 f_c;
+    char pad_10[32];
+    u8 f_30;
+};
+extern unk_00433354_gmbec g_00433354_0;
+int fn_00433354(void) {
+    int t0;
+    int t1;
+    unk_00433354_gmbec_0* v0;
+    int v3;
+    v0 = (unk_00433354_gmbec_0*)((&g_00433354_0)->f_0);
+    t0 = stub_00431e94((void*)(v0));
+    if ((int)((u32)(t0) & 0xff) != (int)(0)) {
+        t1 = stub_00432874((void*)(v0), (u32)(v0->f_c), (u32)(v0->f_8));
+        (&g_00433354_0)->f_0->f_30 = (u8)(1);
+        v3 = (int)(1);
+    } else {
+        v3 = (int)(0);
+    }
+    return (int)(v3);
+}
 
 struct unk_00433708_a0 {
     char pad_0[16];

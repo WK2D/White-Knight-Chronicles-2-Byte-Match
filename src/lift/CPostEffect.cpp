@@ -25,6 +25,8 @@ void fn_0029d828(u32, float);
 void fn_002aa738(u32);
 void fn_002aa73c(u32);
 void fn_002ab39c(u32);
+void fn_002abf44(u32);
+void fn_002ae0f0(u32);
 int fn_002df038(u32);
 void fn_0030947c(u32);
 void fn_00309d44(u32);
@@ -271,6 +273,23 @@ struct unk_004aa88c_gm534_0 {
 extern unk_004aa88c_gm534 g_004aa88c_0;
 void fn_004aa88c(void) {
     fn_002aa73c((u32)((&g_004aa88c_0)->f_0->f_8));
+}
+
+struct unk_004aa8bc_gm534;
+struct unk_004aa8bc_gm534_0;
+struct unk_004aa8bc_gm534 {
+    unk_004aa8bc_gm534_0* f_0;
+};
+struct unk_004aa8bc_gm534_0 {
+    char pad_0[8];
+    u32 f_8;
+};
+extern unk_004aa8bc_gm534 g_004aa8bc_0;
+void fn_004aa8bc(void) {
+    u32 v0;
+    v0 = (u32)((&g_004aa8bc_0)->f_0->f_8);
+    fn_002ae0f0((u32)(v0));
+    fn_002abf44((u32)(v0));
 }
 
 struct unk_004ab088_gm534;

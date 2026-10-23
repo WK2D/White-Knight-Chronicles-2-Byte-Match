@@ -7,6 +7,34 @@ extern "C" {
 static int __attribute__((noinline)) stub_0086d0c4(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 void fn_00b3e2e8(int);
 int fn_00b3e7e8(void*, int);
+void fn_00b3f4c8(u32, float, float, float, float, float, float);
+void fn_00b3fb88(void*, float);
+
+struct unk_00870f84_gm68c8;
+struct unk_00870f84_gm68cc;
+struct unk_00870f84_gm68c8_0;
+struct unk_00870f84_gm68cc_0;
+struct unk_00870f84_gm68c8 {
+    unk_00870f84_gm68c8_0* f_0;
+};
+struct unk_00870f84_gm68cc {
+    unk_00870f84_gm68cc_0* f_0;
+};
+struct unk_00870f84_gm68c8_0 {
+    char pad_0[124];
+    u32 f_7c;
+};
+struct unk_00870f84_gm68cc_0 {
+    u32 f_0;
+};
+extern unk_00870f84_gm68c8 g_00870f84_0;
+extern unk_00870f84_gm68cc g_00870f84_1;
+void fn_00870f84(void) {
+    u32 v0;
+    v0 = (u32)((&g_00870f84_1)->f_0->f_0);
+    fn_00b3f4c8((u32)((&g_00870f84_0)->f_0->f_7c), (float)(1.0f), (float)(0.0f), (float)(0.0f), (float)(0.0f), (float)(1.0f), (float)(0.0f));
+    fn_00b3fb88((void*)(v0), (float)(1.0f));
+}
 
 struct unk_00870ffc_a0 {
     char pad_0[4352];

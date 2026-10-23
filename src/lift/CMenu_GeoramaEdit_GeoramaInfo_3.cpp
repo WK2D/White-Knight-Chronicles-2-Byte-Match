@@ -4,6 +4,26 @@
 
 extern "C" {
 
+void fn_00b3cd58(void*, u32, int, int, int);
+void fn_00b3cec8(void*, u32, int, int);
+void fn_00b3d058(void*, u32, int, int, u16);
+
+struct unk_00888410_a0 {
+    char pad_0[632];
+    u16 f_278;
+};
+struct unk_00888410_a2 {
+    char pad_0[404];
+    u32 f_194;
+};
+int fn_00888410(unk_00888410_a0* a0, int a1, unk_00888410_a2* a2) {
+    u32 v0;
+    v0 = (u32)(a2->f_194);
+    fn_00b3cd58((void*)(a2), (u32)(v0), (int)(234), (int)(1), (int)(0));
+    fn_00b3cec8((void*)(a2), (u32)(v0), (int)(368), (int)(0));
+    fn_00b3d058((void*)(a2), (u32)(v0), (int)(368), (int)(3), (u16)(a0->f_278));
+    return (int)(1);
+}
 
 struct unk_00889d90_gm639c;
 struct unk_00889d90_gm63a0;

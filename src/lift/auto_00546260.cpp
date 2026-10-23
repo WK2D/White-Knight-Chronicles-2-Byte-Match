@@ -4,10 +4,56 @@
 
 extern "C" {
 
-static int __attribute__((noinline)) stub_00545ecc(int p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static int __attribute__((noinline)) stub_00545ecc_2(int p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static int __attribute__((noinline)) stub_00545ecc(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static void __attribute__((noinline)) stub_005468e8(int p0, void* p1, void* p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
 void* fn_0054af54(u16);
+void* fn_0054fc10(void*, u16);
+void fn_00551c98(void*, u16, void*, int);
 void* fn_00592184(int, int);
+void fn_00ba1bb0(void*);
+
+struct unk_005466ec_l;
+struct unk_005466ec_l {
+    u16 f_0;
+    u16 f_2;
+    u32 f_4;
+    char pad_8[33];
+    u8 f_29;
+    u8 f_2a;
+    char pad_2b[1];
+    u8 f_2c;
+};
+struct unk_005466ec_a0 {
+    u32 f_0;
+};
+struct unk_005466ec_a1 {
+    char pad_0[4];
+    u32 f_4;
+    u16 f_8;
+    u16 f_a;
+    char pad_c[1];
+    u8 f_d;
+};
+void fn_005466ec(unk_005466ec_a0* a0, unk_005466ec_a1* a1, void* a2) {
+    int t1;
+    unk_005466ec_l l;
+    int v0;
+    u32 v4;
+    fn_00ba1bb0((void*)((&l)));
+    l.f_0 = (u16)(a1->f_8);
+    l.f_2 = (u16)(a1->f_a);
+    l.f_29 = (u8)(a1->f_d);
+    l.f_4 = (u32)(a1->f_4);
+    l.f_2a = (u8)(0);
+    l.f_2c = (u8)(1);
+    for (v0 = 0; v0 < 8; v0++) {
+        FIELD(u32, (char*)(&l) + (int)(v0) * 4, 8) = (u32)(FIELD(u32, (char*)a2 + (int)(v0) * 4, 0));
+    }
+    v4 = (u32)(a0->f_0);
+    t1 = stub_00545ecc((void*)(a0));
+    fn_00551c98((void*)(v4), (u16)((u16)t1), (void*)((&l)), (int)(1));
+}
 
 void fn_005469e4(int a0, void* a1) {
     void* t0;
@@ -15,10 +61,23 @@ void fn_005469e4(int a0, void* a1) {
     stub_005468e8((int)(a0), (void*)(t0), (void*)(a1));
 }
 
+struct unk_00546ab8_a0 {
+    u32 f_0;
+};
+void* fn_00546ab8(unk_00546ab8_a0* a0) {
+    int t0;
+    void* t1;
+    u32 v0;
+    v0 = (u32)(a0->f_0);
+    t0 = stub_00545ecc((void*)(a0));
+    t1 = fn_0054fc10((void*)(v0), (u16)((u16)t0));
+    return (void*)(t1);
+}
+
 void* fn_005477a0(int a0) {
     int t0;
     void* t1;
-    t0 = stub_00545ecc((int)(a0));
+    t0 = stub_00545ecc_2((int)(a0));
     t1 = fn_0054af54((u16)((u16)t0));
     return (void*)(t1);
 }

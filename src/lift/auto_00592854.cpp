@@ -4,6 +4,52 @@
 
 extern "C" {
 
+void* fn_00429fe8(void*, void*);
+void* fn_00545e18(void*);
+int fn_005478b0(void*);
+
+struct unk_00594b60_g17c8;
+struct unk_00594b60_g17c8_0;
+struct unk_00594b60_g17c8_0_6c;
+struct unk_00594b60_g17c8_0_6c_8;
+struct unk_00594b60_g17c8 {
+    unk_00594b60_g17c8_0* f_0;
+};
+struct unk_00594b60_g17c8_0 {
+    char pad_0[108];
+    unk_00594b60_g17c8_0_6c* f_6c;
+};
+struct unk_00594b60_g17c8_0_6c {
+    char pad_0[8];
+    unk_00594b60_g17c8_0_6c_8* f_8;
+};
+struct unk_00594b60_g17c8_0_6c_8 {
+    char pad_0[68];
+    u32 f_44;
+};
+extern unk_00594b60_g17c8 g_00594b60_0;
+int fn_00594b60(void* a0) {
+    int t0;
+    void* t1;
+    void* t2;
+    u32 v0;
+    if ((int)(a0) != (int)(0)) {
+        t0 = fn_005478b0((void*)(a0));
+        if ((int)((u32)(t0) & 0xff) != (int)(0)) {
+            if ((int)((&g_00594b60_0)->f_0->f_6c->f_8) != (int)(0)) {
+                if ((int)((&g_00594b60_0)->f_0->f_6c->f_8->f_44) != (int)(0)) {
+                    v0 = (u32)((&g_00594b60_0)->f_0->f_6c->f_8->f_44);
+                    t1 = fn_00545e18((void*)(a0));
+                    t2 = fn_00429fe8((void*)(v0), (void*)(t1));
+                    if ((int)(t2) != (int)(0)) {
+                        return (int)(FIELD(u8, t2, 17));
+                    }
+                }
+            }
+        }
+    }
+    return (int)(0);
+}
 
 struct unk_00594e84_a0 {
     float f_0;

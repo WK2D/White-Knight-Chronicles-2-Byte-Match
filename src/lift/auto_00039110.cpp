@@ -56,6 +56,25 @@ void* fn_00039470(int a0, int a1) {
     return (void*)(t0);
 }
 
+struct unk_00039910_a0 {
+    char pad_0[1056];
+    u32 f_420;
+};
+void* fn_00039910(unk_00039910_a0* a0) {
+    int t0;
+    void* v1;
+    int v11;
+    u32 v12;
+    v1 = (void*)(a0);
+    do {
+        v12 = (u32)(a0->f_420);
+        t0 = stub_00039598((void*)(a0), (int)(0));
+        v1 = (void*)(t0);
+        v11 = (int)(v12);
+    } while ((int)(v1) != (int)(0));
+    return (void*)(v11);
+}
+
 struct unk_00039a04_a0 {
     u32 f_0;
     char pad_4[1028];

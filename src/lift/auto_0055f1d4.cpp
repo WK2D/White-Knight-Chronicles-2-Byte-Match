@@ -117,6 +117,8 @@ void* fn_0058eef0_2(void);
 int fn_0058eef0(void);
 void fn_00b37fa8_2(void*, int, int);
 void fn_00b37fa8(u32, int, u32);
+void fn_00ba1e38(void*);
+void fn_00ba1e80(void*);
 
 void fn_0055f40c(void* a0, int a1, int a2) {
     void* t0;
@@ -828,6 +830,16 @@ struct unk_00561b58_a0 {
 };
 void* fn_00561b58(unk_00561b58_a0* a0) {
     return (void*)(a0->f_0 + 26616);
+}
+
+struct unk_00561b68_a0 {
+    u32 f_0;
+};
+void fn_00561b68(unk_00561b68_a0* a0) {
+    int v0;
+    v0 = (int)(a0->f_0 + 26552);
+    fn_00ba1e80((void*)(a0->f_0 + 25912));
+    fn_00ba1e38((void*)(v0));
 }
 
 struct unk_00561f6c_a0 {

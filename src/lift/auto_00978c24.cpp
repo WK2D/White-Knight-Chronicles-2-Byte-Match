@@ -7,6 +7,7 @@ extern "C" {
 int fn_00935b68(void*, void*);
 int fn_0093d824(void*);
 int fn_0093d930(void*);
+void fn_00955300(void*, u32);
 int fn_0096405c(void*, void*);
 void* fn_00964124(void*, int);
 int fn_009645d8(void*, void*);
@@ -79,6 +80,21 @@ void fn_00979424(int a0) {
 
 void fn_0097942c(int a0) {
     stub_0097933c((int)(a0), (int)(1));
+}
+
+struct unk_009794e0_a0 {
+    char pad_0[52];
+    u32 f_34;
+};
+int fn_009794e0(unk_009794e0_a0* a0) {
+    void* t0;
+    void* t1;
+    u32 v0;
+    t0 = fn_00964124((void*)(a0), (int)((int)a0->f_34));
+    v0 = (u32)(FIELD(u32, t0, 4));
+    t1 = fn_00964124((void*)(a0), (int)(a0->f_34 + 1));
+    fn_00955300((void*)(v0), (u32)(FIELD(u32, t1, 4)));
+    return (int)(0);
 }
 
 }

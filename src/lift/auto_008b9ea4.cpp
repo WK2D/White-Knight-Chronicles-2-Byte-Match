@@ -4,7 +4,52 @@
 
 extern "C" {
 
+void* fn_008c69dc(void);
+void* fn_008c69e4(void);
+void* fn_008c69ec(void);
+void fn_00b3e028(void*, void*, void*, void*, void*, int);
 void fn_00b3ebd8(u32, u32, int);
+
+struct unk_008ba0fc_l;
+struct unk_008ba0fc_gm5adc;
+struct unk_008ba0fc_gm5aec;
+struct unk_008ba0fc_gm5adc_0;
+struct unk_008ba0fc_gm5aec_0;
+struct unk_008ba0fc_l {
+    float f_0;
+    float f_4;
+};
+struct unk_008ba0fc_gm5adc {
+    unk_008ba0fc_gm5adc_0* f_0;
+};
+struct unk_008ba0fc_gm5aec {
+    unk_008ba0fc_gm5aec_0* f_0;
+};
+struct unk_008ba0fc_gm5adc_0 {
+    char pad_0[76];
+    u32 f_4c;
+};
+struct unk_008ba0fc_gm5aec_0 {
+    float f_0;
+    float f_4;
+};
+extern unk_008ba0fc_gm5adc g_008ba0fc_0;
+extern unk_008ba0fc_gm5aec g_008ba0fc_1;
+int fn_008ba0fc(void) {
+    void* t0;
+    void* t1;
+    void* t2;
+    unk_008ba0fc_l l;
+    u32 v0;
+    v0 = (u32)((&g_008ba0fc_0)->f_0->f_4c);
+    t0 = fn_008c69dc();
+    t1 = fn_008c69e4();
+    t2 = fn_008c69ec();
+    fn_00b3e028((void*)(v0), (void*)(t0), (void*)(t1), (void*)(t2), (void*)((&l)), (int)(1));
+    (&g_008ba0fc_1)->f_0->f_0 = l.f_0;
+    (&g_008ba0fc_1)->f_0->f_4 = l.f_4;
+    return (int)(0);
+}
 
 struct unk_008bae6c_gm5adc;
 struct unk_008bae6c_gm5adc_0;

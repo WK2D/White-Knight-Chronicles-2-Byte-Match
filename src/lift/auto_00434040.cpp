@@ -4,12 +4,17 @@
 
 extern "C" {
 
+int fn_00031c38(void*, void*, int, int);
+int fn_00041b48(void*);
+void* fn_0036df1c(void*, int);
+static int __attribute__((noinline)) stub_00433cd4(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static void __attribute__((noinline)) stub_00433fc4(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 static void __attribute__((noinline)) stub_00433fe0(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 static void __attribute__((noinline)) stub_00434008(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 static void __attribute__((noinline)) stub_00434024(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 static void __attribute__((noinline)) stub_00434040(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 static void __attribute__((noinline)) stub_0043408c(void) { __asm__ volatile (""); }
+void fn_00b37fa8(u32, int, void*);
 
 struct unk_00434040_gmbe0;
 struct unk_00434040_gmbe0 {
@@ -42,6 +47,50 @@ void fn_00434098(int a0) {
 
 void fn_0043409c(int a0) {
     stub_00434040((int)(a0));
+}
+
+struct unk_00434620_gmbe0;
+struct unk_00434620_gmbe0_0;
+struct unk_00434620_gmbe0 {
+    unk_00434620_gmbe0_0* f_0;
+};
+struct unk_00434620_gmbe0_0 {
+    u32 f_0;
+    u32 f_4;
+    u32 f_8;
+    u32 f_c;
+};
+extern unk_00434620_gmbe0 g_00434620_0;
+int fn_00434620(void* a0) {
+    int t0;
+    int t1;
+    void* t2;
+    int t3;
+    unk_00434620_gmbe0_0* v0;
+    void* v1;
+    unk_00434620_gmbe0_0* v2;
+    v0 = (unk_00434620_gmbe0_0*)((&g_00434620_0)->f_0);
+    t0 = stub_00433cd4((void*)(v0));
+    if ((int)((u32)(t0) & 0xff) == (int)(0)) {
+        return (int)(0);
+    }
+    v0->f_8 = (u32)(0);
+    t1 = fn_00041b48((void*)(a0));
+    v0->f_4 = (u32)(t1);
+    if ((int)((&g_00434620_0)->f_0->f_0) == (int)(0)) {
+        return (int)(0);
+    }
+    t2 = fn_0036df1c((void*)((&g_00434620_0)->f_0->f_0), (int)(0));
+    (&g_00434620_0)->f_0->f_c = (u32)(0);
+    if ((int)((int)((u32)((&g_00434620_0)->f_0->f_4) << 2) + (int)((u32)((&g_00434620_0)->f_0->f_4) << 5)) == (int)(0)) {
+        return (int)(1);
+    }
+    v1 = (void*)((int)((u32)((&g_00434620_0)->f_0->f_4) << 2) + (int)((u32)((&g_00434620_0)->f_0->f_4) << 5));
+    v2 = (unk_00434620_gmbe0_0*)((&g_00434620_0)->f_0);
+    t3 = fn_00031c38((void*)(t2), (void*)(v1), (int)(16), (int)(0));
+    v2->f_c = (u32)(t3);
+    fn_00b37fa8((u32)((&g_00434620_0)->f_0->f_c), (int)(0), (void*)(v1));
+    return (int)(1);
 }
 
 }

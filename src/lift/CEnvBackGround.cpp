@@ -7,6 +7,7 @@ extern "C" {
 void fn_000c39ac(int);
 void fn_000c3a44(int);
 void fn_000c43e0(u32);
+void fn_000c4584(u32, int, void*, int);
 static void __attribute__((noinline)) stub_004c5a7c(int p0, int p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 void fn_00b39e48(int, int, void*, int);
 
@@ -76,6 +77,29 @@ struct unk_004c64e4_gdc_0 {
 extern unk_004c64e4_gdc g_004c64e4_0;
 void fn_004c64e4(void) {
     fn_000c43e0((u32)((&g_004c64e4_0)->f_0->f_58));
+}
+
+struct unk_004c6514_gdc;
+struct unk_004c6514_gdc_0;
+struct unk_004c6514_gdc {
+    unk_004c6514_gdc_0* f_0;
+};
+struct unk_004c6514_gdc_0 {
+    char pad_0[88];
+    u32 f_58;
+};
+struct unk_004c6514_a0 {
+    char pad_0[4180];
+    u8 f_1054;
+    char pad_1055[15];
+    u8 f_1064;
+};
+extern unk_004c6514_gdc g_004c6514_0;
+void fn_004c6514(unk_004c6514_a0* a0) {
+    u32 v0;
+    v0 = (u32)((&g_004c6514_0)->f_0->f_58);
+    fn_000c4584((u32)(v0), (int)(35), (void*)((&a0->f_1054)), (int)(4));
+    fn_000c4584((u32)(v0), (int)(36), (void*)((&a0->f_1064)), (int)(4));
 }
 
 }

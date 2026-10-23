@@ -6,6 +6,7 @@ extern "C" {
 
 void fn_00016a40(u32, int);
 void fn_00036760(void);
+void fn_000cbac0(u32);
 void fn_000cc070(u32);
 void fn_000cc964(u32, int);
 void fn_000cd068(u32);
@@ -103,6 +104,23 @@ struct unk_00076120_gm7778_0 {
 extern unk_00076120_gm7778 g_00076120_0;
 void fn_00076120(void) {
     fn_000cd068((u32)((&g_00076120_0)->f_0->f_74));
+}
+
+struct unk_00076150_gm7778;
+struct unk_00076150_gm7778_0;
+struct unk_00076150_gm7778 {
+    unk_00076150_gm7778_0* f_0;
+};
+struct unk_00076150_gm7778_0 {
+    char pad_0[116];
+    u32 f_74;
+};
+extern unk_00076150_gm7778 g_00076150_0;
+void fn_00076150(void) {
+    u32 v0;
+    v0 = (u32)((&g_00076150_0)->f_0->f_74);
+    fn_000cbac0((u32)(v0));
+    fn_000cd068((u32)(v0));
 }
 
 struct unk_00076198_gm7778;

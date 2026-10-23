@@ -4,6 +4,8 @@
 
 extern "C" {
 
+void fn_0004fe38(void*, u32, int);
+void fn_0004fe84(void*, u32, int, float);
 static void __attribute__((noinline)) stub_00693314(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
 static void __attribute__((noinline)) stub_00693378(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
 void fn_006c1d88(u32, int, int);
@@ -30,6 +32,7 @@ void fn_0071c3fc(u32, int);
 void fn_00b37fa8_2(void*, int, int);
 void fn_00b37fa8(u32, int, int);
 void fn_00b38268_2(void*, int);
+void fn_00b38268_3(void*, void*);
 void fn_00b38268(u32, void*);
 
 struct unk_00692b78_a0 {
@@ -264,6 +267,28 @@ void fn_00693160(unk_00693160_a0* a0, int a1) {
     fn_00b38268_2((void*)((&a0->f_110)), (int)(a1));
 }
 
+struct unk_0069318c_a0 {
+    char pad_0[640];
+    u32 f_280;
+};
+void fn_0069318c(unk_0069318c_a0* a0, void* a1) {
+    void* v0;
+    v0 = (void*)(a0->f_280 + 432);
+    fn_00b37fa8_2((void*)(v0), (int)(0), (int)(64));
+    fn_00b38268_3((void*)(v0), (void*)(a1));
+}
+
+struct unk_006931ec_a0 {
+    char pad_0[684];
+    u32 f_2ac;
+};
+void fn_006931ec(unk_006931ec_a0* a0, void* a1) {
+    void* v0;
+    v0 = (void*)(a0->f_2ac + 150);
+    fn_00b37fa8_2((void*)(v0), (int)(0), (int)(128));
+    fn_00b38268_3((void*)(v0), (void*)(a1));
+}
+
 struct unk_0069324c_a0 {
     char pad_0[616];
     u32 f_268;
@@ -302,6 +327,28 @@ struct unk_006932ec_a0 {
 };
 void fn_006932ec(unk_006932ec_a0* a0, int a1, int a2) {
     fn_006c1d88((u32)(a0->f_238), (int)(a1), (int)(a2));
+}
+
+struct unk_00693314_a0 {
+    char pad_0[936];
+    u8 f_3a8;
+};
+void fn_00693314(unk_00693314_a0* a0) {
+    u32 v0;
+    v0 = (u32)(FIELD(u32, (&a0->f_3a8), 404));
+    fn_0004fe38((void*)((&a0->f_3a8)), (u32)(v0), (int)(1642));
+    fn_0004fe84((void*)((&a0->f_3a8)), (u32)(v0), (int)(1642), (float)(1.0f));
+}
+
+struct unk_00693378_a0 {
+    char pad_0[936];
+    u8 f_3a8;
+};
+void fn_00693378(unk_00693378_a0* a0) {
+    u32 v0;
+    v0 = (u32)(FIELD(u32, (&a0->f_3a8), 404));
+    fn_0004fe38((void*)((&a0->f_3a8)), (u32)(v0), (int)(590));
+    fn_0004fe84((void*)((&a0->f_3a8)), (u32)(v0), (int)(590), (float)(1.0f));
 }
 
 void fn_006933dc(void* a0, int a1) {

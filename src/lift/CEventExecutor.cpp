@@ -13,11 +13,13 @@ void fn_0001d798(u32);
 void fn_0001d958(u32, int);
 void fn_0001d9f8(u32, int);
 void fn_0001da60(u32, int);
+int fn_00036140(void*, u32);
 int fn_0003f9e0_2(int);
 int fn_0003f9e0(void*);
 float fn_0003fa14_2(void*);
 void fn_0003fa14_3(int);
 float fn_0003fa14(int);
+void* fn_0003faa8_2(void*);
 void* fn_0003faa8(int);
 void fn_0003fab0(void*, u8);
 void fn_0003fac8_2(float);
@@ -36,6 +38,7 @@ void fn_002deca0(u32, u16, int);
 void* fn_002df680(u32);
 void fn_00313a0c(void*, void*);
 void fn_00314750(void*, void*);
+int fn_004bba14(void*, void*);
 
 struct unk_004ce4b8_a0 {
     char pad_0[8];
@@ -422,6 +425,67 @@ int fn_004d0e5c(void) {
     t0 = fn_002aa740((u32)((&g_004d0e5c_0)->f_0->f_8));
     fn_002b9888((void*)(t0), (int)(1));
     return (int)(1);
+}
+
+struct unk_004d2098_g2d0;
+struct unk_004d2098_g2d4;
+struct unk_004d2098_g2d0_0;
+struct unk_004d2098_g2d4_0;
+struct unk_004d2098_g2d4_0_c;
+struct unk_004d2098_g2d4_0_c_158;
+struct unk_004d2098_g2d0 {
+    unk_004d2098_g2d0_0* f_0;
+};
+struct unk_004d2098_g2d4 {
+    unk_004d2098_g2d4_0* f_0;
+};
+struct unk_004d2098_g2d0_0 {
+    char pad_0[4];
+    u32 f_4;
+};
+struct unk_004d2098_g2d4_0 {
+    char pad_0[12];
+    unk_004d2098_g2d4_0_c* f_c;
+};
+struct unk_004d2098_g2d4_0_c {
+    char pad_0[344];
+    unk_004d2098_g2d4_0_c_158* f_158;
+};
+struct unk_004d2098_g2d4_0_c_158 {
+    char pad_0[68];
+    u32 f_44;
+};
+struct unk_004d2098_a0 {
+    char pad_0[8];
+    u8 f_8;
+};
+extern unk_004d2098_g2d4 g_004d2098_0;
+extern unk_004d2098_g2d0 g_004d2098_1;
+int fn_004d2098(unk_004d2098_a0* a0) {
+    void* t0;
+    void* t1;
+    int t2;
+    int t3;
+    unk_004d2098_g2d4_0_c_158* v0;
+    int v2;
+    int v6;
+    if ((int)((&g_004d2098_0)->f_0->f_c) != (int)(0)) {
+        if ((int)((&g_004d2098_0)->f_0->f_c->f_158) != (int)(0)) {
+            v0 = (unk_004d2098_g2d4_0_c_158*)((&g_004d2098_0)->f_0->f_c->f_158);
+            t0 = fn_0003faa8_2((void*)(a0));
+            t1 = fn_0003faa8_2((void*)((&a0->f_8)));
+            t2 = fn_00036140((void*)(t0), (u32)((&g_004d2098_1)->f_0->f_4));
+            v0->f_44 = (u32)(t2);
+            t3 = fn_004bba14((void*)(v0), (void*)(t1));
+            v2 = (int)(1);
+        } else {
+            v2 = (int)(0);
+        }
+        v6 = (int)(v2);
+    } else {
+        v6 = (int)(0);
+    }
+    return (int)(v6);
 }
 
 struct unk_004d2da0_g2d4;

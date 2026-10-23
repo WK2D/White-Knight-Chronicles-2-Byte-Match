@@ -16,6 +16,7 @@ the ones that do not match.
     python tools/lift.py --prune build/check.log
 """
 import bisect
+import copy
 import re
 import struct
 import sys
@@ -62,6 +63,18 @@ class Value:
         # Virtual dispatch: ('vptr', obj) the word at offset 0 of obj, ('slot', obj, k)
         # vtable entry k (a function descriptor), ('code', obj, k) its code address.
         self.vt = vt
+
+
+def address_text(text):
+    """(&x): an address, not a read (one parenthesised address-of)."""
+    if not text.startswith('(&'):
+        return False
+    depth = 0
+    for k, ch in enumerate(text):
+        depth += (ch == '(') - (ch == ')')
+        if depth == 0:
+            return k == len(text) - 1
+    return False
 
 
 def paren(v):
@@ -1852,7 +1865,31 @@ class Lifter:
             raise Fail('float argument never set')
         return args + floats
 
+    def hold_loads(self):
+        """Before a call: a value read from memory that a callee-saved
+        register (r14-r31, f14-f31) carries across the call was read before
+        it (the call may change memory), so it becomes a variable set here.
+        Left as an expression, it would be read again after the call."""
+        for regs, lo in ((self.gpr, 14), (self.fpr, 14)):
+            for r in range(lo, 32):
+                v = regs[r]
+                if v is None or v.call is not None or v.vt is not None \
+                        or v.ctype in ('addr', 'gaddr', 'toc', 'frame', 'tls', 'vec') \
+                        or address_text(v.text) or not re.search(r'->|FIELD\(|\bl\.f_', v.text):
+                    continue
+                name = f'v{len(self.vars)}'
+                vtype = getattr(v, 'cast', None) or CTYPES.get(v.ctype, 'int')
+                self.vars.append((vtype, name))
+                self.stmts.append(f'{name} = ({vtype})({v.text});')
+                held = copy.copy(v)                # keeps its access path (struct fields through it)
+                held.text, held.prec = name, 0
+                for bank in (self.gpr, self.fpr):
+                    for k in range(32):
+                        if bank[k] is v:
+                            bank[k] = held
+
     def call(self, target, local=False):
+        self.hold_loads()
         nargs, nfargs, complete = self.arity(target)
         args = self.gather_args(3, nargs, complete, nfargs)
         k = 2
@@ -2437,7 +2474,10 @@ def main():
             print('not lifted:', ', '.join(WHY) or 'nothing to lift')
             return
         decls, code, calls = result
-        print('\n'.join(decls) + '\n' + code)
+        if '--file' in sys.argv:          # a whole compilable file (for tools/try.py)
+            print(file_text([], calls, [(address, decls, code)]), end='')
+        else:
+            print('\n'.join(decls) + '\n' + code)
         return
     prune = set()
     pruned_path = BUILD / 'lift_pruned.txt'

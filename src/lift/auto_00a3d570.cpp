@@ -7,7 +7,32 @@ extern "C" {
 void fn_00a2bd18(void*, u32, int);
 static void* __attribute__((noinline)) stub_00a3da58(int p0, void* p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static void __attribute__((noinline)) stub_00a3e264(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
-void fn_00bd0eb0(int);
+void fn_00a54e00(void*);
+void fn_00a54eb8(void*);
+void fn_00bd0eb0_2(int);
+void fn_00bd0eb0(void*);
+
+struct unk_00a3da58_a0 {
+    char pad_0[16];
+    u8 f_10;
+    char pad_11[75];
+    u32 f_5c;
+    u32 f_60;
+};
+struct unk_00a3da58_a1 {
+    u32 f_0;
+};
+void* fn_00a3da58(unk_00a3da58_a0* a0, unk_00a3da58_a1* a1) {
+    u32 v0;
+    fn_00bd0eb0((void*)(a0));
+    fn_00a54eb8((void*)((&a0->f_10)));
+    if ((int)(a1) != (int)(0)) {
+        a1->f_0 = (u32)(a0->f_60);
+    }
+    v0 = (u32)(a0->f_5c);
+    fn_00a54e00((void*)((&a0->f_10)));
+    return (void*)(v0);
+}
 
 struct unk_00a3dae0_l;
 struct unk_00a3dae0_l {
@@ -18,7 +43,7 @@ int fn_00a3dae0(int a0, int a1, void* a2) {
     int t2;
     unk_00a3dae0_l l;
     int v0;
-    fn_00bd0eb0((int)(a0));
+    fn_00bd0eb0_2((int)(a0));
     l.f_0 = (u32)(0);
     t1 = stub_00a3da58((int)(a0), (void*)((&l)));
     if ((int)(t1) != (int)(0)) {
@@ -86,6 +111,40 @@ void fn_00a3e468(unk_00a3e468_a0* a0) {
         a0->f_40->f_3c = (u32)(0);
     }
     stub_00a3e264((void*)(a0));
+}
+
+struct unk_00a3e568_a0_58;
+struct unk_00a3e568_a0_58 {
+    u32 f_0;
+};
+struct unk_00a3e568_a0 {
+    char pad_0[16];
+    u8 f_10;
+    char pad_11[71];
+    unk_00a3e568_a0_58* f_58;
+};
+void* fn_00a3e568(unk_00a3e568_a0* a0) {
+    u32 v0;
+    fn_00bd0eb0((void*)(a0));
+    fn_00a54eb8((void*)((&a0->f_10)));
+    v0 = (u32)(a0->f_58->f_0);
+    fn_00a54e00((void*)((&a0->f_10)));
+    return (void*)(v0);
+}
+
+struct unk_00a3e5d0_a0 {
+    char pad_0[16];
+    u8 f_10;
+    char pad_11[55];
+    u64 f_48;
+};
+u64 fn_00a3e5d0(unk_00a3e5d0_a0* a0) {
+    u64 v0;
+    fn_00bd0eb0((void*)(a0));
+    fn_00a54eb8((void*)((&a0->f_10)));
+    v0 = (u64)(a0->f_48);
+    fn_00a54e00((void*)((&a0->f_10)));
+    return (u64)(v0);
 }
 
 }

@@ -4,6 +4,7 @@
 
 extern "C" {
 
+int fn_00b3e888(void*);
 
 struct unk_00a98f98_a0 {
     char pad_0[24];
@@ -27,6 +28,38 @@ struct unk_00a9902c_a0 {
 };
 u32 fn_00a9902c(unk_00a9902c_a0* a0, int a1) {
     return (u32)(FIELD(u32, (int)((u32)(a1) << 2) + (int)(a0->f_18), 0));
+}
+
+struct unk_00a99044_a2_0;
+struct unk_00a99044_a2_0_0;
+struct unk_00a99044_a2_0 {
+    unk_00a99044_a2_0_0* f_0;
+    u32 f_4;
+    u32 f_8;
+};
+struct unk_00a99044_a2_0_0 {
+    char pad_0[24];
+    u32 f_18;
+};
+struct unk_00a99044_a0 {
+    char pad_0[8];
+    u8 f_8;
+};
+struct unk_00a99044_a2 {
+    unk_00a99044_a2_0* f_0;
+};
+int fn_00a99044(unk_00a99044_a0* a0, int a1, unk_00a99044_a2* a2) {
+    int t0;
+    int t1;
+    int v0;
+    v0 = (int)((int)((int)((u32)(a2->f_0->f_8) << 2) + (int)((u32)(a2->f_0->f_8) << 6)) + (int)(FIELD(u32, FIELD(u32, (int)((u32)(a2->f_0->f_4) << 2) + (int)(a2->f_0->f_0->f_18), 0), 28)));
+    t0 = fn_00b3e888((void*)(a0));
+    FIELD(u16, v0, 0) = (u16)(t0);
+    t1 = fn_00b3e888((void*)((&a0->f_8)));
+    if ((int)(t1) != (int)(0)) {
+        FIELD(u16, v0, 0) = (u16)(-1);
+    }
+    return (int)(1);
 }
 
 }

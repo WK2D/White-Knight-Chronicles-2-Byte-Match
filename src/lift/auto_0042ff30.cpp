@@ -4,8 +4,84 @@
 
 extern "C" {
 
+int fn_0003f3e8(void*, void*);
+int fn_00041b48(void*);
+void* fn_00041bcc(void*);
+static int __attribute__((noinline)) stub_0042f5b4(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static void __attribute__((noinline)) stub_004302c4(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 static void __attribute__((noinline)) stub_00430304(void) { __asm__ volatile (""); }
+
+struct unk_0042fff0_gmc14;
+struct unk_0042fff0_gmc14_0;
+struct unk_0042fff0_gmc14 {
+    unk_0042fff0_gmc14_0* f_0;
+};
+struct unk_0042fff0_gmc14_0 {
+    char pad_0[8];
+    u32 f_8;
+    u32 f_c;
+};
+struct unk_0042fff0_a0 {
+    char pad_0[8];
+    u8 f_8;
+};
+extern unk_0042fff0_gmc14 g_0042fff0_0;
+int fn_0042fff0(unk_0042fff0_a0* a0) {
+    int t0;
+    int t1;
+    int t2;
+    int t3;
+    unk_0042fff0_gmc14_0* v0;
+    int v1;
+    int v2;
+    v0 = (unk_0042fff0_gmc14_0*)((&g_0042fff0_0)->f_0);
+    t0 = stub_0042f5b4((void*)(v0));
+    if ((int)((u32)(t0) & 0xff) != (int)(0)) {
+        v1 = (int)((int)((u32)(v0->f_8) << 4) + (int)(v0->f_c));
+        t1 = fn_00041b48((void*)(a0));
+        FIELD(u32, v1, 0) = (u32)(t1);
+        t2 = fn_00041b48((void*)((&a0->f_8)));
+        FIELD(u32, v1, 4) = (u32)(t2);
+        t3 = fn_00041b48((void*)((char*)(&a0->f_8) + 8));
+        FIELD(u32, v1, 8) = (u32)(t3);
+        v2 = (int)(1);
+    } else {
+        v2 = (int)(0);
+    }
+    return (int)(v2);
+}
+
+struct unk_0043009c_gmc14;
+struct unk_0043009c_gmc14_0;
+struct unk_0043009c_gmc14 {
+    unk_0043009c_gmc14_0* f_0;
+};
+struct unk_0043009c_gmc14_0 {
+    char pad_0[8];
+    u32 f_8;
+    u32 f_c;
+};
+extern unk_0043009c_gmc14 g_0043009c_0;
+int fn_0043009c(void* a0) {
+    int t0;
+    void* t1;
+    int t2;
+    unk_0043009c_gmc14_0* v0;
+    int v1;
+    int v2;
+    v0 = (unk_0043009c_gmc14_0*)((&g_0043009c_0)->f_0);
+    t0 = stub_0042f5b4((void*)(v0));
+    if ((int)((u32)(t0) & 0xff) != (int)(0)) {
+        v1 = (int)((int)((u32)(v0->f_8) << 4) + (int)(v0->f_c));
+        t1 = fn_00041bcc((void*)(a0));
+        t2 = fn_0003f3e8((void*)(t1), (void*)(t1));
+        FIELD(u32, v1, 12) = (u32)(t2);
+        v2 = (int)(1);
+    } else {
+        v2 = (int)(0);
+    }
+    return (int)(v2);
+}
 
 void fn_00430304(int a0) {
     stub_004302c4((int)(a0));

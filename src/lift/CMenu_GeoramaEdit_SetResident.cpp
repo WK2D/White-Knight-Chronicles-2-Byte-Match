@@ -4,6 +4,8 @@
 
 extern "C" {
 
+void* fn_0086d738(u32, u32);
+void fn_008701d4(u32, void*);
 void fn_00b3ccc8(void*);
 
 struct unk_0088fadc_a0 {
@@ -12,6 +14,23 @@ struct unk_0088fadc_a0 {
 };
 void* fn_0088fadc(unk_0088fadc_a0* a0) {
     return (void*)((char*)((char*)a0 + (int)((int)(a0->f_74) * 76)) + 40);
+}
+
+struct unk_0088faf8_gm6308;
+struct unk_0088faf8_gm6308 {
+    u32 f_0;
+};
+struct unk_0088faf8_a0 {
+    char pad_0[36];
+    u32 f_24;
+};
+extern unk_0088faf8_gm6308 g_0088faf8_0;
+void fn_0088faf8(unk_0088faf8_a0* a0) {
+    void* t0;
+    u32 v0;
+    v0 = (u32)(a0->f_24);
+    t0 = fn_0086d738((u32)(v0), (u32)((&g_0088faf8_0)->f_0));
+    fn_008701d4((u32)(v0), (void*)(t0));
 }
 
 struct unk_0088fbcc_a0 {

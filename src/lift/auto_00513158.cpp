@@ -68,6 +68,63 @@ int fn_005135a8(void) {
     return (int)(1);
 }
 
+struct unk_00513688_g928;
+struct unk_00513688_g928_0;
+struct unk_00513688_g928 {
+    unk_00513688_g928_0* f_0;
+};
+struct unk_00513688_g928_0 {
+    char pad_0[3336];
+    float f_d08;
+};
+extern unk_00513688_g928 g_00513688_0;
+int fn_00513688(int a0) {
+    float t0;
+    unk_00513688_g928_0* v0;
+    v0 = (unk_00513688_g928_0*)((&g_00513688_0)->f_0);
+    t0 = fn_00041b90((int)(a0));
+    v0->f_d08 = t0;
+    return (int)(1);
+}
+
+struct unk_005136c4_g928;
+struct unk_005136c4_g928_0;
+struct unk_005136c4_g928 {
+    unk_005136c4_g928_0* f_0;
+};
+struct unk_005136c4_g928_0 {
+    char pad_0[3332];
+    float f_d04;
+};
+extern unk_005136c4_g928 g_005136c4_0;
+int fn_005136c4(int a0) {
+    float t0;
+    unk_005136c4_g928_0* v0;
+    v0 = (unk_005136c4_g928_0*)((&g_005136c4_0)->f_0);
+    t0 = fn_00041b90((int)(a0));
+    v0->f_d04 = t0;
+    return (int)(1);
+}
+
+struct unk_00513700_g928;
+struct unk_00513700_g928_0;
+struct unk_00513700_g928 {
+    unk_00513700_g928_0* f_0;
+};
+struct unk_00513700_g928_0 {
+    char pad_0[3328];
+    float f_d00;
+};
+extern unk_00513700_g928 g_00513700_0;
+int fn_00513700(int a0) {
+    float t0;
+    unk_00513700_g928_0* v0;
+    v0 = (unk_00513700_g928_0*)((&g_00513700_0)->f_0);
+    t0 = fn_00041b90((int)(a0));
+    v0->f_d00 = t0;
+    return (int)(1);
+}
+
 struct unk_0051373c_g928;
 struct unk_0051373c_g928_0;
 struct unk_0051373c_g928 {

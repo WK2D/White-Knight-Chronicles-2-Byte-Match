@@ -175,6 +175,41 @@ def swaps(code):
     return out
 
 
+ZERO_TEST = re.compile(r'^(\s*)if \(\(int\)\((.*)\) (==|!=) \(int\)\(0\)\) \{$')
+
+
+def pointer_tests(code):
+    """The code with each test of a memory word against 0 read as a pointer
+    (*(void**)&x != 0), one at a time and all together: GCC predicts a
+    pointer to be non-null, which decides the block order, and a cast does
+    not count (it is folded away)."""
+    lines = code.split('\n')
+    def rewrite(line):
+        m = ZERO_TEST.match(line)
+        if not m:
+            return None
+        x = m.group(2)
+        depth = 0
+        for ch in x:                                     # one balanced expression
+            depth += (ch == '(') - (ch == ')')
+            if depth < 0:
+                return None
+        if depth or not re.search(r'(->f_[0-9a-f]+|\.f_[0-9a-f]+|^FIELD\(.*\))$', x):
+            return None
+        return f'{m.group(1)}if (*(void**)&({x}) {m.group(3)} 0) {{'
+    spots = [(i, rewrite(l)) for i, l in enumerate(lines)]
+    spots = [(i, r) for i, r in spots if r]
+    out = []
+    for i, r in spots:
+        out.append('\n'.join(lines[:i] + [r] + lines[i + 1:]))
+    if len(spots) > 1:
+        new = lines[:]
+        for i, r in spots:
+            new[i] = r
+        out.append('\n'.join(new))
+    return out
+
+
 def voided(code):
     """The function returning nothing: the lifter takes whatever r3 holds at
     a return for a result, but the source may have been void (r3 then held
@@ -192,7 +227,7 @@ def variants(code):
     swapped comparisons, a void version, and a few statement orders of each."""
     out = reorders(code)
     void = voided(code)
-    for other in flips(code) + swaps(code) + ([void] if void else []):
+    for other in pointer_tests(code) + flips(code) + swaps(code) + ([void] if void else []):
         out.append(other)
         out += reorders(other)[:8]
     if void:                                     # the void version first among the extras

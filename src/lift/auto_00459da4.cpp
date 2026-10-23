@@ -4,6 +4,10 @@
 
 extern "C" {
 
+int fn_0003f3e8(void*, void*);
+int fn_00041b48_2(int);
+int fn_00041b48(void*);
+void* fn_00041bcc(int);
 static void __attribute__((noinline)) stub_00459da4(int p0) { __asm__ volatile ("" : : "r"(p0)); }
 static void __attribute__((noinline)) stub_00459dd4(u32 p0) { __asm__ volatile ("" : : "r"(p0)); }
 static void __attribute__((noinline)) stub_00459de4(u32 p0) { __asm__ volatile ("" : : "r"(p0)); }
@@ -45,6 +49,78 @@ struct unk_0045a174_gmb28 {
 extern unk_0045a174_gmb28 g_0045a174_0;
 int fn_0045a174(void) {
     stub_00459de4((u32)((&g_0045a174_0)->f_0));
+    return (int)(1);
+}
+
+struct unk_0045a270_gmb28;
+struct unk_0045a270_gmb28_0;
+struct unk_0045a270_gmb28 {
+    unk_0045a270_gmb28_0* f_0;
+};
+struct unk_0045a270_gmb28_0 {
+    char pad_0[16];
+    u32 f_10;
+    char pad_14[4];
+    u32 f_18;
+};
+struct unk_0045a270_a0 {
+    char pad_0[8];
+    u8 f_8;
+};
+extern unk_0045a270_gmb28 g_0045a270_0;
+int fn_0045a270(unk_0045a270_a0* a0) {
+    int t0;
+    int t1;
+    int v0;
+    v0 = (int)((int)((u32)((&g_0045a270_0)->f_0->f_18) << 4) + (int)((&g_0045a270_0)->f_0->f_10));
+    t0 = fn_00041b48((void*)(a0));
+    FIELD(u32, v0, 8) = (u32)(t0);
+    t1 = fn_00041b48((void*)((&a0->f_8)));
+    FIELD(u32, v0, 12) = (u32)(t1);
+    return (int)(1);
+}
+
+struct unk_0045a2e4_gmb28;
+struct unk_0045a2e4_gmb28_0;
+struct unk_0045a2e4_gmb28 {
+    unk_0045a2e4_gmb28_0* f_0;
+};
+struct unk_0045a2e4_gmb28_0 {
+    char pad_0[16];
+    u32 f_10;
+    char pad_14[4];
+    u32 f_18;
+};
+extern unk_0045a2e4_gmb28 g_0045a2e4_0;
+int fn_0045a2e4(int a0) {
+    int t0;
+    int v0;
+    v0 = (int)((int)((u32)((&g_0045a2e4_0)->f_0->f_18) << 4) + (int)((&g_0045a2e4_0)->f_0->f_10));
+    t0 = fn_00041b48_2((int)(a0));
+    FIELD(u32, v0, 0) = (u32)(t0);
+    return (int)(1);
+}
+
+struct unk_0045a9c8_gmb28;
+struct unk_0045a9c8_gmb28_0;
+struct unk_0045a9c8_gmb28 {
+    unk_0045a9c8_gmb28_0* f_0;
+};
+struct unk_0045a9c8_gmb28_0 {
+    char pad_0[16];
+    u32 f_10;
+    char pad_14[4];
+    u32 f_18;
+};
+extern unk_0045a9c8_gmb28 g_0045a9c8_0;
+int fn_0045a9c8(int a0) {
+    void* t0;
+    int t1;
+    int v0;
+    v0 = (int)((int)((u32)((&g_0045a9c8_0)->f_0->f_18) << 4) + (int)((&g_0045a9c8_0)->f_0->f_10));
+    t0 = fn_00041bcc((int)(a0));
+    t1 = fn_0003f3e8((void*)(t0), (void*)(t0));
+    FIELD(u32, v0, 4) = (u32)(t1);
     return (int)(1);
 }
 

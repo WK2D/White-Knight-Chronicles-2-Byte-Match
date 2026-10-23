@@ -4,6 +4,7 @@
 
 extern "C" {
 
+int fn_00041b48(void*);
 void* fn_00076a98(void*, int, int, int, int, int);
 static int __attribute__((noinline)) stub_0043721c(void* p0, void* p1, u32 p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
 static void __attribute__((noinline)) stub_00437bac(void* p0, void* p1, u8 p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
@@ -38,6 +39,72 @@ int fn_004380b8(void) {
         v0 = (int)(0);
     }
     return (int)(v0);
+}
+
+struct unk_004381d4_gmbcc;
+struct unk_004381d4_gmbcc_0;
+struct unk_004381d4_gmbcc {
+    unk_004381d4_gmbcc_0* f_0;
+};
+struct unk_004381d4_gmbcc_0 {
+    char pad_0[64];
+    u32 f_40;
+    u32 f_44;
+};
+struct unk_004381d4_a0 {
+    char pad_0[8];
+    u8 f_8;
+};
+extern unk_004381d4_gmbcc g_004381d4_0;
+int fn_004381d4(unk_004381d4_a0* a0) {
+    int t0;
+    int t1;
+    int v0;
+    int v2;
+    if ((int)((&g_004381d4_0)->f_0->f_44) != (int)(0)) {
+        v0 = (int)((int)((&g_004381d4_0)->f_0->f_44) + (int)((int)((&g_004381d4_0)->f_0->f_40) * 116));
+        t0 = fn_00041b48((void*)(a0));
+        FIELD(u8, v0, 112) = (u8)(t0);
+        t1 = fn_00041b48((void*)((&a0->f_8)));
+        FIELD(u32, v0, 84) = (u32)(t1);
+        v2 = (int)(1);
+    } else {
+        v2 = (int)(0);
+    }
+    return (int)(v2);
+}
+
+struct unk_004385b4_gmbcc;
+struct unk_004385b4_gmbcc_0;
+struct unk_004385b4_gmbcc {
+    unk_004385b4_gmbcc_0* f_0;
+};
+struct unk_004385b4_gmbcc_0 {
+    char pad_0[76];
+    u32 f_4c;
+    u32 f_50;
+};
+struct unk_004385b4_a0 {
+    char pad_0[8];
+    u8 f_8;
+};
+extern unk_004385b4_gmbcc g_004385b4_0;
+int fn_004385b4(unk_004385b4_a0* a0) {
+    int t0;
+    int t1;
+    int v0;
+    int v2;
+    if ((int)((&g_004385b4_0)->f_0->f_50) != (int)(0)) {
+        v0 = (int)((int)((&g_004385b4_0)->f_0->f_50) + (int)((u32)((&g_004385b4_0)->f_0->f_4c) << 3));
+        t0 = fn_00041b48((void*)(a0));
+        FIELD(u32, v0, 0) = (u32)(t0);
+        t1 = fn_00041b48((void*)((&a0->f_8)));
+        FIELD(u32, v0, 4) = (u32)(t1);
+        v2 = (int)(1);
+    } else {
+        v2 = (int)(0);
+    }
+    return (int)(v2);
 }
 
 extern char g_00438638_0[];

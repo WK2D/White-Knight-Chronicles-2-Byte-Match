@@ -5,7 +5,48 @@
 extern "C" {
 
 void fn_0004dfb8(void*, u32, u32, int, int);
+void fn_00696708(u32, u32);
 void fn_006a0864(u32, u32);
+static void __attribute__((noinline)) stub_0070a298(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
+
+struct unk_0070a754_a0_290;
+struct unk_0070a754_a0_290 {
+    char pad_0[4];
+    u32 f_4;
+};
+struct unk_0070a754_a0 {
+    char pad_0[36];
+    u32 f_24;
+    char pad_28[616];
+    unk_0070a754_a0_290* f_290;
+    char pad_294[4];
+    u32 f_298;
+    char pad_29c[8];
+    u32 f_2a4;
+};
+struct unk_0070a754_a2 {
+    char pad_0[404];
+    u32 f_194;
+};
+struct unk_0070a754_a3 {
+    char pad_0[4];
+    u32 f_4;
+};
+int fn_0070a754(unk_0070a754_a0* a0, int a1, unk_0070a754_a2* a2, unk_0070a754_a3* a3) {
+    u32 v0;
+    v0 = (u32)(a2->f_194);
+    fn_0004dfb8((void*)(a2), (u32)(v0), (u32)(a0->f_298), (int)(1), (int)(0));
+    fn_0004dfb8((void*)(a2), (u32)(v0), (u32)(a0->f_2a4), (int)(1), (int)(0));
+    stub_0070a298((void*)(a0));
+    if ((int)(a0->f_290->f_4) != (int)(3)) {
+        if ((int)(a0->f_290->f_4) == (int)(0)) {
+            return (int)(1);
+        }
+        fn_00696708((u32)(a0->f_24), (u32)(a3->f_4));
+        return (int)(1);
+    }
+    return (int)(1);
+}
 
 struct unk_0070aadc_g545c;
 struct unk_0070aadc_g545c {

@@ -4,9 +4,37 @@
 
 extern "C" {
 
+int fn_00013fe8(u32, int, int);
+int fn_0001416c(u32, int);
 void fn_00015b60(u32, int, int);
 void fn_00015d18(u32);
 static void __attribute__((noinline)) stub_000bbdfc(void* p0, int p1, int p2, int p3, int p4, int p5) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4), "r"(p5)); }
+
+struct unk_000bbd84_gm70d0;
+struct unk_000bbd84_gm70d0_0;
+struct unk_000bbd84_gm70d0 {
+    unk_000bbd84_gm70d0_0* f_0;
+};
+struct unk_000bbd84_gm70d0_0 {
+    char pad_0[76];
+    u32 f_4c;
+};
+extern unk_000bbd84_gm70d0 g_000bbd84_0;
+void* fn_000bbd84(int a0, int a1) {
+    int t0;
+    int t1;
+    u32 v0;
+    int v1;
+    v0 = (u32)((&g_000bbd84_0)->f_0->f_4c);
+    t0 = fn_00013fe8((u32)(v0), (int)(a0), (int)(a1));
+    if ((int)((u32)(t0) & 0xff) != (int)(0)) {
+        t1 = fn_0001416c((u32)(v0), (int)(a0));
+        v1 = (int)(t1);
+    } else {
+        v1 = (int)(0);
+    }
+    return (void*)(v1);
+}
 
 struct unk_000bbf2c_a0 {
     char pad_0[4];

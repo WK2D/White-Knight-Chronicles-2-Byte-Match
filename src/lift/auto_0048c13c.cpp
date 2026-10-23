@@ -4,10 +4,113 @@
 
 extern "C" {
 
+int fn_0003f3e8(void*, void*);
+void* fn_00041bcc(void*);
 int fn_0036dee0(void*);
+static int __attribute__((noinline)) stub_0048b644_2(u32 p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static int __attribute__((noinline)) stub_0048b644(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static int __attribute__((noinline)) stub_0048b868_2(u32 p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static int __attribute__((noinline)) stub_0048b868(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static int __attribute__((noinline)) stub_0048b90c(u32 p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static int __attribute__((noinline)) stub_0048b9fc(u32 p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static int __attribute__((noinline)) stub_0048f174(void* p0, u32 p1, u32 p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
 static int __attribute__((noinline)) stub_0048f5b8(void* p0, u32 p1, u32 p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
+static int __attribute__((noinline)) stub_0048f8a4(void* p0, u32 p1, u32 p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
 void fn_00b37fa8(void*, int, int);
+
+struct unk_0048c13c_gm7c0;
+struct unk_0048c13c_gm7c0_0;
+struct unk_0048c13c_gm7c0 {
+    unk_0048c13c_gm7c0_0* f_0;
+};
+struct unk_0048c13c_gm7c0_0 {
+    char pad_0[4161];
+    u8 f_1041;
+};
+extern unk_0048c13c_gm7c0 g_0048c13c_0;
+int fn_0048c13c(void) {
+    int t0;
+    unk_0048c13c_gm7c0_0* v0;
+    int v1;
+    v0 = (unk_0048c13c_gm7c0_0*)((&g_0048c13c_0)->f_0);
+    t0 = stub_0048b644((void*)(v0));
+    if ((int)((u32)(t0) & 0xff) != (int)(0)) {
+        v0->f_1041 = (u8)(1);
+        v1 = (int)(1);
+    } else {
+        v1 = (int)(0);
+    }
+    return (int)(v1);
+}
+
+struct unk_0048c190_gm7c0;
+struct unk_0048c190_gm7c0_0;
+struct unk_0048c190_gm7c0 {
+    unk_0048c190_gm7c0_0* f_0;
+};
+struct unk_0048c190_gm7c0_0 {
+    char pad_0[4161];
+    u8 f_1041;
+};
+extern unk_0048c190_gm7c0 g_0048c190_0;
+int fn_0048c190(void) {
+    int t0;
+    int t1;
+    unk_0048c190_gm7c0_0* v0;
+    int v3;
+    v0 = (unk_0048c190_gm7c0_0*)((&g_0048c190_0)->f_0);
+    t0 = stub_0048b644((void*)(v0));
+    if ((int)((u32)(t0) & 0xff) != (int)(0)) {
+        t1 = stub_0048b868((void*)(v0));
+        (&g_0048c190_0)->f_0->f_1041 = (u8)(0);
+        v3 = (int)(1);
+    } else {
+        v3 = (int)(0);
+    }
+    return (int)(v3);
+}
+
+struct unk_0048c210_gm7c0;
+struct unk_0048c210_gm7c0 {
+    u32 f_0;
+};
+extern unk_0048c210_gm7c0 g_0048c210_0;
+int fn_0048c210(void) {
+    int t0;
+    int t1;
+    u32 v0;
+    int v1;
+    v0 = (u32)((&g_0048c210_0)->f_0);
+    t0 = stub_0048b644_2((u32)(v0));
+    if ((int)((u32)(t0) & 0xff) != (int)(0)) {
+        t1 = stub_0048b868_2((u32)(v0));
+        v1 = (int)(1);
+    } else {
+        v1 = (int)(0);
+    }
+    return (int)(v1);
+}
+
+struct unk_0048c27c_gm7c0;
+struct unk_0048c27c_gm7c0 {
+    u32 f_0;
+};
+extern unk_0048c27c_gm7c0 g_0048c27c_0;
+int fn_0048c27c(void) {
+    int t0;
+    int t1;
+    u32 v0;
+    int v1;
+    v0 = (u32)((&g_0048c27c_0)->f_0);
+    t0 = stub_0048b644_2((u32)(v0));
+    if ((int)((u32)(t0) & 0xff) != (int)(0)) {
+        t1 = stub_0048b868_2((u32)(v0));
+        v1 = (int)(1);
+    } else {
+        v1 = (int)(0);
+    }
+    return (int)(v1);
+}
 
 struct unk_0048c2d0_gm7c0;
 struct unk_0048c2d0_gm7c0_0;
@@ -61,6 +164,34 @@ struct unk_0048c5c8_a0 {
 void fn_0048c5c8(unk_0048c5c8_a0* a0) {
     fn_00b37fa8((void*)((&a0->f_a0)), (int)(0), (int)(256));
     a0->f_1a0 = (u32)(0);
+}
+
+struct unk_0048cad0_gm7c0;
+struct unk_0048cad0_gm7c0 {
+    u32 f_0;
+};
+extern unk_0048cad0_gm7c0 g_0048cad0_0;
+int fn_0048cad0(void* a0) {
+    int t0;
+    int t1;
+    int t2;
+    void* t3;
+    int t4;
+    u32 v0;
+    int v1;
+    v0 = (u32)((&g_0048cad0_0)->f_0);
+    t0 = stub_0048b644_2((u32)(v0));
+    if ((int)((u32)(t0) & 0xff) != (int)(0)) {
+        t1 = stub_0048b9fc((u32)(v0));
+        t2 = stub_0048b90c((u32)(v0));
+        t3 = fn_00041bcc((void*)(a0));
+        t4 = fn_0003f3e8((void*)(t3), (void*)(t3));
+        FIELD(u32, (int)((int)(t2) * 52) + (int)(t1), 36) = (u32)(t4);
+        v1 = (int)(1);
+    } else {
+        v1 = (int)(0);
+    }
+    return (int)(v1);
 }
 
 struct unk_0048e250_a0 {
@@ -347,6 +478,66 @@ int fn_0048f844(void) {
     if ((int)((&g_0048f844_0)->f_0->f_20) != (int)(0)) {
         t0 = stub_0048f5b8((void*)((&g_0048f844_0)->f_0), (u32)((&g_0048f844_0)->f_0->f_2c), (u32)((&g_0048f844_0)->f_0->f_28));
         (&g_0048f844_0)->f_0->f_103a = (u8)(0);
+        v3 = (int)(1);
+    } else {
+        v3 = (int)(0);
+    }
+    return (int)(v3);
+}
+
+struct unk_0048fb78_gm7c0;
+struct unk_0048fb78_gm7c0_0;
+struct unk_0048fb78_gm7c0 {
+    unk_0048fb78_gm7c0_0* f_0;
+};
+struct unk_0048fb78_gm7c0_0 {
+    char pad_0[24];
+    u32 f_18;
+    u32 f_1c;
+    char pad_20[4122];
+    u8 f_103a;
+};
+extern unk_0048fb78_gm7c0 g_0048fb78_0;
+int fn_0048fb78(void) {
+    int t0;
+    int t1;
+    unk_0048fb78_gm7c0_0* v0;
+    int v3;
+    v0 = (unk_0048fb78_gm7c0_0*)((&g_0048fb78_0)->f_0);
+    t0 = stub_0048b644((void*)(v0));
+    if ((int)((u32)(t0) & 0xff) != (int)(0)) {
+        t1 = stub_0048f8a4((void*)(v0), (u32)(v0->f_1c), (u32)(v0->f_18));
+        (&g_0048fb78_0)->f_0->f_103a = (u8)(0);
+        v3 = (int)(1);
+    } else {
+        v3 = (int)(0);
+    }
+    return (int)(v3);
+}
+
+struct unk_0048fbe8_gm7c0;
+struct unk_0048fbe8_gm7c0_0;
+struct unk_0048fbe8_gm7c0 {
+    unk_0048fbe8_gm7c0_0* f_0;
+};
+struct unk_0048fbe8_gm7c0_0 {
+    char pad_0[8];
+    u32 f_8;
+    u32 f_c;
+    char pad_10[4138];
+    u8 f_103a;
+};
+extern unk_0048fbe8_gm7c0 g_0048fbe8_0;
+int fn_0048fbe8(void) {
+    int t0;
+    int t1;
+    unk_0048fbe8_gm7c0_0* v0;
+    int v3;
+    v0 = (unk_0048fbe8_gm7c0_0*)((&g_0048fbe8_0)->f_0);
+    t0 = stub_0048b644((void*)(v0));
+    if ((int)((u32)(t0) & 0xff) != (int)(0)) {
+        t1 = stub_0048f8a4((void*)(v0), (u32)(v0->f_c), (u32)(v0->f_8));
+        (&g_0048fbe8_0)->f_0->f_103a = (u8)(0);
         v3 = (int)(1);
     } else {
         v3 = (int)(0);

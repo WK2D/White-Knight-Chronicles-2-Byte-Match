@@ -4,6 +4,9 @@
 
 extern "C" {
 
+void* fn_003fd2c4(u32);
+void fn_00406768(u32, u32, float);
+void fn_00406818(u32, u32, float);
 static int __attribute__((noinline)) stub_0048850c(void* p0, void* p1, u32 p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
 static void __attribute__((noinline)) stub_00488634(void* p0, void* p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 
@@ -27,6 +30,66 @@ struct unk_0048865c_a0 {
 };
 void fn_0048865c(unk_0048865c_a0* a0, int a1) {
     stub_00488634((void*)(a0), (void*)((int)((int)(a1) * 92) + (int)(a0->f_20)));
+}
+
+struct unk_00488670_gm80c;
+struct unk_00488670_gm80c_0;
+struct unk_00488670_gm80c_0_6c;
+struct unk_00488670_gm80c_0_6c_8;
+struct unk_00488670_gm80c {
+    unk_00488670_gm80c_0* f_0;
+};
+struct unk_00488670_gm80c_0 {
+    char pad_0[108];
+    unk_00488670_gm80c_0_6c* f_6c;
+};
+struct unk_00488670_gm80c_0_6c {
+    char pad_0[8];
+    unk_00488670_gm80c_0_6c_8* f_8;
+};
+struct unk_00488670_gm80c_0_6c_8 {
+    char pad_0[240];
+    u32 f_f0;
+    char pad_f4[32];
+    u32 f_114;
+};
+extern unk_00488670_gm80c g_00488670_0;
+void fn_00488670(void) {
+    void* t0;
+    unk_00488670_gm80c_0_6c_8* v0;
+    v0 = (unk_00488670_gm80c_0_6c_8*)((&g_00488670_0)->f_0->f_6c->f_8);
+    t0 = fn_003fd2c4((u32)((&g_00488670_0)->f_0->f_6c->f_8->f_f0));
+    fn_00406768((u32)(v0->f_114), (u32)(FIELD(u32, t0, 32)), (float)(-1.0f));
+}
+
+struct unk_004886c4_gm80c;
+struct unk_004886c4_gm80c_0;
+struct unk_004886c4_gm80c_0_6c;
+struct unk_004886c4_gm80c_0_6c_8;
+struct unk_004886c4_gm80c {
+    unk_004886c4_gm80c_0* f_0;
+};
+struct unk_004886c4_gm80c_0 {
+    char pad_0[108];
+    unk_004886c4_gm80c_0_6c* f_6c;
+};
+struct unk_004886c4_gm80c_0_6c {
+    char pad_0[8];
+    unk_004886c4_gm80c_0_6c_8* f_8;
+};
+struct unk_004886c4_gm80c_0_6c_8 {
+    char pad_0[240];
+    u32 f_f0;
+    char pad_f4[32];
+    u32 f_114;
+};
+extern unk_004886c4_gm80c g_004886c4_0;
+void fn_004886c4(void) {
+    void* t0;
+    unk_004886c4_gm80c_0_6c_8* v0;
+    v0 = (unk_004886c4_gm80c_0_6c_8*)((&g_004886c4_0)->f_0->f_6c->f_8);
+    t0 = fn_003fd2c4((u32)((&g_004886c4_0)->f_0->f_6c->f_8->f_f0));
+    fn_00406818((u32)(v0->f_114), (u32)(FIELD(u32, t0, 32)), (float)(1.0f));
 }
 
 }

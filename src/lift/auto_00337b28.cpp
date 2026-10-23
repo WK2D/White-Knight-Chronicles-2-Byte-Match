@@ -4,9 +4,13 @@
 
 extern "C" {
 
+void* fn_0003f9e0_2(void*);
 int fn_0003f9e0(void*);
+void* fn_0003faa8(void*);
+int fn_0003fab0_2(void*, int);
 void fn_0003fab0(void*, int);
 int fn_003294fc(void*, int, u16);
+int fn_0040c8e8(void*, void*, void*);
 void fn_00b3a398(void*);
 
 struct unk_00337c60_gm1c38;
@@ -97,6 +101,46 @@ int fn_0033854c(void* a0, int a1) {
     return (int)(1);
 }
 
+struct unk_0033ba04_gm1c30;
+struct unk_0033ba04_gm1c30_0;
+struct unk_0033ba04_gm1c30_0_7c;
+struct unk_0033ba04_gm1c30 {
+    unk_0033ba04_gm1c30_0* f_0;
+};
+struct unk_0033ba04_gm1c30_0 {
+    char pad_0[124];
+    unk_0033ba04_gm1c30_0_7c* f_7c;
+};
+struct unk_0033ba04_gm1c30_0_7c {
+    char pad_0[8];
+    u32 f_8;
+};
+struct unk_0033ba04_a0 {
+    char pad_0[8];
+    u8 f_8;
+};
+extern unk_0033ba04_gm1c30 g_0033ba04_0;
+int fn_0033ba04(unk_0033ba04_a0* a0, int a1) {
+    int t1;
+    int v0;
+    int v1;
+    int v3;
+    if ((int)(a1) > (int)(0)) {
+        v0 = (int)((int)(&g_0033ba04_0)->f_0->f_7c->f_8);
+        fn_0003fab0_2((void*)(a0), (int)(v0));
+        if ((int)(a1) != (int)(1)) {
+            t1 = fn_0003fab0_2((void*)((&a0->f_8)), (int)(v0));
+            v1 = (int)(1);
+        } else {
+            v1 = (int)(1);
+        }
+        v3 = (int)(v1);
+    } else {
+        v3 = (int)(0);
+    }
+    return (int)(v3);
+}
+
 struct unk_0033c894_gm1b9c;
 struct unk_0033c894_gm1c38;
 struct unk_0033c894_gm1c38_0;
@@ -132,6 +176,29 @@ int fn_0033c894(void) {
         (&g_0033c894_1)->f_0 = (u32)(0);
         fn_00b3a398((void*)((&g_0033c894_0)->f_0->f_78));
         return (int)(1);
+    }
+    return (int)(1);
+}
+
+struct unk_0033cd78_gm1c04;
+struct unk_0033cd78_gm1c04 {
+    u32 f_0;
+};
+struct unk_0033cd78_a0 {
+    char pad_0[8];
+    u8 f_8;
+};
+extern unk_0033cd78_gm1c04 g_0033cd78_0;
+int fn_0033cd78(unk_0033cd78_a0* a0) {
+    void* t0;
+    void* t1;
+    int t2;
+    u32 v0;
+    if ((int)((&g_0033cd78_0)->f_0) != (int)(0)) {
+        v0 = (u32)((&g_0033cd78_0)->f_0);
+        t0 = fn_0003faa8((void*)(a0));
+        t1 = fn_0003f9e0_2((void*)((&a0->f_8)));
+        t2 = fn_0040c8e8((void*)(v0), (void*)(t0), (void*)(t1));
     }
     return (int)(1);
 }

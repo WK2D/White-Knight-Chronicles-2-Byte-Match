@@ -6,7 +6,9 @@ extern "C" {
 
 int fn_00034a88(void);
 void fn_0004fbd4(void*, u32, int, float, float, int);
+void fn_0004fe38_2(void*, u32, int);
 void fn_0004fe38(int, int, int);
+void fn_0004fe84_2(void*, u32, int, float);
 void fn_0004fe84(int, int, int, float);
 void fn_00077de8(void*, void*, int);
 void fn_001263b4(u32, int);
@@ -24,6 +26,21 @@ int fn_00b38038(void*, int);
 void fn_006933f8(int a0, int a1, int a2, int a3) {
     fn_0004fe38((int)(a1), (int)(a2), (int)(a3));
     fn_0004fe84((int)(a1), (int)(a2), (int)(a3), (float)(0.6000000238418579f));
+}
+
+struct unk_00693464_a0 {
+    char pad_0[936];
+    u8 f_3a8;
+};
+void fn_00693464(unk_00693464_a0* a0, int a1) {
+    u32 v0;
+    v0 = (u32)(FIELD(u32, (&a0->f_3a8), 404));
+    fn_0004fe38_2((void*)((&a0->f_3a8)), (u32)(v0), (int)(756));
+    if ((int)(a1) == (int)(0)) {
+        fn_0004fe84_2((void*)((&a0->f_3a8)), (u32)(v0), (int)(756), (float)(1.0f));
+        return;
+    }
+    fn_0004fbd4((void*)((&a0->f_3a8)), (u32)(v0), (int)(756), (float)(1.0f), (float)(0.3499999940395355f), (int)(4));
 }
 
 struct unk_00693518_a0 {

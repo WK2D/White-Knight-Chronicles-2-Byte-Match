@@ -7,12 +7,34 @@ extern "C" {
 void fn_00858734(u32, int);
 static void __attribute__((noinline)) stub_0086fe3c(void* p0, void* p1, int p2, int p3, float p4) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4)); }
 static void __attribute__((noinline)) stub_00870040(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
+void fn_0087ca70(u32, void*);
+void fn_0087e6dc(u32, void*);
+void fn_008804fc(u32, void*);
+void fn_008818c4(u32, void*);
+void fn_00882fac(u32, void*);
+void fn_008844c8(u32, void*);
+void fn_00885784(u32, void*);
+void fn_00886bf4(u32, void*);
+void fn_00888964(u32, void*);
+void fn_0088b910(u32, void*);
+void fn_0088ff34(u32, void*);
+void fn_00891cc4(u32, void*);
+void fn_00892fcc(u32, void*);
+void fn_0089596c(u32, void*);
+void fn_00898570(u32, void*);
+void fn_00899b2c(u32, void*);
+void fn_0089b0d4(u32, void*);
+void fn_0089c6ac(u32, void*);
+int fn_00b3cc98(void*, u32, int, int);
 void* fn_00b3cd18(void*, void*, int, int, int, int);
+void fn_00b3cd58(void*, u32, int, int, int);
 void fn_00b3d078(void*, u32, int, float);
 void fn_00b3d4f8(void*, u32, int, float);
+void fn_00b3f4c8(u32, float, float, float, float, float, float);
 void fn_00b3fbe8(void*, u32, int, int);
 int fn_00b3fbf8(u32);
 void fn_00b3fc08(u32, u32, int);
+void fn_00b3fc88(void*, float, float);
 
 struct unk_008729b0_a0 {
     char pad_0[344];
@@ -184,12 +206,94 @@ void fn_008740b4(void* a0) {
     stub_00870040((void*)(a0));
 }
 
+struct unk_008740f8_gm68c8;
+struct unk_008740f8_gm68cc;
+struct unk_008740f8_gm68c8_0;
+struct unk_008740f8_gm68cc_0;
+struct unk_008740f8_gm68c8 {
+    unk_008740f8_gm68c8_0* f_0;
+};
+struct unk_008740f8_gm68cc {
+    unk_008740f8_gm68cc_0* f_0;
+};
+struct unk_008740f8_gm68c8_0 {
+    char pad_0[124];
+    u32 f_7c;
+};
+struct unk_008740f8_gm68cc_0 {
+    u32 f_0;
+};
+struct unk_008740f8_a0 {
+    char pad_0[8360];
+    u32 f_20a8;
+};
+extern unk_008740f8_gm68c8 g_008740f8_0;
+extern unk_008740f8_gm68cc g_008740f8_1;
+void fn_008740f8(unk_008740f8_a0* a0) {
+    u32 v0;
+    v0 = (u32)((&g_008740f8_1)->f_0->f_0);
+    fn_00b3f4c8((u32)((&g_008740f8_0)->f_0->f_7c), (float)(1.0f), (float)(0.0f), (float)(0.0f), (float)(0.0f), (float)(1.0f), (float)(0.0f));
+    fn_00b3fc88((void*)(v0), (float)(0.0f), (float)(1.0f));
+    a0->f_20a8 = (u32)(512);
+}
+
 extern char g_00874e34_0[];
 extern char g_00874e34_1[];
 void* fn_00874e34(void) {
     void* t0;
     t0 = fn_00b3cd18((void*)(g_00874e34_1), (void*)(g_00874e34_0), (int)(0), (int)(-1), (int)(0), (int)(0));
     return (void*)(t0);
+}
+
+struct unk_00875484_a0 {
+    char pad_0[272];
+    u32 f_110;
+    u32 f_114;
+    u32 f_118;
+    u32 f_11c;
+    u32 f_120;
+    u32 f_124;
+    u32 f_128;
+    u32 f_12c;
+    u32 f_130;
+    u32 f_134;
+    u32 f_138;
+    u32 f_13c;
+    u32 f_140;
+    u32 f_144;
+    u32 f_148;
+    u32 f_14c;
+    u32 f_150;
+    u32 f_154;
+    u8 f_158;
+    char pad_159[8283];
+    u32 f_21b4;
+};
+void fn_00875484(unk_00875484_a0* a0) {
+    int t18;
+    u32 v0;
+    fn_0087ca70((u32)(a0->f_110), (void*)((&a0->f_158)));
+    fn_0087e6dc((u32)(a0->f_114), (void*)((&a0->f_158)));
+    fn_0088b910((u32)(a0->f_118), (void*)((&a0->f_158)));
+    fn_0088ff34((u32)(a0->f_11c), (void*)((&a0->f_158)));
+    fn_00892fcc((u32)(a0->f_120), (void*)((&a0->f_158)));
+    fn_0089596c((u32)(a0->f_124), (void*)((&a0->f_158)));
+    fn_00898570((u32)(a0->f_128), (void*)((&a0->f_158)));
+    fn_00891cc4((u32)(a0->f_12c), (void*)((&a0->f_158)));
+    fn_00888964((u32)(a0->f_130), (void*)((&a0->f_158)));
+    fn_0089b0d4((u32)(a0->f_134), (void*)((&a0->f_158)));
+    fn_008818c4((u32)(a0->f_138), (void*)((&a0->f_158)));
+    fn_008804fc((u32)(a0->f_13c), (void*)((&a0->f_158)));
+    fn_00882fac((u32)(a0->f_140), (void*)((&a0->f_158)));
+    fn_00899b2c((u32)(a0->f_144), (void*)((&a0->f_158)));
+    fn_00886bf4((u32)(a0->f_148), (void*)((&a0->f_158)));
+    fn_008844c8((u32)(a0->f_14c), (void*)((&a0->f_158)));
+    fn_00885784((u32)(a0->f_150), (void*)((&a0->f_158)));
+    fn_0089c6ac((u32)(a0->f_154), (void*)((&a0->f_158)));
+    v0 = (u32)(FIELD(u32, (&a0->f_158), 404));
+    t18 = fn_00b3cc98((void*)((&a0->f_158)), (u32)(v0), (int)(6), (int)(100));
+    a0->f_21b4 = (u32)(t18);
+    fn_00b3cd58((void*)((&a0->f_158)), (u32)(v0), (int)(t18), (int)(1), (int)(0));
 }
 
 }

@@ -24,7 +24,7 @@ alternative to the static-recompilation port at
   `-O2` and not with `-fno-ivopts`. The project used `-O2 -fno-ivopts` before
   2026-10-22; only `src/game/CPostEffectManager.cpp` keeps that, as an
   override, until a natural `-O2` form of `fn_004b32e8` is found.
-- Matched: **17,783 of 50,844 functions** (3.94% of code). Six are by hand
+- Matched: **18,653 of 50,844 functions** (4.63% of code). Six are by hand
   (`src/game/*.cpp`); the rest are generated: `tools/gen_simple.py`
   (`src/gen/`, small shapes), `tools/lift.py` (`src/lift/`, the lifter),
   `tools/permute.py` (`src/perm/`, lifter output in another statement order)
@@ -497,6 +497,22 @@ counts over all functions up to 384 instructions):
   another run, check for leftover `permute_all.sh`/`tools/*.py` processes
   and `ubuntu:14.04` containers you started; two runs at once wreck each
   other's objects (a collision showed 10,006 matches instead of 17,760).
+- Values read from memory and kept in a callee-saved register (r14-r31,
+  f14-f31) across a call were read before the call (it may change memory):
+  `hold_loads()` makes them a variable assigned just before the call
+  (`fn_0001ea70`). The lifter used to repeat the read after the call.
+  Not done yet for virtual calls (`vcall`): it compares `this` by identity.
+- Branch layout: GCC predicts a pointer tested against 0 to be non-null,
+  which decides which block it lays out first (`fn_000163f4`). A cast to a
+  pointer is folded away and does not count; `*(void**)&(a0->f_0) != 0`
+  does. `permute.py` tries that form for every `if` testing a memory word
+  against 0 (`pointer_tests`).
+- Quick single-function test: `python tools/lift.py --one ADDR --file >
+  build/try/x.cpp` then `python tools/try.py build/try/x.cpp -d`.
+- Editing tools from the agent's shell: heredocs passed through the Bash
+  tool can lose backslashes (`\n`, `\b` arrived as a newline and a
+  backspace character). Use the file edit tool for lines with escapes, and
+  check with `grep -c $'\x08'`.
 - Near-miss tools: `build/check.log` holds only matches after the final
   pruning; for near-misses run the unpruned lift and check (first lines of
   `permute_all.sh`) and use `build/check_unpruned.log` before anything

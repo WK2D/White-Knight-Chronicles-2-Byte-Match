@@ -4,10 +4,14 @@
 
 extern "C" {
 
+static void __attribute__((noinline)) stub_00908ac8(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
 static void* __attribute__((noinline)) stub_00908c30(int p0, int p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static int __attribute__((noinline)) stub_00909bb8(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static void __attribute__((noinline)) stub_00909cac(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
+static int __attribute__((noinline)) stub_0090a494(void* p0, int p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static void __attribute__((noinline)) stub_0090ae14(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
+int fn_00b3e888(void*);
+int fn_00b41108(void*, int, int);
 void fn_00b41188(void*);
 void fn_00b411b8(void*);
 
@@ -43,6 +47,40 @@ void fn_00909d14(unk_00909d14_a0* a0) {
     fn_00b41188((void*)((&a0->f_3c)));
     fn_00b411b8((void*)((&a0->f_c)));
     a0->f_80 = (u32)(0);
+}
+
+struct unk_0090a9f4_gm4f8c;
+struct unk_0090a9f4_gm4f8c_4;
+struct unk_0090a9f4_gm4f8c_4_0;
+struct unk_0090a9f4_gm4f8c {
+    char pad_0[4];
+    unk_0090a9f4_gm4f8c_4* f_4;
+};
+struct unk_0090a9f4_gm4f8c_4 {
+    unk_0090a9f4_gm4f8c_4_0* f_0;
+    u32 f_4;
+};
+struct unk_0090a9f4_gm4f8c_4_0 {
+    void* f_0;
+};
+extern unk_0090a9f4_gm4f8c g_0090a9f4_0;
+int fn_0090a9f4(void* a0) {
+    int t0;
+    int t1;
+    int t3;
+    u32 v0;
+    unk_0090a9f4_gm4f8c_4* v1;
+    if ((int)((&g_0090a9f4_0)->f_4->f_4) != (int)(0)) {
+        v0 = (u32)((&g_0090a9f4_0)->f_4->f_4);
+        t0 = fn_00b3e888((void*)(a0));
+        v1 = (unk_0090a9f4_gm4f8c_4*)((&g_0090a9f4_0)->f_4);
+        t1 = fn_00b41108((void*)(v0), (int)(16), (int)(5));
+        v1->f_0 = (unk_0090a9f4_gm4f8c_4_0*)(t1);
+        stub_00908ac8((void*)((&g_0090a9f4_0)->f_4->f_0));
+        (&g_0090a9f4_0)->f_4->f_0->f_0 = (void*)(v0);
+        t3 = stub_0090a494((void*)((&g_0090a9f4_0)->f_4->f_0), (int)((int)(short)(t0)));
+    }
+    return (int)(1);
 }
 
 struct unk_0090ae48_a0 {

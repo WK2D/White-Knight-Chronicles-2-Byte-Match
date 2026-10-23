@@ -4,6 +4,8 @@
 
 extern "C" {
 
+void fn_0004e850(void*, u32, int, void*, void*);
+void fn_00050690(void*, u32, u32, int, int, float, int);
 int fn_00053050(void*, u32, u32);
 
 struct unk_0068f448_a0 {
@@ -12,6 +14,34 @@ struct unk_0068f448_a0 {
 };
 void* fn_0068f448(unk_0068f448_a0* a0) {
     return (void*)((char*)((char*)a0 + (int)((int)(a0->f_74) * 76)) + 40);
+}
+
+struct unk_0068f464_l;
+struct unk_0068f464_l {
+    u16 f_0;
+    u16 f_2;
+};
+struct unk_0068f464_a0 {
+    char pad_0[120];
+    u32 f_78;
+    u16 f_7c;
+    u16 f_7e;
+    char pad_80[4];
+    u16 f_84;
+    u16 f_86;
+};
+struct unk_0068f464_a1 {
+    char pad_0[404];
+    u32 f_194;
+};
+void fn_0068f464(unk_0068f464_a0* a0, unk_0068f464_a1* a1, int a2) {
+    unk_0068f464_l l;
+    u32 v0;
+    v0 = (u32)(a1->f_194);
+    fn_0004e850((void*)(a1), (u32)(v0), (int)(a2), (void*)((&l)), (void*)((&l.f_2)));
+    a0->f_7c = (u16)((int)(l.f_0 + -40) + (int)(a0->f_84));
+    a0->f_7e = (u16)((int)(l.f_2 + -40) + (int)(a0->f_86));
+    fn_00050690((void*)(a1), (u32)(v0), (u32)(a0->f_78), (int)((int)(short)((int)(l.f_0 + -40) + (int)(a0->f_84))), (int)((int)(short)((int)(l.f_2 + -40) + (int)(a0->f_86))), (float)(0.15000000596046448f), (int)(8));
 }
 
 struct unk_0068f550_a0 {

@@ -4,7 +4,12 @@
 
 extern "C" {
 
+void* fn_000be2ac(u32, int);
+void fn_000be5bc(u32, int, void*, int, int, int, int);
 static void* __attribute__((noinline)) stub_003bd724(int p0, int p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
+static int __attribute__((noinline)) stub_003be150(int p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static void __attribute__((noinline)) stub_003bebc0(int p0) { __asm__ volatile ("" : : "r"(p0)); }
+static int __attribute__((noinline)) stub_003bf43c(int p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static int __attribute__((noinline)) stub_003bf874(int p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static int __attribute__((noinline)) stub_003c1278(int p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static int __attribute__((noinline)) stub_003c2180(int p0, u32 p1, void* p2, u8 p3) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); return r; }
@@ -101,6 +106,36 @@ void* fn_003c14ac(unk_003c14ac_a0* a0) {
     }
     t0 = fn_0047f8a4((void*)((&g_003c14ac_0)->f_0->f_6c->f_8->f_48), (u32)(a0->f_0), (int)(1));
     return (void*)(t0);
+}
+
+struct unk_003c20d0_gm13d4;
+struct unk_003c20d0_gm13d4_0;
+struct unk_003c20d0_gm13d4 {
+    unk_003c20d0_gm13d4_0* f_0;
+};
+struct unk_003c20d0_gm13d4_0 {
+    char pad_0[72];
+    u32 f_48;
+};
+extern unk_003c20d0_gm13d4 g_003c20d0_0;
+int fn_003c20d0(int a0) {
+    int t0;
+    int t1;
+    void* t3;
+    u32 v0;
+    t0 = stub_003be150((int)(a0));
+    if ((int)((u32)(t0) & 0xff) != (int)(0)) {
+        return (int)(0);
+    }
+    t1 = stub_003bf43c((int)(a0));
+    if ((int)((u32)(t1) & 0xff) != (int)(0)) {
+        return (int)(0);
+    }
+    stub_003bebc0((int)(a0));
+    v0 = (u32)((&g_003c20d0_0)->f_0->f_48);
+    t3 = fn_000be2ac((u32)(v0), (int)(48));
+    fn_000be5bc((u32)(v0), (int)(0), (void*)(t3), (int)(1605), (int)(0), (int)(0), (int)(5));
+    return (int)(0);
 }
 
 int fn_003c22e4(int a0, int a1, void* a2, int a3) {

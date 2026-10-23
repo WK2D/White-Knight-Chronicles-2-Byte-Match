@@ -4,7 +4,48 @@
 
 extern "C" {
 
+static void __attribute__((noinline)) stub_0088a3c0(void* p0, void* p1, int p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
 void fn_00b3ccc8(void*);
+void fn_00b3cec8(void*, u32, int, int);
+void fn_00b3d058(void*, u32, int, int, u16);
+void fn_00b3eab8(void*, void*, u32, int, int);
+void fn_00b3ff58(void*, void*, u32, int, int, float, int);
+
+struct unk_0088a4ac_a0 {
+    char pad_0[272];
+    u32 f_110;
+    char pad_114[44];
+    u16 f_140;
+    u16 f_142;
+};
+struct unk_0088a4ac_a1 {
+    char pad_0[404];
+    u32 f_194;
+};
+void fn_0088a4ac(unk_0088a4ac_a0* a0, unk_0088a4ac_a1* a1, int a2) {
+    u32 v0;
+    v0 = (u32)(a1->f_194);
+    stub_0088a3c0((void*)(a0), (void*)(a1), (int)(a2));
+    fn_00b3ff58((void*)(a1), (void*)(v0), (u32)(a0->f_110), (int)((int)(short)(a0->f_140)), (int)((int)(short)(a0->f_142)), (float)(0.15000000596046448f), (int)(8));
+}
+
+struct unk_0088a51c_a0 {
+    char pad_0[272];
+    u32 f_110;
+    char pad_114[44];
+    u16 f_140;
+    u16 f_142;
+};
+struct unk_0088a51c_a1 {
+    char pad_0[404];
+    u32 f_194;
+};
+void fn_0088a51c(unk_0088a51c_a0* a0, unk_0088a51c_a1* a1, int a2) {
+    u32 v0;
+    v0 = (u32)(a1->f_194);
+    stub_0088a3c0((void*)(a0), (void*)(a1), (int)(a2));
+    fn_00b3eab8((void*)(a1), (void*)(v0), (u32)(a0->f_110), (int)((int)(short)(a0->f_140)), (int)((int)(short)(a0->f_142)));
+}
 
 void fn_0088a7ac(int a0) {
     int v0;
@@ -14,6 +55,34 @@ void fn_0088a7ac(int a0) {
         fn_00b3ccc8((void*)(v12));
         v12 = (int)((char*)v12 + 76);
     }
+}
+
+struct unk_0088aaf0_a0_24;
+struct unk_0088aaf0_a0_24 {
+    char pad_0[10196];
+    u32 f_27d4;
+};
+struct unk_0088aaf0_a0 {
+    char pad_0[36];
+    unk_0088aaf0_a0_24* f_24;
+    char pad_28[288];
+    u16 f_148;
+    char pad_14a[6];
+    u16 f_150;
+};
+struct unk_0088aaf0_a2 {
+    char pad_0[404];
+    u32 f_194;
+};
+int fn_0088aaf0(unk_0088aaf0_a0* a0, int a1, unk_0088aaf0_a2* a2) {
+    u32 v0;
+    v0 = (u32)(a2->f_194);
+    fn_00b3cec8((void*)(a2), (u32)(v0), (int)(148), (int)(0));
+    fn_00b3d058((void*)(a2), (u32)(v0), (int)(148), (int)(3), (u16)(a0->f_148));
+    fn_00b3cec8((void*)(a2), (u32)(v0), (int)(196), (int)(0));
+    fn_00b3d058((void*)(a2), (u32)(v0), (int)(196), (int)(3), (u16)(a0->f_150));
+    a0->f_24->f_27d4 = (u32)(0);
+    return (int)(1);
 }
 
 }

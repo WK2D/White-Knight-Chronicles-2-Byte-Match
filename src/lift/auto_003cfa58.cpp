@@ -5,6 +5,7 @@
 extern "C" {
 
 void* fn_00076a98_2(void*, void*, int, int, int, int);
+int fn_00076a98_3(void*, int, int, int, int, int);
 void* fn_00076a98(void*, int, int, int, int, int);
 static void __attribute__((noinline)) stub_003cac68(void* p0, void* p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 static int __attribute__((noinline)) stub_003cace8(void* p0, void* p1, float p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
@@ -236,6 +237,27 @@ void fn_003d037c(void* a0, int a1) {
     void* t0;
     t0 = fn_00076a98((void*)(g_003d037c_0), (int)(a1), (int)(0), (int)(-1), (int)(0), (int)(0));
     stub_003ce8e8((void*)(a0), (void*)(t0));
+}
+
+struct unk_003d03c8_a0_8;
+struct unk_003d03c8_a0_8 {
+    char pad_0[3732];
+    u32 f_e94;
+    u32 f_e98;
+};
+struct unk_003d03c8_a0 {
+    char pad_0[8];
+    unk_003d03c8_a0_8* f_8;
+};
+extern char g_003d03c8_0[];
+int fn_003d03c8(unk_003d03c8_a0* a0, int a1) {
+    int t0;
+    unk_003d03c8_a0_8* v0;
+    a0->f_8->f_e94 = (u32)(a1);
+    v0 = (unk_003d03c8_a0_8*)(a0->f_8);
+    t0 = fn_00076a98_3((void*)(g_003d03c8_0), (int)(a1), (int)(0), (int)(-1), (int)(0), (int)(0));
+    v0->f_e98 = (u32)(t0);
+    return (int)(t0);
 }
 
 extern char g_003d0418_0[];

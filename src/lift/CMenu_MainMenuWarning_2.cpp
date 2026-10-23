@@ -6,12 +6,15 @@ extern "C" {
 
 void fn_000210fc(u32, u32);
 void fn_00046268(void*);
+void* fn_00048e54_2(void*, int, int);
 void* fn_00048e54(int, int, int);
 void fn_0004db70(int, void*, void*, int, u16, u16);
 void fn_0004dbec(int, void*, void*, int, u16);
 void fn_0004f688(int, int, int, int, void*, void*);
 int fn_0004f708(int, int, int, int);
 int fn_0004f768(int, int, int, int);
+int fn_00053050(void*, void*, void*);
+void fn_005ddc88(u32, void*, int);
 static void __attribute__((noinline)) stub_0066eb74(void* p0, int p1, int p2, u16 p3) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); }
 static void __attribute__((noinline)) stub_0066ebe4(int p0, int p1, int p2, int p3, int p4, int p5) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4), "r"(p5)); }
 static void __attribute__((noinline)) stub_0066edb0(void* p0, int p1, int p2, u16 p3, u16 p4) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4)); }
@@ -105,6 +108,27 @@ int fn_0066f1f0(unk_0066f1f0_a0* a0) {
 
 int fn_0066f220(int a0) {
     stub_0066f1f0((int)(a0));
+    return (int)(1);
+}
+
+struct unk_0066f2d4_a0 {
+    char pad_0[36];
+    u32 f_24;
+};
+struct unk_0066f2d4_a2 {
+    char pad_0[404];
+    u32 f_194;
+};
+int fn_0066f2d4(unk_0066f2d4_a0* a0, int a1, unk_0066f2d4_a2* a2) {
+    void* t1;
+    int t2;
+    u32 v0;
+    fn_005ddc88((u32)(a0->f_24), (void*)(a0), (int)(3));
+    if ((int)(a2) != (int)(0)) {
+        v0 = (u32)(a2->f_194);
+        t1 = fn_00048e54_2((void*)(a2), (int)(148), (int)(0));
+        t2 = fn_00053050((void*)(a2), (void*)(v0), (void*)(t1));
+    }
     return (int)(1);
 }
 

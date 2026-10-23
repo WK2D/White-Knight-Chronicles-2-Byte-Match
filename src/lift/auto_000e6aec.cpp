@@ -14,6 +14,18 @@ int fn_000ea29c_2(void*, int, int);
 void fn_000ea29c(u32, u32, int);
 void fn_00fcd050(void*);
 
+struct unk_000e6c98_a0 {
+    char pad_0[4];
+    u32 f_4;
+};
+int fn_000e6c98(unk_000e6c98_a0* a0) {
+    u32 v0;
+    stub_000e69e8((void*)(a0), (int)(0));
+    v0 = (u32)(a0->f_4);
+    stub_000e6684((void*)(a0));
+    return (int)((int)v0);
+}
+
 struct unk_000e6d38_a0 {
     u32 f_0;
     char pad_4[44];
