@@ -26,11 +26,29 @@ void fn_00089380(unk_00089380_a0* a0) {
     stub_00089350((void*)((&a0->f_48)), (int)(0), (int)(4096));
 }
 
+struct unk_000893c8_a0 {
+    char pad_0[72];
+    u8 f_48;
+};
+void fn_000893c8(unk_000893c8_a0* a0) {
+    stub_00089350((void*)(a0), (int)(0), (int)(72));
+    stub_00089350((void*)((&a0->f_48)), (int)(0), (int)(4096));
+}
+
 struct unk_00089410_a0 {
     char pad_0[72];
     u8 f_48;
 };
 void fn_00089410(unk_00089410_a0* a0) {
+    stub_00089350((void*)(a0), (int)(0), (int)(72));
+    stub_00089350((void*)((&a0->f_48)), (int)(0), (int)(4096));
+}
+
+struct unk_00089458_a0 {
+    char pad_0[72];
+    u8 f_48;
+};
+void fn_00089458(unk_00089458_a0* a0) {
     stub_00089350((void*)(a0), (int)(0), (int)(72));
     stub_00089350((void*)((&a0->f_48)), (int)(0), (int)(4096));
 }

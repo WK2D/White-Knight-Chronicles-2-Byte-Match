@@ -4,11 +4,21 @@
 
 extern "C" {
 
+void fn_00b37fa8_2(void*, int, int);
 void fn_00b37fa8(int, int, int);
+void fn_00ba18c4_2(void*);
 void fn_00fc88dc(void*);
 
 void fn_00ba1878(int a0) {
     fn_00b37fa8((int)(a0), (int)(0), (int)(112));
+}
+
+struct unk_00ba18c4_a0 {
+    char pad_0[4];
+    u8 f_4;
+};
+void fn_00ba18c4(unk_00ba18c4_a0* a0) {
+    fn_00b37fa8_2((void*)((&a0->f_4)), (int)(0), (int)(2400));
 }
 
 void fn_00ba1be8(int a0) {
@@ -73,6 +83,15 @@ void fn_00ba1f88(int a0) {
 
 void fn_00ba1fdc(int a0) {
     fn_00b37fa8((int)(a0), (int)(0), (int)(112));
+}
+
+struct unk_00ba21a0_a0 {
+    void* f_0;
+};
+extern char g_00ba21a0_0[];
+void fn_00ba21a0(unk_00ba21a0_a0* a0) {
+    a0->f_0 = (void*)(g_00ba21a0_0);
+    fn_00ba18c4_2((void*)(a0));
 }
 
 struct unk_00ba21d0_a0 {

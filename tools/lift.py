@@ -2344,11 +2344,13 @@ def main():
         # calls a placeholder stub_ (a different name), and call targets are
         # masked relocations anyway.
         callees, keep, kept = {}, [], set()
+        defined = {a for a, *_ in items}
         for address, decls, code, calls in items:
             # A callee another function of the file declares differently gets
-            # an alias declaration (its name is a masked relocation).
+            # an alias declaration (its name is a masked relocation); so does
+            # an external call to a function this file defines.
             for t, c in list(calls.items()):
-                if t in callees and callees[t] != c:
+                if (t in callees and callees[t] != c) or (not c[2] and isinstance(t, int) and t in defined):
                     base, k = callee_address(t), 2
                     while callees.get((base, k), c) != c or (base, k) in calls:
                         k += 1

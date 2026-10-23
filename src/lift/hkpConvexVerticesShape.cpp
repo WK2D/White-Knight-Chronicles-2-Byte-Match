@@ -4,6 +4,7 @@
 
 extern "C" {
 
+void fn_00d00cdc(int, int);
 
 struct unk_00d00300_a0 {
     char pad_0[48];
@@ -14,6 +15,10 @@ struct unk_00d00300_a1 {
 };
 void fn_00d00300(unk_00d00300_a0* a0, unk_00d00300_a1* a1) {
     a1->f_0 = a0->f_30;
+}
+
+void fn_00d03770(int a0, int a1) {
+    fn_00d00cdc((int)(a0), (int)(a1));
 }
 
 }

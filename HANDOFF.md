@@ -24,7 +24,7 @@ alternative to the static-recompilation port at
   `-O2` and not with `-fno-ivopts`. The project used `-O2 -fno-ivopts` before
   2026-10-22; only `src/game/CPostEffectManager.cpp` keeps that, as an
   override, until a natural `-O2` form of `fn_004b32e8` is found.
-- Matched: **16,659 of 51,438 functions** (3.45% of code). Six are by hand
+- Matched: **16,722 of 51,438 functions** (3.47% of code). Six are by hand
   (`src/game/*.cpp`); the rest are generated: `tools/gen_simple.py`
   (`src/gen/`, small shapes), `tools/lift.py` (`src/lift/`, the lifter),
   `tools/permute.py` (`src/perm/`, lifter output in another statement order)
@@ -311,7 +311,9 @@ counts over all functions up to 384 instructions):
   the callee's `fn_X`), and call targets are masked. (Until 2026-10-23 a
   function and one it called were never kept together, and functions whose
   callee declarations disagreed were dropped; alias declarations and this
-  change recovered about 280 matches and more.)
+  change recovered about 280 matches and more.) An external call (`bl; nop`)
+  to a function the same file defines goes through an alias declaration,
+  so its prototype cannot clash with the definition.
 - Statement order: GCC schedules stores by its own rules, so the order the
   instructions appear in is often not the source order that produces them.
   `tools/permute.py` tries other orders of each run of consecutive
