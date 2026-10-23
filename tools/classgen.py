@@ -54,7 +54,7 @@ def constructor(address, decls, code, vtable_globals, calls):
              and re.fullmatch(r'    a0->f_0 = \(void\*\)\((\w+)\);', l).group(1) in vtable_globals]
     if len(store) != 1 or re.search(r'\ba0->f_0\b', '\n'.join(lines[:store[0]] + lines[store[0] + 1:])):
         return None
-    before = [i for i in range(1, store[0]) if '=' in lines[i] or '(' in lines[i]]   # statements, not declarations
+    before = [i for i in range(1, store[0]) if re.search(r'\b(fn|stub)_[0-9a-f]{8}\(', lines[i])]   # calls only
     base = None
     if before:
         b = re.fullmatch(r'    (stub|fn)_([0-9a-f]{8})\(\(void\*\)\(a0\)\);', lines[before[0]])
