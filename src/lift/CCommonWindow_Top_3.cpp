@@ -14,6 +14,29 @@ void fn_00b3cd68(void*, u32, int, float);
 void fn_00b3d4f8(void*, u32, int, float);
 void fn_00b3e7e8(void*, int);
 
+struct unk_008a31a4_a0 {
+    char pad_0[4280];
+    u32 f_10b8;
+    u32 f_10bc;
+};
+int fn_008a31a4(unk_008a31a4_a0* a0) {
+    int v1;
+    if ((int)(a0->f_10b8) == (int)(2)) {
+        v1 = (int)((u32)(-__builtin_abs((int)(a0->f_10bc))) >> 31);
+    } else {
+        v1 = (int)(0);
+    }
+    return (int)(v1);
+}
+
+struct unk_008a31d0_a0 {
+    char pad_0[4284];
+    u32 f_10bc;
+};
+int fn_008a31d0(unk_008a31d0_a0* a0) {
+    return (int)((int)((u32)(-__builtin_abs((int)(a0->f_10bc))) >> 31));
+}
+
 struct unk_008a3374_a0 {
     char pad_0[4292];
     u32 f_10c4;

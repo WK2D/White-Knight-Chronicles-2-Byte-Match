@@ -62,7 +62,7 @@ struct unk_007541a4_a0 {
 int fn_007541a4(unk_007541a4_a0* a0) {
     int t0;
     t0 = fn_00b38038((void*)(a0->f_210 + 14248), (void*)(((int)(a0) + 65536) + -27486));
-    return (int)((int)((u32)(((int)((u32)((int)(t0) >> 31) ^ (u32)(t0)) - (int)((int)(t0) >> 31)) + -1) >> 31));
+    return (int)((int)((u32)(__builtin_abs((int)(t0)) + -1) >> 31));
 }
 
 void fn_007542d0(int a0) {

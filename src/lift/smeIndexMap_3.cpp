@@ -26,4 +26,32 @@ void fn_00b667e4(unk_00b667e4_a0* a0) {
     fn_00032fec((void*)(a0));
 }
 
+struct unk_00b67514_a0 {
+    u32 f_0;
+};
+int fn_00b67514(unk_00b67514_a0* a0) {
+    return (int)((int)((u32)(-__builtin_abs((int)(a0->f_0))) >> 31));
+}
+
+struct unk_00b67530_a0 {
+    u32 f_0;
+};
+int fn_00b67530(unk_00b67530_a0* a0) {
+    return (int)((int)((u32)(__builtin_abs((int)(a0->f_0)) + -1) >> 31));
+}
+
+struct unk_00b67550_a0 {
+    u32 f_0;
+};
+int fn_00b67550(unk_00b67550_a0* a0) {
+    return (int)((int)((u32)(__builtin_abs((int)(a0->f_0)) + -1) >> 31));
+}
+
+struct unk_00b67570_a0 {
+    u32 f_0;
+};
+int fn_00b67570(unk_00b67570_a0* a0) {
+    return (int)((int)((u32)(__builtin_abs((int)(a0->f_0)) + -1) >> 31));
+}
+
 }

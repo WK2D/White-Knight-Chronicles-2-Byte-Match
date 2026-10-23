@@ -13,4 +13,12 @@ void* fn_0087d3ac(unk_0087d3ac_a0* a0) {
     return (void*)((char*)((char*)a0 + (int)((int)(a0->f_158) * 76)) + 40);
 }
 
+struct unk_0087d400_a0 {
+    char pad_0[372];
+    u32 f_174;
+};
+int fn_0087d400(unk_0087d400_a0* a0) {
+    return (int)((int)((u32)((u32)(__builtin_abs((int)((u32)(a0->f_174) ^ 0x9)) + -1) >> 31) ^ 0x1));
+}
+
 }

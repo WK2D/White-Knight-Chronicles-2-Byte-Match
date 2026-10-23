@@ -46,4 +46,46 @@ void fn_00b5c5d0(unk_00b5c5d0_a0* a0) {
     }
 }
 
+struct unk_00b5c61c_a0 {
+    u32 f_0;
+};
+int fn_00b5c61c(unk_00b5c61c_a0* a0) {
+    return (int)((int)((u32)(-__builtin_abs((int)(a0->f_0))) >> 31));
+}
+
+struct unk_00b5c638_a0 {
+    u32 f_0;
+};
+int fn_00b5c638(unk_00b5c638_a0* a0) {
+    return (int)((int)((u32)(-__builtin_abs((int)(a0->f_0))) >> 31));
+}
+
+struct unk_00b5c654_a0 {
+    u32 f_0;
+};
+int fn_00b5c654(unk_00b5c654_a0* a0) {
+    return (int)((int)((u32)(__builtin_abs((int)(a0->f_0)) + -1) >> 31));
+}
+
+struct unk_00b5c674_a0 {
+    u32 f_0;
+};
+int fn_00b5c674(unk_00b5c674_a0* a0) {
+    return (int)((int)((u32)(__builtin_abs((int)(a0->f_0)) + -1) >> 31));
+}
+
+struct unk_00b5c694_a0 {
+    u32 f_0;
+};
+int fn_00b5c694(unk_00b5c694_a0* a0) {
+    return (int)((int)((u32)(-__builtin_abs((int)(a0->f_0))) >> 31));
+}
+
+struct unk_00b5c6b0_a0 {
+    u32 f_0;
+};
+int fn_00b5c6b0(unk_00b5c6b0_a0* a0) {
+    return (int)((int)((u32)(-__builtin_abs((int)(a0->f_0))) >> 31));
+}
+
 }

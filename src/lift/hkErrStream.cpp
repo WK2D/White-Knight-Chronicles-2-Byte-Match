@@ -8,6 +8,16 @@ static void* __attribute__((noinline)) stub_00096c04(void) { void* r; __asm__ vo
 void fn_00b38a78(void*);
 void fn_00b38a98(void*);
 
+struct unk_00096be4_gm7504;
+struct unk_00096be4_gm7504 {
+    char pad_0[4];
+    u32 f_4;
+};
+extern unk_00096be4_gm7504 g_00096be4_0;
+int fn_00096be4(void) {
+    return (int)((int)((u32)(-__builtin_abs((int)((&g_00096be4_0)->f_4))) >> 31));
+}
+
 struct unk_00096c34_gm7504;
 struct unk_00096c34_gm7504_14;
 struct unk_00096c34_gm7504 {

@@ -29,4 +29,88 @@ u32 fn_00bae368(unk_00bae368_a0* a0) {
     return (u32)(((u32)(a0->f_4) >> 18) & 0x1);
 }
 
+struct unk_00bae374_a0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual int vf5(void);
+};
+int fn_00bae374(unk_00bae374_a0* a0) {
+    int t0;
+    t0 = a0->vf5();
+    return (int)((int)((u32)(__builtin_abs((int)((u32)(t0) ^ 0x1)) + -1) >> 31));
+}
+
+struct unk_00bae3d0_a0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual int vf5(void);
+};
+int fn_00bae3d0(unk_00bae3d0_a0* a0) {
+    int t0;
+    t0 = a0->vf5();
+    return (int)((int)((u32)(__builtin_abs((int)((u32)(t0) ^ 0x2)) + -1) >> 31));
+}
+
+struct unk_00bae42c_a0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual int vf5(void);
+};
+int fn_00bae42c(unk_00bae42c_a0* a0) {
+    int t0;
+    t0 = a0->vf5();
+    return (int)((int)((u32)(__builtin_abs((int)((u32)(t0) ^ 0x3)) + -1) >> 31));
+}
+
+struct unk_00bae488_a0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual int vf5(void);
+};
+int fn_00bae488(unk_00bae488_a0* a0) {
+    int t0;
+    t0 = a0->vf5();
+    return (int)((int)((u32)(__builtin_abs((int)((u32)(t0) ^ 0x4)) + -1) >> 31));
+}
+
+struct unk_00bae4e4_a0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual int vf5(void);
+};
+int fn_00bae4e4(unk_00bae4e4_a0* a0) {
+    int t0;
+    t0 = a0->vf5();
+    return (int)((int)((u32)(__builtin_abs((int)((u32)(t0) ^ 0x5)) + -1) >> 31));
+}
+
+struct unk_00bae540_a0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual int vf5(void);
+};
+int fn_00bae540(unk_00bae540_a0* a0) {
+    int t0;
+    t0 = a0->vf5();
+    return (int)((int)((u32)(__builtin_abs((int)((u32)(t0) ^ 0x6)) + -1) >> 31));
+}
+
 }

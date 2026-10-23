@@ -1957,6 +1957,26 @@ int fn_0037eb04(unk_0037eb04_a0* a0) {
     return (int)(v0);
 }
 
+struct unk_0037ec20_a0 {
+    char pad_0[3368];
+    u32 f_d28;
+};
+int fn_0037ec20(unk_0037ec20_a0* a0) {
+    return (int)((int)((u32)(-__builtin_abs((int)(a0->f_d28))) >> 31));
+}
+
+struct unk_0037ec3c_a0 {
+    char pad_0[24];
+    u32 f_18;
+};
+int fn_0037ec3c(unk_0037ec3c_a0* a0) {
+    return (int)((int)((u32)(__builtin_abs((int)(a0->f_18)) + -1) >> 31));
+}
+
+int fn_0037ecb8(int a0, int a1) {
+    return (int)((int)((u32)(__builtin_abs((int)((u32)(a1) ^ 0x1)) + -1) >> 31));
+}
+
 struct unk_0037ee6c_a0 {
     virtual void vf0();
     virtual void vf1();

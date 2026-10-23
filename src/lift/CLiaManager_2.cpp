@@ -22,6 +22,18 @@ int fn_0004c468(int a0, int a1) {
     return (int)(v0);
 }
 
+int fn_0004c8c4(int a0, int a1) {
+    void* t0;
+    int v0;
+    t0 = stub_0004c174((int)(a0), (int)(a1));
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)((u32)(-__builtin_abs((int)(FIELD(u32, t0, 76)))) >> 31);
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
 int fn_0004cce0(int a0, int a1, void* a2) {
     void* t0;
     int t1;

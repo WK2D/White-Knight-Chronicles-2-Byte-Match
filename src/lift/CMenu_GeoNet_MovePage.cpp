@@ -14,6 +14,10 @@ void* fn_00708bf8(unk_00708bf8_a0* a0) {
     return (void*)((char*)((char*)a0 + (int)((int)(a0->f_80) * 76)) + 52);
 }
 
+int fn_00708c24(int a0, int a1) {
+    return (int)((int)((u32)((u32)(__builtin_abs((int)(a1)) + -1) >> 31) ^ 0x1));
+}
+
 void fn_007091d8(int a0, int a1, int a2) {
     stub_00708d00((int)(a0), (int)(a2));
 }

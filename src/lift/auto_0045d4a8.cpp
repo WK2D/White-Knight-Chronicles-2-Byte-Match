@@ -6,6 +6,54 @@ extern "C" {
 
 static int __attribute__((noinline)) stub_0045d4a8(void) { int r; __asm__ volatile ("" : "=r"(r)); return r; }
 
+struct unk_0045d4a8_gmad4;
+struct unk_0045d4a8_gmad4_0;
+struct unk_0045d4a8_gmad4 {
+    unk_0045d4a8_gmad4_0* f_0;
+};
+struct unk_0045d4a8_gmad4_0 {
+    u32 f_0;
+    char pad_4[8];
+    u32 f_c;
+    u32 f_10;
+    u32 f_14;
+    u32 f_18;
+};
+extern unk_0045d4a8_gmad4 g_0045d4a8_0;
+int fn_0045d4a8(void) {
+    int v1;
+    int v4;
+    int v7;
+    int v10;
+    int v13;
+    if ((int)((&g_0045d4a8_0)->f_0) != (int)(0)) {
+        if ((int)((&g_0045d4a8_0)->f_0->f_0) != (int)(0)) {
+            if ((int)((&g_0045d4a8_0)->f_0->f_c) != (int)(0)) {
+                if ((int)((&g_0045d4a8_0)->f_0->f_10) != (int)(0)) {
+                    if ((int)((&g_0045d4a8_0)->f_0->f_14) != (int)(0)) {
+                        v1 = (int)((u32)((u32)(__builtin_abs((int)((&g_0045d4a8_0)->f_0->f_18)) + -1) >> 31) ^ 0x1);
+                    } else {
+                        v1 = (int)(0);
+                    }
+                    v4 = (int)(v1);
+                } else {
+                    v4 = (int)(0);
+                }
+                v7 = (int)(v4);
+            } else {
+                v7 = (int)(0);
+            }
+            v10 = (int)(v7);
+        } else {
+            v10 = (int)(0);
+        }
+        v13 = (int)(v10);
+    } else {
+        v13 = (int)(0);
+    }
+    return (int)(v13);
+}
+
 struct unk_0045d52c_gmad4;
 struct unk_0045d52c_gmad4_0;
 struct unk_0045d52c_gmad4 {

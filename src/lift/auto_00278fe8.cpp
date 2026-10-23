@@ -34,4 +34,12 @@ void fn_0027bddc(unk_0027bddc_a0* a0) {
     a0->f_106c->f_360 = (u8)(1);
 }
 
+struct unk_0027be1c_a0 {
+    char pad_0[3968];
+    u32 f_f80;
+};
+int fn_0027be1c(unk_0027be1c_a0* a0) {
+    return (int)((int)((u32)(__builtin_abs((int)(a0->f_f80)) + -1) >> 31));
+}
+
 }

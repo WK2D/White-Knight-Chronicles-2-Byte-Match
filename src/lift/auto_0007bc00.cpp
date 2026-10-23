@@ -78,6 +78,13 @@ int fn_0007d678(unk_0007d678_a0* a0) {
     return (int)((int)((u32)(~((u32)(a0->f_0) | (u32)(a0->f_0))) >> 31));
 }
 
+struct unk_0007d68c_a0 {
+    u32 f_0;
+};
+int fn_0007d68c(unk_0007d68c_a0* a0) {
+    return (int)((int)((u32)(-__builtin_abs((int)(a0->f_0))) >> 31));
+}
+
 struct unk_0007d6a8_a0 {
     u32 f_0;
 };

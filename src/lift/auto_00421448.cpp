@@ -228,6 +228,23 @@ u32 fn_0042236c(unk_0042236c_a0* a0) {
     return (u32)(((u32)(a0->f_0->f_10) >> 4) & 0x1);
 }
 
+struct unk_004224b0_a0_0;
+struct unk_004224b0_a0_0 {
+    u32 f_0;
+};
+struct unk_004224b0_a0 {
+    unk_004224b0_a0_0* f_0;
+};
+int fn_004224b0(unk_004224b0_a0* a0) {
+    int v1;
+    if ((int)(a0->f_0) != (int)(0)) {
+        v1 = (int)((u32)(-__builtin_abs((int)(a0->f_0->f_0))) >> 31);
+    } else {
+        v1 = (int)(0);
+    }
+    return (int)(v1);
+}
+
 struct unk_0042251c_a0_0;
 struct unk_0042251c_a0_0 {
     char pad_0[4];

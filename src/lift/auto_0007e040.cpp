@@ -81,6 +81,13 @@ void fn_00081a18(void) {
     stub_000819fc((float)(0.0f));
 }
 
+struct unk_00081ae8_a0 {
+    u32 f_0;
+};
+int fn_00081ae8(unk_00081ae8_a0* a0) {
+    return (int)((int)((u32)(__builtin_abs((int)((u32)(a0->f_0) ^ 0x1)) + -1) >> 31));
+}
+
 struct unk_00081b0c_a0 {
     u32 f_0;
 };
@@ -89,6 +96,24 @@ void fn_00081b0c(unk_00081b0c_a0* a0) {
         return;
     }
     stub_000819f4((void*)(a0), (int)(1));
+}
+
+struct unk_00081b24_a0 {
+    u32 f_0;
+    u32 f_4;
+};
+int fn_00081b24(unk_00081b24_a0* a0) {
+    if ((int)((u32)(a0->f_4) & 0x1) != (int)(0)) {
+        if ((int)(a0->f_0) != (int)(-1)) {
+            if ((int)(a0->f_0) != (int)(1)) {
+                return (int)((int)((u32)(__builtin_abs((int)((u32)(a0->f_0) ^ 0x2)) + -1) >> 31));
+            }
+            return (int)(1);
+        } else {
+            return (int)(1);
+        }
+    }
+    return (int)(0);
 }
 
 }

@@ -657,6 +657,22 @@ void* fn_000738c0(void) {
     return (void*)((&g_000738c0_0)->f_0 + 20);
 }
 
+struct unk_000738d4_gm77dc;
+struct unk_000738d4_gm77dc {
+    u32 f_0;
+    u32 f_4;
+};
+extern unk_000738d4_gm77dc g_000738d4_0;
+int fn_000738d4(void) {
+    int v1;
+    if ((int)((&g_000738d4_0)->f_0) == (int)(720)) {
+        v1 = (int)((u32)(__builtin_abs((int)((u32)((&g_000738d4_0)->f_4) ^ 0x240)) + -1) >> 31);
+    } else {
+        v1 = (int)(0);
+    }
+    return (int)(v1);
+}
+
 struct unk_0007390c_gm77e0;
 struct unk_0007390c_gm77e0_0;
 struct unk_0007390c_gm77e0_0_40;

@@ -22,6 +22,26 @@ int fn_007a57f8(int a0, unk_007a57f8_a1* a1) {
     return (int)(v1);
 }
 
+struct unk_007a586c_a0 {
+    char pad_0[4344];
+    u32 f_10f8;
+    u32 f_10fc;
+};
+int fn_007a586c(unk_007a586c_a0* a0, int a1) {
+    if ((int)(a1) == (int)(0)) {
+        return (int)((int)((u32)(__builtin_abs((int)((u32)(a0->f_10f8) ^ 0x2)) + -1) >> 31));
+    }
+    return (int)((int)((u32)(__builtin_abs((int)((u32)(a0->f_10fc) ^ 0x2)) + -1) >> 31));
+}
+
+struct unk_007a5924_a0 {
+    char pad_0[4332];
+    u32 f_10ec;
+};
+int fn_007a5924(unk_007a5924_a0* a0) {
+    return (int)((int)((u32)(__builtin_abs((int)(a0->f_10ec)) + -1) >> 31));
+}
+
 struct unk_007a5990_a0_1104;
 struct unk_007a5990_a0_1104 {
     char pad_0[744];

@@ -6,6 +6,7 @@ extern "C" {
 
 void fn_00b37fa8_2(int, int, int);
 void fn_00b37fa8(void*, int, int);
+int fn_00fca470(void*);
 
 struct unk_001257e0_a0 {
     char pad_0[5180];
@@ -60,6 +61,18 @@ void fn_00125bfc(int a0) {
 extern char g_00125c5c_0[];
 void fn_00125c5c(void) {
     fn_00b37fa8((void*)(g_00125c5c_0), (int)(0), (int)(1024));
+}
+
+int fn_00125c8c(void* a0) {
+    int t0;
+    int v2;
+    if ((int)(a0) != (int)(0)) {
+        t0 = fn_00fca470((void*)(a0));
+        v2 = (int)((u32)((u32)(__builtin_abs((int)(~((u32)(t0) | (u32)(t0)))) + -1) >> 31) ^ 0x1);
+    } else {
+        v2 = (int)(0);
+    }
+    return (int)(v2);
 }
 
 }

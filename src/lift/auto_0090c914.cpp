@@ -4,6 +4,7 @@
 
 extern "C" {
 
+int fn_0090b7ac(void*, void*);
 static void* __attribute__((noinline)) stub_0090b804(void) { void* r; __asm__ volatile ("" : "=r"(r)); return r; }
 static void* __attribute__((noinline)) stub_0090b884(void* p0, u32 p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 int fn_00b41738(void*);
@@ -55,6 +56,22 @@ int fn_0090cbf0(unk_0090cbf0_a0* a0) {
     }
     fn_00b41748((void*)((&a0->f_8)), (int)(v5));
     return (int)(1);
+}
+
+struct unk_0090cd30_a0 {
+    char pad_0[12];
+    u32 f_c;
+};
+u32 fn_0090cd30(unk_0090cd30_a0* a0, void* a1) {
+    int t0;
+    int v2;
+    if ((int)(a0->f_c) != (int)(0)) {
+        t0 = fn_0090b7ac((void*)(a0->f_c), (void*)(a1));
+        v2 = (int)((u32)((u32)(__builtin_abs((int)(t0)) + -1) >> 31) ^ 0x1);
+    } else {
+        v2 = (int)(0);
+    }
+    return (u32)((u32)(v2) & 0x1);
 }
 
 int fn_0090ce14(void* a0) {

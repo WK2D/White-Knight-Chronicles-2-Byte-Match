@@ -24,6 +24,22 @@ int fn_000141bc(int a0, int a1, void* a2) {
     return (int)(v0);
 }
 
+struct unk_00014214_a0 {
+    char pad_0[4];
+    u32 f_4;
+};
+int fn_00014214(unk_00014214_a0* a0, int a1) {
+    return (int)((int)((u32)(-__builtin_abs((int)((u32)(a1) & (u32)(a0->f_4)))) >> 31));
+}
+
+struct unk_00014234_a0 {
+    char pad_0[8];
+    u32 f_8;
+};
+int fn_00014234(unk_00014234_a0* a0, int a1) {
+    return (int)((int)((u32)(-__builtin_abs((int)((u32)(a1) & (u32)(a0->f_8)))) >> 31));
+}
+
 int fn_000142fc(int a0, int a1, void* a2) {
     void* t0;
     int t1;

@@ -58,6 +58,27 @@ int fn_00449860(void) {
     return (int)(v5);
 }
 
+struct unk_004498a8_gmb68;
+struct unk_004498a8_gmb68_0;
+struct unk_004498a8_gmb68 {
+    unk_004498a8_gmb68_0* f_0;
+};
+struct unk_004498a8_gmb68_0 {
+    u32 f_0;
+    char pad_4[4];
+    u32 f_8;
+};
+extern unk_004498a8_gmb68 g_004498a8_0;
+int fn_004498a8(void) {
+    int v1;
+    if ((int)((&g_004498a8_0)->f_0->f_0) != (int)(0)) {
+        v1 = (int)((u32)((u32)(__builtin_abs((int)((&g_004498a8_0)->f_0->f_8)) + -1) >> 31) ^ 0x1);
+    } else {
+        v1 = (int)(0);
+    }
+    return (int)(v1);
+}
+
 struct unk_004498e4_gmb68;
 struct unk_004498e4_gmb68_0;
 struct unk_004498e4_gmb68 {

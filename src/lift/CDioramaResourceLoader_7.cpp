@@ -5,6 +5,13 @@
 extern "C" {
 
 
+struct unk_00bb9d40_a0 {
+    u32 f_0;
+};
+int fn_00bb9d40(unk_00bb9d40_a0* a0) {
+    return (int)((int)((u32)(-__builtin_abs((int)(a0->f_0))) >> 31));
+}
+
 struct unk_00bb9d5c_a0_0;
 struct unk_00bb9d5c_a0_0 {
     u32 f_0;

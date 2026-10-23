@@ -9,9 +9,47 @@ int fn_0003f9e0(void*);
 void* fn_0003faa8(void*);
 int fn_0003fab0_2(void*, int);
 void fn_0003fab0(void*, int);
+int fn_00222434(u32, u32);
 int fn_003294fc(void*, int, u16);
 int fn_0040c8e8(void*, void*, void*);
 void fn_00b3a398(void*);
+
+struct unk_00337b28_gm1bb4;
+struct unk_00337b28_gm1bb8;
+struct unk_00337b28_gm1bb4 {
+    u8 f_0;
+};
+struct unk_00337b28_gm1bb8 {
+    u32 f_0;
+};
+struct unk_00337b28_a0 {
+    char pad_0[8];
+    u8 f_8;
+};
+extern unk_00337b28_gm1bb8 g_00337b28_0;
+extern unk_00337b28_gm1bb4 g_00337b28_1;
+int fn_00337b28(unk_00337b28_a0* a0, int a1) {
+    int t0;
+    int t1;
+    int t2;
+    int v1;
+    int v2;
+    if ((int)(a1) > (int)(0)) {
+        t0 = fn_0003f9e0((void*)(a0));
+        if ((int)(a1) != (int)(1)) {
+            t1 = fn_0003f9e0((void*)((&a0->f_8)));
+            v1 = (int)((u32)(-__builtin_abs((int)(t1))) >> 31);
+        } else {
+            v1 = (int)(0);
+        }
+        t2 = fn_00222434((u32)((&g_00337b28_0)->f_0), (u32)(((u32)(-__builtin_abs((int)(t0))) >> 31)));
+        (&g_00337b28_1)->f_0 = (u8)(v1);
+        v2 = (int)(1);
+    } else {
+        v2 = (int)(0);
+    }
+    return (int)(v2);
+}
 
 struct unk_00337c60_gm1c38;
 struct unk_00337c60_gm1c38_0;

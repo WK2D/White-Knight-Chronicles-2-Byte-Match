@@ -8,6 +8,25 @@ static void* __attribute__((noinline)) stub_00127cc4_2(void* p0, int p1) { void*
 static void __attribute__((noinline)) stub_00127cc4(void* p0, int p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
 static void* __attribute__((noinline)) stub_00127d60(int p0) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 int fn_00fc9950(int);
+int fn_00fc9c90(void*);
+
+struct unk_001271d0_l;
+struct unk_001271d0_l {
+    u32 f_0;
+};
+struct unk_001271d0_a1 {
+    u8 f_0;
+};
+int fn_001271d0(int a0, unk_001271d0_a1* a1) {
+    int t0;
+    unk_001271d0_l l;
+    l.f_0 = (u32)(0);
+    t0 = fn_00fc9c90((void*)((&l)));
+    if ((int)(t0) >= (int)(0)) {
+        a1->f_0 = (u8)((u32)(-__builtin_abs((int)(l.f_0))) >> 31);
+    }
+    return (int)(t0);
+}
 
 int fn_00127298(int a0, int a1) {
     int t0;

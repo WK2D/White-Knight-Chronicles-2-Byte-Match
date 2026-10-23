@@ -26,6 +26,46 @@ int fn_0077488c(void) {
     return (int)(0);
 }
 
+struct unk_00774b50_a0 {
+    char pad_0[4408];
+    u32 f_1138;
+    char pad_113c[80];
+    u32 f_118c;
+};
+int fn_00774b50(unk_00774b50_a0* a0) {
+    return (int)((int)((u32)(__builtin_abs((int)((u32)(a0->f_118c) ^ (u32)(a0->f_1138))) + -1) >> 31));
+}
+
+struct unk_00774b78_a0 {
+    char pad_0[4476];
+    u32 f_117c;
+    char pad_1180[12];
+    u32 f_118c;
+};
+int fn_00774b78(unk_00774b78_a0* a0) {
+    return (int)((int)((u32)(__builtin_abs((int)((u32)(a0->f_118c) ^ (u32)(a0->f_117c))) + -1) >> 31));
+}
+
+struct unk_00774ba0_a0 {
+    char pad_0[4480];
+    u32 f_1180;
+    char pad_1184[8];
+    u32 f_118c;
+};
+int fn_00774ba0(unk_00774ba0_a0* a0) {
+    return (int)((int)((u32)(__builtin_abs((int)((u32)(a0->f_118c) ^ (u32)(a0->f_1180))) + -1) >> 31));
+}
+
+struct unk_00774bc8_a0 {
+    char pad_0[4484];
+    u32 f_1184;
+    char pad_1188[4];
+    u32 f_118c;
+};
+int fn_00774bc8(unk_00774bc8_a0* a0) {
+    return (int)((int)((u32)(__builtin_abs((int)((u32)(a0->f_118c) ^ (u32)(a0->f_1184))) + -1) >> 31));
+}
+
 struct unk_00774c28_a0_10e0;
 struct unk_00774c28_a0_10e0 {
     char pad_0[1636];

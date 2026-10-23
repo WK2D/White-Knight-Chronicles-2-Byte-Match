@@ -13,12 +13,35 @@ void fn_00b3db08(u32, int, int);
 void fn_00b3db18(u32, int, void*, int, int);
 void fn_00b3e7e8(void*, int);
 
+struct unk_0089f000_a0 {
+    char pad_0[4280];
+    u32 f_10b8;
+    u32 f_10bc;
+};
+int fn_0089f000(unk_0089f000_a0* a0) {
+    int v1;
+    if ((int)(a0->f_10b8) == (int)(2)) {
+        v1 = (int)((u32)(-__builtin_abs((int)(a0->f_10bc))) >> 31);
+    } else {
+        v1 = (int)(0);
+    }
+    return (int)(v1);
+}
+
 struct unk_0089f02c_a0 {
     char pad_0[6040];
     u64 f_1798;
 };
 u32 fn_0089f02c(unk_0089f02c_a0* a0) {
     return (u32)((u32)(((u32)((((u32)(a0->f_1798) >> 26) & 0x1) + -1) & 0xfffffe00) + 1024) & 0xfffffe00);
+}
+
+struct unk_0089f048_a0 {
+    char pad_0[4284];
+    u32 f_10bc;
+};
+int fn_0089f048(unk_0089f048_a0* a0) {
+    return (int)((int)((u32)(-__builtin_abs((int)(a0->f_10bc))) >> 31));
 }
 
 struct unk_0089f064_a0 {

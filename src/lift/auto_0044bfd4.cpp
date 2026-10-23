@@ -68,6 +68,14 @@ u8 fn_0044c640(unk_0044c640_a0* a0) {
     return (u8)((u8)t0);
 }
 
+struct unk_0044c66c_a0 {
+    char pad_0[128];
+    u32 f_80;
+};
+int fn_0044c66c(unk_0044c66c_a0* a0) {
+    return (int)((int)((u32)(-__builtin_abs((int)(a0->f_80))) >> 31));
+}
+
 void fn_0044c7c8(int a0) {
     stub_0044c688((int)(a0));
 }

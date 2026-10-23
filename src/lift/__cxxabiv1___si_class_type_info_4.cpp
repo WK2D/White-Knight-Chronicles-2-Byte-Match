@@ -4,6 +4,13 @@
 
 extern "C" {
 
+void* fn_00b32518(void);
+
+int fn_00b320e0(void) {
+    void* t0;
+    t0 = fn_00b32518();
+    return (int)((int)((u32)(-__builtin_abs((int)(FIELD(u32, t0, 4)))) >> 31));
+}
 
 struct unk_00b32674_l;
 struct unk_00b32674_l {

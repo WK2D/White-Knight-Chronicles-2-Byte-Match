@@ -5,7 +5,15 @@
 extern "C" {
 
 void* fn_009b1c04(u32, int);
+int fn_009b3fbc(int, int);
 void fn_009b509c(void*, int);
+static int __attribute__((noinline)) stub_009c2878(int p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+
+u32 fn_009c28e4(int a0) {
+    int t0;
+    t0 = stub_009c2878((int)(a0));
+    return (u32)(((u32)(-__builtin_abs((int)(t0))) >> 31));
+}
 
 struct unk_009c29a0_a0_78;
 struct unk_009c29a0_a0_78_c;
@@ -25,6 +33,12 @@ void* fn_009c29a0(unk_009c29a0_a0* a0, int a1) {
     void* t0;
     t0 = fn_009b1c04((u32)(a0->f_78->f_c->f_10), (int)(a1));
     return (void*)(t0);
+}
+
+void* fn_009c42c0(void) {
+    int t0;
+    t0 = fn_009b3fbc((int)(0), (int)(0));
+    return (void*)(((u32)(-__builtin_abs((int)(t0))) >> 31) + 1);
 }
 
 struct unk_009c6200_l;

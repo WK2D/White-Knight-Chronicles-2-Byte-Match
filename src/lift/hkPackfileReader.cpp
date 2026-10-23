@@ -19,7 +19,7 @@ int fn_00c4c61c(unk_00c4c61c_a0* a0) {
     v0 = (u32)(a0->f_14);
     t0 = fn_00c6a8b0();
     t1 = fn_00bf9384((void*)(v0), (void*)(t0));
-    return (int)((int)((u32)(((int)((u32)((int)(t1) >> 31) ^ (u32)(t1)) - (int)((int)(t1) >> 31)) + -1) >> 31));
+    return (int)((int)((u32)(__builtin_abs((int)(t1)) + -1) >> 31));
 }
 
 void fn_00c4c674(int a0, int a1, int a2, int a3) {

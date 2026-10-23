@@ -172,4 +172,11 @@ void* fn_0052e290(unk_0052e290_a0* a0) {
     return (void*)(v1);
 }
 
+struct unk_0052e2f4_a0 {
+    u32 f_0;
+};
+int fn_0052e2f4(unk_0052e2f4_a0* a0) {
+    return (int)((int)((u32)(-__builtin_abs((int)(a0->f_0))) >> 31));
+}
+
 }

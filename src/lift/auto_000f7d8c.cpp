@@ -67,19 +67,19 @@ int fn_000f9360(void) {
 int fn_000f944c(int a0) {
     int t0;
     t0 = stub_000f9408((int)(a0), (int)(3));
-    return (int)((int)((u32)(((int)((u32)((int)(t0) >> 31) ^ (u32)(t0)) - (int)((int)(t0) >> 31)) + -1) >> 31));
+    return (int)((int)((u32)(__builtin_abs((int)(t0)) + -1) >> 31));
 }
 
 int fn_000f9488(int a0) {
     int t0;
     t0 = stub_000f9408((int)(a0), (int)(4));
-    return (int)((int)((u32)(((int)((u32)((int)(t0) >> 31) ^ (u32)(t0)) - (int)((int)(t0) >> 31)) + -1) >> 31));
+    return (int)((int)((u32)(__builtin_abs((int)(t0)) + -1) >> 31));
 }
 
 int fn_000f94fc(int a0) {
     int t0;
     t0 = stub_000f9408((int)(a0), (int)(6));
-    return (int)((int)((u32)(((int)((u32)((int)(t0) >> 31) ^ (u32)(t0)) - (int)((int)(t0) >> 31)) + -1) >> 31));
+    return (int)((int)((u32)(__builtin_abs((int)(t0)) + -1) >> 31));
 }
 
 }

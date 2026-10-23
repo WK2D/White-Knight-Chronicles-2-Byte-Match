@@ -204,6 +204,14 @@ int fn_00390390(unk_00390390_a0* a0) {
     return (int)(v0);
 }
 
+struct unk_003903ec_a0 {
+    char pad_0[48];
+    u32 f_30;
+};
+int fn_003903ec(unk_003903ec_a0* a0) {
+    return (int)((int)((u32)(__builtin_abs((int)(a0->f_30)) + -1) >> 31));
+}
+
 struct unk_003904e4_a0 {
     virtual void vf0();
     virtual void vf1();
@@ -6457,6 +6465,21 @@ void* fn_00394388(unk_00394388_a0* a0) {
     void* t0;
     t0 = a0->vf323((int)(0));
     return (void*)(t0);
+}
+
+struct unk_003943d0_a0 {
+    char pad_0[20];
+    u32 f_14;
+    u32 f_18;
+};
+int fn_003943d0(unk_003943d0_a0* a0) {
+    int v1;
+    if ((int)(a0->f_14) == (int)(0)) {
+        v1 = (int)((u32)(__builtin_abs((int)(a0->f_18)) + -1) >> 31);
+    } else {
+        v1 = (int)(0);
+    }
+    return (int)(v1);
 }
 
 struct unk_003944e0_a0 {

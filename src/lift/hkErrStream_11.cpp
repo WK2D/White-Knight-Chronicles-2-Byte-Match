@@ -85,4 +85,25 @@ void fn_00c8f6bc(unk_00c8f6bc_a0* a0, unk_00c8f6bc_a1* a1) {
     a0->f_3 = (u8)(a1->f_3);
 }
 
+struct unk_00c8f6e0_gf84;
+struct unk_00c8f6e0_gf88;
+struct unk_00c8f6e0_gf84 {
+    char pad_0[1];
+    u8 f_1;
+};
+struct unk_00c8f6e0_gf88 {
+    u32 f_0;
+};
+extern unk_00c8f6e0_gf88 g_00c8f6e0_0;
+extern unk_00c8f6e0_gf84 g_00c8f6e0_1;
+void fn_00c8f6e0(int a0, int a1) {
+    if ((int)(a0) != (int)(1)) {
+        return;
+    }
+    if ((int)(a1) != (int)(65535)) {
+        return;
+    }
+    (&g_00c8f6e0_1)->f_1 = (u8)((u32)(__builtin_abs((int)((u32)((&g_00c8f6e0_0)->f_0) ^ 0x1)) + -1) >> 31);
+}
+
 }

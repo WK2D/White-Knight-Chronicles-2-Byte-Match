@@ -173,6 +173,23 @@ void* fn_003fdf44(unk_003fdf44_a0* a0) {
     return (void*)(a0->f_4 + 8832);
 }
 
+struct unk_003fdf54_a0 {
+    char pad_0[4];
+    u32 f_4;
+};
+void* fn_003fdf54(unk_003fdf54_a0* a0) {
+    int v0;
+    int v2;
+    int v4;
+    v2 = (int)(0);
+    v4 = (int)(a0->f_4 + 8832);
+    for (v0 = 0; v0 < 8; v0++) {
+        v2 = (int)((int)(v2) + (int)((u32)(-__builtin_abs((int)(FIELD(u32, v4, 0)))) >> 31));
+        v4 = (int)((char*)v4 + 4);
+    }
+    return (void*)(v2);
+}
+
 struct unk_003fdf94_a0_8;
 struct unk_003fdf94_a0_8 {
     char pad_0[6408];

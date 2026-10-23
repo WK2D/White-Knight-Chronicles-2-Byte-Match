@@ -77,6 +77,22 @@ void* fn_00421018(unk_00421018_a0* a0, int a1) {
     return (void*)(v0);
 }
 
+struct unk_004210ac_a0 {
+    char pad_0[16];
+    u32 f_10;
+    char pad_14[4];
+    u32 f_18;
+};
+int fn_004210ac(unk_004210ac_a0* a0, int a1) {
+    int v1;
+    if ((u32)(a0->f_18) > (u32)(a1)) {
+        v1 = (int)((u32)(-__builtin_abs((int)(FIELD(u32, (int)((u32)(a1) << 4) + (int)(a0->f_10), 8)))) >> 31);
+    } else {
+        v1 = (int)(0);
+    }
+    return (int)(v1);
+}
+
 struct unk_00421238_gmcd4;
 struct unk_00421238_gmcd4_0;
 struct unk_00421238_gmcd4_0_6c;

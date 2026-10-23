@@ -25,6 +25,10 @@ void fn_0089c6ac(unk_0089c6ac_a0* a0) {
     (&g_0089c6ac_0)->f_0 = (u32)(a0->f_24);
 }
 
+int fn_0089c6d8(int a0, int a1, int a2) {
+    return (int)(((u32)(-__builtin_abs((int)(a2))) >> 31) + 2);
+}
+
 struct unk_0089c704_a0 {
     char pad_0[116];
     u32 f_74;

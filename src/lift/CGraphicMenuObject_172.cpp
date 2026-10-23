@@ -171,7 +171,7 @@ void* fn_007b5d84(int a0) {
 }
 
 int fn_007b5e98(int a0) {
-    return (int)((int)((u32)((u32)(((int)((u32)((int)(a0) >> 31) ^ (u32)(a0)) - (int)((int)(a0) >> 31)) + -1) >> 31) ^ 0x1));
+    return (int)((int)((u32)((u32)(__builtin_abs((int)(a0)) + -1) >> 31) ^ 0x1));
 }
 
 }

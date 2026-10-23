@@ -54,6 +54,14 @@ int fn_0083e9e4(int a0, unk_0083e9e4_a1* a1) {
     return (int)(v1);
 }
 
+struct unk_0083ea38_a0 {
+    char pad_0[4776];
+    u32 f_12a8;
+};
+int fn_0083ea38(unk_0083ea38_a0* a0) {
+    return (int)((int)((u32)(__builtin_abs((int)((u32)(a0->f_12a8) ^ 0x2)) + -1) >> 31));
+}
+
 struct unk_0083ea5c_a0_12d0;
 struct unk_0083ea5c_a0_12d0 {
     char pad_0[185];

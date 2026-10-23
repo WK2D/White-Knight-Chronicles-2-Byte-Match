@@ -9,7 +9,51 @@ static int __attribute__((noinline)) stub_000f9408(int p0, int p1) { int r; __as
 int fn_000f955c(int a0) {
     int t0;
     t0 = stub_000f9408((int)(a0), (int)(32));
-    return (int)((int)((u32)(((int)((u32)((int)(t0) >> 31) ^ (u32)(t0)) - (int)((int)(t0) >> 31)) + -1) >> 31));
+    return (int)((int)((u32)(__builtin_abs((int)(t0)) + -1) >> 31));
+}
+
+int fn_000f9598(int a0) {
+    int t0;
+    t0 = stub_000f9408((int)(a0), (int)(47));
+    return (int)((int)((u32)(-__builtin_abs((int)(t0))) >> 31));
+}
+
+int fn_000f96e4(int a0) {
+    int t0;
+    t0 = stub_000f9408((int)(a0), (int)(8));
+    return (int)((int)((u32)(-__builtin_abs((int)(t0))) >> 31));
+}
+
+int fn_000f9818(int a0) {
+    int t0;
+    t0 = stub_000f9408((int)(a0), (int)(14));
+    return (int)((int)((u32)(-__builtin_abs((int)(t0))) >> 31));
+}
+
+int fn_000f98e4(int a0) {
+    int t0;
+    t0 = stub_000f9408((int)(a0), (int)(16));
+    return (int)((int)((u32)(-__builtin_abs((int)(t0))) >> 31));
+}
+
+int fn_000f9a0c(int a0) {
+    int t0;
+    t0 = stub_000f9408((int)(a0), (int)(19));
+    return (int)((int)((u32)(-__builtin_abs((int)(t0))) >> 31));
+}
+
+int fn_000f9c6c(int a0) {
+    int t0;
+    int t1;
+    t0 = stub_000f9408((int)(a0), (int)(23));
+    t1 = stub_000f9408((int)(a0), (int)(24));
+    return (int)((int)((u32)(-__builtin_abs((int)((u32)(t0) | (u32)(t1)))) >> 31));
+}
+
+int fn_000f9df0(int a0) {
+    int t0;
+    t0 = stub_000f9408((int)(a0), (int)(37));
+    return (int)((int)((u32)(-__builtin_abs((int)(t0))) >> 31));
 }
 
 int fn_000f9e28(int a0, int a1) {
@@ -47,19 +91,27 @@ int fn_000f9edc(int a0, int a1) {
 int fn_000fa3c8(int a0) {
     int t0;
     t0 = stub_000f9408((int)(a0), (int)(30));
-    return (int)((int)((u32)(((int)((u32)((int)(t0) >> 31) ^ (u32)(t0)) - (int)((int)(t0) >> 31)) + -1) >> 31));
+    return (int)((int)((u32)(__builtin_abs((int)(t0)) + -1) >> 31));
 }
 
 int fn_000fa404(int a0) {
     int t0;
     t0 = stub_000f9408((int)(a0), (int)(34));
-    return (int)((int)((u32)(((int)((u32)((int)(t0) >> 31) ^ (u32)(t0)) - (int)((int)(t0) >> 31)) + -1) >> 31));
+    return (int)((int)((u32)(__builtin_abs((int)(t0)) + -1) >> 31));
 }
 
 int fn_000fa440(int a0) {
     int t0;
     t0 = stub_000f9408((int)(a0), (int)(35));
-    return (int)((int)((u32)(((int)((u32)((int)(t0) >> 31) ^ (u32)(t0)) - (int)((int)(t0) >> 31)) + -1) >> 31));
+    return (int)((int)((u32)(__builtin_abs((int)(t0)) + -1) >> 31));
+}
+
+int fn_000fa508(int a0) {
+    int t0;
+    int t1;
+    t0 = stub_000f9408((int)(a0), (int)(9));
+    t1 = stub_000f9408((int)(a0), (int)(10));
+    return (int)((int)((u32)(-__builtin_abs((int)((u32)(t0) | (u32)(t1)))) >> 31));
 }
 
 }

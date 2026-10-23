@@ -354,6 +354,38 @@ int fn_0031a5a8(void) {
     return (int)(v0);
 }
 
+struct unk_0031a5f8_gm1e98;
+struct unk_0031a5f8_gm1e98_0;
+struct unk_0031a5f8_gm1e98_0_6c;
+struct unk_0031a5f8_gm1e98_0_6c_8;
+struct unk_0031a5f8_gm1e98 {
+    unk_0031a5f8_gm1e98_0* f_0;
+};
+struct unk_0031a5f8_gm1e98_0 {
+    char pad_0[108];
+    unk_0031a5f8_gm1e98_0_6c* f_6c;
+};
+struct unk_0031a5f8_gm1e98_0_6c {
+    char pad_0[8];
+    unk_0031a5f8_gm1e98_0_6c_8* f_8;
+};
+struct unk_0031a5f8_gm1e98_0_6c_8 {
+    char pad_0[240];
+    u32 f_f0;
+};
+extern unk_0031a5f8_gm1e98 g_0031a5f8_0;
+int fn_0031a5f8(void) {
+    void* t0;
+    int v0;
+    t0 = fn_003fd2c4((u32)((&g_0031a5f8_0)->f_0->f_6c->f_8->f_f0));
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)((u32)(__builtin_abs((int)((u32)(FIELD(u32, t0, 128)) ^ 0x1)) + -1) >> 31);
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
 struct unk_0031a65c_gm1e98;
 struct unk_0031a65c_gm1e98_0;
 struct unk_0031a65c_gm1e98_0_6c;

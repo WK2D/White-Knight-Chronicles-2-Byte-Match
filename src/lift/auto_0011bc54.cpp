@@ -45,7 +45,7 @@ struct unk_0011ce24_a0 {
 int fn_0011ce24(unk_0011ce24_a0* a0) {
     int t0;
     t0 = fn_00fccd90((void*)((&a0->f_4fa8)), (int)(0));
-    return (int)((int)((u32)(((int)((u32)((int)(t0) >> 31) ^ (u32)(t0)) - (int)((int)(t0) >> 31)) + -1) >> 31));
+    return (int)((int)((u32)(__builtin_abs((int)(t0)) + -1) >> 31));
 }
 
 }

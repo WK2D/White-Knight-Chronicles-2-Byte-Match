@@ -30,6 +30,14 @@ int fn_00653750(unk_00653750_a0* a0, unk_00653750_a1* a1) {
     return (int)(1);
 }
 
+struct unk_006538a4_a0 {
+    char pad_0[268];
+    u32 f_10c;
+};
+int fn_006538a4(unk_006538a4_a0* a0) {
+    return (int)((int)((u32)(__builtin_abs((int)((u32)(a0->f_10c) ^ 0x1)) + -1) >> 31));
+}
+
 struct unk_00653c14_g355c;
 struct unk_00653c14_a0_24;
 struct unk_00653c14_g355c_0;

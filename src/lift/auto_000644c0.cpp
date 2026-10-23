@@ -8,6 +8,7 @@ void fn_0005ecf4(int);
 void fn_0005ed00(int);
 void fn_0005ede0(void);
 static void __attribute__((noinline)) stub_00064664(int p0) { __asm__ volatile ("" : : "r"(p0)); }
+static int __attribute__((noinline)) stub_00064c14(int p0, int p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 
 int fn_00064588(int a0, int a1) {
     fn_0005ed00((int)(a1));
@@ -27,6 +28,12 @@ int fn_000647d8(int a0) {
 int fn_00064bec(void) {
     fn_0005ede0();
     return (int)(0);
+}
+
+int fn_00064c7c(int a0, int a1) {
+    int t0;
+    t0 = stub_00064c14((int)(a0), (int)(a1));
+    return (int)(((u32)(-__builtin_abs((int)(~((u32)(t0) | (u32)(t0))))) >> 31) + -1);
 }
 
 }

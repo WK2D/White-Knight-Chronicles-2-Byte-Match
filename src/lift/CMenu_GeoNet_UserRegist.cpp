@@ -9,6 +9,10 @@ int fn_00691ed8(u32);
 void fn_00b37fa8(void*, int, int);
 void fn_00b38268(void*, void*);
 
+int fn_006dce78(int a0, int a1, int a2) {
+    return (int)(((u32)(-__builtin_abs((int)(a2))) >> 31) + 2);
+}
+
 struct unk_006dcef0_a0 {
     char pad_0[1540];
     u32 f_604;

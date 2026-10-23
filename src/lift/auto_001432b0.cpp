@@ -28,4 +28,12 @@ void fn_00143854(unk_00143854_a0* a0) {
     stub_001437d4((void*)(a0));
 }
 
+struct unk_00143bec_a0 {
+    char pad_0[8];
+    u32 f_8;
+};
+int fn_00143bec(unk_00143bec_a0* a0) {
+    return (int)((int)((u32)(-__builtin_abs((int)(a0->f_8))) >> 31));
+}
+
 }

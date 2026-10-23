@@ -21,4 +21,19 @@ int fn_0085a270(int a0, unk_0085a270_a1* a1) {
     return (int)(v1);
 }
 
+struct unk_0085a2c4_a0 {
+    char pad_0[4404];
+    u32 f_1134;
+    u32 f_1138;
+};
+int fn_0085a2c4(unk_0085a2c4_a0* a0) {
+    int v1;
+    if ((int)(a0->f_1134) == (int)(2)) {
+        v1 = (int)((u32)(__builtin_abs((int)((u32)(a0->f_1138) ^ 0x2)) + -1) >> 31);
+    } else {
+        v1 = (int)(0);
+    }
+    return (int)(v1);
+}
+
 }

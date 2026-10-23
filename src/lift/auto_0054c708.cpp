@@ -17,6 +17,7 @@ void* fn_00573d94(void*, u32, u16, u16, int, void*);
 void* fn_00587494(u32);
 int fn_00587540(u32, int, int, int);
 void fn_00587c4c(u32, int);
+int fn_00587ca8(u32, int);
 void* fn_0058ecc0(void);
 void fn_00b37f58(void*, int, int);
 
@@ -46,6 +47,16 @@ struct unk_0054c9ec_a0 {
 };
 void fn_0054c9ec(unk_0054c9ec_a0* a0, int a1) {
     fn_00587c4c((u32)(a0->f_8), (int)(a1));
+}
+
+struct unk_0054ca14_a0 {
+    char pad_0[8];
+    u32 f_8;
+};
+int fn_0054ca14(unk_0054ca14_a0* a0, int a1) {
+    int t0;
+    t0 = fn_00587ca8((u32)(a0->f_8), (int)(a1));
+    return (int)((int)((u32)(-__builtin_abs((int)(t0))) >> 31));
 }
 
 void fn_0054ca50(int a0, int a1) {

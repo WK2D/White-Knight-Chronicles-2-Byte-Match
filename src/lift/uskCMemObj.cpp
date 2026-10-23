@@ -12,6 +12,14 @@ void fn_00081e10(int a0) {
     stub_00081df8((int)(a0));
 }
 
+struct unk_00081f60_a0 {
+    char pad_0[68];
+    u32 f_44;
+};
+int fn_00081f60(unk_00081f60_a0* a0) {
+    return (int)((int)((u32)(-__builtin_abs((int)(a0->f_44))) >> 31));
+}
+
 struct unk_00081fa0_a0_4;
 struct unk_00081fa0_a0_4 {
     void* f_0;
@@ -29,6 +37,14 @@ void fn_00081fa0(unk_00081fa0_a0* a0) {
 
 void fn_00081fc4(int a0) {
     stub_00081fa0((int)(a0));
+}
+
+struct unk_00081fc8_a0 {
+    char pad_0[4];
+    u32 f_4;
+};
+int fn_00081fc8(unk_00081fc8_a0* a0) {
+    return (int)((int)((u32)(-__builtin_abs((int)(a0->f_4))) >> 31));
 }
 
 struct unk_00081fe4_a0_4;
@@ -90,6 +106,13 @@ int fn_00082028(unk_00082028_a0* a0) {
 
 void fn_00082094(int a0) {
     stub_00082088((int)(a0));
+}
+
+struct unk_00082098_a0 {
+    u32 f_0;
+};
+int fn_00082098(unk_00082098_a0* a0) {
+    return (int)((int)((u32)(-__builtin_abs((int)(a0->f_0))) >> 31));
 }
 
 }

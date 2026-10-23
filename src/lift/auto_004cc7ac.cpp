@@ -13,6 +13,7 @@ int fn_0003faa8_2(int);
 void fn_0003faa8(int);
 void fn_0003fab0_2(void*, int);
 void fn_0003fab0(int, int);
+void fn_000750a4(int, u32);
 int fn_000750f8(int);
 void fn_002ae398(u32, void*, int);
 static void* __attribute__((noinline)) stub_004cd54c(void) { void* r; __asm__ volatile ("" : "=r"(r)); return r; }
@@ -251,6 +252,20 @@ int fn_004cdd10(int a0) {
     t0 = fn_0003faa8_2((int)(a0));
     l.f_0 = (u32)(t0);
     fn_002ae398((u32)((&g_004cdd10_0)->f_0->f_8), (void*)((&l)), (int)(1));
+    return (int)(1);
+}
+
+int fn_004cdd58(int a0) {
+    int t0;
+    t0 = fn_0003f9e0((int)(a0));
+    fn_000750a4((int)(6166), (u32)(((u32)(-__builtin_abs((int)(t0))) >> 30) & 0x2));
+    return (int)(1);
+}
+
+int fn_004cdd9c(int a0) {
+    int t0;
+    t0 = fn_0003f9e0((int)(a0));
+    fn_000750a4((int)(6152), (u32)(((u32)(-__builtin_abs((int)(t0))) >> 30) & 0x2));
     return (int)(1);
 }
 

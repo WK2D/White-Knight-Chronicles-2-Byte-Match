@@ -4,11 +4,28 @@
 
 extern "C" {
 
+static int __attribute__((noinline)) stub_00021424(int p0, int p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static void __attribute__((noinline)) stub_00021e8c(int p0, int p1, int p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
 static int __attribute__((noinline)) stub_00022050(void* p0, u32 p1, void* p2, void* p3, int p4, int p5) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4), "r"(p5)); return r; }
-static void __attribute__((noinline)) stub_00023280_2(void* p0, void* p1, int p2, u8 p3, void* p4) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4)); }
-static void __attribute__((noinline)) stub_00023280(void* p0, void* p1, int p2, int p3, void* p4) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4)); }
+static void __attribute__((noinline)) stub_00023280_2(void* p0, void* p1, int p2, int p3, void* p4) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4)); }
+static void __attribute__((noinline)) stub_00023280_3(void* p0, void* p1, int p2, u8 p3, void* p4) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4)); }
+static int __attribute__((noinline)) stub_00023280(int p0, int p1, int p2, int p3, void* p4) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4)); return r; }
 void fn_00035ad0(u32);
+int fn_00b38338(int, int);
+
+int fn_00021e38(int a0, int a1) {
+    int t0;
+    int t1;
+    int v0;
+    t0 = stub_00021424((int)(a0), (int)(a1));
+    if ((int)(t0) != (int)(-1)) {
+        t1 = fn_00b38338((int)(t0), (int)(0));
+        v0 = (int)((u32)(-__builtin_abs((int)(t1))) >> 31);
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
 
 void fn_00021f58(int a0, int a1) {
     stub_00021e8c((int)(a0), (int)(a1), (int)(0));
@@ -32,25 +49,37 @@ int fn_00022f60(void* a0, void* a1, void* a2, unk_00022f60_a3* a3) {
     return (int)(0);
 }
 
+int fn_0002336c(int a0, int a1) {
+    int t0;
+    t0 = stub_00023280((int)(a0), (int)(a1), (int)(3), (int)(0), (void*)(-1));
+    return (int)((int)((u32)(-__builtin_abs((int)(~((u32)(t0) | (u32)(t0))))) >> 31));
+}
+
 void fn_000233b4(void* a0, void* a1) {
     if ((int)(a1) == (int)(0)) {
         return;
     }
-    stub_00023280((void*)(a0), (void*)(a1), (int)(8), (int)(0), (void*)(-1));
+    stub_00023280_2((void*)(a0), (void*)(a1), (int)(8), (int)(0), (void*)(-1));
 }
 
 void fn_000233dc(void* a0, void* a1) {
     if ((int)(a1) == (int)(0)) {
         return;
     }
-    stub_00023280((void*)(a0), (void*)(a1), (int)(7), (int)(0), (void*)(-1));
+    stub_00023280_2((void*)(a0), (void*)(a1), (int)(7), (int)(0), (void*)(-1));
 }
 
 void fn_00023404(void* a0, void* a1, int a2) {
     if ((int)(a1) == (int)(0)) {
         return;
     }
-    stub_00023280_2((void*)(a0), (void*)(a1), (int)(6), (u8)((u8)a2), (void*)(-1));
+    stub_00023280_3((void*)(a0), (void*)(a1), (int)(6), (u8)((u8)a2), (void*)(-1));
+}
+
+int fn_00023430(int a0, int a1) {
+    int t0;
+    t0 = stub_00023280((int)(a0), (int)(a1), (int)(11), (int)(0), (void*)(-1));
+    return (int)((int)((u32)(-__builtin_abs((int)(t0))) >> 31));
 }
 
 }

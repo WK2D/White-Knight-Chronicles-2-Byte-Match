@@ -6,6 +6,27 @@ extern "C" {
 
 int fn_00032efc(u32);
 
+struct unk_00b79558_a0 {
+    u32 f_0;
+};
+int fn_00b79558(unk_00b79558_a0* a0) {
+    return (int)((int)((u32)(__builtin_abs((int)(a0->f_0)) + -1) >> 31));
+}
+
+struct unk_00b7c81c_a0 {
+    u32 f_0;
+};
+int fn_00b7c81c(unk_00b7c81c_a0* a0) {
+    return (int)((int)((u32)(-__builtin_abs((int)(a0->f_0))) >> 31));
+}
+
+struct unk_00b7c838_a0 {
+    u32 f_0;
+};
+int fn_00b7c838(unk_00b7c838_a0* a0) {
+    return (int)((int)((u32)(-__builtin_abs((int)(a0->f_0))) >> 31));
+}
+
 struct unk_00b7c854_a0_0;
 struct unk_00b7c854_a0_0 {
     u32 f_0;

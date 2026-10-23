@@ -6,6 +6,13 @@ extern "C" {
 
 static void __attribute__((noinline)) stub_0028c7cc(void* p0, int p1, int p2) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2)); }
 
+struct unk_0028c804_a0 {
+    u32 f_0;
+};
+int fn_0028c804(unk_0028c804_a0* a0, int a1) {
+    return (int)((int)((u32)(-__builtin_abs((int)((u32)((u32)(1) << (int)(a1)) & (u32)(a0->f_0)))) >> 31));
+}
+
 struct unk_0028c82c_a0 {
     char pad_0[4];
     u32 f_4;

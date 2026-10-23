@@ -63,4 +63,12 @@ int fn_00433708(unk_00433708_a0* a0, int a1, int a2) {
     return (int)(t2);
 }
 
+struct unk_00433cd4_a0 {
+    char pad_0[80];
+    u32 f_50;
+};
+int fn_00433cd4(unk_00433cd4_a0* a0) {
+    return (int)((int)((u32)((u32)(__builtin_abs((int)((u32)(a0->f_50) << 5)) + -1) >> 31) ^ 0x1));
+}
+
 }

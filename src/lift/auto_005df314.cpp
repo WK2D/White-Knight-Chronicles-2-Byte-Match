@@ -9,8 +9,13 @@ void fn_0004693c(void*);
 int fn_001293f4(void*);
 int fn_001293fc(void*);
 int fn_00129628(void*, void*, int);
+void* fn_002df820(u32);
+int fn_00319128(void*);
 void fn_003bb1e4(u32);
+int fn_003d2364(u32, void*);
 void* fn_003e7128(u32);
+int fn_003fd588(void*);
+int fn_003fd5c0(void*);
 static void __attribute__((noinline)) stub_005dabf4(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
 static void __attribute__((noinline)) stub_005e3158(void* p0, void* p1, int p2, int p3, void* p4, int p5, void* p6) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4), "r"(p5), "r"(p6)); }
 static void __attribute__((noinline)) stub_005e75c4(void* p0) { __asm__ volatile ("" : : "r"(p0)); }
@@ -163,6 +168,61 @@ struct unk_005e0bd8_g2214_0_6c_8 {
 extern unk_005e0bd8_g2214 g_005e0bd8_0;
 void fn_005e0bd8(void) {
     fn_003bb1e4((u32)((&g_005e0bd8_0)->f_0->f_6c->f_8->f_10c));
+}
+
+struct unk_005e0c10_g2214;
+struct unk_005e0c10_g2220;
+struct unk_005e0c10_g2214_0;
+struct unk_005e0c10_g2220_0;
+struct unk_005e0c10_g2214_0_6c;
+struct unk_005e0c10_g2214_0_6c_8;
+struct unk_005e0c10_g2214 {
+    unk_005e0c10_g2214_0* f_0;
+};
+struct unk_005e0c10_g2220 {
+    unk_005e0c10_g2220_0* f_0;
+};
+struct unk_005e0c10_g2214_0 {
+    char pad_0[108];
+    unk_005e0c10_g2214_0_6c* f_6c;
+};
+struct unk_005e0c10_g2220_0 {
+    u32 f_0;
+};
+struct unk_005e0c10_g2214_0_6c {
+    char pad_0[8];
+    unk_005e0c10_g2214_0_6c_8* f_8;
+};
+struct unk_005e0c10_g2214_0_6c_8 {
+    char pad_0[240];
+    u32 f_f0;
+    u32 f_f4;
+};
+extern unk_005e0c10_g2214 g_005e0c10_0;
+extern unk_005e0c10_g2220 g_005e0c10_1;
+extern char g_005e0c10_2[];
+int fn_005e0c10(void) {
+    void* t0;
+    int t1;
+    int t2;
+    int t3;
+    int t4;
+    unk_005e0c10_g2214_0_6c_8* v0;
+    u32 v1;
+    v0 = (unk_005e0c10_g2214_0_6c_8*)((&g_005e0c10_0)->f_0->f_6c->f_8);
+    v1 = (u32)((&g_005e0c10_0)->f_0->f_6c->f_8->f_f0);
+    t0 = fn_002df820((u32)((&g_005e0c10_1)->f_0->f_0));
+    t1 = fn_00319128((void*)(t0));
+    t2 = fn_003d2364((u32)(v0->f_f4), (void*)(g_005e0c10_2));
+    if ((int)((u32)(t1) & 0xff) != (int)(0)) {
+        if ((int)((u32)(t2) & 0xff) == (int)(0)) {
+            return (int)(0);
+        }
+        t3 = fn_003fd5c0((void*)(v1));
+        t4 = fn_003fd588((void*)(v1));
+        return (int)((int)((u32)(__builtin_abs((int)((u32)(t3) ^ (u32)(t4))) + -1) >> 31));
+    }
+    return (int)(0);
 }
 
 struct unk_005e0d04_a0_fa8;

@@ -37,4 +37,18 @@ void* fn_00018aa8(unk_00018aa8_a0* a0, int a1) {
     return (void*)(0);
 }
 
+struct unk_00018b44_a0 {
+    char pad_0[20168];
+    u32 f_4ec8;
+};
+int fn_00018b44(unk_00018b44_a0* a0) {
+    int v0;
+    if ((int)(a0->f_4ec8) != (int)(-1)) {
+        v0 = (int)(((u32)(__builtin_abs((int)(a0->f_4ec8)) + -1) >> 30) & 0x2);
+    } else {
+        v0 = (int)(1);
+    }
+    return (int)(v0);
+}
+
 }

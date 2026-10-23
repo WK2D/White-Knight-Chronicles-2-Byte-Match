@@ -19,6 +19,10 @@ void* fn_00b91738(unk_00b91738_a0* a0, int a1) {
     return (void*)(v0);
 }
 
+int fn_00b91760(int a0, int a1) {
+    return (int)((int)((u32)(__builtin_abs((int)((u32)(a1) ^ 0x1)) + -1) >> 31));
+}
+
 struct unk_00b91788_a0 {
     char pad_0[1028];
     u32 f_404;

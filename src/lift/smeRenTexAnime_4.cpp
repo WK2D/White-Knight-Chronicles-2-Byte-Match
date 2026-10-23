@@ -36,6 +36,13 @@ void fn_00b60e18(unk_00b60e18_a0* a0) {
     }
 }
 
+struct unk_00b60e64_a0 {
+    u32 f_0;
+};
+int fn_00b60e64(unk_00b60e64_a0* a0) {
+    return (int)((int)((u32)(__builtin_abs((int)(a0->f_0)) + -1) >> 31));
+}
+
 struct unk_00b66754_a0_0;
 struct unk_00b66754_a0_0 {
     u32 f_0;

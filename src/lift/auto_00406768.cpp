@@ -6,9 +6,16 @@ extern "C" {
 
 void fn_003fd2c4(u32);
 static void* __attribute__((noinline)) stub_0040665c(void) { void* r; __asm__ volatile ("" : "=r"(r)); return r; }
+static int __attribute__((noinline)) stub_00406698(int p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static int __attribute__((noinline)) stub_004083a0(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static int __attribute__((noinline)) stub_004084b0(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static int __attribute__((noinline)) stub_00408578(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+
+int fn_004068c8(int a0, int a1) {
+    int t0;
+    t0 = stub_00406698((int)(a1));
+    return (int)((int)((u32)(-__builtin_abs((int)(t0))) >> 31));
+}
 
 int fn_00406900(void) {
     void* t0;

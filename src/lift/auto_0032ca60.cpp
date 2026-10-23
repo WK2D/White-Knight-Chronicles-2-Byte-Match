@@ -4,9 +4,18 @@
 
 extern "C" {
 
+int fn_0003f9e0(int);
 float fn_0003fa14(void*);
 void fn_0003fac8(void*);
+static void __attribute__((noinline)) stub_0032cf50(u32 p0) { __asm__ volatile ("" : : "r"(p0)); }
 void fn_00b38768(float, int);
+
+int fn_0032d108(int a0) {
+    int t0;
+    t0 = fn_0003f9e0((int)(a0));
+    stub_0032cf50((u32)(((u32)(-__builtin_abs((int)(t0))) >> 31)));
+    return (int)(1);
+}
 
 struct unk_0032d144_a0 {
     char pad_0[8];

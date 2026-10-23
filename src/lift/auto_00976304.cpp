@@ -66,6 +66,23 @@ void fn_009767a0(int a0, int a1) {
     stub_009766a0((int)(a0), (int)(a1), (int)(0), (int)(0));
 }
 
+struct unk_009767ac_a0 {
+    u32 f_0;
+    u8 f_4;
+};
+int fn_009767ac(unk_009767ac_a0* a0) {
+    int t1;
+    int v1;
+    stub_00975e20((void*)(a0));
+    if ((int)(a0->f_4) != (int)(0)) {
+        t1 = fn_00935070((u32)(a0->f_0));
+        v1 = (int)((u32)(__builtin_abs((int)((u32)(t1) ^ 0x2)) + -1) >> 31);
+    } else {
+        v1 = (int)(0);
+    }
+    return (int)(v1);
+}
+
 struct unk_00976810_a0 {
     u32 f_0;
     u8 f_4;

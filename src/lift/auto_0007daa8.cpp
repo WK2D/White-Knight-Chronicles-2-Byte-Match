@@ -10,6 +10,13 @@ void fn_0007db94(int a0) {
     stub_0007db84((int)(a0));
 }
 
+struct unk_0007dbe4_a0 {
+    u32 f_0;
+};
+int fn_0007dbe4(unk_0007dbe4_a0* a0, int a1) {
+    return (int)((int)((u32)(-__builtin_abs((int)((u32)((u32)(1) << (int)((u32)(a1) & 0x1f)) & (u32)(FIELD(u32, (int)((u32)((int)(a1) >> 5) << 2) + (int)(a0->f_0), 0))))) >> 31));
+}
+
 struct unk_0007df40_a0 {
     u32 f_0;
     u32 f_4;

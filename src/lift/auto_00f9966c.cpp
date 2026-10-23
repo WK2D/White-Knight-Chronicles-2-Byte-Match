@@ -11,6 +11,31 @@ void fn_00b232e0(void*);
 void fn_00b2bb1c(void*);
 void fn_00b2bb44(void*);
 
+struct unk_00f99730_a0 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual void vf5();
+    virtual void vf6();
+    virtual void vf7();
+    virtual void vf8();
+    virtual void vf9();
+    virtual void vf10();
+    virtual void vf11();
+    virtual int vf12(int, int);
+    char pad_4[4];
+    u32 f_8;
+};
+int fn_00f99730(unk_00f99730_a0* a0, int a1, int a2) {
+    int t0;
+    u32 v0;
+    v0 = (u32)(a0->f_8);
+    t0 = a0->vf12((int)(a2), (int)(0));
+    return (int)((int)((u32)(-__builtin_abs((int)((int)(short)((u32)(a1) & (u32)(FIELD(u16, (int)(((u32)(t0) << 1) & 0x1fe) + (int)(v0), 0)))))) >> 31));
+}
+
 struct unk_00f99d94_a0 {
     char pad_0[108];
     u32 f_6c;

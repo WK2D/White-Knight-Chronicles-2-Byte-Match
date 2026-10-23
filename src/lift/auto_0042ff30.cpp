@@ -83,6 +83,14 @@ int fn_0043009c(void* a0) {
     return (int)(v2);
 }
 
+struct unk_00430284_a0 {
+    char pad_0[20];
+    u32 f_14;
+};
+int fn_00430284(unk_00430284_a0* a0) {
+    return (int)((int)((u32)((u32)(__builtin_abs((int)((u32)(a0->f_14) << 5)) + -1) >> 31) ^ 0x1));
+}
+
 void fn_00430304(int a0) {
     stub_004302c4((int)(a0));
 }

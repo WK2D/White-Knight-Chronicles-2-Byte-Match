@@ -9,6 +9,8 @@ void fn_00b21148(int, int, int, int);
 void* fn_00b21280(int);
 void fn_00b21460(int, int, int, int);
 void fn_00b214e8_2(void*, void*);
+int fn_00fccdb0(void);
+int fn_00fcd050(void);
 
 void fn_00b21200(int a0, int a1) {
     fn_00b21148((int)(a0), (int)(a1), (int)(0), (int)(0));
@@ -28,6 +30,18 @@ void fn_00b21514(void* a0) {
     void* t0;
     t0 = fn_00b16070((int)(24));
     fn_00b214e8_2((void*)(a0), (void*)(t0));
+}
+
+int fn_00b2205c(void) {
+    int t0;
+    t0 = fn_00fccdb0();
+    return (int)((int)((u32)(-__builtin_abs((int)(t0))) >> 31));
+}
+
+int fn_00b220d0(void) {
+    int t0;
+    t0 = fn_00fcd050();
+    return (int)((int)((u32)(-__builtin_abs((int)(t0))) >> 31));
 }
 
 }

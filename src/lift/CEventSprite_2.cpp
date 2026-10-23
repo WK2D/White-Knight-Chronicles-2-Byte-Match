@@ -4,6 +4,25 @@
 
 extern "C" {
 
+int fn_000356fc(u32);
+
+struct unk_00507670_a0 {
+    char pad_0[8];
+    u8 f_8;
+    char pad_9[263];
+    u32 f_110;
+};
+int fn_00507670(unk_00507670_a0* a0) {
+    int t0;
+    int v2;
+    if ((int)(a0->f_8) == (int)(0)) {
+        t0 = fn_000356fc((u32)(a0->f_110));
+        v2 = (int)((u32)(__builtin_abs((int)((u32)(t0) ^ 0x6)) + -1) >> 31);
+    } else {
+        v2 = (int)(0);
+    }
+    return (int)(v2);
+}
 
 struct unk_0050892c_a0 {
     char pad_0[272];

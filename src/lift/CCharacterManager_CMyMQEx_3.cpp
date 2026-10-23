@@ -21,4 +21,11 @@ void fn_00b5c9d0(unk_00b5c9d0_a0* a0) {
     }
 }
 
+struct unk_00b5d330_a0 {
+    u32 f_0;
+};
+int fn_00b5d330(unk_00b5d330_a0* a0) {
+    return (int)((int)((u32)(-__builtin_abs((int)(a0->f_0))) >> 31));
+}
+
 }

@@ -134,7 +134,7 @@ struct unk_006936f8_a0 {
 int fn_006936f8(unk_006936f8_a0* a0, int a1) {
     int t0;
     t0 = fn_00b38038((void*)((&a0->f_37a8)), (int)(a1));
-    return (int)((int)((u32)(((int)((u32)((int)(t0) >> 31) ^ (u32)(t0)) - (int)((int)(t0) >> 31)) + -1) >> 31));
+    return (int)((int)((u32)(__builtin_abs((int)(t0)) + -1) >> 31));
 }
 
 struct unk_006937d4_g3f68;

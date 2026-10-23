@@ -278,4 +278,11 @@ void fn_00c2b9f0(void* a0, int a1) {
     fn_00c2b898((void*)(a0), (int)(v1));
 }
 
+struct unk_00c2c040_a0 {
+    u32 f_0;
+};
+int fn_00c2c040(unk_00c2c040_a0* a0) {
+    return (int)((int)((u32)(-__builtin_abs((int)((u32)(a0->f_0) ^ (u32)(-47)))) >> 31));
+}
+
 }

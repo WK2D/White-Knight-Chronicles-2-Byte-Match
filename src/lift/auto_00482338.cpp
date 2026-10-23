@@ -133,6 +133,34 @@ void* fn_00482500(unk_00482500_a0* a0) {
     return (void*)(v0);
 }
 
+struct unk_00482638_gm848;
+struct unk_00482638_gm848_0;
+struct unk_00482638_gm848 {
+    unk_00482638_gm848_0* f_0;
+};
+struct unk_00482638_gm848_0 {
+    char pad_0[28];
+    u32 f_1c;
+    u32 f_20;
+    u32 f_24;
+};
+extern unk_00482638_gm848 g_00482638_0;
+int fn_00482638(void) {
+    int v1;
+    int v4;
+    if ((int)((&g_00482638_0)->f_0->f_1c) != (int)(0)) {
+        if ((int)((&g_00482638_0)->f_0->f_20) != (int)(0)) {
+            v1 = (int)((u32)((u32)(__builtin_abs((int)((&g_00482638_0)->f_0->f_24)) + -1) >> 31) ^ 0x1);
+        } else {
+            v1 = (int)(0);
+        }
+        v4 = (int)(v1);
+    } else {
+        v4 = (int)(0);
+    }
+    return (int)(v4);
+}
+
 struct unk_00482688_gm848;
 struct unk_00482688_gm848_0;
 struct unk_00482688_gm848 {

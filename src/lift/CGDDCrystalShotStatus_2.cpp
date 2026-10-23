@@ -8,6 +8,7 @@ int fn_00041b48(int);
 void* fn_00041bcc(int);
 int fn_000750a4(int, int);
 static void __attribute__((noinline)) stub_003bb2e8(void* p0, void* p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
+static int __attribute__((noinline)) stub_003bd724(int p0, int p1) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static void* __attribute__((noinline)) stub_003bdddc(int p0, int p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 void fn_00b38268(void*, int);
 
@@ -80,6 +81,15 @@ int fn_003bb8c8(int a0) {
     return (int)(0);
 }
 
+struct unk_003bd64c_a0 {
+    char pad_0[176];
+    u32 f_b0;
+    u32 f_b4;
+};
+void* fn_003bd64c(unk_003bd64c_a0* a0) {
+    return (void*)((int)((u32)(-__builtin_abs((int)(a0->f_b0))) >> 31) + (int)((u32)(-__builtin_abs((int)(a0->f_b4))) >> 31));
+}
+
 struct unk_003bd680_a0 {
     char pad_0[172];
     u32 f_ac;
@@ -89,6 +99,52 @@ struct unk_003bd680_a0 {
 void fn_003bd680(unk_003bd680_a0* a0) {
     a0->f_ac = (u32)(0);
     a0->f_b8 = (u32)((((u32)((((u32)(a0->f_b8) << 16) | ((u32)(a0->f_b8) >> 16)) & 0x3fffffff) << 16) | ((u32)((((u32)(a0->f_b8) << 16) | ((u32)(a0->f_b8) >> 16)) & 0x3fffffff) >> 16)) & 0xffffffff);
+}
+
+struct unk_003bd7c4_a0 {
+    char pad_0[4];
+    u32 f_4;
+};
+void* fn_003bd7c4(unk_003bd7c4_a0* a0) {
+    int v0;
+    int v2;
+    int v5;
+    if ((int)(a0->f_4) != (int)(0)) {
+        v2 = (int)(0);
+        for (v0 = 0; v0 < 20; v0++) {
+            v2 = (int)((int)(v2) + (int)((u32)(-__builtin_abs((int)(FIELD(u32, (char*)a0->f_4 + (int)(v0) * 192, 0)))) >> 31));
+        }
+        v5 = (int)(v2);
+    } else {
+        v5 = (int)(0);
+    }
+    return (void*)(v5);
+}
+
+int fn_003bd810(int a0, int a1) {
+    int t0;
+    t0 = stub_003bd724((int)(a0), (int)(a1));
+    return (int)((int)((u32)(-__builtin_abs((int)(t0))) >> 31));
+}
+
+struct unk_003bdcbc_a0 {
+    char pad_0[4];
+    u32 f_4;
+};
+void* fn_003bdcbc(unk_003bdcbc_a0* a0) {
+    int v0;
+    int v2;
+    int v5;
+    if ((int)(a0->f_4) != (int)(0)) {
+        v2 = (int)(0);
+        for (v0 = 0; v0 < 384; v0++) {
+            v2 = (int)((int)(v2) + (int)((u32)(-__builtin_abs((int)(~((u32)(FIELD(u32, (char*)a0->f_4 + (int)(v0) * 8, 3840)) | (u32)(FIELD(u32, (char*)a0->f_4 + (int)(v0) * 8, 3840)))))) >> 31));
+        }
+        v5 = (int)(v2);
+    } else {
+        v5 = (int)(0);
+    }
+    return (void*)(v5);
 }
 
 struct unk_003bde20_a0_4;
@@ -237,6 +293,23 @@ int fn_003be014(unk_003be014_a0* a0) {
         v1 = (int)(0);
     }
     return (int)(v1);
+}
+
+struct unk_003be038_a0 {
+    char pad_0[4];
+    u32 f_4;
+};
+void* fn_003be038(unk_003be038_a0* a0) {
+    int v0;
+    int v2;
+    int v4;
+    v2 = (int)(0);
+    v4 = (int)(a0->f_4 + 6912);
+    for (v0 = 0; v0 < 512; v0++) {
+        v2 = (int)((int)(v2) + (int)((u32)(-__builtin_abs((int)(FIELD(u32, v4, 0)))) >> 31));
+        v4 = (int)((char*)v4 + 4);
+    }
+    return (void*)(v2);
 }
 
 struct unk_003be124_a0_8;

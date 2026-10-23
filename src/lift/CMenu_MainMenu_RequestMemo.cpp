@@ -14,6 +14,14 @@ void* fn_0064b000(unk_0064b000_a0* a0) {
     return (void*)((char*)((char*)a0 + (int)((int)(a0->f_c0) * 76)) + 40);
 }
 
+struct unk_0064b01c_a0 {
+    char pad_0[224];
+    u32 f_e0;
+};
+int fn_0064b01c(unk_0064b01c_a0* a0) {
+    return (int)((int)((u32)(-__builtin_abs((int)(a0->f_e0))) >> 31));
+}
+
 struct unk_0064b0cc_g3338;
 struct unk_0064b0cc_g3338_0;
 struct unk_0064b0cc_g3338_0_6c;

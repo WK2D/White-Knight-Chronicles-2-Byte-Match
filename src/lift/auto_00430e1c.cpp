@@ -136,6 +136,14 @@ int fn_004317b4(void) {
     return (int)(v3);
 }
 
+struct unk_00431e94_a0 {
+    char pad_0[52];
+    u32 f_34;
+};
+int fn_00431e94(unk_00431e94_a0* a0) {
+    return (int)((int)((u32)((u32)(__builtin_abs((int)((u32)(a0->f_34) << 5)) + -1) >> 31) ^ 0x1));
+}
+
 void fn_00431f70(int a0) {
     stub_00431f0c((int)(a0));
 }

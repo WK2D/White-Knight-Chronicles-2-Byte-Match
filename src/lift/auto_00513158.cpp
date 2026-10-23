@@ -24,7 +24,7 @@ int fn_005133cc(int a0, int a1) {
 int fn_00513450(int a0, int a1) {
     int t0;
     t0 = stub_00513398_2((int)(a0), (int)(a1));
-    return (int)((int)((u32)((u32)(((int)((u32)((int)(t0) >> 31) ^ (u32)(t0)) - (int)((int)(t0) >> 31)) + -1) >> 31) ^ 0x1));
+    return (int)((int)((u32)((u32)(__builtin_abs((int)(t0)) + -1) >> 31) ^ 0x1));
 }
 
 int fn_0051348c(int a0, int a1) {

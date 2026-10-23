@@ -103,6 +103,14 @@ void fn_0006a504(void) {
     stub_0006a4f0((u32)((&g_0006a504_0)->f_1ff4));
 }
 
+struct unk_0006a510_a0 {
+    char pad_0[64];
+    u32 f_40;
+};
+int fn_0006a510(unk_0006a510_a0* a0) {
+    return (int)((int)((u32)(-__builtin_abs((int)(a0->f_40))) >> 31));
+}
+
 struct unk_0006a52c_gm79d4;
 struct unk_0006a52c_gm79d4 {
     char pad_0[8180];

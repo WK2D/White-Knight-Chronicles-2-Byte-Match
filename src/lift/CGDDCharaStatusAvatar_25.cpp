@@ -21,4 +21,12 @@ int fn_00b9523c(unk_00b9523c_a0* a0) {
     return (int)((int)((u32)(a0->f_ff0) >> 31));
 }
 
+struct unk_00b9524c_a0 {
+    char pad_0[3368];
+    u32 f_d28;
+};
+int fn_00b9524c(unk_00b9524c_a0* a0, int a1) {
+    return (int)((int)((u32)(__builtin_abs((int)((u32)(a1) ^ (u32)(a0->f_d28))) + -1) >> 31));
+}
+
 }

@@ -24,4 +24,28 @@ int fn_00866308(unk_00866308_a0* a0) {
     return (int)(v1);
 }
 
+struct unk_00866378_a0 {
+    char pad_0[476];
+    u32 f_1dc;
+    char pad_1e0[4244];
+    u32 f_1274;
+    char pad_1278[72];
+    u32 f_12c0;
+};
+int fn_00866378(unk_00866378_a0* a0) {
+    int v1;
+    int v3;
+    if ((int)(a0->f_12c0) != (int)(0)) {
+        if ((int)(a0->f_1dc) != (int)(0)) {
+            v1 = (int)((u32)(__builtin_abs((int)((u32)(a0->f_1274) ^ 0x2)) + -1) >> 31);
+        } else {
+            v1 = (int)(1);
+        }
+        v3 = (int)(v1);
+    } else {
+        v3 = (int)(1);
+    }
+    return (int)(v3);
+}
+
 }

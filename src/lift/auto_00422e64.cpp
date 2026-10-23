@@ -68,4 +68,22 @@ void fn_0042423c(unk_0042423c_a0* a0, void* a1) {
     }
 }
 
+struct unk_0042448c_a0_0;
+struct unk_0042448c_a0_0 {
+    u32 f_0;
+    char pad_4[10];
+    u8 f_e;
+};
+struct unk_0042448c_a0 {
+    unk_0042448c_a0_0* f_0;
+};
+int fn_0042448c(unk_0042448c_a0* a0) {
+    if ((int)(a0->f_0->f_e) != (int)(2)) {
+        if ((int)(a0->f_0->f_e) != (int)(3)) {
+            return (int)((int)((u32)(__builtin_abs((int)((u32)(a0->f_0->f_0) ^ (u32)(2886666254))) + -1) >> 31));
+        }
+    }
+    return (int)((int)((u32)(-__builtin_abs((int)((u32)((u32)(a0->f_0->f_0) ^ 0x16fa0000) ^ 0xc8d0))) >> 31));
+}
+
 }

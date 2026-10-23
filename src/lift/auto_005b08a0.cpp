@@ -53,4 +53,33 @@ void fn_005b1550(unk_005b1550_a0* a0, unk_005b1550_a1* a1) {
     a0->f_c = (u32)(a1->f_c);
 }
 
+struct unk_005b1574_a0 {
+    u32 f_0;
+    u32 f_4;
+    u16 f_8;
+    char pad_a[2];
+    u32 f_c;
+};
+int fn_005b1574(unk_005b1574_a0* a0) {
+    int v1;
+    int v4;
+    int v6;
+    if ((int)(a0->f_0) == (int)(0)) {
+        if ((int)(a0->f_4) == (int)(0)) {
+            if ((int)(a0->f_8) == (int)(0)) {
+                v1 = (int)((u32)(__builtin_abs((int)((u32)(a0->f_c) & (u32)(4278255360))) + -1) >> 31);
+            } else {
+                v1 = (int)(0);
+            }
+            v4 = (int)(v1);
+        } else {
+            v4 = (int)(0);
+        }
+        v6 = (int)(v4);
+    } else {
+        v6 = (int)(0);
+    }
+    return (int)(v6);
+}
+
 }

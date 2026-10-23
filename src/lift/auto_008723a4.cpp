@@ -93,6 +93,14 @@ void fn_00872b2c(unk_00872b2c_a0* a0) {
     fn_00b3d4f8((void*)((&a0->f_1100)), (u32)(FIELD(u32, (&a0->f_1100), 404)), (int)(3), (float)(1.0f));
 }
 
+struct unk_00873060_a0 {
+    char pad_0[8360];
+    u32 f_20a8;
+};
+int fn_00873060(unk_00873060_a0* a0) {
+    return (int)((int)((u32)(__builtin_abs((int)((u32)(a0->f_20a8) ^ 0x4)) + -1) >> 31));
+}
+
 struct unk_00873084_a0 {
     char pad_0[8360];
     u32 f_20a8;

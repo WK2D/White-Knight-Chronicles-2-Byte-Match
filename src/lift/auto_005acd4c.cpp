@@ -11,6 +11,28 @@ static int __attribute__((noinline)) stub_005acf3c(void* p0, void* p1, void* p2)
 static void* __attribute__((noinline)) stub_005ad060(int p0, int p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 static void* __attribute__((noinline)) stub_005ad150(int p0, int p1) { void* r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1)); return r; }
 
+struct unk_005acd8c_a0_0;
+struct unk_005acd8c_a0_0 {
+    u8 f_0;
+    char pad_1[4];
+    u8 f_5;
+};
+struct unk_005acd8c_a0 {
+    unk_005acd8c_a0_0* f_0;
+    char pad_4[320];
+    u32 f_144;
+    u8 f_148;
+};
+int fn_005acd8c(unk_005acd8c_a0* a0) {
+    if ((int)(a0->f_0) != (int)(0)) {
+        if ((int)(a0->f_0->f_0) != (int)(a0->f_148)) {
+            return (int)(0);
+        }
+        return (int)((int)((u32)(__builtin_abs((int)((u32)((int)(signed char)(a0->f_0->f_5)) ^ (u32)(a0->f_144))) + -1) >> 31));
+    }
+    return (int)(0);
+}
+
 struct unk_005ace50_a0 {
     char pad_0[4];
     u8 f_4;

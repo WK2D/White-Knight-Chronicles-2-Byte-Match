@@ -24,6 +24,10 @@ void fn_007af3a8(unk_007af3a8_a0* a0, unk_007af3a8_a1* a1) {
     }
 }
 
+int fn_007b1e48(int a0, int a1, int a2) {
+    return (int)((((u32)(-__builtin_abs((int)(a2))) >> 29) & 0x4) + 1);
+}
+
 int fn_007b1fec(int a0) {
     stub_007b1fa0((int)(a0));
     return (int)(1);

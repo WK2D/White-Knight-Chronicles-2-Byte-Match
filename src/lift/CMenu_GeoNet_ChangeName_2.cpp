@@ -5,7 +5,21 @@
 extern "C" {
 
 void fn_0004dfb8(void*, u32, int, int, int);
+void* fn_00073b14(void);
+float fn_0008c07c(void*, void*, int);
 static void __attribute__((noinline)) stub_0068f550(void* p0, void* p1) { __asm__ volatile ("" : : "r"(p0), "r"(p1)); }
+
+struct unk_0068faf8_a0 {
+    char pad_0[150];
+    u8 f_96;
+};
+int fn_0068faf8(unk_0068faf8_a0* a0) {
+    void* t0;
+    float t1;
+    t0 = fn_00073b14();
+    t1 = fn_0008c07c((void*)(t0), (void*)((&a0->f_96)), (int)(0));
+    return (int)((int)((u32)(-__builtin_abs((int)((u32)(t1)))) >> 31));
+}
 
 struct unk_00690490_a2 {
     char pad_0[404];

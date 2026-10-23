@@ -4,9 +4,29 @@
 
 extern "C" {
 
+void* fn_0013dc1c_2(void*, int, int, int);
+int fn_0013dc1c(void*, int, int, int);
 int fn_0013dd60(void*, int, int, int, int);
 void fn_0013dde0(void*, int, int, int, int);
 int fn_00b3a388(u32);
+
+int fn_000fd154(int a0, int a1, int a2) {
+    int t0;
+    t0 = fn_0013dc1c((void*)(((int)(a0) + 851968) + 5120), (int)(a1), (int)(a2), (int)(1));
+    return (int)((int)((u32)(-__builtin_abs((int)(t0))) >> 31));
+}
+
+int fn_000fd19c(int a0, int a1, int a2) {
+    void* t0;
+    int v0;
+    t0 = fn_0013dc1c_2((void*)(((int)(a0) + 851968) + 5120), (int)(a1), (int)(a2), (int)(0));
+    if ((int)(t0) != (int)(0)) {
+        v0 = (int)((u32)((u32)(__builtin_abs((int)(FIELD(u32, t0, 20))) + -1) >> 31) ^ 0x1);
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
 
 u8 fn_000fd364(int a0, int a1, int a2, int a3) {
     int t0;

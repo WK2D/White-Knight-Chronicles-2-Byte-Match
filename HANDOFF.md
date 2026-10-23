@@ -24,7 +24,7 @@ alternative to the static-recompilation port at
   `-O2` and not with `-fno-ivopts`. The project used `-O2 -fno-ivopts` before
   2026-10-22; only `src/game/CPostEffectManager.cpp` keeps that, as an
   override, until a natural `-O2` form of `fn_004b32e8` is found.
-- Matched: **18,840 of 50,844 functions** (4.76% of code). Six are by hand
+- Matched: **19,205 of 50,844 functions** (4.90% of code). Six are by hand
   (`src/game/*.cpp`); the rest are generated: `tools/gen_simple.py`
   (`src/gen/`, small shapes), `tools/lift.py` (`src/lift/`, the lifter),
   `tools/permute.py` (`src/perm/`, lifter output in another statement order)
@@ -519,6 +519,15 @@ counts over all functions up to 384 instructions):
   void, all pointer tests) on functions over 48 words that are at least
   20% alike (`BIG_FUZZY`); that gained 63. A full cycle takes about 35
   minutes.
+- `srawi t,x,31; xor y,t,x; subf z,t,y` is GCC's `abs(x)` (`subf z,y,t`
+  is `-abs(x)`): lifted as `__builtin_abs(x)` (`fn_00018b44`,
+  `fn_00b67514`). Written out as shifts and xor, GCC reorders the operands.
+  About 880 near-misses contain `srawi x,31`; this gained 365.
+- Not solved yet: `(p[0]<<24)|(p[1]<<16)|(p[2]<<8)|p[3]` byte assembly
+  (`fn_0003de80`): GCC reassociates our version whatever the types; the
+  original ors the first three before loading the fourth byte. Destructor
+  vtable stores (`fn_00f9dd40`): the original loads the vtable address
+  before the prologue.
 - Quick single-function test: `python tools/lift.py --one ADDR --file >
   build/try/x.cpp` then `python tools/try.py build/try/x.cpp -d`.
 - Editing tools from the agent's shell: heredocs passed through the Bash

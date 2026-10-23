@@ -323,6 +323,32 @@ int fn_0022c620(void) {
     return (int)(0);
 }
 
+struct unk_0022c644_gm42b4;
+struct unk_0022c644_gm42b4_0;
+struct unk_0022c644_gm42b4_0_2c;
+struct unk_0022c644_gm42b4_0_2c_0;
+struct unk_0022c644_gm42b4 {
+    unk_0022c644_gm42b4_0* f_0;
+};
+struct unk_0022c644_gm42b4_0 {
+    char pad_0[44];
+    unk_0022c644_gm42b4_0_2c* f_2c;
+};
+struct unk_0022c644_gm42b4_0_2c {
+    unk_0022c644_gm42b4_0_2c_0* f_0;
+};
+struct unk_0022c644_gm42b4_0_2c_0 {
+    char pad_0[68];
+    u32 f_44;
+};
+extern unk_0022c644_gm42b4 g_0022c644_0;
+int fn_0022c644(int a0) {
+    int t0;
+    t0 = fn_00041b48((int)(a0));
+    (&g_0022c644_0)->f_0->f_2c->f_0->f_44 = (u32)((u32)((u32)((&g_0022c644_0)->f_0->f_2c->f_0->f_44) & 0x7fffffff) | (u32)((u32)(-__builtin_abs((int)(t0))) & 0x80000000));
+    return (int)(0);
+}
+
 struct unk_0022f5f8_gm42b4;
 struct unk_0022f5f8_gm42b4_0;
 struct unk_0022f5f8_gm42b4_0_2c;

@@ -13,4 +13,18 @@ void* fn_008314ec(unk_008314ec_a0* a0) {
     return (void*)((char*)((char*)a0 + (int)((int)(a0->f_c0) * 76)) + 40);
 }
 
+struct unk_00831564_a0 {
+    char pad_0[260];
+    u32 f_104;
+};
+int fn_00831564(unk_00831564_a0* a0) {
+    int v0;
+    if ((int)(a0->f_104) != (int)(3)) {
+        v0 = (int)((u32)(__builtin_abs((int)((u32)(a0->f_104) ^ 0x4)) + -1) >> 31);
+    } else {
+        v0 = (int)(1);
+    }
+    return (int)(v0);
+}
+
 }

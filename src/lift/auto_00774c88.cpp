@@ -8,6 +8,8 @@ static int __attribute__((noinline)) stub_00774d44(int p0, int p1, int p2) { int
 static int __attribute__((noinline)) stub_00774df0(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
 static int __attribute__((noinline)) stub_00774e1c(int p0, int p1, int p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
 static int __attribute__((noinline)) stub_00774ec8(void* p0) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0)); return r; }
+static int __attribute__((noinline)) stub_00775164(int p0, int p1, int p2, int p3) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); return r; }
+static int __attribute__((noinline)) stub_00775210(int p0, int p1, int p2, int p3) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2), "r"(p3)); return r; }
 
 extern char g_00774c88_0[];
 void* fn_00774c88(int a0, int a1) {
@@ -84,6 +86,43 @@ int fn_00774ed4(unk_00774ed4_a0* a0) {
     }
     t0 = stub_00774ec8((void*)(a0));
     return (int)(t0);
+}
+
+int fn_007751dc(int a0, int a1, int a2, int a3) {
+    int t0;
+    t0 = stub_00775164((int)(a0), (int)(a1), (int)(a2), (int)(a3));
+    return (int)((int)((u32)(-__builtin_abs((int)(t0))) >> 31));
+}
+
+int fn_00775288(int a0, int a1, int a2, int a3) {
+    int t0;
+    t0 = stub_00775210((int)(a0), (int)(a1), (int)(a2), (int)(a3));
+    return (int)((int)((u32)(-__builtin_abs((int)(t0))) >> 31));
+}
+
+struct unk_007752bc_g6608;
+struct unk_007752bc_g6608_0;
+struct unk_007752bc_g6608_0_3c;
+struct unk_007752bc_g6608 {
+    unk_007752bc_g6608_0* f_0;
+};
+struct unk_007752bc_g6608_0 {
+    char pad_0[60];
+    unk_007752bc_g6608_0_3c* f_3c;
+};
+struct unk_007752bc_g6608_0_3c {
+    char pad_0[56];
+    u32 f_38;
+};
+extern unk_007752bc_g6608 g_007752bc_0;
+int fn_007752bc(void) {
+    int v1;
+    if ((int)((&g_007752bc_0)->f_0->f_3c) != (int)(0)) {
+        v1 = (int)((u32)(__builtin_abs((int)((u32)((&g_007752bc_0)->f_0->f_3c->f_38) ^ 0x1)) + -1) >> 31);
+    } else {
+        v1 = (int)(0);
+    }
+    return (int)(v1);
 }
 
 struct unk_00775308_g6608;

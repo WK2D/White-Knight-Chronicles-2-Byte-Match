@@ -1647,7 +1647,10 @@ class Lifter:
                 return
             if xo == 824:                                            # srawi
                 n = rb
-                self.set(ra, Value(f'(int)({self.reg(rt).text}) >> {n}', 'int', 1))
+                x = self.reg(rt)
+                self.set(ra, Value(f'(int)({x.text}) >> {n}', 'int', 1))
+                if n == 31:
+                    self.gpr[ra].sign_of = x                         # 0 or -1: the start of abs(x)
                 if w & 1:
                     self.cr[0] = (self.gpr[ra], '0', 'signed')
                 return
@@ -1657,6 +1660,10 @@ class Lifter:
                         124: f'~((u32)({a.text}) | (u32)({b.text}))', 60: f'(u32)({a.text}) & ~(u32)({b.text})',
                         444: f'(u32)({a.text}) | (u32)({b.text})'}[xo]
                 result = Value(text, 'u32', 1)
+                if xo == 316:                                        # (x >> 31) ^ x: abs(x) after the subtraction
+                    for t_, x_ in ((a, b), (b, a)):
+                        if getattr(t_, 'sign_of', None) is x_:
+                            result.abs_of = (x_, t_)
                 if xo == 28:                                         # and with ~bit: clears one bool bitfield
                     for byte, mask in ((a, b), (b, a)):
                         if getattr(byte, 'byte_of', None) and re.fullmatch(r'\d+', mask.text):
@@ -1721,6 +1728,13 @@ class Lifter:
                 if xo == 266:
                     self.set(rt, self.sum(a, b))
                     return
+                # GCC's abs(x): t = x >> 31; (t ^ x) - t, or t - (t ^ x) for -abs(x).
+                for y_, t_, neg in ((b, a, False), (a, b, True)):
+                    ab = getattr(y_, 'abs_of', None)
+                    if ab is not None and ab[1] is t_:
+                        text = f'__builtin_abs((int)({ab[0].text}))'
+                        self.set(rt, Value(f'-{text}' if neg else text, 'int', 1 if neg else 0))
+                        return
                 self.set(rt, Value(f'(int)({b.text}) - (int)({a.text})', 'int', 1))
                 return
             raise Fail(f'op 31/{xo}')

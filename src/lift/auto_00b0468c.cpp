@@ -6,7 +6,7 @@ extern "C" {
 
 
 int fn_00b04d30(int a0) {
-    return (int)((int)((u32)((int)(a0) >> 31) ^ (u32)(a0)) - (int)((int)(a0) >> 31));
+    return (int)(__builtin_abs((int)(a0)));
 }
 
 }

@@ -20,4 +20,18 @@ void fn_002d2864(unk_002d2864_a0* a0) {
     a0->f_0->f_4 = (u32)(a0->f_0->f_4 + 1);
 }
 
+struct unk_002d288c_a0 {
+    u32 f_0;
+};
+int fn_002d288c(unk_002d288c_a0* a0) {
+    return (int)((int)((u32)(__builtin_abs((int)(a0->f_0)) + -1) >> 31));
+}
+
+struct unk_002d28ac_a0 {
+    u32 f_0;
+};
+int fn_002d28ac(unk_002d28ac_a0* a0) {
+    return (int)((int)((u32)(-__builtin_abs((int)(a0->f_0))) >> 31));
+}
+
 }

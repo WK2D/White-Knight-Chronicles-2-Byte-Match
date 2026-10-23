@@ -24,6 +24,14 @@ int fn_0040f4a0(unk_0040f4a0_a0* a0) {
     return (int)(v0);
 }
 
+struct unk_0040f538_a0 {
+    char pad_0[4];
+    u32 f_4;
+};
+int fn_0040f538(unk_0040f538_a0* a0) {
+    return (int)((int)((u32)((u32)(__builtin_abs((int)(a0->f_4)) + -1) >> 31) ^ 0x1));
+}
+
 struct unk_0040f55c_a0_4;
 struct unk_0040f55c_a0_4 {
     char pad_0[1];

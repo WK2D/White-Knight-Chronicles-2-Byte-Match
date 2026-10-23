@@ -17,6 +17,29 @@ static int __attribute__((noinline)) stub_0028df1c(void* p0, void* p1, u8 p2) { 
 int fn_004152b8(void*);
 void fn_005312ec(void*);
 
+struct unk_0028cfd0_a0 {
+    char pad_0[112];
+    u32 f_70;
+    u32 f_74;
+    char pad_78[72];
+    u32 f_c0;
+};
+int fn_0028cfd0(unk_0028cfd0_a0* a0) {
+    int v1;
+    int v3;
+    if ((int)(a0->f_74) != (int)(0)) {
+        if ((int)(a0->f_70) != (int)(0)) {
+            v1 = (int)((u32)((u32)(__builtin_abs((int)(a0->f_c0)) + -1) >> 31) ^ 0x1);
+        } else {
+            v1 = (int)(0);
+        }
+        v3 = (int)(v1);
+    } else {
+        v3 = (int)(0);
+    }
+    return (int)(v3);
+}
+
 void fn_0028d0e8(int a0, int a1) {
     stub_0028d030((int)(a0), (int)(0), (int)(a1));
 }

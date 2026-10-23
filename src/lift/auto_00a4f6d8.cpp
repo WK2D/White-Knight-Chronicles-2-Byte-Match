@@ -59,4 +59,8 @@ void fn_00a50fd8(unk_00a50fd8_a0* a0) {
     fn_00a3e264((void*)(a0));
 }
 
+int fn_00a53850(int a0, int a1) {
+    return (int)((int)((u32)(__builtin_abs((int)((u32)(a0) ^ (u32)(a1))) + -1) >> 31));
+}
+
 }

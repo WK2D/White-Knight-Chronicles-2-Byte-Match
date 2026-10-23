@@ -5,6 +5,10 @@
 extern "C" {
 
 
+int fn_006dccac(int a0, int a1, int a2) {
+    return (int)(((u32)((int)(-__builtin_abs((int)(a2))) >> 31) & 0xfffffffc) + 5);
+}
+
 struct unk_006dcccc_a0 {
     char pad_0[120];
     u32 f_78;

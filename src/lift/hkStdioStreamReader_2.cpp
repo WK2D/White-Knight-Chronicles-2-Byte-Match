@@ -5,6 +5,7 @@
 extern "C" {
 
 int fn_00fc8d2c(u32);
+int fn_00fc8d3c(u32, int, int);
 
 struct unk_00c16bb0_a0 {
     char pad_0[12];
@@ -14,6 +15,16 @@ int fn_00c16bb0(unk_00c16bb0_a0* a0) {
     int t0;
     t0 = fn_00fc8d2c((u32)(a0->f_c));
     return (int)(t0);
+}
+
+struct unk_00c16bdc_a0 {
+    char pad_0[12];
+    u32 f_c;
+};
+u32 fn_00c16bdc(unk_00c16bdc_a0* a0, int a1, u32 a2) {
+    int t0;
+    t0 = fn_00fc8d3c((u32)(a0->f_c), (int)(a1), (int)((int)a2));
+    return (u32)(((u32)(-__builtin_abs((int)(t0))) >> 31));
 }
 
 }

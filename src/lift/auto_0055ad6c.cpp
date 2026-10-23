@@ -13,4 +13,39 @@ void fn_0055b3a0(int a0, int a1, int a2) {
     stub_0055b198((int)(a0), (void*)(t0), (u16)((u16)a2));
 }
 
+struct unk_0055b3e4_a0 {
+    u32 f_0;
+    u32 f_4;
+};
+int fn_0055b3e4(unk_0055b3e4_a0* a0) {
+    int v1;
+    if ((int)(a0->f_0) != (int)(0)) {
+        v1 = (int)((u32)(-__builtin_abs((int)(a0->f_4))) >> 31);
+    } else {
+        v1 = (int)(0);
+    }
+    return (int)(v1);
+}
+
+struct unk_0055b460_a0 {
+    u32 f_0;
+    u32 f_4;
+    u32 f_8;
+};
+int fn_0055b460(unk_0055b460_a0* a0) {
+    int v1;
+    int v3;
+    if ((int)(a0->f_0) != (int)(0)) {
+        if ((int)(a0->f_4) != (int)(0)) {
+            v1 = (int)((u32)(-__builtin_abs((int)(a0->f_8))) >> 31);
+        } else {
+            v1 = (int)(0);
+        }
+        v3 = (int)(v1);
+    } else {
+        v3 = (int)(0);
+    }
+    return (int)(v3);
+}
+
 }

@@ -19,6 +19,19 @@ void fn_0016040c(unk_0016040c_a0* a0, int a1, int a2) {
     a0->f_20 = (u16)((u32)(a0->f_20) & ~(u32)(a1));
 }
 
+struct unk_00160440_a1 {
+    u32 f_0;
+};
+int fn_00160440(int a0, unk_00160440_a1* a1) {
+    int v0;
+    if (a1 != 0) {
+        v0 = (int)((u32)((u32)(__builtin_abs((int)(a1->f_0)) + -1) >> 31) ^ 0x1);
+    } else {
+        v0 = (int)(0);
+    }
+    return (int)(v0);
+}
+
 struct unk_001607fc_a1 {
     u32 f_0;
 };

@@ -5,6 +5,20 @@
 extern "C" {
 
 
+int fn_00a3ffc8(int a0) {
+    if ((int)((u32)(a0) & 0xfffffffe) != (int)(0)) {
+        if ((int)((u32)(a0) & 0xfffffffe) != (int)(4)) {
+            if ((int)((u32)(a0) & 0xfffffffe) != (int)(8)) {
+                if ((int)((u32)(a0) & 0xfffffffe) == (int)(16)) {
+                } else {
+                    return (int)((int)((u32)(__builtin_abs((int)((u32)((u32)(a0) & 0xfffffffe) ^ 0x20)) + -1) >> 31));
+                }
+            }
+        }
+    }
+    return (int)(1);
+}
+
 struct unk_00a40010_gm1e18;
 struct unk_00a40010_gm1e18 {
     u32 f_0;

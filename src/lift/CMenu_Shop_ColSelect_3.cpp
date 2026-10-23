@@ -100,6 +100,31 @@ void* fn_007cb368(void) {
     return (void*)((&g_007cb368_0)->f_0->f_6c->f_8->f_4c);
 }
 
+struct unk_007cb3a8_g773c;
+struct unk_007cb3a8_g773c_0;
+struct unk_007cb3a8_g773c_0_78;
+struct unk_007cb3a8_g773c {
+    unk_007cb3a8_g773c_0* f_0;
+};
+struct unk_007cb3a8_g773c_0 {
+    char pad_0[120];
+    unk_007cb3a8_g773c_0_78* f_78;
+};
+struct unk_007cb3a8_g773c_0_78 {
+    char pad_0[4284];
+    u32 f_10bc;
+};
+extern unk_007cb3a8_g773c g_007cb3a8_0;
+int fn_007cb3a8(void) {
+    int v1;
+    if ((int)((&g_007cb3a8_0)->f_0->f_78) != (int)(0)) {
+        v1 = (int)((u32)(__builtin_abs((int)((&g_007cb3a8_0)->f_0->f_78->f_10bc)) + -1) >> 31);
+    } else {
+        v1 = (int)(0);
+    }
+    return (int)(v1);
+}
+
 struct unk_007cb410_g7738;
 struct unk_007cb410_g7738_0;
 struct unk_007cb410_g7738_0_6c;

@@ -160,4 +160,12 @@ void* fn_00857154(void) {
     return (void*)(v0);
 }
 
+struct unk_00857938_a0 {
+    char pad_0[4404];
+    u32 f_1134;
+};
+int fn_00857938(unk_00857938_a0* a0) {
+    return (int)((((u32)(-__builtin_abs((int)((u32)(a0->f_1134) ^ 0x15))) >> 30) & 0x2) + 14);
+}
+
 }

@@ -32,6 +32,10 @@ int fn_00691968(int a0, int a1) {
     return (int)(v0);
 }
 
+int fn_006919a8(int a0, int a1) {
+    return (int)(((u32)((int)(-__builtin_abs((int)(a1))) >> 31) & (u32)(38)) + 82);
+}
+
 struct unk_006919d8_a0_260;
 struct unk_006919d8_a0_260 {
     char pad_0[2212];

@@ -5,9 +5,16 @@
 extern "C" {
 
 static void __attribute__((noinline)) stub_003d71d0(int p0, int p1, int p2, int p3, int p4) { __asm__ volatile ("" : : "r"(p0), "r"(p1), "r"(p2), "r"(p3), "r"(p4)); }
+static int __attribute__((noinline)) stub_003d72f4(int p0, int p1, int p2) { int r; __asm__ volatile ("" : "=r"(r) : "r"(p0), "r"(p1), "r"(p2)); return r; }
 
 void fn_003d72f4(int a0, int a1, int a2) {
     stub_003d71d0((int)(a0), (int)(a1), (int)(0), (int)(-1), (int)(a2));
+}
+
+int fn_003d7304(int a0, int a1) {
+    int t0;
+    t0 = stub_003d72f4((int)(a0), (int)(a1), (int)(1));
+    return (int)((int)((u32)(-__builtin_abs((int)(t0))) >> 31));
 }
 
 }

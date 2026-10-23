@@ -18,6 +18,15 @@ int fn_0081ab68(void* a0, int a1, void* a2) {
     return (int)(v0);
 }
 
+int fn_0081dbd8(int a0) {
+    if ((u32)(a0 + -2) > (u32)(1)) {
+        if ((int)(a0) != (int)(5)) {
+            return (int)((int)((u32)(__builtin_abs((int)((u32)(a0) ^ 0x6)) + -1) >> 31));
+        }
+    }
+    return (int)(1);
+}
+
 struct unk_0081dc18_a1 {
     virtual void vf0();
     virtual int vf1(void);

@@ -471,6 +471,14 @@ int fn_0038b61c(unk_0038b61c_a0* a0) {
     return (int)(v0);
 }
 
+struct unk_0038b6d4_a0 {
+    char pad_0[20];
+    u32 f_14;
+};
+int fn_0038b6d4(unk_0038b6d4_a0* a0) {
+    return (int)((int)((u32)(__builtin_abs((int)(a0->f_14)) + -1) >> 31));
+}
+
 struct unk_0038b7dc_a0 {
     virtual void vf0();
     virtual void vf1();

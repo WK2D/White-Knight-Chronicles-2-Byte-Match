@@ -46,6 +46,14 @@ void* fn_00afe6c4(unk_00afe6c4_a0* a0, int a1) {
     return (void*)(t0);
 }
 
+struct unk_00afe744_a0 {
+    char pad_0[8];
+    u32 f_8;
+};
+u32 fn_00afe744(unk_00afe744_a0* a0) {
+    return (u32)(((u32)(-__builtin_abs((int)(a0->f_8))) >> 31));
+}
+
 struct unk_00afe78c_gm1a8;
 struct unk_00afe78c_gm1a8 {
     u32 f_0;

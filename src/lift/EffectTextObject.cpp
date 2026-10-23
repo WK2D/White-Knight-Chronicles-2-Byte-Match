@@ -17,4 +17,8 @@ u8 fn_0091b830(unk_0091b830_a0* a0) {
     return (u8)((u8)t0);
 }
 
+int fn_0091b874(int a0, int a1) {
+    return (int)((int)((u32)(__builtin_abs((int)((u32)(a1) ^ 0x1)) + -1) >> 31));
+}
+
 }
